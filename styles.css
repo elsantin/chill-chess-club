@@ -936,6 +936,108 @@ header {
 }
 
 /*------------------------------------*\
+  #BLOG SECTION
+\*------------------------------------*/
+.blog-section {
+  background-color: var(--color-background-medium); /* Fondo similar a otras secciones */
+  padding: var(--spacing-xl) 0;
+}
+
+.blog-section h2::after {
+  background: var(--color-modern-accent-2); /* Acento naranja para esta sección, por ejemplo */
+}
+
+.blog-grid {
+  display: grid;
+  /* Crea columnas responsivas: 1, 2 o 3 dependiendo del espacio */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: var(--spacing-lg); /* Espacio generoso entre posts */
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.blog-post-card {
+  background-color: var(--color-dark); /* Fondo oscuro para las tarjetas */
+  border-radius: 12px;
+  overflow: hidden; /* Para que la imagen no se salga */
+  display: flex;
+  flex-direction: column; /* Apila imagen, contenido */
+  border: 1px solid var(--color-background-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post-card:hover {
+  transform: translateY(-5px); /* Eleva la tarjeta al pasar el cursor */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+.blog-post-image {
+  width: 100%;
+  height: 200px; /* Altura fija para la imagen */
+  overflow: hidden;
+  background-color: var(--color-background-card); /* Color de fondo mientras carga la imagen */
+}
+
+.blog-post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.blog-post-card:hover .blog-post-image img {
+  transform: scale(1.05); /* Efecto zoom suave en la imagen */
+}
+
+.blog-post-content {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column; /* Apila título, extracto, botón */
+  flex-grow: 1; /* Asegura que esta área ocupe el espacio vertical restante */
+}
+
+.blog-post-title {
+  font-size: 1.4rem;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.3;
+}
+
+.blog-post-title a {
+  color: var(--color-secondary-accent); /* Título en dorado */
+  text-decoration: none;
+}
+
+.blog-post-title a:hover {
+  color: var(--color-modern-accent-1); /* Rosa al pasar el cursor */
+}
+
+.blog-post-excerpt {
+  color: var(--color-text-medium);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+  flex-grow: 1; /* Empuja el botón hacia abajo si el contenido es corto */
+}
+
+.blog-read-more {
+  margin-top: auto; /* Empuja el botón al final del contenedor flex (.blog-post-content) */
+  padding-top: var(--spacing-sm); /* Espacio extra arriba del botón */
+  align-self: flex-start; /* Alinea el botón a la izquierda */
+}
+
+/* Media query opcional para ajustar en móviles */
+@media (max-width: 768px) {
+  .blog-grid {
+      gap: var(--spacing-md); /* Menos espacio entre tarjetas en móviles */
+  }
+  .blog-post-title {
+      font-size: 1.3rem;
+  }
+}
+/* == FIN ESTILOS SECCIÓN BLOG == */
+
+/*------------------------------------*\
   #CONTACT SECTION
 \*------------------------------------*/
 .contact {
