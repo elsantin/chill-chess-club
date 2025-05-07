@@ -849,6 +849,172 @@ header {
 }
 
 /*------------------------------------*\
+  #BENEFITS SECTION (Beneficios del Ajedrez)
+\*------------------------------------*/
+.benefits-section {
+  background-color: var(--color-background-medium); /* Fondo similar a otras secciones como "About" */
+  padding: var(--spacing-xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto sutil de fondo, similar a la sección "About", pero con otro color de acento si se desea */
+.benefits-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0; /* Detrás del contenido */
+  background-image: var(--noise-svg-uri); /* Reutilizamos la textura de ruido */
+  opacity: 0.4; /* Más sutil */
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+}
+.benefits-section::after { /* Un patrón diferente o color para distinguirlo */
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  background-image: var(--palm-svg-uri); /* Reutilizamos el patrón de palmas */
+  background-size: 200px 200px;
+  opacity: 0.05; /* Muy sutil */
+  background-position: 20px 80px;
+  animation: subtlePalmPulse 10s ease-in-out infinite alternate; /* Animación ligeramente diferente */
+}
+
+
+.benefits-section .container {
+    position: relative; /* Para que el contenido esté sobre los pseudo-elementos ::before y ::after */
+    z-index: 1;
+}
+
+.benefits-section h2::after {
+  background: var(--color-modern-accent-3); /* Acento púrpura para esta sección */
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Por defecto una columna */
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.benefit-category {
+  background-color: rgba(39, 39, 42, 0.7); /* var(--color-background-medium con un poco de transparencia) o var(--color-dark) */
+  padding: var(--spacing-md);
+  border-radius: 12px;
+  border-left: 5px solid var(--color-modern-accent-3); /* Borde de acento */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px); /* Efecto de vidrio esmerilado */
+}
+
+.benefit-category h3 {
+  font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+  color: var(--color-secondary-accent);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+}
+
+.benefit-category h3 i {
+  margin-right: 12px;
+  color: var(--color-modern-accent-3); /* Icono del título de categoría con acento */
+  font-size: 1.5em; /* Un poco más grande el icono del título */
+}
+
+.benefit-category .section-intro, /* Si hubiera intros específicas por categoría */
+.benefit-category p[data-lang-key="benefitsLifeSkillsIntro"] { /* Estilo para el párrafo introductorio de "Habilidades Esenciales" */
+  color: var(--color-text-medium);
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-md);
+  max-width: 100%; /* Para que no se restrinja por el 70ch general de los p */
+  text-align: left; /* Alineación a la izquierda para este párrafo específico */
+}
+
+
+.benefit-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.benefit-list li {
+  display: flex;
+  align-items: flex-start; /* Alinea el ícono con la primera línea de texto si es largo */
+  margin-bottom: var(--spacing-sm);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-light);
+}
+
+.benefit-list li i {
+  color: var(--color-modern-accent-1); /* Iconos de los ítems en rosa */
+  margin-right: 12px;
+  margin-top: 5px; /* Ajuste vertical fino del ícono */
+  flex-shrink: 0; /* Para que el ícono no se encoja */
+}
+
+.benefits-cta {
+  text-align: center;
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: rgba(24, 24, 27, 0.6); /* var(--color-dark) con transparencia */
+  border-radius: 12px;
+  border-top: 2px solid var(--color-modern-accent-1);
+}
+
+.benefits-cta p {
+  color: var(--color-text-medium);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px; /* Limitar ancho del texto CTA */
+}
+.benefits-cta p:last-of-type {
+    margin-bottom: var(--spacing-md); /* Espacio antes del botón */
+}
+
+.benefits-cta .btn-primary {
+  background: var(--color-modern-accent-1); /* Botón con acento rosa */
+}
+.benefits-cta .btn-primary:hover {
+  background: var(--color-modern-accent-2); /* Hover naranja */
+}
+
+/* Responsividad para la cuadrícula de beneficios */
+@media (min-width: 768px) {
+  .benefits-grid {
+    /* Podríamos hacer 2 columnas en tabletas si hay muchas categorías, o mantener 1 */
+    /* grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); */
+     grid-template-columns: 1fr; /* Mantenemos una columna para que el texto no sea muy estrecho */
+  }
+   .benefit-category p[data-lang-key="benefitsLifeSkillsIntro"] {
+     font-size: 1rem; /* Un poco más grande en pantallas mayores */
+   }
+}
+
+@media (min-width: 1024px) {
+  .benefits-grid {
+    /* Para pantallas más grandes, podríamos considerar dividir en más columnas si el diseño lo permite */
+    /* O simplemente dejar que el contenido fluya en una columna bien estilizada */
+    /* Por ahora, mantenemos una columna para asegurar buena legibilidad del texto extenso */
+  }
+}
+
+/* Ajustes generales para la sección de beneficios dentro de las media queries existentes */
+@media (max-width: 768px) { /* Móviles */
+    .benefit-category h3 {
+        font-size: 1.3rem;
+    }
+    .benefit-category h3 i {
+        font-size: 1.3em;
+    }
+    .benefit-list li {
+        font-size: 0.95rem;
+    }
+    .benefits-cta p {
+        font-size: 0.95rem;
+    }
+}
+
+/*------------------------------------*\
   #FREE RESOURCES SECTION
 \*------------------------------------*/
 .free-resources { background-color: var(--color-dark); }
