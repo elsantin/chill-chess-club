@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="pageTitle">Chill Chess Club | Clases de Ajedrez Online</title>
+    <meta name="description" content="Aprende ajedrez con un método personalizado y efectivo. Clases online para principiantes e intermedios, con enfoque en el desarrollo individual y asistencia de IA." data-lang-key="metaDescription|content">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="icon" type="image/png" href="favicon.png"> <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="language-selector">
+        <button id="lang-es" class="lang-button active" data-lang="es">ES</button>
+        <button id="lang-en" class="lang-button" data-lang="en">EN</button>
+    </div>
+
+    <header>
+        <div class="container header-container">
+             <a href="#inicio" class="scroll-to logo-link" aria-label="Ir al inicio de la página" data-lang-key="logoLinkAriaLabel|aria-label">
+                <img src="logo.png" alt="Logo de Chill Chess Club" data-lang-key="logoImageAlt|alt" id="site-logo-img">
+                <span class="site-name-text" data-lang-key="siteName">Chill Chess Club</span>
+            </a>
+            <nav class="main-nav">
+                <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="#inicio" data-lang-key="navHome" class="scroll-to">Inicio</a></li>
+                    <li><a href="#instructor" data-lang-key="navAbout" class="scroll-to">Sobre Mí</a></li>
+                    <li><a href="#cursos" data-lang-key="navCourses" class="scroll-to">Cursos</a></li>
+                    <li><a href="#metodo" data-lang-key="navMethod" class="scroll-to">Método</a></li>
+                    <li><a href="#recursos" data-lang-key="navResources" class="scroll-to">Recursos</a></li>
+                    <li><a href="#contacto" data-lang-key="navContact" class="scroll-to">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div id="particles-js"></div>
+            <div class="container hero-content-container">
+                <div class="hero-content">
+                    <h1 data-lang-key="heroTitle">Domina el ajedrez con un enfoque inmersivo y personalizado</h1>
+                    <p class="lead" data-lang-key="heroSubtitle">Método exclusivo diseñado para ayudarte a progresar desde principiante hasta nivel intermedio con instrucción personalizada y asistida por IA.</p>
+                    <div class="hero-cta">
+                        <a href="#contacto" class="btn btn-primary scroll-to" data-lang-key="heroCtaTrial">Solicita tu clase introductoria gratuita</a>
+                        <a href="#metodo" class="btn btn-gradient-border scroll-to" data-lang-key="heroCtaMethod">Descubre mi método</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="instructor" class="about">
+            <div class="container">
+                <h2 data-lang-key="aboutTitle" data-aos="fade-up">Sobre Mí</h2>
+                <div class="about-content">
+                    <div class="about-image" data-aos="fade-right" data-aos-delay="100">
+                        <img src="profile.png" alt="Foto de perfil artística del instructor jugando ajedrez en la playa" data-lang-key="aboutImageAlt|alt" onerror="this.onerror=null; this.src='https://placehold.co/400x400/3F3F46/f4f4f5?text=Instructor';">
+                    </div>
+                    <div class="about-text" data-aos="fade-left" data-aos-delay="200">
+                        <h3 data-lang-key="aboutSubtitle">Un enfoque único para el aprendizaje del ajedrez</h3>
+                        <p data-lang-key="aboutPara1">Apasionado del ajedrez desde temprana edad, he dedicado mi vida a entender y enseñar este magnífico juego a jugadores principiantes e intermedios. Mi enfoque se centra en el desarrollo personalizado de cada estudiante, adaptando las técnicas de enseñanza a sus necesidades específicas.</p>
+                        <p data-lang-key="aboutPara2">Aunque no soy un jugador federado de alto nivel, mi verdadera fortaleza radica en mi capacidad didáctica excepcional y en mi habilidad para descomponer conceptos complejos en elementos comprensibles para niveles iniciales e intermedios.</p>
+                        <h4 data-lang-key="aboutPhilosophyTitle">Mi filosofía de enseñanza</h4>
+                        <p data-lang-key="aboutPhilosophyPara">Creo firmemente en un método inmersivo que combina la teoría con la práctica constante. Mi sistema personalizado utiliza tecnologías de IA para adaptar el contenido a tus fortalezas y debilidades, permitiéndote progresar de manera eficiente y motivadora.</p>
+                        <div class="platforms-info">
+                            <h4 data-lang-key="aboutPlatformsTitle">Plataformas Utilizadas</h4>
+                            <p data-lang-key="aboutPlatformsDesc">Utilizamos principalmente las siguientes plataformas para nuestras clases y análisis. Es recomendable que tengas una cuenta (gratuita) y la aplicación instalada:</p>
+                            <ul class="platform-links">
+                                <li>
+                                    <i class="fas fa-chess"></i>
+                                    <a href="https://www.chess.com/member/santiagovskiy" target="_blank" rel="noopener noreferrer" data-lang-key="aboutPlatformChesscom">Mi Perfil en Chess.com</a>
+                                </li>
+                                <li>
+                                    <i class="fas fa-chess-knight"></i>
+                                    <a href="https://lichess.org/@/Santiagovskiy" target="_blank" rel="noopener noreferrer" data-lang-key="aboutPlatformLichess">Mi Perfil en Lichess.org</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="about-cta-button">
+                           <a href="#contacto" class="btn btn-gradient-border scroll-to" data-lang-key="aboutCtaConnect">Conéctate conmigo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cursos" class="courses">
+            <div class="container">
+                <h2 data-lang-key="coursesTitle" data-aos="fade-up">Cursos y Servicios</h2>
+                <p class="section-intro" data-lang-key="coursesIntro" data-aos="fade-up" data-aos-delay="50">Programas diseñados para satisfacer tus necesidades específicas, sin importar tu nivel de experiencia. Todos los cursos incluyen material didáctico multilingüe, acceso a herramientas de IA personalizadas y soporte continuo.</p>
+                <div class="course-grid">
+                    <div class="course-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="course-header">
+                            <h3 data-lang-key="courseBeginnerTitle">Curso Principiante</h3>
+                            <div class="course-level" aria-label="Nivel Principiante" data-lang-key="courseBeginnerLevel|aria-label"></div>
+                        </div>
+                        <div class="course-image">
+                            <img src="https://placehold.co/400x200/1f1f1f/f0f0f0?text=Curso+Principiante" alt="Piezas de ajedrez blancas para principiantes" data-lang-key="courseBeginnerImgAlt|alt">
+                        </div>
+                        <div class="course-content">
+                            <ul class="course-features">
+                                <li data-lang-key="courseBeginnerFeat1"><i class="fas fa-check" aria-hidden="true"></i> Fundamentos del juego y movimientos</li>
+                                <li data-lang-key="courseBeginnerFeat2"><i class="fas fa-check" aria-hidden="true"></i> Principios básicos de apertura</li>
+                                <li data-lang-key="courseBeginnerFeat3"><i class="fas fa-check" aria-hidden="true"></i> Tácticas elementales</li>
+                                <li data-lang-key="courseBeginnerFeat4"><i class="fas fa-check" aria-hidden="true"></i> Finales básicos</li>
+                                <li data-lang-key="courseBeginnerFeat5"><i class="fas fa-check" aria-hidden="true"></i> 8 clases en vivo personalizadas</li>
+                                <li data-lang-key="courseBeginnerFeat6"><i class="fas fa-check" aria-hidden="true"></i> Material didáctico multilingüe</li>
+                                <li data-lang-key="courseBeginnerFeat7"><i class="fas fa-check" aria-hidden="true"></i> Acceso a IA de entrenamiento</li>
+                            </ul>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="price" data-lang-key="courseBeginnerPrice">$15 USD</span>
+                                    <span class="price-note" data-lang-key="coursePriceNoteHour">/ hora (clases en vivo)</span>
+                                </div>
+                                <a href="#contacto" class="btn btn-primary scroll-to" data-lang-key="courseEnrollBtn">Inscríbete</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="course-header">
+                            <h3 data-lang-key="courseIntermediateTitle">Curso Intermedio</h3>
+                            <div class="course-level" aria-label="Nivel Intermedio" data-lang-key="courseIntermediateLevel|aria-label"></div>
+                        </div>
+                        <div class="course-image">
+                            <img src="https://placehold.co/400x200/2c2c2c/f0f0f0?text=Curso+Intermedio" alt="Estrategia de ajedrez en tablero" data-lang-key="courseIntermediateImgAlt|alt">
+                        </div>
+                        <div class="course-content">
+                             <ul class="course-features">
+                                <li data-lang-key="courseIntermediateFeat1"><i class="fas fa-check" aria-hidden="true"></i> Estrategia posicional avanzada</li>
+                                <li data-lang-key="courseIntermediateFeat2"><i class="fas fa-check" aria-hidden="true"></i> Repertorio de aperturas personalizado</li>
+                                <li data-lang-key="courseIntermediateFeat3"><i class="fas fa-check" aria-hidden="true"></i> Combinaciones tácticas intermedias</li>
+                                <li data-lang-key="courseIntermediateFeat4"><i class="fas fa-check" aria-hidden="true"></i> Finales prácticos esenciales</li>
+                                <li data-lang-key="courseIntermediateFeat5"><i class="fas fa-check" aria-hidden="true"></i> 16 clases en vivo personalizadas</li>
+                                <li data-lang-key="courseIntermediateFeat6"><i class="fas fa-check" aria-hidden="true"></i> Análisis de partidas con IA</li>
+                                <li data-lang-key="courseIntermediateFeat7"><i class="fas fa-check" aria-hidden="true"></i> Plan de estudio individualizado</li>
+                            </ul>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="price" data-lang-key="courseIntermediatePrice">$20 USD</span>
+                                    <span class="price-note" data-lang-key="coursePriceNoteHour">/ hora (clases en vivo)</span>
+                                </div>
+                                <a href="#contacto" class="btn btn-primary scroll-to" data-lang-key="courseEnrollBtn">Inscríbete</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="course-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="course-header">
+                            <h3 data-lang-key="courseCustomTitle">Clases Personalizadas</h3>
+                            <div class="course-level" aria-label="Nivel Personalizado" data-lang-key="courseCustomLevel|aria-label"></div>
+                        </div>
+                        <div class="course-image">
+                            <img src="https://placehold.co/400x200/3f3f3f/f0f0f0?text=Clases+Personalizadas" alt="Instructor explicando jugada de ajedrez" data-lang-key="courseCustomImgAlt|alt">
+                        </div>
+                        <div class="course-content">
+                            <ul class="course-features">
+                                <li data-lang-key="courseCustomFeat1"><i class="fas fa-check" aria-hidden="true"></i> Programa totalmente personalizado</li>
+                                <li data-lang-key="courseCustomFeat2"><i class="fas fa-check" aria-hidden="true"></i> Enfoque en áreas específicas</li>
+                                <li data-lang-key="courseCustomFeat3"><i class="fas fa-check" aria-hidden="true"></i> Horarios flexibles</li>
+                                <li data-lang-key="courseCustomFeat4"><i class="fas fa-check" aria-hidden="true"></i> Sesiones individuales dedicadas</li>
+                                <li data-lang-key="courseCustomFeat5"><i class="fas fa-check" aria-hidden="true"></i> Análisis detallado de tu juego</li>
+                                <li data-lang-key="courseCustomFeat6"><i class="fas fa-check" aria-hidden="true"></i> Material exclusivo adaptado</li>
+                                <li data-lang-key="courseCustomFeat7"><i class="fas fa-check" aria-hidden="true"></i> Soporte constante entre sesiones</li>
+                            </ul>
+                           <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="price" data-lang-key="courseCustomPrice">$30 USD</span>
+                                    <span class="price-note" data-lang-key="coursePriceNoteHour">/ hora (clases en vivo)</span>
+                                </div>
+                                <a href="#contacto" class="btn btn-primary scroll-to" data-lang-key="courseConsultBtn">Consultar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="courses-cta" data-aos="fade-up" data-aos-delay="100">
+                    <p data-lang-key="coursesCtaText">¿No estás seguro qué opción es mejor para ti? Agenda una sesión introductoria gratuita y recibe una evaluación personalizada.</p>
+                    <a href="#contacto" class="btn btn-primary scroll-to" data-subject="clase_prueba" data-lang-key="coursesCtaBtn">Solicitar clase de prueba gratis</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="metodo" class="methodology">
+            <div class="container">
+                <h2 data-lang-key="methodTitle" data-aos="fade-up">Nuestro Método Inmersivo y Personalizado</h2>
+                <p class="section-intro" data-lang-key="methodIntro" data-aos="fade-up" data-aos-delay="50">Descubre cómo nuestro enfoque único, potenciado por IA, acelera tu aprendizaje y se adapta perfectamente a tu estilo y ritmo.</p>
+                <div class="method-steps">
+                    <div class="step" data-aos="fade-up" data-aos-delay="100">
+                        <div class="step-icon"><i class="fas fa-brain" aria-hidden="true"></i></div>
+                        <h3><span class="highlight">01.</span> <span data-lang-key="methodStep1Title">Evaluación Personalizada</span></h3>
+                        <p data-lang-key="methodStep1Desc">Comenzamos con un análisis detallado de tu nivel actual, estilo de juego, fortalezas y debilidades, utilizando herramientas avanzadas y mi experiencia pedagógica.</p>
+                    </div>
+                     <div class="step" data-aos="fade-up" data-aos-delay="200">
+                        <div class="step-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
+                         <h3><span class="highlight">02.</span> <span data-lang-key="methodStep2Title">Plan de Estudio Adaptativo con IA</span></h3>
+                        <p data-lang-key="methodStep2Desc">Nuestra plataforma utiliza inteligencia artificial para crear un plan de estudio dinámico que evoluciona contigo, enfocándose en las áreas de mayor impacto para tu progreso.</p>
+                    </div>
+                    <div class="step" data-aos="fade-up" data-aos-delay="300">
+                        <div class="step-icon"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i></div>
+                         <h3><span class="highlight">03.</span> <span data-lang-key="methodStep3Title">Sesiones Inmersivas</span></h3>
+                        <p data-lang-key="methodStep3Desc">Clases (en vivo o grabadas) que van más allá de la teoría. Nos sumergimos en análisis de partidas, resolución de problemas tácticos y estratégicos, y práctica deliberada.</p>
+                    </div>
+                    <div class="step" data-aos="fade-up" data-aos-delay="400">
+                        <div class="step-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                         <h3><span class="highlight">04.</span> <span data-lang-key="methodStep4Title">Seguimiento Continuo</span></h3>
+                        <p data-lang-key="methodStep4Desc">Monitorizamos tu progreso constantemente, ajustando el plan y proporcionando retroalimentación específica para asegurar que siempre estés desafiado pero no abrumado.</p>
+                    </div>
+                </div>
+                <div class="method-benefits" data-aos="fade-up">
+                    <h3 data-lang-key="methodBenefitsTitle">Beneficios Clave</h3>
+                    <ul>
+                        <li data-lang-key="methodBenefit1"><i class="fas fa-star" aria-hidden="true"></i> Aprendizaje más rápido y eficiente.</li>
+                        <li data-lang-key="methodBenefit2"><i class="fas fa-star" aria-hidden="true"></i> Mayor comprensión conceptual y práctica.</li>
+                        <li data-lang-key="methodBenefit3"><i class="fas fa-star" aria-hidden="true"></i> Motivación constante a través de metas personalizadas.</li>
+                        <li data-lang-key="methodBenefit4"><i class="fas fa-star" aria-hidden="true"></i> Flexibilidad para aprender a tu propio ritmo.</li>
+                        <li data-lang-key="methodBenefit5"><i class="fas fa-star" aria-hidden="true"></i> Desarrollo de un pensamiento ajedrecístico más profundo.</li>
+                    </ul>
+                    <a href="#cursos" class="btn btn-gradient-border scroll-to" data-lang-key="methodBenefitsBtn">Ver Cursos Disponibles</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="recursos" class="free-resources">
+            <div class="container">
+                <h2 data-lang-key="resourcesTitle" data-aos="fade-up">Recursos Gratuitos</h2>
+                <p class="section-intro" data-lang-key="resourcesIntro" data-aos="fade-up" data-aos-delay="50">Empieza tu viaje en el ajedrez o refresca tus conocimientos con estos recursos esenciales que he preparado para ti.</p>
+                <div class="resource-grid">
+                    <div class="resource-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="resource-icon"><i class="fas fa-chess-board" aria-hidden="true"></i></div>
+                        <h3 data-lang-key="resource1Title">Reglas Básicas</h3>
+                        <p data-lang-key="resource1Desc">Una guía clara y concisa sobre cómo se mueven las piezas y las reglas fundamentales del juego.</p>
+                        <a href="#" class="resource-link" data-lang-key="resourceLinkText">Leer más <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                     <div class="resource-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="resource-icon"><i class="fas fa-lightbulb" aria-hidden="true"></i></div>
+                        <h3 data-lang-key="resource2Title">5 Consejos Tácticos Iniciales</h3>
+                        <p data-lang-key="resource2Desc">Aprende patrones tácticos clave que te darán ventaja en tus primeras partidas.</p>
+                        <a href="#" class="resource-link" data-lang-key="resourceLinkText">Leer más <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="resource-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="resource-icon"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i></div>
+                        <h3 data-lang-key="resource3Title">Errores Comunes a Evitar</h3>
+                        <p data-lang-key="resource3Desc">Identifica y corrige los errores típicos que cometen los principiantes para mejorar rápidamente.</p>
+                        <a href="#" class="resource-link" data-lang-key="resourceLinkText">Leer más <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                 <div class="more-resources-cta" data-aos="fade-up">
+                    <p data-lang-key="resourcesCta">¿Quieres profundizar más? <a href="#cursos" class="scroll-to">Inscríbete en un curso</a> para análisis y consejos avanzados.</p>
+                 </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contact">
+            <div class="container">
+                <h2 data-lang-key="contactTitle" data-aos="fade-up">Contacta Conmigo</h2>
+                <p class="section-intro" data-lang-key="contactIntro" data-aos="fade-up" data-aos-delay="50">¿Listo para empezar o tienes alguna pregunta? Envíame un mensaje a través del formulario o utiliza mis datos de contacto.</p>
+                <div class="contact-wrapper" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-form">
+                        <h3 data-lang-key="contactFormTitle">Formulario de Contacto</h3>
+                        <form id="contactForm" action="YOUR_BACKEND_ENDPOINT" method="POST">
+                            <div class="form-group">
+                                <label for="name" data-lang-key="contactNameLabel">Nombre:</label>
+                                <input type="text" id="name" name="name" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-lang-key="contactEmailLabel">Email:</label>
+                                <input type="email" id="email" name="email" required aria-required="true">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" data-lang-key="contactSubjectLabel">Asunto:</label>
+                                <select id="subject" name="subject">
+                                    <option value="consulta_general" data-lang-key="contactSubjectOpt1">Consulta General</option>
+                                    <option value="clase_prueba" data-lang-key="contactSubjectOpt2">Solicitar Clase de Prueba Gratuita</option>
+                                    <option value="info_principiante" data-lang-key="contactSubjectOpt3">Info Curso Principiante</option>
+                                    <option value="info_intermedio" data-lang-key="contactSubjectOpt4">Info Curso Intermedio</option>
+                                    <option value="clases_personalizadas" data-lang-key="contactSubjectOpt5">Info Clases Personalizadas</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-lang-key="contactMessageLabel">Mensaje:</label>
+                                <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" data-lang-key="contactSubmitBtn">Enviar Mensaje</button>
+                        </form>
+                        <div id="form-status" aria-live="polite"></div>
+                    </div>
+                    <div class="contact-info">
+                        <h3 data-lang-key="contactInfoTitle">Información de Contacto</h3>
+                        <p data-lang-key="contactInfoLocation"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Clases 100% Online</p>
+                        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:tuemail@example.com">tuemail@example.com</a></p>
+                        <h4 data-lang-key="contactTrialTitle">Solicita tu Clase Introductoria Gratuita</h4>
+                        <p data-lang-key="contactTrialDesc">Una sesión de 30 minutos para conocernos, evaluar tu nivel y discutir cómo puedo ayudarte a alcanzar tus metas ajedrecísticas.</p>
+                         <a href="#contacto" class="btn btn-gradient-border scroll-to" data-subject="clase_prueba" data-lang-key="contactTrialBtn">Solicitar Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h4 data-lang-key="footerAboutTitle">Chill Chess Club</h4>
+                    <p data-lang-key="footerAboutDesc">Transformando tu juego con un método personalizado y efectivo. Clases para principiantes e intermedios.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-lang-key="footerLinksTitle">Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio" class="scroll-to" data-lang-key="navHome">Inicio</a></li>
+                        <li><a href="#instructor" class="scroll-to" data-lang-key="navAbout">Sobre Mí</a></li>
+                        <li><a href="#cursos" class="scroll-to" data-lang-key="navCourses">Cursos</a></li>
+                        <li><a href="#metodo" class="scroll-to" data-lang-key="navMethod">Método</a></li>
+                        <li><a href="#contacto" class="scroll-to" data-lang-key="navContact">Contacto</a></li>
+                        <li><a href="#" data-lang-key="footerPrivacyLink">Política de Privacidad</a></li>
+                        <li><a href="#" data-lang-key="footerTermsLink">Términos de Servicio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-lang-key="footerContactTitle">Contacto Rápido</h4>
+                     <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:tuemail@example.com">tuemail@example.com</a></p>
+                     <p><i class="fas fa-info-circle" aria-hidden="true"></i> <a href="#contacto" class="scroll-to" data-lang-key="footerContactFormLink">Formulario de Contacto</a></p>
+                     <div class="payment-methods">
+                         <span data-lang-key="footerPaymentText">Pagos Seguros con:</span>
+                         <i class="fab fa-cc-paypal" title="PayPal" aria-label="PayPal"></i>
+                         <span class="payment-label">Payoneer</span>
+                         <span class="payment-label">Binance</span>
+                     </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footerCopyright">© <span id="current-year"></span> Chill Chess Club. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top-btn" title="Volver arriba" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
