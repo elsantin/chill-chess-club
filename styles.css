@@ -51,7 +51,7 @@
 }
 
 html {
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
 }
 
 body {
@@ -60,43 +60,43 @@ body {
   color: var(--color-text-light);
   background-color: var(--color-dark);
   min-height: 100vh;
-  font-size: 16px; 
-  overflow-x: hidden; 
+  font-size: 16px;
+  overflow-x: hidden;
   opacity: 1;
   transition: opacity var(--lang-transition-speed) ease-in-out;
-  cursor: default; 
+  cursor: default;
 }
 
 body.fade-out {
-  opacity: 0; 
+  opacity: 0;
 }
 
 /* Estilos de Tipografía */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-title);
   margin-bottom: var(--spacing-sm);
-  color: var(--color-secondary-accent); 
+  color: var(--color-secondary-accent);
   font-weight: 700;
   letter-spacing: 0.5px;
   line-height: 1.3;
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw + 1rem, 3.5rem); 
+  font-size: clamp(2.5rem, 5vw + 1rem, 3.5rem);
   margin-bottom: var(--spacing-md);
-  color: var(--color-text-light); 
+  color: var(--color-text-light);
   line-height: 1.2;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw + 1rem, 2.5rem); 
+  font-size: clamp(2rem, 4vw + 1rem, 2.5rem);
   position: relative;
   padding-bottom: var(--spacing-sm);
   margin-bottom: var(--spacing-lg);
   text-align: center;
 }
 
-h2::after { 
+h2::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -104,7 +104,7 @@ h2::after {
   transform: translateX(-50%);
   width: 100px;
   height: 3px;
-  background: var(--color-modern-accent-1); 
+  background: var(--color-modern-accent-1);
 }
 
 h3 {
@@ -113,12 +113,12 @@ h3 {
 
 h4 {
   font-size: clamp(1.1rem, 2vw + 0.5rem, 1.25rem);
-  color: var(--color-modern-accent-1); 
+  color: var(--color-modern-accent-1);
 }
 
 p {
   margin-bottom: var(--spacing-md);
-  max-width: 70ch; 
+  max-width: 70ch;
   color: var(--color-text-light);
 }
 
@@ -126,39 +126,39 @@ p {
 .more-resources-cta p {
     margin-left: auto;
     margin-right: auto;
-    text-align: center; 
+    text-align: center;
     max-width: 100%; /* Permitir que el text-align del padre funcione mejor para líneas cortas */
 }
 
 
-p.lead { 
+p.lead {
   color: var(--color-text-light);
   opacity: 0.95;
   font-size: clamp(1rem, 1.8vw, 1.2rem);
   line-height: 1.5;
 }
 
-.section-intro { 
+.section-intro {
   color: var(--color-text-medium);
   max-width: 800px;
-  margin: 0 auto var(--spacing-lg); 
+  margin: 0 auto var(--spacing-lg);
   text-align: center;
   font-size: 1.1rem;
 }
 
 a {
-  color: var(--color-secondary-accent); 
+  color: var(--color-secondary-accent);
   text-decoration: none;
   transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
   cursor: pointer;
 }
 
 a:hover, a:focus {
-  color: var(--color-modern-accent-1); 
-  outline: 2px solid transparent; 
+  color: var(--color-modern-accent-1);
+  outline: 2px solid transparent;
 }
 
-.sr-only { 
+.sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -179,7 +179,7 @@ a:hover, a:focus {
 
 section {
   padding: var(--spacing-xl) 0;
-  overflow: visible; 
+  overflow: visible;
 }
 
 /* Estilos de Botones */
@@ -203,8 +203,8 @@ section {
   overflow: hidden;
 }
 .btn:hover, .btn:focus {
-    transform: scale(1.03); 
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.03);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 .btn:not(.btn-primary) {
@@ -214,7 +214,7 @@ section {
 .btn:not(.btn-primary):hover, .btn:not(.btn-primary):focus {
     background: var(--color-secondary-accent);
     color: var(--color-dark);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3); 
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
     transform: scale(1.03);
 }
 
@@ -224,19 +224,19 @@ section {
     color: var(--color-text-light);
 }
 .btn-primary:hover, .btn-primary:focus {
-    background: var(--color-modern-accent-2); 
+    background: var(--color-modern-accent-2);
     border-color: var(--color-modern-accent-2);
     color: var(--color-text-light);
-    box-shadow: 0 5px 15px rgba(249, 115, 22, 0.4); 
+    box-shadow: 0 5px 15px rgba(249, 115, 22, 0.4);
     transform: scale(1.03);
 }
 
 .btn-gradient-border {
     border-color: transparent;
     color: var(--color-text-light);
-    background-color: var(--color-background-card); 
+    background-color: var(--color-background-card);
 }
-.btn-gradient-border::before { 
+.btn-gradient-border::before {
     content: '';
     position: absolute;
     top: -2px; left: -2px; right: -2px; bottom: -2px;
@@ -245,7 +245,7 @@ section {
     border-radius: inherit;
     z-index: -1;
     transition: background-position var(--transition-speed) ease-out;
-    animation: gradient-animation 4s linear infinite; 
+    animation: gradient-animation 4s linear infinite;
 }
 @keyframes gradient-animation {
     0% { background-position: 0% 50%; }
@@ -254,8 +254,8 @@ section {
 }
 .btn-gradient-border:hover, .btn-gradient-border:focus {
     color: var(--color-text-light);
-    background-color: var(--color-background-light); 
-    box-shadow: 0 5px 15px rgba(236, 72, 153, 0.3); 
+    background-color: var(--color-background-light);
+    box-shadow: 0 5px 15px rgba(236, 72, 153, 0.3);
     transform: scale(1.03);
 }
 
@@ -271,59 +271,59 @@ header {
   background-color: rgba(24, 24, 27, 0.85);
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, padding 0.3s ease; 
+  transition: background-color 0.3s ease, padding 0.3s ease;
 }
 
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 50px; 
+  min-height: 50px;
 }
 
 /* Estilos para el enlace <a> que contiene el logo y el nombre del sitio */
 .logo-link {
-    text-decoration: none; 
-    color: inherit; 
-    display: flex; 
-    align-items: center; 
-    gap: calc(var(--spacing-sm) * 0.8); 
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing-sm) * 0.8);
 }
 
 .logo-link:hover, .logo-link:focus {
-    color: inherit; 
+    color: inherit;
 }
 
 /* Estilos para la imagen del logo DENTRO del enlace .logo-link (tus ajustes) */
-.logo-link #site-logo-img { 
-  height: 55px; 
-  width: auto;  
-  display: block; 
+.logo-link #site-logo-img {
+  height: 55px;
+  width: auto;
+  display: block;
   transition: transform 0.3s ease;
   border: none;
   box-shadow: none;
   outline: none;
-  vertical-align: middle; 
+  vertical-align: middle;
 }
 
-.logo-link:hover #site-logo-img { 
+.logo-link:hover #site-logo-img {
     transform: scale(1.05);
 }
 
 /* Estilos para el texto del nombre del sitio DENTRO del enlace .logo-link (tus ajustes) */
-.logo-link .site-name-text { 
+.logo-link .site-name-text {
   font-family: var(--font-title);
-  font-size: 1.95rem; 
-  font-weight: 800; 
+  font-size: 1.95rem;
+  font-weight: 800;
   color: var(--color-text-light);
   text-shadow: 0 0 5px rgba(236, 72, 153, 0.3),
                0 0 8px rgba(249, 115, 22, 0.2);
   letter-spacing: 1px;
-  white-space: nowrap; 
+  white-space: nowrap;
   transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.logo-link:hover .site-name-text { 
+.logo-link:hover .site-name-text {
     color: var(--color-secondary-accent);
     text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
 }
@@ -916,15 +916,15 @@ header {
 
 .more-resources-cta {
     text-align: center;
-    margin: var(--spacing-lg) auto 0; 
-    max-width: 800px; 
+    margin: var(--spacing-lg) auto 0;
+    max-width: 800px;
     color: var(--color-text-medium);
 }
 .more-resources-cta p {
     margin-bottom: 0;
     margin-left: auto;
     margin-right: auto;
-    text-align: center; 
+    text-align: center;
 }
 .more-resources-cta a {
   color: var(--color-modern-accent-1);
@@ -939,103 +939,114 @@ header {
   #BLOG SECTION
 \*------------------------------------*/
 .blog-section {
-  background-color: var(--color-background-medium); /* Fondo similar a otras secciones */
-  padding: var(--spacing-xl) 0;
+    background-color: var(--color-background-medium); /* Fondo similar a otras secciones */
+    padding: var(--spacing-xl) 0;
 }
 
 .blog-section h2::after {
-  background: var(--color-modern-accent-2); /* Acento naranja para esta sección, por ejemplo */
+    background: var(--color-modern-accent-2); /* Acento naranja para esta sección, por ejemplo */
 }
 
 .blog-grid {
-  display: grid;
-  /* Crea columnas responsivas: 1, 2 o 3 dependiendo del espacio */
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-  gap: var(--spacing-lg); /* Espacio generoso entre posts */
-  margin-top: var(--spacing-lg);
-  margin-bottom: var(--spacing-lg);
+    display: grid;
+    /* Crea columnas responsivas: 1, 2 o 3 dependiendo del espacio */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+    gap: var(--spacing-lg); /* Espacio generoso entre posts */
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
 }
 
 .blog-post-card {
-  background-color: var(--color-dark); /* Fondo oscuro para las tarjetas */
-  border-radius: 12px;
-  overflow: hidden; /* Para que la imagen no se salga */
-  display: flex;
-  flex-direction: column; /* Apila imagen, contenido */
-  border: 1px solid var(--color-background-light);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--color-dark); /* Fondo oscuro para las tarjetas */
+    border-radius: 12px;
+    overflow: hidden; /* Para que la imagen no se salga */
+    display: flex;
+    flex-direction: column; /* Apila imagen, contenido */
+    border: 1px solid var(--color-background-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .blog-post-card:hover {
-  transform: translateY(-5px); /* Eleva la tarjeta al pasar el cursor */
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    transform: translateY(-5px); /* Eleva la tarjeta al pasar el cursor */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
 }
 
 .blog-post-image {
-  width: 100%;
-  height: 200px; /* Altura fija para la imagen */
-  overflow: hidden;
-  background-color: var(--color-background-card); /* Color de fondo mientras carga la imagen */
+    width: 100%;
+    height: 200px; /* Altura fija para la imagen */
+    overflow: hidden;
+    background-color: var(--color-background-card); /* Color de fondo mientras carga la imagen */
 }
 
 .blog-post-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
-  display: block;
-  transition: transform 0.4s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+    display: block;
+    transition: transform 0.4s ease;
 }
 
 .blog-post-card:hover .blog-post-image img {
-  transform: scale(1.05); /* Efecto zoom suave en la imagen */
+    transform: scale(1.05); /* Efecto zoom suave en la imagen */
 }
 
 .blog-post-content {
-  padding: var(--spacing-md);
-  display: flex;
-  flex-direction: column; /* Apila título, extracto, botón */
-  flex-grow: 1; /* Asegura que esta área ocupe el espacio vertical restante */
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column; /* Apila título, extracto, botón */
+    flex-grow: 1; /* Asegura que esta área ocupe el espacio vertical restante */
+    /* CAMBIO: Añadir text-align: center para centrar título y extracto */
+    text-align: center;
 }
 
 .blog-post-title {
-  font-size: 1.4rem;
-  margin-bottom: var(--spacing-sm);
-  line-height: 1.3;
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
 }
 
 .blog-post-title a {
-  color: var(--color-secondary-accent); /* Título en dorado */
-  text-decoration: none;
+    color: var(--color-secondary-accent); /* Título en dorado */
+    text-decoration: none;
 }
 
 .blog-post-title a:hover {
-  color: var(--color-modern-accent-1); /* Rosa al pasar el cursor */
+    color: var(--color-modern-accent-1); /* Rosa al pasar el cursor */
 }
 
 .blog-post-excerpt {
-  color: var(--color-text-medium);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-bottom: var(--spacing-md);
-  flex-grow: 1; /* Empuja el botón hacia abajo si el contenido es corto */
+    color: var(--color-text-medium);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: var(--spacing-md);
+    flex-grow: 1; /* Empuja el botón hacia abajo si el contenido es corto */
 }
 
 .blog-read-more {
-  margin-top: auto; /* Empuja el botón al final del contenedor flex (.blog-post-content) */
-  padding-top: var(--spacing-sm); /* Espacio extra arriba del botón */
-  align-self: flex-start; /* Alinea el botón a la izquierda */
+    margin-top: auto; /* Empuja el botón al final del contenedor flex (.blog-post-content) */
+    padding-top: var(--spacing-sm); /* Espacio extra arriba del botón */
+    /* CAMBIO: Centrar el botón horizontalmente */
+    align-self: center;
 }
 
 /* Media query opcional para ajustar en móviles */
 @media (max-width: 768px) {
-  .blog-grid {
-      gap: var(--spacing-md); /* Menos espacio entre tarjetas en móviles */
-  }
-  .blog-post-title {
-      font-size: 1.3rem;
-  }
+    .blog-grid {
+        gap: var(--spacing-md); /* Menos espacio entre tarjetas en móviles */
+    }
+    .blog-post-title {
+        font-size: 1.3rem;
+    }
+    /* Asegurar centrado en móvil también si fuera necesario */
+    .blog-post-content {
+        text-align: center;
+    }
+    .blog-read-more {
+        align-self: center;
+    }
 }
 /* == FIN ESTILOS SECCIÓN BLOG == */
+
 
 /*------------------------------------*\
   #CONTACT SECTION
@@ -1293,7 +1304,7 @@ footer {
   color: var(--color-text-medium);
   margin-left: auto;
   margin-right: auto;
-  text-align: center; 
+  text-align: center;
 }
 
 /*------------------------------------*\
@@ -1333,14 +1344,14 @@ footer {
   .header-container {
       min-height: 60px;
   }
-  .logo-link #site-logo-img { 
+  .logo-link #site-logo-img {
       height: 45px;
   }
-  .logo-link .site-name-text { 
+  .logo-link .site-name-text {
       font-size: 1.7rem;
   }
-  .logo-link { 
-      padding-top: 3px; 
+  .logo-link {
+      padding-top: 3px;
   }
 
   .about-content {
@@ -1399,17 +1410,17 @@ footer {
   header { padding: var(--spacing-sm) 0; }
   .header-container { padding: 0 var(--spacing-sm); min-height: 55px; }
 
-  .logo-link #site-logo-img { 
+  .logo-link #site-logo-img {
       height: 40px;
   }
-  .logo-link .site-name-text { 
+  .logo-link .site-name-text {
       font-size: 1.6rem;
       letter-spacing: 0.5px;
       text-shadow: 0 0 3px rgba(236, 72, 153, 0.2), 0 0 5px rgba(249, 115, 22, 0.1);
   }
-  .logo-link { 
+  .logo-link {
       gap: var(--spacing-xs);
-      padding-top: 2px; 
+      padding-top: 2px;
   }
 
 
@@ -1468,6 +1479,20 @@ footer {
   .method-steps { grid-template-columns: 1fr; }
   .resource-grid { grid-template-columns: 1fr; }
   .contact-wrapper { grid-template-columns: 1fr; }
+
+  /* Ajustes para el blog en móviles */
+  .blog-grid {
+      gap: var(--spacing-md); /* Menos espacio entre tarjetas en móviles */
+  }
+  .blog-post-title {
+      font-size: 1.3rem;
+  }
+  .blog-post-content {
+      text-align: center; /* Asegurar centrado */
+  }
+  .blog-read-more {
+      align-self: center; /* Asegurar centrado */
+  }
 
   .footer-content {
     text-align: center;
