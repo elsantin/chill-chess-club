@@ -4,22 +4,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Language Translation ---
     const translations = {
-        // ... (traducciones sin cambios) ...
         es: {
             pageTitle: "Chill Chess Club | Clases de Ajedrez Online",
             metaDescription: "Aprende ajedrez con un método relajado y personalizado. Clases para principiantes e intermedios adaptadas con IA para maximizar tu progreso.",
-            logoAlt: "Chill Chess Club",
+            logoAlt: "Chill Chess Club", // Asumiendo que tienes un data-lang-key para el alt del logo si es una img
+            siteName: "Chill Chess Club", // Para el texto junto al logo
+            logoLinkAriaLabel: "Ir al inicio de la página",
             navHome: "Inicio",
             navAbout: "Sobre Mí",
             navCourses: "Cursos",
             navMethod: "Método",
             navResources: "Recursos",
             navContact: "Contacto",
-            heroTitle: "Domina el ajedrez con un enfoque inmersivo y personalizado", // Sin <br>
-            heroSubtitle: "Método exclusivo diseñado para ayudarte a progresar desde principiante hasta nivel intermedio con instrucción personalizada y asistida por IA.", // Sin <br>
+            heroTitle: "Domina el ajedrez con un enfoque inmersivo y personalizado",
+            heroSubtitle: "Método exclusivo diseñado para ayudarte a progresar desde principiante hasta nivel intermedio con instrucción personalizada y asistida por IA.",
             heroCtaTrial: "Solicita tu clase introductoria gratuita",
             heroCtaMethod: "Descubre mi método",
             aboutTitle: "Sobre Mí",
+            aboutImageAlt: "Foto de perfil artística del instructor jugando ajedrez en la playa",
             aboutSubtitle: "Un enfoque único para el aprendizaje del ajedrez",
             aboutPara1: "Apasionado del ajedrez desde temprana edad, he dedicado mi vida a entender y enseñar este magnífico juego a jugadores principiantes e intermedios. Mi enfoque se centra en el desarrollo personalizado de cada estudiante, adaptando las técnicas de enseñanza a sus necesidades específicas.",
             aboutPara2: "Aunque no soy un jugador federado de alto nivel, mi verdadera fortaleza radica en mi capacidad didáctica excepcional y en mi habilidad para descomponer conceptos complejos en elementos comprensibles para niveles iniciales e intermedios.",
@@ -30,11 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutPlatformChesscom: "Mi Perfil en Chess.com",
             aboutPlatformLichess: "Mi Perfil en Lichess.org",
             aboutCtaConnect: "Conéctate conmigo",
-            aboutImageAlt: "Foto de perfil artística del instructor jugando ajedrez en la playa",
             coursesTitle: "Cursos y Servicios",
             coursesIntro: "Programas diseñados para satisfacer tus necesidades específicas, sin importar tu nivel de experiencia. Todos los cursos incluyen material didáctico multilingüe, acceso a herramientas de IA personalizadas y soporte continuo.",
             courseBeginnerTitle: "Curso Principiante",
-            courseBeginnerLevel: "Nivel Principiante",
+            courseBeginnerLevelAriaLabel: "Nivel Principiante",
             courseBeginnerImgAlt: "Piezas de ajedrez blancas para principiantes",
             courseBeginnerFeat1: "Fundamentos del juego y movimientos",
             courseBeginnerFeat2: "Principios básicos de apertura",
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             coursePriceNoteHour: "/ hora (clases en vivo)",
             courseEnrollBtn: "Inscríbete",
             courseIntermediateTitle: "Curso Intermedio",
-            courseIntermediateLevel: "Nivel Intermedio",
+            courseIntermediateLevelAriaLabel: "Nivel Intermedio",
             courseIntermediateImgAlt: "Estrategia de ajedrez en tablero",
             courseIntermediateFeat1: "Estrategia posicional avanzada",
             courseIntermediateFeat2: "Repertorio de aperturas personalizado",
@@ -58,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
             courseIntermediateFeat7: "Plan de estudio individualizado",
             courseIntermediatePrice: "$20 USD",
             courseCustomTitle: "Clases Personalizadas",
-            courseCustomLevel: "Nivel Personalizado",
+            courseCustomLevelAriaLabel: "Nivel Personalizado",
             courseCustomImgAlt: "Instructor explicando jugada de ajedrez",
             courseCustomFeat1: "Programa totalmente personalizado",
             courseCustomFeat2: "Enfoque en áreas específicas",
@@ -98,6 +99,22 @@ document.addEventListener('DOMContentLoaded', () => {
             resource3Title: "Errores Comunes a Evitar",
             resource3Desc: "Identifica y corrige los errores típicos que cometen los principiantes para mejorar rápidamente.",
             resourcesCta: "¿Quieres profundizar más? <a href=\"#cursos\" class=\"scroll-to\">Inscríbete en un curso</a> para análisis y consejos avanzados.",
+            
+            // --- NUEVAS TRADUCCIONES PARA EL BLOG ---
+            blogTitle: "Desde Nuestro Blog",
+            blogIntro: "Explora artículos, consejos y curiosidades del mundo del ajedrez con nuestro toque \"chill\".",
+            blogPost1ImgAlt: "Imagen representativa de la historia del ajedrez",
+            blogPost1Title: "Un Viaje Rápido por la Historia del Ajedrez",
+            blogPost1Excerpt: "Desde sus orígenes en la India hasta el juego moderno, descubre la fascinante evolución del ajedrez a través de los siglos.",
+            blogPost2ImgAlt: "Imagen mostrando el ajedrez de forma relajada",
+            blogPost2Title: "¿Ajedrez Aburrido? ¡Rompiendo el Mito!",
+            blogPost2Excerpt: "Descubre por qué el ajedrez es mucho más que un juego lento y complicado. ¡Es dinámico, creativo y sorprendentemente \"chill\"!",
+            blogPost3ImgAlt: "Imagen de alguien jugando ajedrez online",
+            blogPost3Title: "5 Pasos Sencillos para Empezar a Jugar Online",
+            blogPost3Excerpt: "¿Listo para tu primera partida en línea? Te guiamos paso a paso para que empieces a jugar en minutos, ¡sin complicaciones!",
+            blogReadMore: "Leer Más",
+            // --- FIN NUEVAS TRADUCCIONES PARA EL BLOG ---
+            
             contactTitle: "Contacta Conmigo",
             contactIntro: "¿Listo para empezar o tienes alguna pregunta? Envíame un mensaje a través del formulario o utiliza mis datos de contacto.",
             contactFormTitle: "Formulario de Contacto",
@@ -133,18 +150,21 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {
             pageTitle: "Chill Chess Club | Online Chess Classes",
             metaDescription: "Learn chess with a relaxed and personalized method. Classes for beginners and intermediate players adapted with AI to maximize your progress.",
-            logoAlt: "Chill Chess Club",
+            logoAlt: "Chill Chess Club", // Assuming you have a data-lang-key for the logo's alt if it's an img
+            siteName: "Chill Chess Club", // For the text next to the logo
+            logoLinkAriaLabel: "Go to the top of the page",
             navHome: "Home",
             navAbout: "About Me",
             navCourses: "Courses",
             navMethod: "Method",
             navResources: "Resources",
             navContact: "Contact",
-            heroTitle: "Master chess with an immersive and personalized approach", // No <br>
-            heroSubtitle: "Exclusive method designed to help you progress from beginner to intermediate level with personalized, AI-assisted instruction.", // No <br>
+            heroTitle: "Master chess with an immersive and personalized approach",
+            heroSubtitle: "Exclusive method designed to help you progress from beginner to intermediate level with personalized, AI-assisted instruction.",
             heroCtaTrial: "Request your free introductory class",
             heroCtaMethod: "Discover my method",
             aboutTitle: "About Me",
+            aboutImageAlt: "Artistic profile picture of the instructor playing chess on the beach",
             aboutSubtitle: "A unique approach to chess learning",
             aboutPara1: "Passionate about chess from an early age, I have dedicated my life to understanding and teaching this magnificent game to beginner and intermediate players. My approach focuses on the personalized development of each student, adapting teaching techniques to their specific needs.",
             aboutPara2: "Although I am not a high-level federated player, my true strength lies in my exceptional teaching ability and my skill in breaking down complex concepts into understandable elements for initial and intermediate levels.",
@@ -155,11 +175,10 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutPlatformChesscom: "My Chess.com Profile",
             aboutPlatformLichess: "My Lichess.org Profile",
             aboutCtaConnect: "Connect with me",
-            aboutImageAlt: "Artistic profile picture of the instructor playing chess on the beach",
             coursesTitle: "Courses and Services",
             coursesIntro: "Programs designed to meet your specific needs, regardless of your experience level. All courses include multilingual learning materials, access to personalized AI tools, and ongoing support.",
             courseBeginnerTitle: "Beginner Course",
-            courseBeginnerLevel: "Beginner Level",
+            courseBeginnerLevelAriaLabel: "Beginner Level",
             courseBeginnerImgAlt: "White chess pieces for beginners",
             courseBeginnerFeat1: "Game fundamentals and moves",
             courseBeginnerFeat2: "Basic opening principles",
@@ -172,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
             coursePriceNoteHour: "/ hour (live classes)",
             courseEnrollBtn: "Enroll Now",
             courseIntermediateTitle: "Intermediate Course",
-            courseIntermediateLevel: "Intermediate Level",
+            courseIntermediateLevelAriaLabel: "Intermediate Level",
             courseIntermediateImgAlt: "Chess strategy on a board",
             courseIntermediateFeat1: "Advanced positional strategy",
             courseIntermediateFeat2: "Personalized opening repertoire",
@@ -183,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
             courseIntermediateFeat7: "Individualized study plan",
             courseIntermediatePrice: "$20 USD",
             courseCustomTitle: "Personalized Classes",
-            courseCustomLevel: "Custom Level",
+            courseCustomLevelAriaLabel: "Custom Level",
             courseCustomImgAlt: "Instructor explaining a chess move",
             courseCustomFeat1: "Fully customized program",
             courseCustomFeat2: "Focus on specific areas",
@@ -223,6 +242,22 @@ document.addEventListener('DOMContentLoaded', () => {
             resource3Title: "Common Mistakes to Avoid",
             resource3Desc: "Identify and correct typical mistakes beginners make to improve quickly.",
             resourcesCta: "Want to dive deeper? <a href=\"#cursos\" class=\"scroll-to\">Enroll in a course</a> for advanced analysis and tips.",
+
+            // --- NEW TRANSLATIONS FOR THE BLOG ---
+            blogTitle: "From Our Blog",
+            blogIntro: "Explore articles, tips, and curiosities from the world of chess with our \"chill\" touch.",
+            blogPost1ImgAlt: "Representative image of chess history",
+            blogPost1Title: "A Quick Journey Through the History of Chess",
+            blogPost1Excerpt: "From its origins in India to the modern game, discover the fascinating evolution of chess through the centuries.",
+            blogPost2ImgAlt: "Image showing chess in a relaxed way",
+            blogPost2Title: "Chess Boring? Busting the Myth!",
+            blogPost2Excerpt: "Discover why chess is much more than a slow and complicated game. It's dynamic, creative, and surprisingly \"chill\"!",
+            blogPost3ImgAlt: "Image of someone playing chess online",
+            blogPost3Title: "5 Simple Steps to Start Playing Online",
+            blogPost3Excerpt: "Ready for your first online game? We guide you step-by-step so you can start playing in minutes, hassle-free!",
+            blogReadMore: "Read More",
+            // --- END NEW TRANSLATIONS FOR THE BLOG ---
+
             contactTitle: "Contact Me",
             contactIntro: "Ready to start or have questions? Send me a message using the form or use my contact details.",
             contactFormTitle: "Contact Form",
@@ -268,193 +303,270 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error(`Language ${lang} not found in translations.`);
             return;
         }
+        // Get transition duration from CSS custom property or default to 0.25s
         const transitionDuration = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--lang-transition-speed') || '0.25') * 1000);
-        bodyElement.classList.add('fade-out');
-        langButtons.forEach(btn => btn.disabled = true);
+
+        bodyElement.classList.add('fade-out'); // Start fade-out
+        langButtons.forEach(btn => btn.disabled = true); // Disable buttons during transition
+
         setTimeout(() => {
             translatableElements.forEach(el => {
                 const keyAttr = el.dataset.langKey;
-                const [key, attribute] = keyAttr.split('|');
+                const [key, attribute] = keyAttr.split('|'); // Allows specifying attribute, e.g., "metaDescription|content"
+
                 if (translations[lang][key]) {
                     let translation = translations[lang][key];
-                    if (key === 'footerCopyright') { translation = translation.replace('[YEAR]', new Date().getFullYear()); }
-                    if (attribute) { el.setAttribute(attribute, translation); if (key === 'metaDescription' && attribute === 'content') { document.querySelector('meta[name="description"]').setAttribute('content', translation); } }
-                    else if (el.tagName === 'INPUT' && el.type === 'submit' || el.tagName === 'BUTTON') { if (el.id === 'back-to-top-btn') { el.setAttribute('aria-label', translations[lang]['backToTop'] || 'Back to top'); el.setAttribute('title', translations[lang]['backToTop'] || 'Back to top'); } else { el.value = translation; el.innerHTML = translation; } }
-                    else if (el.tagName === 'TITLE') { document.title = translation; }
-                    // Use innerHTML for elements that might contain <br> from translations (like resourcesCta)
-                    else if (key === 'resourcesCta') {
-                         el.innerHTML = translation;
+
+                    // Special handling for copyright year
+                    if (key === 'footerCopyright') {
+                        translation = translation.replace('[YEAR]', new Date().getFullYear());
                     }
-                    else { el.textContent = translation; } // Use textContent for others (Hero texts no longer have <br>)
+
+                    if (attribute) {
+                        el.setAttribute(attribute, translation);
+                        // Ensure meta description is updated if that's the target
+                        if (key === 'metaDescription' && attribute === 'content') {
+                            document.querySelector('meta[name="description"]').setAttribute('content', translation);
+                        }
+                    } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
+                        if (el.id === 'back-to-top-btn') { // Special handling for back-to-top button title/aria-label
+                             el.setAttribute('aria-label', translations[lang]['backToTop'] || 'Back to top');
+                             el.setAttribute('title', translations[lang]['backToTop'] || 'Back to top');
+                        } else {
+                            el.value = translation; // For input type="submit"
+                            el.innerHTML = translation; // For button elements
+                        }
+                    } else if (el.tagName === 'TITLE') {
+                        document.title = translation;
+                    } else if (key === 'resourcesCta') { // Use innerHTML for elements that might contain HTML (like the link in resourcesCta)
+                        el.innerHTML = translation;
+                    }
+                    else {
+                        el.textContent = translation; // Default to textContent for most elements
+                    }
                 }
             });
-            document.documentElement.lang = lang;
+
+            document.documentElement.lang = lang; // Update HTML lang attribute
+
+            // Update active state for language buttons
             langButtons.forEach(btn => {
-                if (btn.dataset.lang === lang) { btn.classList.add('active'); btn.setAttribute('aria-current', 'page'); }
-                else { btn.classList.remove('active'); btn.removeAttribute('aria-current'); }
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-current', 'page');
+                } else {
+                    btn.classList.remove('active');
+                    btn.removeAttribute('aria-current');
+                }
             });
-            try { localStorage.setItem('preferredLanguage', lang); }
-            catch (e) { console.warn("Could not save language preference to localStorage."); }
-            bodyElement.classList.remove('fade-out');
-            setTimeout(() => { langButtons.forEach(btn => btn.disabled = false); }, 50);
-        }, transitionDuration);
+
+            // Save preference to localStorage
+            try {
+                localStorage.setItem('preferredLanguage', lang);
+            } catch (e) {
+                console.warn("Could not save language preference to localStorage.");
+            }
+
+            bodyElement.classList.remove('fade-out'); // End fade-out
+            // Re-enable buttons shortly after fade-in starts to prevent premature clicks
+            setTimeout(() => {
+                langButtons.forEach(btn => btn.disabled = false);
+            }, 50); // Small delay
+
+        }, transitionDuration); // Wait for fade-out to complete
     };
 
     // Language Button Event Listeners
     langButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            if (bodyElement.classList.contains('fade-out') || e.target.classList.contains('active')) { return; }
+            // Prevent changing language if already fading or if the button is already active
+            if (bodyElement.classList.contains('fade-out') || e.target.classList.contains('active')) {
+                return;
+            }
             const selectedLang = e.target.dataset.lang;
             setLanguage(selectedLang);
         });
     });
 
-    // Initial Language Setting (No Transition)
+    // Initial Language Setting (No Transition on first load)
     const initialUpdateLanguage = (lang) => {
-        if (!translations[lang]) return;
+        if (!translations[lang]) return; // Safety check
+
         translatableElements.forEach(el => {
              const keyAttr = el.dataset.langKey;
              const [key, attribute] = keyAttr.split('|');
              if (translations[lang][key]) {
                  let translation = translations[lang][key];
-                 if (key === 'footerCopyright') { translation = translation.replace('[YEAR]', new Date().getFullYear()); }
-                 if (attribute) { el.setAttribute(attribute, translation); if (key === 'metaDescription' && attribute === 'content') { document.querySelector('meta[name="description"]').setAttribute('content', translation); } }
-                 else if (el.tagName === 'INPUT' && el.type === 'submit' || el.tagName === 'BUTTON') { if (el.id === 'back-to-top-btn') { el.setAttribute('aria-label', translations[lang]['backToTop'] || 'Back to top'); el.setAttribute('title', translations[lang]['backToTop'] || 'Back to top'); } else { el.value = translation; el.innerHTML = translation; } }
-                 else if (el.tagName === 'TITLE') { document.title = translation; }
-                 // Use innerHTML for elements that might contain <br> from translations
-                 else if (key === 'resourcesCta') {
+                 if (key === 'footerCopyright') {
+                     translation = translation.replace('[YEAR]', new Date().getFullYear());
+                 }
+                 if (attribute) {
+                     el.setAttribute(attribute, translation);
+                     if (key === 'metaDescription' && attribute === 'content') {
+                         document.querySelector('meta[name="description"]').setAttribute('content', translation);
+                     }
+                 } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
+                     if (el.id === 'back-to-top-btn') {
+                          el.setAttribute('aria-label', translations[lang]['backToTop'] || 'Back to top');
+                          el.setAttribute('title', translations[lang]['backToTop'] || 'Back to top');
+                     } else {
+                         el.value = translation;
+                         el.innerHTML = translation;
+                     }
+                 } else if (el.tagName === 'TITLE') {
+                     document.title = translation;
+                 } else if (key === 'resourcesCta') {
                       el.innerHTML = translation;
                  }
-                 else { el.textContent = translation; } // Use textContent for others
+                 else {
+                     el.textContent = translation;
+                 }
              }
         });
         document.documentElement.lang = lang;
         langButtons.forEach(btn => {
-             if (btn.dataset.lang === lang) { btn.classList.add('active'); btn.setAttribute('aria-current', 'page'); }
-             else { btn.classList.remove('active'); btn.removeAttribute('aria-current'); }
+             if (btn.dataset.lang === lang) {
+                 btn.classList.add('active');
+                 btn.setAttribute('aria-current', 'page');
+             } else {
+                 btn.classList.remove('active');
+                 btn.removeAttribute('aria-current');
+             }
         });
     };
-    let preferredLanguage = 'es';
+
+    // Determine and set initial language
+    let preferredLanguage = 'es'; // Default language
      try {
         const savedLang = localStorage.getItem('preferredLanguage');
-        if (savedLang && translations[savedLang]) { preferredLanguage = savedLang; }
-        else { const browserLang = navigator.language.split('-')[0]; if (translations[browserLang]) { preferredLanguage = browserLang; } }
-    } catch (e) { console.warn("Could not read language preference from localStorage."); }
+        if (savedLang && translations[savedLang]) {
+            preferredLanguage = savedLang;
+        } else {
+            // Fallback to browser language if no preference is saved or saved is invalid
+            const browserLang = navigator.language.split('-')[0];
+            if (translations[browserLang]) {
+                preferredLanguage = browserLang;
+            }
+        }
+    } catch (e) {
+        console.warn("Could not read language preference from localStorage. Defaulting to 'es'.");
+    }
     initialUpdateLanguage(preferredLanguage);
 
-    // Initialize AOS
+
+    // Initialize AOS (Animate On Scroll)
     AOS.init({
-        duration: 800,
-        once: true,
-        offset: 50,
+        duration: 800, // Animation duration
+        once: true,     // Whether animation should happen only once - while scrolling down
+        offset: 50,     // Offset (in px) from the original trigger point
     });
 
-    // --- NUEVO: Inicialización de Particles.js ---
+    // Initialize Particles.js
     if (document.getElementById('particles-js')) {
         particlesJS('particles-js', {
             "particles": {
                 "number": {
-                    "value": 80, // Número de partículas
+                    "value": 80, // Number of particles
                     "density": {
                         "enable": true,
-                        "value_area": 800
+                        "value_area": 800 // Area where particles will be distributed
                     }
                 },
                 "color": {
-                    "value": ["#EC4899", "#F97316", "#8B5CF6", "#d4af37"] // Colores del tema
+                    "value": ["#EC4899", "#F97316", "#8B5CF6", "#d4af37"] // Array of theme colors
                 },
                 "shape": {
-                    "type": "circle", // Forma de las partículas
+                    "type": "circle", // Shape of particles (can be "edge", "triangle", "polygon", "star", "image")
                     "stroke": {
-                        "width": 0,
+                        "width": 0, // No border for particles
                         "color": "#000000"
                     },
                     "polygon": {
-                        "nb_sides": 5
+                        "nb_sides": 5 // Number of sides if shape is polygon
                     },
                 },
                 "opacity": {
-                    "value": 0.6, // Opacidad de las partículas
-                    "random": true,
+                    "value": 0.6, // Base opacity of particles
+                    "random": true, // Random opacity for particles
                     "anim": {
-                        "enable": true,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
+                        "enable": true, // Enable opacity animation
+                        "speed": 1, // Speed of opacity animation
+                        "opacity_min": 0.1, // Minimum opacity value
+                        "sync": false // Synchronize opacity animation for all particles
                     }
                 },
                 "size": {
-                    "value": 3, // Tamaño de las partículas
-                    "random": true,
+                    "value": 3, // Base size of particles
+                    "random": true, // Random size for particles
                     "anim": {
-                        "enable": false,
+                        "enable": false, // Disable size animation
                         "speed": 40,
                         "size_min": 0.1,
                         "sync": false
                     }
                 },
                 "line_linked": {
-                    "enable": true,
-                    "distance": 150, // Distancia para conectar partículas
-                    "color": "#a1a1aa", // Color de las líneas (text-medium)
-                    "opacity": 0.4,
-                    "width": 1
+                    "enable": true, // Enable lines between particles
+                    "distance": 150, // Maximum distance to draw a line
+                    "color": "#a1a1aa", // Color of the lines (theme's text-medium)
+                    "opacity": 0.4, // Opacity of the lines
+                    "width": 1 // Width of the lines
                 },
                 "move": {
-                    "enable": true,
-                    "speed": 3, // Velocidad de movimiento
-                    "direction": "none",
-                    "random": true,
-                    "straight": false,
-                    "out_mode": "out", // Comportamiento al salir del canvas
-                    "bounce": false,
+                    "enable": true, // Enable particle movement
+                    "speed": 3, // Speed of particle movement
+                    "direction": "none", // Direction of movement ("none", "top", "top-right", "right", etc.)
+                    "random": true, // Random movement direction
+                    "straight": false, // Particles move in straight lines or not
+                    "out_mode": "out", // Behavior when particles move out of the canvas ("out", "bounce")
+                    "bounce": false, // Bounce off canvas edges
                     "attract": {
-                        "enable": false,
+                        "enable": false, // Attract particles to each other
                         "rotateX": 600,
                         "rotateY": 1200
                     }
                 }
             },
             "interactivity": {
-                "detect_on": "canvas",
+                "detect_on": "canvas", // Detect interactivity on "canvas" or "window"
                 "events": {
                     "onhover": {
-                        "enable": true, // Habilitar interactividad al pasar el ratón
-                        "mode": "grab" // Modo: "grab", "bubble", "repulse"
+                        "enable": true, // Enable interactivity on hover
+                        "mode": "grab" // Mode on hover ("grab", "bubble", "repulse")
                     },
                     "onclick": {
-                        "enable": true, // Habilitar interactividad al hacer clic
-                        "mode": "push" // Modo: "push", "remove", "bubble", "repulse"
+                        "enable": true, // Enable interactivity on click
+                        "mode": "push" // Mode on click ("push", "remove", "bubble", "repulse")
                     },
-                    "resize": true
+                    "resize": true // Resize particles animation on window resize
                 },
                 "modes": {
                     "grab": {
-                        "distance": 140,
+                        "distance": 140, // Distance for grab mode
                         "line_linked": {
-                            "opacity": 1
+                            "opacity": 1 // Opacity of lines in grab mode
                         }
                     },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
+                    "bubble": { // Makes particles larger on hover/click
+                        "distance": 400, // Distance for bubble mode
+                        "size": 40, // Size of bubbles
+                        "duration": 2, // Duration of bubble animation
                         "opacity": 8,
                         "speed": 3
                     },
-                    "repulse": {
-                        "distance": 200,
+                    "repulse": { // Pushes particles away on hover/click
+                        "distance": 200, // Distance for repulse mode
                         "duration": 0.4
                     },
                     "push": {
-                        "particles_nb": 4 // Número de partículas a añadir al hacer clic
+                        "particles_nb": 4 // Number of particles to push on click
                     },
                     "remove": {
-                        "particles_nb": 2
+                        "particles_nb": 2 // Number of particles to remove on click
                     }
                 }
             },
-            "retina_detect": true
+            "retina_detect": true // Enable retina display support
         });
     }
 
@@ -462,14 +574,23 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle Functionality
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
+
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             const isActive = navLinks.classList.toggle('active');
-            menuToggle.setAttribute('aria-expanded', isActive);
+            menuToggle.setAttribute('aria-expanded', isActive); // Update ARIA attribute for accessibility
             const icon = menuToggle.querySelector('i');
-            if (isActive) { icon.classList.remove('fa-bars'); icon.classList.add('fa-times'); navLinks.querySelector('a').focus(); }
-            else { icon.classList.remove('fa-times'); icon.classList.add('fa-bars'); }
+            if (isActive) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+                navLinks.querySelector('a').focus(); // Focus first link in mobile menu when opened
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
         });
+
+        // Close mobile menu when a link is clicked
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 if (navLinks.classList.contains('active')) {
@@ -481,8 +602,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
+
+         // Close mobile menu when clicking outside of it
          document.addEventListener('click', (event) => {
-            if (navLinks.classList.contains('active') && !navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+            if (navLinks.classList.contains('active') &&
+                !navLinks.contains(event.target) && // Click was outside navLinks
+                !menuToggle.contains(event.target)) { // Click was not on the toggle button itself
                 navLinks.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
                 const icon = menuToggle.querySelector('i');
@@ -496,21 +621,34 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a.scroll-to, .nav-links a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            if (href && href.startsWith('#')) {
-                e.preventDefault();
+            if (href && href.startsWith('#')) { // Check if it's an internal link
+                e.preventDefault(); // Prevent default anchor click behavior
                 const targetId = href;
                 const targetElement = document.querySelector(targetId);
+
                 if (targetElement) {
-                    const headerOffset = 80;
+                    const headerOffset = 80; // Adjust this value based on your fixed header's height
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth' // Smooth scroll animation
+                    });
+
+                    // If link is to contact, pre-fill subject and focus first input
                     if (targetId === '#contacto') {
-                        const subjectValue = this.getAttribute('data-subject');
+                        const subjectValue = this.getAttribute('data-subject'); // e.g., from "Solicitar clase de prueba" button
                         const subjectSelect = document.getElementById('subject');
-                        const firstInput = document.querySelector('#contactForm #name');
-                        if (subjectValue && subjectSelect) { subjectSelect.value = subjectValue; }
-                        if(firstInput) { setTimeout(() => firstInput.focus(), 300); }
+                        const firstInput = document.querySelector('#contactForm #name'); // First focusable input
+
+                        if (subjectValue && subjectSelect) {
+                            subjectSelect.value = subjectValue;
+                        }
+                        if(firstInput) {
+                            // Delay focus slightly to ensure section is visible after scroll
+                            setTimeout(() => firstInput.focus(), 300);
+                        }
                     }
                 }
             }
@@ -519,43 +657,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Contact Form Submission Simulation
     const contactForm = document.getElementById('contactForm');
-    const formStatus = document.getElementById('form-status');
+    const formStatus = document.getElementById('form-status'); // Element to display success/error messages
+
      if (contactForm && formStatus) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const currentLang = document.documentElement.lang || 'es';
+            e.preventDefault(); // Prevent actual form submission for now
+
+            const currentLang = document.documentElement.lang || 'es'; // Get current language for messages
+
+            // Display "Submitting..." message
             formStatus.textContent = translations[currentLang]?.submitting || 'Enviando...';
-            formStatus.className = 'status';
-            formStatus.style.display = 'block';
+            formStatus.className = 'status'; // Reset classes
+            formStatus.style.display = 'block'; // Make status visible
+
+            // Simulate network delay
             setTimeout(() => {
+                // Simulate success or failure (e.g., 80% success rate)
                 const isSuccess = Math.random() > 0.2;
+
                 if (isSuccess) {
                     formStatus.textContent = translations[currentLang]?.formSuccess || '¡Mensaje enviado con éxito! Te contactaremos pronto.';
                     formStatus.classList.add('success');
-                    contactForm.reset();
+                    contactForm.reset(); // Clear the form on success
                 } else {
                     formStatus.textContent = translations[currentLang]?.formError || 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o usa el email de contacto.';
                     formStatus.classList.add('error');
                 }
+                 // Hide the status message after a few seconds
                  setTimeout(() => {
                     formStatus.style.display = 'none';
-                    formStatus.className = 'status';
-                 }, 5000);
-            }, 1500);
+                    formStatus.className = 'status'; // Reset classes
+                 }, 5000); // Hide after 5 seconds
+            }, 1500); // Simulate 1.5 seconds delay
         });
     }
 
     // Back to Top Button Functionality
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
+            if (window.pageYOffset > 300) { // Show button after scrolling down 300px
                 backToTopButton.classList.add('show');
             } else {
                 backToTopButton.classList.remove('show');
             }
         });
+
         backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top smoothly
         });
     }
 
