@@ -990,13 +990,7 @@ header {
    }
 }
 
-@media (min-width: 1024px) {
-  .benefits-grid {
-    /* Para pantallas más grandes, podríamos considerar dividir en más columnas si el diseño lo permite */
-    /* O simplemente dejar que el contenido fluya en una columna bien estilizada */
-    /* Por ahora, mantenemos una columna para asegurar buena legibilidad del texto extenso */
-  }
-}
+
 
 /* Ajustes generales para la sección de beneficios dentro de las media queries existentes */
 @media (max-width: 768px) { /* Móviles */
