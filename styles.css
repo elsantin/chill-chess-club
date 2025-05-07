@@ -303,7 +303,6 @@ header {
   border: none;
   box-shadow: none;
   outline: none;
-  vertical-align: middle;
 }
 
 .logo-link:hover #site-logo-img {
