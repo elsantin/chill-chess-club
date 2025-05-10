@@ -774,10 +774,6 @@ header {
   margin-bottom: var(--spacing-md);
   color: var(--color-text-medium);
 }
-/* Este botón .btn-primary usará el estilo de gradiente animado y su hover asociado */
-.courses-cta .btn-primary {
-  /* No necesita redefinir background aquí si hereda de .btn-primary general */
-}
 
 
 /*------------------------------------*\
@@ -960,10 +956,6 @@ header {
 }
 .benefits-cta p:last-of-type {
     margin-bottom: var(--spacing-md); 
-}
-/* Este botón .btn-primary usará el estilo de gradiente animado */
-.benefits-cta .btn-primary {
-  /* No necesita redefinir background aquí si hereda de .btn-primary general */
 }
 
 
