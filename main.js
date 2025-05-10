@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutTitle: "Sobre Mí",
             aboutImageAlt: "Foto de perfil artística del instructor jugando ajedrez en la playa",
             aboutSubtitle: "Un enfoque único para el aprendizaje del ajedrez",
-            aboutPara1: "Apasionado del ajedrez desde temprana edad, he dedicado mi vida a entender y enseñar este magnífico juego a jugadores principiantes e intermedios. Mi enfoque se centra en el desarrollo personalizado de cada estudiante, adaptando las técnicas de enseñanza a sus necesidades específicas.",
+            // MODIFICADO: Texto del primer párrafo de "Sobre Mí"
+            aboutPara1: "Apasionado del ajedrez desde temprana edad, mi enfoque se centra en el desarrollo personalizado de cada estudiante, adaptando las técnicas de enseñanza a sus necesidades específicas.",
             aboutPara2: "Aunque no soy un jugador federado de alto nivel, mi verdadera fortaleza radica en mi capacidad didáctica excepcional y en mi habilidad para descomponer conceptos complejos en elementos comprensibles para niveles iniciales e intermedios.",
             aboutPhilosophyTitle: "Mi filosofía de enseñanza",
             aboutPhilosophyPara: "Creo firmemente en un método inmersivo que combina la teoría con la práctica constante. Mi sistema personalizado utiliza tecnologías de IA para adaptar el contenido a tus fortalezas y debilidades, permitiéndote progresar de manera eficiente y motivadora.",
@@ -39,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             coursesTitle: "Cursos y Servicios",
             coursesIntro: "Programas diseñados para satisfacer tus necesidades específicas, sin importar tu nivel. Todos los cursos incluyen material didáctico bilingüe, acceso a herramientas de IA personalizadas y soporte continuo.",
-            courseBeginnerTitle: "Curso Principiante: El Despegue",
+            courseBeginnerTitle: "Curso Principiante:<br>El Despegue",
             courseBeginnerLevelAriaLabel: "Nivel Principiante",
             courseBeginnerImgAlt: "Piezas de ajedrez blancas listas para empezar",
             courseBeginnerFeat1: "Domina los movimientos y reglas esenciales.",
@@ -53,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             coursePriceNoteHour: "/ hora (clases en vivo)",
             courseEnrollBtn: "Empezar Ahora", 
 
-            courseIntermediateTitle: "Curso Intermedio: Estratega",
+            courseIntermediateTitle: "Curso Intermedio:<br>Estratega",
             courseIntermediateLevelAriaLabel: "Nivel Intermedio",
             courseIntermediateImgAlt: "Tablero de ajedrez mostrando una estrategia compleja",
             courseIntermediateFeat1: "Profundiza en estrategia posicional avanzada.",
@@ -65,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             courseIntermediateFeat7: "Recibe un plan de estudio individualizado.",
             courseIntermediatePrice: "$20 USD",
 
-            courseCustomTitle: "Clases Personalizadas: Tu Juego",
+            courseCustomTitle: "Clases Personalizadas:<br>Tu Juego",
             courseCustomLevelAriaLabel: "Nivel Personalizado",
             courseCustomImgAlt: "Instructor de ajedrez dando una clase personalizada online",
             courseCustomFeat1: "Diseñamos un programa 100% a tu medida.",
@@ -75,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
             courseCustomFeat5: "Análisis profundo y práctico de tu juego.",
             courseCustomFeat6: "Recursos y material exclusivo adaptado.",
             courseCustomFeat7: "Soporte y seguimiento constante entre sesiones.",
-            // CAMBIO: Precio a $25 USD
             courseCustomPrice: "$25 USD", 
             courseConsultBtn: "Consultar Disponibilidad",
 
@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
             methodStep4Title: "Seguimiento Continuo",
             methodStep4Desc: "Monitorizamos tu progreso constantemente, ajustando el plan y proporcionando retroalimentación específica para asegurar que siempre estés desafiado pero no abrumado.",
             
-            // CAMBIO: Textos para la sección de beneficios del método simplificada
             methodKeyBenefitsTitle: "¿Cómo te Ayuda Nuestro Método?",
             methodKeyBenefitsDesc: "Nuestro método está diseñado para maximizar tu potencial, combinando la atención personalizada con herramientas de vanguardia. Te enfocarás en lo que realmente importa para tu progreso, de una manera que es tanto efectiva como disfrutable.",
             methodExploreBenefitsBtn: "Descubre Todos los Beneficios del Ajedrez",
@@ -199,7 +198,8 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutTitle: "About Me",
             aboutImageAlt: "Artistic profile picture of the instructor playing chess on the beach",
             aboutSubtitle: "A unique approach to chess learning",
-            aboutPara1: "Passionate about chess from an early age, I have dedicated my life to understanding and teaching this magnificent game to beginner and intermediate players. My approach focuses on the personalized development of each student, adapting teaching techniques to their specific needs.",
+            // MODIFICADO: Texto del primer párrafo de "Sobre Mí" en inglés
+            aboutPara1: "Passionate about chess from an early age, my approach focuses on the personalized development of each student, adapting teaching techniques to their specific needs.",
             aboutPara2: "Although I am not a high-level federated player, my true strength lies in my exceptional teaching ability and my skill in breaking down complex concepts into understandable elements for initial and intermediate levels.",
             aboutPhilosophyTitle: "My teaching philosophy",
             aboutPhilosophyPara: "I firmly believe in an immersive method that combines theory with constant practice. My personalized system uses AI technologies to adapt the content to your strengths and weaknesses, allowing you to progress efficiently and motivatingly.",
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             coursesTitle: "Courses and Services",
             coursesIntro: "Programs designed to meet your specific needs, regardless of your level. All courses include bilingual learning materials, access to personalized AI tools, and ongoing support.",
-            courseBeginnerTitle: "Beginner Course: Liftoff",
+            courseBeginnerTitle: "Beginner Course:<br>Liftoff",
             courseBeginnerLevelAriaLabel: "Beginner Level",
             courseBeginnerImgAlt: "White chess pieces ready to start",
             courseBeginnerFeat1: "Master the essential moves and rules.",
@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
             coursePriceNoteHour: "/ hour (live classes)",
             courseEnrollBtn: "Start Now",
 
-            courseIntermediateTitle: "Intermediate Course: Strategist",
+            courseIntermediateTitle: "Intermediate Course:<br>Strategist",
             courseIntermediateLevelAriaLabel: "Intermediate Level",
             courseIntermediateImgAlt: "Chessboard showing a complex strategy",
             courseIntermediateFeat1: "Deepen your advanced positional strategy.",
@@ -237,7 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
             courseIntermediateFeat7: "Receive an individualized study plan.",
             courseIntermediatePrice: "$20 USD",
 
-            courseCustomTitle: "Personalized Classes: Your Game",
+            courseCustomTitle: "Personalized Classes:<br>Your Game",
             courseCustomLevelAriaLabel: "Custom Level",
             courseCustomImgAlt: "Chess instructor giving a personalized online class",
             courseCustomFeat1: "We design a program 100% tailored to you.",
@@ -247,7 +247,6 @@ document.addEventListener('DOMContentLoaded', () => {
             courseCustomFeat5: "In-depth and practical analysis of your game.",
             courseCustomFeat6: "Receive exclusive adapted resources.",
             courseCustomFeat7: "Constant support and follow-up between sessions.",
-            // CAMBIO: Precio a $25 USD
             courseCustomPrice: "$25 USD",
             courseConsultBtn: "Check Availability",
 
@@ -265,7 +264,6 @@ document.addEventListener('DOMContentLoaded', () => {
             methodStep4Title: "Continuous Monitoring",
             methodStep4Desc: "We constantly monitor your progress, adjusting the plan and providing specific feedback to ensure you are always challenged but not overwhelmed.",
             
-            // CAMBIO: Textos para la sección de beneficios del método simplificada
             methodKeyBenefitsTitle: "How Does Our Method Help You?",
             methodKeyBenefitsDesc: "Our method is designed to maximize your potential, combining personalized attention with cutting-edge tools. You'll focus on what truly matters for your progress, in a way that's both effective and enjoyable.",
             methodExploreBenefitsBtn: "Discover All the Benefits of Chess",
@@ -350,15 +348,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // --- El resto del código JS (funciones setLanguage, initialUpdateLanguage, listeners, etc.) permanece igual ---
-    // ... (asegúrate de que todo tu código JS funcional esté aquí) ...
-
     const langButtons = document.querySelectorAll('.lang-button');
     const translatableElements = document.querySelectorAll('[data-lang-key]');
     const backToTopButton = document.getElementById('back-to-top-btn');
     const bodyElement = document.body;
 
-    // --- Language Transition Function ---
     const setLanguage = (lang) => {
         if (!translations[lang]) {
             console.error(`Language ${lang} not found in translations.`);
@@ -386,7 +380,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (key === 'metaDescription' && attribute === 'content') {
                             document.querySelector('meta[name="description"]').setAttribute('content', translation);
                         }
-                         // Actualizar alt de imágenes de cursos si la clave existe
                          if (key === 'courseBeginnerImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                          if (key === 'courseIntermediateImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                          if (key === 'courseCustomImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
@@ -395,8 +388,19 @@ document.addEventListener('DOMContentLoaded', () => {
                          if (key === 'blogPost2ImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                          if (key === 'blogPost3ImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                          if (key === 'logoAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-
-
+                    } else if (
+                        key === 'courseBeginnerTitle' ||
+                        key === 'courseIntermediateTitle' ||
+                        key === 'courseCustomTitle' ||
+                        key === 'resourcesCta' || 
+                        key === 'coursesCtaText' || 
+                        key === 'benefitsIntro' || 
+                        key === 'benefitsLifeSkillsIntro' || 
+                        key === 'benefitsCtaText' || 
+                        key === 'benefitsCtaMethod' || 
+                        key === 'methodKeyBenefitsDesc'
+                    ) {
+                        el.innerHTML = translation; 
                     } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
                         if (el.id === 'back-to-top-btn') {
                              el.setAttribute('aria-label', translations[lang]['backToTop'] || 'Back to top');
@@ -407,8 +411,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     } else if (el.tagName === 'TITLE') {
                         document.title = translation;
-                    } else if (key === 'resourcesCta' || key === 'coursesCtaText' || key === 'benefitsIntro' || key === 'benefitsLifeSkillsIntro' || key === 'benefitsCtaText' || key === 'benefitsCtaMethod' || key === 'methodKeyBenefitsDesc' ) { // Añadida nueva clave
-                        el.innerHTML = translation; // Use innerHTML for elements that might contain HTML
                     }
                     else {
                         el.textContent = translation;
@@ -442,7 +444,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, transitionDuration);
     };
 
-    // Language Button Event Listeners
     langButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             if (bodyElement.classList.contains('fade-out') || e.target.classList.contains('active')) {
@@ -453,7 +454,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Initial Language Setting (No Transition)
     const initialUpdateLanguage = (lang) => {
         if (!translations[lang]) return;
 
@@ -470,7 +470,6 @@ document.addEventListener('DOMContentLoaded', () => {
                      if (key === 'metaDescription' && attribute === 'content') {
                          document.querySelector('meta[name="description"]').setAttribute('content', translation);
                      }
-                      // Actualizar alt de imágenes de cursos si la clave existe
                       if (key === 'courseBeginnerImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                       if (key === 'courseIntermediateImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                       if (key === 'courseCustomImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
@@ -479,8 +478,20 @@ document.addEventListener('DOMContentLoaded', () => {
                       if (key === 'blogPost2ImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                       if (key === 'blogPost3ImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                       if (key === 'logoAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-
-                 } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
+                 } else if (
+                    key === 'courseBeginnerTitle' ||
+                    key === 'courseIntermediateTitle' ||
+                    key === 'courseCustomTitle' ||
+                    key === 'resourcesCta' || 
+                    key === 'coursesCtaText' || 
+                    key === 'benefitsIntro' || 
+                    key === 'benefitsLifeSkillsIntro' || 
+                    key === 'benefitsCtaText' || 
+                    key === 'benefitsCtaMethod' || 
+                    key === 'methodKeyBenefitsDesc'
+                ) {
+                     el.innerHTML = translation;
+                } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
                      if (el.id === 'back-to-top-btn') {
                           el.setAttribute('aria-label', translations[lang]['backToTop'] || 'Back to top');
                           el.setAttribute('title', translations[lang]['backToTop'] || 'Back to top');
@@ -490,9 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
                      }
                  } else if (el.tagName === 'TITLE') {
                      document.title = translation;
-                 } else if (key === 'resourcesCta' || key === 'coursesCtaText' || key === 'benefitsIntro' || key === 'benefitsLifeSkillsIntro' || key === 'benefitsCtaText' || key === 'benefitsCtaMethod' || key === 'methodKeyBenefitsDesc' ) { // Añadida nueva clave
-                      el.innerHTML = translation;
-                 }
+                 } 
                  else {
                      el.textContent = translation;
                  }
@@ -510,8 +519,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Determine and set initial language
-    let preferredLanguage = 'es'; // Default language
+    let preferredLanguage = 'es';
      try {
         const savedLang = localStorage.getItem('preferredLanguage');
         if (savedLang && translations[savedLang]) {
@@ -527,15 +535,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     initialUpdateLanguage(preferredLanguage);
 
-
-    // Initialize AOS (Animate On Scroll)
     AOS.init({
         duration: 800,
         once: true,
         offset: 50,
     });
 
-    // Initialize Particles.js
     if (document.getElementById('particles-js')) {
         particlesJS('particles-js', {
             "particles": {
@@ -556,8 +561,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
-    // Mobile Menu Toggle Functionality
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
@@ -569,8 +572,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isActive) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
-                // Consider focusing the first focusable element in the nav
-                // navLinks.querySelector('a, button').focus(); 
             } else {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
@@ -602,7 +603,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth Scrolling for internal links
     document.querySelectorAll('a.scroll-to, .nav-links a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
@@ -612,7 +612,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetElement = document.querySelector(targetId);
 
                 if (targetElement) {
-                    const headerOffset = 80; // Ajustar según la altura real del header
+                    const headerOffset = 80; 
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -621,7 +621,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         behavior: 'smooth'
                     });
 
-                    // Si el enlace es para contacto y tiene data-subject, preseleccionar
                     if (targetId === '#contacto') {
                         const subjectValue = this.getAttribute('data-subject');
                         const subjectSelect = document.getElementById('subject');
@@ -630,8 +629,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (subjectValue && subjectSelect) {
                             subjectSelect.value = subjectValue;
                         }
-                        if(firstInput) { // Dar foco al primer campo del formulario
-                            setTimeout(() => firstInput.focus(), 300); // Pequeño delay para asegurar scroll
+                        if(firstInput) { 
+                            setTimeout(() => firstInput.focus(), 300); 
                         }
                     }
                 }
@@ -639,7 +638,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Contact Form Submission Simulation
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('form-status');
 
@@ -650,35 +648,31 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentLang = document.documentElement.lang || 'es';
 
             formStatus.textContent = translations[currentLang]?.submitting || 'Enviando...';
-            formStatus.className = 'status'; // Reset classes
+            formStatus.className = 'status'; 
             formStatus.style.display = 'block';
 
-            // Simulación de envío
             setTimeout(() => {
-                // Simular éxito o error aleatoriamente
-                const isSuccess = Math.random() > 0.2; // 80% de éxito
+                const isSuccess = Math.random() > 0.2; 
 
                 if (isSuccess) {
                     formStatus.textContent = translations[currentLang]?.formSuccess || '¡Mensaje enviado con éxito! Te contactaremos pronto.';
                     formStatus.classList.add('success');
-                    contactForm.reset(); // Limpiar formulario en caso de éxito
+                    contactForm.reset(); 
                 } else {
                     formStatus.textContent = translations[currentLang]?.formError || 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o usa el email de contacto.';
                     formStatus.classList.add('error');
                 }
-                 // Ocultar mensaje después de unos segundos
                  setTimeout(() => {
                     formStatus.style.display = 'none';
-                    formStatus.className = 'status'; // Reset classes
+                    formStatus.className = 'status'; 
                  }, 5000);
             }, 1500);
         });
     }
 
-    // Back to Top Button Functionality
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) { // Mostrar botón después de 300px de scroll
+            if (window.pageYOffset > 300) { 
                 backToTopButton.classList.add('show');
             } else {
                 backToTopButton.classList.remove('show');
@@ -690,11 +684,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-     // Actualizar año en el footer
      const yearSpan = document.getElementById('current-year');
      if (yearSpan) {
          yearSpan.textContent = new Date().getFullYear();
      }
-
 
 }); // End DOMContentLoaded
