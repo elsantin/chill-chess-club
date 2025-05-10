@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const translations = {
         es: {
             pageTitle: "Chill Chess Club | Clases de Ajedrez Online",
-            metaDescription: "Aprende ajedrez con un método relajado y personalizado. Clases online para principiantes e intermedios adaptadas con IA para maximizar tu progreso.", // Ligeramente más corto
-            logoAlt: "Logo de Chill Chess Club", // Más descriptivo
+            metaDescription: "Aprende ajedrez con un método relajado y personalizado. Clases online para principiantes e intermedios adaptadas con IA para maximizar tu progreso.",
+            logoAlt: "Logo de Chill Chess Club",
             siteName: "Chill Chess Club",
             logoLinkAriaLabel: "Ir al inicio de la página",
             navHome: "Inicio",
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navContact: "Contacto",
 
             heroTitle: "Domina el ajedrez con un enfoque inmersivo y personalizado",
-            heroSubtitle: "Método exclusivo diseñado para ayudarte a progresar desde principiante hasta nivel intermedio, con instrucción personalizada y asistida por IA.", // Flujo ligeramente mejorado
+            heroSubtitle: "Método exclusivo diseñado para ayudarte a progresar desde principiante hasta nivel intermedio, con instrucción personalizada y asistida por IA.",
             heroCtaTrial: "Solicita tu clase introductoria gratuita",
             heroCtaMethod: "Descubre mi método",
 
@@ -38,24 +38,24 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutCtaConnect: "Conéctate conmigo",
 
             coursesTitle: "Cursos y Servicios",
-            coursesIntro: "Programas diseñados para satisfacer tus necesidades específicas, sin importar tu nivel. Todos los cursos incluyen material didáctico bilingüe, acceso a herramientas de IA personalizadas y soporte continuo.", // 'multilingüe' a 'bilingüe' si es solo ES/EN
-            courseBeginnerTitle: "Curso Principiante: El Despegue", // Título más atractivo
+            coursesIntro: "Programas diseñados para satisfacer tus necesidades específicas, sin importar tu nivel. Todos los cursos incluyen material didáctico bilingüe, acceso a herramientas de IA personalizadas y soporte continuo.",
+            courseBeginnerTitle: "Curso Principiante: El Despegue",
             courseBeginnerLevelAriaLabel: "Nivel Principiante",
-            courseBeginnerImgAlt: "Piezas de ajedrez blancas listas para empezar", // Más específico
-            courseBeginnerFeat1: "Domina los movimientos y reglas esenciales.", // Más orientado a la acción
+            courseBeginnerImgAlt: "Piezas de ajedrez blancas listas para empezar",
+            courseBeginnerFeat1: "Domina los movimientos y reglas esenciales.",
             courseBeginnerFeat2: "Descubre los secretos de una buena apertura.",
             courseBeginnerFeat3: "Aprende tácticas básicas para ganar ventaja.",
             courseBeginnerFeat4: "Entiende los finales clave para cerrar partidas.",
-            courseBeginnerFeat5: "8 clases en vivo 1-a-1 adaptadas a ti.", // Más claro
-            courseBeginnerFeat6: "Material didáctico bilingüe (ES/EN).", // Especifica idiomas
+            courseBeginnerFeat5: "8 clases en vivo 1-a-1 adaptadas a ti.",
+            courseBeginnerFeat6: "Material didáctico bilingüe (ES/EN).",
             courseBeginnerFeat7: "Acceso a nuestra IA de entrenamiento personalizada.",
             courseBeginnerPrice: "$15 USD",
             coursePriceNoteHour: "/ hora (clases en vivo)",
-            courseEnrollBtn: "Empezar Ahora", // Llamada a la acción diferente
+            courseEnrollBtn: "Empezar Ahora", 
 
-            courseIntermediateTitle: "Curso Intermedio: Estratega", // Título más atractivo
+            courseIntermediateTitle: "Curso Intermedio: Estratega",
             courseIntermediateLevelAriaLabel: "Nivel Intermedio",
-            courseIntermediateImgAlt: "Tablero de ajedrez mostrando una estrategia compleja", // Más específico
+            courseIntermediateImgAlt: "Tablero de ajedrez mostrando una estrategia compleja",
             courseIntermediateFeat1: "Profundiza en estrategia posicional avanzada.",
             courseIntermediateFeat2: "Construye tu repertorio de aperturas ideal.",
             courseIntermediateFeat3: "Domina combinaciones tácticas intermedias.",
@@ -64,12 +64,10 @@ document.addEventListener('DOMContentLoaded', () => {
             courseIntermediateFeat6: "Análisis detallado de tus partidas con IA.",
             courseIntermediateFeat7: "Recibe un plan de estudio individualizado.",
             courseIntermediatePrice: "$20 USD",
-            // coursePriceNoteHour: "/ hora (clases en vivo)", // Reutiliza la clave anterior
-            // courseEnrollBtn: "Inscríbete", // Reutiliza la clave anterior o crea una nueva si el texto debe ser diferente
 
-            courseCustomTitle: "Clases Personalizadas: Tu Juego", // Título más atractivo
+            courseCustomTitle: "Clases Personalizadas: Tu Juego",
             courseCustomLevelAriaLabel: "Nivel Personalizado",
-            courseCustomImgAlt: "Instructor de ajedrez dando una clase personalizada online", // Más específico
+            courseCustomImgAlt: "Instructor de ajedrez dando una clase personalizada online",
             courseCustomFeat1: "Diseñamos un programa 100% a tu medida.",
             courseCustomFeat2: "Nos enfocamos en tus objetivos y áreas de mejora.",
             courseCustomFeat3: "Máxima flexibilidad de horarios.",
@@ -77,12 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
             courseCustomFeat5: "Análisis profundo y práctico de tu juego.",
             courseCustomFeat6: "Recursos y material exclusivo adaptado.",
             courseCustomFeat7: "Soporte y seguimiento constante entre sesiones.",
-            courseCustomPrice: "$30 USD",
-            // coursePriceNoteHour: "/ hora (clases en vivo)", // Reutiliza la clave anterior
-            courseConsultBtn: "Consultar Disponibilidad", // Llamada a la acción diferente
+            // CAMBIO: Precio a $25 USD
+            courseCustomPrice: "$25 USD", 
+            courseConsultBtn: "Consultar Disponibilidad",
 
             coursesCtaText: "¿No estás seguro qué opción es mejor para ti? Agenda una sesión introductoria gratuita y recibe una evaluación personalizada.",
-            coursesCtaBtn: "Solicitar Clase de Prueba Gratis", // Coherencia con botón superior
+            coursesCtaBtn: "Solicitar Clase de Prueba Gratis", 
 
             methodTitle: "Nuestro Método Inmersivo y Personalizado",
             methodIntro: "Descubre cómo nuestro enfoque único, potenciado por IA, acelera tu aprendizaje y se adapta perfectamente a tu estilo y ritmo.",
@@ -94,13 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
             methodStep3Desc: "Clases (en vivo o grabadas) que van más allá de la teoría. Nos sumergimos en análisis de partidas, resolución de problemas tácticos y estratégicos, y práctica deliberada.",
             methodStep4Title: "Seguimiento Continuo",
             methodStep4Desc: "Monitorizamos tu progreso constantemente, ajustando el plan y proporcionando retroalimentación específica para asegurar que siempre estés desafiado pero no abrumado.",
-            methodBenefitsTitle: "Beneficios Clave",
-            methodBenefit1: "Aprendizaje más rápido y eficiente.",
-            methodBenefit2: "Mayor comprensión conceptual y práctica.",
-            methodBenefit3: "Motivación constante a través de metas personalizadas.",
-            methodBenefit4: "Flexibilidad para aprender a tu propio ritmo.",
-            methodBenefit5: "Desarrollo de un pensamiento ajedrecístico más profundo.",
-            methodBenefitsBtn: "Ver Cursos Disponibles",
+            
+            // CAMBIO: Textos para la sección de beneficios del método simplificada
+            methodKeyBenefitsTitle: "¿Cómo te Ayuda Nuestro Método?",
+            methodKeyBenefitsDesc: "Nuestro método está diseñado para maximizar tu potencial, combinando la atención personalizada con herramientas de vanguardia. Te enfocarás en lo que realmente importa para tu progreso, de una manera que es tanto efectiva como disfrutable.",
+            methodExploreBenefitsBtn: "Descubre Todos los Beneficios del Ajedrez",
 
             benefitsTitle: "Enriquece tu Vida con el Ajedrez. A Cualquier Edad.",
             benefitsIntro: "Jugar ajedrez es mucho más que una simple partida; es una poderosa herramienta para activar tu mente, fortalecer tu carácter y conectar con otros, sin importar en qué etapa de la vida te encuentres. En Chill Chess Club, te mostramos cómo este juego milenario impulsa tu crecimiento personal de formas sorprendentes, seas joven, adulto o mayor.",
@@ -122,18 +118,16 @@ document.addEventListener('DOMContentLoaded', () => {
             benefitsCtaMethod: "Nuestro método personalizado está diseñado para guiarte en este fascinante viaje, ayudándote a desarrollar no solo tu juego, sino también valiosas habilidades para la vida, sin importar cuándo decidas empezar.",
             benefitsCtaBtn: "¡Únete al Club!",
 
-            resourcesTitle: "Recursos Gratuitos Esenciales", // Título más específico
-            resourcesIntro: "Explora estos materiales introductorios o refresca tus conocimientos. ¡El primer paso hacia tu maestría empieza aquí!", // Más motivador
-            resource1Title: "Guía Rápida: Movimientos y Reglas", // Más directo
-            resource1Desc: "Todo lo que necesitas saber para empezar a mover las piezas con confianza. ¡Las reglas básicas explicadas de forma sencilla!", // Más atractivo
-            resourceLinkText: "Explorar Guía", // Llamada a la acción diferente
+            resourcesTitle: "Recursos Gratuitos Esenciales",
+            resourcesIntro: "Explora estos materiales introductorios o refresca tus conocimientos. ¡El primer paso hacia tu maestría empieza aquí!",
+            resource1Title: "Guía Rápida: Movimientos y Reglas",
+            resource1Desc: "Todo lo que necesitas saber para empezar a mover las piezas con confianza. ¡Las reglas básicas explicadas de forma sencilla!",
+            resourceLinkText: "Explorar Guía",
             resource2Title: "5 Tácticas Clave para Principiantes",
             resource2Desc: "Descubre patrones tácticos iniciales que te darán ventaja y te ayudarán a sorprender a tus oponentes.",
-            // resourceLinkText: "Leer más", // Reutilizar clave si el texto es el mismo
             resource3Title: "Errores Típicos (¡Y Cómo Evitarlos!)",
             resource3Desc: "Identifica las trampas comunes en las que caen los principiantes y aprende a esquivarlas para mejorar rápidamente.",
-            // resourceLinkText: "Leer más", // Reutilizar clave
-            resourcesCta: "¿Listo para el siguiente nivel? <a href=\"#cursos\" class=\"scroll-to\">Descubre nuestros cursos</a> y recibe análisis personalizados.", // CTA ligeramente modificado
+            resourcesCta: "¿Listo para el siguiente nivel? <a href=\"#cursos\" class=\"scroll-to\">Descubre nuestros cursos</a> y recibe análisis personalizados.",
 
             blogTitle: "Desde Nuestro Blog",
             blogIntro: "Explora artículos, consejos y curiosidades del mundo del ajedrez con nuestro toque \"chill\".",
@@ -183,11 +177,9 @@ document.addEventListener('DOMContentLoaded', () => {
             backToTop: "Volver arriba"
         },
         en: {
-            // --- ENGLISH TRANSLATIONS ---
-            // (Note: You'll need to translate the refined Spanish texts above into natural-sounding English)
             pageTitle: "Chill Chess Club | Online Chess Classes",
-            metaDescription: "Learn chess with a relaxed, personalized method. Online classes for beginners & intermediates adapted with AI to maximize your progress.", // Slightly shorter
-            logoAlt: "Chill Chess Club Logo", // More descriptive
+            metaDescription: "Learn chess with a relaxed, personalized method. Online classes for beginners & intermediates adapted with AI to maximize your progress.",
+            logoAlt: "Chill Chess Club Logo",
             siteName: "Chill Chess Club",
             logoLinkAriaLabel: "Go to the top of the page",
             navHome: "Home",
@@ -200,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navContact: "Contact",
 
             heroTitle: "Master chess with an immersive and personalized approach",
-            heroSubtitle: "Exclusive method designed to help you progress from beginner to intermediate level, with personalized, AI-assisted instruction.", // Slightly improved flow
+            heroSubtitle: "Exclusive method designed to help you progress from beginner to intermediate level, with personalized, AI-assisted instruction.",
             heroCtaTrial: "Request your free introductory class",
             heroCtaMethod: "Discover my method",
 
@@ -218,24 +210,24 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutCtaConnect: "Connect with me",
 
             coursesTitle: "Courses and Services",
-            coursesIntro: "Programs designed to meet your specific needs, regardless of your level. All courses include bilingual learning materials, access to personalized AI tools, and ongoing support.", // 'multilingual' to 'bilingual' if only ES/EN
-            courseBeginnerTitle: "Beginner Course: Liftoff", // More engaging title
+            coursesIntro: "Programs designed to meet your specific needs, regardless of your level. All courses include bilingual learning materials, access to personalized AI tools, and ongoing support.",
+            courseBeginnerTitle: "Beginner Course: Liftoff",
             courseBeginnerLevelAriaLabel: "Beginner Level",
-            courseBeginnerImgAlt: "White chess pieces ready to start", // More specific
-            courseBeginnerFeat1: "Master the essential moves and rules.", // More action-oriented
+            courseBeginnerImgAlt: "White chess pieces ready to start",
+            courseBeginnerFeat1: "Master the essential moves and rules.",
             courseBeginnerFeat2: "Discover the secrets of a good opening.",
             courseBeginnerFeat3: "Learn basic tactics to gain an advantage.",
             courseBeginnerFeat4: "Understand key endgames to close out games.",
-            courseBeginnerFeat5: "8 personalized 1-on-1 live classes.", // Clearer
-            courseBeginnerFeat6: "Bilingual learning material (ES/EN).", // Specify languages
+            courseBeginnerFeat5: "8 personalized 1-on-1 live classes.",
+            courseBeginnerFeat6: "Bilingual learning material (ES/EN).",
             courseBeginnerFeat7: "Access our personalized training AI.",
             courseBeginnerPrice: "$15 USD",
             coursePriceNoteHour: "/ hour (live classes)",
-            courseEnrollBtn: "Start Now", // Different CTA
+            courseEnrollBtn: "Start Now",
 
-            courseIntermediateTitle: "Intermediate Course: Strategist", // More engaging title
+            courseIntermediateTitle: "Intermediate Course: Strategist",
             courseIntermediateLevelAriaLabel: "Intermediate Level",
-            courseIntermediateImgAlt: "Chessboard showing a complex strategy", // More specific
+            courseIntermediateImgAlt: "Chessboard showing a complex strategy",
             courseIntermediateFeat1: "Deepen your advanced positional strategy.",
             courseIntermediateFeat2: "Build your ideal opening repertoire.",
             courseIntermediateFeat3: "Master intermediate tactical combinations.",
@@ -244,12 +236,10 @@ document.addEventListener('DOMContentLoaded', () => {
             courseIntermediateFeat6: "Detailed analysis of your games with AI.",
             courseIntermediateFeat7: "Receive an individualized study plan.",
             courseIntermediatePrice: "$20 USD",
-            // coursePriceNoteHour: "/ hour (live classes)", // Reuse previous key
-            // courseEnrollBtn: "Enroll Now", // Reuse previous key or create new if text differs
 
-            courseCustomTitle: "Personalized Classes: Your Game", // More engaging title
+            courseCustomTitle: "Personalized Classes: Your Game",
             courseCustomLevelAriaLabel: "Custom Level",
-            courseCustomImgAlt: "Chess instructor giving a personalized online class", // More specific
+            courseCustomImgAlt: "Chess instructor giving a personalized online class",
             courseCustomFeat1: "We design a program 100% tailored to you.",
             courseCustomFeat2: "We focus on your goals and areas for improvement.",
             courseCustomFeat3: "Maximum schedule flexibility.",
@@ -257,12 +247,12 @@ document.addEventListener('DOMContentLoaded', () => {
             courseCustomFeat5: "In-depth and practical analysis of your game.",
             courseCustomFeat6: "Receive exclusive adapted resources.",
             courseCustomFeat7: "Constant support and follow-up between sessions.",
-            courseCustomPrice: "$30 USD",
-            // coursePriceNoteHour: "/ hour (live classes)", // Reuse previous key
-            courseConsultBtn: "Check Availability", // Different CTA
+            // CAMBIO: Precio a $25 USD
+            courseCustomPrice: "$25 USD",
+            courseConsultBtn: "Check Availability",
 
             coursesCtaText: "Not sure which option is best for you? Schedule a free introductory session and receive a personalized assessment.",
-            coursesCtaBtn: "Request Free Trial Class", // Consistency with upper button
+            coursesCtaBtn: "Request Free Trial Class",
 
             methodTitle: "Our Immersive and Personalized Method",
             methodIntro: "Discover how our unique AI-powered approach accelerates your learning and adapts perfectly to your style and pace.",
@@ -274,13 +264,11 @@ document.addEventListener('DOMContentLoaded', () => {
             methodStep3Desc: "Classes (live or recorded) that go beyond theory. We dive into game analysis, solving tactical and strategic problems, and deliberate practice.",
             methodStep4Title: "Continuous Monitoring",
             methodStep4Desc: "We constantly monitor your progress, adjusting the plan and providing specific feedback to ensure you are always challenged but not overwhelmed.",
-            methodBenefitsTitle: "Key Benefits",
-            methodBenefit1: "Faster and more efficient learning.",
-            methodBenefit2: "Greater conceptual and practical understanding.",
-            methodBenefit3: "Constant motivation through personalized goals.",
-            methodBenefit4: "Flexibility to learn at your own pace.",
-            methodBenefit5: "Development of deeper chess thinking.",
-            methodBenefitsBtn: "View Available Courses",
+            
+            // CAMBIO: Textos para la sección de beneficios del método simplificada
+            methodKeyBenefitsTitle: "How Does Our Method Help You?",
+            methodKeyBenefitsDesc: "Our method is designed to maximize your potential, combining personalized attention with cutting-edge tools. You'll focus on what truly matters for your progress, in a way that's both effective and enjoyable.",
+            methodExploreBenefitsBtn: "Discover All the Benefits of Chess",
 
             benefitsTitle: "Enrich Your Life with Chess. At Any Age.",
             benefitsIntro: "Playing chess is much more than a simple game; it's a powerful tool to activate your mind, strengthen your character, and connect with others, no matter what stage of life you're in. At Chill Chess Club, we show you how this ancient game boosts your personal growth in surprising ways, whether you're young, an adult, or a senior.",
@@ -302,18 +290,16 @@ document.addEventListener('DOMContentLoaded', () => {
             benefitsCtaMethod: "Our personalized method is designed to guide you on this fascinating journey, helping you develop not only your game but also valuable life skills, no matter when you decide to start.",
             benefitsCtaBtn: "Join the Club!",
 
-            resourcesTitle: "Essential Free Resources", // More specific title
-            resourcesIntro: "Explore these introductory materials or refresh your knowledge. The first step towards mastery starts here!", // More motivating
-            resource1Title: "Quick Guide: Moves and Rules", // More direct
-            resource1Desc: "Everything you need to know to start moving the pieces with confidence. The basic rules explained simply!", // More engaging
-            resourceLinkText: "Explore Guide", // Different CTA
+            resourcesTitle: "Essential Free Resources",
+            resourcesIntro: "Explore these introductory materials or refresh your knowledge. The first step towards mastery starts here!",
+            resource1Title: "Quick Guide: Moves and Rules",
+            resource1Desc: "Everything you need to know to start moving the pieces with confidence. The basic rules explained simply!",
+            resourceLinkText: "Explore Guide",
             resource2Title: "5 Key Tactics for Beginners",
             resource2Desc: "Discover initial tactical patterns that will give you an edge and help you surprise your opponents.",
-            // resourceLinkText: "Read more", // Reuse key if text is the same
             resource3Title: "Common Mistakes (And How to Avoid Them!)",
             resource3Desc: "Identify the common traps beginners fall into and learn how to dodge them to improve quickly.",
-            // resourceLinkText: "Read more", // Reuse key
-            resourcesCta: "Ready for the next level? <a href=\"#cursos\" class=\"scroll-to\">Discover our courses</a> and receive personalized analysis.", // Slightly modified CTA
+            resourcesCta: "Ready for the next level? <a href=\"#cursos\" class=\"scroll-to\">Discover our courses</a> and receive personalized analysis.",
 
             blogTitle: "From Our Blog",
             blogIntro: "Explore articles, tips, and curiosities from the world of chess with our \"chill\" touch.",
@@ -421,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     } else if (el.tagName === 'TITLE') {
                         document.title = translation;
-                    } else if (key === 'resourcesCta' || key === 'coursesCtaText' || key === 'benefitsIntro' || key === 'benefitsLifeSkillsIntro' || key === 'benefitsCtaText' || key === 'benefitsCtaMethod' ) {
+                    } else if (key === 'resourcesCta' || key === 'coursesCtaText' || key === 'benefitsIntro' || key === 'benefitsLifeSkillsIntro' || key === 'benefitsCtaText' || key === 'benefitsCtaMethod' || key === 'methodKeyBenefitsDesc' ) { // Añadida nueva clave
                         el.innerHTML = translation; // Use innerHTML for elements that might contain HTML
                     }
                     else {
@@ -504,7 +490,7 @@ document.addEventListener('DOMContentLoaded', () => {
                      }
                  } else if (el.tagName === 'TITLE') {
                      document.title = translation;
-                 } else if (key === 'resourcesCta' || key === 'coursesCtaText' || key === 'benefitsIntro' || key === 'benefitsLifeSkillsIntro' || key === 'benefitsCtaText' || key === 'benefitsCtaMethod' ) {
+                 } else if (key === 'resourcesCta' || key === 'coursesCtaText' || key === 'benefitsIntro' || key === 'benefitsLifeSkillsIntro' || key === 'benefitsCtaText' || key === 'benefitsCtaMethod' || key === 'methodKeyBenefitsDesc' ) { // Añadida nueva clave
                       el.innerHTML = translation;
                  }
                  else {
@@ -583,7 +569,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isActive) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
-                navLinks.querySelector('a').focus();
+                // Consider focusing the first focusable element in the nav
+                // navLinks.querySelector('a, button').focus(); 
             } else {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
@@ -625,7 +612,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetElement = document.querySelector(targetId);
 
                 if (targetElement) {
-                    const headerOffset = 80;
+                    const headerOffset = 80; // Ajustar según la altura real del header
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -634,6 +621,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         behavior: 'smooth'
                     });
 
+                    // Si el enlace es para contacto y tiene data-subject, preseleccionar
                     if (targetId === '#contacto') {
                         const subjectValue = this.getAttribute('data-subject');
                         const subjectSelect = document.getElementById('subject');
@@ -642,8 +630,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         if (subjectValue && subjectSelect) {
                             subjectSelect.value = subjectValue;
                         }
-                        if(firstInput) {
-                            setTimeout(() => firstInput.focus(), 300);
+                        if(firstInput) { // Dar foco al primer campo del formulario
+                            setTimeout(() => firstInput.focus(), 300); // Pequeño delay para asegurar scroll
                         }
                     }
                 }
@@ -662,23 +650,26 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentLang = document.documentElement.lang || 'es';
 
             formStatus.textContent = translations[currentLang]?.submitting || 'Enviando...';
-            formStatus.className = 'status';
+            formStatus.className = 'status'; // Reset classes
             formStatus.style.display = 'block';
 
+            // Simulación de envío
             setTimeout(() => {
-                const isSuccess = Math.random() > 0.2;
+                // Simular éxito o error aleatoriamente
+                const isSuccess = Math.random() > 0.2; // 80% de éxito
 
                 if (isSuccess) {
                     formStatus.textContent = translations[currentLang]?.formSuccess || '¡Mensaje enviado con éxito! Te contactaremos pronto.';
                     formStatus.classList.add('success');
-                    contactForm.reset();
+                    contactForm.reset(); // Limpiar formulario en caso de éxito
                 } else {
                     formStatus.textContent = translations[currentLang]?.formError || 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o usa el email de contacto.';
                     formStatus.classList.add('error');
                 }
+                 // Ocultar mensaje después de unos segundos
                  setTimeout(() => {
                     formStatus.style.display = 'none';
-                    formStatus.className = 'status';
+                    formStatus.className = 'status'; // Reset classes
                  }, 5000);
             }, 1500);
         });
@@ -687,7 +678,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Back to Top Button Functionality
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
+            if (window.pageYOffset > 300) { // Mostrar botón después de 300px de scroll
                 backToTopButton.classList.add('show');
             } else {
                 backToTopButton.classList.remove('show');
@@ -698,5 +689,12 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
+     // Actualizar año en el footer
+     const yearSpan = document.getElementById('current-year');
+     if (yearSpan) {
+         yearSpan.textContent = new Date().getFullYear();
+     }
+
 
 }); // End DOMContentLoaded

@@ -11,11 +11,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#18181B">
 </head>
 <body>
@@ -43,7 +43,7 @@
                     <li><a href="#recursos" data-lang-key="navResources" class="scroll-to">Recursos</a></li>
                     <li><a href="#blog" data-lang-key="navBlog" class="scroll-to">Blog</a></li>
                     <li><a href="#contacto" data-lang-key="navContact" class="scroll-to">Contacto</a></li>
-                </ul>
+                    </ul>
             </nav>
         </div>
     </header>
@@ -54,7 +54,7 @@
             <div class="container hero-content-container">
                 <div class="hero-content">
                     <h1 data-lang-key="heroTitle">Domina el ajedrez con un enfoque inmersivo y personalizado</h1>
-                    <p class="lead" data-lang-key="heroSubtitle">Método exclusivo diseñado para ayudarte a progresar desde principiante hasta nivel intermedio con instrucción personalizada y asistida por IA.</p>
+                    <p class="lead" data-lang-key="heroSubtitle">Método exclusivo diseñado para ayudarte a progresar desde principiante hasta nivel intermedio, con instrucción personalizada y asistida por IA.</p>
                     <div class="hero-cta">
                         <a href="#contacto" class="btn btn-primary scroll-to" data-lang-key="heroCtaTrial">Solicita tu clase introductoria gratuita</a>
                         <a href="#metodo" class="btn btn-gradient-border scroll-to" data-lang-key="heroCtaMethod">Descubre mi método</a>
@@ -109,7 +109,7 @@
                             <div class="course-level" aria-label="Nivel Principiante" data-lang-key="courseBeginnerLevelAriaLabel|aria-label"></div>
                         </div>
                         <div class="course-image">
-                            <img src="https://placehold.co/400x200/1f1f1f/EC4899?text=Inicia+tu+Viaje" alt="Piezas de ajedrez blancas para principiantes" data-lang-key="courseBeginnerImgAlt|alt">
+                            <img src="images/curso-principiante.jpg" alt="Piezas de ajedrez blancas para principiantes" data-lang-key="courseBeginnerImgAlt|alt" onerror="this.onerror=null; this.src='https://placehold.co/400x200/1f1f1f/EC4899?text=Inicia+tu+Viaje';">
                         </div>
                         <div class="course-content">
                             <ul class="course-features">
@@ -136,7 +136,7 @@
                             <div class="course-level" aria-label="Nivel Intermedio" data-lang-key="courseIntermediateLevelAriaLabel|aria-label"></div>
                         </div>
                         <div class="course-image">
-                             <img src="https://placehold.co/400x200/2c2c2c/F97316?text=Profundiza+Estrategia" alt="Estrategia de ajedrez en tablero" data-lang-key="courseIntermediateImgAlt|alt">
+                             <img src="images/curso-intermedio.jpg" alt="Estrategia de ajedrez en tablero" data-lang-key="courseIntermediateImgAlt|alt" onerror="this.onerror=null; this.src='https://placehold.co/400x200/2c2c2c/F97316?text=Profundiza+Estrategia';">
                         </div>
                         <div class="course-content">
                             <ul class="course-features">
@@ -163,7 +163,7 @@
                             <div class="course-level" aria-label="Nivel Personalizado" data-lang-key="courseCustomLevelAriaLabel|aria-label"></div>
                         </div>
                         <div class="course-image">
-                             <img src="https://placehold.co/400x200/3f3f3f/8B5CF6?text=Tu+Ritmo%2C+Tu+Juego" alt="Instructor explicando jugada de ajedrez" data-lang-key="courseCustomImgAlt|alt">
+                             <img src="images/curso-personalizado.jpg" alt="Instructor explicando jugada de ajedrez" data-lang-key="courseCustomImgAlt|alt" onerror="this.onerror=null; this.src='https://placehold.co/400x200/3f3f3f/8B5CF6?text=Tu+Ritmo%2C+Tu+Juego';">
                         </div>
                         <div class="course-content">
                             <ul class="course-features">
@@ -177,7 +177,7 @@
                             </ul>
                         <div class="course-footer">
                                 <div class="course-price">
-                                    <span class="price" data-lang-key="courseCustomPrice">$30 USD</span>
+                                    <span class="price" data-lang-key="courseCustomPrice">$25 USD</span>
                                     <span class="price-note" data-lang-key="coursePriceNoteHour">/ hora (clases en vivo)</span>
                                 </div>
                                 <a href="#contacto" class="btn btn-primary scroll-to" data-lang-key="courseConsultBtn">Consultar</a>
@@ -219,15 +219,9 @@
                     </div>
                 </div>
                 <div class="method-benefits" data-aos="fade-up">
-                    <h3 data-lang-key="methodBenefitsTitle">Beneficios Clave</h3>
-                    <ul>
-                        <li data-lang-key="methodBenefit1"><i class="fas fa-star" aria-hidden="true"></i> Aprendizaje más rápido y eficiente.</li>
-                        <li data-lang-key="methodBenefit2"><i class="fas fa-star" aria-hidden="true"></i> Mayor comprensión conceptual y práctica.</li>
-                        <li data-lang-key="methodBenefit3"><i class="fas fa-star" aria-hidden="true"></i> Motivación constante a través de metas personalizadas.</li>
-                        <li data-lang-key="methodBenefit4"><i class="fas fa-star" aria-hidden="true"></i> Flexibilidad para aprender a tu propio ritmo.</li>
-                        <li data-lang-key="methodBenefit5"><i class="fas fa-star" aria-hidden="true"></i> Desarrollo de un pensamiento ajedrecístico más profundo.</li>
-                    </ul>
-                    <a href="#cursos" class="btn btn-gradient-border scroll-to" data-lang-key="methodBenefitsBtn">Ver Cursos Disponibles</a>
+                    <h3 data-lang-key="methodKeyBenefitsTitle">¿Cómo te Ayuda Nuestro Método?</h3>
+                    <p data-lang-key="methodKeyBenefitsDesc">Nuestro método está diseñado para maximizar tu potencial, combinando la atención personalizada con herramientas de vanguardia. Te enfocarás en lo que realmente importa para tu progreso, de una manera que es tanto efectiva como disfrutable.</p>
+                    <a href="#beneficios-ajedrez" class="btn btn-gradient-border scroll-to" data-lang-key="methodExploreBenefitsBtn">Descubre Todos los Beneficios del Ajedrez</a>
                 </div>
             </div>
         </section>
@@ -316,7 +310,7 @@
                 <div class="blog-grid">
                     <article class="blog-post-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="blog-post-image">
-                            <a href="#"><img src="https://placehold.co/400x250/EC4899/18181B?text=Historia+Ajedrez" alt="Imagen representativa de la historia del ajedrez" data-lang-key="blogPost1ImgAlt|alt"></a>
+                            <a href="#"><img src="images/blog-historia-ajedrez.jpg" alt="Imagen representativa de la historia del ajedrez" data-lang-key="blogPost1ImgAlt|alt" onerror="this.onerror=null; this.src='https://placehold.co/400x250/EC4899/18181B?text=Historia+Ajedrez';"></a>
                         </div>
                         <div class="blog-post-content">
                             <h3 class="blog-post-title"><a href="#" data-lang-key="blogPost1Title">Un Viaje Rápido por la Historia del Ajedrez</a></h3>
@@ -326,7 +320,7 @@
                     </article>  
                     <article class="blog-post-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="blog-post-image">
-                             <a href="#"><img src="https://placehold.co/400x250/F97316/18181B?text=Ajedrez+Chill" alt="Imagen mostrando el ajedrez de forma relajada" data-lang-key="blogPost2ImgAlt|alt"></a>
+                             <a href="#"><img src="images/blog-ajedrez-chill.jpg" alt="Imagen mostrando el ajedrez de forma relajada" data-lang-key="blogPost2ImgAlt|alt" onerror="this.onerror=null; this.src='https://placehold.co/400x250/F97316/18181B?text=Ajedrez+Chill';"></a>
                         </div>
                         <div class="blog-post-content">
                             <h3 class="blog-post-title"><a href="#" data-lang-key="blogPost2Title">¿Ajedrez Aburrido? ¡Rompiendo el Mito!</a></h3>
@@ -336,7 +330,7 @@
                     </article>
                     <article class="blog-post-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="blog-post-image">
-                             <a href="#"><img src="https://placehold.co/400x250/8B5CF6/18181B?text=Jugar+Online" alt="Imagen de alguien jugando ajedrez online" data-lang-key="blogPost3ImgAlt|alt"></a>
+                             <a href="#"><img src="images/blog-jugar-online.jpg" alt="Imagen de alguien jugando ajedrez online" data-lang-key="blogPost3ImgAlt|alt" onerror="this.onerror=null; this.src='https://placehold.co/400x250/8B5CF6/18181B?text=Jugar+Online';"></a>
                         </div>
                         <div class="blog-post-content">
                             <h3 class="blog-post-title"><a href="#" data-lang-key="blogPost3Title">5 Pasos Sencillos para Empezar a Jugar Online</a></h3>
@@ -420,8 +414,11 @@
                     <p><i class="fas fa-info-circle" aria-hidden="true"></i> <a href="#contacto" class="scroll-to" data-lang-key="footerContactFormLink">Formulario de Contacto</a></p>
                     <div class="payment-methods">
                         <span data-lang-key="footerPaymentText">Pagos Seguros con:</span>
-                        <i class="fab fa-cc-paypal" title="PayPal" aria-label="PayPal"></i> <span class="payment-label">Payoneer</span>
-                        <span class="payment-label">Binance</span>
+                        <div class="payment-icons">
+                            <i class="fab fa-cc-paypal" title="PayPal" aria-label="PayPal"></i>
+                            <span class="payment-brand" title="Payoneer">Payoneer</span>
+                            <span class="payment-brand" title="Binance">Binance</span>
+                            </div>
                     </div>
                 </div>
             </div>
