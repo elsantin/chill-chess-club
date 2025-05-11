@@ -135,7 +135,7 @@ p {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    max-width: 100%; /* Permitir que el text-align del padre funcione mejor para líneas cortas */
+    max-width: 100%; 
 }
 
 
@@ -536,9 +536,8 @@ header {
   animation: subtlePalmPulse 8s ease-in-out infinite;
 }
 
-.about h2::after { background: var(--color-modern-accent-2); }
+.about h2::after { background: var(--color-modern-accent-2); } 
 
-/* ESTILOS PARA LA CITA - INICIO */
 .about-quote {
     margin-bottom: var(--spacing-lg); 
     padding-left: var(--spacing-md);
@@ -546,8 +545,8 @@ header {
     font-style: italic;
     color: var(--color-text-medium);
     text-align: center; 
-    max-width: 60ch; /* Limita el ancho para mejor legibilidad */
-    margin-left: auto; /* Centra el bloque de cita si es más angosto que el contenedor */
+    max-width: 60ch; 
+    margin-left: auto; 
     margin-right: auto;
 }
 .about-quote p {
@@ -562,7 +561,6 @@ header {
     color: var(--color-secondary-accent);
     margin-top: var(--spacing-sm);
 }
-/* ESTILOS PARA LA CITA - FIN */
 
 .about-content {
   display: grid;
@@ -796,50 +794,103 @@ header {
 /*------------------------------------*\
   #METHODOLOGY SECTION
 \*------------------------------------*/
-.methodology { background-color: var(--color-background-medium); }
-.methodology h2::after { background: var(--color-modern-accent-1); }
-
-.method-steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
-  gap: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
+.methodology { 
+  background-color: var(--color-background-medium); 
 }
-.step {
+.methodology h2::after { 
+  background: var(--color-modern-accent-1); 
+}
+
+/* Hacemos los selectores más específicos para que solo afecten a esta sección */
+#metodo .method-steps { 
+  display: grid;
+  gap: var(--spacing-md); 
+  margin-bottom: var(--spacing-lg);
+  grid-template-columns: 1fr; 
+}
+
+#metodo .step { 
   background: var(--color-dark);
-  padding: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md); 
   border-radius: 12px;
   text-align: center;
   transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
   border-left: 5px solid var(--color-modern-accent-3);
+  display: flex; 
+  flex-direction: column; 
 }
-.step:hover {
+#metodo .step:hover { 
   background-color: var(--color-background-light);
   transform: translateY(-3px);
 }
-.step-icon {
-  font-size: 2.8rem;
+#metodo .step-icon { 
+  font-size: 2.5rem; 
   color: var(--color-modern-accent-3);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-sm); 
   display: inline-block;
 }
-.step h3 {
-  font-size: 1.3rem;
-  margin-bottom: var(--spacing-sm);
+#metodo .step h3 { 
+  font-size: 1.25rem; 
+  margin-bottom: var(--spacing-xs);
   color: var(--color-secondary-accent);
+  line-height: 1.3;
 }
-.step h3 .highlight {
+#metodo .step h3 .highlight { 
   color: var(--color-modern-accent-3);
   font-weight: 700;
   display: block;
-  font-size: 1rem;
-  margin-bottom: 8px;
+  font-size: 0.95rem; 
+  margin-bottom: 6px;
   font-family: var(--font-body);
 }
-.step p {
-  font-size: 0.95rem;
+#metodo .step p { 
+  font-size: 0.9rem; 
   color: var(--color-text-medium);
   margin-bottom: 0; 
+  flex-grow: 1; 
+}
+
+/* Media Queries para la distribución de los pasos de la sección Método */
+
+@media (min-width: 576px) {
+  #metodo .method-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-sm); 
+  }
+  #metodo .step {
+    padding: var(--spacing-md); 
+  }
+}
+
+@media (min-width: 768px) {
+  #metodo .method-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  #metodo .method-steps {
+     grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+@media (min-width: 1200px) {
+  #metodo .method-steps {
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-sm); 
+  }
+  #metodo .step {
+    padding: var(--spacing-sm) calc(var(--spacing-sm) * 0.75); 
+  }
+  #metodo .step h3 {
+    font-size: 1.15rem; 
+  }
+  #metodo .step p {
+    font-size: 0.85rem;
+  }
+  #metodo .step-icon {
+    font-size: 2.2rem;
+  }
 }
 
 .method-benefits {
@@ -979,10 +1030,14 @@ header {
 /*------------------------------------*\
   #FREE RESOURCES SECTION
 \*------------------------------------*/
-.free-resources { background-color: var(--color-dark); }
-.free-resources h2::after { background: var(--color-modern-accent-2); }
+.free-resources { 
+  background-color: var(--color-dark); 
+}
+.free-resources h2::after { 
+  background: var(--color-modern-accent-2); 
+}
 
-.resource-grid {
+.free-resources .resource-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: var(--spacing-md);
@@ -1072,7 +1127,7 @@ header {
 .blog-section h2::after {
     background: var(--color-modern-accent-2); 
 }
-.blog-grid {
+.blog-section .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: var(--spacing-lg); 
@@ -1435,7 +1490,7 @@ footer {
 /*------------------------------------*\
   #MEDIA QUERIES (Responsive Design)
 \*------------------------------------*/
-@media (max-width: 992px) { /* Tablets y pantallas medianas */
+@media (max-width: 992px) { 
   .header-container {
       height: var(--header-height-desktop); 
   }
@@ -1464,7 +1519,6 @@ footer {
     display: inline-block; 
     text-align: left; 
   }
-  /* Centrar la cita en tablets si se ve mejor */
   .about-quote {
       text-align: center;
   }
@@ -1579,18 +1633,17 @@ footer {
   /* Secciones a una columna en móviles */
   .about-content,
   .course-grid,
-  .method-steps,
-  .resource-grid,
+  /* #metodo .method-steps se define arriba para móviles */
+  .resource-grid, /* Asegúrate que .resource-grid tenga su propia definición de grid si es necesario */
   .contact-wrapper,
-  .blog-grid { 
+  .blog-grid { /* Asegúrate que .blog-grid tenga su propia definición de grid si es necesario */
     grid-template-columns: 1fr; 
     gap: var(--spacing-md); 
   }
   .about-content { padding: var(--spacing-sm); } 
-  /* Centrar la cita en móviles si se ve mejor */
   .about-quote {
       text-align: center;
-      padding-left: var(--spacing-sm); /* Menos padding en móviles */
+      padding-left: var(--spacing-sm); 
   }
    
   .blog-post-title { font-size: 1.3rem; }

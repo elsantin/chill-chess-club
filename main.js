@@ -86,19 +86,21 @@ document.addEventListener('DOMContentLoaded', () => {
             coursesCtaText: "¿No estás seguro qué opción es mejor para ti? Agenda una sesión introductoria gratuita y recibe una evaluación personalizada.",
             coursesCtaBtn: "Solicitar Clase de Prueba Gratis", 
 
-            methodTitle: "Nuestro Método Inmersivo y Personalizado",
-            methodIntro: "Descubre cómo nuestro enfoque único, potenciado por IA, acelera tu aprendizaje y se adapta perfectamente a tu estilo y ritmo.",
-            methodStep1Title: "Evaluación Personalizada",
-            methodStep1Desc: "Comenzamos con un análisis detallado de tu nivel actual, estilo de juego, fortalezas y debilidades, utilizando herramientas avanzadas y mi experiencia pedagógica.",
-            methodStep2Title: "Plan de Estudio Adaptativo con IA",
-            methodStep2Desc: "Nuestra plataforma utiliza inteligencia artificial para crear un plan de estudio dinámico que evoluciona contigo, enfocándose en las áreas de mayor impacto para tu progreso.",
-            methodStep3Title: "Sesiones Inmersivas",
-            methodStep3Desc: "Clases (en vivo o grabadas) que van más allá de la teoría. Nos sumergimos en análisis de partidas, resolución de problemas tácticos y estratégicos, y práctica deliberada.",
-            methodStep4Title: "Seguimiento Continuo",
-            methodStep4Desc: "Monitorizamos tu progreso constantemente, ajustando el plan y proporcionando retroalimentación específica para asegurar que siempre estés desafiado pero no abrumado.",
-            
-            methodKeyBenefitsTitle: "¿Cómo te Ayuda Nuestro Método?",
-            methodKeyBenefitsDesc: "Nuestro método está diseñado para maximizar tu potencial, combinando la atención personalizada con herramientas de vanguardia. Te enfocarás en lo que realmente importa para tu progreso, de una manera que es tanto efectiva como disfrutable.",
+            // Textos de la sección Método actualizados a 5 pasos
+            methodTitle: "Mi Método: Aprendizaje Inmersivo y Personalizado con un Toque Tecnológico Único",
+            methodIntro: "Descubre cómo mi enfoque, que combina una profunda comprensión del ajedrez con una habilidad avanzada para crear contenido digital asistido por IA, transforma tu aprendizaje en una experiencia totalmente adaptada a ti: a tu estilo, tu ritmo y tus intereses.",
+            methodStep1Title: "Conexión y Evaluación Inicial", // Paso 1 (antes Paso 1)
+            methodStep1Desc: "Comenzamos con una charla para conocernos y entender tus metas. Luego, analizo tu nivel, estilo de juego e intereses, revisando tus partidas (en Chess.com, ya sean jugadas conmigo o que me envíes) y usando mi experiencia pedagógica para trazar un primer mapa.",
+            methodStep2aTitle: "Diseño de Tu Hoja de Ruta Personal", // Paso 2 (Nuevo)
+            methodStep2aDesc: "Con base en nuestra conversación y tu evaluación inicial, diseño una hoja de ruta clara para tu aprendizaje. Selecciono los temas centrales y la estructura de estudio que mejor se adaptan a tu nivel actual, tus objetivos específicos y la forma en que prefieres asimilar la información.",
+            methodStep2bTitle: "Material Didáctico Único, Creado para Ti con IA", // Paso 3 (Nuevo)
+            methodStep2bDesc: "Aquí mi enfoque se potencia. Me apoyo en avanzadas herramientas de IA para desarrollar recursos didácticos totalmente a medida: desde artículos y análisis personalizados hasta resúmenes y guías en audio en tu idioma, todo moldeado según tus hobbies y aspiraciones para un aprendizaje estimulante.",
+            methodStep3Title: "Sesiones de Aprendizaje Inmersivo y Práctico", // Paso 4 (antes Paso 3)
+            methodStep3Desc: "Nuestras clases en vivo son dinámicas e interactivas. Usamos Chess.com o Lichess para jugar, analizar posiciones, resolver problemas tácticos y estratégicos, y practicar lo aprendido con tu material personalizado, siempre en un ambiente relajado y adaptándonos a tu energía del día.",
+            methodStep4Title: "Evolución Continua y Adaptación Inteligente", // Paso 5 (antes Paso 4)
+            methodStep4Desc: "Tu progreso es mi prioridad. Monitoreo de cerca tu evolución, analizo tus nuevas partidas y ajustamos el plan y los materiales de forma continua. La IA me asiste en identificar patrones y refinar los recursos para que tu aprendizaje nunca se estanque, manteniéndote siempre motivado.",
+            methodKeyBenefitsTitle: "¿Cómo Te Ayuda Realmente Mi Método?",
+            methodKeyBenefitsDesc: "Mi método está diseñado para ofrecerte una experiencia de aprendizaje de ajedrez que va más allá de lo convencional. Combino mi atención personalizada y mi pasión por la enseñanza con un dominio único de herramientas digitales y de IA para crear un camino hecho a tu exacta medida. Te enfocarás en lo que realmente impulsa tu progreso, de una manera efectiva, profundamente disfrutable y adaptada a tu vida.",
             methodExploreBenefitsBtn: "Descubre Todos los Beneficios del Ajedrez",
 
             benefitsTitle: "Enriquece tu Vida con el Ajedrez. A Cualquier Edad.",
@@ -229,7 +231,6 @@ document.addEventListener('DOMContentLoaded', () => {
             courseBeginnerFeat6: "Access to bilingual digital study material (Spanish/English) created by me to guide your practice.", 
             courseBeginnerFeat7: "Exercises and examples that I select and adapt with AI according to your interests to make studying the syllabus more enjoyable and effective.", 
             courseBeginnerPrice: "$120 USD", 
-            // CORRECCIÓN Y AJUSTE EN INGLÉS: Nota de precio del curso principiante
             coursePriceNoteHour: "8-class package (only $15 USD/hour). Payment plans available", 
             courseEnrollBtn: "Start Now", 
 
@@ -244,10 +245,8 @@ document.addEventListener('DOMContentLoaded', () => {
             courseIntermediateFeat6: "Detailed analysis of your games: I identify patterns and key areas with the support of AI tools to guide our review.", 
             courseIntermediateFeat7: "A structured study plan that I complement with material and exercises adapted by me (AI-assisted) to your goals and style within the program.", 
             courseIntermediatePrice: "$320 USD", 
-            // CORRECCIÓN Y AJUSTE EN INGLÉS: Nota de precio del curso intermedio
             courseIntermediatePriceNoteHour: "16-class package (only $20 USD/hour). Payment plans available", 
 
-            // NUEVOS TEXTOS EN INGLÉS: Curso Personalizado
             courseCustomTitle: "Personalized Classes:<br>Your Game",
             courseCustomLevelAriaLabel: "Custom Level",
             courseCustomImgAlt: "Chess instructor giving a personalized online class",
@@ -262,24 +261,23 @@ document.addEventListener('DOMContentLoaded', () => {
             courseCustomPriceNoteHour: "/ hour (live classes)",
             courseConsultBtn: "Check Availability",
 
-
-            coursesCtaText: "Not sure which option is best for you? Schedule a free introductory session and receive a personalized assessment.",
-            coursesCtaBtn: "Request Free Trial Class",
-
-            methodTitle: "Our Immersive and Personalized Method",
-            methodIntro: "Discover how our unique AI-powered approach accelerates your learning and adapts perfectly to your style and pace.",
-            methodStep1Title: "Personalized Assessment",
-            methodStep1Desc: "We start with a detailed analysis of your current level, playing style, strengths, and weaknesses, using advanced tools and my teaching experience.",
-            methodStep2Title: "Adaptive Study Plan with AI",
-            methodStep2Desc: "Our platform uses artificial intelligence to create a dynamic study plan that evolves with you, focusing on the areas of greatest impact for your progress.",
-            methodStep3Title: "Immersive Sessions",
-            methodStep3Desc: "Classes (live or recorded) that go beyond theory. We dive into game analysis, solving tactical and strategic problems, and deliberate practice.",
-            methodStep4Title: "Continuous Monitoring",
-            methodStep4Desc: "We constantly monitor your progress, adjusting the plan and providing specific feedback to ensure you are always challenged but not overwhelmed.",
-            
-            methodKeyBenefitsTitle: "How Does Our Method Help You?",
-            methodKeyBenefitsDesc: "Our method is designed to maximize your potential, combining personalized attention with cutting-edge tools. You'll focus on what truly matters for your progress, in a way that's both effective and enjoyable.",
+            // Textos de la sección Método actualizados a 5 pasos (placeholders en inglés)
+            methodTitle: "My Method: Immersive and Personalized Learning with a Unique Technological Touch", 
+            methodIntro: "Discover how my approach, combining a deep understanding of chess with advanced skills in AI-assisted digital content creation, transforms your learning into an experience fully tailored to you: your style, your pace, and your interests.", 
+            methodStep1Title: "Connection and Initial Assessment", 
+            methodStep1Desc: "We start with a chat to get to know each other and understand your goals. Then, I analyze your level, playing style, and interests, reviewing your games (on Chess.com, whether played with me or sent by you) and using my teaching experience to draw an initial map.", 
+            methodStep2aTitle: "Design of Your Personal Roadmap", // Placeholder
+            methodStep2aDesc: "Based on our conversation and your initial assessment, I design a clear roadmap for your learning. I select the central themes and study structure that best suit your current level, specific goals, and how you prefer to assimilate information.", // Placeholder
+            methodStep2bTitle: "Unique Educational Material, Created for You with AI", // Placeholder
+            methodStep2bDesc: "This is where my approach is enhanced. I rely on advanced AI tools to develop fully customized educational resources: from articles and personalized analyses to summaries and audio guides in your language, all shaped by your hobbies and aspirations for stimulating learning.", // Placeholder
+            methodStep3Title: "Immersive and Practical Learning Sessions", 
+            methodStep3Desc: "Our live classes are dynamic and interactive. We use Chess.com or Lichess to play, analyze positions, solve tactical and strategic problems, and practice what you've learned with your personalized material, always in a relaxed atmosphere and adapting to your energy of the day.", 
+            methodStep4Title: "Continuous Evolution and Smart Adaptation", 
+            methodStep4Desc: "Your progress is my priority. I closely monitor your evolution, analyze your new games, and we continuously adjust the plan and materials. AI assists me in identifying patterns and refining resources so your learning never stagnates, keeping you always motivated.", 
+            methodKeyBenefitsTitle: "How Does My Method Truly Help You?", 
+            methodKeyBenefitsDesc: "My method is designed to offer you a chess learning experience that goes beyond the conventional. I combine my personalized attention and passion for teaching with a unique mastery of digital and AI tools to create a path tailored exactly to you. You'll focus on what truly drives your progress, in an effective, deeply enjoyable, and life-adapted way.", 
             methodExploreBenefitsBtn: "Discover All the Benefits of Chess",
+
 
             benefitsTitle: "Enrich Your Life with Chess. At Any Age.",
             benefitsIntro: "Playing chess is much more than a simple game; it's a powerful tool to activate your mind, strengthen your character, and connect with others, no matter what stage of life you're in. At Chill Chess Club, we show you how this ancient game boosts your personal growth in surprising ways, whether you're young, an adult, or a senior.",
