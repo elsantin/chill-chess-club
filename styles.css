@@ -189,14 +189,14 @@ a:hover, a:focus {
 
 section {
   padding: var(--spacing-xl) 0;
-  overflow: visible; /* Cambiado de hidden a visible si no hay una razón específica para hidden */
+  overflow: visible; 
 }
 
 /*------------------------------------*\
   #HEADER Y NAVEGACIÓN
 \*------------------------------------*/
 header {
-  padding: var(--spacing-xs) 0; /* Padding vertical para el tag <header> */
+  padding: var(--spacing-xs) 0; 
   position: fixed;
   width: 100%;
   top: 0;
@@ -212,14 +212,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px; /* Mismo max-width que .container */
-  margin: 0 auto;    /* Centra el .header-container */
-  padding: 0 var(--spacing-md); /* Mismo padding horizontal que .container */
-  width: 100%;       /* Ocupa el ancho disponible hasta el max-width */
+  max-width: 1200px; 
+  margin: 0 auto;    
+  padding: 0 var(--spacing-md); 
+  width: 100%;       
   height: var(--header-height-desktop); 
 }
 
-/* Estilos para el enlace <a> que contiene el logo y el nombre del sitio */
 .logo-link {
     text-decoration: none;
     color: inherit;
@@ -229,28 +228,26 @@ header {
 }
 
 .logo-link:hover, .logo-link:focus {
-    color: inherit; /* Evita que cambie el color del texto si no se desea */
+    color: inherit; 
 }
 
-/* Estilos para la imagen del logo DENTRO del enlace .logo-link */
 .logo-link #site-logo-img {
-  height: 55px; /* Ajustado para el nuevo --header-height-desktop */
+  height: 55px; 
   width: auto;
   display: block;
   transition: transform 0.3s ease;
-  border: none; /* Asegurar que no haya bordes inesperados */
-  box-shadow: none; /* Asegurar que no haya sombras inesperadas */
-  outline: none; /* Quitar outline al enfocar si no se desea */
+  border: none; 
+  box-shadow: none; 
+  outline: none; 
 }
 
 .logo-link:hover #site-logo-img {
     transform: scale(1.05);
 }
 
-/* Estilos para el texto del nombre del sitio DENTRO del enlace .logo-link */
 .logo-link .site-name-text {
   font-family: var(--font-title);
-  font-size: 1.95rem; /* Ajustado para el nuevo --header-height-desktop */
+  font-size: 1.95rem; 
   font-weight: 800;
   color: var(--color-text-light);
   text-shadow: 0 0 5px rgba(236, 72, 153, 0.3),
@@ -318,8 +315,8 @@ header {
   position: relative;
   width: 40px;
   height: 40px;
-  -webkit-tap-highlight-color: transparent; /* Para evitar el resaltado azul en móviles al tocar */
-  user-select: none; /* Para evitar la selección de texto del ícono */
+  -webkit-tap-highlight-color: transparent; 
+  user-select: none; 
 }
 .menu-toggle .fa-bars,
 .menu-toggle .fa-times {
@@ -328,7 +325,7 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  pointer-events: none; /* Para que el click pase al botón */
+  pointer-events: none; 
 }
 .menu-toggle .fa-times {
   opacity: 0;
@@ -380,7 +377,6 @@ header {
 /*------------------------------------*\
   #ESTILOS DE BOTONES
 \*------------------------------------*/
-/* Animación para el fondo del gradiente */
 @keyframes animatedGradientBackground {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -412,7 +408,6 @@ header {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
-/* Botones que NO son primarios (ej. btn-gradient-border) */
 .btn:not(.btn-primary) {
     border-color: var(--color-secondary-accent);
     color: var(--color-secondary-accent);
@@ -424,12 +419,11 @@ header {
     transform: scale(1.03);
 }
 
-/* INICIO: Estilos para .btn-primary con fondo de gradiente animado */
 .btn-primary {
     background: var(--animated-gradient); 
     background-size: 300% 300%; 
     animation: animatedGradientBackground 6s ease infinite; 
-    color: var(--color-text-light); /* Texto claro por defecto */
+    color: var(--color-text-light); 
     border: none; 
     position: relative; 
     z-index: 1;
@@ -438,10 +432,8 @@ header {
 .btn-primary:hover, .btn-primary:focus {
     box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4); 
     transform: scale(1.03);
-    color: var(--color-text-dark-on-gradient); /* CAMBIO: Texto oscuro en hover/focus */
+    color: var(--color-text-dark-on-gradient); 
 }
-/* FIN: Estilos para .btn-primary con fondo de gradiente animado */
-
 
 /*------------------------------------*\
   #HERO SECTION
@@ -545,6 +537,32 @@ header {
 }
 
 .about h2::after { background: var(--color-modern-accent-2); }
+
+/* ESTILOS PARA LA CITA - INICIO */
+.about-quote {
+    margin-bottom: var(--spacing-lg); 
+    padding-left: var(--spacing-md);
+    border-left: 3px solid var(--color-modern-accent-1); 
+    font-style: italic;
+    color: var(--color-text-medium);
+    text-align: center; 
+    max-width: 60ch; /* Limita el ancho para mejor legibilidad */
+    margin-left: auto; /* Centra el bloque de cita si es más angosto que el contenedor */
+    margin-right: auto;
+}
+.about-quote p {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.1rem; 
+    line-height: 1.6;
+}
+.about-quote cite {
+    display: block;
+    font-style: normal;
+    font-size: 0.95rem;
+    color: var(--color-secondary-accent);
+    margin-top: var(--spacing-sm);
+}
+/* ESTILOS PARA LA CITA - FIN */
 
 .about-content {
   display: grid;
@@ -745,11 +763,10 @@ header {
   display: block; 
 }
 
-/* Estilos para los botones DENTRO de las tarjetas de curso (color naranja) */
 .course-card .btn-primary {
   background: var(--color-modern-accent-2); 
   border-color: var(--color-modern-accent-2); 
-  color: var(--color-text-light); /* Texto claro sobre fondo naranja */
+  color: var(--color-text-light); 
   
   padding: 8px 20px;   
   font-size: 0.9rem; 
@@ -761,7 +778,7 @@ header {
 .course-card .btn-primary:hover, .course-card .btn-primary:focus {
   background: var(--color-modern-accent-1); 
   border-color: var(--color-modern-accent-1); 
-  color: var(--color-text-light); /* Mantenemos texto claro en hover */
+  color: var(--color-text-light); 
 }
 
 
@@ -1188,7 +1205,6 @@ header {
   padding-right: 40px; 
 }
 
-/* Este botón .btn-primary usará el estilo de gradiente animado */
 .contact-form button[type="submit"] {
   width: auto; 
   min-width: 180px; 
@@ -1395,13 +1411,13 @@ footer {
   background: var(--animated-gradient); 
   background-size: 300% 300%; 
   animation: animatedGradientBackground 6s ease infinite; 
-  color: var(--color-text-light); /* Texto claro por defecto */
+  color: var(--color-text-light); 
   cursor: pointer;
   padding: 12px 15px; 
   border-radius: 50%; 
   font-size: 1.1rem; 
   opacity: 0; 
-  transition: opacity 0.4s ease-in-out, box-shadow 0.3s ease, color 0.3s ease; /* Añadida transición para color */
+  transition: opacity 0.4s ease-in-out, box-shadow 0.3s ease, color 0.3s ease; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 #back-to-top-btn.show {
@@ -1413,7 +1429,7 @@ footer {
   opacity: 1; 
   box-shadow: 0 6px 15px rgba(236, 72, 153, 0.5); 
   transform: scale(1.05);
-  color: var(--color-text-dark-on-gradient); /* CAMBIO: Texto oscuro en hover/focus */
+  color: var(--color-text-dark-on-gradient); 
 }
 
 /*------------------------------------*\
@@ -1448,6 +1464,11 @@ footer {
     display: inline-block; 
     text-align: left; 
   }
+  /* Centrar la cita en tablets si se ve mejor */
+  .about-quote {
+      text-align: center;
+  }
+
 
   .contact-wrapper { grid-template-columns: 1fr; } 
   .contact-info {
@@ -1566,6 +1587,11 @@ footer {
     gap: var(--spacing-md); 
   }
   .about-content { padding: var(--spacing-sm); } 
+  /* Centrar la cita en móviles si se ve mejor */
+  .about-quote {
+      text-align: center;
+      padding-left: var(--spacing-sm); /* Menos padding en móviles */
+  }
    
   .blog-post-title { font-size: 1.3rem; }
   .blog-post-content { text-align: center; }
