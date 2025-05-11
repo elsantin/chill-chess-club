@@ -1025,43 +1025,38 @@ header {
 
 /* ===== INICIO DE ESTILOS PARA CONCEPTOS EN LA LISTA DE BENEFICIOS ===== */
 #beneficios-ajedrez .benefit-list li {
-  display: flex; 
-  align-items: flex-start; 
-  /* El resto de los estilos como margin-bottom, font-size, line-height, color 
-     ya están definidos en la regla general .benefit-list li más arriba, 
-     así que no es necesario repetirlos aquí a menos que queramos anularlos. */
+  display: flex;
+  align-items: flex-start;
 }
 
 #beneficios-ajedrez .benefit-list li i {
   color: var(--color-modern-accent-1); /* Color rosa para el check mark */
   margin-right: 12px; /* Espacio a la derecha del ícono */
   margin-top: 6px; /* Ajuste vertical fino del ícono */
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
 #beneficios-ajedrez .benefit-list li div {
-  flex-grow: 1; /* Para que el texto ocupe el espacio restante */
+  flex-grow: 1;
 }
 
 #beneficios-ajedrez .benefit-list li strong {
-  font-weight: 700; 
-  color: var(--color-secondary-accent); /* Color dorado para el concepto */
-  display: inline; /* Para que esté en la misma línea que la descripción */
+  font-weight: 700;
+  /* color: var(--color-secondary-accent); */ /* Color dorado original comentado */
+  display: inline;
   margin-right: 0.4em; /* Pequeño espacio después del concepto y antes de la descripción */
-  /* Líneas del degradado comentadas para usar color sólido dorado */
-  /*
+  /* Líneas del degradado DESCOMENTADAS para activar el efecto */
   background: var(--animated-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  background-size: 200% 200%;
+  background-size: 200% 200%; /* O 300% 300% como en .btn-primary para consistencia */
   animation: animatedGradientBackground 6s ease infinite;
-  */
 }
 
 #beneficios-ajedrez .benefit-list li span {
-  color: var(--color-text-light); /* Asegura el color de la descripción si es necesario */
+  color: var(--color-text-light); /* Asegura el color de la descripción */
 }
 /* ===== FIN DE ESTILOS PARA CONCEPTOS EN LA LISTA DE BENEFICIOS ===== */
 
@@ -1729,72 +1724,5 @@ footer {
   }
 }
 
-/* ===== INICIO DE ESTILOS PARA LA CITA DE PASCAL EN SECCIÓN BENEFICIOS (AJUSTADO PARA SEMEJANZA) ===== */
-#beneficios-ajedrez .benefits-quote {
-    margin: 0 auto var(--spacing-lg);
-    padding-left: var(--spacing-md);
-    padding-top: var(--spacing-xs);
-    padding-bottom: var(--spacing-xs);
-    border-left: 3px solid var(--color-modern-accent-1); /* Mismo borde que .about-quote */
-    max-width: 60ch; /* Mismo ancho que .about-quote */
-    text-align: center;
-    font-style: italic; /* Aplicar cursiva al contenedor */
-    color: var(--color-text-medium); /* Aplicar color de texto al contenedor */
-}
-
-#beneficios-ajedrez .benefits-quote p {
-    font-size: 1.1rem; /* Hereda font-style y color del contenedor .benefits-quote */
-    margin-bottom: var(--spacing-xs);
-    line-height: 1.6;
-    max-width: 100%;
-    /* No es necesario color o font-style aquí si se heredan correctamente */
-}
-
-#beneficios-ajedrez .benefits-quote cite {
-    display: block;
-    font-style: normal; /* Quitar cursiva del autor si la hereda */
-    font-size: 0.95rem;
-    color: var(--color-secondary-accent); /* Color específico para el autor */
-    margin-top: var(--spacing-sm);
-}
-/* ===== FIN DE ESTILOS PARA LA CITA DE PASCAL ===== */
-
-
-/* ===== INICIO DE ESTILOS PARA CONCEPTOS EN LA LISTA DE BENEFICIOS ===== */
-#beneficios-ajedrez .benefit-list li {
-  display: flex; 
-  align-items: flex-start; 
-}
-
-#beneficios-ajedrez .benefit-list li i {
-  color: var(--color-modern-accent-1); /* Color rosa para el check mark */
-  margin-right: 12px; /* Espacio a la derecha del ícono */
-  margin-top: 6px; /* Ajuste vertical fino del ícono */
-  flex-shrink: 0; 
-}
-
-#beneficios-ajedrez .benefit-list li div {
-  flex-grow: 1; 
-}
-
-#beneficios-ajedrez .benefit-list li strong {
-  font-weight: 700; 
-  color: var(--color-secondary-accent); /* Color dorado para el concepto */
-  display: inline; 
-  margin-right: 0.4em; /* Pequeño espacio después del concepto, antes de la descripción */
-  /* Líneas del degradado comentadas */
-  /*
-  background: var(--animated-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  background-size: 200% 200%;
-  animation: animatedGradientBackground 6s ease infinite;
-  */
-}
-
-#beneficios-ajedrez .benefit-list li span {
-  color: var(--color-text-light); /* Asegura el color de la descripción */
-}
-/* ===== FIN DE ESTILOS PARA CONCEPTOS EN LA LISTA DE BENEFICIOS ===== */
+/* El bloque duplicado de #beneficios-ajedrez .benefit-list ha sido eliminado. */
+/* El código para el degradado en los strong ha sido descomentado arriba. */
