@@ -19,27 +19,32 @@ document.addEventListener('DOMContentLoaded', () => {
             navBlog: "Blog",
             navContact: "Contacto",
 
-            heroTitle: "Domina el ajedrez con un enfoque inmersivo y personalizado",
-            heroSubtitle: "Método exclusivo diseñado para ayudarte a progresar desde principiante hasta nivel intermedio, con instrucción personalizada y asistida por IA.",
-            heroCtaTrial: "Solicita tu clase introductoria gratuita",
-            heroCtaMethod: "Descubre mi método",
+            // Textos HERO actualizados
+            heroTitle: "Descubre el ajedrez a tu manera: una experiencia inmersiva y personalizada",
+            heroSubtitle: "Siente cómo el ajedrez fluye contigo. Mi método se afina con IA, permitiéndome adaptar las lecciones y el material a tus gustos e intereses, para que tu comprensión del juego se expanda naturalmente.",
+            heroCtaTrial: "Prueba tu primera clase gratis",
+            heroCtaMethod: "¿Cómo lo hago?",
 
+            // Textos "SOBRE MÍ" actualizados
             aboutTitle: "Sobre Mí",
-            aboutImageAlt: "Foto de perfil artística del instructor jugando ajedrez en la playa",
-            aboutSubtitle: "Un enfoque único para el aprendizaje del ajedrez",
-            // MODIFICADO: Texto del primer párrafo de "Sobre Mí"
-            aboutPara1: "Apasionado del ajedrez desde temprana edad, mi enfoque se centra en el desarrollo personalizado de cada estudiante, adaptando las técnicas de enseñanza a sus necesidades específicas.",
-            aboutPara2: "Aunque no soy un jugador federado de alto nivel, mi verdadera fortaleza radica en mi capacidad didáctica excepcional y en mi habilidad para descomponer conceptos complejos en elementos comprensibles para niveles iniciales e intermedios.",
-            aboutPhilosophyTitle: "Mi filosofía de enseñanza",
-            aboutPhilosophyPara: "Creo firmemente en un método inmersivo que combina la teoría con la práctica constante. Mi sistema personalizado utiliza tecnologías de IA para adaptar el contenido a tus fortalezas y debilidades, permitiéndote progresar de manera eficiente y motivadora.",
+            aboutQuoteText: "\"El ajedrez es un mar en el cual un mosquito puede beber y un elefante puede bañarse.\"", 
+            aboutQuoteCite: "- Proverbio Indio", 
+            aboutImageAlt: "Foto de perfil artística del instructor Santiago Narváez",
+            aboutSubtitle: "Descifrando el Ajedrez Contigo: De la Orilla a las Profundidades",
+            aboutPara1: "Soy Santiago Narváez. Al igual que el proverbio indio nos recuerda la vastedad del mar, concibo el ajedrez como un océano sereno, listo para ser explorado a cualquier nivel, un océano donde todos tienen cabida. Es esta visión la que define mi enseñanza para principiantes e intermedios. Mi objetivo es crear un espacio donde cada jugador pueda crecer y encontrar su propio placer en el juego, independientemente de su punto de partida. Adapto mi método para que el aprendizaje sea una experiencia fluida y personal, permitiendo al estudiante explorar las corrientes del ajedrez con confianza y satisfacción.",
+            aboutPara2: "Si bien mi camino no ha sido el del ajedrez profesional de torneos, mi energía se centra completamente en hacer que el ajedrez sea accesible y apasionante para ti. Mi fortaleza es una capacidad especial para simplificar los conceptos y estrategias, guiando a jugadores principiantes e intermedios hacia un entendimiento sólido y un disfrute genuino del juego. Mi compromiso es ser el puente que necesitas para conectar con la belleza del ajedrez, combinando la enseñanza clásica con las ventajas de la tecnología actual, sin importar tu nivel inicial.",
+            aboutPhilosophyTitle: "Mi Método y Filosofía: Ajedrez Personalizado con Inteligencia",
+            aboutPhilosophyPara: "Mi convicción es un aprendizaje tan único como tú. Por ello, mi método inmersivo fusiona teoría y práctica con una personalización profunda. Me apoyo en la IA para diseñar y adaptar tu contenido didáctico (lecciones, ejercicios) a tus fortalezas, debilidades, gustos y metas, logrando un estudio más ameno y un progreso eficiente.",
             aboutPlatformsTitle: "Plataformas Utilizadas",
-            aboutPlatformsDesc: "Utilizamos principalmente las siguientes plataformas para nuestras clases y análisis. Es recomendable que tengas una cuenta (gratuita) y la aplicación instalada:",
+            // CAMBIO: Texto de descripción de plataformas actualizado
+            aboutPlatformsDesc: "Utilizamos las siguientes plataformas para nuestras clases y análisis. Es necesario que tengas una cuenta (gratuita) y la aplicación instalada:",
             aboutPlatformChesscom: "Mi Perfil en Chess.com",
             aboutPlatformLichess: "Mi Perfil en Lichess.org",
-            aboutCtaConnect: "Conéctate conmigo",
+            aboutCtaConnect: "¿Listo para empezar?",
 
-            coursesTitle: "Cursos y Servicios",
-            coursesIntro: "Programas diseñados para satisfacer tus necesidades específicas, sin importar tu nivel. Todos los cursos incluyen material didáctico bilingüe, acceso a herramientas de IA personalizadas y soporte continuo.",
+            // CAMBIOS: Textos de la sección Cursos actualizados
+            coursesTitle: "Explora los Cursos: Tu Ajedrez, Tu Ritmo",
+            coursesIntro: "Descubre el programa ideal para ti, diseñado para impulsar tu juego sin importar tu experiencia. Cada opción te ofrece: material de estudio bilingüe, lecciones y ejercicios que adapto a tus intereses con asistencia de IA, y mi soporte continuo para que alcances tus metas.",
             courseBeginnerTitle: "Curso Principiante:<br>El Despegue",
             courseBeginnerLevelAriaLabel: "Nivel Principiante",
             courseBeginnerImgAlt: "Piezas de ajedrez blancas listas para empezar",
@@ -176,6 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
             backToTop: "Volver arriba"
         },
         en: {
+            // ... (Traducciones en inglés - se mantienen los placeholders o traducciones previas)
             pageTitle: "Chill Chess Club | Online Chess Classes",
             metaDescription: "Learn chess with a relaxed, personalized method. Online classes for beginners & intermediates adapted with AI to maximize your progress.",
             logoAlt: "Chill Chess Club Logo",
@@ -190,27 +196,30 @@ document.addEventListener('DOMContentLoaded', () => {
             navBlog: "Blog",
             navContact: "Contact",
 
-            heroTitle: "Master chess with an immersive and personalized approach",
-            heroSubtitle: "Exclusive method designed to help you progress from beginner to intermediate level, with personalized, AI-assisted instruction.",
-            heroCtaTrial: "Request your free introductory class",
-            heroCtaMethod: "Discover my method",
+            heroTitle: "Discover chess your way: an immersive and personalized experience",
+            heroSubtitle: "Feel how chess flows with you. My method is fine-tuned with AI, allowing me to adapt lessons and materials to your tastes and interests, so your understanding of the game expands naturally.",
+            heroCtaTrial: "Try your first class for free",
+            heroCtaMethod: "How do I do it?",
 
             aboutTitle: "About Me",
-            aboutImageAlt: "Artistic profile picture of the instructor playing chess on the beach",
-            aboutSubtitle: "A unique approach to chess learning",
-            // MODIFICADO: Texto del primer párrafo de "Sobre Mí" en inglés
-            aboutPara1: "Passionate about chess from an early age, my approach focuses on the personalized development of each student, adapting teaching techniques to their specific needs.",
-            aboutPara2: "Although I am not a high-level federated player, my true strength lies in my exceptional teaching ability and my skill in breaking down complex concepts into understandable elements for initial and intermediate levels.",
-            aboutPhilosophyTitle: "My teaching philosophy",
-            aboutPhilosophyPara: "I firmly believe in an immersive method that combines theory with constant practice. My personalized system uses AI technologies to adapt the content to your strengths and weaknesses, allowing you to progress efficiently and motivatingly.",
+            aboutQuoteText: "\"Chess is a sea in which a gnat may drink and an elephant may bathe.\"", 
+            aboutQuoteCite: "- Indian Proverb", 
+            aboutImageAlt: "Artistic profile picture of instructor Santiago Narvaez",
+            aboutSubtitle: "Deciphering Chess With You: From the Shore to the Depths",
+            aboutPara1: "I'm Santiago Narváez. Just as the Indian proverb reminds us of the vastness of the sea, I see chess as a serene ocean, ready to be explored at any level—an ocean where everyone belongs. This vision defines my teaching for beginners and intermediates. My goal is to create a space where every player can grow and find their own joy in the game, regardless of their starting point. I adapt my method so that learning is a fluid and personal experience, allowing students to explore the currents of chess with confidence and satisfaction.",
+            aboutPara2: "While my path hasn't been that of professional tournament chess, my energy is entirely focused on making chess accessible and exciting for you. My strength lies in a special ability to simplify concepts and strategies, guiding beginner and intermediate players towards a solid understanding and genuine enjoyment of the game. My commitment is to be the bridge you need to connect with the beauty of chess, combining classic teaching with the advantages of current technology, no matter your initial level.",
+            aboutPhilosophyTitle: "My Method and Philosophy: Personalized Chess with Intelligence",
+            aboutPhilosophyPara: "My conviction is a learning experience as unique as you are. Therefore, my immersive method fuses theory and practice with deep personalization. I rely on AI to design and adapt your educational content (lessons, exercises) to your strengths, weaknesses, tastes, and goals, achieving a more enjoyable study and efficient progress.",
             aboutPlatformsTitle: "Platforms Used",
-            aboutPlatformsDesc: "We primarily use the following platforms for our classes and analysis. It is recommended that you have a (free) account and the application installed:",
+            // CAMBIO EN INGLÉS (para mantener consistencia, aunque el usuario no lo pidió explícitamente para inglés, es buena práctica)
+            aboutPlatformsDesc: "We use the following platforms for our classes and analysis. It is necessary that you have a (free) account and the application installed:",
             aboutPlatformChesscom: "My Chess.com Profile",
             aboutPlatformLichess: "My Lichess.org Profile",
-            aboutCtaConnect: "Connect with me",
+            aboutCtaConnect: "Ready to start?",
 
-            coursesTitle: "Courses and Services",
-            coursesIntro: "Programs designed to meet your specific needs, regardless of your level. All courses include bilingual learning materials, access to personalized AI tools, and ongoing support.",
+            // CAMBIOS EN INGLÉS (placeholders para los nuevos textos de Cursos)
+            coursesTitle: "Explore Courses: Your Chess, Your Pace", // Placeholder, traducir adecuadamente
+            coursesIntro: "Discover the ideal program for you, designed to boost your game regardless of your experience. Each option offers you: bilingual study material, lessons and exercises that I adapt to your interests with AI assistance, and my continuous support for you to achieve your goals.", // Placeholder, traducir adecuadamente
             courseBeginnerTitle: "Beginner Course:<br>Liftoff",
             courseBeginnerLevelAriaLabel: "Beginner Level",
             courseBeginnerImgAlt: "White chess pieces ready to start",
@@ -353,33 +362,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToTopButton = document.getElementById('back-to-top-btn');
     const bodyElement = document.body;
 
+    // Function to set the language
     const setLanguage = (lang) => {
         if (!translations[lang]) {
             console.error(`Language ${lang} not found in translations.`);
             return;
         }
+        // Duration of the fade transition for language change
         const transitionDuration = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--lang-transition-speed') || '0.25') * 1000);
 
-        bodyElement.classList.add('fade-out');
-        langButtons.forEach(btn => btn.disabled = true);
+        bodyElement.classList.add('fade-out'); // Apply fade-out effect
+        langButtons.forEach(btn => btn.disabled = true); // Disable buttons during transition
 
         setTimeout(() => {
             translatableElements.forEach(el => {
                 const keyAttr = el.dataset.langKey;
-                const [key, attribute] = keyAttr.split('|');
+                const [key, attribute] = keyAttr.split('|'); // Split key and attribute if present (e.g., "metaDescription|content")
 
                 if (translations[lang][key]) {
                     let translation = translations[lang][key];
 
+                    // Special handling for copyright year
                     if (key === 'footerCopyright') {
                         translation = translation.replace('[YEAR]', new Date().getFullYear());
                     }
 
-                    if (attribute) {
+                    if (attribute) { // If an attribute is specified (e.g., alt, content for meta)
                         el.setAttribute(attribute, translation);
+                        // Special case for meta description
                         if (key === 'metaDescription' && attribute === 'content') {
                             document.querySelector('meta[name="description"]').setAttribute('content', translation);
                         }
+                        // Update alt texts for images if the key exists
                          if (key === 'courseBeginnerImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                          if (key === 'courseIntermediateImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                          if (key === 'courseCustomImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
@@ -389,6 +403,7 @@ document.addEventListener('DOMContentLoaded', () => {
                          if (key === 'blogPost3ImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                          if (key === 'logoAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                     } else if (
+                        // Keys that require innerHTML for things like <br> tags
                         key === 'courseBeginnerTitle' ||
                         key === 'courseIntermediateTitle' ||
                         key === 'courseCustomTitle' ||
@@ -398,28 +413,31 @@ document.addEventListener('DOMContentLoaded', () => {
                         key === 'benefitsLifeSkillsIntro' || 
                         key === 'benefitsCtaText' || 
                         key === 'benefitsCtaMethod' || 
-                        key === 'methodKeyBenefitsDesc'
+                        key === 'methodKeyBenefitsDesc' ||
+                        key === 'aboutQuoteText' // For the new quote text
                     ) {
                         el.innerHTML = translation; 
                     } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
+                        // Handle buttons, including the back-to-top button's aria-label and title
                         if (el.id === 'back-to-top-btn') {
                              el.setAttribute('aria-label', translations[lang]['backToTop'] || 'Back to top');
                              el.setAttribute('title', translations[lang]['backToTop'] || 'Back to top');
                         } else {
-                            el.value = translation;
-                            el.innerHTML = translation;
+                            el.value = translation; // For input buttons
+                            el.innerHTML = translation; // For button elements
                         }
-                    } else if (el.tagName === 'TITLE') {
+                    } else if (el.tagName === 'TITLE') { // Handle page title
                         document.title = translation;
                     }
-                    else {
+                    else { // Default to textContent for other elements
                         el.textContent = translation;
                     }
                 }
             });
 
-            document.documentElement.lang = lang;
+            document.documentElement.lang = lang; // Set HTML lang attribute
 
+            // Update active state for language buttons
             langButtons.forEach(btn => {
                 if (btn.dataset.lang === lang) {
                     btn.classList.add('active');
@@ -430,22 +448,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
+            // Save preferred language to localStorage
             try {
                 localStorage.setItem('preferredLanguage', lang);
             } catch (e) {
                 console.warn("Could not save language preference to localStorage.");
             }
 
-            bodyElement.classList.remove('fade-out');
+            bodyElement.classList.remove('fade-out'); // Remove fade-out
             setTimeout(() => {
-                langButtons.forEach(btn => btn.disabled = false);
-            }, 50);
+                langButtons.forEach(btn => btn.disabled = false); // Re-enable buttons
+            }, 50); // Short delay to ensure smooth transition
 
         }, transitionDuration);
     };
 
+    // Add event listeners to language buttons
     langButtons.forEach(button => {
         button.addEventListener('click', (e) => {
+            // Prevent action if already fading or button is active
             if (bodyElement.classList.contains('fade-out') || e.target.classList.contains('active')) {
                 return;
             }
@@ -454,6 +475,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Function to set initial language without transition
     const initialUpdateLanguage = (lang) => {
         if (!translations[lang]) return;
 
@@ -478,6 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       if (key === 'blogPost2ImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                       if (key === 'blogPost3ImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                       if (key === 'logoAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
+
                  } else if (
                     key === 'courseBeginnerTitle' ||
                     key === 'courseIntermediateTitle' ||
@@ -488,7 +511,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     key === 'benefitsLifeSkillsIntro' || 
                     key === 'benefitsCtaText' || 
                     key === 'benefitsCtaMethod' || 
-                    key === 'methodKeyBenefitsDesc'
+                    key === 'methodKeyBenefitsDesc' ||
+                    key === 'aboutQuoteText' // For the new quote text
                 ) {
                      el.innerHTML = translation;
                 } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
@@ -519,55 +543,69 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    let preferredLanguage = 'es';
+    // Determine and set initial language
+    let preferredLanguage = 'es'; // Default language
      try {
         const savedLang = localStorage.getItem('preferredLanguage');
         if (savedLang && translations[savedLang]) {
             preferredLanguage = savedLang;
         } else {
-            const browserLang = navigator.language.split('-')[0];
+            // Fallback to browser language if no preference is saved or saved language is invalid
+            const browserLang = navigator.language.split('-')[0]; // Use primary language code (e.g., "en" from "en-US")
             if (translations[browserLang]) {
                 preferredLanguage = browserLang;
             }
         }
     } catch (e) {
+        // localStorage might be disabled or full
         console.warn("Could not read language preference from localStorage. Defaulting to 'es'.");
     }
-    initialUpdateLanguage(preferredLanguage);
+    initialUpdateLanguage(preferredLanguage); // Set language on page load
 
+
+    // Initialize AOS (Animate On Scroll) library
     AOS.init({
-        duration: 800,
-        once: true,
-        offset: 50,
+        duration: 800, // Animation duration
+        once: true,    // Whether animation should happen only once - while scrolling down
+        offset: 50,    // Offset (in px) from the original trigger point
     });
 
+    // Initialize Particles.js for hero section background
     if (document.getElementById('particles-js')) {
         particlesJS('particles-js', {
             "particles": {
                 "number": {"value": 80, "density": {"enable": true, "value_area": 800}},
-                "color": {"value": ["#EC4899", "#F97316", "#8B5CF6", "#d4af37"]},
+                "color": {"value": ["#EC4899", "#F97316", "#8B5CF6", "#d4af37"]}, // Array of modern accent colors
                 "shape": {"type": "circle", "stroke": {"width": 0, "color": "#000000"}, "polygon": {"nb_sides": 5}},
                 "opacity": {"value": 0.6, "random": true, "anim": {"enable": true, "speed": 1, "opacity_min": 0.1, "sync": false}},
                 "size": {"value": 3, "random": true, "anim": {"enable": false, "speed": 40, "size_min": 0.1, "sync": false}},
-                "line_linked": {"enable": true, "distance": 150, "color": "#a1a1aa", "opacity": 0.4, "width": 1},
+                "line_linked": {"enable": true, "distance": 150, "color": "#a1a1aa", "opacity": 0.4, "width": 1}, // Using text-medium for lines
                 "move": {"enable": true, "speed": 3, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false, "attract": {"enable": false, "rotateX": 600, "rotateY": 1200}}
             },
             "interactivity": {
                 "detect_on": "canvas",
                 "events": {"onhover": {"enable": true, "mode": "grab"}, "onclick": {"enable": true, "mode": "push"}, "resize": true},
-                "modes": {"grab": {"distance": 140, "line_linked": {"opacity": 1}}, "bubble": {"distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3}, "repulse": {"distance": 200, "duration": 0.4}, "push": {"particles_nb": 4}, "remove": {"particles_nb": 2}}
+                "modes": {
+                    "grab": {"distance": 140, "line_linked": {"opacity": 1}},
+                    "bubble": {"distance": 400, "size": 40, "duration": 2, "opacity": 8, "speed": 3},
+                    "repulse": {"distance": 200, "duration": 0.4},
+                    "push": {"particles_nb": 4},
+                    "remove": {"particles_nb": 2}
+                }
             },
             "retina_detect": true
         });
     }
 
+
+    // Mobile Menu Toggle Functionality
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             const isActive = navLinks.classList.toggle('active');
-            menuToggle.setAttribute('aria-expanded', isActive);
+            menuToggle.setAttribute('aria-expanded', isActive); // ARIA for accessibility
             const icon = menuToggle.querySelector('i');
             if (isActive) {
                 icon.classList.remove('fa-bars');
@@ -578,6 +616,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Close mobile menu when a link is clicked
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 if (navLinks.classList.contains('active')) {
@@ -589,11 +628,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         });
-
+        
+        // Close mobile menu if clicked outside
          document.addEventListener('click', (event) => {
             if (navLinks.classList.contains('active') &&
-                !navLinks.contains(event.target) &&
-                !menuToggle.contains(event.target)) {
+                !navLinks.contains(event.target) && // Click was not on a nav link
+                !menuToggle.contains(event.target)) { // Click was not on the toggle button itself
                 navLinks.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
                 const icon = menuToggle.querySelector('i');
@@ -603,16 +643,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Smooth Scrolling for internal links
     document.querySelectorAll('a.scroll-to, .nav-links a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            if (href && href.startsWith('#')) {
+            if (href && href.startsWith('#')) { // Check if it's an internal link
                 e.preventDefault();
                 const targetId = href;
                 const targetElement = document.querySelector(targetId);
 
                 if (targetElement) {
-                    const headerOffset = 80; 
+                    // Calculate offset considering fixed header height
+                    const headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height-desktop') || '65') + 10; // Get header height from CSS var or default
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -621,15 +663,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         behavior: 'smooth'
                     });
 
+                    // If link is to contact, pre-fill subject and focus on name field
                     if (targetId === '#contacto') {
                         const subjectValue = this.getAttribute('data-subject');
                         const subjectSelect = document.getElementById('subject');
-                        const firstInput = document.querySelector('#contactForm #name');
+                        const firstInput = document.querySelector('#contactForm #name'); // First focusable input
 
                         if (subjectValue && subjectSelect) {
                             subjectSelect.value = subjectValue;
                         }
                         if(firstInput) { 
+                            // Delay focus slightly to allow scroll to complete
                             setTimeout(() => firstInput.focus(), 300); 
                         }
                     }
@@ -638,41 +682,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Contact Form Submission Simulation (replace with actual AJAX later)
     const contactForm = document.getElementById('contactForm');
-    const formStatus = document.getElementById('form-status');
+    const formStatus = document.getElementById('form-status'); // Element to display form status messages
 
      if (contactForm && formStatus) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // Prevent default form submission
 
-            const currentLang = document.documentElement.lang || 'es';
+            const currentLang = document.documentElement.lang || 'es'; // Get current language for messages
 
+            // Display "sending" message
             formStatus.textContent = translations[currentLang]?.submitting || 'Enviando...';
-            formStatus.className = 'status'; 
+            formStatus.className = 'status'; // Reset classes
             formStatus.style.display = 'block';
 
+            // Simulate network request
             setTimeout(() => {
-                const isSuccess = Math.random() > 0.2; 
+                const isSuccess = Math.random() > 0.2; // Simulate success (80% chance)
 
                 if (isSuccess) {
                     formStatus.textContent = translations[currentLang]?.formSuccess || '¡Mensaje enviado con éxito! Te contactaremos pronto.';
                     formStatus.classList.add('success');
-                    contactForm.reset(); 
+                    contactForm.reset(); // Clear form on success
                 } else {
                     formStatus.textContent = translations[currentLang]?.formError || 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o usa el email de contacto.';
                     formStatus.classList.add('error');
                 }
+                 // Hide status message after 5 seconds
                  setTimeout(() => {
                     formStatus.style.display = 'none';
-                    formStatus.className = 'status'; 
+                    formStatus.className = 'status'; // Reset classes
                  }, 5000);
-            }, 1500);
+            }, 1500); // Simulate 1.5 second delay
         });
     }
 
+    // Back to Top Button Functionality
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) { 
+            if (window.pageYOffset > 300) { // Show button after scrolling 300px
                 backToTopButton.classList.add('show');
             } else {
                 backToTopButton.classList.remove('show');
@@ -680,13 +729,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top smoothly
         });
     }
 
+     // Update copyright year dynamically
      const yearSpan = document.getElementById('current-year');
      if (yearSpan) {
          yearSpan.textContent = new Date().getFullYear();
      }
+
 
 }); // End DOMContentLoaded
