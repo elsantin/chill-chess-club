@@ -59,13 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
             courseIntermediateTitle: "Curso Intermedio:<br>Estratega",
             courseIntermediateLevelAriaLabel: "Nivel Intermedio",
             courseIntermediateImgAlt: "Tablero de ajedrez mostrando una estrategia compleja",
-            courseIntermediateFeat1: "Explora la estrategia posicional para entender y controlar el juego a un nivel más profundo.",
-            courseIntermediateFeat2: "Desarrolla un repertorio de aperturas que se adapte a tu estilo de juego.",
-            courseIntermediateFeat3: "Domina combinaciones tácticas más complejas para crear ventajas decisivas.",
-            courseIntermediateFeat4: "Aplica con precisión los finales prácticos esenciales para convertir tus ventajas en victorias.",
-            courseIntermediateFeat5: "16 clases en vivo (uno a uno) para refinar tu juego estratégico y táctico, con un enfoque adaptado a tus áreas de mejora.",
-            courseIntermediateFeat6: "Análisis detallado de tus partidas: identifico patrones y áreas clave con el apoyo de herramientas de IA para guiar nuestra revisión.",
-            courseIntermediateFeat7: "Un plan de estudio estructurado que complemento con material y ejercicios adaptados por mí (asistido por IA) a tus objetivos y estilo dentro del programa.",
+            courseIntermediateFeat1: "Explora la estrategia posicional para entender y controlar el juego a un nivel más profundo.", 
+            courseIntermediateFeat2: "Desarrolla un repertorio de aperturas que se adapte a tu estilo de juego.", 
+            courseIntermediateFeat3: "Domina combinaciones tácticas más complejas para crear ventajas decisivas.", 
+            courseIntermediateFeat4: "Aplica con precisión los finales prácticos esenciales para convertir tus ventajas en victorias.", 
+            courseIntermediateFeat5: "16 clases en vivo (uno a uno) para refinar tu juego estratégico y táctico, con un enfoque adaptado a tus áreas de mejora.", 
+            courseIntermediateFeat6: "Análisis detallado de tus partidas: identifico patrones y áreas clave con el apoyo de herramientas de IA para guiar nuestra revisión.", 
+            courseIntermediateFeat7: "Un plan de estudio estructurado que complemento con material y ejercicios adaptados por mí (asistido por IA) a tus objetivos y estilo dentro del programa.", 
             courseIntermediatePrice: "$320 USD", 
             courseIntermediatePriceNoteHour: "Paquete de 16 clases (solo $20 USD/hora). Planes de pago disponibles", 
 
@@ -79,25 +79,24 @@ document.addEventListener('DOMContentLoaded', () => {
             courseCustomFeat5: "Análisis profundo y práctico de tus propias partidas para un feedback totalmente personalizado.",
             courseCustomFeat6: "Creación de material didáctico y selección de recursos exclusivos para ti, donde utilizo la IA para ayudarte a construir el camino más efectivo hacia tus objetivos.",
             courseCustomFeat7: "Acompañamiento y soporte continuo entre sesiones para mantener tu motivación y resolver dudas sobre la marcha.",
-            courseCustomPrice: "$25 USD", 
+            courseCustomPrice: "$25 USD",
             courseCustomPriceNoteHour: "/ hora (clases en vivo)",
             courseConsultBtn: "Consultar Disponibilidad",
 
             coursesCtaText: "¿No estás seguro qué opción es mejor para ti? Agenda una sesión introductoria gratuita y recibe una evaluación personalizada.",
             coursesCtaBtn: "Solicitar Clase de Prueba Gratis", 
 
-            // Textos de la sección Método actualizados a 5 pasos
             methodTitle: "Mi Método: Aprendizaje Inmersivo y Personalizado con un Toque Tecnológico Único",
             methodIntro: "Descubre cómo mi enfoque, que combina una profunda comprensión del ajedrez con una habilidad avanzada para crear contenido digital asistido por IA, transforma tu aprendizaje en una experiencia totalmente adaptada a ti: a tu estilo, tu ritmo y tus intereses.",
-            methodStep1Title: "Conexión y Evaluación Inicial", // Paso 1 (antes Paso 1)
+            methodStep1Title: "Conexión y Evaluación Inicial", 
             methodStep1Desc: "Comenzamos con una charla para conocernos y entender tus metas. Luego, analizo tu nivel, estilo de juego e intereses, revisando tus partidas (en Chess.com, ya sean jugadas conmigo o que me envíes) y usando mi experiencia pedagógica para trazar un primer mapa.",
-            methodStep2aTitle: "Diseño de Tu Hoja de Ruta Personal", // Paso 2 (Nuevo)
+            methodStep2aTitle: "Diseño de Tu Hoja de Ruta Personal", 
             methodStep2aDesc: "Con base en nuestra conversación y tu evaluación inicial, diseño una hoja de ruta clara para tu aprendizaje. Selecciono los temas centrales y la estructura de estudio que mejor se adaptan a tu nivel actual, tus objetivos específicos y la forma en que prefieres asimilar la información.",
-            methodStep2bTitle: "Material Didáctico Único, Creado para Ti con IA", // Paso 3 (Nuevo)
+            methodStep2bTitle: "Material Didáctico Único, Creado para Ti con IA", 
             methodStep2bDesc: "Aquí mi enfoque se potencia. Me apoyo en avanzadas herramientas de IA para desarrollar recursos didácticos totalmente a medida: desde artículos y análisis personalizados hasta resúmenes y guías en audio en tu idioma, todo moldeado según tus hobbies y aspiraciones para un aprendizaje estimulante.",
-            methodStep3Title: "Sesiones de Aprendizaje Inmersivo y Práctico", // Paso 4 (antes Paso 3)
+            methodStep3Title: "Sesiones de Aprendizaje Inmersivo y Práctico", 
             methodStep3Desc: "Nuestras clases en vivo son dinámicas e interactivas. Usamos Chess.com o Lichess para jugar, analizar posiciones, resolver problemas tácticos y estratégicos, y practicar lo aprendido con tu material personalizado, siempre en un ambiente relajado y adaptándonos a tu energía del día.",
-            methodStep4Title: "Evolución Continua y Adaptación Inteligente", // Paso 5 (antes Paso 4)
+            methodStep4Title: "Evolución Continua y Adaptación Inteligente", 
             methodStep4Desc: "Tu progreso es mi prioridad. Monitoreo de cerca tu evolución, analizo tus nuevas partidas y ajustamos el plan y los materiales de forma continua. La IA me asiste en identificar patrones y refinar los recursos para que tu aprendizaje nunca se estanque, manteniéndote siempre motivado.",
             methodKeyBenefitsTitle: "¿Cómo Te Ayuda Realmente Mi Método?",
             methodKeyBenefitsDesc: "Mi método está diseñado para ofrecerte una experiencia de aprendizaje de ajedrez que va más allá de lo convencional. Combino mi atención personalizada y mi pasión por la enseñanza con un dominio único de herramientas digitales y de IA para crear un camino hecho a tu exacta medida. Te enfocarás en lo que realmente impulsa tu progreso, de una manera efectiva, profundamente disfrutable y adaptada a tu vida.",
@@ -105,13 +104,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             benefitsTitle: "Enriquece tu Vida con el Ajedrez. A Cualquier Edad.",
             benefitsIntro: "Jugar ajedrez es mucho más que una simple partida; es una poderosa herramienta para activar tu mente, fortalecer tu carácter y conectar con otros, sin importar en qué etapa de la vida te encuentres. En Chill Chess Club, te mostramos cómo este juego milenario impulsa tu crecimiento personal de formas sorprendentes, seas joven, adulto o mayor.",
+            benefitsPascalQuoteText: "\"El ajedrez es el gimnasio de la mente.\"",
+            benefitsPascalCiteName: "- Blaise Pascal",
             benefitsMindTitle: "Despierta y Fortalece tu Mente",
             benefitsMindFeat1: "Memoria Aguda y Reconocimiento: Ejercita tu memoria recordando aperturas, tácticas y reconociendo patrones complejos sobre el tablero.",
             benefitsMindFeat2: "Concentración Profunda: Desarrolla una capacidad de enfoque intensa, aprendiendo a mantener la atención y a gestionar las distracciones del entorno.",
             benefitsMindFeat3: "Pensamiento Estratégico y Resolución de Problemas: Cada partida es un desafío. Aprende a analizar situaciones desde múltiples ángulos, planificar con antelación y encontrar soluciones creativas y lógicas.",
             benefitsMindFeat4: "Visión y Anticipación: Desarrolla la habilidad de mirar hacia adelante, prever posibles escenarios y planificar tus movimientos con mayor perspectiva.",
             benefitsLifeSkillsTitle: "Habilidades Esenciales para la Vida",
-            benefitsLifeSkillsIntro: "Las lecciones del tablero se traducen directamente en ventajas fuera de él, útiles en cada fase de tu vida:",
+            // benefitsLifeSkillsIntro: "Las lecciones del tablero se traducen directamente en ventajas fuera de él, útiles en cada fase de tu vida:", // CLAVE ELIMINADA
             benefitsLifeSkill1: "Toma de Decisiones Inteligente: Evalúa opciones, sopesa riesgos y beneficios, y toma decisiones más seguras y calculadas, incluso bajo presión.",
             benefitsLifeSkill2: "Resiliencia y Fortaleza Mental: Aprende a gestionar tanto la victoria como la derrota con equilibrio. El ajedrez te enseña a aprender de los errores y a fortalecer tu carácter ante los desafíos.",
             benefitsLifeSkill3: "Empatía y Comprensión: Ponerte en la perspectiva de tu oponente para entender sus intenciones mejora tu habilidad para comprender diferentes puntos de vista.",
@@ -261,15 +262,14 @@ document.addEventListener('DOMContentLoaded', () => {
             courseCustomPriceNoteHour: "/ hour (live classes)",
             courseConsultBtn: "Check Availability",
 
-            // Textos de la sección Método actualizados a 5 pasos (placeholders en inglés)
             methodTitle: "My Method: Immersive and Personalized Learning with a Unique Technological Touch", 
             methodIntro: "Discover how my approach, combining a deep understanding of chess with advanced skills in AI-assisted digital content creation, transforms your learning into an experience fully tailored to you: your style, your pace, and your interests.", 
             methodStep1Title: "Connection and Initial Assessment", 
             methodStep1Desc: "We start with a chat to get to know each other and understand your goals. Then, I analyze your level, playing style, and interests, reviewing your games (on Chess.com, whether played with me or sent by you) and using my teaching experience to draw an initial map.", 
-            methodStep2aTitle: "Design of Your Personal Roadmap", // Placeholder
-            methodStep2aDesc: "Based on our conversation and your initial assessment, I design a clear roadmap for your learning. I select the central themes and study structure that best suit your current level, specific goals, and how you prefer to assimilate information.", // Placeholder
-            methodStep2bTitle: "Unique Educational Material, Created for You with AI", // Placeholder
-            methodStep2bDesc: "This is where my approach is enhanced. I rely on advanced AI tools to develop fully customized educational resources: from articles and personalized analyses to summaries and audio guides in your language, all shaped by your hobbies and aspirations for stimulating learning.", // Placeholder
+            methodStep2aTitle: "Design of Your Personal Roadmap", 
+            methodStep2aDesc: "Based on our conversation and your initial assessment, I design a clear roadmap for your learning. I select the central themes and study structure that best suit your current level, specific goals, and how you prefer to assimilate information.", 
+            methodStep2bTitle: "Unique Educational Material, Created for You with AI", 
+            methodStep2bDesc: "This is where my approach is enhanced. I rely on advanced AI tools to develop fully customized educational resources: from articles and personalized analyses to summaries and audio guides in your language, all shaped by your hobbies and aspirations for stimulating learning.", 
             methodStep3Title: "Immersive and Practical Learning Sessions", 
             methodStep3Desc: "Our live classes are dynamic and interactive. We use Chess.com or Lichess to play, analyze positions, solve tactical and strategic problems, and practice what you've learned with your personalized material, always in a relaxed atmosphere and adapting to your energy of the day.", 
             methodStep4Title: "Continuous Evolution and Smart Adaptation", 
@@ -281,13 +281,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             benefitsTitle: "Enrich Your Life with Chess. At Any Age.",
             benefitsIntro: "Playing chess is much more than a simple game; it's a powerful tool to activate your mind, strengthen your character, and connect with others, no matter what stage of life you're in. At Chill Chess Club, we show you how this ancient game boosts your personal growth in surprising ways, whether you're young, an adult, or a senior.",
+            benefitsPascalQuoteText: "\"Chess is the gymnasium of the mind.\"",
+            benefitsPascalCiteName: "- Blaise Pascal",
             benefitsMindTitle: "Awaken and Strengthen Your Mind",
             benefitsMindFeat1: "Sharp Memory and Recognition: Exercise your memory by recalling openings, tactics, and recognizing complex patterns on the board.",
             benefitsMindFeat2: "Deep Concentration: Develop intense focus, learning to maintain attention and manage environmental distractions.",
             benefitsMindFeat3: "Strategic Thinking and Problem Solving: Every game is a challenge. Learn to analyze situations from multiple angles, plan ahead, and find creative and logical solutions.",
             benefitsMindFeat4: "Vision and Anticipation: Develop the ability to look ahead, foresee possible scenarios, and plan your moves with greater perspective.",
             benefitsLifeSkillsTitle: "Essential Life Skills",
-            benefitsLifeSkillsIntro: "The lessons from the board translate directly into advantages off it, useful in every phase of your life:",
+            // benefitsLifeSkillsIntro: "The lessons from the board translate directly into advantages off it, useful in every phase of your life:", // KEY REMOVED
             benefitsLifeSkill1: "Smart Decision-Making: Evaluate options, weigh risks and benefits, and make safer, more calculated decisions, even under pressure.",
             benefitsLifeSkill2: "Resilience and Mental Strength: Learn to manage both victory and defeat with balance. Chess teaches you to learn from mistakes and strengthen your character in the face of challenges.",
             benefitsLifeSkill3: "Empathy and Understanding: Putting yourself in your opponent's perspective to understand their intentions improves your ability to understand different viewpoints.",
@@ -359,6 +361,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // ... (resto del código de main.js sin cambios) ...
+    // Asegúrate de que las funciones setLanguage e initialUpdateLanguage
+    // ya no intenten acceder a translations[lang]['benefitsLifeSkillsIntro']
+    // o que manejen su ausencia si es necesario (aunque al eliminar la clave, no debería haber problema).
+    // La lógica actual de buscar la clave y, si no existe, no hacer nada, es suficiente.
+
     const langButtons = document.querySelectorAll('.lang-button');
     const translatableElements = document.querySelectorAll('[data-lang-key]');
     const backToTopButton = document.getElementById('back-to-top-btn');
@@ -379,23 +387,20 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             translatableElements.forEach(el => {
                 const keyAttr = el.dataset.langKey;
-                const [key, attribute] = keyAttr.split('|'); // Split key and attribute if present (e.g., "metaDescription|content")
+                const [key, attribute] = keyAttr.split('|'); 
 
                 if (translations[lang][key]) {
                     let translation = translations[lang][key];
 
-                    // Special handling for copyright year
                     if (key === 'footerCopyright') {
                         translation = translation.replace('[YEAR]', new Date().getFullYear());
                     }
 
-                    if (attribute) { // If an attribute is specified (e.g., alt, content for meta)
+                    if (attribute) { 
                         el.setAttribute(attribute, translation);
-                        // Special case for meta description
                         if (key === 'metaDescription' && attribute === 'content') {
                             document.querySelector('meta[name="description"]').setAttribute('content', translation);
                         }
-                        // Update alt texts for images if the key exists
                          if (key === 'courseBeginnerImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                          if (key === 'courseIntermediateImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                          if (key === 'courseCustomImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
@@ -405,41 +410,38 @@ document.addEventListener('DOMContentLoaded', () => {
                          if (key === 'blogPost3ImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                          if (key === 'logoAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
                     } else if (
-                        // Keys that require innerHTML for things like <br> tags
                         key === 'courseBeginnerTitle' ||
                         key === 'courseIntermediateTitle' ||
                         key === 'courseCustomTitle' ||
                         key === 'resourcesCta' || 
                         key === 'coursesCtaText' || 
                         key === 'benefitsIntro' || 
-                        key === 'benefitsLifeSkillsIntro' || 
+                        // key === 'benefitsLifeSkillsIntro' || // CLAVE ELIMINADA
                         key === 'benefitsCtaText' || 
                         key === 'benefitsCtaMethod' || 
                         key === 'methodKeyBenefitsDesc' ||
-                        key === 'aboutQuoteText' // For the new quote text
+                        key === 'aboutQuoteText' 
                     ) {
                         el.innerHTML = translation; 
                     } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
-                        // Handle buttons, including the back-to-top button's aria-label and title
                         if (el.id === 'back-to-top-btn') {
                              el.setAttribute('aria-label', translations[lang]['backToTop'] || 'Back to top');
                              el.setAttribute('title', translations[lang]['backToTop'] || 'Back to top');
                         } else {
-                            el.value = translation; // For input buttons
-                            el.innerHTML = translation; // For button elements
+                            el.value = translation; 
+                            el.innerHTML = translation; 
                         }
-                    } else if (el.tagName === 'TITLE') { // Handle page title
+                    } else if (el.tagName === 'TITLE') { 
                         document.title = translation;
                     }
-                    else { // Default to textContent for other elements
+                    else { 
                         el.textContent = translation;
                     }
                 }
             });
 
-            document.documentElement.lang = lang; // Set HTML lang attribute
+            document.documentElement.lang = lang; 
 
-            // Update active state for language buttons
             langButtons.forEach(btn => {
                 if (btn.dataset.lang === lang) {
                     btn.classList.add('active');
@@ -450,25 +452,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            // Save preferred language to localStorage
             try {
                 localStorage.setItem('preferredLanguage', lang);
             } catch (e) {
                 console.warn("Could not save language preference to localStorage.");
             }
 
-            bodyElement.classList.remove('fade-out'); // Remove fade-out
+            bodyElement.classList.remove('fade-out'); 
             setTimeout(() => {
-                langButtons.forEach(btn => btn.disabled = false); // Re-enable buttons
-            }, 50); // Short delay to ensure smooth transition
+                langButtons.forEach(btn => btn.disabled = false); 
+            }, 50); 
 
         }, transitionDuration);
     };
 
-    // Add event listeners to language buttons
     langButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            // Prevent action if already fading or button is active
             if (bodyElement.classList.contains('fade-out') || e.target.classList.contains('active')) {
                 return;
             }
@@ -477,7 +476,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Function to set initial language without transition
     const initialUpdateLanguage = (lang) => {
         if (!translations[lang]) return;
 
@@ -510,11 +508,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     key === 'resourcesCta' || 
                     key === 'coursesCtaText' || 
                     key === 'benefitsIntro' || 
-                    key === 'benefitsLifeSkillsIntro' || 
+                    // key === 'benefitsLifeSkillsIntro' || // CLAVE ELIMINADA
                     key === 'benefitsCtaText' || 
                     key === 'benefitsCtaMethod' || 
                     key === 'methodKeyBenefitsDesc' ||
-                    key === 'aboutQuoteText' // For the new quote text
+                    key === 'aboutQuoteText' 
                 ) {
                      el.innerHTML = translation;
                 } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
@@ -545,43 +543,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Determine and set initial language
-    let preferredLanguage = 'es'; // Default language
+    let preferredLanguage = 'es'; 
      try {
         const savedLang = localStorage.getItem('preferredLanguage');
         if (savedLang && translations[savedLang]) {
             preferredLanguage = savedLang;
         } else {
-            // Fallback to browser language if no preference is saved or saved language is invalid
-            const browserLang = navigator.language.split('-')[0]; // Use primary language code (e.g., "en" from "en-US")
+            const browserLang = navigator.language.split('-')[0]; 
             if (translations[browserLang]) {
                 preferredLanguage = browserLang;
             }
         }
     } catch (e) {
-        // localStorage might be disabled or full
         console.warn("Could not read language preference from localStorage. Defaulting to 'es'.");
     }
-    initialUpdateLanguage(preferredLanguage); // Set language on page load
+    initialUpdateLanguage(preferredLanguage); 
 
 
-    // Initialize AOS (Animate On Scroll) library
     AOS.init({
-        duration: 800, // Animation duration
-        once: true,    // Whether animation should happen only once - while scrolling down
-        offset: 50,    // Offset (in px) from the original trigger point
+        duration: 800, 
+        once: true,    
+        offset: 50,    
     });
 
-    // Initialize Particles.js for hero section background
     if (document.getElementById('particles-js')) {
         particlesJS('particles-js', {
             "particles": {
                 "number": {"value": 80, "density": {"enable": true, "value_area": 800}},
-                "color": {"value": ["#EC4899", "#F97316", "#8B5CF6", "#d4af37"]}, // Array of modern accent colors
+                "color": {"value": ["#EC4899", "#F97316", "#8B5CF6", "#d4af37"]}, 
                 "shape": {"type": "circle", "stroke": {"width": 0, "color": "#000000"}, "polygon": {"nb_sides": 5}},
                 "opacity": {"value": 0.6, "random": true, "anim": {"enable": true, "speed": 1, "opacity_min": 0.1, "sync": false}},
                 "size": {"value": 3, "random": true, "anim": {"enable": false, "speed": 40, "size_min": 0.1, "sync": false}},
-                "line_linked": {"enable": true, "distance": 150, "color": "#a1a1aa", "opacity": 0.4, "width": 1}, // Using text-medium for lines
+                "line_linked": {"enable": true, "distance": 150, "color": "#a1a1aa", "opacity": 0.4, "width": 1}, 
                 "move": {"enable": true, "speed": 3, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false, "attract": {"enable": false, "rotateX": 600, "rotateY": 1200}}
             },
             "interactivity": {
@@ -600,14 +593,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Mobile Menu Toggle Functionality
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
             const isActive = navLinks.classList.toggle('active');
-            menuToggle.setAttribute('aria-expanded', isActive); // ARIA for accessibility
+            menuToggle.setAttribute('aria-expanded', isActive); 
             const icon = menuToggle.querySelector('i');
             if (isActive) {
                 icon.classList.remove('fa-bars');
@@ -618,7 +610,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Close mobile menu when a link is clicked
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 if (navLinks.classList.contains('active')) {
@@ -631,11 +622,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
         
-        // Close mobile menu if clicked outside
          document.addEventListener('click', (event) => {
             if (navLinks.classList.contains('active') &&
-                !navLinks.contains(event.target) && // Click was not on a nav link
-                !menuToggle.contains(event.target)) { // Click was not on the toggle button itself
+                !navLinks.contains(event.target) && 
+                !menuToggle.contains(event.target)) { 
                 navLinks.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
                 const icon = menuToggle.querySelector('i');
@@ -645,18 +635,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth Scrolling for internal links
     document.querySelectorAll('a.scroll-to, .nav-links a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            if (href && href.startsWith('#')) { // Check if it's an internal link
+            if (href && href.startsWith('#')) { 
                 e.preventDefault();
                 const targetId = href;
                 const targetElement = document.querySelector(targetId);
 
                 if (targetElement) {
-                    // Calculate offset considering fixed header height
-                    const headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height-desktop') || '65') + 10; // Get header height from CSS var or default
+                    const headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height-desktop') || '65') + 10; 
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -665,17 +653,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         behavior: 'smooth'
                     });
 
-                    // If link is to contact, pre-fill subject and focus on name field
                     if (targetId === '#contacto') {
                         const subjectValue = this.getAttribute('data-subject');
                         const subjectSelect = document.getElementById('subject');
-                        const firstInput = document.querySelector('#contactForm #name'); // First focusable input
+                        const firstInput = document.querySelector('#contactForm #name'); 
 
                         if (subjectValue && subjectSelect) {
                             subjectSelect.value = subjectValue;
                         }
                         if(firstInput) { 
-                            // Delay focus slightly to allow scroll to complete
                             setTimeout(() => firstInput.focus(), 300); 
                         }
                     }
@@ -684,46 +670,41 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Contact Form Submission Simulation (replace with actual AJAX later)
     const contactForm = document.getElementById('contactForm');
-    const formStatus = document.getElementById('form-status'); // Element to display form status messages
+    const formStatus = document.getElementById('form-status'); 
 
      if (contactForm && formStatus) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent default form submission
+            e.preventDefault(); 
 
-            const currentLang = document.documentElement.lang || 'es'; // Get current language for messages
+            const currentLang = document.documentElement.lang || 'es'; 
 
-            // Display "sending" message
             formStatus.textContent = translations[currentLang]?.submitting || 'Enviando...';
-            formStatus.className = 'status'; // Reset classes
+            formStatus.className = 'status'; 
             formStatus.style.display = 'block';
 
-            // Simulate network request
             setTimeout(() => {
-                const isSuccess = Math.random() > 0.2; // Simulate success (80% chance)
+                const isSuccess = Math.random() > 0.2; 
 
                 if (isSuccess) {
                     formStatus.textContent = translations[currentLang]?.formSuccess || '¡Mensaje enviado con éxito! Te contactaremos pronto.';
                     formStatus.classList.add('success');
-                    contactForm.reset(); // Clear form on success
+                    contactForm.reset(); 
                 } else {
                     formStatus.textContent = translations[currentLang]?.formError || 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o usa el email de contacto.';
                     formStatus.classList.add('error');
                 }
-                 // Hide status message after 5 seconds
                  setTimeout(() => {
                     formStatus.style.display = 'none';
-                    formStatus.className = 'status'; // Reset classes
+                    formStatus.className = 'status'; 
                  }, 5000);
-            }, 1500); // Simulate 1.5 second delay
+            }, 1500); 
         });
     }
 
-    // Back to Top Button Functionality
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) { // Show button after scrolling 300px
+            if (window.pageYOffset > 300) { 
                 backToTopButton.classList.add('show');
             } else {
                 backToTopButton.classList.remove('show');
@@ -731,11 +712,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         backToTopButton.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' }); 
         });
     }
 
-     // Update copyright year dynamically
      const yearSpan = document.getElementById('current-year');
      if (yearSpan) {
          yearSpan.textContent = new Date().getFullYear();
