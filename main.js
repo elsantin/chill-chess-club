@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navCourses: "Cursos",
             navMethod: "Método",
             navBenefits: "Beneficios",
-            navResources: "Recursos",
+            navResources: "Recursos", // Clave para el título de la sección en la NAV
             navBlog: "Blog",
             navContact: "Contacto",
 
@@ -133,16 +133,17 @@ document.addEventListener('DOMContentLoaded', () => {
             benefitsCtaMethod: "Nuestro método personalizado está diseñado para guiarte en este fascinante viaje, ayudándote a desarrollar no solo tu juego, sino también valiosas habilidades para la vida, sin importar cuándo decidas empezar.",
             benefitsCtaBtn: "¡Únete al Club!",
 
-            resourcesTitle: "Recursos Gratuitos Esenciales",
-            resourcesIntro: "Explora estos materiales introductorios o refresca tus conocimientos. ¡El primer paso hacia tu maestría empieza aquí!",
-            resource1Title: "Guía Rápida: Movimientos y Reglas",
-            resource1Desc: "Todo lo que necesitas saber para empezar a mover las piezas con confianza. ¡Las reglas básicas explicadas de forma sencilla!",
-            resourceLinkText: "Explorar Guía",
-            resource2Title: "5 Tácticas Clave para Principiantes",
-            resource2Desc: "Descubre patrones tácticos iniciales que te darán ventaja y te ayudarán a sorprender a tus oponentes.",
-            resource3Title: "Errores Típicos (¡Y Cómo Evitarlos!)",
-            resource3Desc: "Identifica las trampas comunes en las que caen los principiantes y aprende a esquivarlas para mejorar rápidamente.",
-            resourcesCta: "¿Listo para el siguiente nivel? <a href=\"#cursos\" class=\"scroll-to\">Descubre nuestros cursos</a> y recibe análisis personalizados.",
+            // --- Textos para Recursos Gratuitos ---
+            resourcesTitle: "Recursos Gratuitos Esenciales", // Título de la sección
+            resourcesIntro: "Inicia tu exploración del ajedrez o redescubre sus fundamentos. Estos materiales esenciales son el punto de partida hacia una comprensión más profunda del juego.",
+            resource1Title: "Ajedrez Esencial: Comprendiendo Movimientos y Reglas",
+            resource1Desc: "Domina el tablero moviendo tus piezas con seguridad. Presentamos las reglas básicas de una forma directa y comprensible.",
+            resource2Title: "Preceptos del Ajedrez: Guía Fundamental para Principiantes",
+            resource2Desc: "Descubre los conceptos fundamentales que orientarán tus primeras partidas y te ayudarán a construir una base estratégica sólida y reflexiva.",
+            resource3Title: "Anatomía del Juego: Piezas, Fases y Su Valor Estratégico",
+            resource3Desc: "Una mirada al flujo de la partida, desde la apertura hasta el final, y cómo el valor y las características de cada pieza definen tu estrategia.",
+            resourceLinkText: "Explorar Contenido",
+            resourcesCta: "Si esta información resuena contigo, <a href=\"#cursos\" class=\"scroll-to\">descubre nuestros cursos</a> y profundiza tu conocimiento con un enfoque personalizado.",
 
             blogTitle: "Desde Nuestro Blog",
             blogIntro: "Explora artículos, consejos y curiosidades del mundo del ajedrez con nuestro toque \"chill\".",
@@ -202,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navCourses: "Courses",
             navMethod: "Method",
             navBenefits: "Benefits",
-            navResources: "Resources",
+            navResources: "Resources", // Key for the section title in NAV
             navBlog: "Blog",
             navContact: "Contact",
 
@@ -317,16 +318,17 @@ document.addEventListener('DOMContentLoaded', () => {
             benefitsCtaMethod: "Our personalized method is designed to guide you on this fascinating journey, helping you develop not only your game but also valuable life skills, no matter when you decide to start.",
             benefitsCtaBtn: "Join the Club!",
 
-            resourcesTitle: "Essential Free Resources",
-            resourcesIntro: "Explore these introductory materials or refresh your knowledge. The first step towards mastery starts here!",
-            resource1Title: "Quick Guide: Moves and Rules",
-            resource1Desc: "Everything you need to know to start moving the pieces with confidence. The basic rules explained simply!",
-            resourceLinkText: "Explore Guide",
-            resource2Title: "5 Key Tactics for Beginners",
-            resource2Desc: "Discover initial tactical patterns that will give you an edge and help you surprise your opponents.",
-            resource3Title: "Common Mistakes (And How to Avoid Them!)",
-            resource3Desc: "Identify the common traps beginners fall into and learn how to dodge them to improve quickly.",
-            resourcesCta: "Ready for the next level? <a href=\"#cursos\" class=\"scroll-to\">Discover our courses</a> and receive personalized analysis.",
+            // --- Texts for Free Resources ---
+            resourcesTitle: "Essential Free Resources", // Section Title
+            resourcesIntro: "Begin your chess exploration or rediscover its fundamentals. These essential materials are the starting point towards a deeper understanding of the game.",
+            resource1Title: "Essential Chess: Understanding Moves and Rules",
+            resource1Desc: "Master the board by moving your pieces with confidence. We present the basic rules in a direct and understandable way.",
+            resource2Title: "Chess Precepts: A Fundamental Guide for Beginners",
+            resource2Desc: "Discover the fundamental concepts that will guide your first games and help you build a solid and thoughtful strategic foundation.",
+            resource3Title: "Anatomy of the Game: Pieces, Phases, and Their Strategic Value",
+            resource3Desc: "A look at the game's flow, from opening to endgame, and how each piece's value and characteristics define your strategy.",
+            resourceLinkText: "Explore Content",
+            resourcesCta: "If this information resonates with you, <a href=\"#cursos\" class=\"scroll-to\">discover our courses</a> and deepen your knowledge with a personalized approach.",
 
             blogTitle: "From Our Blog",
             blogIntro: "Explore articles, tips, and curiosities from the world of chess with our \"chill\" touch.",
@@ -423,7 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         key === 'courseBeginnerTitle' ||
                         key === 'courseIntermediateTitle' ||
                         key === 'courseCustomTitle' ||
-                        key === 'resourcesCta' ||
+                        key === 'resourcesCta' || 
                         key === 'coursesCtaText' ||
                         key === 'benefitsIntro' ||
                         key === 'benefitsCtaText' ||
@@ -431,7 +433,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         key === 'methodKeyBenefitsDesc' ||
                         key === 'aboutQuoteText'
                     ) {
-                        el.innerHTML = translation;
+                        el.innerHTML = translation; 
                     } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
                         if (el.id === 'back-to-top-btn') {
                              el.setAttribute('aria-label', translations[lang]['backToTop'] || 'Back to top');
@@ -514,7 +516,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     key === 'courseBeginnerTitle' ||
                     key === 'courseIntermediateTitle' ||
                     key === 'courseCustomTitle' ||
-                    key === 'resourcesCta' ||
+                    key === 'resourcesCta' || 
                     key === 'coursesCtaText' ||
                     key === 'benefitsIntro' ||
                     key === 'benefitsCtaText' ||
@@ -522,7 +524,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     key === 'methodKeyBenefitsDesc' ||
                     key === 'aboutQuoteText'
                 ) {
-                     el.innerHTML = translation;
+                     el.innerHTML = translation; 
                 } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
                      if (el.id === 'back-to-top-btn') {
                           el.setAttribute('aria-label', translations[lang]['backToTop'] || 'Back to top');
