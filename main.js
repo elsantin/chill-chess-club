@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutTitle: "Sobre Mí",
             aboutQuoteText: "\"El ajedrez es un mar en el cual un mosquito puede beber y un elefante puede bañarse.\"",
             aboutQuoteCite: "- Proverbio Indio",
-            aboutImageAlt: "Foto de perfil artística del instructor Santiago Narváez",
+            aboutImageAlt: "Foto de perfil artística del instructor Santiago Narvaez",
             aboutSubtitle: "Descifrando el Ajedrez Contigo: De la Orilla a las Profundidades",
             aboutPara1: "Soy Santiago Narváez. Al igual que el proverbio indio nos recuerda la vastedad del mar, concibo el ajedrez como un océano sereno, listo para ser explorado a cualquier nivel, un océano donde todos tienen cabida. Es esta visión la que define mi enseñanza para principiantes e intermedios. Mi objetivo es crear un espacio donde cada jugador pueda crecer y encontrar su propio placer en el juego, independientemente de su punto de partida. Adapto mi método para que el aprendizaje sea una experiencia fluida y personal, permitiendo al estudiante explorar las corrientes del ajedrez con confianza y satisfacción.",
             aboutPara2: "Si bien mi camino no ha sido el del ajedrez profesional de torneos, mi energía se centra completamente en hacer que el ajedrez sea accesible y apasionante para ti. Mi fortaleza es una capacidad especial para simplificar los conceptos y estrategias, guiando a jugadores principiantes e intermedios hacia un entendimiento sólido y un disfrute genuino del juego. Mi compromiso es ser el puente que necesitas para conectar con la belleza del ajedrez, combinando la enseñanza clásica con las ventajas de la tecnología actual, sin importar tu nivel inicial. Actualmente, imparto estas clases online desde la hermosa Isla de Margarita, en Venezuela.",
@@ -176,7 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
             faqA7: "Empleo una combinación de software de análisis de ajedrez reconocido y herramientas de IA para la creación de contenido. Estas tecnologías me ayudan a identificar patrones en tu juego, generar ejercicios adaptados a tus necesidades, y crear materiales de estudio (como resúmenes o guías) más eficientes y personalizados. El objetivo es enriquecer tu aprendizaje, no reemplazar la interacción humana.",
 
             contactTitle: "Contacta Conmigo",
-            contactIntro: "¿Listo para empezar o tienes alguna pregunta? Envíame un mensaje a través del formulario o utiliza mis datos de contacto.",
+            // Texto anterior: contactIntro: "¿Listo para empezar o tienes alguna pregunta? Envíame un mensaje a través del formulario o utiliza mis datos de contacto.",
+            contactIntro: "Si deseas comenzar tu exploración del ajedrez o tienes alguna consulta, puedes comunicarte a través del formulario o utilizando mis datos de contacto directo.", // NUEVO TEXTO EN ESPAÑOL
             contactFormTitle: "Formulario de Contacto",
             contactNameLabel: "Nombre:",
             contactEmailLabel: "Email:",
@@ -378,7 +379,8 @@ document.addEventListener('DOMContentLoaded', () => {
             faqA7: "I use a combination of recognized chess analysis software and AI tools for content creation. These technologies help me identify patterns in your game, generate exercises tailored to your needs, and create more efficient and personalized study materials (such as summaries or guides). The goal is to enrich your learning, not replace human interaction.",
 
             contactTitle: "Contact Me",
-            contactIntro: "Ready to start or have questions? Send me a message using the form or use my contact details.",
+            // Previous text: contactIntro: "Ready to start or have questions? Send me a message using the form or use my contact details.",
+            contactIntro: "If you wish to begin your chess exploration or have any questions, you can get in touch using the form or by using my direct contact details.", // NEW ENGLISH TEXT
             contactFormTitle: "Contact Form",
             contactNameLabel: "Name:",
             contactEmailLabel: "Email:",
