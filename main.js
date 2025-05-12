@@ -176,8 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
             faqA7: "Empleo una combinación de software de análisis de ajedrez reconocido y herramientas de IA para la creación de contenido. Estas tecnologías me ayudan a identificar patrones en tu juego, generar ejercicios adaptados a tus necesidades, y crear materiales de estudio (como resúmenes o guías) más eficientes y personalizados. El objetivo es enriquecer tu aprendizaje, no reemplazar la interacción humana.",
 
             contactTitle: "Contacta Conmigo",
-            // Texto anterior: contactIntro: "¿Listo para empezar o tienes alguna pregunta? Envíame un mensaje a través del formulario o utiliza mis datos de contacto.",
-            contactIntro: "Si deseas comenzar tu exploración del ajedrez o tienes alguna consulta, puedes comunicarte a través del formulario o utilizando mis datos de contacto directo.", // NUEVO TEXTO EN ESPAÑOL
+            contactIntro: "Si deseas comenzar tu exploración del ajedrez o tienes alguna consulta, puedes comunicarte a través del formulario o utilizando mis datos de contacto directo.",
             contactFormTitle: "Formulario de Contacto",
             contactNameLabel: "Nombre:",
             contactEmailLabel: "Email:",
@@ -190,9 +189,9 @@ document.addEventListener('DOMContentLoaded', () => {
             contactMessageLabel: "Mensaje:",
             contactSubmitBtn: "Enviar Mensaje",
             contactInfoTitle: "Información de Contacto",
-            contactInfoLocation: "Clases 100% Online",
+            // contactInfoLocation: "Clases 100% Online", // Clave eliminada previamente
             contactTrialTitle: "Solicita tu Clase Introductoria Gratuita",
-            contactTrialDesc: "Una sesión de 30 minutos para conocernos, evaluar tu nivel y discutir cómo puedo ayudarte a alcanzar tus metas ajedrecísticas.",
+            contactTrialDesc: "Una sesión de 30 minutos dedicada a una primera conversación, evaluar tu nivel actual y trazar un plan para alcanzar tus objetivos en el ajedrez.", // NUEVO TEXTO EN ESPAÑOL
             contactTrialBtn: "Solicitar Ahora",
 
             footerAboutTitle: "Chill Chess Club",
@@ -379,8 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
             faqA7: "I use a combination of recognized chess analysis software and AI tools for content creation. These technologies help me identify patterns in your game, generate exercises tailored to your needs, and create more efficient and personalized study materials (such as summaries or guides). The goal is to enrich your learning, not replace human interaction.",
 
             contactTitle: "Contact Me",
-            // Previous text: contactIntro: "Ready to start or have questions? Send me a message using the form or use my contact details.",
-            contactIntro: "If you wish to begin your chess exploration or have any questions, you can get in touch using the form or by using my direct contact details.", // NEW ENGLISH TEXT
+            contactIntro: "If you wish to begin your chess exploration or have any questions, you can get in touch using the form or by using my direct contact details.",
             contactFormTitle: "Contact Form",
             contactNameLabel: "Name:",
             contactEmailLabel: "Email:",
@@ -393,9 +391,9 @@ document.addEventListener('DOMContentLoaded', () => {
             contactMessageLabel: "Message:",
             contactSubmitBtn: "Send Message",
             contactInfoTitle: "Contact Information",
-            contactInfoLocation: "100% Online Classes",
+            // contactInfoLocation: "100% Online Classes", // Key removed previously
             contactTrialTitle: "Request Your Free Introductory Class",
-            contactTrialDesc: "A 30-minute session to get to know each other, assess your level, and discuss how I can help you achieve your chess goals.",
+            contactTrialDesc: "A 30-minute session dedicated to an initial conversation, assessing your current level, and outlining a plan to achieve your chess goals.", // NEW ENGLISH TEXT
             contactTrialBtn: "Request Now",
 
             footerAboutTitle: "Chill Chess Club",
