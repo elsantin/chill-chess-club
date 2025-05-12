@@ -313,7 +313,7 @@ header {
         font-weight: 500;
         position: relative;
         padding: 5px 0;
-        font-size: 1.1rem;
+        font-size: 0.95rem;
         transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
         cursor: pointer;
         display: inline-block; /* Para que el ::after funcione bien */
@@ -486,6 +486,7 @@ header {
   margin-top: 0; 
   padding-top: calc(var(--header-height-desktop) + var(--spacing-xl) + var(--spacing-sm)); 
   padding-bottom: var(--spacing-lg);
+  /* Imagen de fondo por defecto para desktop */
   background-image: var(--hero-overlay-color), url('hero.jpg');
   background-attachment: fixed; 
   background-position: center center;
@@ -509,7 +510,7 @@ header {
   width: 45%; 
   max-width: 650px; 
   margin-left: 0; 
-  margin-right: 21%; /* El valor que te funcionó */
+  margin-right: 21%; 
   padding: 0;
   text-align: right; 
 }
@@ -1623,8 +1624,9 @@ footer {
   .hero { 
     justify-content: center; 
     text-align: center; 
-    background-attachment: scroll; 
+    background-attachment: scroll; /* Cambiado para mejor rendimiento en móvil */
     padding-top: calc(var(--header-height-desktop) + var(--spacing-md)); 
+    /* La imagen de fondo específica para móvil se definirá en la query de 768px */
   }
   .hero .hero-content-container {
       width: 90%; 
@@ -1732,7 +1734,7 @@ footer {
       height: 30px; 
   }
   .logo-link .site-name-text {
-      font-size: 1.6rem; /* AUMENTADO DESDE 0.95rem */
+      font-size: 1.1rem; /* AUMENTADO DESDE 0.95rem */
       line-height: 1.1; 
   }
   .logo-link {
@@ -1831,20 +1833,33 @@ footer {
     min-height: 80vh; 
     padding-top: calc(var(--header-height-mobile) + var(--spacing-md)); 
     align-items: center; 
+    /* Imagen de fondo específica para móvil */
+    background-image: var(--hero-overlay-color), url('hero-vertical.png'); /* ¡NUEVA IMAGEN AQUÍ! */
+    background-attachment: scroll; /* Mejor para móviles */
+    /* background-position y background-size ya están bien para cover */
   }
   .hero .hero-content-container { 
       width: 90%; 
+      /* Ya no necesitamos el margin-right: 21% de desktop */
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center; /* Centrar contenido en móvil */
   }
   .hero-content h1 { 
     font-size: clamp(1.8rem, 6vw, 2.5rem); 
+    text-align: center; /* Asegurar centrado */
   }
   .hero-content p.lead { 
     font-size: clamp(0.9rem, 3.5vw, 1rem); 
+    text-align: center; /* Asegurar centrado */
+    margin-left: auto;
+    margin-right: auto;
   }
   .hero-cta {
     flex-direction: column; 
     align-items: center; 
     gap: var(--spacing-sm);
+    justify-content: center; /* Centrar botones */
   }
 
   .course-grid,
