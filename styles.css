@@ -1726,3 +1726,157 @@ footer {
 
 /* El bloque duplicado de #beneficios-ajedrez .benefit-list ha sido eliminado. */
 /* El código para el degradado en los strong ha sido descomentado arriba. */
+
+
+/*------------------------------------*\
+  #FAQ SECTION STYLES
+\*------------------------------------*/
+.faq-section {
+  background-color: var(--color-background-medium); /* Fondo similar a otras secciones */
+  padding: var(--spacing-xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Opcional: Añadir un patrón de ruido o textura sutil si lo deseas, como en otras secciones */
+.faq-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  background-image: var(--noise-svg-uri); /* Usando la variable de ruido existente */
+  opacity: 0.3; /* Ajusta la opacidad según sea necesario */
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+}
+
+.faq-section .container {
+    position: relative; /* Para que el contenido esté sobre el ::before */
+    z-index: 1;
+}
+
+.faq-section h2::after {
+  background: var(--color-modern-accent-2); /* Naranja vibrante para la línea del título */
+}
+
+.faq-section .section-intro a {
+    color: var(--color-modern-accent-1); /* Rosa para el enlace en la intro */
+    font-weight: 600;
+}
+.faq-section .section-intro a:hover {
+    color: var(--color-text-light);
+    text-decoration: underline;
+}
+
+.faq-grid {
+  max-width: 800px; /* Limita el ancho para mejor legibilidad */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm); /* Espacio entre cada item de FAQ */
+}
+
+.faq-item {
+  background-color: var(--color-dark); /* Fondo oscuro para cada item */
+  border: 1px solid var(--color-background-light); /* Borde sutil */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: background-color var(--transition-speed) ease;
+}
+
+.faq-item[open] {
+  background-color: var(--color-background-card); /* Un poco más claro cuando está abierto */
+}
+
+.faq-item[open] summary { /* Estilo para el summary cuando el details está abierto */
+  border-bottom: 1px solid var(--color-background-light); /* Línea separadora cuando está abierto */
+  color: var(--color-secondary-accent); /* Dorado para la pregunta cuando está abierta */
+}
+
+.faq-question { /* Estilo para el elemento summary */
+  padding: var(--spacing-md);
+  font-family: var(--font-body); /* Usar fuente de cuerpo para las preguntas */
+  font-size: 1.1rem; /* Tamaño de fuente para la pregunta */
+  font-weight: 600; /* Un poco más de peso para la pregunta */
+  color: var(--color-text-light);
+  cursor: pointer;
+  position: relative; /* Para el posicionamiento del ícono */
+  list-style: none; /* Ocultar el marcador por defecto de details/summary */
+  transition: color var(--transition-speed) ease;
+  outline: none; /* Quitar el outline por defecto en Firefox al hacer clic */
+}
+
+.faq-question::-webkit-details-marker { /* Ocultar marcador en Chrome/Safari */
+  display: none;
+}
+
+.faq-question::after { /* Ícono de flecha */
+  content: '\f078'; /* Icono de flecha hacia abajo de Font Awesome */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900; /* Asegurar que el ícono sólido se muestre */
+  position: absolute;
+  right: var(--spacing-md);
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform var(--transition-speed) ease;
+  color: var(--color-text-medium);
+}
+
+.faq-item[open] .faq-question::after {
+  transform: translateY(-50%) rotate(-180deg); /* Flecha hacia arriba cuando está abierto */
+  color: var(--color-secondary-accent);
+}
+
+.faq-question:hover,
+.faq-question:focus-visible { /* Mejorar accesibilidad del foco */
+  color: var(--color-secondary-accent);
+}
+.faq-question:hover::after {
+    color: var(--color-secondary-accent);
+}
+
+
+.faq-answer { /* Estilo para el contenido dentro de details (la respuesta) */
+  padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md); /* Padding cuando está visible */
+  color: var(--color-text-medium);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.faq-answer p {
+  margin-bottom: var(--spacing-sm); /* Espacio entre párrafos dentro de una respuesta */
+  color: var(--color-text-light); /* Texto de respuesta un poco más claro */
+}
+.faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+.faq-answer a {
+  color: var(--color-modern-accent-1); /* Rosa para enlaces dentro de las respuestas */
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  transition: text-decoration-color var(--transition-speed) ease;
+}
+
+.faq-answer a:hover,
+.faq-answer a:focus {
+  color: var(--color-secondary-accent); /* Dorado al hacer hover */
+  text-decoration-color: var(--color-secondary-accent);
+}
+
+/* Animación suave para abrir/cerrar */
+.faq-item .faq-answer {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity var(--transition-speed) ease-out, max-height var(--transition-speed) ease-out, padding var(--transition-speed) ease-out;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.faq-item[open] .faq-answer {
+    opacity: 1;
+    max-height: 500px; /* Ajustar si las respuestas son muy largas */
+    padding-top: var(--spacing-sm); /* Añadir padding cuando está abierto */
+    padding-bottom: var(--spacing-md);
+}
