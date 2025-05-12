@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navCourses: "Cursos",
             navMethod: "Método",
             navBenefits: "Beneficios",
-            navResources: "Recursos", // Clave para el título de la sección en la NAV
+            navResources: "Recursos",
             navBlog: "Blog",
             navContact: "Contacto",
 
@@ -133,8 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
             benefitsCtaMethod: "Nuestro método personalizado está diseñado para guiarte en este fascinante viaje, ayudándote a desarrollar no solo tu juego, sino también valiosas habilidades para la vida, sin importar cuándo decidas empezar.",
             benefitsCtaBtn: "¡Únete al Club!",
 
-            // --- Textos para Recursos Gratuitos ---
-            resourcesTitle: "Recursos Gratuitos Esenciales", // Título de la sección
+            resourcesTitle: "Recursos Gratuitos Esenciales",
             resourcesIntro: "Inicia tu exploración del ajedrez o redescubre sus fundamentos. Estos materiales esenciales son el punto de partida hacia una comprensión más profunda del juego.",
             resource1Title: "Ajedrez Esencial: Comprendiendo Movimientos y Reglas",
             resource1Desc: "Domina el tablero moviendo tus piezas con seguridad. Presentamos las reglas básicas de una forma directa y comprensible.",
@@ -145,17 +144,18 @@ document.addEventListener('DOMContentLoaded', () => {
             resourceLinkText: "Explorar Contenido",
             resourcesCta: "Si esta información resuena contigo, <a href=\"#cursos\" class=\"scroll-to\">descubre nuestros cursos</a> y profundiza tu conocimiento con un enfoque personalizado.",
 
+            // --- Textos para el Blog ---
             blogTitle: "Desde Nuestro Blog",
-            blogIntro: "Explora artículos, consejos y curiosidades del mundo del ajedrez con nuestro toque \"chill\".",
-            blogPost1ImgAlt: "Imagen representativa de la historia del ajedrez",
-            blogPost1Title: "Un Viaje Rápido por la Historia del Ajedrez",
-            blogPost1Excerpt: "Desde sus orígenes en la India hasta el juego moderno, descubre la fascinante evolución del ajedrez a través de los siglos.",
-            blogPost2ImgAlt: "Imagen mostrando el ajedrez de forma relajada",
-            blogPost2Title: "¿Ajedrez Aburrido? ¡Rompiendo el Mito!",
-            blogPost2Excerpt: "Descubre por qué el ajedrez es mucho más que un juego lento y complicado. ¡Es dinámico, creativo y sorprendentemente \"chill\"!",
-            blogPost3ImgAlt: "Imagen de alguien jugando ajedrez online",
-            blogPost3Title: "5 Pasos Sencillos para Empezar a Jugar Online",
-            blogPost3Excerpt: "¿Listo para tu primera partida en línea? Te guiamos paso a paso para que empieces a jugar en minutos, ¡sin complicaciones!",
+            blogIntro: "Un espacio dedicado a la exploración del ajedrez. Artículos, perspectivas y curiosidades para profundizar tu entendimiento y aprecio por el juego.", // <-- INTRO ACTUALIZADA
+            blogPost1Title: "El Legado del Ajedrez: Un Viaje a Través del Tiempo y las Culturas",
+            blogPost1Excerpt: "Explora la rica evolución del ajedrez, desde sus orígenes ancestrales y su travesía por diversas culturas, hasta consolidarse como el desafío intelectual que conocemos hoy.",
+            blogPost1ImgAlt: "El legado del ajedrez a través del tiempo",
+            blogPost2Title: "Ajedrez: ¿Juego Lento o Desafío Apasionante? La Respuesta Podría Sorprenderte",
+            blogPost2Excerpt: "Si crees que el ajedrez es solo para genios pacientes, permítenos mostrarte su intensidad, su belleza creativa y por qué se ha mantenido relevante por siglos.",
+            blogPost2ImgAlt: "Ajedrez como desafío apasionante",
+            blogPost3Title: "Tu Camino al Ajedrez Online: 5 Pasos Fáciles para un Comienzo Gratuito",
+            blogPost3Excerpt: "Comenzar en el ajedrez online es simple. Sigue esta guía de cinco pasos para acceder a plataformas gratuitas y disfrutar de la experiencia internacional del ajedrez rápidamente.",
+            blogPost3ImgAlt: "Guía para iniciar en el ajedrez online",
             blogReadMore: "Leer Más",
 
             contactTitle: "Contacta Conmigo",
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navCourses: "Courses",
             navMethod: "Method",
             navBenefits: "Benefits",
-            navResources: "Resources", // Key for the section title in NAV
+            navResources: "Resources",
             navBlog: "Blog",
             navContact: "Contact",
 
@@ -318,8 +318,7 @@ document.addEventListener('DOMContentLoaded', () => {
             benefitsCtaMethod: "Our personalized method is designed to guide you on this fascinating journey, helping you develop not only your game but also valuable life skills, no matter when you decide to start.",
             benefitsCtaBtn: "Join the Club!",
 
-            // --- Texts for Free Resources ---
-            resourcesTitle: "Essential Free Resources", // Section Title
+            resourcesTitle: "Essential Free Resources",
             resourcesIntro: "Begin your chess exploration or rediscover its fundamentals. These essential materials are the starting point towards a deeper understanding of the game.",
             resource1Title: "Essential Chess: Understanding Moves and Rules",
             resource1Desc: "Master the board by moving your pieces with confidence. We present the basic rules in a direct and understandable way.",
@@ -330,18 +329,19 @@ document.addEventListener('DOMContentLoaded', () => {
             resourceLinkText: "Explore Content",
             resourcesCta: "If this information resonates with you, <a href=\"#cursos\" class=\"scroll-to\">discover our courses</a> and deepen your knowledge with a personalized approach.",
 
+            // --- Texts for Blog ---
             blogTitle: "From Our Blog",
-            blogIntro: "Explore articles, tips, and curiosities from the world of chess with our \"chill\" touch.",
-            blogPost1ImgAlt: "Representative image of chess history",
-            blogPost1Title: "A Quick Journey Through the History of Chess",
-            blogPost1Excerpt: "From its origins in India to the modern game, discover the fascinating evolution of chess through the centuries.",
-            blogPost2ImgAlt: "Image showing chess in a relaxed way",
-            blogPost2Title: "Chess Boring? Busting the Myth!",
-            blogPost2Excerpt: "Discover why chess is much more than a slow and complicated game. It's dynamic, creative, and surprisingly \"chill\"!",
-            blogPost3ImgAlt: "Image of someone playing chess online",
-            blogPost3Title: "5 Simple Steps to Start Playing Online",
-            blogPost3Excerpt: "Ready for your first online game? We guide you step-by-step so you can start playing in minutes, hassle-free!",
-            blogReadMore: "Read More",
+            blogIntro: "A space dedicated to the exploration of chess. Articles, perspectives, and curiosities to deepen your understanding and appreciation for the game.", // <-- UPDATED INTRO
+            blogPost1Title: "The Legacy of Chess: A Journey Through Time and Cultures",
+            blogPost1Excerpt: "Explore the rich evolution of chess, from its ancient origins and its journey through diverse cultures, to its consolidation as the intellectual challenge we know today.",
+            blogPost1ImgAlt: "The legacy of chess through time", // Placeholder Alt Text
+            blogPost2Title: "Chess: Slow Game or Exciting Challenge? The Answer Might Surprise You",
+            blogPost2Excerpt: "If you think chess is only for patient geniuses, allow us to show you its intensity, its creative beauty, and why it has remained relevant for centuries.",
+            blogPost2ImgAlt: "Chess as an exciting challenge", // Placeholder Alt Text
+            blogPost3Title: "Your Path to Online Chess: 5 Easy Steps for a Free Start",
+            blogPost3Excerpt: "Starting online chess is simple. Follow this five-step guide to access free platforms and enjoy the international chess experience quickly.",
+            blogPost3ImgAlt: "Guide to start playing chess online", // Placeholder Alt Text
+            blogReadMore: "Read More", // Text for the "Read More" button of each post
 
             contactTitle: "Contact Me",
             contactIntro: "Ready to start or have questions? Send me a message using the form or use my contact details.",
