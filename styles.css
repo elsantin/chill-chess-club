@@ -70,7 +70,7 @@ body {
   background-color: var(--color-dark);
   min-height: 100vh;
   font-size: 16px;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Evita el desbordamiento horizontal general */
   opacity: 1;
   transition: opacity var(--lang-transition-speed) ease-in-out;
   cursor: default;
@@ -127,7 +127,7 @@ h4 {
 
 p {
   margin-bottom: var(--spacing-md);
-  max-width: 70ch;
+  max-width: 70ch; /* Límite de ancho para mejorar legibilidad */
   color: var(--color-text-light);
 }
 
@@ -136,7 +136,7 @@ p {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    max-width: 100%;
+    max-width: 100%; /* Asegura que no se desborde en contextos centrados */
 }
 
 
@@ -164,10 +164,10 @@ a {
 
 a:hover, a:focus {
   color: var(--color-modern-accent-1);
-  outline: 2px solid transparent;
+  outline: 2px solid transparent; /* Para accesibilidad del foco */
 }
 
-.sr-only {
+.sr-only { /* Para accesibilidad, ocultar visualmente pero mantener para lectores de pantalla */
   position: absolute;
   width: 1px;
   height: 1px;
@@ -190,7 +190,7 @@ a:hover, a:focus {
 
 section {
   padding: var(--spacing-xl) 0;
-  overflow: visible;
+  overflow: hidden; /* Cambiado de visible a hidden para ayudar a contener elementos flotantes o con márgenes negativos */
 }
 
 /*------------------------------------*\
@@ -203,7 +203,7 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: rgba(24, 24, 27, 0.85);
+  background-color: rgba(24, 24, 27, 0.85); /* Fondo semi-transparente con desenfoque */
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, padding 0.3s ease;
@@ -226,10 +226,13 @@ header {
     display: flex;
     align-items: center;
     gap: calc(var(--spacing-sm) * 0.8);
+    flex-shrink: 1; 
+    min-width: 0; 
+    overflow: hidden; 
 }
 
 .logo-link:hover, .logo-link:focus {
-    color: inherit;
+    color: inherit; 
 }
 
 .logo-link #site-logo-img {
@@ -237,13 +240,14 @@ header {
   width: auto;
   display: block;
   transition: transform 0.3s ease;
-  border: none;
+  border: none; 
   box-shadow: none;
   outline: none;
+  flex-shrink: 0; 
 }
 
 .logo-link:hover #site-logo-img {
-    transform: scale(1.05);
+    transform: scale(1.05); 
 }
 
 .logo-link .site-name-text {
@@ -254,8 +258,10 @@ header {
   text-shadow: 0 0 5px rgba(236, 72, 153, 0.3),
                0 0 8px rgba(249, 115, 22, 0.2);
   letter-spacing: 1px;
-  white-space: nowrap;
+  white-space: nowrap; 
   transition: color 0.3s ease, text-shadow 0.3s ease;
+  overflow: hidden;
+  text-overflow: ellipsis; 
 }
 
 .logo-link:hover .site-name-text {
@@ -266,6 +272,7 @@ header {
 .main-nav {
   display: flex;
   align-items: center;
+  flex-shrink: 0; 
 }
 
 .nav-links {
@@ -284,7 +291,6 @@ header {
   font-size: 0.95rem;
   transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
   cursor: pointer;
-  /* white-space: nowrap; */ /* Ya no es necesario si "Inicio" se eliminó */
 }
 .nav-links a::after {
   content: '';
@@ -305,20 +311,19 @@ header {
 }
 
 .menu-toggle {
-  display: none;
+  display: none; 
   background: none;
   border: none;
   font-size: 1.5rem;
   color: var(--color-text-light);
   cursor: pointer;
   padding: 8px;
-  margin-left: var(--spacing-md);
-  z-index: 1002;
-  position: relative;
-  width: 40px;
+  z-index: 1002; 
+  position: relative; 
+  width: 40px; 
   height: 40px;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
+  -webkit-tap-highlight-color: transparent; 
+  user-select: none; 
 }
 .menu-toggle .fa-bars,
 .menu-toggle .fa-times {
@@ -327,7 +332,7 @@ header {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  pointer-events: none;
+  pointer-events: none; 
 }
 .menu-toggle .fa-times {
   opacity: 0;
@@ -342,14 +347,15 @@ header {
   transform: translate(-50%, -50%) rotate(0deg) scale(1);
 }
 
+/* AJUSTE IDIOMA DESKTOP: Estilos base para el selector de idioma (incluye position:fixed) */
 .language-selector {
-  position: fixed;
-  top: var(--spacing-sm);
-  right: var(--spacing-md);
   display: flex;
   align-items: center;
-  gap: 5px;
-  z-index: 1001;
+  gap: 5px; 
+  z-index: 1001; 
+  position: fixed; /* Para que esté fijo en la esquina en desktop */
+  top: var(--spacing-sm); 
+  right: var(--spacing-md); 
 }
 .lang-button {
   background: none;
@@ -361,7 +367,7 @@ header {
   font-weight: 700;
   border-radius: 3px;
   transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, opacity var(--transition-speed) ease;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid transparent; 
 }
 .lang-button:hover {
   color: var(--color-text-light);
@@ -369,16 +375,17 @@ header {
 .lang-button.active {
   color: var(--color-modern-accent-1);
   border-bottom-color: var(--color-modern-accent-1);
-  cursor: default;
+  cursor: default; 
 }
-.lang-button:disabled {
+.lang-button:disabled { 
     cursor: not-allowed;
     opacity: 0.5;
 }
 
 /*------------------------------------*\
-  #ESTILOS DE BOTONES
+  #ESTILOS DE BOTONES 
 \*------------------------------------*/
+/* ... (código de botones sin cambios) ... */
 @keyframes animatedGradientBackground {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -402,12 +409,12 @@ header {
   text-align: center;
   position: relative;
   z-index: 1;
-  overflow: hidden;
-  line-height: 1.2;
+  overflow: hidden; 
+  line-height: 1.2; 
 }
 .btn:hover, .btn:focus {
-    transform: scale(1.03);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03); 
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); 
 }
 
 .btn:not(.btn-primary) {
@@ -416,25 +423,22 @@ header {
 }
 .btn:not(.btn-primary):hover, .btn:not(.btn-primary):focus {
     background: var(--color-secondary-accent);
-    color: var(--color-dark);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
-    transform: scale(1.03);
+    color: var(--color-dark); 
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3); 
 }
 
 .btn-primary {
     background: var(--animated-gradient);
     background-size: 300% 300%;
     animation: animatedGradientBackground 6s ease infinite;
-    color: var(--color-text-light);
-    border: none;
+    color: var(--color-text-light); 
+    border: none; 
     position: relative;
     z-index: 1;
 }
 
 .btn-primary:hover, .btn-primary:focus {
-    box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4);
-    transform: scale(1.03);
-    color: var(--color-text-dark-on-gradient);
+    box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4); 
 }
 
 /*------------------------------------*\
@@ -443,17 +447,18 @@ header {
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: flex-start;
+  align-items: flex-start; 
+  justify-content: flex-end; 
   position: relative;
-  margin-top: 0;
-  padding-top: calc(var(--header-height-desktop) + var(--spacing-xl) + var(--spacing-md));
+  margin-top: 0; 
+  padding-top: calc(var(--header-height-desktop) + var(--spacing-xl) + var(--spacing-sm)); 
   padding-bottom: var(--spacing-lg);
   background-image: var(--hero-overlay-color), url('hero.jpg');
-  background-attachment: fixed;
+  background-attachment: fixed; 
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
+  overflow: hidden; 
 }
 
 #particles-js {
@@ -462,39 +467,39 @@ header {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 1; 
 }
 
 .hero .hero-content-container {
   position: relative;
-  z-index: 2;
-  width: 60%;
-  max-width: 700px;
-  margin-left: 42.5%;
-  margin-right: var(--spacing-md);
+  z-index: 2; 
+  width: 45%; 
+  max-width: 650px; 
+  margin-left: 0; 
+  margin-right: 21%; /* El valor que te funcionó */
   padding: 0;
-  text-align: right;
+  text-align: right; 
 }
 
 .hero-content h1 {
   animation: fadeInUp 1s ease-out;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+  text-shadow: 0 2px 5px rgba(0,0,0,0.6); 
 }
 .hero-content p.lead {
   animation: fadeInUp 1s ease-out 0.3s forwards;
-  opacity: 0;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: 0;
+  opacity: 0; 
+  max-width: 100%; 
+  margin-left: auto; 
+  margin-right: 0; 
   text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
 .hero-cta {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
   gap: var(--spacing-sm);
-  justify-content: flex-end;
+  justify-content: flex-end; 
   animation: fadeInUp 1s ease-out 0.6s forwards;
-  opacity: 0;
+  opacity: 0; 
   margin-top: var(--spacing-lg);
 }
 
@@ -507,6 +512,7 @@ header {
   to { opacity: 1; }
 }
 
+/* ... (Resto de tus estilos para otras secciones) ... */
 /*------------------------------------*\
   #ABOUT SECTION (Instructor)
 \*------------------------------------*/
@@ -544,8 +550,8 @@ header {
     margin-bottom: var(--spacing-lg);
     padding-left: var(--spacing-md);
     border-left: 3px solid var(--color-modern-accent-1);
-    font-style: italic; /* Estilo de la cita aplicado al contenedor */
-    color: var(--color-text-medium); /* Color del texto de la cita aplicado al contenedor */
+    font-style: italic;
+    color: var(--color-text-medium);
     text-align: center;
     max-width: 60ch;
     margin-left: auto;
@@ -555,7 +561,6 @@ header {
     margin-bottom: var(--spacing-xs);
     font-size: 1.1rem;
     line-height: 1.6;
-    /* El color y font-style se heredan de .about-quote */
 }
 .about-quote cite {
     display: block;
@@ -567,30 +572,29 @@ header {
 
 .about-content {
   display: grid;
-  grid-template-columns: minmax(250px, 1fr) 2fr; /* Estructura de dos columnas para la imagen y el texto */
+  grid-template-columns: minmax(250px, 1fr) 2fr;
   gap: var(--spacing-lg);
-  align-items: start; /* CAMBIO: de 'center' a 'start' para alinear al inicio verticalmente */
+  align-items: start; 
   position: relative;
   z-index: 1;
-  background-color: rgba(24, 24, 27, 0.65); /* Fondo semi-transparente para el contenido */
+  background-color: rgba(24, 24, 27, 0.65);
   padding: var(--spacing-lg);
   border-radius: 12px;
-  backdrop-filter: blur(4px); /* Efecto de desenfoque para el fondo */
+  backdrop-filter: blur(4px);
 }
 .about-image {
   position: relative;
-  max-width: 400px; /* Máximo ancho para la imagen */
-  /* margin: 0 auto; */ /* Comentado o ajustado si es necesario para alineación izquierda en su columna */
-  margin-left: 0; /* Asegura alineación a la izquierda en su columna del grid */
-  margin-right: auto; /* Permite que la columna del grid controle el espacio a la derecha */
+  max-width: 400px;
+  margin-left: 0; 
+  margin-right: auto; 
 }
 .about-image img {
-  width: 100%; /* La imagen ocupa todo el ancho de su contenedor .about-image */
-  height: auto; /* Mantiene la proporción de la imagen */
-  border-radius: 12px; /* Bordes redondeados para la imagen */
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35); /* Sombra para la imagen */
-  display: block; /* Asegura que la imagen sea un bloque */
-  border: 3px solid var(--color-background-light); /* Borde sutil para la imagen */
+  width: 100%; 
+  height: auto; 
+  border-radius: 12px; 
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35); 
+  display: block; 
+  border: 3px solid var(--color-background-light); 
 }
 .about-text h3 {
   color: var(--color-secondary-accent);
@@ -806,7 +810,6 @@ header {
   background: var(--color-modern-accent-1);
 }
 
-/* Hacemos los selectores más específicos para que solo afecten a esta sección */
 #metodo .method-steps {
   display: grid;
   gap: var(--spacing-md);
@@ -854,8 +857,6 @@ header {
   margin-bottom: 0;
   flex-grow: 1;
 }
-
-/* Media Queries para la distribución de los pasos de la sección Método */
 
 @media (min-width: 576px) {
   #metodo .method-steps {
@@ -996,47 +997,42 @@ header {
   text-align: left;
 }
 
-/* Estilos para la Cita de Pascal en la Sección de Beneficios */
 #beneficios-ajedrez .benefits-quote {
     margin: 0 auto var(--spacing-lg);
     padding-left: var(--spacing-md);
     padding-top: var(--spacing-xs);
     padding-bottom: var(--spacing-xs);
-    border-left: 3px solid var(--color-modern-accent-1); /* Mismo borde que .about-quote */
-    max-width: 60ch; /* Mismo ancho que .about-quote */
+    border-left: 3px solid var(--color-modern-accent-1); 
+    max-width: 60ch; 
     text-align: center;
-    font-style: italic; /* Aplicar cursiva al contenedor */
-    color: var(--color-text-medium); /* Aplicar color de texto al contenedor */
+    font-style: italic; 
+    color: var(--color-text-medium); 
 }
 
 #beneficios-ajedrez .benefits-quote p {
-    font-size: 1.1rem; /* Hereda font-style y color del contenedor .benefits-quote */
+    font-size: 1.1rem; 
     margin-bottom: var(--spacing-xs);
     line-height: 1.6;
     max-width: 100%;
-    /* No es necesario color o font-style aquí si se heredan correctamente */
 }
 
 #beneficios-ajedrez .benefits-quote cite {
     display: block;
-    font-style: normal; /* Quitar cursiva del autor si la hereda */
+    font-style: normal; 
     font-size: 0.95rem;
-    color: var(--color-secondary-accent); /* Color específico para el autor */
+    color: var(--color-secondary-accent); 
     margin-top: var(--spacing-sm);
 }
-/* ===== FIN DE ESTILOS PARA LA CITA DE PASCAL ===== */
 
-
-/* ===== INICIO DE ESTILOS PARA CONCEPTOS EN LA LISTA DE BENEFICIOS ===== */
 #beneficios-ajedrez .benefit-list li {
   display: flex;
   align-items: flex-start;
 }
 
 #beneficios-ajedrez .benefit-list li i {
-  color: var(--color-modern-accent-1); /* Color rosa para el check mark */
-  margin-right: 12px; /* Espacio a la derecha del ícono */
-  margin-top: 6px; /* Ajuste vertical fino del ícono */
+  color: var(--color-modern-accent-1); 
+  margin-right: 12px; 
+  margin-top: 6px; 
   flex-shrink: 0;
 }
 
@@ -1046,24 +1042,20 @@ header {
 
 #beneficios-ajedrez .benefit-list li strong {
   font-weight: 700;
-  /* color: var(--color-secondary-accent); */ /* Color dorado original comentado */
   display: inline;
-  margin-right: 0.4em; /* Pequeño espacio después del concepto y antes de la descripción */
-  /* Líneas del degradado DESCOMENTADAS para activar el efecto */
+  margin-right: 0.4em; 
   background: var(--animated-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  background-size: 200% 200%; /* O 300% 300% como en .btn-primary para consistencia */
+  background-size: 200% 200%; 
   animation: animatedGradientBackground 6s ease infinite;
 }
 
 #beneficios-ajedrez .benefit-list li span {
-  color: var(--color-text-light); /* Asegura el color de la descripción */
+  color: var(--color-text-light); 
 }
-/* ===== FIN DE ESTILOS PARA CONCEPTOS EN LA LISTA DE BENEFICIOS ===== */
-
 
 .benefits-cta {
   text-align: center;
@@ -1382,7 +1374,7 @@ footer {
   color: var(--color-text-medium);
   padding-top: var(--spacing-lg);
   border-top: 5px solid var(--color-modern-accent-3);
-  margin-top: auto;
+  margin-top: auto; /* Empuja el footer al final de la página si el contenido es corto */
 }
 .footer-content {
   display: grid;
@@ -1433,7 +1425,7 @@ footer {
   font-size: 0.95rem;
   color: var(--color-text-medium);
 }
-.footer-contact i { /* Estilo para iconos de Font Awesome en footer contact, si los usas */
+.footer-contact i { 
   color: var(--color-modern-accent-2);
   margin-right: 10px;
   width: 20px;
@@ -1442,7 +1434,7 @@ footer {
 }
 .footer-contact a {
   color: var(--color-text-medium);
-  word-break: break-all;
+  word-break: break-all; /* Para emails largos */
 }
 .footer-contact a:hover, .footer-contact a:focus {
   color: var(--color-modern-accent-1);
@@ -1452,44 +1444,38 @@ footer {
     margin-top: var(--spacing-md);
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm); /* Espacio entre "Pagos Seguros con:" y los logos */
-    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no caben */
+    gap: var(--spacing-sm); 
+    flex-wrap: wrap; 
 }
 .payment-methods span[data-lang-key="footerPaymentText"] {
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--color-text-medium);
-    margin-right: var(--spacing-xs); /* Pequeño espacio a la derecha del texto */
+    margin-right: var(--spacing-xs); 
 }
 .payment-icons {
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm); /* Espacio entre cada logo */
+    gap: var(--spacing-sm); 
     flex-wrap: wrap;
 }
 
-/* Nuevos estilos para los logos de pago como imágenes */
 .payment-logo {
-    height: 28px; /* Altura deseada para los logos. Ajusta según sea necesario. */
-    width: auto; /* Mantiene la proporción */
+    height: 28px; 
+    width: auto; 
     opacity: 0.85;
     transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
-    vertical-align: middle; /* Ayuda a alinear con el texto si estuvieran en la misma línea */
-    background-color: var(--color-background-light); /* Fondo para logos PNG con transparencia */
-    padding: 4px; /* Pequeño padding alrededor del logo */
-    border-radius: 4px; /* Bordes redondeados */
+    vertical-align: middle; 
+    background-color: var(--color-background-light); 
+    padding: 4px; 
+    border-radius: 4px; 
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
 .payment-logo:hover {
     opacity: 1;
-    transform: scale(1.05); /* Efecto sutil al pasar el cursor */
+    transform: scale(1.05); 
 }
-
-/* Eliminamos o ajustamos estilos anteriores si ya no se usan */
-/* .payment-methods i.fab ya no se usa, se puede eliminar si no hay otros fab en .payment-methods */
-/* .payment-methods .payment-brand ya no se usa para los logos, se puede eliminar */
-
 
 .footer-bottom {
     border-top: 1px solid var(--color-background-card);
@@ -1505,30 +1491,298 @@ footer {
   text-align: center;
 }
 
-/* ... (otros estilos como .back-to-top-btn y media queries) ... */
-
-/* Asegúrate de incluir tus media queries aquí si necesitas ajustar el tamaño de los logos en móviles */
-@media (max-width: 768px) {
-    .payment-methods {
-        justify-content: center; /* Centra el texto y los logos en móviles */
-    }
-    .payment-icons {
-        justify-content: center; /* Centra los logos si pasan a otra línea */
-        gap: var(--spacing-sm); /* Mantiene el espacio entre logos */
-    }
-    .payment-logo {
-        height: 24px; /* Un poco más pequeños en móviles si es necesario */
-    }
-    .footer-content { text-align: center; }
-    .footer-about h4::after,
-    .footer-links h4::after,
-    .footer-contact h4::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    .footer-contact p { justify-content: center; }
+/*------------------------------------*\
+  #BACK TO TOP BUTTON
+\*------------------------------------*/
+#back-to-top-btn {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  border: none;
+  outline: none;
+  background: var(--animated-gradient);
+  background-size: 300% 300%;
+  animation: animatedGradientBackground 6s ease infinite;
+  color: var(--color-text-light);
+  cursor: pointer;
+  padding: 12px 15px;
+  border-radius: 50%; /* Botón circular */
+  font-size: 1.1rem;
+  opacity: 0; /* Inicia invisible para transición suave */
+  transition: opacity 0.4s ease-in-out, box-shadow 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+#back-to-top-btn.show { /* Se muestra con JS cuando el scroll es suficiente */
+  display: block;
+  opacity: 0.8;
+}
+#back-to-top-btn:hover,
+#back-to-top-btn:focus {
+  opacity: 1;
+  box-shadow: 0 6px 15px rgba(236, 72, 153, 0.5);
+  transform: scale(1.05);
+  /* color: var(--color-text-dark-on-gradient); */ /* Opcional */
 }
 
+/*------------------------------------*\
+  #MEDIA QUERIES (Responsive Design)
+\*------------------------------------*/
+@media (max-width: 992px) { /* Tablets y móviles grandes */
+  .header-container {
+      /* AJUSTE HEADER MÓVIL V4: Asegurar alineación y espacio */
+      padding: 0 var(--spacing-sm); 
+      gap: var(--spacing-xs); 
+      justify-content: space-between; 
+      align-items: center; 
+  }
+  .logo-link {
+      gap: 0.2rem; 
+      flex-shrink: 1; 
+      min-width: 0; 
+      display: flex; 
+      align-items: center;
+      flex-basis: auto; 
+      max-width: calc(100% - 120px); /* AJUSTE HEADER MÓVIL V4: Más espacio para idioma y hamburguesa */
+  }
+  .logo-link #site-logo-img {
+      height: 38px; 
+  }
+  .logo-link .site-name-text {
+      font-size: 1.25rem; 
+      white-space: normal; 
+      line-height: 1.15; 
+      letter-spacing: normal; 
+      overflow: hidden; 
+      text-overflow: ellipsis; 
+      display: -webkit-box; 
+      -webkit-line-clamp: 2; 
+      -webkit-box-orient: vertical;
+  }
+  
+  .language-selector {
+    /* AJUSTE HEADER MÓVIL V4: Posicionamiento en el flujo */
+    position: static; 
+    order: 1; 
+    margin-left: auto; /* Empuja a la derecha, antes del menu-toggle */
+    margin-right: var(--spacing-xs); 
+    flex-shrink: 0; 
+    display: flex; 
+    align-items: center;
+  }
+  .main-nav { /* Contenedor del menu-toggle */
+    order: 2; 
+    display: flex; 
+    align-items: center;
+    flex-shrink: 0; 
+  }
+  .menu-toggle {
+    margin-left: 0; 
+  }
+
+
+  /* AJUSTE MÓVIL HERO: Tablet */
+  .hero { 
+    justify-content: center; 
+    text-align: center; 
+    background-attachment: scroll; 
+    padding-top: calc(var(--header-height-desktop) + var(--spacing-md)); 
+  }
+  .hero .hero-content-container {
+      width: 90%; 
+      max-width: 600px; 
+      margin-left: auto; 
+      margin-right: auto; 
+      padding-left: 0; 
+      padding-right: 0; 
+      text-align: center; 
+   }
+   .hero-cta { justify-content: center; } 
+
+
+  .about-content {
+    grid-template-columns: 1fr; 
+    text-align: center; 
+    padding: var(--spacing-md);
+  }
+  .about-image {
+    margin-bottom: var(--spacing-lg); 
+    max-width: 350px; 
+    margin-left: auto; 
+    margin-right: auto; 
+  }
+  .about-text h4 { text-align: center; }
+  .platforms-info { text-align: center; }
+  .platform-links {
+    display: inline-block;
+    text-align: left;
+  }
+  .about-quote {
+      text-align: center;
+  }
+
+
+  .contact-wrapper { grid-template-columns: 1fr; }
+  .contact-info {
+    margin-top: var(--spacing-lg);
+    text-align: center;
+  }
+  .contact-info p { justify-content: center; }
+
+   .footer-content { text-align: center; }
+   .footer-about h4::after,
+   .footer-links h4::after,
+   .footer-contact h4::after {
+     left: 50%;
+     transform: translateX(-50%);
+   }
+   .footer-contact p { justify-content: center; }
+   .payment-methods { justify-content: center; }
+}
+
+@media (max-width: 768px) { /* Móviles */
+  body { font-size: 15px;  } 
+  header { 
+    padding: calc(var(--spacing-xs)/2) 0; 
+  }
+  .header-container {
+    padding: 0 var(--spacing-sm);
+    height: var(--header-height-mobile);
+    align-items: center; 
+  }
+
+  .logo-link #site-logo-img {
+      height: 32px; 
+  }
+  .logo-link .site-name-text {
+      font-size: 1.05rem; 
+      line-height: 1.1; 
+      /* white-space: normal; ya heredado */
+      /* letter-spacing: normal; ya heredado */
+      /* text-shadow: none; ya heredado */
+      /* overflow y text-overflow ya heredados de 992px */
+  }
+  .logo-link {
+      gap: 0.15rem; 
+      /* padding-top: 0; ya heredado */
+      /* align-items: center; ya heredado */
+      max-width: calc(100% - 80px); /* AJUSTE HEADER MÓVIL V4: (aprox. 40px idioma + 40px hamburguesa) */
+  }
+
+  .menu-toggle { 
+    display: block; 
+  } 
+
+  .language-selector {
+    margin-right: var(--spacing-xs); 
+    gap: 1px; 
+    /* position: static; ya heredado */
+    /* order: 1; ya heredado */
+  }
+  .lang-button {
+    padding: 2px 3px; 
+    font-size: 0.7rem; 
+  }
+
+
+  .nav-links {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 80%; 
+      max-width: 300px; 
+      height: 100vh; 
+      flex-direction: column; 
+      background: var(--color-dark); 
+      padding-top: calc(var(--header-height-mobile) + var(--spacing-lg)); 
+      text-align: center;
+      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2); 
+      overflow-y: auto; 
+      z-index: 1001; 
+      transform: translateX(-100%); 
+      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); 
+      visibility: hidden; 
+  }
+  .nav-links.active { 
+      transform: translateX(0); 
+      visibility: visible;
+  }
+  .nav-links li { margin: var(--spacing-md) 0; } 
+  .nav-links a { font-size: 1.3rem; } 
+  .nav-links a::after { display: none; } 
+
+  /* AJUSTE MÓVIL HERO: Móviles pequeños */
+  .hero {
+    min-height: 80vh; 
+    padding-top: calc(var(--header-height-mobile) + var(--spacing-md)); 
+    align-items: center; 
+  }
+  .hero .hero-content-container { 
+      width: 90%; 
+  }
+  .hero-content h1 { 
+    font-size: clamp(2rem, 7vw, 2.8rem); 
+  }
+  .hero-content p.lead { 
+    font-size: clamp(0.95rem, 4vw, 1.1rem); 
+  }
+  .hero-cta {
+    flex-direction: column; 
+    align-items: center; 
+    gap: var(--spacing-sm);
+  }
+
+  .course-grid,
+  .resource-grid, 
+  .contact-wrapper,
+  .blog-grid,
+  .faq-grid { 
+    grid-template-columns: 1fr; 
+    gap: var(--spacing-md);
+  }
+  .about-content { padding: var(--spacing-sm); } 
+  .about-quote {
+      text-align: center;
+      padding-left: var(--spacing-sm);
+  }
+
+  .blog-post-title { font-size: 1.3rem; }
+  .blog-post-content { text-align: center; }
+  .blog-read-more { align-self: center; }
+
+  .footer-content {
+    text-align: center;
+    gap: var(--spacing-md);
+  }
+  .footer-about h4::after,
+  .footer-links h4::after,
+  .footer-contact h4::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .footer-contact p { justify-content: center; }
+  
+  /* AJUSTE MÓVIL FOOTER LOGOS */
+  .payment-methods { 
+    justify-content: center; 
+  }
+  .payment-icons {
+      justify-content: center; 
+      gap: var(--spacing-sm); 
+  }
+  .payment-logo {
+      height: 22px; 
+      padding: 3px; 
+  }
+
+  #back-to-top-btn {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 13px;
+    font-size: 1rem;
+  }
+}
 
 /*------------------------------------*\
   #FAQ SECTION STYLES (Improved)
@@ -1537,7 +1791,7 @@ footer {
   background-color: var(--color-background-medium);
   padding: var(--spacing-xl) 0;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Evita desbordamientos */
 }
 
 .faq-section::before {
@@ -1557,11 +1811,11 @@ footer {
 }
 
 .faq-section h2::after {
-  background: var(--color-modern-accent-2); /* Naranja vibrante */
+  background: var(--color-modern-accent-2); 
 }
 
 .faq-section .section-intro a {
-    color: var(--color-modern-accent-1); /* Rosa */
+    color: var(--color-modern-accent-1); 
     font-weight: 600;
 }
 .faq-section .section-intro a:hover {
@@ -1600,7 +1854,7 @@ footer {
   text-fill-color: transparent;
   background-size: 250% 250%;
   animation: animatedGradientBackground 5s ease infinite;
-  padding-bottom: calc(var(--spacing-md) - 1px);
+  padding-bottom: calc(var(--spacing-md) - 1px); /* Ajuste para el borde */
 }
 
 .faq-question {
@@ -1611,16 +1865,16 @@ footer {
   color: var(--color-text-light);
   cursor: pointer;
   position: relative;
-  list-style: none;
+  list-style: none; /* Quita el marcador por defecto de <summary> */
   transition: color var(--transition-speed-faq) ease;
-  outline: none;
+  outline: none; /* Quita el outline por defecto en algunos navegadores */
 }
 
-.faq-question::-webkit-details-marker {
+.faq-question::-webkit-details-marker { /* Para navegadores WebKit */
   display: none;
 }
 
-.faq-question::after {
+.faq-question::after { /* Icono de flecha */
   content: '\f078'; 
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
@@ -1634,12 +1888,12 @@ footer {
 }
 
 .faq-item[open] .faq-question::after {
-  transform: translateY(-50%) rotate(-180deg);
+  transform: translateY(-50%) rotate(-180deg); /* Gira la flecha cuando está abierto */
   color: var(--color-modern-accent-3);
 }
 
 .faq-question:hover,
-.faq-question:focus-visible {
+.faq-question:focus-visible { /* Estilo para hover y foco */
   color: var(--color-secondary-accent);
 }
 .faq-question:hover::after {
@@ -1676,7 +1930,7 @@ footer {
   border-bottom-color: var(--color-secondary-accent);
 }
 
-.faq-item .faq-answer {
+.faq-item .faq-answer { /* Animación de despliegue */
     opacity: 0;
     max-height: 0;
     overflow: hidden;
@@ -1685,12 +1939,12 @@ footer {
                 padding var(--transition-speed-faq) cubic-bezier(0.25, 0.1, 0.25, 1);
     padding-top: 0;
     padding-bottom: 0;
-    will-change: max-height, opacity;
+    will-change: max-height, opacity; /* Optimización para la animación */
 }
 
 .faq-item[open] .faq-answer {
     opacity: 1;
-    max-height: 600px; /* Aumentado para asegurar que quepa contenido largo */
+    max-height: 600px; /* Suficiente altura para el contenido */
     padding-top: var(--spacing-md);
     padding-bottom: var(--spacing-md);
 }
