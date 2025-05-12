@@ -191,11 +191,11 @@ document.addEventListener('DOMContentLoaded', () => {
             contactInfoTitle: "Información de Contacto",
             // contactInfoLocation: "Clases 100% Online", // Clave eliminada previamente
             contactTrialTitle: "Solicita tu Clase Introductoria Gratuita",
-            contactTrialDesc: "Una sesión de 30 minutos dedicada a una primera conversación, evaluar tu nivel actual y trazar un plan para alcanzar tus objetivos en el ajedrez.", // NUEVO TEXTO EN ESPAÑOL
+            contactTrialDesc: "Una sesión de 30 minutos dedicada a una primera conversación, evaluar tu nivel actual y trazar un plan para alcanzar tus objetivos en el ajedrez.",
             contactTrialBtn: "Solicitar Ahora",
 
             footerAboutTitle: "Chill Chess Club",
-            footerAboutDesc: "Transformando tu juego con un método personalizado y efectivo. Clases para principiantes e intermedios.",
+            footerAboutDesc: "Clases de ajedrez para principiantes e intermedios. Un método personalizado y tecnológicamente asistido para transformar tu juego.", // NUEVO TEXTO EN ESPAÑOL
             footerLinksTitle: "Enlaces Rápidos",
             footerPrivacyLink: "Política de Privacidad",
             footerTermsLink: "Términos de Servicio",
@@ -393,11 +393,11 @@ document.addEventListener('DOMContentLoaded', () => {
             contactInfoTitle: "Contact Information",
             // contactInfoLocation: "100% Online Classes", // Key removed previously
             contactTrialTitle: "Request Your Free Introductory Class",
-            contactTrialDesc: "A 30-minute session dedicated to an initial conversation, assessing your current level, and outlining a plan to achieve your chess goals.", // NEW ENGLISH TEXT
+            contactTrialDesc: "A 30-minute session dedicated to an initial conversation, assessing your current level, and outlining a plan to achieve your chess goals.",
             contactTrialBtn: "Request Now",
 
             footerAboutTitle: "Chill Chess Club",
-            footerAboutDesc: "Transforming your game with a personalized and effective method. Classes for beginners and intermediates.",
+            footerAboutDesc: "Chess classes for beginners and intermediates. A personalized and technologically assisted method to transform your game.", // NEW ENGLISH TEXT
             footerLinksTitle: "Quick Links",
             footerPrivacyLink: "Privacy Policy",
             footerTermsLink: "Terms of Service",
