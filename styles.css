@@ -567,28 +567,30 @@ header {
 
 .about-content {
   display: grid;
-  grid-template-columns: minmax(250px, 1fr) 2fr;
+  grid-template-columns: minmax(250px, 1fr) 2fr; /* Estructura de dos columnas para la imagen y el texto */
   gap: var(--spacing-lg);
-  align-items: center;
+  align-items: start; /* CAMBIO: de 'center' a 'start' para alinear al inicio verticalmente */
   position: relative;
   z-index: 1;
-  background-color: rgba(24, 24, 27, 0.65);
+  background-color: rgba(24, 24, 27, 0.65); /* Fondo semi-transparente para el contenido */
   padding: var(--spacing-lg);
   border-radius: 12px;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px); /* Efecto de desenfoque para el fondo */
 }
 .about-image {
   position: relative;
-  max-width: 400px;
-  margin: 0 auto;
+  max-width: 400px; /* Máximo ancho para la imagen */
+  /* margin: 0 auto; */ /* Comentado o ajustado si es necesario para alineación izquierda en su columna */
+  margin-left: 0; /* Asegura alineación a la izquierda en su columna del grid */
+  margin-right: auto; /* Permite que la columna del grid controle el espacio a la derecha */
 }
 .about-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
-  display: block;
-  border: 3px solid var(--color-background-light);
+  width: 100%; /* La imagen ocupa todo el ancho de su contenedor .about-image */
+  height: auto; /* Mantiene la proporción de la imagen */
+  border-radius: 12px; /* Bordes redondeados para la imagen */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35); /* Sombra para la imagen */
+  display: block; /* Asegura que la imagen sea un bloque */
+  border: 3px solid var(--color-background-light); /* Borde sutil para la imagen */
 }
 .about-text h3 {
   color: var(--color-secondary-accent);
@@ -1560,13 +1562,15 @@ footer {
   }
 
   .about-content {
-    grid-template-columns: 1fr;
-    text-align: center;
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    text-align: center; /* Centra el texto cuando está en una columna */
     padding: var(--spacing-md);
   }
   .about-image {
-    margin-bottom: var(--spacing-lg);
-    max-width: 350px;
+    margin-bottom: var(--spacing-lg); /* Añade margen inferior a la imagen cuando está arriba */
+    max-width: 350px; /* Ajusta el tamaño máximo de la imagen en tablets */
+    margin-left: auto; /* Centra la imagen */
+    margin-right: auto; /* Centra la imagen */
   }
   .about-text h4 { text-align: center; }
   .platforms-info { text-align: center; }
@@ -1686,7 +1690,7 @@ footer {
   }
 
   /* Secciones a una columna en móviles */
-  .about-content,
+  /* .about-content ya está cubierto por max-width: 992px */
   .course-grid,
   /* #metodo .method-steps se define arriba para móviles */
   .resource-grid, /* Asegúrate que .resource-grid tenga su propia definición de grid si es necesario */
@@ -1696,7 +1700,7 @@ footer {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
-  .about-content { padding: var(--spacing-sm); }
+  .about-content { padding: var(--spacing-sm); } /* Ajuste de padding para móviles */
   .about-quote {
       text-align: center;
       padding-left: var(--spacing-sm);
@@ -1891,7 +1895,7 @@ footer {
 
 .faq-item[open] .faq-answer {
     opacity: 1;
-    max-height: 600px;
+    max-height: 600px; /* Aumentado para asegurar que quepa contenido largo */
     padding-top: var(--spacing-md);
     padding-bottom: var(--spacing-md);
 }
