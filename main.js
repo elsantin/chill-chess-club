@@ -360,7 +360,6 @@ document.addEventListener('DOMContentLoaded', () => {
             blogPost3ImgAlt: "Guide to start playing chess online",
             blogReadMore: "Read More",
 
-            // --- Texts for FAQ ---
             faqTitle: "Frequently Asked Questions",
             faqIntro: "Here you'll find answers to the most common inquiries. If your doubt isn't resolved, feel free to <a href='#contacto' class='scroll-to'>contact me directly</a>.",
             faqQ1: "What do I need to start the chess classes?",
@@ -467,9 +466,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         key === 'benefitsCtaMethod' ||
                         key === 'methodKeyBenefitsDesc' ||
                         key === 'aboutQuoteText' ||
-                        key === 'faqIntro' || // Added for FAQ intro which contains HTML
-                        key === 'faqA1' || // Added for FAQ answer which contains HTML
-                        key === 'faqA2'    // Added for FAQ answer which contains HTML
+                        key === 'faqIntro' || 
+                        key === 'faqA1' || 
+                        key === 'faqA2'    
                     ) {
                         el.innerHTML = translation; 
                     } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
@@ -561,9 +560,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     key === 'benefitsCtaMethod' ||
                     key === 'methodKeyBenefitsDesc' ||
                     key === 'aboutQuoteText' ||
-                    key === 'faqIntro' || // Added for FAQ intro which contains HTML
-                    key === 'faqA1' || // Added for FAQ answer which contains HTML
-                    key === 'faqA2'    // Added for FAQ answer which contains HTML
+                    key === 'faqIntro' || 
+                    key === 'faqA1' || 
+                    key === 'faqA2'    
                 ) {
                      el.innerHTML = translation; 
                 } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {

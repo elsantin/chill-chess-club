@@ -284,7 +284,7 @@ header {
   font-size: 0.95rem;
   transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
   cursor: pointer;
-  white-space: nowrap; /* Evita que el texto del enlace se divida en múltiples líneas */
+  /* white-space: nowrap; */ /* Ya no es necesario si "Inicio" se eliminó */
 }
 .nav-links a::after {
   content: '';
