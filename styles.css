@@ -215,7 +215,7 @@ header {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  /* padding: 0 var(--spacing-md); /* Ajustado en media queries */
+  padding: 0 var(--spacing-md); /* Padding base para desktop */
   width: 100%;
   height: var(--header-height-desktop);
 }
@@ -227,8 +227,8 @@ header {
     align-items: center;
     gap: calc(var(--spacing-sm) * 0.8);
     flex-shrink: 1; 
-    min-width: 0; /* Para que flex-shrink funcione bien con texto */
-    overflow: hidden; /* Para que text-overflow funcione */
+    min-width: 0; 
+    overflow: hidden; 
 }
 
 .logo-link:hover, .logo-link:focus {
@@ -270,62 +270,89 @@ header {
 }
 
 /* Contenedor para los controles de la derecha en el header (idioma y hamburguesa) */
-.header-controls-right {
+.header-controls-right { /* Asegúrate que este es el nombre de clase correcto en tu HTML */
     display: flex;
     align-items: center;
-    gap: var(--spacing-xs); /* Espacio entre idioma y hamburguesa */
-    flex-shrink: 0; /* Para que no se encojan */
+    gap: var(--spacing-xs); 
+    flex-shrink: 0; 
 }
 
-.main-nav { /* Ahora solo contiene el menú desplegable, el botón se estiliza por separado */
-  display: flex; /* Por si acaso, aunque solo contendrá el ul en desktop */
+.main-nav { 
+  display: flex; 
   align-items: center;
   flex-shrink: 0; 
 }
 
-.nav-links {
-  display: flex;
+.nav-links { /* Este es el menú desplegable en móvil, oculto por defecto */
+  display: none; /* Oculto por defecto, se muestra en desktop y se activa con JS en móvil */
   list-style: none;
-  align-items: center;
+  /* Estilos para desktop */
 }
-.nav-links li {
-  margin: 0 var(--spacing-sm);
-}
-.nav-links a {
-  color: var(--color-text-light);
-  font-weight: 500;
-  position: relative;
-  padding: 5px 0;
-  font-size: 0.95rem;
-  transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
-  cursor: pointer;
-}
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--color-modern-accent-1);
-  transition: width var(--transition-speed) ease;
-}
-.nav-links a:hover, .nav-links a:focus {
-  color: var(--color-modern-accent-1);
-  transform: translateY(-2px);
-}
-.nav-links a:hover::after, .nav-links a:focus::after {
-  width: 100%;
+@media (min-width: 993px) { /* O el breakpoint donde tu menú cambia de hamburguesa a links directos */
+    .nav-links {
+        display: flex;
+        align-items: center;
+        /* Reseteamos propiedades de móvil si es necesario, aunque con display:flex ya se anulan muchas */
+        position: static;
+        transform: none;
+        visibility: visible;
+        width: auto;
+        height: auto;
+        background: transparent;
+        box-shadow: none;
+        padding-top: 0;
+    }
+    .nav-links li {
+        margin: 0 var(--spacing-sm);
+    }
+    .nav-links li.mobile-menu-header { /* Ocultar el logo del menú móvil en desktop */
+        display: none;
+    }
+    .nav-links a {
+        color: var(--color-text-light);
+        font-weight: 500;
+        position: relative;
+        padding: 5px 0;
+        font-size: 0.95rem;
+        transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+        cursor: pointer;
+        display: inline-block; /* Para que el ::after funcione bien */
+        border-bottom: none; /* Quitar borde de móvil */
+        text-align: left; /* Restablecer por si acaso */
+    }
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--color-modern-accent-1);
+        transition: width var(--transition-speed) ease;
+        display: block; /* Asegurar que se muestre */
+    }
+    .nav-links a:hover, .nav-links a:focus {
+        color: var(--color-modern-accent-1);
+        transform: translateY(-2px);
+        background-color: transparent; /* Asegurar que no herede el hover de móvil */
+    }
+    .nav-links a:hover::after, .nav-links a:focus::after {
+        width: 100%;
+    }
+    .menu-toggle {
+        display: none; /* Ocultar hamburguesa en desktop */
+    }
 }
 
+
 .menu-toggle {
-  display: none; 
+  /* display: none;  Se controla en media queries */
   background: none;
   border: none;
   font-size: 1.5rem;
   color: var(--color-text-light);
   cursor: pointer;
-  padding: 8px; /* Área de clic un poco más grande */
+  padding: 8px; 
   z-index: 1002; 
   position: relative; 
   width: 40px; 
@@ -518,7 +545,6 @@ header {
   to { opacity: 1; }
 }
 
-/* ... (Resto de tus estilos para otras secciones) ... */
 /*------------------------------------*\
   #ABOUT SECTION (Instructor)
 \*------------------------------------*/
@@ -1328,8 +1354,11 @@ header {
   color: var(--color-text-medium);
   font-size: 1rem;
   /* AJUSTE CONTACTO MÓVIL: Permitir que el texto se divida */
-  word-break: break-word;
-  overflow-wrap: break-word;
+  word-break: break-word; /* Para palabras largas como emails */
+  overflow-wrap: break-word; /* Alternativa moderna a word-break */
+}
+.contact-info p a { /* Específico para el enlace del email */
+    word-break: break-all; /* Forzar el quiebre en cualquier punto para el email */
 }
 .contact-info i {
   color: var(--color-modern-accent-2);
@@ -1339,14 +1368,7 @@ header {
   font-size: 1.1rem;
   flex-shrink: 0; /* Evita que el icono se encoja */
 }
-.contact-info a {
-  color: var(--color-secondary-accent);
-  word-break: break-all; /* Ayuda a que el email se divida */
-}
-.contact-info a:hover, .contact-info a:focus {
-  text-decoration: underline;
-  color: var(--color-modern-accent-1);
-}
+
 .contact-info h4 {
   margin-top: var(--spacing-lg);
   margin-bottom: var(--spacing-sm);
@@ -1355,13 +1377,6 @@ header {
 }
 .contact-info .btn { 
   margin-top: var(--spacing-sm); 
-  /* AJUSTE CONTACTO MÓVIL: Estilos para el botón */
-  white-space: normal; /* Permitir que el texto del botón se divida */
-  padding: 12px 20px; /* Padding ajustado para móvil */
-  font-size: 0.9rem; /* Fuente más pequeña para el botón */
-  width: auto; /* Que se ajuste al contenido */
-  max-width: 90%; /* Que no exceda el 90% del contenedor */
-  display: inline-block; /* Para que respete el text-align:center del padre */
 }
 
 #form-status {
@@ -1530,7 +1545,7 @@ footer {
   border-radius: 50%; /* Botón circular */
   font-size: 1.1rem;
   opacity: 0; /* Inicia invisible para transición suave */
-  transition: opacity 0.4s ease-in-out, box-shadow 0.3s ease, color 0.3s ease;
+  transition: opacity 0.4s ease-in-out, box-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Añadido transform */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 #back-to-top-btn.show { /* Se muestra con JS cuando el scroll es suficiente */
@@ -1562,49 +1577,46 @@ footer {
       display: flex; 
       align-items: center;
       flex-basis: auto; 
-      /* max-width: calc(100% - 120px); */ /* AJUSTE HEADER MÓVIL V5: Eliminado para que el nuevo div controle */
+      max-width: calc(100% - 130px); 
   }
   .logo-link #site-logo-img {
       height: 38px; 
   }
   .logo-link .site-name-text {
-      font-size: 1.25rem; 
-      white-space: nowrap; /* AJUSTE HEADER MÓVIL V5: Volver a nowrap con ellipsis */
+      font-size: 1.2rem; 
+      white-space: nowrap; 
       line-height: 1.15; 
       letter-spacing: normal; 
       overflow: hidden; 
       text-overflow: ellipsis; 
-      /* display: -webkit-box; */ /* AJUSTE HEADER MÓVIL V5: Eliminado para nowrap */
-      /* -webkit-line-clamp: 2; */
-      /* -webkit-box-orient: vertical; */
   }
   
-  /* AJUSTE HEADER MÓVIL V5: Estilos para el nuevo contenedor de controles derechos */
   .header-controls-right {
       display: flex;
       align-items: center;
-      flex-shrink: 0; /* Que no se encoja */
-      gap: var(--spacing-xs); /* Espacio entre idioma y hamburguesa */
+      flex-shrink: 0; 
+      gap: var(--spacing-xs); 
   }
-
   .language-selector {
-    position: static; /* Asegurar que esté en el flujo dentro de header-controls-right */
-    order: 1; /* Idioma primero */
-    margin-left: 0; /* Quitar margen auto */
-    margin-right: 0; /* Quitar margen, el gap del padre lo maneja */
+    position: static; 
+    order: 1; 
+    margin-left: 0; 
+    margin-right: 0; 
     flex-shrink: 0; 
     display: flex; 
     align-items: center;
   }
   .main-nav { 
-    order: 2; /* Hamburguesa después */
+    order: 2; 
     display: flex; 
     align-items: center;
     flex-shrink: 0; 
   }
   .menu-toggle {
     margin-left: 0; 
+    display: block; 
   }
+  /* .nav-links se maneja en la query de 768px para el modo móvil */
 
 
   /* AJUSTE MÓVIL HERO: Tablet */
@@ -1650,22 +1662,47 @@ footer {
 
   .contact-wrapper { 
     grid-template-columns: 1fr; 
-    padding: var(--spacing-md); /* Menos padding en móvil */
+    padding: var(--spacing-md); 
   }
   .contact-info {
     margin-top: var(--spacing-lg);
     text-align: center;
-    padding: 0 var(--spacing-sm); /* Padding interno para contact-info */
+    padding: 0 var(--spacing-sm); 
   }
   .contact-info p { 
     justify-content: center; 
-    font-size: 0.9rem; /* AJUSTE CONTACTO MÓVIL: Fuente más pequeña para párrafos */
+    font-size: 0.9rem; 
+    word-break: break-word; 
+    overflow-wrap: break-word;
+  }
+   .contact-info p a {
+    word-break: break-all; 
   }
   .contact-info h3 {
-    font-size: 1.3rem; /* AJUSTE CONTACTO MÓVIL: Título más pequeño */
+    font-size: 1.3rem; 
   }
    .contact-info h4 {
-    font-size: 1rem; /* AJUSTE CONTACTO MÓVIL: Subtítulo más pequeño */
+    font-size: 1rem; 
+  }
+  .contact-info .btn {
+    white-space: normal; 
+    padding: 10px 15px; 
+    font-size: 0.9rem; 
+    width: auto; 
+    max-width: 80%; 
+    display: inline-block; 
+    margin-left: auto; 
+    margin-right: auto; 
+  }
+  .contact-form button[type="submit"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content; 
+    max-width: 90%; 
+    padding: 12px 25px; 
+    font-size: 0.95rem;
+    white-space: normal; 
   }
 
 
@@ -1692,23 +1729,19 @@ footer {
   }
 
   .logo-link #site-logo-img {
-      height: 30px; /* AJUSTE HEADER MÓVIL V5: Aún más pequeño */
+      height: 30px; 
   }
   .logo-link .site-name-text {
-      font-size: 1rem; /* AJUSTE HEADER MÓVIL V5: Mucho más pequeño */
+      font-size: 0.95rem; 
       line-height: 1.1; 
-      /* white-space: nowrap; ya heredado */
-      /* letter-spacing: normal; ya heredado */
-      /* text-shadow: none; ya heredado */
-      /* overflow y text-overflow ya heredados de 992px */
   }
   .logo-link {
-      gap: 0.1rem; /* AJUSTE HEADER MÓVIL V5: Mínimo gap */
-      max-width: calc(100% - 70px); /* AJUSTE HEADER MÓVIL V5: (aprox. 30px idioma + 40px hamburguesa) */
+      gap: 0.1rem; 
+      max-width: calc(100% - 70px); 
   }
   
   .header-controls-right {
-    gap: var(--spacing-xs); /* Espacio entre idioma y hamburguesa */
+    gap: var(--spacing-xs); 
   }
 
   .menu-toggle { 
@@ -1716,42 +1749,82 @@ footer {
   } 
 
   .language-selector {
-    margin-right: 0; /* Quitar margen si el gap del padre lo maneja */
+    margin-right: 0; 
     gap: 1px; 
-    /* position: static; ya heredado */
-    /* order: 1; ya heredado */
   }
   .lang-button {
     padding: 2px 3px; 
-    font-size: 0.7rem; 
+    font-size: 0.65rem; 
   }
 
-
-  .nav-links {
+  /* --- ESTILOS DEL MENÚ MÓVIL --- */
+  .nav-links { /* Estado base: oculto y listo para transición */
+      display: flex; 
+      flex-direction: column;
       position: fixed;
       top: 0;
-      left: 0;
+      left: 0; 
       width: 80%; 
       max-width: 300px; 
       height: 100vh; 
-      flex-direction: column; 
       background: var(--color-dark); 
-      padding-top: calc(var(--header-height-mobile) + var(--spacing-lg)); 
+      padding-top: 0; 
       text-align: center;
       box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2); 
       overflow-y: auto; 
       z-index: 1001; 
+      
       transform: translateX(-100%); 
-      transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); 
       visibility: hidden; 
+      transition: transform var(--transition-speed) ease-in-out, 
+                  visibility var(--transition-speed) ease-in-out; 
+      
+      justify-content: flex-start; 
   }
-  .nav-links.active { 
+
+  .nav-links.active { /* Estado visible */
       transform: translateX(0); 
-      visibility: visible;
+      visibility: visible; 
   }
-  .nav-links li { margin: var(--spacing-md) 0; } 
-  .nav-links a { font-size: 1.3rem; } 
-  .nav-links a::after { display: none; } 
+
+  .nav-links .mobile-menu-header {
+      list-style-type: none; 
+      padding: var(--spacing-sm); 
+      padding-top: var(--spacing-md); 
+      border-bottom: 1px solid var(--color-background-light); 
+      text-align: center; 
+      margin-bottom: var(--spacing-xs); 
+  }
+
+  .nav-links .mobile-menu-logo {
+      max-height: 45px; 
+      width: auto;
+      display: inline-block; 
+  }
+  
+  .nav-links li:not(.mobile-menu-header) { 
+    margin: 0; 
+  } 
+  
+  .nav-links a { 
+    font-size: 1.05rem; 
+    padding: calc(var(--spacing-xs) * 1.5) var(--spacing-sm); 
+    display: block; 
+    color: var(--color-text-light);
+    text-align: left; 
+    border-bottom: 1px solid var(--color-background-card); 
+  } 
+  .nav-links li:last-child a {
+      border-bottom: none; 
+  }
+
+  .nav-links a:hover, .nav-links a:focus {
+      background-color: var(--color-background-medium);
+      color: var(--color-modern-accent-1);
+  }
+  .nav-links a::after { display: none; } /* Ocultar el ::after de desktop en móvil */
+  /* --- FIN ESTILOS MENÚ MÓVIL --- */
+
 
   /* AJUSTE MÓVIL HERO: Móviles pequeños */
   .hero {
@@ -1763,10 +1836,10 @@ footer {
       width: 90%; 
   }
   .hero-content h1 { 
-    font-size: clamp(2rem, 7vw, 2.8rem); 
+    font-size: clamp(1.8rem, 6vw, 2.5rem); 
   }
   .hero-content p.lead { 
-    font-size: clamp(0.95rem, 4vw, 1.1rem); 
+    font-size: clamp(0.9rem, 3.5vw, 1rem); 
   }
   .hero-cta {
     flex-direction: column; 
@@ -1793,13 +1866,13 @@ footer {
   .blog-read-more { align-self: center; }
 
   .contact-wrapper {
-      padding: var(--spacing-sm); /* Aún menos padding en pantallas muy pequeñas */
+      padding: var(--spacing-sm); 
   }
   .contact-info {
-    padding: 0; /* Quitar padding si el wrapper ya tiene */
+    padding: 0; 
   }
   .contact-info .btn {
-    padding: 10px 15px; /* Botón un poco más pequeño */
+    padding: 10px 15px; 
     font-size: 0.85rem;
   }
 
