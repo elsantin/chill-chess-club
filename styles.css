@@ -313,7 +313,7 @@ header {
         font-weight: 500;
         position: relative;
         padding: 5px 0;
-        font-size: 0.95rem;
+        font-size: 1.1rem;
         transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
         cursor: pointer;
         display: inline-block; /* Para que el ::after funcione bien */
@@ -1732,7 +1732,7 @@ footer {
       height: 30px; 
   }
   .logo-link .site-name-text {
-      font-size: 0.95rem; 
+      font-size: 1.6rem; /* AUMENTADO DESDE 0.95rem */
       line-height: 1.1; 
   }
   .logo-link {
