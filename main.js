@@ -10,13 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
             logoAlt: "Logo de Chill Chess Club",
             siteName: "Chill Chess Club",
             logoLinkAriaLabel: "Ir al inicio de la página",
-            navHome: "Inicio",
+            // navHome: "Inicio", // Eliminada
             navAbout: "Sobre Mí",
             navCourses: "Cursos",
             navMethod: "Método",
             navBenefits: "Beneficios",
             navResources: "Recursos",
             navBlog: "Blog",
+            navFaq: "FAQ",
             navContact: "Contacto",
 
             heroTitle: "Descubre el ajedrez a tu manera: una experiencia inmersiva y personalizada",
@@ -144,9 +145,8 @@ document.addEventListener('DOMContentLoaded', () => {
             resourceLinkText: "Explorar Contenido",
             resourcesCta: "Si esta información resuena contigo, <a href=\"#cursos\" class=\"scroll-to\">descubre nuestros cursos</a> y profundiza tu conocimiento con un enfoque personalizado.",
 
-            // --- Textos para el Blog ---
             blogTitle: "Desde Nuestro Blog",
-            blogIntro: "Un espacio dedicado a la exploración del ajedrez. Artículos, perspectivas y curiosidades para profundizar tu entendimiento y aprecio por el juego.", // <-- INTRO ACTUALIZADA
+            blogIntro: "Un espacio dedicado a la exploración del ajedrez. Artículos, perspectivas y curiosidades para profundizar tu entendimiento y aprecio por el juego.",
             blogPost1Title: "El Legado del Ajedrez: Un Viaje a Través del Tiempo y las Culturas",
             blogPost1Excerpt: "Explora la rica evolución del ajedrez, desde sus orígenes ancestrales y su travesía por diversas culturas, hasta consolidarse como el desafío intelectual que conocemos hoy.",
             blogPost1ImgAlt: "El legado del ajedrez a través del tiempo",
@@ -157,6 +157,23 @@ document.addEventListener('DOMContentLoaded', () => {
             blogPost3Excerpt: "Comenzar en el ajedrez online es simple. Sigue esta guía de cinco pasos para acceder a plataformas gratuitas y disfrutar de la experiencia internacional del ajedrez rápidamente.",
             blogPost3ImgAlt: "Guía para iniciar en el ajedrez online",
             blogReadMore: "Leer Más",
+
+            faqTitle: "Preguntas Frecuentes",
+            faqIntro: "Aquí encontrarás respuestas a las consultas más comunes. Si tu duda no está resuelta, no dudes en <a href='#contacto' class='scroll-to'>contactarme directamente</a>.",
+            faqQ1: "¿Qué necesito para empezar las clases de ajedrez?",
+            faqA1: "Principalmente, una conexión a internet estable y una cuenta gratuita en <a href=\"https://www.chess.com\" target=\"_blank\" rel=\"noopener noreferrer\">Chess.com</a> y/o <a href=\"https://lichess.org\" target=\"_blank\" rel=\"noopener noreferrer\">Lichess.org</a>, según lo que acordemos para nuestras sesiones. Un micrófono es recomendable para una comunicación fluida, y por supuesto, entusiasmo por explorar el mundo del ajedrez.",
+            faqQ2: "¿Cómo funcionan los pagos de los cursos?",
+            faqA2: "Los pagos se gestionan de forma segura a través de plataformas como PayPal, Payoneer o Binance. Una vez que definamos el curso o paquete de clases que mejor se adapta a ti, te facilitaré los detalles para realizar la transacción. Si necesitas un plan de pagos, podemos conversarlo.",
+            faqQ3: "¿Son estos cursos adecuados si nunca antes he jugado ajedrez?",
+            faqA3: "Definitivamente. El 'Curso Principiante: El Despegue' está especialmente diseñado para quienes se acercan al ajedrez por primera vez. Te acompañaré desde los movimientos básicos de las piezas hasta tus primeras estrategias, todo en un ambiente de aprendizaje paciente y motivador.",
+            faqQ4: "¿En qué se diferencia tu método de enseñanza de otros cursos online?",
+            faqA4: "Mi enfoque distintivo radica en la personalización profunda, potenciada con herramientas de IA. Esto me permite adaptar cada lección, material de estudio y ejercicio a tu ritmo individual, estilo de aprendizaje y áreas de interés específicas. Busco crear una experiencia inmersiva que te enseñe ajedrez y, al mismo tiempo, te permita apreciar su riqueza estratégica y conceptual.",
+            faqQ5: "¿Cuánto tiempo duran las clases y cuál es la frecuencia recomendada?",
+            faqA5: "Las clases individuales estándar tienen una duración de 60 minutos. En cuanto a la frecuencia, sugiero una o dos clases por semana para un progreso constante y una buena asimilación de los conceptos, aunque siempre podemos ajustarlo a tu disponibilidad y objetivos.",
+            faqQ6: "¿Se proporciona material de estudio o ejercicios para practicar entre clases?",
+            faqA6: "Sí, por supuesto. Como parte del método, recibirás acceso a material de estudio digital bilingüe, ejercicios seleccionados y análisis de partidas (con apoyo de IA) para que puedas consolidar tu aprendizaje y practicar a tu propio ritmo.",
+            faqQ7: "¿Qué herramientas o plataformas de IA se utilizan y cómo me benefician?",
+            faqA7: "Empleo una combinación de software de análisis de ajedrez reconocido y herramientas de IA para la creación de contenido. Estas tecnologías me ayudan a identificar patrones en tu juego, generar ejercicios adaptados a tus necesidades, y crear materiales de estudio (como resúmenes o guías) más eficientes y personalizados. El objetivo es enriquecer tu aprendizaje, no reemplazar la interacción humana.",
 
             contactTitle: "Contacta Conmigo",
             contactIntro: "¿Listo para empezar o tienes alguna pregunta? Envíame un mensaje a través del formulario o utiliza mis datos de contacto.",
@@ -198,13 +215,14 @@ document.addEventListener('DOMContentLoaded', () => {
             logoAlt: "Chill Chess Club Logo",
             siteName: "Chill Chess Club",
             logoLinkAriaLabel: "Go to the top of the page",
-            navHome: "Home",
+            // navHome: "Home", // Removed
             navAbout: "About Me",
             navCourses: "Courses",
             navMethod: "Method",
             navBenefits: "Benefits",
             navResources: "Resources",
             navBlog: "Blog",
+            navFaq: "FAQ",
             navContact: "Contact",
 
             heroTitle: "Discover chess your way: an immersive and personalized experience",
@@ -329,19 +347,36 @@ document.addEventListener('DOMContentLoaded', () => {
             resourceLinkText: "Explore Content",
             resourcesCta: "If this information resonates with you, <a href=\"#cursos\" class=\"scroll-to\">discover our courses</a> and deepen your knowledge with a personalized approach.",
 
-            // --- Texts for Blog ---
             blogTitle: "From Our Blog",
-            blogIntro: "A space dedicated to the exploration of chess. Articles, perspectives, and curiosities to deepen your understanding and appreciation for the game.", // <-- UPDATED INTRO
+            blogIntro: "A space dedicated to the exploration of chess. Articles, perspectives, and curiosities to deepen your understanding and appreciation for the game.",
             blogPost1Title: "The Legacy of Chess: A Journey Through Time and Cultures",
             blogPost1Excerpt: "Explore the rich evolution of chess, from its ancient origins and its journey through diverse cultures, to its consolidation as the intellectual challenge we know today.",
-            blogPost1ImgAlt: "The legacy of chess through time", // Placeholder Alt Text
+            blogPost1ImgAlt: "The legacy of chess through time",
             blogPost2Title: "Chess: Slow Game or Exciting Challenge? The Answer Might Surprise You",
             blogPost2Excerpt: "If you think chess is only for patient geniuses, allow us to show you its intensity, its creative beauty, and why it has remained relevant for centuries.",
-            blogPost2ImgAlt: "Chess as an exciting challenge", // Placeholder Alt Text
+            blogPost2ImgAlt: "Chess as an exciting challenge",
             blogPost3Title: "Your Path to Online Chess: 5 Easy Steps for a Free Start",
             blogPost3Excerpt: "Starting online chess is simple. Follow this five-step guide to access free platforms and enjoy the international chess experience quickly.",
-            blogPost3ImgAlt: "Guide to start playing chess online", // Placeholder Alt Text
-            blogReadMore: "Read More", // Text for the "Read More" button of each post
+            blogPost3ImgAlt: "Guide to start playing chess online",
+            blogReadMore: "Read More",
+
+            // --- Texts for FAQ ---
+            faqTitle: "Frequently Asked Questions",
+            faqIntro: "Here you'll find answers to the most common inquiries. If your doubt isn't resolved, feel free to <a href='#contacto' class='scroll-to'>contact me directly</a>.",
+            faqQ1: "What do I need to start the chess classes?",
+            faqA1: "Mainly, a stable internet connection and a free account on <a href=\"https://www.chess.com\" target=\"_blank\" rel=\"noopener noreferrer\">Chess.com</a> and/or <a href=\"https://lichess.org\" target=\"_blank\" rel=\"noopener noreferrer\">Lichess.org</a>, as we agree for our sessions. A microphone is recommended for smooth communication, and of course, enthusiasm to explore the world of chess!",
+            faqQ2: "How do course payments work?",
+            faqA2: "Payments are securely managed through platforms like PayPal, Payoneer, or Binance. Once we define the course or class package that best suits you, I will provide the details to make the transaction. If you need a payment plan, we can discuss it.",
+            faqQ3: "Are these courses suitable if I've never played chess before?",
+            faqA3: "Definitely! The 'Beginner Course: Liftoff' is specially designed for those approaching chess for the first time. I will accompany you from the basic movements of the pieces to your first strategies, all in a patient and motivating learning environment.",
+            faqQ4: "How does your teaching method differ from other online courses?",
+            faqA4: "My distinctive approach lies in deep personalization, enhanced with AI tools. This allows me to adapt each lesson, study material, and exercise to your individual pace, learning style, and specific areas of interest. I aim to create an immersive experience that not only teaches you chess but also allows you to appreciate its strategic and conceptual richness.",
+            faqQ5: "How long are the classes and what is the recommended frequency?",
+            faqA5: "Standard individual classes are 60 minutes long. Regarding frequency, I suggest one or two classes per week for consistent progress and good assimilation of concepts, although we can always adjust it to your availability and goals.",
+            faqQ6: "Is study material or exercises provided to practice between classes?",
+            faqA6: "Yes, of course. As part of the method, you will receive access to bilingual digital study material, selected exercises, and game analysis (with AI support) so you can consolidate your learning and practice at your own pace.",
+            faqQ7: "What AI tools or platforms are used and how do they benefit me?",
+            faqA7: "I use a combination of recognized chess analysis software and AI tools for content creation. These technologies help me identify patterns in your game, generate exercises tailored to your needs, and create more efficient and personalized study materials (such as summaries or guides). The goal is to enrich your learning, not replace human interaction.",
 
             contactTitle: "Contact Me",
             contactIntro: "Ready to start or have questions? Send me a message using the form or use my contact details.",
@@ -431,7 +466,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         key === 'benefitsCtaText' ||
                         key === 'benefitsCtaMethod' ||
                         key === 'methodKeyBenefitsDesc' ||
-                        key === 'aboutQuoteText'
+                        key === 'aboutQuoteText' ||
+                        key === 'faqIntro' || // Added for FAQ intro which contains HTML
+                        key === 'faqA1' || // Added for FAQ answer which contains HTML
+                        key === 'faqA2'    // Added for FAQ answer which contains HTML
                     ) {
                         el.innerHTML = translation; 
                     } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
@@ -522,7 +560,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     key === 'benefitsCtaText' ||
                     key === 'benefitsCtaMethod' ||
                     key === 'methodKeyBenefitsDesc' ||
-                    key === 'aboutQuoteText'
+                    key === 'aboutQuoteText' ||
+                    key === 'faqIntro' || // Added for FAQ intro which contains HTML
+                    key === 'faqA1' || // Added for FAQ answer which contains HTML
+                    key === 'faqA2'    // Added for FAQ answer which contains HTML
                 ) {
                      el.innerHTML = translation; 
                 } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {

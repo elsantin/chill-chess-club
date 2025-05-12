@@ -284,6 +284,7 @@ header {
   font-size: 0.95rem;
   transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
   cursor: pointer;
+  white-space: nowrap; /* Evita que el texto del enlace se divida en múltiples líneas */
 }
 .nav-links a::after {
   content: '';
@@ -1690,7 +1691,8 @@ footer {
   /* #metodo .method-steps se define arriba para móviles */
   .resource-grid, /* Asegúrate que .resource-grid tenga su propia definición de grid si es necesario */
   .contact-wrapper,
-  .blog-grid { /* Asegúrate que .blog-grid tenga su propia definición de grid si es necesario */
+  .blog-grid,
+  .faq-grid { /* Asegurar que faq-grid también sea de una columna si es necesario */
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
@@ -1780,34 +1782,33 @@ footer {
   background-color: var(--color-dark);
   border: 1px solid var(--color-background-light);
   border-radius: 8px;
-  transition: background-color var(--transition-speed-faq) ease, box-shadow var(--transition-speed-faq) ease; /* Usar nueva variable de velocidad */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil por defecto */
+  transition: background-color var(--transition-speed-faq) ease, box-shadow var(--transition-speed-faq) ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .faq-item[open] {
   background-color: var(--color-background-card);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Sombra más pronunciada cuando está abierto */
-  border-left: 4px solid var(--color-modern-accent-3); /* Borde de acento púrpura cuando está abierto */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  border-left: 4px solid var(--color-modern-accent-3);
 }
 
-.faq-item[open] summary.faq-question { /* Aplicar degradado al texto de la pregunta cuando está abierta */
+.faq-item[open] summary.faq-question {
   border-bottom: 1px solid var(--color-background-light);
-  /* El color sólido se reemplaza por el degradado */
   background: var(--animated-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  background-size: 250% 250%; /* Ajustar tamaño del gradiente */
-  animation: animatedGradientBackground 5s ease infinite; /* Ajustar velocidad de animación */
-  padding-bottom: calc(var(--spacing-md) - 1px); /* Ajustar padding para compensar el borde */
+  background-size: 250% 250%;
+  animation: animatedGradientBackground 5s ease infinite;
+  padding-bottom: calc(var(--spacing-md) - 1px);
 }
 
 .faq-question {
   padding: var(--spacing-md);
   font-family: var(--font-body);
-  font-size: 1.15rem; /* Ligeramente más grande */
-  font-weight: 700;   /* Más peso */
+  font-size: 1.15rem;
+  font-weight: 700;
   color: var(--color-text-light);
   cursor: pointer;
   position: relative;
@@ -1821,37 +1822,37 @@ footer {
 }
 
 .faq-question::after {
-  content: '\f078'; /* fas fa-chevron-down */
+  content: '\f078'; 
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
   position: absolute;
   right: var(--spacing-md);
   top: 50%;
   transform: translateY(-50%) rotate(0deg);
-  transition: transform var(--transition-speed-faq) ease-in-out, color var(--transition-speed-faq) ease; /* Transición más suave */
+  transition: transform var(--transition-speed-faq) ease-in-out, color var(--transition-speed-faq) ease;
   color: var(--color-text-medium);
-  font-size: 1rem; /* Tamaño del ícono */
+  font-size: 1rem;
 }
 
 .faq-item[open] .faq-question::after {
   transform: translateY(-50%) rotate(-180deg);
-  color: var(--color-modern-accent-3); /* Púrpura para el ícono cuando está abierto */
+  color: var(--color-modern-accent-3);
 }
 
 .faq-question:hover,
 .faq-question:focus-visible {
-  color: var(--color-secondary-accent); /* Dorado al hacer hover/focus */
+  color: var(--color-secondary-accent);
 }
 .faq-question:hover::after {
-    color: var(--color-secondary-accent); /* Dorado para el ícono al hacer hover */
+    color: var(--color-secondary-accent);
 }
 
 
 .faq-answer {
   padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
-  color: var(--color-text-light); /* Un poco más claro para mejor contraste */
-  font-size: 1rem; /* Ligeramente más grande */
-  line-height: 1.75; /* Un poco más de interlineado */
+  color: var(--color-text-light);
+  font-size: 1rem;
+  line-height: 1.75;
 }
 
 .faq-answer p {
@@ -1864,9 +1865,9 @@ footer {
 
 .faq-answer a {
   color: var(--color-modern-accent-1);
-  font-weight: 600; /* Un poco más de peso */
-  text-decoration: none; /* Quitar subrayado por defecto */
-  border-bottom: 1px dashed var(--color-modern-accent-1); /* Subrayado punteado */
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px dashed var(--color-modern-accent-1);
   transition: color var(--transition-speed-faq) ease, border-bottom-color var(--transition-speed-faq) ease;
 }
 
@@ -1876,7 +1877,6 @@ footer {
   border-bottom-color: var(--color-secondary-accent);
 }
 
-/* Animación suave para abrir/cerrar mejorada */
 .faq-item .faq-answer {
     opacity: 0;
     max-height: 0;
@@ -1886,12 +1886,12 @@ footer {
                 padding var(--transition-speed-faq) cubic-bezier(0.25, 0.1, 0.25, 1);
     padding-top: 0;
     padding-bottom: 0;
-    will-change: max-height, opacity; /* Ayuda al navegador a optimizar la animación */
+    will-change: max-height, opacity;
 }
 
 .faq-item[open] .faq-answer {
     opacity: 1;
-    max-height: 600px; /* Aumentado para respuestas potencialmente más largas */
-    padding-top: var(--spacing-md); /* Más padding superior cuando está abierto */
+    max-height: 600px;
+    padding-top: var(--spacing-md);
     padding-bottom: var(--spacing-md);
 }
