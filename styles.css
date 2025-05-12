@@ -1584,7 +1584,7 @@ footer {
       height: 38px; 
   }
   .logo-link .site-name-text {
-      font-size: 1.0rem; 
+      font-size: 1.15rem; 
       white-space: nowrap; 
       line-height: 1.15; 
       letter-spacing: normal; 
@@ -1621,45 +1621,53 @@ footer {
 
 
   /* AJUSTE MÓVIL HERO: Tablet */
-  .hero { 
-    justify-content: center; 
-    text-align: center; 
-    background-attachment: scroll; /* Cambiado para mejor rendimiento en móvil */
-    padding-top: calc(var(--header-height-desktop) + var(--spacing-md)); 
-    /* La imagen de fondo específica para móvil se definirá en la query de 768px */
+  /* ... (todos tus estilos anteriores) ... */
+
+@media (max-width: 768px) { /* Móviles */
+  /* ... (otros estilos móviles) ... */
+
+  /* AJUSTE MÓVIL HERO: Móviles pequeños */
+  .hero {
+    min-height: 100vh; /* CAMBIO: De 80vh a 100vh para ocupar toda la altura visible */
+    padding-top: calc(var(--header-height-mobile) + var(--spacing-md)); 
+    align-items: center; 
+    /* Imagen de fondo específica para móvil */
+    background-image: var(--hero-overlay-color), url('hero-vertical.png'); 
+    background-attachment: scroll; 
+    background-position: center center; /* Asegurar centrado */
+    background-size: cover; /* Asegurar que cubra */
+    background-repeat: no-repeat;
+    /* Opcional: Añadir un color de fondo de respaldo similar al de la imagen */
+    /* background-color: #tu-color-de-fondo-hero-vertical; */ 
   }
-  .hero .hero-content-container {
+  .hero .hero-content-container { 
       width: 90%; 
-      max-width: 600px; 
-      margin-left: auto; 
-      margin-right: auto; 
-      padding-left: 0; 
-      padding-right: 0; 
+      margin-left: auto;
+      margin-right: auto;
       text-align: center; 
-   }
-   .hero-cta { justify-content: center; } 
-
-
-  .about-content {
-    grid-template-columns: 1fr; 
+  }
+  .hero-content h1 { 
+    font-size: clamp(1.8rem, 6vw, 2.5rem); 
     text-align: center; 
-    padding: var(--spacing-md);
   }
-  .about-image {
-    margin-bottom: var(--spacing-lg); 
-    max-width: 350px; 
-    margin-left: auto; 
-    margin-right: auto; 
+  .hero-content p.lead { 
+    font-size: clamp(0.9rem, 3.5vw, 1rem); 
+    text-align: center; 
+    margin-left: auto;
+    margin-right: auto;
   }
-  .about-text h4 { text-align: center; }
-  .platforms-info { text-align: center; }
-  .platform-links {
-    display: inline-block;
-    text-align: left;
+  .hero-cta {
+    flex-direction: column; 
+    align-items: center; 
+    gap: var(--spacing-sm);
+    justify-content: center; 
   }
-  .about-quote {
-      text-align: center;
-  }
+
+  /* ... (resto de tus estilos móviles) ... */
+}
+
+/* ... (resto de tus estilos) ... */
+
 
 
   .contact-wrapper { 
