@@ -1,16 +1,16 @@
 // main.js
 
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM completamente cargado y parseado para la página:", window.location.pathname);
 
     // --- Language Translation ---
     const translations = {
         es: {
-            // SEO: Título de la página.
+            // ========================================================================
+            // START: Textos SEO Optimizados y Claves Principales (Revisadas/Mantenidas)
+            // ========================================================================
             pageTitle: "Clases de Ajedrez Online Personalizadas | Chill Chess Club", 
-            // SEO: Meta Descripción.
             metaDescription: "Aprende ajedrez online con el método personalizado de Chill Chess Club. Clases para principiantes e intermedios con asistencia IA. ¡Eleva tu juego!",
-            
-            // SEO: Alt text para imágenes.
             logoAlt: "Logo de Chill Chess Club: Siluetas de piezas de ajedrez (torres, alfil, rey, caballo) con un sol poniente estilizado",
             siteName: "Chill Chess Club",
             logoLinkAriaLabel: "Ir al inicio de la página",
@@ -209,15 +209,73 @@ document.addEventListener('DOMContentLoaded', () => {
             formSuccess: "¡Mensaje enviado con éxito! Te contactaremos pronto.",
             formError: "Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o usa el email de contacto.",
             submitting: "Enviando...",
-            backToTop: "Volver arriba"
+            backToTop: "Volver arriba",
+            
+            // ========================================================================
+            // START: NUEVAS CLAVES PARA PÁGINAS LEGALES (CON CONTENIDO GENÉRICO)
+            // ¡IMPORTANTE! REVISA Y ADAPTA ESTE CONTENIDO. REEMPLAZA PLACEHOLDERS.
+            // ========================================================================
+            pageTitlePrivacy: "Política de Privacidad - Chill Chess Club",
+            metaDescriptionPrivacy: "Conoce cómo Chill Chess Club protege y utiliza tu información personal. Lee nuestra política de privacidad.",
+            privacyPolicyTitle: "Política de Privacidad",
+            privacyLastUpdated: "Última actualización: 13 de mayo de 2025",
+            privacyIntro: "Bienvenido a Chill Chess Club. Nos comprometemos a proteger tu privacidad. Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y salvaguardamos tu información cuando visitas nuestro sitio web [TU-SITIO-WEB.com] y utilizas nuestros servicios. Por favor, lee esta política de privacidad cuidadosamente. Si no estás de acuerdo con los términos de esta política de privacidad, por favor no accedas al sitio.",
+            privacyDataCollectionTitle: "Recopilación de tu Información",
+            privacyDataCollectionDesc: "Podemos recopilar información sobre ti de varias maneras. La información que podemos recopilar en el Sitio incluye:",
+            privacyDataPersonal: "<strong>Datos Personales:</strong> Información de identificación personal, como tu nombre, dirección de correo electrónico y número de teléfono, que nos proporcionas voluntariamente cuando te registras en el Sitio o eliges participar en diversas actividades relacionadas con el Sitio, como formularios de contacto o suscripciones a boletines.",
+            privacyDataDerivative: "<strong>Datos Derivados:</strong> Información que nuestros servidores recopilan automáticamente cuando accedes al Sitio, como tu dirección IP, tipo de navegador, sistema operativo, tiempos de acceso y las páginas que has visto directamente antes y después de acceder al Sitio.",
+            privacyDataUseTitle: "Uso de tu Información",
+            privacyDataUseDesc: "Tener información precisa sobre ti nos permite ofrecerte una experiencia fluida, eficiente y personalizada. Específicamente, podemos usar la información recopilada sobre ti a través del Sitio para:",
+            privacyUseAccount: "Crear y gestionar tu cuenta.",
+            privacyUseComms: "Enviarte correos electrónicos sobre tu cuenta o pedido.",
+            privacyUseServices: "Proporcionarte los servicios solicitados, como el acceso a cursos y materiales.",
+            privacyUseImprove: "Mejorar la eficiencia y el funcionamiento del Sitio.",
+            privacyUseDisputes: "Resolver disputas y solucionar problemas.",
+            privacyDataDisclosureTitle: "Divulgación de tu Información",
+            privacyDataDisclosureDesc: "No compartiremos tu información con terceros excepto como se describe en esta Política de Privacidad o con tu consentimiento. Podemos divulgar tu información en las siguientes situaciones:",
+            privacyDisclosureLaw: "<strong>Por Ley o para Proteger Derechos:</strong> Si creemos que la divulgación es necesaria para responder a un proceso legal, investigar o remediar posibles violaciones de nuestras políticas, o proteger los derechos, la propiedad y la seguridad de otros.",
+            privacyDisclosureProviders: "<strong>Proveedores de Servicios de Terceros:</strong> Podemos compartir tu información con terceros que realizan servicios para nosotros o en nuestro nombre, incluido el procesamiento de pagos, análisis de datos, envío de correos electrónicos, servicios de alojamiento, servicio al cliente y asistencia de marketing.",
+            privacySecurityTitle: "Seguridad de tu Información",
+            privacySecurityDesc: "Utilizamos medidas de seguridad administrativas, técnicas y físicas para ayudar a proteger tu información personal. Si bien hemos tomado medidas razonables para asegurar la información personal que nos proporcionas, ten en cuenta que ninguna medida de seguridad es perfecta o impenetrable, y ningún método de transmisión de datos puede garantizarse contra cualquier intercepción u otro tipo de uso indebido.",
+            privacyPolicyChangesTitle: "Cambios a esta Política de Privacidad",
+            privacyPolicyChangesDesc: "Podemos actualizar esta Política de Privacidad de vez en cuando. Te notificaremos cualquier cambio publicando la nueva Política de Privacidad en el Sitio. Se te aconseja revisar esta Política de Privacidad periódicamente para cualquier cambio. Los cambios a esta Política de Privacidad son efectivos cuando se publican en esta página.",
+            privacyContactUsTitle: "Contáctanos",
+            privacyContactUsDesc: "Si tienes preguntas o comentarios sobre esta Política de Privacidad, por favor contáctanos en: [TU-EMAIL-DE-CONTACTO@ejemplo.com]",
+
+            // --- Términos de Servicio ---
+            pageTitleTerms: "Términos de Servicio - Chill Chess Club",
+            metaDescriptionTerms: "Lee los Términos y Condiciones de Uso para el sitio web y los servicios de Chill Chess Club.",
+            termsServiceTitle: "Términos de Servicio",
+            termsLastUpdated: "Última actualización: 13 de mayo de 2025",
+            termsIntro: "Estos Términos de Servicio rigen tu acceso y uso de los servicios ofrecidos por Chill Chess Club (\"nosotros\", \"nuestro\"), incluyendo nuestro sitio web [TU-SITIO-WEB.com] y cualquier contenido, funcionalidad y servicios ofrecidos en o a través del sitio. Por favor, lee estos términos cuidadosamente antes de usar nuestros Servicios.",
+            termsAcceptanceTitle: "Aceptación de los Términos",
+            termsAcceptanceDesc: "Al acceder o utilizar nuestros Servicios, aceptas estar sujeto a estos Términos de Servicio y a nuestra Política de Privacidad. Si no estás de acuerdo con alguna parte de los términos, entonces no puedes acceder al Servicio.",
+            termsServicesTitle: "Nuestros Servicios",
+            termsServicesDesc: "Chill Chess Club proporciona clases de ajedrez online, material educativo y contenido relacionado. Nos reservamos el derecho de modificar o descontinuar, temporal o permanentemente, los Servicios (o cualquier parte de ellos) con o sin previo aviso.",
+            termsUserAccountsTitle: "Cuentas de Usuario",
+            termsUserAccountsDesc: "Para acceder a ciertos servicios, es posible que se te solicite crear una cuenta. Eres responsable de salvaguardar la contraseña que utilizas para acceder al Servicio y de cualquier actividad o acciones bajo tu contraseña. Aceptas notificarnos inmediatamente sobre cualquier uso no autorizado de tu cuenta.",
+            termsPaymentTitle: "Pagos y Reembolsos",
+            termsPaymentDesc: "Las tarifas por nuestros cursos y servicios se describen en el Sitio. Nos reservamos el derecho de cambiar nuestras tarifas en cualquier momento. Todas las compras pueden estar sujetas a políticas de reembolso específicas que se detallarán en el momento de la compra.",
+            termsIntellectualPropertyTitle: "Propiedad Intelectual",
+            termsIntellectualPropertyDesc: "El Servicio y su contenido original (excluyendo el contenido proporcionado por los usuarios), características y funcionalidad son y seguirán siendo propiedad exclusiva de Chill Chess Club y sus licenciantes. Nuestros derechos de autor, marcas comerciales y otros derechos de propiedad intelectual no pueden ser utilizados en conexión con ningún producto o servicio sin el consentimiento previo por escrito de Chill Chess Club.",
+            termsUserConductTitle: "Conducta del Usuario",
+            termsUserConductDesc: "Aceptas no utilizar los Servicios para ningún propósito ilegal o prohibido por estos Términos. No puedes usar los Servicios de ninguna manera que pueda dañar, deshabilitar, sobrecargar o deteriorar el Servicio.",
+            termsLimitationLiabilityTitle: "Limitación de Responsabilidad",
+            termsLimitationLiabilityDesc: "En ningún caso Chill Chess Club, ni sus directores, empleados, socios, agentes, proveedores o afiliados, serán responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluyendo sin limitación, pérdida de ganancias, datos, uso, buena voluntad u otras pérdidas intangibles, resultantes de tu acceso o uso o incapacidad para acceder o usar el Servicio.",
+            termsChangesTitle: "Cambios a los Términos",
+            termsChangesDesc: "Nos reservamos el derecho, a nuestra sola discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, intentaremos proporcionar al menos 30 días de aviso antes de que los nuevos términos entren en vigor. Lo que constituye un cambio material será determinado a nuestra sola discreción.",
+            termsContactUsTitle: "Contáctanos",
+            termsContactUsDesc: "Si tienes alguna pregunta sobre estos Términos, por favor contáctanos en: [TU-EMAIL-DE-CONTACTO@ejemplo.com]"
+            // ========================================================================
+            // END: NUEVAS CLAVES PARA PÁGINAS LEGALES
+            // ========================================================================
         },
         en: {
-            // SEO: Page Title.
+            // ========================================================================
+            // START: SEO & Core Content (EXISTING - REVIEW AND MAINTAIN)
+            // ========================================================================
             pageTitle: "Personalized Online Chess Classes | Chill Chess Club",
-            // SEO: Meta Description.
             metaDescription: "Learn chess online with Chill Chess Club's personalized method. AI-assisted classes for beginners and intermediates. Elevate your game!",
-            
-            // SEO: Alt text for images.
             logoAlt: "Chill Chess Club Logo: Silhouettes of chess pieces (rooks, bishop, king, knight) with a stylized setting sun",
             siteName: "Chill Chess Club",
             logoLinkAriaLabel: "Go to the top of the page",
@@ -413,7 +471,66 @@ document.addEventListener('DOMContentLoaded', () => {
             formSuccess: "Message sent successfully! We will contact you soon.",
             formError: "There was an error sending the message. Please try again or use the contact email.",
             submitting: "Sending...",
-            backToTop: "Back to top"
+            backToTop: "Back to top",
+
+            // ========================================================================
+            // START: NUEVAS CLAVES PARA PÁGINAS LEGALES (CON CONTENIDO GENÉRICO)
+            // ¡IMPORTANTE! REVISA Y ADAPTA ESTE CONTENIDO. REEMPLAZA PLACEHOLDERS.
+            // ========================================================================
+            pageTitlePrivacy: "Privacy Policy - Chill Chess Club",
+            metaDescriptionPrivacy: "Learn how Chill Chess Club protects and uses your personal information. Read our privacy policy.",
+            privacyPolicyTitle: "Privacy Policy",
+            privacyLastUpdated: "Last Updated: May 13, 2025",
+            privacyIntro: "Welcome to Chill Chess Club. We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website [YOUR-WEBSITE-NAME.com] and use our services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.",
+            privacyDataCollectionTitle: "Collection of Your Information",
+            privacyDataCollectionDesc: "We may collect information about you in a variety of ways. The information we may collect on the Site includes:",
+            privacyDataPersonal: "<strong>Personal Data:</strong> Personally identifiable information, such as your name, email address, and telephone number, that you voluntarily give to us when you register with the Site or when you choose to participate in various activities related to the Site, such as contact forms or newsletter subscriptions.",
+            privacyDataDerivative: "<strong>Derivative Data:</strong> Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site.",
+            privacyDataUseTitle: "Use of Your Information",
+            privacyDataUseDesc: "Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Site to:",
+            privacyUseAccount: "Create and manage your account.",
+            privacyUseComms: "Email you regarding your account or order.",
+            privacyUseServices: "Provide you with requested services, such as access to courses and materials.",
+            privacyUseImprove: "Improve the efficiency and operation of the Site.",
+            privacyUseDisputes: "Resolve disputes and troubleshoot problems.",
+            privacyDataDisclosureTitle: "Disclosure of Your Information",
+            privacyDataDisclosureDesc: "We will not share your information with third parties except as described in this Privacy Policy or with your consent. We may disclose your information in the following situations:",
+            privacyDisclosureLaw: "<strong>By Law or to Protect Rights:</strong> If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others.",
+            privacyDisclosureProviders: "<strong>Third-Party Service Providers:</strong> We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.",
+            privacySecurityTitle: "Security of Your Information",
+            privacySecurityDesc: "We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.",
+            privacyPolicyChangesTitle: "Changes to This Privacy Policy",
+            privacyPolicyChangesDesc: "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on the Site. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.",
+            privacyContactUsTitle: "Contact Us",
+            privacyContactUsDesc: "If you have questions or comments about this Privacy Policy, please contact us at: [YOUR-CONTACT-EMAIL@example.com]",
+
+            // --- Terms of Service ---
+            pageTitleTerms: "Terms of Service - Chill Chess Club",
+            metaDescriptionTerms: "Read the Terms and Conditions of Use for the Chill Chess Club website and services.",
+            termsServiceTitle: "Terms of Service",
+            termsLastUpdated: "Last Updated: May 13, 2025",
+            termsIntro: "These Terms of Service govern your access to and use of the services offered by Chill Chess Club (\"us\", \"we\", or \"our\"), including our website [YOUR-WEBSITE-NAME.com] and any content, functionality, and services offered on or through the site. Please read these terms carefully before using our Services.",
+            termsAcceptanceTitle: "Acceptance of Terms",
+            termsAcceptanceDesc: "By accessing or using our Services, you agree to be bound by these Terms of Service and our Privacy Policy. If you disagree with any part of the terms, then you may not access the Service.",
+            termsServicesTitle: "Our Services",
+            termsServicesDesc: "Chill Chess Club provides online chess classes, educational material, and related content. We reserve the right to modify or discontinue, temporarily or permanently, the Services (or any part thereof) with or without notice.",
+            termsUserAccountsTitle: "User Accounts",
+            termsUserAccountsDesc: "To access certain services, you may be required to create an account. You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password. You agree to notify us immediately of any unauthorized use of your account.",
+            termsPaymentTitle: "Payments and Refunds",
+            termsPaymentDesc: "Fees for our courses and services are described on the Site. We reserve the right to change our fees at any time. All purchases may be subject to specific refund policies detailed at the time of purchase.",
+            termsIntellectualPropertyTitle: "Intellectual Property",
+            termsIntellectualPropertyDesc: "The Service and its original content (excluding content provided by users), features, and functionality are and will remain the exclusive property of Chill Chess Club and its licensors. Our copyrights, trademarks, and other intellectual property rights may not be used in connection with any product or service without the prior written consent of Chill Chess Club.",
+            termsUserConductTitle: "User Conduct",
+            termsUserConductDesc: "You agree not to use the Services for any unlawful purpose or any purpose prohibited by these Terms. You may not use the Services in any manner that could damage, disable, overburden, or impair the Service.",
+            termsLimitationLiabilityTitle: "Limitation of Liability",
+            termsLimitationLiabilityDesc: "In no event shall Chill Chess Club, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.",
+            termsChangesTitle: "Changes to Terms",
+            termsChangesDesc: "We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.",
+            termsContactUsTitle: "Contact Us",
+            termsContactUsDesc: "If you have any questions about these Terms, please contact us at: [YOUR-CONTACT-EMAIL@example.com]"
+            // ========================================================================
+            // END: NUEVAS CLAVES PARA PÁGINAS LEGALES
+            // ========================================================================
         }
     };
 
@@ -424,17 +541,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to set the language
     const setLanguage = (lang) => {
+        console.log(`Attempting to set language to: ${lang}`); // DEBUG
         if (!translations[lang]) {
             console.error(`Language ${lang} not found in translations.`);
             return;
         }
-        // Duration of the fade transition for language change
         const transitionDuration = (parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--lang-transition-speed') || '0.25') * 1000);
 
-        bodyElement.classList.add('fade-out'); // Apply fade-out effect
-        langButtons.forEach(btn => btn.disabled = true); // Disable buttons during transition
+        bodyElement.classList.add('fade-out'); 
+        langButtons.forEach(btn => btn.disabled = true); 
 
         setTimeout(() => {
+            console.log(`Updating elements for language: ${lang}`); // DEBUG
             translatableElements.forEach(el => {
                 const keyAttr = el.dataset.langKey;
                 const [key, attribute] = keyAttr.split('|');
@@ -448,11 +566,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (attribute) {
                         el.setAttribute(attribute, translation);
-                        // Ensure meta description and alt texts are updated correctly
                         if (key === 'metaDescription' && attribute === 'content') {
-                            document.querySelector('meta[name="description"]').setAttribute('content', translation);
+                            const mainMetaDesc = document.querySelector('head > meta[name="description"][data-lang-key="metaDescription|content"]');
+                            if (mainMetaDesc) mainMetaDesc.setAttribute('content', translation);
                         }
-                         // Explicitly update alt attributes for images if they use data-lang-key
                          if ((key === 'logoAlt' || 
                               key === 'aboutImageAlt' || 
                               key === 'courseBeginnerImgAlt' || 
@@ -462,6 +579,14 @@ document.addEventListener('DOMContentLoaded', () => {
                               key === 'blogPost2ImgAlt' ||
                               key === 'blogPost3ImgAlt') && attribute === 'alt') {
                             el.setAttribute('alt', translation);
+                         }
+                         if (key === 'metaDescriptionPrivacy' && attribute === 'content') {
+                            const metaDescPrivacy = document.querySelector('head > meta[data-lang-key="metaDescriptionPrivacy|content"]');
+                            if (metaDescPrivacy) metaDescPrivacy.setAttribute('content', translation);
+                         }
+                         if (key === 'metaDescriptionTerms' && attribute === 'content') {
+                            const metaDescTerms = document.querySelector('head > meta[data-lang-key="metaDescriptionTerms|content"]');
+                            if (metaDescTerms) metaDescTerms.setAttribute('content', translation);
                          }
                     } else if (
                         key === 'courseBeginnerTitle' ||
@@ -476,7 +601,13 @@ document.addEventListener('DOMContentLoaded', () => {
                         key === 'aboutQuoteText' ||
                         key === 'faqIntro' || 
                         key === 'faqA1' || 
-                        key === 'faqA2'    
+                        key === 'faqA2' ||
+                        key === 'privacyDataPersonal' || 
+                        key === 'privacyDataDerivative' ||
+                        key === 'privacyDisclosureLaw' ||
+                        key === 'privacyDisclosureProviders' ||
+                        key === 'termsAcceptanceDesc' || 
+                        key === 'termsIntellectualPropertyDesc'
                     ) {
                         el.innerHTML = translation; 
                     } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
@@ -485,18 +616,21 @@ document.addEventListener('DOMContentLoaded', () => {
                              el.setAttribute('title', translations[lang]['backToTop'] || 'Back to top');
                         } else {
                             el.value = translation;
-                            el.innerHTML = translation; // For <button> elements
+                            el.innerHTML = translation; 
                         }
-                    } else if (el.tagName === 'TITLE') { // Correctly update page title
+                    } else if (el.tagName === 'TITLE') { 
                         document.title = translation;
                     }
                     else {
                         el.textContent = translation;
                     }
+                } else {
+                    // console.warn(`Translation key "${key}" not found for language "${lang}". Element:`, el); // DEBUG
                 }
             });
 
             document.documentElement.lang = lang;
+            console.log(`Document language set to: ${document.documentElement.lang}`); // DEBUG
 
             langButtons.forEach(btn => {
                 if (btn.dataset.lang === lang) {
@@ -517,13 +651,13 @@ document.addEventListener('DOMContentLoaded', () => {
             bodyElement.classList.remove('fade-out');
             setTimeout(() => {
                 langButtons.forEach(btn => btn.disabled = false);
-            }, 50); // Small delay to ensure fade-in is smooth
-
+            }, 50); 
+            console.log(`Language update to ${lang} complete.`); // DEBUG
         }, transitionDuration);
     };
 
-    // Function to initialize language on page load
     const initialUpdateLanguage = (lang) => {
+        console.log(`Initial language update to: ${lang}`); // DEBUG
         if (!translations[lang]) {
             console.error(`Initial language ${lang} not found.`);
             return;
@@ -540,9 +674,9 @@ document.addEventListener('DOMContentLoaded', () => {
                  if (attribute) {
                      el.setAttribute(attribute, translation);
                      if (key === 'metaDescription' && attribute === 'content') {
-                         document.querySelector('meta[name="description"]').setAttribute('content', translation);
+                        const mainMetaDesc = document.querySelector('head > meta[name="description"][data-lang-key="metaDescription|content"]');
+                        if (mainMetaDesc) mainMetaDesc.setAttribute('content', translation);
                      }
-                      // Explicitly update alt attributes for images
                       if ((key === 'logoAlt' || 
                            key === 'aboutImageAlt' || 
                            key === 'courseBeginnerImgAlt' || 
@@ -552,6 +686,14 @@ document.addEventListener('DOMContentLoaded', () => {
                            key === 'blogPost2ImgAlt' ||
                            key === 'blogPost3ImgAlt') && attribute === 'alt') {
                          el.setAttribute('alt', translation);
+                      }
+                      if (key === 'metaDescriptionPrivacy' && attribute === 'content') {
+                        const metaDescPrivacy = document.querySelector('head > meta[data-lang-key="metaDescriptionPrivacy|content"]');
+                        if (metaDescPrivacy) metaDescPrivacy.setAttribute('content', translation);
+                      }
+                      if (key === 'metaDescriptionTerms' && attribute === 'content') {
+                         const metaDescTerms = document.querySelector('head > meta[data-lang-key="metaDescriptionTerms|content"]');
+                         if (metaDescTerms) metaDescTerms.setAttribute('content', translation);
                       }
                  } else if (
                     key === 'courseBeginnerTitle' ||
@@ -566,7 +708,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     key === 'aboutQuoteText' ||
                     key === 'faqIntro' || 
                     key === 'faqA1' || 
-                    key === 'faqA2'    
+                    key === 'faqA2' ||
+                    key === 'privacyDataPersonal' || 
+                    key === 'privacyDataDerivative' ||
+                    key === 'privacyDisclosureLaw' ||
+                    key === 'privacyDisclosureProviders' ||
+                    key === 'termsAcceptanceDesc' || 
+                    key === 'termsIntellectualPropertyDesc'  
                 ) {
                      el.innerHTML = translation; 
                 } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
@@ -575,14 +723,16 @@ document.addEventListener('DOMContentLoaded', () => {
                           el.setAttribute('title', translations[lang]['backToTop'] || 'Back to top');
                      } else {
                          el.value = translation;
-                         el.innerHTML = translation; // For <button> elements
+                         el.innerHTML = translation; 
                      }
-                 } else if (el.tagName === 'TITLE') { // Correctly update page title
+                 } else if (el.tagName === 'TITLE') { 
                      document.title = translation;
                  }
                  else {
                      el.textContent = translation;
                  }
+             } else {
+                // console.warn(`Key "${key}" not found for initial language "${lang}". Element:`, el); // DEBUG
              }
         });
         document.documentElement.lang = lang;
@@ -595,10 +745,10 @@ document.addEventListener('DOMContentLoaded', () => {
                  btn.removeAttribute('aria-current');
              }
         });
+        console.log(`Initial language update to ${lang} applied.`); //DEBUG
     };
 
-    // Determine and set initial language
-    let preferredLanguage = 'es'; // Default language
+    let preferredLanguage = 'es'; 
      try {
         const savedLang = localStorage.getItem('preferredLanguage');
         if (savedLang && translations[savedLang]) {
@@ -610,29 +760,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     } catch (e) {
-        // localStorage might be unavailable (e.g., private browsing, or disabled)
         console.warn("Could not read language preference from localStorage. Defaulting to 'es'.");
     }
     initialUpdateLanguage(preferredLanguage);
 
-
-    // --- AOS Initialization ---
+    langButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            console.log(`Language button clicked: ${e.target.dataset.lang}`); // DEBUG
+            if (bodyElement.classList.contains('fade-out') || e.target.classList.contains('active')) {
+                return;
+            }
+            const selectedLang = e.target.dataset.lang;
+            setLanguage(selectedLang);
+        });
+    });
+    
     AOS.init({
-        duration: 800, // Animation duration
-        once: true,     // Whether animation should happen only once - while scrolling down
-        offset: 50,     // Offset (in px) from the original trigger point
+        duration: 800, 
+        once: true,     
+        offset: 50,     
     });
 
-    // --- Particles.js Initialization ---
-    if (document.getElementById('particles-js')) {
+    const particlesElement = document.getElementById('particles-js');
+    if (particlesElement) { // Only initialize if the #particles-js div exists
         particlesJS('particles-js', {
             "particles": {
                 "number": {"value": 80, "density": {"enable": true, "value_area": 800}},
-                "color": {"value": ["#EC4899", "#F97316", "#8B5CF6", "#d4af37"]}, // Array of accent colors
+                "color": {"value": ["#EC4899", "#F97316", "#8B5CF6", "#d4af37"]},
                 "shape": {"type": "circle", "stroke": {"width": 0, "color": "#000000"}, "polygon": {"nb_sides": 5}},
                 "opacity": {"value": 0.6, "random": true, "anim": {"enable": true, "speed": 1, "opacity_min": 0.1, "sync": false}},
                 "size": {"value": 3, "random": true, "anim": {"enable": false, "speed": 40, "size_min": 0.1, "sync": false}},
-                "line_linked": {"enable": true, "distance": 150, "color": "#a1a1aa", "opacity": 0.4, "width": 1}, // Subtle lines
+                "line_linked": {"enable": true, "distance": 150, "color": "#a1a1aa", "opacity": 0.4, "width": 1},
                 "move": {"enable": true, "speed": 3, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false, "attract": {"enable": false, "rotateX": 600, "rotateY": 1200}}
             },
             "interactivity": {
@@ -650,8 +808,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-
-    // --- Mobile Menu Toggle ---
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
@@ -659,7 +815,6 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.addEventListener('click', () => {
             const isActive = navLinks.classList.toggle('active');
             menuToggle.setAttribute('aria-expanded', isActive);
-            // Toggle icon class
             const icon = menuToggle.querySelector('i');
             if (isActive) {
                 icon.classList.remove('fa-bars');
@@ -670,24 +825,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Close menu when a link is clicked
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    menuToggle.setAttribute('aria-expanded', 'false');
-                    const icon = menuToggle.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
+                const linkHref = link.getAttribute('href');
+                if (linkHref.startsWith('#') || linkHref.includes('.html')) {
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        const icon = menuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
                 }
             });
         });
 
-        // Close menu when clicking outside
          document.addEventListener('click', (event) => {
             if (navLinks.classList.contains('active') &&
-                !navLinks.contains(event.target) && // Click was not inside navLinks
-                !menuToggle.contains(event.target)) { // And click was not on the toggle button itself
+                !navLinks.contains(event.target) && 
+                !menuToggle.contains(event.target)) { 
                 navLinks.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
                 const icon = menuToggle.querySelector('i');
@@ -696,38 +852,51 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-
-    // --- Smooth Scroll for Anchor Links & Pre-fill Contact Subject ---
-    document.querySelectorAll('a.scroll-to, .nav-links a[href^="#"]').forEach(anchor => {
+    
+    document.querySelectorAll('a.scroll-to, .nav-links a[href*="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            // Ensure it's an internal anchor link
-            if (href && href.startsWith('#')) {
-                e.preventDefault();
-                const targetId = href;
-                const targetElement = document.querySelector(targetId);
+            const currentPath = window.location.pathname.split("/").pop() || "index.html"; 
 
-                if (targetElement) {
-                    const headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height-desktop') || '65') + 10; // 10px extra padding
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            if (href && href.includes('#')) {
+                const [pathToFile, hash] = href.split('#');
+                const targetId = `#${hash}`;
+                
+                if (pathToFile && pathToFile !== currentPath && pathToFile === 'index.html') {
+                    // Allow default browser navigation to index.html, then jump to hash
+                    return; 
+                }
 
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
+                // If the link is to a section on the current page
+                if (!pathToFile || pathToFile === currentPath) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
 
-                    // Pre-fill contact form subject if data-subject attribute exists
-                    if (targetId === '#contacto') {
-                        const subjectValue = this.getAttribute('data-subject');
-                        const subjectSelect = document.getElementById('subject');
-                        const firstInput = document.querySelector('#contactForm #name'); // Get the first input field
+                    if (targetElement) {
+                        const headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue(window.innerWidth <= 992 ? '--header-height-mobile' : '--header-height-desktop') || '65') + 10;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-                        if (subjectValue && subjectSelect) {
-                            subjectSelect.value = subjectValue;
-                        }
-                        if(firstInput) { // Focus after a slight delay to ensure scroll has finished
-                            setTimeout(() => firstInput.focus(), 300); // Adjust delay if needed
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        // Pre-fill contact form subject if applicable (only on index.html or where form exists)
+                        if (targetId === '#contacto') {
+                            const contactFormOnPage = document.getElementById('contactForm');
+                            if (contactFormOnPage) { // Check if contact form is on the current page
+                                const subjectValue = this.getAttribute('data-subject');
+                                const subjectSelect = document.getElementById('subject');
+                                const firstInput = document.querySelector('#contactForm #name');
+
+                                if (subjectValue && subjectSelect) {
+                                    subjectSelect.value = subjectValue;
+                                }
+                                if(firstInput) { 
+                                    setTimeout(() => firstInput.focus(), 300); 
+                                }
+                            }
                         }
                     }
                 }
@@ -735,63 +904,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Contact Form Simulation ---
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('form-status');
 
-     if (contactForm && formStatus) {
+     if (contactForm && formStatus) { 
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent actual submission for now
-
-            const currentLang = document.documentElement.lang || 'es'; // Get current language
-
-            // Show submitting message
+            e.preventDefault(); 
+            const currentLang = document.documentElement.lang || 'es'; 
             formStatus.textContent = translations[currentLang]?.submitting || 'Enviando...';
-            formStatus.className = 'status'; // Reset classes
+            formStatus.className = 'status'; 
             formStatus.style.display = 'block';
-
-            // Simulate network request
             setTimeout(() => {
-                // Simulate success or error
-                const isSuccess = Math.random() > 0.2; // 80% chance of success for demo
-
+                const isSuccess = Math.random() > 0.2; 
                 if (isSuccess) {
                     formStatus.textContent = translations[currentLang]?.formSuccess || '¡Mensaje enviado con éxito! Te contactaremos pronto.';
                     formStatus.classList.add('success');
-                    contactForm.reset(); // Clear the form
+                    contactForm.reset(); 
                 } else {
                     formStatus.textContent = translations[currentLang]?.formError || 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o usa el email de contacto.';
                     formStatus.classList.add('error');
                 }
-                 // Hide status message after a few seconds
                  setTimeout(() => {
                     formStatus.style.display = 'none';
-                    formStatus.className = 'status'; // Reset classes
+                    formStatus.className = 'status'; 
                  }, 5000);
             }, 1500);
         });
     }
 
-    // --- Back to Top Button ---
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) { // Show button after 300px of scroll
+            if (window.pageYOffset > 300) { 
                 backToTopButton.classList.add('show');
             } else {
                 backToTopButton.classList.remove('show');
             }
         });
-
         backToTopButton.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 
-    // --- Update Copyright Year ---
      const yearSpan = document.getElementById('current-year');
      if (yearSpan) {
          yearSpan.textContent = new Date().getFullYear();
      }
-
 
 }); // End DOMContentLoaded
