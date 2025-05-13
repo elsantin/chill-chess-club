@@ -190,7 +190,7 @@ a:hover, a:focus {
 
 section {
   padding: var(--spacing-xl) 0;
-  overflow: hidden; /* Cambiado de visible a hidden para ayudar a contener elementos flotantes o con márgenes negativos */
+  overflow: hidden; 
 }
 
 /*------------------------------------*\
@@ -203,7 +203,7 @@ header {
   top: 0;
   left: 0;
   z-index: 1000;
-  background-color: rgba(24, 24, 27, 0.85); /* Fondo semi-transparente con desenfoque */
+  background-color: rgba(24, 24, 27, 0.85); 
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease, padding 0.3s ease;
@@ -215,7 +215,7 @@ header {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--spacing-md); /* Padding base para desktop */
+  padding: 0 var(--spacing-md); 
   width: 100%;
   height: var(--header-height-desktop);
 }
@@ -252,7 +252,7 @@ header {
 
 .logo-link .site-name-text {
   font-family: var(--font-title);
-  font-size: 1.80rem;
+  font-size: 1.80rem; 
   font-weight: 800;
   color: var(--color-text-light);
   text-shadow: 0 0 5px rgba(236, 72, 153, 0.3),
@@ -269,8 +269,7 @@ header {
     text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
 }
 
-/* Contenedor para los controles de la derecha en el header (idioma y hamburguesa) */
-.header-controls-right { /* Asegúrate que este es el nombre de clase correcto en tu HTML */
+.header-controls-right { 
     display: flex;
     align-items: center;
     gap: var(--spacing-xs); 
@@ -283,16 +282,14 @@ header {
   flex-shrink: 0; 
 }
 
-.nav-links { /* Este es el menú desplegable en móvil, oculto por defecto */
-  display: none; /* Oculto por defecto, se muestra en desktop y se activa con JS en móvil */
+.nav-links { 
+  display: none; 
   list-style: none;
-  /* Estilos para desktop */
 }
-@media (min-width: 993px) { /* O el breakpoint donde tu menú cambia de hamburguesa a links directos */
+@media (min-width: 993px) { 
     .nav-links {
         display: flex;
         align-items: center;
-        /* Reseteamos propiedades de móvil si es necesario, aunque con display:flex ya se anulan muchas */
         position: static;
         transform: none;
         visibility: visible;
@@ -305,7 +302,7 @@ header {
     .nav-links li {
         margin: 0 var(--spacing-sm);
     }
-    .nav-links li.mobile-menu-header { /* Ocultar el logo del menú móvil en desktop */
+    .nav-links li.mobile-menu-header { 
         display: none;
     }
     .nav-links a {
@@ -316,9 +313,9 @@ header {
         font-size: 0.95rem;
         transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
         cursor: pointer;
-        display: inline-block; /* Para que el ::after funcione bien */
-        border-bottom: none; /* Quitar borde de móvil */
-        text-align: left; /* Restablecer por si acaso */
+        display: inline-block; 
+        border-bottom: none; 
+        text-align: left; 
     }
     .nav-links a::after {
         content: '';
@@ -329,24 +326,23 @@ header {
         height: 2px;
         background: var(--color-modern-accent-1);
         transition: width var(--transition-speed) ease;
-        display: block; /* Asegurar que se muestre */
+        display: block; 
     }
     .nav-links a:hover, .nav-links a:focus {
         color: var(--color-modern-accent-1);
         transform: translateY(-2px);
-        background-color: transparent; /* Asegurar que no herede el hover de móvil */
+        background-color: transparent; 
     }
     .nav-links a:hover::after, .nav-links a:focus::after {
         width: 100%;
     }
     .menu-toggle {
-        display: none; /* Ocultar hamburguesa en desktop */
+        display: none; 
     }
 }
 
 
 .menu-toggle {
-  /* display: none;  Se controla en media queries */
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -472,6 +468,7 @@ header {
 
 .btn-primary:hover, .btn-primary:focus {
     box-shadow: 0 5px 15px rgba(236, 72, 153, 0.4); 
+    color: var(--color-text-dark-on-gradient); 
 }
 
 /*------------------------------------*\
@@ -486,7 +483,6 @@ header {
   margin-top: 0; 
   padding-top: calc(var(--header-height-desktop) + var(--spacing-xl) + var(--spacing-sm)); 
   padding-bottom: var(--spacing-lg);
-  /* Imagen de fondo por defecto para desktop */
   background-image: var(--hero-overlay-color), url('hero.jpg');
   background-attachment: fixed; 
   background-position: center center;
@@ -818,7 +814,7 @@ header {
 .course-card .btn-primary:hover, .course-card .btn-primary:focus {
   background: var(--color-modern-accent-1);
   border-color: var(--color-modern-accent-1);
-  color: var(--color-text-light);
+  color: var(--color-text-dark-on-gradient); 
 }
 
 
@@ -1354,12 +1350,11 @@ header {
   align-items: center;
   color: var(--color-text-medium);
   font-size: 1rem;
-  /* AJUSTE CONTACTO MÓVIL: Permitir que el texto se divida */
-  word-break: break-word; /* Para palabras largas como emails */
-  overflow-wrap: break-word; /* Alternativa moderna a word-break */
+  word-break: break-word; 
+  overflow-wrap: break-word; 
 }
-.contact-info p a { /* Específico para el enlace del email */
-    word-break: break-all; /* Forzar el quiebre en cualquier punto para el email */
+.contact-info p a { 
+    word-break: break-all; 
 }
 .contact-info i {
   color: var(--color-modern-accent-2);
@@ -1367,7 +1362,7 @@ header {
   width: 20px;
   text-align: center;
   font-size: 1.1rem;
-  flex-shrink: 0; /* Evita que el icono se encoja */
+  flex-shrink: 0; 
 }
 
 .contact-info h4 {
@@ -1409,7 +1404,7 @@ footer {
   color: var(--color-text-medium);
   padding-top: var(--spacing-lg);
   border-top: 5px solid var(--color-modern-accent-3);
-  margin-top: auto; /* Empuja el footer al final de la página si el contenido es corto */
+  margin-top: auto; 
 }
 .footer-content {
   display: grid;
@@ -1469,7 +1464,7 @@ footer {
 }
 .footer-contact a {
   color: var(--color-text-medium);
-  word-break: break-all; /* Para emails largos */
+  word-break: break-all; 
 }
 .footer-contact a:hover, .footer-contact a:focus {
   color: var(--color-modern-accent-1);
@@ -1530,7 +1525,7 @@ footer {
   #BACK TO TOP BUTTON
 \*------------------------------------*/
 #back-to-top-btn {
-  display: none; /* Oculto por defecto */
+  display: none; 
   position: fixed;
   bottom: 30px;
   right: 30px;
@@ -1543,13 +1538,13 @@ footer {
   color: var(--color-text-light);
   cursor: pointer;
   padding: 12px 15px;
-  border-radius: 50%; /* Botón circular */
+  border-radius: 50%; 
   font-size: 1.1rem;
-  opacity: 0; /* Inicia invisible para transición suave */
-  transition: opacity 0.4s ease-in-out, box-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease; /* Añadido transform */
+  opacity: 0; 
+  transition: opacity 0.4s ease-in-out, box-shadow 0.3s ease, color 0.3s ease, transform 0.3s ease; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-#back-to-top-btn.show { /* Se muestra con JS cuando el scroll es suficiente */
+#back-to-top-btn.show { 
   display: block;
   opacity: 0.8;
 }
@@ -1558,7 +1553,7 @@ footer {
   opacity: 1;
   box-shadow: 0 6px 15px rgba(236, 72, 153, 0.5);
   transform: scale(1.05);
-  /* color: var(--color-text-dark-on-gradient); */ /* Opcional */
+  color: var(--color-text-dark-on-gradient); /* MODIFICACIÓN AQUÍ */
 }
 
 /*------------------------------------*\
@@ -1617,57 +1612,45 @@ footer {
     margin-left: 0; 
     display: block; 
   }
-  /* .nav-links se maneja en la query de 768px para el modo móvil */
 
-
-  /* AJUSTE MÓVIL HERO: Tablet */
-  /* ... (todos tus estilos anteriores) ... */
-
-@media (max-width: 768px) { /* Móviles */
-  /* ... (otros estilos móviles) ... */
-
-  /* AJUSTE MÓVIL HERO: Móviles pequeños */
-  .hero {
-    min-height: 100vh; /* CAMBIO: De 80vh a 100vh para ocupar toda la altura visible */
-    padding-top: calc(var(--header-height-mobile) + var(--spacing-md)); 
-    align-items: center; 
-    /* Imagen de fondo específica para móvil */
-    background-image: var(--hero-overlay-color), url('hero-vertical.png'); 
-    background-attachment: scroll; 
-    background-position: center center; /* Asegurar centrado */
-    background-size: cover; /* Asegurar que cubra */
-    background-repeat: no-repeat;
-    /* Opcional: Añadir un color de fondo de respaldo similar al de la imagen */
-    /* background-color: #tu-color-de-fondo-hero-vertical; */ 
-  }
-  .hero .hero-content-container { 
-      width: 90%; 
-      margin-left: auto;
-      margin-right: auto;
-      text-align: center; 
-  }
-  .hero-content h1 { 
-    font-size: clamp(1.8rem, 6vw, 2.5rem); 
-    text-align: center; 
-  }
-  .hero-content p.lead { 
-    font-size: clamp(0.9rem, 3.5vw, 1rem); 
-    text-align: center; 
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .hero-cta {
-    flex-direction: column; 
-    align-items: center; 
-    gap: var(--spacing-sm);
+  .hero { 
     justify-content: center; 
+    text-align: center; 
+    background-attachment: scroll; 
+    padding-top: calc(var(--header-height-desktop) + var(--spacing-md)); 
   }
+  .hero .hero-content-container {
+      width: 90%; 
+      max-width: 600px; 
+      margin-left: auto; 
+      margin-right: auto; 
+      padding-left: 0; 
+      padding-right: 0; 
+      text-align: center; 
+   }
+   .hero-cta { justify-content: center; } 
 
-  /* ... (resto de tus estilos móviles) ... */
-}
 
-/* ... (resto de tus estilos) ... */
-
+  .about-content {
+    grid-template-columns: 1fr; 
+    text-align: center; 
+    padding: var(--spacing-md);
+  }
+  .about-image {
+    margin-bottom: var(--spacing-lg); 
+    max-width: 350px; 
+    margin-left: auto; 
+    margin-right: auto; 
+  }
+  .about-text h4 { text-align: center; }
+  .platforms-info { text-align: center; }
+  .platform-links {
+    display: inline-block;
+    text-align: left;
+  }
+  .about-quote {
+      text-align: center;
+  }
 
 
   .contact-wrapper { 
@@ -1742,7 +1725,7 @@ footer {
       height: 30px; 
   }
   .logo-link .site-name-text {
-      font-size: 1.1rem; /* AUMENTADO DESDE 0.95rem */
+      font-size: 1.1rem; 
       line-height: 1.1; 
   }
   .logo-link {
@@ -1767,8 +1750,7 @@ footer {
     font-size: 0.65rem; 
   }
 
-  /* --- ESTILOS DEL MENÚ MÓVIL --- */
-  .nav-links { /* Estado base: oculto y listo para transición */
+  .nav-links { 
       display: flex; 
       flex-direction: column;
       position: fixed;
@@ -1792,7 +1774,7 @@ footer {
       justify-content: flex-start; 
   }
 
-  .nav-links.active { /* Estado visible */
+  .nav-links.active { 
       transform: translateX(0); 
       visibility: visible; 
   }
@@ -1832,34 +1814,32 @@ footer {
       background-color: var(--color-background-medium);
       color: var(--color-modern-accent-1);
   }
-  .nav-links a::after { display: none; } /* Ocultar el ::after de desktop en móvil */
-  /* --- FIN ESTILOS MENÚ MÓVIL --- */
+  .nav-links a::after { display: none; } 
 
 
-  /* AJUSTE MÓVIL HERO: Móviles pequeños */
   .hero {
-    min-height: 80vh; 
+    min-height: 100vh; 
     padding-top: calc(var(--header-height-mobile) + var(--spacing-md)); 
     align-items: center; 
-    /* Imagen de fondo específica para móvil */
-    background-image: var(--hero-overlay-color), url('hero-vertical.png'); /* ¡NUEVA IMAGEN AQUÍ! */
-    background-attachment: scroll; /* Mejor para móviles */
-    /* background-position y background-size ya están bien para cover */
+    background-image: var(--hero-overlay-color), url('hero-vertical.png'); 
+    background-attachment: scroll; 
+    background-position: center center; 
+    background-size: cover; 
+    background-repeat: no-repeat;
   }
   .hero .hero-content-container { 
       width: 90%; 
-      /* Ya no necesitamos el margin-right: 21% de desktop */
       margin-left: auto;
       margin-right: auto;
-      text-align: center; /* Centrar contenido en móvil */
+      text-align: center; 
   }
   .hero-content h1 { 
     font-size: clamp(1.8rem, 6vw, 2.5rem); 
-    text-align: center; /* Asegurar centrado */
+    text-align: center; 
   }
   .hero-content p.lead { 
     font-size: clamp(0.9rem, 3.5vw, 1rem); 
-    text-align: center; /* Asegurar centrado */
+    text-align: center; 
     margin-left: auto;
     margin-right: auto;
   }
@@ -1867,7 +1847,7 @@ footer {
     flex-direction: column; 
     align-items: center; 
     gap: var(--spacing-sm);
-    justify-content: center; /* Centrar botones */
+    justify-content: center; 
   }
 
   .course-grid,
@@ -1912,7 +1892,6 @@ footer {
   }
   .footer-contact p { justify-content: center; }
   
-  /* AJUSTE MÓVIL FOOTER LOGOS */
   .payment-methods { 
     justify-content: center; 
   }
@@ -1940,7 +1919,7 @@ footer {
   background-color: var(--color-background-medium);
   padding: var(--spacing-xl) 0;
   position: relative;
-  overflow: hidden; /* Evita desbordamientos */
+  overflow: hidden; 
 }
 
 .faq-section::before {
@@ -2003,7 +1982,7 @@ footer {
   text-fill-color: transparent;
   background-size: 250% 250%;
   animation: animatedGradientBackground 5s ease infinite;
-  padding-bottom: calc(var(--spacing-md) - 1px); /* Ajuste para el borde */
+  padding-bottom: calc(var(--spacing-md) - 1px); 
 }
 
 .faq-question {
@@ -2014,16 +1993,16 @@ footer {
   color: var(--color-text-light);
   cursor: pointer;
   position: relative;
-  list-style: none; /* Quita el marcador por defecto de <summary> */
+  list-style: none; 
   transition: color var(--transition-speed-faq) ease;
-  outline: none; /* Quita el outline por defecto en algunos navegadores */
+  outline: none; 
 }
 
-.faq-question::-webkit-details-marker { /* Para navegadores WebKit */
+.faq-question::-webkit-details-marker { 
   display: none;
 }
 
-.faq-question::after { /* Icono de flecha */
+.faq-question::after { 
   content: '\f078'; 
   font-family: 'Font Awesome 6 Free';
   font-weight: 900;
@@ -2037,12 +2016,12 @@ footer {
 }
 
 .faq-item[open] .faq-question::after {
-  transform: translateY(-50%) rotate(-180deg); /* Gira la flecha cuando está abierto */
+  transform: translateY(-50%) rotate(-180deg); 
   color: var(--color-modern-accent-3);
 }
 
 .faq-question:hover,
-.faq-question:focus-visible { /* Estilo para hover y foco */
+.faq-question:focus-visible { 
   color: var(--color-secondary-accent);
 }
 .faq-question:hover::after {
@@ -2079,7 +2058,7 @@ footer {
   border-bottom-color: var(--color-secondary-accent);
 }
 
-.faq-item .faq-answer { /* Animación de despliegue */
+.faq-item .faq-answer { 
     opacity: 0;
     max-height: 0;
     overflow: hidden;
@@ -2088,12 +2067,12 @@ footer {
                 padding var(--transition-speed-faq) cubic-bezier(0.25, 0.1, 0.25, 1);
     padding-top: 0;
     padding-bottom: 0;
-    will-change: max-height, opacity; /* Optimización para la animación */
+    will-change: max-height, opacity; 
 }
 
 .faq-item[open] .faq-answer {
     opacity: 1;
-    max-height: 600px; /* Suficiente altura para el contenido */
+    max-height: 600px; 
     padding-top: var(--spacing-md);
     padding-bottom: var(--spacing-md);
 }
