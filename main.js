@@ -5,12 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Language Translation ---
     const translations = {
         es: {
-            pageTitle: "Chill Chess Club | Clases de Ajedrez Online",
-            metaDescription: "Aprende ajedrez con un método relajado y personalizado. Clases online para principiantes e intermedios adaptadas con IA para maximizar tu progreso.",
-            logoAlt: "Logo de Chill Chess Club",
+            // SEO: Título de la página.
+            pageTitle: "Clases de Ajedrez Online Personalizadas | Chill Chess Club", 
+            // SEO: Meta Descripción.
+            metaDescription: "Aprende ajedrez online con el método personalizado de Chill Chess Club. Clases para principiantes e intermedios con asistencia IA. ¡Eleva tu juego!",
+            
+            // SEO: Alt text para imágenes.
+            logoAlt: "Logo de Chill Chess Club: Siluetas de piezas de ajedrez (torres, alfil, rey, caballo) con un sol poniente estilizado",
             siteName: "Chill Chess Club",
             logoLinkAriaLabel: "Ir al inicio de la página",
-            // navHome: "Inicio", // Eliminada
             navAbout: "Sobre Mí",
             navCourses: "Cursos",
             navMethod: "Método",
@@ -28,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutTitle: "Sobre Mí",
             aboutQuoteText: "\"El ajedrez es un mar en el cual un mosquito puede beber y un elefante puede bañarse.\"",
             aboutQuoteCite: "- Proverbio Indio",
-            aboutImageAlt: "Foto de perfil artística del instructor Santiago Narvaez",
+            aboutImageAlt: "Santiago Narváez, instructor de Chill Chess Club, jugando una partida de ajedrez en la playa durante el atardecer",
             aboutSubtitle: "Descifrando el Ajedrez Contigo: De la Orilla a las Profundidades",
             aboutPara1: "Soy Santiago Narváez. Al igual que el proverbio indio nos recuerda la vastedad del mar, concibo el ajedrez como un océano sereno, listo para ser explorado a cualquier nivel, un océano donde todos tienen cabida. Es esta visión la que define mi enseñanza para principiantes e intermedios. Mi objetivo es crear un espacio donde cada jugador pueda crecer y encontrar su propio placer en el juego, independientemente de su punto de partida. Adapto mi método para que el aprendizaje sea una experiencia fluida y personal, permitiendo al estudiante explorar las corrientes del ajedrez con confianza y satisfacción.",
             aboutPara2: "Si bien mi camino no ha sido el del ajedrez profesional de torneos, mi energía se centra completamente en hacer que el ajedrez sea accesible y apasionante para ti. Mi fortaleza es una capacidad especial para simplificar los conceptos y estrategias, guiando a jugadores principiantes e intermedios hacia un entendimiento sólido y un disfrute genuino del juego. Mi compromiso es ser el puente que necesitas para conectar con la belleza del ajedrez, combinando la enseñanza clásica con las ventajas de la tecnología actual, sin importar tu nivel inicial. Actualmente, imparto estas clases online desde la hermosa Isla de Margarita, en Venezuela.",
@@ -45,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             courseBeginnerTitle: "Curso Principiante:<br>El Despegue",
             courseBeginnerLevelAriaLabel: "Nivel Principiante",
-            courseBeginnerImgAlt: "Piezas de ajedrez blancas listas para empezar",
+            courseBeginnerImgAlt: "Peón negro derribando al rey blanco en un tablero sobre el agua al atardecer, representando el inicio del aprendizaje en el curso de principiantes de Chill Chess Club",
             courseBeginnerFeat1: "Conoce con claridad las reglas y el movimiento de cada pieza.",
             courseBeginnerFeat2: "Aprende los principios esenciales para iniciar bien tus partidas (aperturas).",
             courseBeginnerFeat3: "Domina las tácticas básicas para ganar material y controlar el juego.",
@@ -59,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             courseIntermediateTitle: "Curso Intermedio:<br>Estratega",
             courseIntermediateLevelAriaLabel: "Nivel Intermedio",
-            courseIntermediateImgAlt: "Tablero de ajedrez mostrando una estrategia compleja",
+            courseIntermediateImgAlt: "Caballo de ajedrez sobre un tablero con una explosión de polvo de colores vibrantes detrás, simbolizando la estrategia dinámica del curso intermedio de Chill Chess Club",
             courseIntermediateFeat1: "Explora la estrategia posicional para entender y controlar el juego a un nivel más profundo.",
             courseIntermediateFeat2: "Desarrolla un repertorio de aperturas que se adapte a tu estilo de juego.",
             courseIntermediateFeat3: "Domina combinaciones tácticas más complejas para crear ventajas decisivas.",
@@ -72,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             courseCustomTitle: "Clases Personalizadas:<br>Tu Juego",
             courseCustomLevelAriaLabel: "Nivel Personalizado",
-            courseCustomImgAlt: "Instructor de ajedrez dando una clase personalizada online",
+            courseCustomImgAlt: "Rey de ajedrez en un trono de piezas en la playa al atardecer, representando la naturaleza a medida de las clases personalizadas de Chill Chess Club",
             courseCustomFeat1: "Un plan de estudio totalmente co-creado contigo, diseñado desde cero para tus metas únicas en el ajedrez.",
             courseCustomFeat2: "Nos centramos 100% en tus objetivos específicos, áreas de interés o cualquier aspecto del juego que quieras explorar o mejorar.",
             courseCustomFeat3: "Máxima flexibilidad en horarios, frecuencia de clases y duración del programa, adaptándonos a tu vida.",
@@ -149,13 +152,13 @@ document.addEventListener('DOMContentLoaded', () => {
             blogIntro: "Un espacio dedicado a la exploración del ajedrez. Artículos, perspectivas y curiosidades para profundizar tu entendimiento y aprecio por el juego.",
             blogPost1Title: "El Legado del Ajedrez: Un Viaje a Través del Tiempo y las Culturas",
             blogPost1Excerpt: "Explora la rica evolución del ajedrez, desde sus orígenes ancestrales y su travesía por diversas culturas, hasta consolidarse como el desafío intelectual que conocemos hoy.",
-            blogPost1ImgAlt: "El legado del ajedrez a través del tiempo",
+            blogPost1ImgAlt: "Ilustración de estilo tapiz medieval de dos personas jugando ajedrez, para el artículo sobre la historia del ajedrez en el blog de Chill Chess Club",
             blogPost2Title: "Ajedrez: ¿Juego Lento o Desafío Apasionante? La Respuesta Podría Sorprenderte",
             blogPost2Excerpt: "Si crees que el ajedrez es solo para genios pacientes, permítenos mostrarte su intensidad, su belleza creativa y por qué se ha mantenido relevante por siglos.",
-            blogPost2ImgAlt: "Ajedrez como desafío apasionante",
+            blogPost2ImgAlt: "Piezas de ajedrez surfeando sobre una ola de luz vibrante, ilustrando el concepto de 'ajedrez chill' en el blog de Chill Chess Club",
             blogPost3Title: "Tu Camino al Ajedrez Online: 5 Pasos Fáciles para un Comienzo Gratuito",
             blogPost3Excerpt: "Comenzar en el ajedrez online es simple. Sigue esta guía de cinco pasos para acceder a plataformas gratuitas y disfrutar de la experiencia internacional del ajedrez rápidamente.",
-            blogPost3ImgAlt: "Guía para iniciar en el ajedrez online",
+            blogPost3ImgAlt: "Laptop mostrando una partida de ajedrez online en un ambiente relajado con vista al mar, para el artículo sobre cómo empezar a jugar online en Chill Chess Club",
             blogReadMore: "Leer Más",
 
             faqTitle: "Preguntas Frecuentes",
@@ -189,13 +192,12 @@ document.addEventListener('DOMContentLoaded', () => {
             contactMessageLabel: "Mensaje:",
             contactSubmitBtn: "Enviar Mensaje",
             contactInfoTitle: "Información de Contacto",
-            // contactInfoLocation: "Clases 100% Online", // Clave eliminada previamente
             contactTrialTitle: "Solicita tu Clase Introductoria Gratuita",
             contactTrialDesc: "Una sesión de 30 minutos dedicada a una primera conversación, evaluar tu nivel actual y trazar un plan para alcanzar tus objetivos en el ajedrez.",
             contactTrialBtn: "Solicitar Ahora",
 
             footerAboutTitle: "Chill Chess Club",
-            footerAboutDesc: "Clases de ajedrez para principiantes e intermedios. Un método personalizado y tecnológicamente asistido para transformar tu juego.", // NUEVO TEXTO EN ESPAÑOL
+            footerAboutDesc: "Clases de ajedrez para principiantes e intermedios. Un método personalizado y tecnológicamente asistido para transformar tu juego.", 
             footerLinksTitle: "Enlaces Rápidos",
             footerPrivacyLink: "Política de Privacidad",
             footerTermsLink: "Términos de Servicio",
@@ -210,12 +212,15 @@ document.addEventListener('DOMContentLoaded', () => {
             backToTop: "Volver arriba"
         },
         en: {
-            pageTitle: "Chill Chess Club | Online Chess Classes",
-            metaDescription: "Learn chess with a relaxed, personalized method. Online classes for beginners & intermediates adapted with AI to maximize your progress.",
-            logoAlt: "Chill Chess Club Logo",
+            // SEO: Page Title.
+            pageTitle: "Personalized Online Chess Classes | Chill Chess Club",
+            // SEO: Meta Description.
+            metaDescription: "Learn chess online with Chill Chess Club's personalized method. AI-assisted classes for beginners and intermediates. Elevate your game!",
+            
+            // SEO: Alt text for images.
+            logoAlt: "Chill Chess Club Logo: Silhouettes of chess pieces (rooks, bishop, king, knight) with a stylized setting sun",
             siteName: "Chill Chess Club",
             logoLinkAriaLabel: "Go to the top of the page",
-            // navHome: "Home", // Removed
             navAbout: "About Me",
             navCourses: "Courses",
             navMethod: "Method",
@@ -233,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutTitle: "About Me",
             aboutQuoteText: "\"Chess is a sea in which a gnat may drink and an elephant may bathe.\"",
             aboutQuoteCite: "- Indian Proverb",
-            aboutImageAlt: "Artistic profile picture of instructor Santiago Narvaez",
+            aboutImageAlt: "Santiago Narvaez, Chill Chess Club's instructor, playing a game of chess on the beach at sunset",
             aboutSubtitle: "Deciphering Chess With You: From the Shore to the Depths",
             aboutPara1: "I'm Santiago Narváez. Just as the Indian proverb reminds us of the vastness of the sea, I see chess as a serene ocean, ready to be explored at any level—an ocean where everyone belongs. This vision defines my teaching for beginners and intermediates. My goal is to create a space where every player can grow and find their own joy in the game, regardless of their starting point. I adapt my method so that learning is a fluid and personal experience, allowing students to explore the currents of chess with confidence and satisfaction.",
             aboutPara2: "While my path hasn't been that of professional tournament chess, my energy is entirely focused on making chess accessible and exciting for you. My strength lies in a special ability to simplify concepts and strategies, guiding beginner and intermediate players towards a solid understanding and genuine enjoyment of the game. My commitment is to be the bridge you need to connect with the beauty of chess, combining classic teaching with the advantages of current technology, regardless of your initial level. Currently, I teach these classes online from the beautiful Margarita Island, in Venezuela.",
@@ -250,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             courseBeginnerTitle: "Beginner Course:<br>Liftoff",
             courseBeginnerLevelAriaLabel: "Beginner Level",
-            courseBeginnerImgAlt: "White chess pieces ready to start",
+            courseBeginnerImgAlt: "Black pawn toppling a white king on a chessboard over water at sunset, representing the learning start in Chill Chess Club's beginner course",
             courseBeginnerFeat1: "Clearly understand the rules and movement of each piece.",
             courseBeginnerFeat2: "Learn the essential principles to start your games well (openings).",
             courseBeginnerFeat3: "Master basic tactics to win material and control the game.",
@@ -264,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             courseIntermediateTitle: "Intermediate Course:<br>Strategist",
             courseIntermediateLevelAriaLabel: "Intermediate Level",
-            courseIntermediateImgAlt: "Chessboard showing a complex strategy",
+            courseIntermediateImgAlt: "Chess knight on a board with an explosion of vibrant colored powder behind, symbolizing dynamic strategy in Chill Chess Club's intermediate course",
             courseIntermediateFeat1: "Explore positional strategy to understand and control the game at a deeper level.",
             courseIntermediateFeat2: "Develop an opening repertoire that suits your playing style.",
             courseIntermediateFeat3: "Master more complex tactical combinations to create decisive advantages.",
@@ -277,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             courseCustomTitle: "Personalized Classes:<br>Your Game",
             courseCustomLevelAriaLabel: "Custom Level",
-            courseCustomImgAlt: "Chess instructor giving a personalized online class",
+            courseCustomImgAlt: "Chess king on a throne of pieces on the beach at sunset, representing the bespoke nature of Chill Chess Club's personalized classes",
             courseCustomFeat1: "A study plan totally co-created with you, designed from scratch for your unique chess goals.",
             courseCustomFeat2: "We focus 100% on your specific objectives, areas of interest, or any aspect of the game you want to explore or improve.",
             courseCustomFeat3: "Maximum flexibility in schedules, class frequency, and program duration, adapting to your life.",
@@ -351,13 +356,13 @@ document.addEventListener('DOMContentLoaded', () => {
             blogIntro: "A space dedicated to the exploration of chess. Articles, perspectives, and curiosities to deepen your understanding and appreciation for the game.",
             blogPost1Title: "The Legacy of Chess: A Journey Through Time and Cultures",
             blogPost1Excerpt: "Explore the rich evolution of chess, from its ancient origins and its journey through diverse cultures, to its consolidation as the intellectual challenge we know today.",
-            blogPost1ImgAlt: "The legacy of chess through time",
+            blogPost1ImgAlt: "Medieval tapestry-style illustration of two people playing chess, for the article on chess history on Chill Chess Club's blog",
             blogPost2Title: "Chess: Slow Game or Exciting Challenge? The Answer Might Surprise You",
             blogPost2Excerpt: "If you think chess is only for patient geniuses, allow us to show you its intensity, its creative beauty, and why it has remained relevant for centuries.",
-            blogPost2ImgAlt: "Chess as an exciting challenge",
+            blogPost2ImgAlt: "Chess pieces surfing on a vibrant wave of light, illustrating the 'chill chess' concept on Chill Chess Club's blog",
             blogPost3Title: "Your Path to Online Chess: 5 Easy Steps for a Free Start",
             blogPost3Excerpt: "Starting online chess is simple. Follow this five-step guide to access free platforms and enjoy the international chess experience quickly.",
-            blogPost3ImgAlt: "Guide to start playing chess online",
+            blogPost3ImgAlt: "Laptop displaying an online chess game in a relaxed setting overlooking the sea, for the article on starting to play online at Chill Chess Club",
             blogReadMore: "Read More",
 
             faqTitle: "Frequently Asked Questions",
@@ -391,13 +396,12 @@ document.addEventListener('DOMContentLoaded', () => {
             contactMessageLabel: "Message:",
             contactSubmitBtn: "Send Message",
             contactInfoTitle: "Contact Information",
-            // contactInfoLocation: "100% Online Classes", // Key removed previously
             contactTrialTitle: "Request Your Free Introductory Class",
             contactTrialDesc: "A 30-minute session dedicated to an initial conversation, assessing your current level, and outlining a plan to achieve your chess goals.",
             contactTrialBtn: "Request Now",
 
             footerAboutTitle: "Chill Chess Club",
-            footerAboutDesc: "Chess classes for beginners and intermediates. A personalized and technologically assisted method to transform your game.", // NEW ENGLISH TEXT
+            footerAboutDesc: "Chess classes for beginners and intermediates. A personalized and technologically assisted method to transform your game.",
             footerLinksTitle: "Quick Links",
             footerPrivacyLink: "Privacy Policy",
             footerTermsLink: "Terms of Service",
@@ -444,17 +448,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     if (attribute) {
                         el.setAttribute(attribute, translation);
+                        // Ensure meta description and alt texts are updated correctly
                         if (key === 'metaDescription' && attribute === 'content') {
                             document.querySelector('meta[name="description"]').setAttribute('content', translation);
                         }
-                         if (key === 'courseBeginnerImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-                         if (key === 'courseIntermediateImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-                         if (key === 'courseCustomImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-                         if (key === 'aboutImageAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-                         if (key === 'blogPost1ImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-                         if (key === 'blogPost2ImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-                         if (key === 'blogPost3ImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-                         if (key === 'logoAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
+                         // Explicitly update alt attributes for images if they use data-lang-key
+                         if ((key === 'logoAlt' || 
+                              key === 'aboutImageAlt' || 
+                              key === 'courseBeginnerImgAlt' || 
+                              key === 'courseIntermediateImgAlt' || 
+                              key === 'courseCustomImgAlt' ||
+                              key === 'blogPost1ImgAlt' ||
+                              key === 'blogPost2ImgAlt' ||
+                              key === 'blogPost3ImgAlt') && attribute === 'alt') {
+                            el.setAttribute('alt', translation);
+                         }
                     } else if (
                         key === 'courseBeginnerTitle' ||
                         key === 'courseIntermediateTitle' ||
@@ -477,9 +485,9 @@ document.addEventListener('DOMContentLoaded', () => {
                              el.setAttribute('title', translations[lang]['backToTop'] || 'Back to top');
                         } else {
                             el.value = translation;
-                            el.innerHTML = translation;
+                            el.innerHTML = translation; // For <button> elements
                         }
-                    } else if (el.tagName === 'TITLE') {
+                    } else if (el.tagName === 'TITLE') { // Correctly update page title
                         document.title = translation;
                     }
                     else {
@@ -509,23 +517,17 @@ document.addEventListener('DOMContentLoaded', () => {
             bodyElement.classList.remove('fade-out');
             setTimeout(() => {
                 langButtons.forEach(btn => btn.disabled = false);
-            }, 50);
+            }, 50); // Small delay to ensure fade-in is smooth
 
         }, transitionDuration);
     };
 
-    langButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            if (bodyElement.classList.contains('fade-out') || e.target.classList.contains('active')) {
-                return;
-            }
-            const selectedLang = e.target.dataset.lang;
-            setLanguage(selectedLang);
-        });
-    });
-
+    // Function to initialize language on page load
     const initialUpdateLanguage = (lang) => {
-        if (!translations[lang]) return;
+        if (!translations[lang]) {
+            console.error(`Initial language ${lang} not found.`);
+            return;
+        }
 
         translatableElements.forEach(el => {
              const keyAttr = el.dataset.langKey;
@@ -540,15 +542,17 @@ document.addEventListener('DOMContentLoaded', () => {
                      if (key === 'metaDescription' && attribute === 'content') {
                          document.querySelector('meta[name="description"]').setAttribute('content', translation);
                      }
-                      if (key === 'courseBeginnerImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-                      if (key === 'courseIntermediateImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-                      if (key === 'courseCustomImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-                      if (key === 'aboutImageAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-                      if (key === 'blogPost1ImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-                      if (key === 'blogPost2ImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-                      if (key === 'blogPost3ImgAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-                      if (key === 'logoAlt' && attribute === 'alt') { el.setAttribute(attribute, translation); }
-
+                      // Explicitly update alt attributes for images
+                      if ((key === 'logoAlt' || 
+                           key === 'aboutImageAlt' || 
+                           key === 'courseBeginnerImgAlt' || 
+                           key === 'courseIntermediateImgAlt' || 
+                           key === 'courseCustomImgAlt' ||
+                           key === 'blogPost1ImgAlt' ||
+                           key === 'blogPost2ImgAlt' ||
+                           key === 'blogPost3ImgAlt') && attribute === 'alt') {
+                         el.setAttribute('alt', translation);
+                      }
                  } else if (
                     key === 'courseBeginnerTitle' ||
                     key === 'courseIntermediateTitle' ||
@@ -571,9 +575,9 @@ document.addEventListener('DOMContentLoaded', () => {
                           el.setAttribute('title', translations[lang]['backToTop'] || 'Back to top');
                      } else {
                          el.value = translation;
-                         el.innerHTML = translation;
+                         el.innerHTML = translation; // For <button> elements
                      }
-                 } else if (el.tagName === 'TITLE') {
+                 } else if (el.tagName === 'TITLE') { // Correctly update page title
                      document.title = translation;
                  }
                  else {
@@ -593,7 +597,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    let preferredLanguage = 'es';
+    // Determine and set initial language
+    let preferredLanguage = 'es'; // Default language
      try {
         const savedLang = localStorage.getItem('preferredLanguage');
         if (savedLang && translations[savedLang]) {
@@ -605,26 +610,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     } catch (e) {
+        // localStorage might be unavailable (e.g., private browsing, or disabled)
         console.warn("Could not read language preference from localStorage. Defaulting to 'es'.");
     }
     initialUpdateLanguage(preferredLanguage);
 
 
+    // --- AOS Initialization ---
     AOS.init({
-        duration: 800,
-        once: true,
-        offset: 50,
+        duration: 800, // Animation duration
+        once: true,     // Whether animation should happen only once - while scrolling down
+        offset: 50,     // Offset (in px) from the original trigger point
     });
 
+    // --- Particles.js Initialization ---
     if (document.getElementById('particles-js')) {
         particlesJS('particles-js', {
             "particles": {
                 "number": {"value": 80, "density": {"enable": true, "value_area": 800}},
-                "color": {"value": ["#EC4899", "#F97316", "#8B5CF6", "#d4af37"]},
+                "color": {"value": ["#EC4899", "#F97316", "#8B5CF6", "#d4af37"]}, // Array of accent colors
                 "shape": {"type": "circle", "stroke": {"width": 0, "color": "#000000"}, "polygon": {"nb_sides": 5}},
                 "opacity": {"value": 0.6, "random": true, "anim": {"enable": true, "speed": 1, "opacity_min": 0.1, "sync": false}},
                 "size": {"value": 3, "random": true, "anim": {"enable": false, "speed": 40, "size_min": 0.1, "sync": false}},
-                "line_linked": {"enable": true, "distance": 150, "color": "#a1a1aa", "opacity": 0.4, "width": 1},
+                "line_linked": {"enable": true, "distance": 150, "color": "#a1a1aa", "opacity": 0.4, "width": 1}, // Subtle lines
                 "move": {"enable": true, "speed": 3, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false, "attract": {"enable": false, "rotateX": 600, "rotateY": 1200}}
             },
             "interactivity": {
@@ -643,6 +651,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+    // --- Mobile Menu Toggle ---
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
@@ -650,6 +659,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menuToggle.addEventListener('click', () => {
             const isActive = navLinks.classList.toggle('active');
             menuToggle.setAttribute('aria-expanded', isActive);
+            // Toggle icon class
             const icon = menuToggle.querySelector('i');
             if (isActive) {
                 icon.classList.remove('fa-bars');
@@ -660,6 +670,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Close menu when a link is clicked
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 if (navLinks.classList.contains('active')) {
@@ -672,10 +683,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        // Close menu when clicking outside
          document.addEventListener('click', (event) => {
             if (navLinks.classList.contains('active') &&
-                !navLinks.contains(event.target) &&
-                !menuToggle.contains(event.target)) {
+                !navLinks.contains(event.target) && // Click was not inside navLinks
+                !menuToggle.contains(event.target)) { // And click was not on the toggle button itself
                 navLinks.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
                 const icon = menuToggle.querySelector('i');
@@ -685,16 +697,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Smooth Scroll for Anchor Links & Pre-fill Contact Subject ---
     document.querySelectorAll('a.scroll-to, .nav-links a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
+            // Ensure it's an internal anchor link
             if (href && href.startsWith('#')) {
                 e.preventDefault();
                 const targetId = href;
                 const targetElement = document.querySelector(targetId);
 
                 if (targetElement) {
-                    const headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height-desktop') || '65') + 10;
+                    const headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-height-desktop') || '65') + 10; // 10px extra padding
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -703,16 +717,17 @@ document.addEventListener('DOMContentLoaded', () => {
                         behavior: 'smooth'
                     });
 
+                    // Pre-fill contact form subject if data-subject attribute exists
                     if (targetId === '#contacto') {
                         const subjectValue = this.getAttribute('data-subject');
                         const subjectSelect = document.getElementById('subject');
-                        const firstInput = document.querySelector('#contactForm #name');
+                        const firstInput = document.querySelector('#contactForm #name'); // Get the first input field
 
                         if (subjectValue && subjectSelect) {
                             subjectSelect.value = subjectValue;
                         }
-                        if(firstInput) {
-                            setTimeout(() => firstInput.focus(), 300);
+                        if(firstInput) { // Focus after a slight delay to ensure scroll has finished
+                            setTimeout(() => firstInput.focus(), 300); // Adjust delay if needed
                         }
                     }
                 }
@@ -720,41 +735,47 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- Contact Form Simulation ---
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('form-status');
 
      if (contactForm && formStatus) {
         contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            e.preventDefault(); // Prevent actual submission for now
 
-            const currentLang = document.documentElement.lang || 'es';
+            const currentLang = document.documentElement.lang || 'es'; // Get current language
 
+            // Show submitting message
             formStatus.textContent = translations[currentLang]?.submitting || 'Enviando...';
-            formStatus.className = 'status';
+            formStatus.className = 'status'; // Reset classes
             formStatus.style.display = 'block';
 
+            // Simulate network request
             setTimeout(() => {
-                const isSuccess = Math.random() > 0.2;
+                // Simulate success or error
+                const isSuccess = Math.random() > 0.2; // 80% chance of success for demo
 
                 if (isSuccess) {
                     formStatus.textContent = translations[currentLang]?.formSuccess || '¡Mensaje enviado con éxito! Te contactaremos pronto.';
                     formStatus.classList.add('success');
-                    contactForm.reset();
+                    contactForm.reset(); // Clear the form
                 } else {
                     formStatus.textContent = translations[currentLang]?.formError || 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o usa el email de contacto.';
                     formStatus.classList.add('error');
                 }
+                 // Hide status message after a few seconds
                  setTimeout(() => {
                     formStatus.style.display = 'none';
-                    formStatus.className = 'status';
+                    formStatus.className = 'status'; // Reset classes
                  }, 5000);
             }, 1500);
         });
     }
 
+    // --- Back to Top Button ---
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
+            if (window.pageYOffset > 300) { // Show button after 300px of scroll
                 backToTopButton.classList.add('show');
             } else {
                 backToTopButton.classList.remove('show');
@@ -766,6 +787,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Update Copyright Year ---
      const yearSpan = document.getElementById('current-year');
      if (yearSpan) {
          yearSpan.textContent = new Date().getFullYear();
