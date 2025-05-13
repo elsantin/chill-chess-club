@@ -5,19 +5,19 @@
 \*------------------------------------*/
 :root {
   /* Paleta de colores principal y acentos */
-  --color-dark: #18181B; /* Fondo principal oscuro */
-  --color-background-medium: #27272A; /* Fondo secundario, ligeramente más claro */
-  --color-background-card: #3F3F46; /* Fondo para tarjetas y elementos destacados */
-  --color-primary-accent: #6a102a; /* Un acento vinotinto oscuro, podría usarse con moderación */
-  --color-primary-accent-hover: #500c1f; /* Versión hover del vinotinto */
-  --color-secondary-accent: #d4af37; /* Dorado, para títulos y elementos importantes */
-  --color-modern-accent-1: #EC4899; /* Rosa vibrante */
-  --color-modern-accent-2: #F97316; /* Naranja vibrante */
-  --color-modern-accent-3: #8B5CF6; /* Púrpura vibrante */
-  --color-text-light: #f4f4f5; /* Texto principal claro */
-  --color-text-medium: #a1a1aa; /* Texto secundario, menos prominente */
-  --color-background-light: #52525B; /* Un gris más claro para bordes o fondos sutiles */
-  --color-text-dark-on-gradient: #111111; /* Color de texto oscuro para hover en botones de gradiente */
+  --color-dark: #18181B; 
+  --color-background-medium: #27272A; 
+  --color-background-card: #3F3F46; 
+  --color-primary-accent: #6a102a; 
+  --color-primary-accent-hover: #500c1f; 
+  --color-secondary-accent: #d4af37; 
+  --color-modern-accent-1: #EC4899; 
+  --color-modern-accent-2: #F97316; 
+  --color-modern-accent-3: #8B5CF6; 
+  --color-text-light: #f4f4f5; 
+  --color-text-medium: #a1a1aa; 
+  --color-background-light: #52525B; 
+  --color-text-dark-on-gradient: #111111; 
 
 
   /* Gradientes y efectos */
@@ -25,11 +25,17 @@
   --gradient-border: linear-gradient(90deg, var(--color-modern-accent-3), var(--color-modern-accent-1), var(--color-modern-accent-2));
   --animated-gradient: linear-gradient(120deg, var(--color-modern-accent-3), var(--color-modern-accent-1), var(--color-modern-accent-2), var(--color-modern-accent-3));
 
-  /* Tipografía */
-  --font-title: 'Playfair Display', serif; /* Para títulos principales */
-  --font-body: 'Roboto', sans-serif; /* Para cuerpo de texto y elementos UI */
+  /* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+     Asegurar que estas fuentes base se apliquen consistentemente. 
+     Verificar si hay overrides innecesarios en otros selectores.
+  */
+  --font-title: 'Playfair Display', serif; 
+  --font-body: 'Roboto', sans-serif; 
 
-  /* Espaciado */
+  /* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+     Evaluar si esta escala de espaciado se usa de forma coherente 
+     para márgenes y paddings de secciones y elementos textuales.
+  */
   --spacing-xs: 0.5rem;  /* 8px */
   --spacing-sm: 1rem;    /* 16px */
   --spacing-md: 2rem;    /* 32px */
@@ -39,15 +45,13 @@
 
   /* Transiciones y Animaciones */
   --transition-speed: 0.3s;
-  --transition-speed-faq: 0.4s; /* Transición específica para FAQ más suave */
-  --lang-transition-speed: 0.25s; /* Para la transición de cambio de idioma */
+  --transition-speed-faq: 0.4s; 
+  --lang-transition-speed: 0.25s; 
 
-  /* Altura del Header (variable para ajustes responsivos si es necesario) */
+  /* Altura del Header */
   --header-height-desktop: 65px;
   --header-height-mobile: 55px;
 
-
-  /* SVGs para fondos texturizados (mejorados y más sutiles) */
   --palm-svg-uri: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='rgba(139, 92, 246, 0.08)' d='M85,50 Q80,45 75,50 T65,50 Q60,45 55,50 T45,50 Q40,45 35,50 T25,50 Q20,45 15,50 L15,55 Q20,60 25,55 T35,55 Q40,60 45,55 T55,55 Q60,60 65,55 T75,55 Q80,60 85,55 Z M50,10 L50,90 M50,50 Q60,40 70,30 M50,50 Q40,40 30,30 M50,50 Q60,55 75,60 M50,50 Q40,55 25,60 M50,50 Q55,40 60,25 M50,50 Q45,40 40,25 M50,50 Q55,60 65,70 M50,50 Q45,60 35,70' stroke='rgba(139, 92, 246, 0.05)' stroke-width='1'/%3E%3C/svg%3E");
   --noise-svg-uri: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.3'/%3E%3C/svg%3E");
 }
@@ -64,13 +68,17 @@ html {
 }
 
 body {
+  /* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+     Verificar font-family, line-height, color y font-size base. 
+     ¿Son adecuados y consistentes?
+  */
   font-family: var(--font-body);
   line-height: 1.7;
   color: var(--color-text-light);
   background-color: var(--color-dark);
   min-height: 100vh;
   font-size: 16px;
-  overflow-x: hidden; /* Evita el desbordamiento horizontal general */
+  overflow-x: hidden; 
   opacity: 1;
   transition: opacity var(--lang-transition-speed) ease-in-out;
   cursor: default;
@@ -81,6 +89,14 @@ body.fade-out {
 }
 
 /* Estilos de Tipografía */
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Esta es la sección principal para la jerarquía de encabezados.
+   - ¿Se usa Playfair Display consistentemente?
+   - ¿Los márgenes inferiores (margin-bottom) son adecuados y proporcionales?
+   - ¿Los colores son consistentes con la paleta?
+   - ¿Las line-heights son óptimas?
+   - ¿Los clamp() para font-size ofrecen una buena escala responsiva?
+*/
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-title);
   margin-bottom: var(--spacing-sm);
@@ -125,9 +141,16 @@ h4 {
   color: var(--color-modern-accent-1);
 }
 
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Estilos para párrafos.
+   - ¿Roboto se aplica correctamente?
+   - ¿El margin-bottom es consistente?
+   - ¿El max-width para legibilidad es adecuado?
+   - ¿El color es el correcto para texto de cuerpo?
+*/
 p {
   margin-bottom: var(--spacing-md);
-  max-width: 70ch; /* Límite de ancho para mejorar legibilidad */
+  max-width: 70ch; 
   color: var(--color-text-light);
 }
 
@@ -136,11 +159,12 @@ p {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    max-width: 100%; /* Asegura que no se desborde en contextos centrados */
+    max-width: 100%; 
 }
 
 
 p.lead {
+  /* REVISIÓN TIPOGRAFÍA/JERARQUÍA: Estilo para párrafos destacados. */
   color: var(--color-text-light);
   opacity: 0.95;
   font-size: clamp(1rem, 1.8vw, 1.2rem);
@@ -148,6 +172,7 @@ p.lead {
 }
 
 .section-intro {
+  /* REVISIÓN TIPOGRAFÍA/JERARQUÍA: Estilo para introducciones de sección. */
   color: var(--color-text-medium);
   max-width: 800px;
   margin: 0 auto var(--spacing-lg);
@@ -155,6 +180,10 @@ p.lead {
   font-size: 1.1rem;
 }
 
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Estilos para enlaces.
+   - ¿El color base y hover son consistentes con la paleta?
+*/
 a {
   color: var(--color-secondary-accent);
   text-decoration: none;
@@ -164,10 +193,10 @@ a {
 
 a:hover, a:focus {
   color: var(--color-modern-accent-1);
-  outline: 2px solid transparent; /* Para accesibilidad del foco */
+  outline: 2px solid transparent; 
 }
 
-.sr-only { /* Para accesibilidad, ocultar visualmente pero mantener para lectores de pantalla */
+.sr-only { 
   position: absolute;
   width: 1px;
   height: 1px;
@@ -189,6 +218,9 @@ a:hover, a:focus {
 }
 
 section {
+  /* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+     Espaciado vertical de las secciones. ¿Es consistente?
+  */
   padding: var(--spacing-xl) 0;
   overflow: hidden; 
 }
@@ -196,6 +228,11 @@ section {
 /*------------------------------------*\
   #HEADER Y NAVEGACIÓN
 \*------------------------------------*/
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Textos dentro del header.
+   - Tamaño y fuente del nombre del sitio.
+   - Tamaño y fuente de los enlaces de navegación y botones de idioma.
+*/
 header {
   padding: var(--spacing-xs) 0;
   position: fixed;
@@ -306,6 +343,7 @@ header {
         display: none;
     }
     .nav-links a {
+        /* REVISIÓN TIPOGRAFÍA/JERARQUÍA: Enlaces de navegación desktop. */
         color: var(--color-text-light);
         font-weight: 500;
         position: relative;
@@ -388,6 +426,7 @@ header {
   right: var(--spacing-md); 
 }
 .lang-button {
+  /* REVISIÓN TIPOGRAFÍA/JERARQUÍA: Botones de idioma. */
   background: none;
   border: none;
   padding: 4px 8px;
@@ -415,6 +454,11 @@ header {
 /*------------------------------------*\
   #ESTILOS DE BOTONES 
 \*------------------------------------*/
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Estilos de botones.
+   - ¿El font-family, font-weight, font-size, letter-spacing y text-transform son consistentes y legibles?
+   - ¿El padding es adecuado?
+*/
 @keyframes animatedGradientBackground {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -474,6 +518,11 @@ header {
 /*------------------------------------*\
   #HERO SECTION
 \*------------------------------------*/
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Textos en la sección Hero.
+   - ¿El H1 y p.lead tienen la jerarquía y el impacto visual deseados?
+   - ¿Los clamp() para font-size funcionan bien en todos los anchos?
+*/
 .hero {
   min-height: 100vh;
   display: flex;
@@ -545,6 +594,12 @@ header {
 /*------------------------------------*\
   #ABOUT SECTION (Instructor)
 \*------------------------------------*/
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Textos en la sección "Sobre Mí".
+   - ¿El H2, H3, H4, p y blockquote tienen la jerarquía y el estilo correctos?
+   - ¿La cita (blockquote) es legible y se destaca adecuadamente?
+   - ¿Los textos en .platforms-info son claros?
+*/
 .about {
   position: relative;
   z-index: 0;
@@ -672,6 +727,11 @@ header {
 /*------------------------------------*\
   #COURSES SECTION
 \*------------------------------------*/
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Textos en las tarjetas de cursos.
+   - Título del curso (H3), características (li), precio.
+   - ¿Son legibles y consistentes?
+*/
 .courses {
   background-color: var(--color-dark);
   position: relative;
@@ -832,6 +892,10 @@ header {
 /*------------------------------------*\
   #METHODOLOGY SECTION
 \*------------------------------------*/
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Textos en la sección "Método".
+   - Títulos de los pasos (H3), descripciones (p).
+*/
 .methodology {
   background-color: var(--color-background-medium);
 }
@@ -958,6 +1022,10 @@ header {
 /*------------------------------------*\
   #BENEFITS SECTION (Beneficios del Ajedrez)
 \*------------------------------------*/
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Textos en la sección "Beneficios".
+   - Cita, introducción, títulos de categoría (H3), elementos de lista (strong, span).
+*/
 .benefits-section {
   background-color: var(--color-background-medium);
   padding: var(--spacing-xl) 0;
@@ -1108,6 +1176,10 @@ header {
 /*------------------------------------*\
   #FREE RESOURCES SECTION
 \*------------------------------------*/
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Textos en la sección "Recursos".
+   - Títulos (H3), descripciones (p), enlaces.
+*/
 .free-resources {
   background-color: var(--color-dark);
 }
@@ -1198,6 +1270,10 @@ header {
 /*------------------------------------*\
   #BLOG SECTION
 \*------------------------------------*/
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Textos en las tarjetas del blog.
+   - Título del post (H3), extracto (p).
+*/
 .blog-section {
     background-color: var(--color-background-medium);
     padding: var(--spacing-xl) 0;
@@ -1276,6 +1352,10 @@ header {
 /*------------------------------------*\
   #CONTACT SECTION
 \*------------------------------------*/
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Textos en la sección de Contacto.
+   - Títulos (H3), etiquetas de formulario (label), texto en párrafos de info.
+*/
 .contact {
   background-color: var(--color-dark);
   padding-bottom: var(--spacing-xl);
@@ -1399,6 +1479,10 @@ header {
 /*------------------------------------*\
   #FOOTER
 \*------------------------------------*/
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Textos en el footer.
+   - Títulos (H4), párrafos, enlaces de lista, texto de copyright.
+*/
 footer {
   background-color: var(--color-dark);
   color: var(--color-text-medium);
@@ -1553,12 +1637,17 @@ footer {
   opacity: 1;
   box-shadow: 0 6px 15px rgba(236, 72, 153, 0.5);
   transform: scale(1.05);
-  color: var(--color-text-dark-on-gradient); /* MODIFICACIÓN AQUÍ */
+  color: var(--color-text-dark-on-gradient); 
 }
 
 /*------------------------------------*\
   #MEDIA QUERIES (Responsive Design)
 \*------------------------------------*/
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Verificar cómo la tipografía y los espaciados se adaptan en móviles.
+   - ¿Los tamaños de fuente responsivos (clamp) funcionan bien?
+   - ¿Los márgenes y paddings se ajustan adecuadamente?
+*/
 @media (max-width: 992px) { /* Tablets y móviles grandes */
   .header-container {
       padding: 0 var(--spacing-sm); 
@@ -1725,6 +1814,7 @@ footer {
       height: 30px; 
   }
   .logo-link .site-name-text {
+      /* REVISIÓN TIPOGRAFÍA/JERARQUÍA: Tamaño del nombre del sitio en móvil. */
       font-size: 1.1rem; 
       line-height: 1.1; 
   }
@@ -1746,6 +1836,7 @@ footer {
     gap: 1px; 
   }
   .lang-button {
+    /* REVISIÓN TIPOGRAFÍA/JERARQUÍA: Tamaño de botones de idioma en móvil. */
     padding: 2px 3px; 
     font-size: 0.65rem; 
   }
@@ -1799,6 +1890,7 @@ footer {
   } 
   
   .nav-links a { 
+    /* REVISIÓN TIPOGRAFÍA/JERARQUÍA: Enlaces del menú móvil. */
     font-size: 1.05rem; 
     padding: calc(var(--spacing-xs) * 1.5) var(--spacing-sm); 
     display: block; 
@@ -1834,10 +1926,12 @@ footer {
       text-align: center; 
   }
   .hero-content h1 { 
+    /* REVISIÓN TIPOGRAFÍA/JERARQUÍA: H1 del Hero en móvil. */
     font-size: clamp(1.8rem, 6vw, 2.5rem); 
     text-align: center; 
   }
   .hero-content p.lead { 
+    /* REVISIÓN TIPOGRAFÍA/JERARQUÍA: Subtítulo del Hero en móvil. */
     font-size: clamp(0.9rem, 3.5vw, 1rem); 
     text-align: center; 
     margin-left: auto;
@@ -1915,6 +2009,11 @@ footer {
 /*------------------------------------*\
   #FAQ SECTION STYLES (Improved)
 \*------------------------------------*/
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Textos en la sección FAQ.
+   - Preguntas (summary), respuestas (p).
+   - ¿Son legibles y el tamaño es adecuado?
+*/
 .faq-section {
   background-color: var(--color-background-medium);
   padding: var(--spacing-xl) 0;
@@ -2075,4 +2174,70 @@ footer {
     max-height: 600px; 
     padding-top: var(--spacing-md);
     padding-bottom: var(--spacing-md);
+}
+
+/* REVISIÓN TIPOGRAFÍA/JERARQUÍA: 
+   Estilos específicos para las páginas legales (politica-privacidad.html, terminos-servicio.html).
+   - ¿Los H1, H2, p, ul, li tienen el tamaño y espaciado adecuados para contenido legal extenso?
+   - ¿La legibilidad es óptima?
+*/
+/* Estilos básicos para centrar contenido en páginas legales (ya incluidos en los HTML, pero se pueden centralizar aquí) */
+.legal-content-section {
+    /* padding-top ya se maneja en el body de esas páginas para evitar el header fijo */
+    padding-bottom: var(--spacing-xl);
+}
+.legal-content-section .container {
+    max-width: 800px; 
+    text-align: left;
+}
+.legal-content-section h1 { /* Título principal de la página legal */
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: clamp(1.8rem, 4vw, 2.2rem); /* Ligeramente más pequeño que el H1 del hero */
+}
+.legal-content-section h2 { /* Subtítulos dentro de la página legal */
+    font-size: clamp(1.4rem, 3vw, 1.7rem);
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    text-align: left;
+    padding-bottom: var(--spacing-xs);
+    color: var(--color-secondary-accent); /* Mantener consistencia con otros H2/H3 */
+}
+.legal-content-section h2::after {
+    display: none; /* No queremos la línea decorativa de los H2 de sección aquí */
+}
+.legal-content-section p, 
+.legal-content-section ul {
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8; /* Buena altura de línea para texto largo */
+    color: var(--color-text-medium); /* Texto ligeramente menos prominente que el principal */
+    font-size: 0.95rem; /* Ligeramente más pequeño para bloques de texto densos */
+}
+.legal-content-section ul {
+    list-style-position: outside;
+    padding-left: 20px; /* Indentación estándar para listas */
+}
+.legal-content-section li {
+    margin-bottom: var(--spacing-xs);
+}
+.last-updated { /* Para la fecha de "Última actualización" */
+    display: block;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--color-text-medium);
+}
+
+/* Ajuste para el padding-top del body en páginas legales, ya que el header es fijo */
+body.legal-page { /* Considera añadir esta clase al <body> de politica-privacidad.html y terminos-servicio.html */
+    padding-top: var(--header-height-desktop); 
+}
+@media (max-width: 992px) {
+    body.legal-page {
+        padding-top: var(--header-height-mobile);
+    }
+    .legal-content-section { /* Reducir padding superior en móvil para páginas legales */
+            padding-top: var(--spacing-md); 
+    }
 }
