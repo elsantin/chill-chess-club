@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="pageTitleTerms">Términos de Servicio - Chill Chess Club</title>
+    <meta name="description" content="Términos y Condiciones de Uso para el sitio web y servicios de Chill Chess Club." data-lang-key="metaDescriptionTerms|content">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#18181B">
+    <style>
+        /* Estilos básicos para centrar contenido en páginas legales (igual que en politica-privacidad.html) */
+        body {
+            padding-top: var(--header-height-desktop);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex-grow: 1;
+        }
+        .legal-content-section {
+            padding-top: var(--spacing-lg);
+            padding-bottom: var(--spacing-xl);
+        }
+        .legal-content-section .container {
+            max-width: 800px;
+            text-align: left;
+        }
+        .legal-content-section h1 {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+        }
+        .legal-content-section h2 {
+            font-size: clamp(1.4rem, 3vw, 1.7rem);
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+            text-align: left;
+            padding-bottom: var(--spacing-xs);
+        }
+         .legal-content-section h2::after {
+            display: none; 
+        }
+        .legal-content-section p, .legal-content-section ul {
+            margin-bottom: var(--spacing-md);
+            line-height: 1.8;
+            color: var(--color-text-medium);
+        }
+        .legal-content-section ul {
+            list-style-position: outside;
+            padding-left: 20px;
+        }
+        .legal-content-section li {
+            margin-bottom: var(--spacing-xs);
+        }
+        .last-updated {
+            display: block;
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--color-text-medium);
+        }
+        @media (max-width: 992px) {
+            body {
+                padding-top: var(--header-height-mobile);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html#inicio" class="scroll-to logo-link" aria-label="Ir al inicio de la página" data-lang-key="logoLinkAriaLabel|aria-label">
+                <img src="logo.png" alt="Logo de Chill Chess Club" data-lang-key="logoAlt|alt" id="site-logo-img">
+                <span class="site-name-text" data-lang-key="siteName">Chill Chess Club</span>
+            </a>
+            <div class="header-controls-right">
+                <div class="language-selector">
+                    <button id="lang-es" class="lang-button active" data-lang="es">ES</button>
+                    <button id="lang-en" class="lang-button" data-lang="en">EN</button>
+                </div>
+                <nav class="main-nav">
+                    <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-links">
+                        <li class="mobile-menu-header">
+                            <img src="logo.png" alt="Chill Chess Club Logo" data-lang-key="logoAlt|alt" class="mobile-menu-logo">
+                        </li>
+                        <li><a href="index.html#instructor" data-lang-key="navAbout" class="scroll-to">Sobre Mí</a></li>
+                        <li><a href="index.html#cursos" data-lang-key="navCourses" class="scroll-to">Cursos</a></li>
+                        <li><a href="index.html#metodo" data-lang-key="navMethod" class="scroll-to">Método</a></li>
+                        <li><a href="index.html#beneficios-ajedrez" data-lang-key="navBenefits" class="scroll-to">Beneficios</a></li>
+                        <li><a href="index.html#recursos" data-lang-key="navResources" class="scroll-to">Recursos</a></li>
+                        <li><a href="index.html#blog" data-lang-key="navBlog" class="scroll-to">Blog</a></li>
+                        <li><a href="index.html#faq" data-lang-key="navFaq" class="scroll-to">FAQ</a></li>
+                        <li><a href="index.html#contacto" data-lang-key="navContact" class="scroll-to">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="legal-content-section">
+            <div class="container">
+                <h1 data-lang-key="termsServiceTitle">Términos de Servicio</h1>
+                <p class="last-updated" data-lang-key="termsLastUpdated">Última actualización: 13 de mayo de 2025</p>
+
+                <p data-lang-key="termsIntro">Estos Términos de Servicio rigen tu acceso y uso de los servicios ofrecidos por Chill Chess Club ("nosotros", "nuestro"), incluyendo nuestro sitio web [NombreDeTuSitioWeb.com] y cualquier contenido, funcionalidad y servicios ofrecidos en o a través del sitio. Por favor, lee estos términos cuidadosamente antes de usar nuestros Servicios.</p>
+
+                <h2 data-lang-key="termsAcceptanceTitle">Aceptación de los Términos</h2>
+                <p data-lang-key="termsAcceptanceDesc">Al acceder o utilizar nuestros Servicios, aceptas estar sujeto a estos Términos de Servicio y a nuestra Política de Privacidad. Si no estás de acuerdo con alguna parte de los términos, entonces no puedes acceder al Servicio.</p>
+
+                <h2 data-lang-key="termsServicesTitle">Nuestros Servicios</h2>
+                <p data-lang-key="termsServicesDesc">Chill Chess Club proporciona clases de ajedrez online, material educativo y contenido relacionado. Nos reservamos el derecho de modificar o descontinuar, temporal o permanentemente, los Servicios (o cualquier parte de ellos) con o sin previo aviso.</p>
+                
+                <h2 data-lang-key="termsUserAccountsTitle">Cuentas de Usuario</h2>
+                <p data-lang-key="termsUserAccountsDesc">Para acceder a ciertos servicios, es posible que se te solicite crear una cuenta. Eres responsable de salvaguardar la contraseña que utilizas para acceder al Servicio y de cualquier actividad o acciones bajo tu contraseña. Aceptas notificarnos inmediatamente sobre cualquier uso no autorizado de tu cuenta.</p>
+
+                <h2 data-lang-key="termsPaymentTitle">Pagos y Reembolsos</h2>
+                <p data-lang-key="termsPaymentDesc">Las tarifas por nuestros cursos y servicios se describen en el Sitio. Nos reservamos el derecho de cambiar nuestras tarifas en cualquier momento. Todas las compras pueden estar sujetas a políticas de reembolso específicas que se detallarán en el momento de la compra.</p>
+
+                <h2 data-lang-key="termsIntellectualPropertyTitle">Propiedad Intelectual</h2>
+                <p data-lang-key="termsIntellectualPropertyDesc">El Servicio y su contenido original (excluyendo el contenido proporcionado por los usuarios), características y funcionalidad son y seguirán siendo propiedad exclusiva de Chill Chess Club y sus licenciantes. Nuestros derechos de autor, marcas comerciales y otros derechos de propiedad intelectual no pueden ser utilizados en conexión con ningún producto o servicio sin el consentimiento previo por escrito de Chill Chess Club.</p>
+
+                <h2 data-lang-key="termsUserConductTitle">Conducta del Usuario</h2>
+                <p data-lang-key="termsUserConductDesc">Aceptas no utilizar los Servicios para ningún propósito ilegal o prohibido por estos Términos. No puedes usar los Servicios de ninguna manera que pueda dañar, deshabilitar, sobrecargar o deteriorar el Servicio.</p>
+                
+                <h2 data-lang-key="termsLimitationLiabilityTitle">Limitación de Responsabilidad</h2>
+                <p data-lang-key="termsLimitationLiabilityDesc">En ningún caso Chill Chess Club, ni sus directores, empleados, socios, agentes, proveedores o afiliados, serán responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluyendo sin limitación, pérdida de ganancias, datos, uso, buena voluntad u otras pérdidas intangibles, resultantes de tu acceso o uso o incapacidad para acceder o usar el Servicio.</p>
+
+                <h2 data-lang-key="termsChangesTitle">Cambios a los Términos</h2>
+                <p data-lang-key="termsChangesDesc">Nos reservamos el derecho, a nuestra sola discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, intentaremos proporcionar al menos 30 días de aviso antes de que los nuevos términos entren en vigor. Lo que constituye un cambio material será determinado a nuestra sola discreción.</p>
+
+                <h2 data-lang-key="termsContactUsTitle">Contáctanos</h2>
+                <p data-lang-key="termsContactUsDesc">Si tienes alguna pregunta sobre estos Términos, por favor contáctanos en: [tu@email.com]</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h4 data-lang-key="footerAboutTitle">Chill Chess Club</h4>
+                    <p data-lang-key="footerAboutDesc">Transformando tu juego con un método personalizado y efectivo. Clases para principiantes e intermedios.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-lang-key="footerLinksTitle">Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html#instructor" class="scroll-to" data-lang-key="navAbout">Sobre Mí</a></li>
+                        <li><a href="index.html#cursos" class="scroll-to" data-lang-key="navCourses">Cursos</a></li>
+                        <li><a href="index.html#metodo" class="scroll-to" data-lang-key="navMethod">Método</a></li>
+                        <li><a href="index.html#faq" class="scroll-to" data-lang-key="navFaq">FAQ</a></li> 
+                        <li><a href="index.html#contacto" class="scroll-to" data-lang-key="navContact">Contacto</a></li>
+                        <li><a href="politica-privacidad.html" data-lang-key="footerPrivacyLink">Política de Privacidad</a></li> 
+                        <li><a href="terminos-servicio.html" data-lang-key="footerTermsLink">Términos de Servicio</a></li> 
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-lang-key="footerContactTitle">Contacto Rápido</h4>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:santiago.narvaez.84@gmail.com">santiago.narvaez.84@gmail.com</a></p>
+                    <p><i class="fas fa-info-circle" aria-hidden="true"></i> <a href="index.html#contacto" class="scroll-to" data-lang-key="footerContactFormLink">Formulario de Contacto</a></p>
+                    <div class="payment-methods">
+                        <span data-lang-key="footerPaymentText">Pagos Seguros con:</span>
+                        <div class="payment-icons">
+                            <img src="paypal.png" alt="PayPal" title="PayPal" class="payment-logo">
+                            <img src="payoneer.png" alt="Payoneer" title="Payoneer" class="payment-logo">
+                            <img src="binance.png" alt="Binance" title="Binance" class="payment-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footerCopyright">© <span id="current-year"></span> Chill Chess Club. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top-btn" title="Volver arriba" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

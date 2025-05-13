@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="pageTitlePrivacy">Política de Privacidad - Chill Chess Club</title>
+    <meta name="description" content="Política de Privacidad del sitio web Chill Chess Club." data-lang-key="metaDescriptionPrivacy|content">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#18181B">
+    <style>
+        body {
+            padding-top: var(--header-height-desktop); 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex-grow: 1;
+        }
+        .legal-content-section {
+            padding-top: var(--spacing-lg); 
+            padding-bottom: var(--spacing-xl);
+        }
+        .legal-content-section .container {
+            max-width: 800px; 
+            text-align: left;
+        }
+        .legal-content-section h1 {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+        }
+        .legal-content-section h2 {
+            font-size: clamp(1.4rem, 3vw, 1.7rem);
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+            text-align: left;
+            padding-bottom: var(--spacing-xs);
+        }
+        .legal-content-section h2::after {
+            display: none; /* Ocultar la línea decorativa global de h2 en estas páginas */
+        }
+        .legal-content-section p, .legal-content-section ul {
+            margin-bottom: var(--spacing-md);
+            line-height: 1.8;
+            color: var(--color-text-medium);
+        }
+        .legal-content-section ul {
+            list-style-position: outside;
+            padding-left: 20px;
+        }
+        .legal-content-section li {
+            margin-bottom: var(--spacing-xs);
+        }
+        .last-updated {
+            display: block;
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            font-style: italic;
+            font-size: 0.9rem;
+            color: var(--color-text-medium);
+        }
+         @media (max-width: 992px) {
+            body {
+                padding-top: var(--header-height-mobile);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html#inicio" class="scroll-to logo-link" aria-label="Ir al inicio de la página" data-lang-key="logoLinkAriaLabel|aria-label">
+                <img src="logo.png" alt="Logo de Chill Chess Club" data-lang-key="logoAlt|alt" id="site-logo-img">
+                <span class="site-name-text" data-lang-key="siteName">Chill Chess Club</span>
+            </a>
+            <div class="header-controls-right">
+                <div class="language-selector">
+                    <button id="lang-es" class="lang-button active" data-lang="es">ES</button>
+                    <button id="lang-en" class="lang-button" data-lang="en">EN</button>
+                </div>
+                <nav class="main-nav">
+                    <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-links">
+                        <li class="mobile-menu-header">
+                            <img src="logo.png" alt="Chill Chess Club Logo" data-lang-key="logoAlt|alt" class="mobile-menu-logo">
+                        </li>
+                        <li><a href="index.html#instructor" data-lang-key="navAbout" class="scroll-to">Sobre Mí</a></li>
+                        <li><a href="index.html#cursos" data-lang-key="navCourses" class="scroll-to">Cursos</a></li>
+                        <li><a href="index.html#metodo" data-lang-key="navMethod" class="scroll-to">Método</a></li>
+                        <li><a href="index.html#beneficios-ajedrez" data-lang-key="navBenefits" class="scroll-to">Beneficios</a></li>
+                        <li><a href="index.html#recursos" data-lang-key="navResources" class="scroll-to">Recursos</a></li>
+                        <li><a href="index.html#blog" data-lang-key="navBlog" class="scroll-to">Blog</a></li>
+                        <li><a href="index.html#faq" data-lang-key="navFaq" class="scroll-to">FAQ</a></li>
+                        <li><a href="index.html#contacto" data-lang-key="navContact" class="scroll-to">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="legal-content-section">
+            <div class="container">
+                <h1 data-lang-key="privacyPolicyTitle">Política de Privacidad</h1>
+                <p class="last-updated" data-lang-key="privacyLastUpdated">Última actualización: 13 de mayo de 2025</p>
+
+                <p data-lang-key="privacyIntro">Bienvenido a Chill Chess Club. Nos comprometemos a proteger tu privacidad. Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y salvaguardamos tu información cuando visitas nuestro sitio web [NombreDeTuSitioWeb.com] y utilizas nuestros servicios. Por favor, lee esta política de privacidad cuidadosamente. Si no estás de acuerdo con los términos de esta política de privacidad, por favor no accedas al sitio.</p>
+
+                <h2 data-lang-key="privacyDataCollectionTitle">Recopilación de tu Información</h2>
+                <p data-lang-key="privacyDataCollectionDesc">Podemos recopilar información sobre ti de varias maneras. La información que podemos recopilar en el Sitio incluye:</p>
+                <ul>
+                    <li data-lang-key="privacyDataPersonal"><strong>Datos Personales:</strong> Información de identificación personal, como tu nombre, dirección de correo electrónico y número de teléfono, que nos proporcionas voluntariamente cuando te registras en el Sitio o eliges participar en diversas actividades relacionadas con el Sitio, como formularios de contacto o suscripciones a boletines.</li>
+                    <li data-lang-key="privacyDataDerivative"><strong>Datos Derivados:</strong> Información que nuestros servidores recopilan automáticamente cuando accedes al Sitio, como tu dirección IP, tipo de navegador, sistema operativo, tiempos de acceso y las páginas que has visto directamente antes y después de acceder al Sitio.</li>
+                </ul>
+
+                <h2 data-lang-key="privacyDataUseTitle">Uso de tu Información</h2>
+                <p data-lang-key="privacyDataUseDesc">Tener información precisa sobre ti nos permite ofrecerte una experiencia fluida, eficiente y personalizada. Específicamente, podemos usar la información recopilada sobre ti a través del Sitio para:</p>
+                <ul>
+                    <li data-lang-key="privacyUseAccount">Crear y gestionar tu cuenta.</li>
+                    <li data-lang-key="privacyUseComms">Enviarte correos electrónicos sobre tu cuenta o pedido.</li>
+                    <li data-lang-key="privacyUseServices">Proporcionarte los servicios solicitados, como el acceso a cursos y materiales.</li>
+                    <li data-lang-key="privacyUseImprove">Mejorar la eficiencia y el funcionamiento del Sitio.</li>
+                    <li data-lang-key="privacyUseDisputes">Resolver disputas y solucionar problemas.</li>
+                </ul>
+
+                <h2 data-lang-key="privacyDataDisclosureTitle">Divulgación de tu Información</h2>
+                <p data-lang-key="privacyDataDisclosureDesc">No compartiremos tu información con terceros excepto como se describe en esta Política de Privacidad o con tu consentimiento. Podemos divulgar tu información en las siguientes situaciones:</p>
+                <ul>
+                    <li data-lang-key="privacyDisclosureLaw"><strong>Por Ley o para Proteger Derechos:</strong> Si creemos que la divulgación es necesaria para responder a un proceso legal, investigar o remediar posibles violaciones de nuestras políticas, o proteger los derechos, la propiedad y la seguridad de otros.</li>
+                    <li data-lang-key="privacyDisclosureProviders"><strong>Proveedores de Servicios de Terceros:</strong> Podemos compartir tu información con terceros que realizan servicios para nosotros o en nuestro nombre, incluido el procesamiento de pagos, análisis de datos, envío de correos electrónicos, servicios de alojamiento, servicio al cliente y asistencia de marketing.</li>
+                </ul>
+
+                <h2 data-lang-key="privacySecurityTitle">Seguridad de tu Información</h2>
+                <p data-lang-key="privacySecurityDesc">Utilizamos medidas de seguridad administrativas, técnicas y físicas para ayudar a proteger tu información personal. Si bien hemos tomado medidas razonables para asegurar la información personal que nos proporcionas, ten en cuenta que ninguna medida de seguridad es perfecta o impenetrable, y ningún método de transmisión de datos puede garantizarse contra cualquier intercepción u otro tipo de uso indebido.</p>
+                
+                <h2 data-lang-key="privacyPolicyChangesTitle">Cambios a esta Política de Privacidad</h2>
+                <p data-lang-key="privacyPolicyChangesDesc">Podemos actualizar esta Política de Privacidad de vez en cuando. Te notificaremos cualquier cambio publicando la nueva Política de Privacidad en el Sitio. Se te aconseja revisar esta Política de Privacidad periódicamente para cualquier cambio. Los cambios a esta Política de Privacidad son efectivos cuando se publican en esta página.</p>
+
+                <h2 data-lang-key="privacyContactUsTitle">Contáctanos</h2>
+                <p data-lang-key="privacyContactUsDesc">Si tienes preguntas o comentarios sobre esta Política de Privacidad, por favor contáctanos en: [tu@email.com]</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h4 data-lang-key="footerAboutTitle">Chill Chess Club</h4>
+                    <p data-lang-key="footerAboutDesc">Transformando tu juego con un método personalizado y efectivo. Clases para principiantes e intermedios.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-lang-key="footerLinksTitle">Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html#instructor" class="scroll-to" data-lang-key="navAbout">Sobre Mí</a></li>
+                        <li><a href="index.html#cursos" class="scroll-to" data-lang-key="navCourses">Cursos</a></li>
+                        <li><a href="index.html#metodo" class="scroll-to" data-lang-key="navMethod">Método</a></li>
+                        <li><a href="index.html#faq" class="scroll-to" data-lang-key="navFaq">FAQ</a></li> 
+                        <li><a href="index.html#contacto" class="scroll-to" data-lang-key="navContact">Contacto</a></li>
+                        <li><a href="politica-privacidad.html" data-lang-key="footerPrivacyLink">Política de Privacidad</a></li> 
+                        <li><a href="terminos-servicio.html" data-lang-key="footerTermsLink">Términos de Servicio</a></li> 
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-lang-key="footerContactTitle">Contacto Rápido</h4>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:santiago.narvaez.84@gmail.com">santiago.narvaez.84@gmail.com</a></p>
+                    <p><i class="fas fa-info-circle" aria-hidden="true"></i> <a href="index.html#contacto" class="scroll-to" data-lang-key="footerContactFormLink">Formulario de Contacto</a></p>
+                    <div class="payment-methods">
+                        <span data-lang-key="footerPaymentText">Pagos Seguros con:</span>
+                        <div class="payment-icons">
+                            <img src="paypal.png" alt="PayPal" title="PayPal" class="payment-logo">
+                            <img src="payoneer.png" alt="Payoneer" title="Payoneer" class="payment-logo">
+                            <img src="binance.png" alt="Binance" title="Binance" class="payment-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footerCopyright">© <span id="current-year"></span> Chill Chess Club. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top-btn" title="Volver arriba" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
