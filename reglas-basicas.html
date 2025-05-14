@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-key="pageTitleChessRules">Guía Rápida: Movimientos y Reglas del Ajedrez - Chill Chess Club</title>
+    <meta name="description" content="Aprende los fundamentos del ajedrez: el tablero, cómo se mueven las piezas, jaque, jaque mate y más. Guía esencial para principiantes." data-lang-key="metaDescriptionChessRules|content">
+
+    <link rel="alternate" hreflang="es" href="reglas-basicas.html" />
+    <link rel="alternate" hreflang="en" href="reglas-basicas.html" />
+    <link rel="alternate" hreflang="x-default" href="reglas-basicas.html" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#18181B">
+    <style>
+        /* Estilos básicos para centrar contenido en páginas de contenido (similar a legales) */
+        body {
+            padding-top: var(--header-height-desktop); 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex-grow: 1;
+        }
+        .content-page-section { /* Cambiado de legal-content-section para generalizar */
+            padding-top: var(--spacing-lg); 
+            padding-bottom: var(--spacing-xl);
+        }
+        .content-page-section .container {
+            max-width: 900px; /* Un poco más ancho para contenido general */
+            text-align: left;
+        }
+        .content-page-section h1 {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            font-size: clamp(2rem, 5vw, 2.8rem); /* Un poco más grande */
+        }
+        .content-page-section h2 {
+            font-size: clamp(1.5rem, 3.5vw, 2rem);
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-md);
+            text-align: left;
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 2px solid var(--color-accent-pink); /* Un toque de color */
+        }
+         .content-page-section h2::after { /* Ocultar línea global si existe */
+            display: none; 
+        }
+        .content-page-section h3 {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-accent-orange);
+        }
+        .content-page-section p, .content-page-section ul, .content-page-section ol {
+            margin-bottom: var(--spacing-md);
+            line-height: 1.8;
+            color: var(--color-text-medium);
+            font-size: 1.05rem;
+        }
+        .content-page-section ul, .content-page-section ol {
+            list-style-position: outside;
+            padding-left: 25px;
+        }
+        .content-page-section li {
+            margin-bottom: var(--spacing-xs);
+        }
+        .content-page-section strong {
+            color: var(--color-text-light);
+        }
+        .content-page-section .chess-piece { /* Estilo para resaltar nombres de piezas */
+            font-weight: bold;
+            color: var(--color-accent-purple);
+        }
+        .content-page-section .concept { /* Estilo para resaltar conceptos clave */
+            font-style: italic;
+            color: var(--color-accent-teal);
+        }
+        .content-page-section .back-to-resources {
+            display: block;
+            text-align: center;
+            margin-top: var(--spacing-xl);
+            margin-bottom: var(--spacing-md);
+        }
+        .content-page-section .back-to-resources a {
+            color: var(--color-accent-pink);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border: 1px solid var(--color-accent-pink);
+            border-radius: var(--border-radius-md);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .content-page-section .back-to-resources a:hover {
+            background-color: var(--color-accent-pink);
+            color: var(--color-dark-bg);
+        }
+
+        /* Estilos para un diagrama de ajedrez simple (opcional, puedes usar imágenes) */
+        .chess-diagram {
+            display: grid;
+            grid-template-columns: repeat(8, 30px); /* Tamaño de las casillas */
+            grid-template-rows: repeat(8, 30px);
+            border: 2px solid var(--color-text-dark);
+            width: fit-content;
+            margin: var(--spacing-md) auto; /* Centrar el diagrama */
+        }
+        .chess-diagram span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem; /* Tamaño de las piezas (emoji o texto) */
+        }
+        .chess-diagram .white-square { background-color: #f0d9b5; }
+        .chess-diagram .black-square { background-color: #b58863; }
+
+        @media (max-width: 992px) {
+            body {
+                padding-top: var(--header-height-mobile);
+            }
+            .chess-diagram {
+                grid-template-columns: repeat(8, 25px);
+                grid-template-rows: repeat(8, 25px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="index.html#inicio" class="scroll-to logo-link" aria-label="Ir al inicio de la página" data-lang-key="logoLinkAriaLabel|aria-label">
+                <img src="logo.png" alt="Logo de Chill Chess Club" data-lang-key="logoAlt|alt" id="site-logo-img">
+                <span class="site-name-text" data-lang-key="siteName">Chill Chess Club</span>
+            </a>
+            <div class="header-controls-right">
+                <div class="language-selector">
+                    <button id="lang-es" class="lang-button active" data-lang="es">ES</button>
+                    <button id="lang-en" class="lang-button" data-lang="en">EN</button>
+                </div>
+                <nav class="main-nav">
+                    <button class="menu-toggle" aria-label="Toggle Menu" aria-expanded="false">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-links">
+                        <li class="mobile-menu-header">
+                            <img src="logo.png" alt="Chill Chess Club Logo" data-lang-key="logoAlt|alt" class="mobile-menu-logo">
+                        </li>
+                        <li><a href="index.html#instructor" data-lang-key="navAbout" class="scroll-to">Sobre Mí</a></li>
+                        <li><a href="index.html#cursos" data-lang-key="navCourses" class="scroll-to">Cursos</a></li>
+                        <li><a href="index.html#metodo" data-lang-key="navMethod" class="scroll-to">Método</a></li>
+                        <li><a href="index.html#beneficios-ajedrez" data-lang-key="navBenefits" class="scroll-to">Beneficios</a></li>
+                        <li><a href="index.html#recursos" data-lang-key="navResources" class="scroll-to">Recursos</a></li>
+                        <li><a href="index.html#blog" data-lang-key="navBlog" class="scroll-to">Blog</a></li>
+                        <li><a href="index.html#faq" data-lang-key="navFaq" class="scroll-to">FAQ</a></li>
+                        <li><a href="index.html#contacto" data-lang-key="navContact" class="scroll-to">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="content-page-section">
+            <div class="container">
+                <h1 data-lang-key="rulesTitle">Guía Rápida: Movimientos y Reglas del Ajedrez</h1>
+                
+                <p data-lang-key="rulesIntro">¡Bienvenido al fascinante mundo del ajedrez! Esta guía te proporcionará los conocimientos básicos para entender el tablero, las piezas y cómo comenzar a jugar. El ajedrez es un juego de estrategia, táctica y paciencia. ¡Vamos a empezar!</p>
+
+                <h2 data-lang-key="rulesBoardTitle">El Tablero de Ajedrez</h2>
+                <p data-lang-key="rulesBoardDesc1">El ajedrez se juega en un tablero cuadrado dividido en 64 casillas (8x8), alternando colores claros y oscuros (generalmente llamadas "blancas" y "negras").</p>
+                <p data-lang-key="rulesBoardDesc2">Al comenzar la partida, cada jugador debe tener una casilla blanca en su esquina inferior derecha. Las filas horizontales se llaman <span class="concept" data-lang-key="rulesConceptRanks">filas</span> y se numeran del 1 al 8. Las columnas verticales se llaman <span class="concept" data-lang-key="rulesConceptFiles">columnas</span> y se designan con letras de la 'a' a la 'h'.</p>
+                <h2 data-lang-key="rulesPiecesTitle">Las Piezas de Ajedrez</h2>
+                <p data-lang-key="rulesPiecesIntro">Cada jugador comienza con 16 piezas:</p>
+                <ul>
+                    <li data-lang-key="rulesPieceKing">1 <span class="chess-piece">Rey</span></li>
+                    <li data-lang-key="rulesPieceQueen">1 <span class="chess-piece">Dama</span> (o Reina)</li>
+                    <li data-lang-key="rulesPieceRook">2 <span class="chess-piece">Torres</span></li>
+                    <li data-lang-key="rulesPieceBishop">2 <span class="chess-piece">Alfiles</span></li>
+                    <li data-lang-key="rulesPieceKnight">2 <span class="chess-piece">Caballos</span></li>
+                    <li data-lang-key="rulesPiecePawn">8 <span class="chess-piece">Peones</span></li>
+                </ul>
+                <p data-lang-key="rulesPiecesSetup">Las piezas se colocan siempre de la misma manera. La segunda fila de cada jugador se llena con peones. En la primera fila, desde las esquinas hacia el centro: Torre, Caballo, Alfil. La Dama se coloca en la casilla de su propio color (Dama blanca en casilla blanca, Dama negra en casilla negra) y el Rey en la casilla restante.</p>
+
+                <h3 data-lang-key="rulesMoveKingTitle">Cómo se Mueve el Rey (<span class="chess-piece">♔</span> <span class="chess-piece">♚</span>)</h3>
+                <p data-lang-key="rulesMoveKingDesc">El Rey puede moverse una casilla en cualquier dirección (horizontal, vertical o diagonal). Es la pieza más importante, pero también una de las más débiles en términos de movilidad.</p>
+
+                <h3 data-lang-key="rulesMoveQueenTitle">Cómo se Mueve la Dama (<span class="chess-piece">♕</span> <span class="chess-piece">♛</span>)</h3>
+                <p data-lang-key="rulesMoveQueenDesc">La Dama es la pieza más poderosa. Puede moverse cualquier número de casillas en línea recta en cualquier dirección (horizontal, vertical o diagonal), siempre que su camino no esté bloqueado.</p>
+
+                <h3 data-lang-key="rulesMoveRookTitle">Cómo se Mueve la Torre (<span class="chess-piece">♖</span> <span class="chess-piece">♜</span>)</h3>
+                <p data-lang-key="rulesMoveRookDesc">La Torre puede moverse cualquier número de casillas en horizontal o vertical, siempre que su camino no esté bloqueado.</p>
+
+                <h3 data-lang-key="rulesMoveBishopTitle">Cómo se Mueve el Alfil (<span class="chess-piece">♗</span> <span class="chess-piece">♝</span>)</h3>
+                <p data-lang-key="rulesMoveBishopDesc">El Alfil puede moverse cualquier número de casillas en diagonal, siempre que su camino no esté bloqueado. Cada jugador tiene un alfil que se mueve por casillas blancas y otro por casillas negras.</p>
+
+                <h3 data-lang-key="rulesMoveKnightTitle">Cómo se Mueve el Caballo (<span class="chess-piece">♘</span> <span class="chess-piece">♞</span>)</h3>
+                <p data-lang-key="rulesMoveKnightDesc">El Caballo se mueve en forma de "L": dos casillas en una dirección (horizontal o vertical) y luego una casilla en ángulo recto. Es la única pieza que puede saltar sobre otras piezas.</p>
+
+                <h3 data-lang-key="rulesMovePawnTitle">Cómo se Mueve el Peón (<span class="chess-piece">♙</span> <span class="chess-piece">♟</span>)</h3>
+                <p data-lang-key="rulesMovePawnDesc1">El Peón es la pieza más numerosa pero tiene reglas de movimiento especiales:</p>
+                <ul>
+                    <li data-lang-key="rulesMovePawnForward">Normalmente, avanza una casilla hacia adelante (nunca hacia atrás).</li>
+                    <li data-lang-key="rulesMovePawnFirst">En su primer movimiento, un peón tiene la opción de avanzar una o dos casillas.</li>
+                    <li data-lang-key="rulesMovePawnCapture">Captura en diagonal, una casilla hacia adelante. No puede capturar moviéndose recto.</li>
+                    <li data-lang-key="rulesMovePawnEnPassant"><strong>Captura al Paso (En Passant):</strong> Una regla especial. Si un peón avanza dos casillas en su primer movimiento y se sitúa al lado de un peón enemigo, este peón enemigo tiene la opción de capturarlo "al paso" como si el primer peón solo hubiera avanzado una casilla. Esta captura solo puede hacerse en el turno inmediatamente posterior al avance de dos casillas.</li>
+                    <li data-lang-key="rulesMovePawnPromotion"><strong>Promoción (Coronación):</strong> Si un peón alcanza la última fila del tablero (la octava fila para las blancas, la primera para las negras), se "promociona" y debe ser reemplazado inmediatamente por una Dama, Torre, Alfil o Caballo del mismo color (generalmente se elige la Dama por ser la más poderosa).</li>
+                </ul>
+
+                <h2 data-lang-key="rulesSpecialMovesTitle">Movimientos Especiales</h2>
+                <h3 data-lang-key="rulesCastlingTitle">Enroque (<span class="concept">Castling</span>)</h3>
+                <p data-lang-key="rulesCastlingDesc1">El enroque es un movimiento especial que involucra al Rey y a una de las Torres. Permite hacer dos cosas en un solo turno: mover el Rey a una posición más segura y activar la Torre.</p>
+                <p data-lang-key="rulesCastlingDesc2">Condiciones para el enroque:</p>
+                <ul>
+                    <li data-lang-key="rulesCastlingCond1">Ni el Rey ni la Torre implicada deben haberse movido previamente en la partida.</li>
+                    <li data-lang-key="rulesCastlingCond2">No puede haber piezas entre el Rey y la Torre.</li>
+                    <li data-lang-key="rulesCastlingCond3">El Rey no puede estar en jaque, ni pasar por una casilla atacada por una pieza enemiga, ni terminar en una casilla atacada.</li>
+                </ul>
+                <p data-lang-key="rulesCastlingTypes">Hay dos tipos de enroque:</p>
+                <ul>
+                    <li data-lang-key="rulesCastlingKingside"><strong>Enroque Corto (lado del Rey):</strong> El Rey se mueve dos casillas hacia la Torre del flanco de rey, y la Torre salta al otro lado del Rey.</li>
+                    <li data-lang-key="rulesCastlingQueenside"><strong>Enroque Largo (lado de la Dama):</strong> El Rey se mueve dos casillas hacia la Torre del flanco de dama, y la Torre salta al otro lado del Rey.</li>
+                </ul>
+
+                <h2 data-lang-key="rulesObjectiveTitle">Objetivo del Juego: Jaque y Jaque Mate</h2>
+                <h3 data-lang-key="rulesCheckTitle">Jaque (<span class="concept">Check</span>)</h3>
+                <p data-lang-key="rulesCheckDesc">Un Rey está en <span class="concept" data-lang-key="rulesConceptCheck">jaque</span> cuando está siendo atacado por una o más piezas enemigas. El jugador cuyo Rey está en jaque debe eliminar la amenaza inmediatamente. No se puede realizar ningún movimiento que deje o ponga al propio Rey en jaque.</p>
+                <p data-lang-key="rulesCheckOptions">Para salir del jaque, hay tres opciones:</p>
+                <ul>
+                    <li data-lang-key="rulesCheckOptMove">Mover el Rey a una casilla segura.</li>
+                    <li data-lang-key="rulesCheckOptBlock">Bloquear el jaque interponiendo otra pieza.</li>
+                    <li data-lang-key="rulesCheckOptCapture">Capturar la pieza que está dando jaque.</li>
+                </ul>
+
+                <h3 data-lang-key="rulesCheckmateTitle">Jaque Mate (<span class="concept">Checkmate</span>)</h3>
+                <p data-lang-key="rulesCheckmateDesc">Si un Rey está en jaque y no hay ningún movimiento legal para escapar del jaque, se dice que es <span class="concept" data-lang-key="rulesConceptCheckmate">jaque mate</span>. El jugador que da jaque mate gana la partida.</p>
+
+                <h2 data-lang-key="rulesDrawTitle">Tablas (Empate)</h2>
+                <p data-lang-key="rulesDrawDesc">Una partida de ajedrez no siempre termina con un ganador. Puede terminar en <span class="concept" data-lang-key="rulesConceptDraw">tablas</span> (empate) de varias maneras:</p>
+                <ul>
+                    <li data-lang-key="rulesDrawStalemate"><strong>Rey Ahogado (Stalemate):</strong> Si el jugador al que le toca mover no tiene ningún movimiento legal posible y su Rey no está en jaque.</li>
+                    <li data-lang-key="rulesDrawAgreement"><strong>Acuerdo Mutuo:</strong> Ambos jugadores pueden acordar un empate.</li>
+                    <li data-lang-key="rulesDrawRepetition"><strong>Triple Repetición de Posición:</strong> Si la misma posición se repite tres veces con el mismo jugador al turno y las mismas posibilidades de movimiento (incluyendo el derecho a enrocar o capturar al paso).</li>
+                    <li data-lang-key="rulesDraw50Moves"><strong>Regla de los 50 Movimientos:</strong> Si durante 50 movimientos consecutivos de cada jugador no se ha movido ningún peón ni se ha capturado ninguna pieza.</li>
+                    <li data-lang-key="rulesDrawInsufficientMaterial"><strong>Material Insuficiente:</strong> Si no quedan suficientes piezas en el tablero para forzar un jaque mate (por ejemplo, Rey contra Rey, Rey y Alfil contra Rey, Rey y Caballo contra Rey).</li>
+                </ul>
+
+                <p data-lang-key="rulesNextSteps">¡Felicidades! Ahora conoces las reglas básicas del ajedrez. La mejor manera de aprender es jugando. ¡Practica mucho y no dudes en explorar más sobre estrategia y táctica!</p>
+
+                <div class="back-to-resources">
+                    <a href="index.html#recursos" data-lang-key="rulesBackToResources">Volver a Recursos Gratuitos</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h4 data-lang-key="footerAboutTitle">Chill Chess Club</h4>
+                    <p data-lang-key="footerAboutDesc">Transformando tu juego con un método personalizado y efectivo. Clases para principiantes e intermedios.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-lang-key="footerLinksTitle">Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html#instructor" class="scroll-to" data-lang-key="navAbout">Sobre Mí</a></li>
+                        <li><a href="index.html#cursos" class="scroll-to" data-lang-key="navCourses">Cursos</a></li>
+                        <li><a href="index.html#metodo" class="scroll-to" data-lang-key="navMethod">Método</a></li>
+                        <li><a href="index.html#faq" class="scroll-to" data-lang-key="navFaq">FAQ</a></li> 
+                        <li><a href="index.html#contacto" class="scroll-to" data-lang-key="navContact">Contacto</a></li>
+                        <li><a href="politica-privacidad.html" data-lang-key="footerPrivacyLink">Política de Privacidad</a></li> 
+                        <li><a href="terminos-servicio.html" data-lang-key="footerTermsLink">Términos de Servicio</a></li> 
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-lang-key="footerContactTitle">Contacto Rápido</h4>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:santiago.narvaez.84@gmail.com">santiago.narvaez.84@gmail.com</a></p>
+                    <p><i class="fas fa-info-circle" aria-hidden="true"></i> <a href="index.html#contacto" class="scroll-to" data-lang-key="footerContactFormLink">Formulario de Contacto</a></p>
+                    <div class="payment-methods">
+                        <span data-lang-key="footerPaymentText">Pagos Seguros con:</span>
+                        <div class="payment-icons">
+                            <img src="paypal.png" alt="PayPal" title="PayPal" class="payment-logo">
+                            <img src="payoneer.png" alt="Payoneer" title="Payoneer" class="payment-logo">
+                            <img src="binance.png" alt="Binance" title="Binance" class="payment-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-key="footerCopyright">© <span id="current-year"></span> Chill Chess Club. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top-btn" title="Volver arriba" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
