@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate-key="pageTitleBlogJuegoLento">Ajedrez: ¿Juego Lento o Desafío Apasionante? - Mi Blog</title>
+    <title data-translate-key="pageTitleBlogVibranteEsencia">Ajedrez: Redescubre su Vibrante Esencia - Mi Blog</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
       /* styles.css - Versión integrada para la página del post del blog */
-      /* Los estilos son idénticos a los de blog_post_historia_ajedrez_v1 */
       :root {
         --color-dark: #18181B;
         --color-background-medium: #27272A;
@@ -56,7 +55,11 @@
         font-family: var(--font-title); margin-bottom: var(--spacing-sm); color: var(--color-text-light); 
         font-weight: 700; letter-spacing: 0.5px; line-height: 1.3;
       }
-      p { margin-bottom: var(--spacing-md); max-width: 70ch; color: var(--color-text-light); }
+      p { 
+        margin-bottom: var(--spacing-md); 
+        max-width: 70ch; 
+        color: var(--color-text-light); 
+      }
       a { color: var(--color-secondary-accent); text-decoration: none; transition: color var(--transition-speed) ease; }
       a:hover, a:focus { color: var(--color-modern-accent-1); }
       .container { max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: var(--spacing-md); padding-right: var(--spacing-md); }
@@ -81,7 +84,8 @@
       body.blog-page-body > header { display: none !important; }
       .blog-post-page { margin-top: var(--spacing-xl); margin-bottom: var(--spacing-xl); padding: 0; }
       .blog-post-page .post-container-inner { 
-          max-width: 850px; margin-left: auto; margin-right: auto; background-color: var(--color-dark-bg); 
+          max-width: 1040px; 
+          margin-left: auto; margin-right: auto; background-color: var(--color-dark-bg); 
           padding: var(--spacing-md); border-radius: var(--border-radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.35);
           border: 2px solid transparent; background-clip: padding-box; position: relative; 
       }
@@ -101,20 +105,77 @@
           text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; 
       }
       .blog-post-page .post-header h1:hover { transform: scale(1.02); }
-      .blog-post-page .post-meta { margin-bottom: 0; color: var(--color-text-medium); font-size: 0.9rem; }
-      .blog-post-page .post-meta span { margin: 0 10px; }
+      
+      .blog-post-page .post-meta {
+          display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+          gap: var(--spacing-xs) var(--spacing-sm); margin-top: var(--spacing-xs); 
+          margin-bottom: var(--spacing-md); color: var(--color-text-medium); font-size: 0.85rem; 
+          border-top: 1px solid var(--color-background-medium); 
+          border-bottom: 1px solid var(--color-background-medium); 
+          padding: var(--spacing-sm) 0;
+      }
+      .blog-post-page .post-meta span { display: inline-flex; align-items: center; }
+      .blog-post-page .post-meta .fas { 
+          margin-right: calc(var(--spacing-xs) / 2); color: var(--color-secondary-accent); 
+          font-size: 0.9em; 
+      }
+      .blog-post-page .post-meta .meta-author { color: var(--color-text-light); font-weight: 500; }
+      .blog-post-page .post-meta .meta-separator {
+          display: inline-block; width: 4px; height: 4px; background-color: var(--color-text-medium);
+          border-radius: 50%; margin: 0 var(--spacing-xs); opacity: 0.6;
+      }
+
+      .featured-image-figure {
+        margin-bottom: var(--spacing-lg); 
+      }
       .blog-post-page .post-image-featured {
           width: 100%; max-height: 450px; object-fit: cover; border-radius: var(--border-radius-md);
-          margin-top: 0; margin-bottom: var(--spacing-lg); border: 1px solid rgba(255,255,255,0.1); 
+          border: 1px solid rgba(255,255,255,0.1); 
           display: block; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       }
-      .blog-post-page .post-content h2 {
+      .image-caption {
+        text-align: left; /* Pie de imagen alineado a la izquierda */
+        font-size: 0.85em;
+        color: var(--color-text-medium);
+        margin-top: var(--spacing-xs);
+        padding: 0 var(--spacing-sm); 
+        font-style: italic;
+      }
+
+      .blog-post-page .post-content h2 { 
           font-size: clamp(1.6rem, 4vw, 2.1rem); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-md);
           text-align: left; padding-bottom: var(--spacing-sm); border-bottom: 2px solid var(--color-modern-accent-2); 
           color: var(--color-text-light); font-family: var(--font-title);
       }
       .blog-post-page .post-content h2::after { display:none; }
-      .blog-post-page .post-content p { margin-bottom: var(--spacing-md); line-height: 1.8; color: var(--color-text-light); font-size: 1.05rem; text-align: left; }
+      .blog-post-page .post-content p { 
+          margin-bottom: var(--spacing-md); 
+          line-height: 1.8; 
+          color: var(--color-text-light); 
+          font-size: 1.05rem; 
+          text-align: left; 
+          max-width: none; 
+      }
+      
+      .blog-post-page .post-content blockquote {
+        margin: var(--spacing-md) var(--spacing-sm); 
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-left: 4px solid var(--color-secondary-accent); 
+        background-color: rgba(39, 39, 42, 0.2); 
+        border-radius: var(--border-radius-sm);
+        font-style: italic;
+        color: var(--color-text-medium); 
+      }
+      .blog-post-page .post-content blockquote p {
+        margin-bottom: var(--spacing-xs); 
+        color: inherit; 
+        font-size: 0.95rem; 
+      }
+      .blog-post-page .post-content blockquote cite {
+        display: block; text-align: right; margin-top: var(--spacing-sm);
+        font-size: 0.85rem; color: var(--color-text-medium);
+      }
+
       .blog-post-page .back-to-blog-container { display: block; text-align: center; margin-top: var(--spacing-xl); }
       @keyframes animatedGradientBackground { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
       .btn {
@@ -159,18 +220,39 @@
       .payment-icons { display: flex; gap: var(--spacing-sm); align-items: center; }
       .payment-icons img { height: 25px; width: auto; opacity: 0.7; transition: opacity var(--transition-speed) ease; }
       .payment-icons img:hover { opacity: 1; }
-      .footer-bottom { padding-top: var(--spacing-md); border-top: 1px solid var(--color-background-medium); font-size: 0.85rem; }
-      .footer-bottom p { margin: 0; color: var(--color-text-medium); text-align: center; }
+      .footer-bottom { 
+        padding-top: var(--spacing-md); 
+        border-top: 1px solid var(--color-background-medium); 
+        font-size: 0.85rem; 
+        text-align: center; 
+      }
+      .footer-bottom p { 
+        display: inline-block; 
+        margin: 0; 
+        color: var(--color-text-medium); 
+      }
       @media (max-width: 992px) { .footer-about, .footer-links, .footer-contact { flex-basis: 45%; } }
       @media (max-width: 767px) { 
         .footer-content { flex-direction: column; align-items: flex-start; }
         .footer-about, .footer-links, .footer-contact { flex-basis: 100%; min-width: 100%; margin-bottom: var(--spacing-md); text-align: left; }
         .footer-about h4::after, .footer-links h4::after, .footer-contact h4::after { left: 0; transform: none; } 
         .payment-icons { justify-content: flex-start; }
-        .footer-bottom p { text-align: center; }
       }
-      @media (max-width: 992px) { .blog-post-page .post-container-inner { padding: var(--spacing-sm); margin-left: var(--spacing-sm); margin-right: var(--spacing-sm); width: auto; } }
-      @media (max-width: 480px) { .blog-post-page .post-header h1 { font-size: clamp(1.6rem, 7vw, 2rem); } }
+      @media (max-width: 992px) { 
+        .blog-post-page .post-container-inner { 
+            padding: var(--spacing-sm); 
+            margin-left: var(--spacing-sm); 
+            margin-right: var(--spacing-sm); 
+            width: auto; 
+            max-width: 95%; 
+        } 
+      }
+      @media (max-width: 480px) { 
+        .blog-post-page .post-header h1 { font-size: clamp(1.6rem, 7vw, 2rem); } 
+        .blog-post-page .post-container-inner {
+             max-width: 100%; 
+        }
+      }
     </style>
 </head>
 <body class="blog-page-body" data-lang="es">
@@ -184,40 +266,45 @@
     <main class="blog-post-page">
         <div class="post-container-inner"> 
             <header class="post-header">
-                <h1 data-translate-key="postTitleJuegoLento">Ajedrez: ¿Juego Lento o Desafío Apasionante? La Respuesta Podría Sorprenderte</h1>
-                <p class="post-meta">
-                    <span data-translate-key="publishedDate">Publicado el 14 de Mayo, 2025</span> por <span data-translate-key="authorName" class="author-name">Santiago Narváez</span>
-                </p>
+                <h1 data-translate-key="postTitleVibranteEsencia">Ajedrez: Redescubre su Vibrante Esencia, Olvida lo que Creías Saber</h1>
+                <div class="post-meta">
+                    <span><i class="fas fa-calendar-alt"></i> <span data-translate-key="publishedDateVe">Publicado el 14 de Mayo, 2025</span></span>
+                    <span class="meta-separator"></span>
+                    <span><i class="fas fa-user"></i> por&nbsp;<span class="meta-author" data-translate-key="authorNameVe">Santiagovskiy</span></span>
+                </div>
             </header>
 
-            <img src="images/blog-ajedrez-apasionante.jpg" 
-                 alt="[Imagen mostrando el ajedrez de forma relajada]" 
-                 class="post-image-featured"
-                 onerror="this.onerror=null; this.src='https://placehold.co/800x400/222225/a1a1aa?text=Error+al+cargar+imagen%0Aimages/blog-ajedrez-apasionante.jpg';">
+            <figure class="featured-image-figure">
+                <img src="images/blog-2-ajedrez-surf-ola-luminosa-energia.jpg" 
+                     alt="[Piezas de ajedrez surfeando una ola de luz energética]" 
+                     class="post-image-featured"
+                     onerror="this.onerror=null; this.src='https://placehold.co/800x400/F97316/18181B?text=Ajedrez+Apasionante';">
+                <figcaption class="image-caption" data-translate-key="imageCaptionVibranteEsencia">
+                    Más allá de la imagen de genios serenos, el ajedrez revela una intensidad oculta, una belleza singular y una relevancia perdurable. Le invitamos a cuestionar viejas ideas y observar de nuevo.
+                </figcaption>
+            </figure>
 
             <article class="post-content">
-                <p data-translate-key="postParagraph1JuegoLento">
-                    Si crees que el ajedrez es solo para genios pacientes, permítenos mostrarte su intensidad, su belleza creativa y por qué se ha mantenido relevante por siglos.
+                <p data-translate-key="postIntroVe1">
+                    Si la palabra "ajedrez" le sugiere imágenes de genios enfrascados en una concentración tal que las manecillas del reloj piden clemencia, o de duelos que se extienden hasta que el polvo se asienta con familiaridad sobre el tablero, le invitamos a mirar un poco más allá.
                 </p>
-                <p data-translate-key="postParagraph2">
-                    Desde la India, el chaturanga se extendió a Persia, donde se conoció como "chatrang". Fue en Persia donde se
-                    introdujeron términos como "Shah" (rey) y "Shah Mat" (el rey está muerto), que darían origen a la palabra
-                    "jaque mate". Con la conquista musulmana de Persia, el juego fue adoptado por el mundo árabe y, a través de él,
-                    llegó al norte de África, Sicilia y España alrededor del siglo X.
+                <p data-translate-key="postIntroVe2">
+                    Permítanos mostrarle la intensidad que se esconde bajo su calma aparente, la belleza singular de su creatividad, y las profundas raíces de su perdurable relevancia. Es tiempo, ciertamente, de cuestionar viejas ideas y observar de nuevo.
                 </p>
-                <h2 data-translate-key="postSubtitleEvolucion">Evolución en Europa</h2>
-                <p data-translate-key="postParagraph3">
-                    En Europa, el ajedrez experimentó cambios significativos, especialmente entre los siglos XV y XVI.
-                    La reina (que originalmente era una pieza débil llamada "fers" o consejero) se convirtió en la pieza más poderosa del tablero,
-                    y el alfil también ganó su movimiento moderno. Estos cambios hicieron el juego más rápido y dinámico.
-                    Fue durante este período que se escribieron los primeros tratados de ajedrez y el juego se popularizó entre la nobleza
-                    y los eruditos.
+                <p data-translate-key="postParagraph1Ve">
+                    El imaginario popular suele envolver al ajedrez en un aura de quietud casi reverencial. Se piensa en largas horas de silencio profundo, miradas fijas en un tablero inmóvil, una justa intelectual que parece avanzar con un ritmo pausado y ancestral. Y hay verdad en ello: el ajedrez conoce la pausa, ese murmullo interno donde madura la estrategia. Pero reducir su esencia a esta calma superficial, a una lentitud sin verdadera pasión, es ignorar las profundas corrientes internas que lo animan. La propuesta es clara: redescubra su esencia vibrante. La revelación aguarda a quien se atreve a una mirada más atenta.
                 </p>
-                <p data-translate-key="postParagraph4">
-                    El ajedrez moderno, con sus reglas estandarizadas, comenzó a tomar forma en el siglo XIX. Se organizaron los
-                    primeros torneos internacionales y surgieron los primeros campeones mundiales. Hoy en día, el ajedrez es
-                    un deporte mental global, con millones de jugadores y una rica cultura que abarca desde partidas casuales
-                    hasta competiciones de élite y el estudio profundo de sus estrategias y tácticas.
+                <p data-translate-key="postParagraph2Ve">
+                    Porque en esos momentos de silencio, en esa aparente inmovilidad, se libran duelos de gran intensidad. No es solo la estructura clara de la lógica la que opera; es también un espejo de la experiencia humana: la tensión del cálculo preciso, la sombra de la angustia ante el error, la silenciosa euforia de una idea clara. Cada pieza movida es una palabra en un diálogo sin voz, un pulso en la lucha de voluntades donde la mente del oponente se siente casi tangible. ¿Lento? Quizás para el ojo que solo ve el movimiento. Apasionante, sin duda, para quien experimenta el vértigo de las posibilidades, la presión del tiempo, la súbita fuerza de una combinación que quiebra los planes más elaborados.
+                </p>
+                <p data-translate-key="postParagraph3Ve">
+                    La belleza creativa del ajedrez es otra de sus cualidades, a menudo ocultas para el no iniciado. Lejos de ser un mero ejercicio de cálculo predecible, el tablero se convierte en un lienzo donde la imaginación traza geometrías sorprendentes, donde la intuición, esa chispa de comprensión, a veces supera la lógica pura. Una partida puede ser la narración de una gesta, una secuencia de movimientos precisos, una forma modelada en el tiempo. Hay sacrificios impactantes, defensas que conmueven por su tenacidad, ataques que avanzan con fuerza natural. Esta capacidad para generar asombro, para revelar lo nuevo dentro de un marco de reglas antiguas, es uno de los pilares de su notable persistencia.
+                </p>
+                <p data-translate-key="postParagraph4Ve">
+                    Su largo viaje a través de los siglos testifica esta riqueza. Desde las orillas del Indo, donde el chaturanga comenzó a esbozar las primeras estrategias de combate simbólico, el juego emprendió su largo viaje: Persia lo acogió y lo transformó, y desde allí, como una idea persistente, cruzó continentes, se integró en culturas diversas, siempre adaptándose, siempre desafiando, siempre encontrando nuevos adeptos. No habría sobrevivido quince siglos, viendo pasar imperios, modas y peinados francamente cuestionables, si fuese un simple pasatiempo para temperamentos sosegados o mentes poco curiosas. Su longevidad surge de su asombrosa capacidad para ser, al mismo tiempo, ciencia exacta y arte libre, lucha intensa y calma reflexión.
+                </p>
+                <p data-translate-key="postParagraph5Ve">
+                    Así, la aparente "lentitud" del ajedrez bien podría ser el silencio productivo, el espacio necesario donde su complejidad se despliega. Es el tiempo que permite la inmersión profunda, la antesala de esa comprensión que, al llegar, ilumina el tablero y la mente con una claridad súbita y estimulante. No es la pasividad del genio paciente lo que define al jugador, sino la búsqueda activa, a veces intensa, de la verdad y la belleza en ese universo de 64 escaques. La respuesta, entonces, va más allá de una simple elección; reside en la comprensión de que en el corazón de la calma ajedrecística arde un fuego duradero, una llama que ha cautivado a la humanidad. Es el momento de dejar atrás viejas etiquetas y redescubrir esa llama. Sin duda, seguirá brillando.
                 </p>
             </article>
 
@@ -276,15 +363,18 @@
 
         const translations = {
             es: {
-                pageTitleBlogJuegoLento: "Ajedrez: ¿Juego Lento o Desafío Apasionante? - Mi Blog",
-                postTitleJuegoLento: "Ajedrez: ¿Juego Lento o Desafío Apasionante? La Respuesta Podría Sorprenderte",
-                postParagraph1JuegoLento: "Si crees que el ajedrez es solo para genios pacientes, permítenos mostrarte su intensidad, su belleza creativa y por qué se ha mantenido relevante por siglos.",
-                publishedDate: "Publicado el 14 de Mayo, 2025", // Placeholder, ajustar si es necesario
-                authorName: "Santiago Narváez", // Placeholder
-                postSubtitleEvolucion: "Evolución en Europa", // Placeholder
-                postParagraph2: "Desde la India, el chaturanga se extendió a Persia...", // Placeholder
-                postParagraph3: "En Europa, el ajedrez experimentó cambios significativos...", // Placeholder
-                postParagraph4: "El ajedrez moderno, con sus reglas estandarizadas...", // Placeholder
+                pageTitleBlogVibranteEsencia: "Ajedrez: Redescubre su Vibrante Esencia - Mi Blog",
+                postTitleVibranteEsencia: "Ajedrez: Redescubre su Vibrante Esencia, Olvida lo que Creías Saber",
+                publishedDateVe: "Publicado el 14 de Mayo, 2025", 
+                authorNameVe: "Santiagovskiy", 
+                imageCaptionVibranteEsencia: "Más allá de la imagen de genios serenos, el ajedrez revela una intensidad oculta, una belleza singular y una relevancia perdurable. Le invitamos a cuestionar viejas ideas y observar de nuevo.",
+                postIntroVe1: "Si la palabra \"ajedrez\" le sugiere imágenes de genios enfrascados en una concentración tal que las manecillas del reloj piden clemencia, o de duelos que se extienden hasta que el polvo se asienta con familiaridad sobre el tablero, le invitamos a mirar un poco más allá.",
+                postIntroVe2: "Permítanos mostrarle la intensidad que se esconde bajo su calma aparente, la belleza singular de su creatividad, y las profundas raíces de su perdurable relevancia. Es tiempo, ciertamente, de cuestionar viejas ideas y observar de nuevo.",
+                postParagraph1Ve: "El imaginario popular suele envolver al ajedrez en un aura de quietud casi reverencial. Se piensa en largas horas de silencio profundo, miradas fijas en un tablero inmóvil, una justa intelectual que parece avanzar con un ritmo pausado y ancestral. Y hay verdad en ello: el ajedrez conoce la pausa, ese murmullo interno donde madura la estrategia. Pero reducir su esencia a esta calma superficial, a una lentitud sin verdadera pasión, es ignorar las profundas corrientes internas que lo animan. La propuesta es clara: redescubra su esencia vibrante. La revelación aguarda a quien se atreve a una mirada más atenta.",
+                postParagraph2Ve: "Porque en esos momentos de silencio, en esa aparente inmovilidad, se libran duelos de gran intensidad. No es solo la estructura clara de la lógica la que opera; es también un espejo de la experiencia humana: la tensión del cálculo preciso, la sombra de la angustia ante el error, la silenciosa euforia de una idea clara. Cada pieza movida es una palabra en un diálogo sin voz, un pulso en la lucha de voluntades donde la mente del oponente se siente casi tangible. ¿Lento? Quizás para el ojo que solo ve el movimiento. Apasionante, sin duda, para quien experimenta el vértigo de las posibilidades, la presión del tiempo, la súbita fuerza de una combinación que quiebra los planes más elaborados.",
+                postParagraph3Ve: "La belleza creativa del ajedrez es otra de sus cualidades, a menudo ocultas para el no iniciado. Lejos de ser un mero ejercicio de cálculo predecible, el tablero se convierte en un lienzo donde la imaginación traza geometrías sorprendentes, donde la intuición, esa chispa de comprensión, a veces supera la lógica pura. Una partida puede ser la narración de una gesta, una secuencia de movimientos precisos, una forma modelada en el tiempo. Hay sacrificios impactantes, defensas que conmueven por su tenacidad, ataques que avanzan con fuerza natural. Esta capacidad para generar asombro, para revelar lo nuevo dentro de un marco de reglas antiguas, es uno de los pilares de su notable persistencia.",
+                postParagraph4Ve: "Su largo viaje a través de los siglos testifica esta riqueza. Desde las orillas del Indo, donde el chaturanga comenzó a esbozar las primeras estrategias de combate simbólico, el juego emprendió su largo viaje: Persia lo acogió y lo transformó, y desde allí, como una idea persistente, cruzó continentes, se integró en culturas diversas, siempre adaptándose, siempre desafiando, siempre encontrando nuevos adeptos. No habría sobrevivido quince siglos, viendo pasar imperios, modas y peinados francamente cuestionables, si fuese un simple pasatiempo para temperamentos sosegados o mentes poco curiosas. Su longevidad surge de su asombrosa capacidad para ser, al mismo tiempo, ciencia exacta y arte libre, lucha intensa y calma reflexión.",
+                postParagraph5Ve: "Así, la aparente \"lentitud\" del ajedrez bien podría ser el silencio productivo, el espacio necesario donde su complejidad se despliega. Es el tiempo que permite la inmersión profunda, la antesala de esa comprensión que, al llegar, ilumina el tablero y la mente con una claridad súbita y estimulante. No es la pasividad del genio paciente lo que define al jugador, sino la búsqueda activa, a veces intensa, de la verdad y la belleza en ese universo de 64 escaques. La respuesta, entonces, va más allá de una simple elección; reside en la comprensión de que en el corazón de la calma ajedrecística arde un fuego duradero, una llama que ha cautivado a la humanidad. Es el momento de dejar atrás viejas etiquetas y redescubrir esa llama. Sin duda, seguirá brillando.",
                 backToBlogLink: "Volver al Blog",
                 footerAboutTitleIndex: "Chill Chess Club",
                 footerAboutDescIndex: "Clases de ajedrez para principiantes e intermedios. Un método personalizado y tecnológicamente asistido para transformar tu juego.", 
@@ -296,15 +386,18 @@
                 footerCopyrightIndex: "© {year} Chill Chess Club. Todos los derechos reservados." 
             },
             en: {
-                pageTitleBlogJuegoLento: "Chess: Slow Game or Exciting Challenge? - My Blog",
-                postTitleJuegoLento: "Chess: Slow Game or Exciting Challenge? The Answer Might Surprise You",
-                postParagraph1JuegoLento: "If you think chess is only for patient geniuses, let us show you its intensity, its creative beauty, and why it has remained relevant for centuries.",
-                publishedDate: "Published on May 14, 2025", // Placeholder
-                authorName: "Santiago Narvaez", // Placeholder
-                postSubtitleEvolucion: "Evolution in Europe", // Placeholder
-                postParagraph2: "From India, chaturanga spread to Persia...", // Placeholder
-                postParagraph3: "In Europe, chess underwent significant changes...", // Placeholder
-                postParagraph4: "Modern chess, with its standardized rules...", // Placeholder
+                pageTitleBlogVibranteEsencia: "Chess: Rediscover its Vibrant Essence - My Blog",
+                postTitleVibranteEsencia: "Chess: Rediscover its Vibrant Essence, Forget What You Thought You Knew",
+                publishedDateVe: "Published on May 14, 2025", 
+                authorNameVe: "Santiagovskiy", 
+                imageCaptionVibranteEsencia: "Beyond the image of serene geniuses, chess reveals a hidden intensity, a singular beauty, and an enduring relevance. We invite you to question old ideas and look anew.",
+                postIntroVibrante1: "If the word \"chess\" suggests to you images of geniuses engrossed in such concentration that the clock hands beg for mercy, or of duels that extend until dust settles familiarly on the board, we invite you to look a little further.",
+                postIntroVibrante2: "Allow us to show you the intensity hidden beneath its apparent calm, the singular beauty of its creativity, and the deep roots of its enduring relevance. It is time, indeed, to question old ideas and observe anew.",
+                postParagraph1Vibrante: "The popular imagination often envelops chess in an aura of almost reverential stillness. One thinks of long hours of deep silence, gazes fixed on an immobile board, an intellectual contest that seems to advance with a leisurely, ancient rhythm. And there is truth in this: chess knows the pause, that inner murmur where strategy matures. But to reduce its essence to this superficial calm, to a slowness without true passion, is to ignore the deep internal currents that animate it. The proposal is clear: rediscover its vibrant essence. Revelation awaits those who dare to look more closely.",
+                postParagraph2Vibrante: "Because in those moments of silence, in that apparent immobility, duels of great intensity are fought. It is not only the clear structure of logic that operates; it is also a mirror of human experience: the tension of precise calculation, the shadow of anguish before error, the silent euphoria of a clear idea. Each piece moved is a word in a voiceless dialogue, a pulse in the struggle of wills where the opponent's mind feels almost tangible. Slow? Perhaps for the eye that only sees movement. Exciting, undoubtedly, for one who experiences the vertigo of possibilities, the pressure of time, the sudden force of a combination that shatters the most elaborate plans.",
+                postParagraph3Vibrante: "The creative beauty of chess is another of its qualities, often hidden from the uninitiated. Far from being a mere exercise of predictable calculation, the board becomes a canvas where imagination traces surprising geometries, where intuition, that spark of understanding, sometimes surpasses pure logic. A game can be the narration of an epic, a sequence of precise movements, a form molded in time. There are breathtaking sacrifices, defenses that move by their tenacity, attacks that advance with natural force. This capacity to generate astonishment, to reveal the new within a framework of ancient rules, is one of the pillars of its remarkable persistence.",
+                postParagraph4Vibrante: "Its long journey through the centuries testifies to this richness. From the banks of the Indus, where chaturanga began to sketch the first strategies of symbolic combat, the game undertook its long journey: Persia welcomed and transformed it, and from there, like a persistent idea, it crossed continents, integrated into diverse cultures, always adapting, always challenging, always finding new adepts. It would not have survived fifteen centuries, watching empires, fashions, and frankly questionable hairstyles pass by, if it were a simple pastime for placid temperaments or incurious minds. Its longevity stems from its astonishing ability to be, at the same time, exact science and free art, intense struggle and calm reflection.",
+                postParagraph5Vibrante: "Thus, the apparent \"slowness\" of chess might well be the productive silence, the necessary space where its complexity unfolds. It is the time that allows for deep immersion, the antechamber of that understanding that, when it arrives, illuminates the board and the mind with a sudden and stimulating clarity. It is not the passivity of the patient genius that defines the player, but the active, sometimes intense, pursuit of truth and beauty in that universe of 64 squares. The answer, then, goes beyond a simple choice; it lies in the understanding that in the heart of chess's calm burns a lasting fire, a flame that has captivated humanity. It is time to leave behind old labels and rediscover that flame. Without a doubt, it will continue to shine.",
                 backToBlogLink: "Back to Blog",
                 footerAboutTitleIndex: "Chill Chess Club", 
                 footerAboutDescIndex: "Chess classes for beginners and intermediate players. A personalized and technologically assisted method to transform your game.", 
@@ -336,7 +429,7 @@
                 if (key === "footerCopyrightIndex") {
                     translationText = translationText.replace("{year}", new Date().getFullYear());
                 }
-                if (key === "pageTitleBlogJuegoLento" && el.tagName === 'TITLE') { // ESPECÍFICO PARA ESTE POST
+                if (key === "pageTitleBlogVibranteEsencia" && el.tagName === 'TITLE') { 
                     document.title = translationText;
                 } else {
                     el.innerHTML = translationText; 
