@@ -612,7 +612,7 @@
     margin-top: 0; 
     padding-top: calc(var(--header-height-desktop) + var(--spacing-xl) + var(--spacing-sm)); 
     padding-bottom: var(--spacing-lg);
-    background-image: var(--hero-overlay-color), url('/images/hero.jpg');
+    background-image: var(--hero-overlay-color), url('images/hero.jpg');
     background-attachment: fixed; 
     background-position: center center;
     background-repeat: no-repeat;
@@ -1957,7 +1957,7 @@
       min-height: 100vh; 
       padding-top: calc(var(--header-height-mobile) + var(--spacing-md)); 
       align-items: center; 
-      background-image: var(--hero-overlay-color), url('hero-vertical.png'); 
+      background-image: var(--hero-overlay-color), url('images/hero-vertical.png'); 
       background-attachment: scroll; 
       background-position: center center; 
       background-size: cover; 
