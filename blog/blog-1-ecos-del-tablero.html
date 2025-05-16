@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192" href="../icons/android-icon-192x192.png">
     <link rel="manifest" href="../manifest.json">
-    
+
     <style>
       /* styles.css - Versión integrada para la página del post del blog */
       :root {
@@ -24,16 +24,18 @@
         --color-primary-accent: #6a102a; 
         --color-secondary-accent: #d4af37; 
         --color-modern-accent-1: #EC4899; /* Rosa Moderno */
-        --color-modern-accent-1-rgb: 236, 72, 153; /* Rosa Moderno RGB para box-shadow */
+        --color-modern-accent-1-rgb: 236, 72, 153;
         --color-modern-accent-2: #F97316; /* Naranja Moderno */
-        --color-modern-accent-2-rgb: 249, 115, 22; /* Naranja Moderno RGB para box-shadow */
+        --color-modern-accent-2-rgb: 249, 115, 22;
         --color-modern-accent-3: #8B5CF6; /* Púrpura Moderno */
+        --color-modern-accent-3-rgb: 139, 92, 246;
         --title-gradient-color-1: var(--color-modern-accent-3); 
         --title-gradient-color-2: var(--color-modern-accent-1); 
         --title-gradient-color-3: var(--color-modern-accent-2); 
         --color-text-light: #f4f4f5;    
         --color-text-medium: #a1a1aa;   
-        --color-text-dark: #18181B; 
+        --color-text-dark: #18181B; /* Color oscuro para iconos en hover */
+        --color-text-light-rgb: 244, 244, 245; /* Para bordes con opacidad */
         --color-dark-bg: #1a1a1d; 
         --color-dark-bg-secondary: #222225; 
         --border-radius-sm: 4px;
@@ -50,8 +52,8 @@
         --lang-transition-speed: 0.25s;
         --gradient-container-border-modern: linear-gradient(145deg, var(--color-modern-accent-3), var(--color-modern-accent-1), var(--color-modern-accent-2));
         --animated-gradient-colors: var(--color-modern-accent-3), var(--color-modern-accent-1), var(--color-modern-accent-2), var(--color-modern-accent-3);
-        /* Degradado específico para el botón "Volver Arriba" */
         --back-to-top-gradient: linear-gradient(135deg, var(--color-modern-accent-1) 0%, var(--color-modern-accent-2) 70%, var(--color-modern-accent-1) 100%);
+        --arrow-nav-gradient: linear-gradient(135deg, var(--color-modern-accent-3), var(--color-modern-accent-1), var(--color-modern-accent-2), var(--color-modern-accent-3));
       }
       *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
       html { scroll-behavior: smooth; }
@@ -77,30 +79,16 @@
       .container { max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: var(--spacing-md); padding-right: var(--spacing-md); }
       @media (max-width: 768px) { .container { padding-left: var(--spacing-sm); padding-right: var(--spacing-sm); } }
       
-      /* Estilos del Logo Fijo para páginas de blog */
       .blog-fixed-logo-link {
-        position: fixed;
-        top: 20px; 
-        left: 20px; 
-        z-index: 1050; 
-        display: block;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border-radius: var(--border-radius-sm); 
+        position: fixed; top: 20px; left: 20px; z-index: 1050; display: block;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: var(--border-radius-sm); 
       }
-      .blog-fixed-logo-link img {
-        height: 48px; 
-        width: auto;
-        display: block; 
-        border-radius: var(--border-radius-sm); 
-      }
-      .blog-fixed-logo-link:hover {
-        transform: scale(1.08);
-        box-shadow: 0 0 15px rgba(var(--color-modern-accent-1-rgb), 0.5); 
-      }
+      .blog-fixed-logo-link img { height: 48px; width: auto; display: block; border-radius: var(--border-radius-sm); }
+      .blog-fixed-logo-link:hover { transform: scale(1.08); box-shadow: 0 0 15px rgba(var(--color-modern-accent-1-rgb), 0.5); }
 
       .language-selector {
         display: flex; align-items: center; gap: 5px; position: fixed; 
-        top: var(--spacing-sm); right: var(--spacing-md); z-index: 1001; 
+        top: var(--spacing-sm); right: var(--spacing-md); z-index: 1020; /* Elevado para estar sobre flechas si es necesario */
         background-color: rgba(39, 39, 42, 0.7); padding: var(--spacing-xs) var(--spacing-sm);
         border-radius: var(--border-radius-md); backdrop-filter: blur(5px);
       }
@@ -139,7 +127,6 @@
           text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; 
       }
       .blog-post-page .post-header h1:hover { transform: scale(1.02); }
-      
       .blog-post-page .post-meta {
           display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
           gap: var(--spacing-xs) var(--spacing-sm); margin-top: var(--spacing-xs); 
@@ -149,68 +136,123 @@
           padding: var(--spacing-sm) 0;
       }
       .blog-post-page .post-meta span { display: inline-flex; align-items: center; }
-      .blog-post-page .post-meta .fas { 
-          margin-right: calc(var(--spacing-xs) / 2); color: var(--color-secondary-accent); 
-          font-size: 0.9em; 
-      }
+      .blog-post-page .post-meta .fas { margin-right: calc(var(--spacing-xs) / 2); color: var(--color-secondary-accent); font-size: 0.9em; }
       .blog-post-page .post-meta .meta-author { color: var(--color-text-light); font-weight: 500; }
-      .blog-post-page .post-meta .meta-separator {
-          display: inline-block; width: 4px; height: 4px; background-color: var(--color-text-medium);
-          border-radius: 50%; margin: 0 var(--spacing-xs); opacity: 0.6;
-      }
-
-      .featured-image-figure {
-        margin-bottom: var(--spacing-lg); 
-      }
-      .blog-post-page .post-image-featured {
-          width: 100%; max-height: 450px; object-fit: cover; border-radius: var(--border-radius-md);
-          border: 1px solid rgba(255,255,255,0.1); 
-          display: block; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      }
-      .image-caption {
-        text-align: left; 
-        font-size: 0.85em;
-        color: var(--color-text-medium);
-        margin-top: var(--spacing-xs);
-        padding: 0 var(--spacing-sm); 
-        font-style: italic;
-      }
-
-      .blog-post-page .post-content h2 { 
-          font-size: clamp(1.6rem, 4vw, 2.1rem); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-md);
-          text-align: left; padding-bottom: var(--spacing-sm); border-bottom: 2px solid var(--color-modern-accent-2); 
-          color: var(--color-text-light); font-family: var(--font-title);
-      }
+      .blog-post-page .post-meta .meta-separator { display: inline-block; width: 4px; height: 4px; background-color: var(--color-text-medium); border-radius: 50%; margin: 0 var(--spacing-xs); opacity: 0.6; }
+      .featured-image-figure { margin-bottom: var(--spacing-lg); }
+      .blog-post-page .post-image-featured { width: 100%; max-height: 450px; object-fit: cover; border-radius: var(--border-radius-md); border: 1px solid rgba(255,255,255,0.1); display: block; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+      .image-caption { text-align: left; font-size: 0.85em; color: var(--color-text-medium); margin-top: var(--spacing-xs); padding: 0 var(--spacing-sm); font-style: italic; }
+      .blog-post-page .post-content h2 { font-size: clamp(1.6rem, 4vw, 2.1rem); margin-top: var(--spacing-xl); margin-bottom: var(--spacing-md); text-align: left; padding-bottom: var(--spacing-sm); border-bottom: 2px solid var(--color-modern-accent-2); color: var(--color-text-light); font-family: var(--font-title); }
       .blog-post-page .post-content h2::after { display:none; } 
-      .blog-post-page .post-content p { 
-          margin-bottom: var(--spacing-md); 
-          line-height: 1.8; 
-          color: var(--color-text-light); 
-          font-size: 1.05rem; 
-          text-align: left; 
-          max-width: none; 
+      .blog-post-page .post-content p { margin-bottom: var(--spacing-md); line-height: 1.8; color: var(--color-text-light); font-size: 1.05rem; text-align: left; max-width: none; }
+      .blog-post-page .post-content blockquote { margin: var(--spacing-md) 0; padding: var(--spacing-sm) var(--spacing-md); border-left: 4px solid var(--color-secondary-accent); background-color: rgba(39, 39, 42, 0.2); border-radius: var(--border-radius-sm); font-style: italic; color: var(--color-text-medium); }
+      .blog-post-page .post-content blockquote p { margin-bottom: var(--spacing-xs); color: inherit; font-size: 0.95rem; }
+      .blog-post-page .post-content blockquote cite { display: block; text-align: right; margin-top: var(--spacing-sm); font-size: 0.85rem; color: var(--color-text-medium); }
+      
+      /* --- ESTILOS PARA NAVEGACIÓN DE POSTS (LATERAL FIJA) --- */
+      .post-navigation {
+        /* Este contenedor <nav> es solo semántico y no debe afectar el flujo. */
+        height: 0; 
+        margin: 0;
+        padding: 0;
+        border: none;
+        overflow: hidden; /* Asegura que no ocupe espacio */
+      }
+
+      @keyframes animatedArrowNavGradient { /* Animación para el degradado de las flechas */
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+
+      .nav-arrow { 
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1010; 
+        
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        width: 48px; 
+        height: 48px; 
+        
+        background-image: var(--arrow-nav-gradient); 
+        background-size: 250% 250%; 
+        animation: animatedArrowNavGradient 7s ease infinite; 
+        
+        border-radius: 50%; 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+        text-decoration: none;
+        transition: opacity var(--transition-speed) ease-out, transform var(--transition-speed) ease-out, box-shadow var(--transition-speed) ease-out;
+        opacity: 0.75; 
+        border: 1px solid rgba(var(--color-text-light-rgb), 0.1); 
+        backdrop-filter: blur(4px);
+        cursor: pointer;
+      }
+
+      .nav-arrow .fas { /* Estilo del icono por defecto */
+        color: var(--color-text-light); 
+        font-size: 1.5rem; 
+        line-height: 1; 
+        text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+        transition: color var(--transition-speed) ease-out, transform var(--transition-speed) ease-out; 
       }
       
-      .blog-post-page .post-content blockquote {
-        margin: var(--spacing-md) 0; 
-        padding: var(--spacing-sm) var(--spacing-md);
-        border-left: 4px solid var(--color-secondary-accent); 
-        background-color: rgba(39, 39, 42, 0.2); 
-        border-radius: var(--border-radius-sm);
-        font-style: italic;
-        color: var(--color-text-medium); 
-      }
-      .blog-post-page .post-content blockquote p {
-        margin-bottom: var(--spacing-xs); 
-        color: inherit; 
-        font-size: 0.95rem; 
-      }
-      .blog-post-page .post-content blockquote cite {
-        display: block; text-align: right; margin-top: var(--spacing-sm);
-        font-size: 0.85rem; color: var(--color-text-medium);
+      .nav-arrow:hover,
+      .nav-arrow:focus-visible { /* Usar focus-visible para mejor accesibilidad */
+        opacity: 1;
+        transform: translateY(-50%) scale(1.15); 
+        box-shadow: 0 6px 20px rgba(var(--color-modern-accent-1-rgb), 0.4);
+        outline: none; 
       }
 
-      .blog-post-page .back-to-blog-container { display: block; text-align: center; margin-top: var(--spacing-xl); }
+      .nav-arrow:hover .fas,
+      .nav-arrow:focus-visible .fas { /* Icono oscuro en hover/focus */
+        color: var(--color-text-dark); 
+      }
+      
+      .nav-arrow span { 
+        display: none; /* Ocultar texto "Anterior/Siguiente" */
+      }
+
+      #prev-post-link {
+        left: var(--spacing-md); 
+      }
+      #prev-post-link:hover .fas {
+        animation: pulseArrowLeft 0.6s infinite alternate ease-in-out;
+      }
+
+      #next-post-link {
+        right: var(--spacing-md); 
+      }
+      #next-post-link:hover .fas {
+        animation: pulseArrowRight 0.6s infinite alternate ease-in-out;
+      }
+
+      @keyframes pulseArrowLeft {
+        from { transform: translateX(0px); }
+        to { transform: translateX(-3px); }
+      }
+      @keyframes pulseArrowRight {
+        from { transform: translateX(0px); }
+        to { transform: translateX(3px); }
+      }
+      
+      @media (max-width: 1024px) { 
+        .nav-arrow {
+          display: none; 
+        }
+      }
+      /* --- FIN DE ESTILOS PARA NAVEGACIÓN --- */
+
+      .blog-post-page .back-to-blog-container { 
+        display: block; 
+        text-align: center; 
+        margin-top: var(--spacing-xl); 
+        padding-top: var(--spacing-md); 
+        border-top: 1px solid var(--color-background-medium); 
+      }
       @keyframes animatedGradientBackground { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
       .btn {
         display: inline-block; font-family: var(--font-body); font-weight: 600; text-decoration: none;
@@ -226,9 +268,6 @@
       .btn-gradient:hover, .btn-gradient:focus { color: var(--color-text-dark); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); transform: translateY(-2px); }
       .btn-gradient:active { transform: translateY(0); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
       
-      /*------------------------------------*\
-        #FOOTER STYLES 
-      \*------------------------------------*/
       footer { 
         background-color: var(--color-dark-bg); 
         color: var(--color-text-medium); 
@@ -284,7 +323,6 @@
       }
       .footer-contact p a { color: var(--color-text-medium); }
       .footer-contact p a:hover { color: var(--color-secondary-accent); }
-
       .payment-methods { margin-top: var(--spacing-sm); }
       .payment-methods span { 
         display: block; 
@@ -300,7 +338,6 @@
         transition: opacity var(--transition-speed) ease; 
       }
       .payment-icons img:hover { opacity: 1; }
-
       .footer-bottom { 
         padding-top: var(--spacing-md); 
         border-top: 1px solid var(--color-background-medium); 
@@ -312,66 +349,35 @@
         margin: 0; 
         color: var(--color-text-medium); 
       }
-
-      /*------------------------------------*\
-        #BACK TO TOP BUTTON (Estilos Mejorados y Unificados)
-      \*------------------------------------*/
-      @keyframes backToTopGradientAnimation {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-
+      @keyframes backToTopGradientAnimation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
       #back-to-top-btn {
         position: fixed; bottom: 30px; right: 30px;
-        width: 45px; 
-        height: 45px; 
+        width: 45px; height: 45px; 
         background-image: var(--back-to-top-gradient); 
         background-size: 200% 200%; 
         animation: backToTopGradientAnimation 6s ease infinite; 
         color: var(--color-text-light); 
         border: none; border-radius: 50%; font-size: 1.3rem; 
         cursor: pointer;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.25), 
-                    0 0 15px 3px rgba(var(--color-modern-accent-1-rgb), 0.35); 
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25), 0 0 15px 3px rgba(var(--color-modern-accent-1-rgb), 0.35); 
         opacity: 0; visibility: hidden; transform: translateY(20px);
         transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-        z-index: 999;
-        display: flex; 
-        align-items: center;
-        justify-content: center;
+        z-index: 999; display: flex; align-items: center; justify-content: center;
       }
       #back-to-top-btn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-      #back-to-top-btn:hover,
-      #back-to-top-btn:focus { 
+      #back-to-top-btn:hover, #back-to-top-btn:focus { 
         color: var(--color-text-dark); 
         transform: translateY(-2px) scale(1.05); 
-        box-shadow: 0 6px 18px rgba(0,0,0,0.3), 
-                    0 0 20px 5px rgba(var(--color-modern-accent-2-rgb), 0.45); 
+        box-shadow: 0 6px 18px rgba(0,0,0,0.3), 0 0 20px 5px rgba(var(--color-modern-accent-2-rgb), 0.45); 
         outline: none;
       }
-      #back-to-top-btn .fas { 
-        transition: color 0.3s ease;
-      }
-      #back-to-top-btn:hover .fas,
-      #back-to-top-btn:focus .fas {
-        color: var(--color-text-dark);
-      }
-
-
-      /* Media Queries para responsividad general y de blog posts */
+      #back-to-top-btn .fas { transition: color 0.3s ease; }
+      #back-to-top-btn:hover .fas, #back-to-top-btn:focus .fas { color: var(--color-text-dark); }
+      
       @media (max-width: 992px) { 
-          main {
-              padding-top: var(--header-height-mobile);
-          }
+          /* No aplicar padding-top al main en blog-page-body ya que no tiene header fijo */
           .footer-about, .footer-links, .footer-contact { flex-basis: 45%; } 
-          .blog-post-page .post-container-inner { 
-              padding: var(--spacing-sm); 
-              margin-left: var(--spacing-sm); 
-              margin-right: var(--spacing-sm); 
-              width: auto; 
-              max-width: 95%; 
-          } 
+          .blog-post-page .post-container-inner { padding: var(--spacing-sm); margin-left: var(--spacing-sm); margin-right: var(--spacing-sm); width: auto; max-width: 95%; } 
       }
       @media (max-width: 767px) { 
           .footer-content { flex-direction: column; align-items: flex-start; }
@@ -381,22 +387,12 @@
       }
       @media (max-width: 480px) { 
           .blog-post-page .post-header h1 { font-size: clamp(1.6rem, 7vw, 2rem); } 
-          .blog-post-page .post-container-inner {
-               max-width: 100%; 
-               padding-left: var(--spacing-xs); 
-               padding-right: var(--spacing-xs);
-          }
-          .image-caption {
-              padding: 0 var(--spacing-xs);
-          }
-          #back-to-top-btn { 
-            width: 45px; height: 45px; font-size: 1.2rem;
-            bottom: 20px; right: 20px;
-          }
+          .blog-post-page .post-container-inner { max-width: 100%; padding-left: var(--spacing-xs); padding-right: var(--spacing-xs); }
+          .image-caption { padding: 0 var(--spacing-xs); }
+          #back-to-top-btn { width: 45px; height: 45px; font-size: 1.2rem; bottom: 20px; right: 20px; }
       }
     </style>
 </head>
-
 <body class="blog-page-body" data-lang="es">
 
     <a href="../index.html" class="blog-fixed-logo-link" aria-label="Volver a la página principal de Chill Chess Club">
@@ -431,89 +427,55 @@
             </figure>
 
             <article class="post-content">
-                <p data-translate-key="histIntro1">
-                    Existen juegos diseñados para el olvido momentáneo, distracciones efímeras. El ajedrez se sitúa en otra categoría.
-                </p>
-                <p data-translate-key="histIntro2">
-                    Una creación de asombrosa tenacidad: un tablero, unas piezas talladas y un conjunto de reglas que ha alimentado una obsesión intelectual –y muy humana– durante más de mil años.
-                </p>
-                <p data-translate-key="histIntro3">
-                    Preguntarse cómo esta creación, de aparente simpleza, ha logrado cautivar la imaginación de civilizaciones enteras, susurrando secretos a reyes y plebeyos, a sabios y a quienes coquetean con la locura, es abrir una puerta a un misterio con muchas respuestas. Se parece más bien a una posición compleja y llena de matices, cuyas verdades se muestran capa por capa, a menudo con lógica austera, y a veces, con una paradoja que provoca una sonrisa cómplice.
-                </p>
-                
+                <p data-translate-key="histIntro1">Existen juegos diseñados para el olvido momentáneo, distracciones efímeras. El ajedrez se sitúa en otra categoría.</p>
+                <p data-translate-key="histIntro2">Una creación de asombrosa tenacidad: un tablero, unas piezas talladas y un conjunto de reglas que ha alimentado una obsesión intelectual –y muy humana– durante más de mil años.</p>
+                <p data-translate-key="histIntro3">Preguntarse cómo esta creación, de aparente simpleza, ha logrado cautivar la imaginación de civilizaciones enteras, susurrando secretos a reyes y plebeyos, a sabios y a quienes coquetean con la locura, es abrir una puerta a un misterio con muchas respuestas. Se parece más bien a una posición compleja y llena de matices, cuyas verdades se muestran capa por capa, a menudo con lógica austera, y a veces, con una paradoja que provoca una sonrisa cómplice.</p>
                 <h2 data-translate-key="histSubtitleOrigenes">Orígenes Ancestrales: Del Chaturanga al Refinamiento Persa</h2>
-                <p data-translate-key="histIndia1">
-                    El rastro más firme de sus orígenes nos lleva a la India, alrededor del siglo VI. En aquel crisol de culturas, nació el chaturanga, concebido como un reflejo simbólico de la guerra: infantería, caballería, elefantes (precursores de los actuales alfiles, con un movimiento más bien torpón para lo que se espera de un paquidermo en batalla) y carros de combate, todos bajo el mando de un Rajá.
-                </p>
-                <p data-translate-key="histIndia2">
-                    Era, en esencia, un espejo de la sociedad y sus conflictos, un pequeño mundo donde la estrategia comenzaba a separarse del puro azar –aunque algunos estudiosos, con esa picardía propia del historiador que disfruta desenterrando detalles inconvenientes, sugieren la influencia de los dados en sus inicios, quizás para que los dioses también tuvieran algo que decir en el resultado.
-                </p>
-                <p data-translate-key="histIndia3">
-                    Es inevitable imaginar a aquellos primeros estrategas, con el ceño fruncido, viendo en cada movimiento no solo una táctica, sino el eco de sus profundas tensiones vitales, una temprana manifestación de la voluntad humana en su eterna lucha por encontrar un orden, aunque frágil, ante la inmensa incertidumbre.
-                </p>
-
-                <p data-translate-key="histPersia1">
-                    Desde la India, el juego, como una idea con vida propia, emprendió una silenciosa pero imparable conquista. Se deslizó por las rutas de caravanas, se murmuró en los bazares, y finalmente echó raíces en Persia, donde fue abrazado con el fervor que el alma persa guarda para la poesía y la belleza. Allí fue rebautizado como Shatranj.
-                </p>
-                <p data-translate-key="histPersia2">
-                    Fue en este nuevo hogar donde el elemento del azar fue desapareciendo, como sombra ante la luz, permitiendo que habilidad, previsión y cálculo se volvieran los verdaderos jueces de la partida. El "Shah" (Rey) y su inevitable final, el "Shah Mat" (el rey ha caído, o más llanamente, está frito), se convirtieron en los ejes de este drama intelectual.
-                </p>
-                <p data-translate-key="histPersia3">
-                    En el rico crisol de la Persia sasánida y, luego, bajo el manto de la civilización islámica, el Shatranj se elevó al estatus de disciplina mental, casi un arte austero. Figuras como As-Suli, cuyo nombre se volvió sinónimo de maestría notable, surgieron como ejemplos de una dedicación que bordeaba la santa (o no tan santa) obsesión. ¿Qué llama interior consumía a estos hombres? ¿Una gran sed de orden lógico, un impulso por dominar el caos de tantas variantes, o quizás una abstracción tan profunda que creaba una realidad paralela, más viva e intensa que la vida diaria? Uno casi puede imaginarlos, en patios iluminados por la luna, enfrascados durante horas en el análisis de una sola posición, sus vidas simbólicamente suspendidas en el frágil equilibrio de unas pocas piezas, una intensidad que roza lo sublime y, no nos engañemos, también lo sutilmente perturbador.
-                </p>
-                
+                <p data-translate-key="histIndia1">El rastro más firme de sus orígenes nos lleva a la India, alrededor del siglo VI. En aquel crisol de culturas, nació el chaturanga, concebido como un reflejo simbólico de la guerra: infantería, caballería, elefantes (precursores de los actuales alfiles, con un movimiento más bien torpón para lo que se espera de un paquidermo en batalla) y carros de combate, todos bajo el mando de un Rajá.</p>
+                <p data-translate-key="histIndia2">Era, en esencia, un espejo de la sociedad y sus conflictos, un pequeño mundo donde la estrategia comenzaba a separarse del puro azar –aunque algunos estudiosos, con esa picardía propia del historiador que disfruta desenterrando detalles inconvenientes, sugieren la influencia de los dados en sus inicios, quizás para que los dioses también tuvieran algo que decir en el resultado.</p>
+                <p data-translate-key="histIndia3">Es inevitable imaginar a aquellos primeros estrategas, con el ceño fruncido, viendo en cada movimiento no solo una táctica, sino el eco de sus profundas tensiones vitales, una temprana manifestación de la voluntad humana en su eterna lucha por encontrar un orden, aunque frágil, ante la inmensa incertidumbre.</p>
+                <p data-translate-key="histPersia1">Desde la India, el juego, como una idea con vida propia, emprendió una silenciosa pero imparable conquista. Se deslizó por las rutas de caravanas, se murmuró en los bazares, y finalmente echó raíces en Persia, donde fue abrazado con el fervor que el alma persa guarda para la poesía y la belleza. Allí fue rebautizado como Shatranj.</p>
+                <p data-translate-key="histPersia2">Fue en este nuevo hogar donde el elemento del azar fue desapareciendo, como sombra ante la luz, permitiendo que habilidad, previsión y cálculo se volvieran los verdaderos jueces de la partida. El "Shah" (Rey) y su inevitable final, el "Shah Mat" (el rey ha caído, o más llanamente, está frito), se convirtieron en los ejes de este drama intelectual.</p>
+                <p data-translate-key="histPersia3">En el rico crisol de la Persia sasánida y, luego, bajo el manto de la civilización islámica, el Shatranj se elevó al estatus de disciplina mental, casi un arte austero. Figuras como As-Suli, cuyo nombre se volvió sinónimo de maestría notable, surgieron como ejemplos de una dedicación que bordeaba la santa (o no tan santa) obsesión. ¿Qué llama interior consumía a estos hombres? ¿Una gran sed de orden lógico, un impulso por dominar el caos de tantas variantes, o quizás una abstracción tan profunda que creaba una realidad paralela, más viva e intensa que la vida diaria? Uno casi puede imaginarlos, en patios iluminados por la luna, enfrascados durante horas en el análisis de una sola posición, sus vidas simbólicamente suspendidas en el frágil equilibrio de unas pocas piezas, una intensidad que roza lo sublime y, no nos engañemos, también lo sutilmente perturbador.</p>
                 <h2 data-translate-key="histSubtitleEuropaMedieval">Expansión a Occidente y la Revolución de la Reina</h2>
-                <p data-translate-key="histParagraphEuropaMedieval1">
-                    La ola de la expansión árabe fue el vehículo que transportó el Shatranj a Europa. A través de la Península Ibérica y Sicilia, el juego se diseminó hacia el norte con la fuerza del polen en primavera. Incluso los rudos vikingos, esos navegantes de mirada firme y espíritu audaz, parecen haber sucumbido a su atractivo durante sus largas travesías, quizás como un ejercicio para mantener la mente afilada entre un saqueo y el siguiente, o simplemente para no aburrirse hasta las lágrimas.
-                </p>
-                <p data-translate-key="histParagraphEuropaMedieval2">
-                    En la Europa medieval, el ajedrez experimentó un cambio importante, adaptándose como un ser vivo a un nuevo contexto cultural. El cambio más radical, que sin duda le imprimió una velocidad sorprendente, fue la espectacular potenciación de la Reina.
-                </p>
-                <p data-translate-key="histParagraphEuropaMedieval3">
-                    El antiguo Firzan, un consejero de movimientos modestos y diagonales de un solo paso –más bien un burócrata cauto que un verdadero poder en la sombra–, evolucionó (algunos cronistas insinúan que con una prisa casi indecorosa) hasta convertirse en la pieza más dinámica y letal del tablero. Esta "dama enfurecida", como se la conoció con asombro y quizás un sutil temor, con algo de misoginia, revolucionó el juego, añadiendo una complejidad táctica que lo catapultó a una nueva era. Resulta una ironía digna de una comedia que, en sociedades tan rígidamente patriarcales, la figura femenina en el tablero adquiriese tal poder, un hecho que invita a la reflexión sobre las tensiones simbólicas de una cultura, o quizás, más simplemente, sobre la impaciencia de alguna reina medieval que, harta de partidas interminables, exigió una pieza que acabara con el asunto de una vez.
-                </p>
-
+                <p data-translate-key="histParagraphEuropaMedieval1">La ola de la expansión árabe fue el vehículo que transportó el Shatranj a Europa. A través de la Península Ibérica y Sicilia, el juego se diseminó hacia el norte con la fuerza del polen en primavera. Incluso los rudos vikingos, esos navegantes de mirada firme y espíritu audaz, parecen haber sucumbido a su atractivo durante sus largas travesías, quizás como un ejercicio para mantener la mente afilada entre un saqueo y el siguiente, o simplemente para no aburrirse hasta las lágrimas.</p>
+                <p data-translate-key="histParagraphEuropaMedieval2">En la Europa medieval, el ajedrez experimentó un cambio importante, adaptándose como un ser vivo a un nuevo contexto cultural. El cambio más radical, que sin duda le imprimió una velocidad sorprendente, fue la espectacular potenciación de la Reina.</p>
+                <p data-translate-key="histParagraphEuropaMedieval3">El antiguo Firzan, un consejero de movimientos modestos y diagonales de un solo paso –más bien un burócrata cauto que un verdadero poder en la sombra–, evolucionó (algunos cronistas insinúan que con una prisa casi indecorosa) hasta convertirse en la pieza más dinámica y letal del tablero. Esta "dama enfurecida", como se la conoció con asombro y quizás un sutil temor, con algo de misoginia, revolucionó el juego, añadiendo una complejidad táctica que lo catapultó a una nueva era. Resulta una ironía digna de una comedia que, en sociedades tan rígidamente patriarcales, la figura femenina en el tablero adquiriese tal poder, un hecho que invita a la reflexión sobre las tensiones simbólicas de una cultura, o quizás, más simplemente, sobre la impaciencia de alguna reina medieval que, harta de partidas interminables, exigió una pieza que acabara con el asunto de una vez.</p>
                 <h2 data-translate-key="histSubtitleRenacimientoIlustracion">El Intelecto en Juego: Renacimiento, Ilustración y Romanticismo</h2>
-                <p data-translate-key="histParagraphRenacimientoIlustracion">
-                    Con la llegada del Renacimiento y el posterior Siglo de las Luces, el ajedrez se consolidó como un ejercicio para el intelecto. Vieron la luz los primeros tratados, serios y profundos intentos de sistematizar su estudio, de revelar sus misterios y codificar sus principios (tarea difícil, pues el ajedrez, con su falsa modestia, guarda bien sus secretos). Figuras como el clérigo español Ruy López de Segura no solo jugaban; investigaban, buscaban patrones con el cuidado de un naturalista. La búsqueda de la belleza en la combinación se unía a la de una verdad lógica, un anhelo humano por encontrar un orden claro tras el velo de su aparente complejidad infinita.
-                </p>
-                <p data-translate-key="histParagraphEraRomantica">
-                    El siglo XIX trajo la era Romántica, un tiempo de juego audaz, de gambitos ofrecidos con desdén teatral y combinaciones que caían sobre el tablero como sentencias del destino (o, para el perdedor, como una broma cósmica de muy mal gusto). Nombres como Anderssen y, sobre todo, Paul Morphy, son símbolos de este espíritu audaz. Morphy, joven prodigio de Nueva Orleans, deslumbró a Europa con una facilidad que resultaba casi insultante. Sus partidas, aún hoy, irradian claridad y fuerza. No obstante, como en las historias con un tinte de romanticismo trágico, su estrella brilló con intensidad deslumbrante pero breve. Su temprana retirada y posterior declive personal son un recordatorio sombrío de las presiones del talento excepcional y la soledad que a menudo lo envolvía; una tensión interna con un eco algo descorazonador.
-                </p>
-
+                <p data-translate-key="histParagraphRenacimientoIlustracion">Con la llegada del Renacimiento y el posterior Siglo de las Luces, el ajedrez se consolidó como un ejercicio para el intelecto. Vieron la luz los primeros tratados, serios y profundos intentos de sistematizar su estudio, de revelar sus misterios y codificar sus principios (tarea difícil, pues el ajedrez, con su falsa modestia, guarda bien sus secretos). Figuras como el clérigo español Ruy López de Segura no solo jugaban; investigaban, buscaban patrones con el cuidado de un naturalista. La búsqueda de la belleza en la combinación se unía a la de una verdad lógica, un anhelo humano por encontrar un orden claro tras el velo de su aparente complejidad infinita.</p>
+                <p data-translate-key="histParagraphEraRomantica">El siglo XIX trajo la era Romántica, un tiempo de juego audaz, de gambitos ofrecidos con desdén teatral y combinaciones que caían sobre el tablero como sentencias del destino (o, para el perdedor, como una broma cósmica de muy mal gusto). Nombres como Anderssen y, sobre todo, Paul Morphy, son símbolos de este espíritu audaz. Morphy, joven prodigio de Nueva Orleans, deslumbró a Europa con una facilidad que resultaba casi insultante. Sus partidas, aún hoy, irradian claridad y fuerza. No obstante, como en las historias con un tinte de romanticismo trágico, su estrella brilló con intensidad deslumbrante pero breve. Su temprana retirada y posterior declive personal son un recordatorio sombrío de las presiones del talento excepcional y la soledad que a menudo lo envolvía; una tensión interna con un eco algo descorazonador.</p>
                 <h2 data-translate-key="histSubtitleEraCientifica">Hacia la Comprensión Moderna: Ciencia Posicional y Duelos de Titanes</h2>
-                <p data-translate-key="histParagraphEraCientifica1">
-                    Tras el arrebato romántico, el estilo de juego comenzó a cambiar hacia una concepción más científica, o al menos, un intento más metódico de entender sus infinitas posibilidades. Wilhelm Steinitz, a quien la historia (siempre necesitada de poner etiquetas) reconoce como el primer campeón mundial oficial, fue el gran impulsor de esta nueva era, articulando los principios de la estrategia posicional.
-                </p>
-                <p data-translate-key="histParagraphEraCientifica2">
-                    La acumulación paciente de pequenas ventajas, la solidez defensiva (a veces hasta el aburrimiento del espectador), y la lógica estratégica a largo plazo se convirtieron en los nuevos principios del ajedrez. Una serie de campeones, desde Emanuel Lasker, con su enfoque psicológico y práctico, hasta José Raúl Capablanca, talento natural casi insultante, pasando por Alexander Alekhine, de fuerte voluntad y genialidad a veces turbulenta, y la formidable escuela soviética liderada por Mikhail Botvinnik (el "Patriarca", que parecía tener un plan para todo, incluso para el desayuno), profundizaron este legado. Las luchas por el campeonato mundial se volvieron grandes sagas, duelos de enorme carga psicológica e intelectual, donde personalidades y filosofías chocaban con intensidad, alimentadas por cantidades industriales de café, tabaco y la nerviosa expectación de sus analistas, que probablemente dormían menos que los propios contendientes.
-                </p>
-
+                <p data-translate-key="histParagraphEraCientifica1">Tras el arrebato romántico, el estilo de juego comenzó a cambiar hacia una concepción más científica, o al menos, un intento más metódico de entender sus infinitas posibilidades. Wilhelm Steinitz, a quien la historia (siempre necesitada de poner etiquetas) reconoce como el primer campeón mundial oficial, fue el gran impulsor de esta nueva era, articulando los principios de la estrategia posicional.</p>
+                <p data-translate-key="histParagraphEraCientifica2">La acumulación paciente de pequenas ventajas, la solidez defensiva (a veces hasta el aburrimiento del espectador), y la lógica estratégica a largo plazo se convirtieron en los nuevos principios del ajedrez. Una serie de campeones, desde Emanuel Lasker, con su enfoque psicológico y práctico, hasta José Raúl Capablanca, talento natural casi insultante, pasando por Alexander Alekhine, de forte voluntad y genialidad a veces turbulenta, y la formidable escuela soviética liderada por Mikhail Botvinnik (el "Patriarca", que parecía tener un plan para todo, incluso para el desayuno), profundizaron este legado. Las luchas por el campeonato mundial se volvieron grandes sagas, duelos de enorme carga psicológica e intelectual, donde personalidades y filosofías chocaban con intensidad, alimentadas por cantidades industriales de café, tabaco y la nerviosa expectación de sus analistas, que probablemente dormían menos que los propios contendientes.</p>
                 <h2 data-translate-key="histSubtitleGuerraFria">El Ajedrez en Tiempos Modernos: Geopolítica y Revolución Digital</h2> 
-                <p data-translate-key="histParagraphGuerraFria">
-                    La Guerra Fría, con su particular y a veces tenso "encanto" bipolar, dejó su larga sombra sobre el ajedrez. El gran dominio soviético en el juego se usó como símbolo de superioridad intelectual. Por ello, los desafíos de Occidente, especialmente el de la figura única, carismática y muy excéntrica de Bobby Fischer, se cargaron de un simbolismo político que iba mucho más allá del deporte. La victoria de Fischer en Reikiavik en 1972 fue un fenómeno cultural, la narrativa del genio solitario contra un sistema, tan valorada en Occidente. Una historia con un claro toque de inconformismo y una honestidad cruda, con consecuencias a menudo trágicas para su protagonista.
-                </p>
-                <p data-translate-key="histParagraphEraDigital">
-                    En nuestros días, la llegada de la tecnología digital ha cambiado profunda e irreversiblemente el ajedrez. Los módulos de análisis, esos oráculos de silicio, calculan millones de variantes por segundo, superando la capacidad humana, para regocijo de unos y ligera melancolía de otros. El acceso a la información es casi ilimitado y la posibilidad de competir globalmente sin moverse del sillón (y a veces en pijama, para qué negarlo), se ha democratizado de una forma que Morphy o Capablanca ni habrían soñado (aunque es probable que ambos se hubieran quejado de la falta de etiqueta de algunos rivales anónimos en el chat).
-                </p>
-                <p data-translate-key="histParagraphDigitalHumano">
-                    Sin embargo, lejos de agotar su misterio, esta nueva realidad podría estar resaltando el valor único de la decisión humana. La máquina calcula con precisión asombrosa; el ser humano interpreta, intuye, crea y, crucialmente, comete errores, algunos gloriosos, otros simplemente desastrosos. Es en esa imperfección, en esa chispa de intuición que desafía la lógica, y en la audacia de asumir riesgos (a veces con una temeridad que bordea lo cómico, pero que hace el juego infinitamente más entretenido) donde reside la constante y vibrante tensión del ajedrez.
-                </p>
-
+                <p data-translate-key="histParagraphGuerraFria">La Guerra Fría, con su particular y a veces tenso "encanto" bipolar, dejó su larga sombra sobre el ajedrez. El gran dominio soviético en el juego se usó como símbolo de superioridad intelectual. Por ello, los desafíos de Occidente, especialmente el de la figura única, carismática y muy excéntrica de Bobby Fischer, se cargaron de un simbolismo político que iba mucho más allá del deporte. La victoria de Fischer en Reikiavik en 1972 fue un fenómeno cultural, la narrativa del genio solitario contra un sistema, tan valorada en Occidente. Una historia con un claro toque de inconformismo y una honestidad cruda, con consecuencias a menudo trágicas para su protagonista.</p>
+                <p data-translate-key="histParagraphEraDigital">En nuestros días, la llegada de la tecnología digital ha cambiado profunda e irreversiblemente el ajedrez. Los módulos de análisis, esos oráculos de silicio, calculan millones de variantes por segundo, superando la capacidad humana, para regocijo de unos y ligera melancolía de otros. El acceso a la información es casi ilimitado y la posibilidad de competir globalmente sin moverse del sillón (y a veces en pijama, para qué negarlo), se ha democratizado de una forma que Morphy o Capablanca ni habrían soñado (aunque es probable que ambos se hubieran quejado de la falta de etiqueta de algunos rivales anónimos en el chat).</p>
+                <p data-translate-key="histParagraphDigitalHumano">Sin embargo, lejos de agotar su misterio, esta nueva realidad podría estar resaltando el valor único de la decisión humana. La máquina calcula con precisión asombrosa; el ser humano interpreta, intuye, crea y, crucialmente, comete errores, algunos gloriosos, otros simplemente desastrosos. Es en esa imperfección, en esa chispa de intuición que desafía la lógica, y en la audacia de asumir riesgos (a veces con una temeridad que bordea lo cómico, pero que hace el juego infinitamente más entretenido) donde reside la constante y vibrante tensión del ajedrez.</p>
                 <h2 data-translate-key="histSubtitleEpilogo">Epílogo: El Tablero como Espejo Eterno</h2>
-                <p data-translate-key="histParagraphEpilogo">
-                    El ajedrez, en definitiva, sigue siendo un reflejo sorprendentemente fiel, y a menudo muy lúcido, de la condición humana: nuestra capacidad para la lógica más pura y, al mismo tiempo, para la pasión más intensa; para la estrategia meticulosa y para el error impulsivo y a veces garrafal. Cada partida es una confrontación con la incertidumbre, una afirmación de la voluntad y, al final, un pequeño drama en 64 cuadros. Y mientras dos almas, con sus luces y sombras, se sienten ante el tablero dispuestas a emprender este diálogo silencioso de intelectos (y, seamos honestos, también, de vez en cuando, de egos heridos), la interminable historia del ajedrez seguirá escribiéndose, añadiendo nuevas y fascinantes capas a su narrativa profunda, compleja y siempre resonante.
-                </p>
+                <p data-translate-key="histParagraphEpilogo">El ajedrez, en definitiva, sigue siendo un reflejo sorprendentemente fiel, y a menudo muy lúcido, de la condición humana: nuestra capacidad para la lógica más pura y, al mismo tiempo, para la pasión más intensa; para la estrategia meticulosa y para el error impulsivo y a veces garrafal. Cada partida es una confrontación con la incertidumbre, una afirmación de la voluntad y, al final, un pequeño drama en 64 cuadros. Y mientras dos almas, con sus luces y sombras, se sienten ante el tablero dispuestas a emprender este diálogo silencioso de intelectos (y, seamos honestos, también, de vez en cuando, de egos heridos), la interminable historia del ajedrez seguirá escribiéndose, añadiendo nuevas y fascinantes capas a su narrativa profunda, compleja y siempre resonante.</p>
             </article>
 
-            <div class="back-to-blog-container">
+            <nav class="post-navigation" aria-label="Navegación entre artículos">
+                <a href="#" id="prev-post-link" class="nav-arrow prev" aria-label="Artículo anterior">
+                    <i class="fas fa-chevron-left"></i>
+                    <span data-translate-key="blogNavPrev">Anterior</span>
+                </a>
+                <a href="#" id="next-post-link" class="nav-arrow next" aria-label="Siguiente artículo">
+                    <span data-translate-key="blogNavNext">Siguiente</span>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </nav>
+
+            <div class="back-to-blog-container"> 
                 <a href="../index.html#blog" class="btn btn-gradient" data-translate-key="backToBlogLink">Volver al Blog</a>
             </div>
         </div>
     </main>
 
-    <footer> <div class="container"> <div class="footer-content">
-                <div class="footer-about">
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                 <div class="footer-about">
                     <h4 data-translate-key="footerAboutTitleIndex">Chill Chess Club</h4>
                     <p data-translate-key="footerAboutDescIndex">Clases de ajedrez para principiantes e intermedios. Un método personalizado y tecnológicamente asistido para transformar tu juego.</p>
                 </div>
@@ -549,9 +511,12 @@
         </div>
     </footer>
 
-    <button id="back-to-top-btn" title="Volver arriba" aria-label="Volver arriba" data-translate-key="backToTopTitle|title,ariaLabelBackToTop|aria-label">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <button id="back-to-top-btn" 
+        title="Volver arriba" 
+        aria-label="Volver arriba" 
+        data-translate-key="backToTopTitle|title">
+    <i class="fas fa-arrow-up"></i>
+</button>
 
     <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -559,11 +524,12 @@
         const translatableElements = document.querySelectorAll('[data-translate-key]');
         let currentLang = document.body.getAttribute('data-lang') || 'es';
 
-        function toTitleCase(str) {
+        function toTitleCase(str) { 
+            if (!str) return '';
             return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
         }
 
-        const translations = {
+        const translations = { // TODO: Asegúrate de que este objeto contenga TODAS tus traducciones para el blog 1
             es: {
                 pageTitleBlogHistoria: "Ecos del Tablero: Crónica del Ajedrez - Mi Blog",
                 postTitleHistoriaAjedrez: "Ecos del Tablero: Una Crónica del Ajedrez y su Alma Humana",
@@ -589,7 +555,7 @@
                 histParagraphEraRomantica: "El siglo XIX trajo la era Romántica, un tiempo de juego audaz, de gambitos ofrecidos con desdén teatral y combinaciones que caían sobre el tablero como sentencias del destino (o, para el perdedor, como una broma cósmica de muy mal gusto). Nombres como Anderssen y, sobre todo, Paul Morphy, son símbolos de este espíritu audaz. Morphy, joven prodigio de Nueva Orleans, deslumbró a Europa con una facilidad que resultaba casi insultante. Sus partidas, aún hoy, irradian claridad y fuerza. No obstante, como en las historias con un tinte de romanticismo trágico, su estrella brilló con intensidad deslumbrante pero breve. Su temprana retirada y posterior declive personal son un recordatorio sombrío de las presiones del talento excepcional y la soledad que a menudo lo envolvía; una tensión interna con un eco algo descorazonador.",
                 histSubtitleEraCientifica: "Hacia la Comprensión Moderna: Ciencia Posicional y Duelos de Titanes",
                 histParagraphEraCientifica1: "Tras el arrebato romántico, el estilo de juego comenzó a cambiar hacia una concepción más científica, o al menos, un intento más metódico de entender sus infinitas posibilidades. Wilhelm Steinitz, a quien la historia (siempre necesitada de poner etiquetas) reconoce como el primer campeón mundial oficial, fue el gran impulsor de esta nueva era, articulando los principios de la estrategia posicional.",
-                histParagraphEraCientifica2: "La acumulación paciente de pequenas ventajas, la solidez defensiva (a veces hasta el aburrimiento del espectador), y la lógica estratégica a largo plazo se convirtieron en los nuevos principios del ajedrez. Una serie de campeones, desde Emanuel Lasker, con su enfoque psicológico y práctico, hasta José Raúl Capablanca, talento natural casi insultante, pasando por Alexander Alekhine, de fuerte voluntad y genialidad a veces turbulenta, y la formidable escuela soviética liderada por Mikhail Botvinnik (el \"Patriarca\", que parecía tener un plan para todo, incluso para el desayuno), profundizaron este legado. Las luchas por el campeonato mundial se volvieron grandes sagas, duelos de enorme carga psicológica e intelectual, donde personalidades y filosofías chocaban con intensidad, alimentadas por cantidades industriales de café, tabaco y la nerviosa expectación de sus analistas, que probablemente dormían menos que los propios contendientes.",
+                histParagraphEraCientifica2: "La acumulación paciente de pequenas ventajas, la solidez defensiva (a veces hasta el aburrimiento del espectador), y la lógica estratégica a largo plazo se convirtieron en los nuevos principios del ajedrez. Una serie de campeones, desde Emanuel Lasker, con su enfoque psicológico y práctico, hasta José Raúl Capablanca, talento natural casi insultante, pasando por Alexander Alekhine, de forte voluntad y genialidad a veces turbulenta, y la formidable escuela soviética liderada por Mikhail Botvinnik (el \"Patriarca\", que parecía tener un plan para todo, incluso para el desayuno), profundizaron este legado. Las luchas por el campeonato mundial se volvieron grandes sagas, duelos de enorme carga psicológica e intelectual, donde personalidades y filosofías chocaban con intensidad, alimentadas por cantidades industriales de café, tabaco y la nerviosa expectación de sus analistas, que probablemente dormían menos que los propios contendientes.",
                 histSubtitleGuerraFria: "El Ajedrez en Tiempos Modernos: Geopolítica y Revolución Digital", 
                 histParagraphGuerraFria: "La Guerra Fría, con su particular y a veces tenso \"encanto\" bipolar, dejó su larga sombra sobre el ajedrez. El gran dominio soviético en el juego se usó como símbolo de superioridad intelectual. Por ello, los desafíos de Occidente, especialmente el de la figura única, carismática y muy excéntrica de Bobby Fischer, se cargaron de un simbolismo político que iba mucho más allá del deporte. La victoria de Fischer en Reikiavik en 1972 fue un fenómeno cultural, la narrativa del genio solitario contra un sistema, tan valorada en Occidente. Una historia con un claro toque de inconformismo y una honestidad cruda, con consecuencias a menudo trágicas para su protagonista.",
                 histParagraphEraDigital: "En nuestros días, la llegada de la tecnología digital ha cambiado profunda e irreversiblemente el ajedrez. Los módulos de análisis, esos oráculos de silicio, calculan millones de variantes por segundo, superando la capacidad humana, para regocijo de unos y ligera melancolía de otros. El acceso a la información es casi ilimitado y la posibilidad de competir globalmente sin moverse del sillón (y a veces en pijama, para qué negarlo), se ha democratizado de una forma que Morphy o Capablanca ni habrían soñado (aunque es probable que ambos se hubieran quejado de la falta de etiqueta de algunos rivales anónimos en el chat).",
@@ -606,7 +572,9 @@
                 footerPaymentTextIndex: "Pagos Seguros con:",
                 footerCopyrightIndex: "© {year} Chill Chess Club. Todos los derechos reservados.",
                 backToTopTitle: "Volver arriba",
-                ariaLabelBackToTop: "Volver arriba"
+                ariaLabelBackToTop: "Volver arriba",
+                blogNavPrev: "Anterior", 
+                blogNavNext: "Siguiente"
             },
             en: { 
                 pageTitleBlogHistoria: "Chess Echoes: A Chronicle of Chess and its Human Soul - My Blog",
@@ -616,33 +584,33 @@
                 imageCaptionHistoria: "Sixty-four squares: an ancient mirror where strategy and passion intersect, reflecting the adventure of the human intellect. A story that, like the game itself, always continues.",
                 histIntro1: "There are games designed for momentary oblivion, ephemeral distractions. Chess stands in another category.",
                 histIntro2: "A creation of astonishing tenacity: a board, carved pieces, and a set of rules that has fueled an intellectual – and very human – obsession for over a thousand years.",
-                histIntro3: "To wonder how this seemingly simple creation has managed to captivate the imagination of entire civilizations, whispering secrets to kings and commoners, to sages and those who flirt with madness, is to open a door to a mystery with many answers. It is more like a complex and nuanced position, whose truths are revealed layer by layer, often with austere logic, and sometimes, with a paradox that provokes a knowing smile.",
+                histIntro3: "To wonder how this seemingly simple creation has managed to captivate the imagination...",
                 histSubtitleOrigenes: "Ancient Origins: From Chaturanga to Persian Refinement",
-                histIndia1: "The firmest trace of its origins leads us to India, around the 6th century. In that crucible of cultures, chaturanga was born, conceived as a symbolic reflection of war: infantry, cavalry, elephants (precursors to the current bishops, with a rather clumsy movement for what is expected of a pachyderm in battle) and war chariots, all under the command of a Rajah.",
-                histIndia2: "It was, in essence, a mirror of society and its conflicts, a small world where strategy began to separate from pure chance – although some scholars, with that characteristic mischief of the historian who enjoys unearthing inconvenient details, suggest the influence of dice in its early stages, perhaps so that the gods also had a say in the outcome.",
-                histIndia3: "It is inevitable to imagine those first strategists, frowning, seeing in each move not only a tactic, but the echo of their deep vital tensions, an early manifestation of the human will in its eternal struggle to find order, however fragile, in the face of immense uncertainty.",
-                histPersia1: "From India, the game, like an idea with a life of its own, undertook a silent but unstoppable conquest. It slipped along caravan routes, was whispered in bazaars, and finally took root in Persia, where it was embraced with the fervor that the Persian soul reserves for poetry and beauty. There it was renamed Shatranj.",
-                histPersia2: "It was in this new home that the element of chance began to disappear, like a shadow before the light, allowing skill, foresight, and calculation to become the true judges of the game. The \"Shah\" (King) and its inevitable end, the \"Shah Mat\" (the king has fallen, or more plainly, is toast), became the axes of this intellectual drama.",
-                histPersia3: "In the rich crucible of Sasanian Persia and, later, under the mantle of Islamic civilization, Shatranj rose to the status of a mental discipline, almost an austere art. Figures like As-Suli, whose name became synonymous with remarkable mastery, emerged as examples of a dedication bordering on holy (or not so holy) obsession. What inner flame consumed these men? A great thirst for logical order, an impulse to master the chaos of so many variations, or perhaps an abstraction so profound that it created a parallel reality, more alive and intense than daily life? One can almost imagine them, in moonlit courtyards, engrossed for hours in the analysis of a single position, their lives symbolically suspended in the fragile balance of a few pieces, an intensity that borders on the sublime and, let's not fool ourselves, also the subtly unsettling.",
+                histIndia1: "The firmest trace of its origins leads us to India, around the 6th century...",
+                histIndia2: "It was, in essence, a mirror of society...",
+                histIndia3: "It is inevitable to imagine those first strategists...",
+                histPersia1: "From India, the game, like an idea with a life of its own...",
+                histPersia2: "It was in this new home that the element of chance began to disappear...",
+                histPersia3: "In the rich crucible of Sasanian Persia...",
                 histSubtitleEuropaMedieval: "Expansion to the West and the Queen's Revolution",
-                histParagraphEuropaMedieval1: "The wave of Arab expansion was the vehicle that transported Shatranj to Europe. Through the Iberian Peninsula and Sicily, the game spread northward with the force of pollen in spring. Even the rugged Vikings, those navigators of firm gaze and bold spirit, seem to have succumbed to its appeal during their long voyages, perhaps as an exercise to keep their minds sharp between one raid and the next, or simply to avoid being bored to tears.",
-                histParagraphEuropaMedieval2: "In medieval Europe, chess underwent a significant change, adapting like a living being to a new cultural context. The most radical change, which undoubtedly gave it surprising speed, was the spectacular empowerment of the Queen.",
-                histParagraphEuropaMedieval3: "The ancient Firzan, a counselor of modest movements and single-step diagonals – rather a cautious bureaucrat than a true power behind the throne – evolved (some chroniclers hint, with almost unseemly haste) into the most dynamic and lethal piece on the board. This \"enraged lady,\" as she came to be known with astonishment and perhaps a subtle fear, with a touch of misogyny, revolutionized the game, adding a tactical complexity that catapulted it into a new era. It is an irony worthy of a comedy that, in such rigidly patriarchal societies, the female figure on the board acquired such power, a fact that invites reflection on the symbolic tensions of a culture, or perhaps, more simply, on the impatience of some medieval queen who, tired of endless games, demanded a piece that would end the matter once and for all.",
+                histParagraphEuropaMedieval1: "The wave of Arab expansion was the vehicle...",
+                histParagraphEuropaMedieval2: "In medieval Europe, chess underwent a significant change...",
+                histParagraphEuropaMedieval3: "The ancient Firzan, a counselor of modest movements...",
                 histSubtitleRenacimientoIlustracion: "The Intellect at Play: Renaissance, Enlightenment, and Romanticism",
-                histParagraphRenacimientoIlustracion: "With the arrival of the Renaissance and the subsequent Age of Enlightenment, chess was consolidated as an exercise for the intellect. The first treatises came to light, serious and profound attempts to systematize its study, to reveal its mysteries and codify its principles (a difficult task, as chess, with its false modesty, guards its secrets well). Figures like the Spanish cleric Ruy López de Segura not only played; they investigated, sought patterns with the care of a naturalist. The search for beauty in combination was united with that of a logical truth, a human longing to find a clear order behind the veil of its apparent infinite complexity.",
-                histParagraphEraRomantica: "The 19th century brought the Romantic era, a time of bold play, of gambits offered with theatrical disdain and combinations that fell upon the board like sentences of fate (or, for the loser, like a cosmic joke in very bad taste). Names like Anderssen and, above all, Paul Morphy, are symbols of this audacious spirit. Morphy, a young prodigy from New Orleans, dazzled Europe with an ease that was almost insulting. His games, even today, radiate clarity and strength. However, as in stories with a tinge of tragic romanticism, his star shone with dazzling but brief intensity. His early retirement and subsequent personal decline are a somber reminder of the pressures of exceptional talent and the loneliness that often enveloped him; an internal tension with a somewhat disheartening echo.",
+                histParagraphRenacimientoIlustracion: "With the arrival of the Renaissance and the subsequent Age of Enlightenment...",
+                histParagraphEraRomantica: "The 19th century brought the Romantic era...",
                 histSubtitleEraCientifica: "Towards Modern Understanding: Positional Science and Titan Duels",
-                histParagraphEraCientifica1: "After the romantic outburst, the style of play began to shift towards a more scientific conception, or at least, a more methodical attempt to understand its infinite possibilities. Wilhelm Steinitz, whom history (always in need of labels) recognizes as the first official world champion, was the great promoter of this new era, articulating the principles of positional strategy.",
-                histParagraphEraCientifica2: "The patient accumulation of small advantages, defensive solidity (sometimes to the boredom of the spectator), and long-term strategic logic became the new principles of chess. A series of champions, from Emanuel Lasker, with his psychological and practical approach, to José Raúl Capablanca, an almost insulting natural talent, through Alexander Alekhine, of strong will and sometimes turbulent genius, and the formidable Soviet school led by Mikhail Botvinnik (the \"Patriarch,\" who seemed to have a plan for everything, even breakfast), deepened this legacy. The struggles for the world championship became great sagas, duels of enormous psychological and intellectual burden, where personalities and playing philosophies clashed with palpable intensity. The rivalry between Capablanca's natural talent and Alekhine's iron will is an example of these tensions pushed to the limit.",
+                histParagraphEraCientifica1: "After the romantic outburst, the style of play began to shift...",
+                histParagraphEraCientifica2: "The patient accumulation of small advantages...",
                 histSubtitleGuerraFria: "Chess in Modern Times: Geopolitics and Digital Revolution", 
-                histParagraphGuerraFria: "The Cold War, with its particular and sometimes tense bipolar \"charm,\" cast its long shadow over chess. The great Soviet dominance in the game was used as a symbol of intellectual superiority. Therefore, the challenges from the West, especially that of the unique, charismatic, and very eccentric figure of Bobby Fischer, were loaded with a political symbolism that went far beyond sport. Fischer's victory in Reykjavik in 1972 was a cultural phenomenon, the narrative of the lone genius against a system, so valued in the West. A story with a clear touch of nonconformity and raw honesty, with often tragic consequences for its protagonist.",
-                histParagraphEraDigital: "In our days, the arrival of digital technology has profoundly and irreversibly changed chess. Analysis engines, those silicon oracles, calculate millions of variations per second, surpassing human capacity, to the delight of some and the slight melancholy of others. Access to information is almost limitless, and the possibility of competing globally without leaving one's armchair (and sometimes in pajamas, why deny it), has been democratized in a way that Morphy or Capablanca would not even have dreamed of (although it is probable that both would have complained about the lack of etiquette of some anonymous opponents in the chat).",
-                histParagraphDigitalHumano: "However, far from exhausting its mystery, this new reality might be highlighting the unique value of human decision-making. The machine calculates with astonishing precision; the human being interprets, intuits, creates, and, crucially, makes mistakes, some glorious, others simply disastrous. It is in that imperfection, in that spark of intuition that defies logic, and in the audacity to take risks (sometimes with a recklessness bordering on the comical, but which makes the game infinitely more entertaining) where the constant and vibrant tension of chess resides.",
+                histParagraphGuerraFria: "The Cold War, with its particular and sometimes tense bipolar \"charm\"...",
+                histParagraphEraDigital: "In our days, the arrival of digital technology has profoundly...",
+                histParagraphDigitalHumano: "However, far from exhausting its mystery...",
                 histSubtitleEpilogo: "Epilogue: The Board as an Eternal Mirror",
-                histParagraphEpilogo: "Chess, in short, remains a surprisingly faithful, and often very lucid, reflection of the human condition: our capacity for the purest logic and, at the same time, for the most intense passion; for meticulous strategy and for impulsive and sometimes colossal error. Each game is a confrontation with uncertainty, an affirmation of will, and, in the end, a small drama in 64 squares. And as long as two souls, with their lights and shadows, sit before the board ready to undertake this silent dialogue of intellects (and, let's be honest, also, from time to time, of wounded egos), the endless history of chess will continue to be written, adding new and fascinating layers to its profound, complex, and ever-resonant narrative.",
+                histParagraphEpilogo: "Chess, in short, remains a surprisingly faithful...",
                 backToBlogLink: "Back to Blog",
                 footerAboutTitleIndex: "Chill Chess Club", 
-                footerAboutDescIndex: "Chess classes for beginners and intermediate players. A personalized and technologically assisted method to transform your game.", 
+                footerAboutDescIndex: "Chess classes for beginners and intermediate players...", 
                 footerLinksTitleIndex: "Quick Links", 
                 navAbout: "About Me", navCourses: "Courses", navMethod: "Method", navFaq: "FAQ", navContact: "Contact",
                 footerPrivacyLinkIndex: "Privacy Policy", footerTermsLinkIndex: "Terms of Service", 
@@ -650,86 +618,50 @@
                 footerPaymentTextIndex: "Secure Payments with:",
                 footerCopyrightIndex: "© {year} Chill Chess Club. All rights reserved.",
                 backToTopTitle: "Back to Top",
-                ariaLabelBackToTop: "Back to Top"
+                ariaLabelBackToTop: "Back to Top",
+                blogNavPrev: "Previous", 
+                blogNavNext: "Next"    
             }
         };
 
         function updateTexts(lang) {
             translatableElements.forEach(el => {
-                const key = el.getAttribute('data-translate-key');
-                let translationText = "";
-
-                // Determinar el texto a usar
-                if (translations[lang] && translations[lang][key]) {
-                    translationText = translations[lang][key];
-                } else if (translations['es'][key]) { // Fallback al español si la clave no existe en el idioma actual
-                     translationText = translations['es'][key];
+                const originalKey = el.dataset.translateKey;
+                if (!originalKey) return;
+                let textKey = originalKey;
+                let attributeToUpdate = null;
+                if (originalKey.includes('|')) {
+                    const parts = originalKey.split('|');
+                    textKey = parts[0];
+                    attributeToUpdate = parts[1];
                 }
-                
-                // Aplicar Title Case selectivamente
-                if (key.startsWith("footerLink") || key === "footerContactTitleIndex" || key === "footerLinksTitleIndex" || 
-                    key.startsWith("nav")) { // Incluir claves de navegación
-                     translationText = toTitleCase(translationText);
+                let translationText = (translations[lang] && translations[lang][textKey]) || (translations['es'] && translations['es'][textKey]) || '';
+                if (textKey.startsWith("footerLink") || textKey === "footerContactTitleIndex" || textKey === "footerLinksTitleIndex" || textKey.startsWith("nav")) {
+                     if (textKey !== "footerAboutTitleIndex") translationText = toTitleCase(translationText);
                 }
-                // Excepción para el título principal del club, que no lleva Title Case
-                if (key === "footerAboutTitleIndex") {
-                    // Mantener el texto original o el específico del idioma sin Title Case
-                     if (translations[lang] && translations[lang][key]) {
-                        translationText = translations[lang][key];
-                    } else if (translations['es'][key]) {
-                        translationText = translations['es'][key];
-                    }
-                }
-
-
-                if (key === "footerCopyrightIndex") {
+                if (textKey === "footerCopyrightIndex") {
                     translationText = translationText.replace("{year}", new Date().getFullYear());
                 }
-                
-                // Manejar atributos como title y aria-label
-                if (el.hasAttribute('data-translate-key') && el.dataset.translateKey.includes('|')) {
-                    const parts = el.dataset.translateKey.split('|');
-                    const mainKey = parts[0]; // La clave principal para el texto del atributo
-                    // El segundo elemento es el nombre del atributo, ej: title, aria-label
-                    const attributeName = parts[1].split(',')[0]; // Tomar solo el nombre del atributo
-
-                    let attrText = "";
-                    if(translations[lang] && translations[lang][mainKey]) {
-                        attrText = translations[lang][mainKey];
-                    } else if (translations['es'][mainKey]) { // Fallback al español
-                        attrText = translations['es'][mainKey];
-                    }
-                    el.setAttribute(attributeName, attrText);
-
+                if (attributeToUpdate) {
+                    el.setAttribute(attributeToUpdate, translationText);
                 } else {
-                     // Actualizar el título de la página si es la etiqueta <title>
-                    if (key === "pageTitleBlogHistoria" && el.tagName === 'TITLE') {
-                        document.title = translationText;
-                    } else {
-                        el.innerHTML = translationText; // Usar innerHTML para que los iconos <i> se mantengan si están dentro
-                    }
+                    if (el.tagName === 'TITLE') document.title = translationText;
+                    else el.innerHTML = translationText; 
                 }
             });
             document.documentElement.lang = lang; 
             document.body.setAttribute('data-lang', lang); 
-            localStorage.setItem('preferredLang', lang); // Guardar preferencia
+            localStorage.setItem('preferredLang', lang);
         }
         
-        // Cargar idioma preferido al inicio
-        const preferredLang = localStorage.getItem('preferredLang');
-        if (preferredLang && translations[preferredLang]) {
-            currentLang = preferredLang;
-            // Actualizar el botón activo
+        const preferredLangStored = localStorage.getItem('preferredLang');
+        if (preferredLangStored && translations[preferredLangStored]) {
+            currentLang = preferredLangStored;
             langButtons.forEach(btn => {
-                btn.classList.remove('active');
-                btn.setAttribute('aria-pressed', 'false');
-                if (btn.getAttribute('data-lang-switch') === currentLang) {
-                    btn.classList.add('active');
-                    btn.setAttribute('aria-pressed', 'true');
-                }
+                btn.classList.toggle('active', btn.getAttribute('data-lang-switch') === currentLang);
+                btn.setAttribute('aria-pressed', btn.getAttribute('data-lang-switch') === currentLang);
             });
         }
-
 
         langButtons.forEach(button => {
             button.addEventListener('click', (e) => {
@@ -738,43 +670,54 @@
                 if (selectedLang === currentLang) return; 
                 document.body.classList.add('fade-out'); 
                 setTimeout(() => {
-                    currentLang = selectedLang;
+                    currentLang = selectedLang; 
                     updateTexts(currentLang);
                     langButtons.forEach(btn => {
-                        btn.classList.remove('active');
-                        btn.setAttribute('aria-pressed', 'false');
+                        btn.classList.toggle('active', btn.getAttribute('data-lang-switch') === currentLang);
+                        btn.setAttribute('aria-pressed', btn.getAttribute('data-lang-switch') === currentLang);
                     });
-                    button.classList.add('active');
-                    button.setAttribute('aria-pressed', 'true');
                     document.body.classList.remove('fade-out'); 
                 }, parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--lang-transition-speed').replace('s', '') || '0.25') * 1000);
             });
         });
         
-        // Funcionalidad del Botón "Volver Arriba"
         const backToTopButton = document.getElementById("back-to-top-btn");
-
         if (backToTopButton) {
-            window.onscroll = function() {
-                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                    backToTopButton.classList.add("visible");
-                } else {
-                    backToTopButton.classList.remove("visible");
-                }
-            };
-
-            backToTopButton.onclick = function() {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            };
+            window.onscroll = function() { backToTopButton.classList.toggle("visible", document.body.scrollTop > 100 || document.documentElement.scrollTop > 100); };
+            backToTopButton.onclick = function() { window.scrollTo({ top: 0, behavior: 'smooth' }); };
         }
         
-        // Actualizar año en el footer
         const yearSpan = document.getElementById('current-year');
-        if (yearSpan) {
-            yearSpan.textContent = new Date().getFullYear();
+        if (yearSpan) { yearSpan.textContent = new Date().getFullYear(); }
+
+        updateTexts(currentLang); 
+
+        function setupBlogNavigation() {
+            const articles = [
+                { id: 'blog-1', url: 'blog-1-ecos-del-tablero.html', titleEs: 'Ecos del Tablero', titleEn: 'Echoes of the Board' },
+                { id: 'blog-2', url: 'blog-2-redescubre-vibrante-esencia.html', titleEs: 'Vibrante Esencia', titleEn: 'Vibrant Essence' },
+                { id: 'blog-3', url: 'blog-3-5-pasos-hacia-ajedrez-online.html', titleEs: '5 Pasos Online', titleEn: '5 Online Steps' }
+            ];
+            const currentPagePath = window.location.pathname.split('/').pop();
+            const currentIndex = articles.findIndex(article => article.url === currentPagePath);
+            const prevPostLink = document.getElementById('prev-post-link');
+            const nextPostLink = document.getElementById('next-post-link');
+
+            if (currentIndex !== -1 && prevPostLink && nextPostLink) {
+                const prevIndex = (currentIndex - 1 + articles.length) % articles.length;
+                const nextIndex = (currentIndex + 1) % articles.length;
+                prevPostLink.href = articles[prevIndex].url;
+                nextPostLink.href = articles[nextIndex].url;
+            } else {
+                if (prevPostLink) prevPostLink.style.display = 'none';
+                if (nextPostLink) nextPostLink.style.display = 'none';
+                console.warn('Blog navigation elements not found or current page unknown.');
+            }
         }
 
-        updateTexts(currentLang); // Aplicar traducciones al cargar la página
+        if (document.getElementById('prev-post-link') && document.getElementById('next-post-link')) {
+            setupBlogNavigation();
+        }
     });
     </script>
 </body>
