@@ -15,9 +15,11 @@
         --color-background-card: #3F3F46;
         --color-primary-accent: #6a102a; 
         --color-secondary-accent: #d4af37; 
-        --color-modern-accent-1: #EC4899; 
-        --color-modern-accent-2: #F97316; 
-        --color-modern-accent-3: #8B5CF6; 
+        --color-modern-accent-1: #EC4899; /* Rosa Moderno */
+        --color-modern-accent-1-rgb: 236, 72, 153; /* Rosa Moderno RGB para box-shadow */
+        --color-modern-accent-2: #F97316; /* Naranja Moderno */
+        --color-modern-accent-2-rgb: 249, 115, 22; /* Naranja Moderno RGB para box-shadow */
+        --color-modern-accent-3: #8B5CF6; /* Púrpura Moderno */
         --title-gradient-color-1: var(--color-modern-accent-3); 
         --title-gradient-color-2: var(--color-modern-accent-1); 
         --title-gradient-color-3: var(--color-modern-accent-2); 
@@ -40,6 +42,8 @@
         --lang-transition-speed: 0.25s;
         --gradient-container-border-modern: linear-gradient(145deg, var(--color-modern-accent-3), var(--color-modern-accent-1), var(--color-modern-accent-2));
         --animated-gradient-colors: var(--color-modern-accent-3), var(--color-modern-accent-1), var(--color-modern-accent-2), var(--color-modern-accent-3);
+        /* Degradado específico para el botón "Volver Arriba" */
+        --back-to-top-gradient: linear-gradient(135deg, var(--color-modern-accent-1) 0%, var(--color-modern-accent-2) 70%, var(--color-modern-accent-1) 100%);
       }
       *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
       html { scroll-behavior: smooth; }
@@ -64,6 +68,28 @@
       a:hover, a:focus { color: var(--color-modern-accent-1); }
       .container { max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: var(--spacing-md); padding-right: var(--spacing-md); }
       @media (max-width: 768px) { .container { padding-left: var(--spacing-sm); padding-right: var(--spacing-sm); } }
+      
+      /* Estilos del Logo Fijo para páginas de blog */
+      .blog-fixed-logo-link {
+        position: fixed;
+        top: 20px; 
+        left: 20px; 
+        z-index: 1050; 
+        display: block;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: var(--border-radius-sm); 
+      }
+      .blog-fixed-logo-link img {
+        height: 48px; 
+        width: auto;
+        display: block; 
+        border-radius: var(--border-radius-sm); 
+      }
+      .blog-fixed-logo-link:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 15px rgba(var(--color-modern-accent-1-rgb), 0.5); 
+      }
+
       .language-selector {
         display: flex; align-items: center; gap: 5px; position: fixed; 
         top: var(--spacing-sm); right: var(--spacing-md); z-index: 1001; 
@@ -134,7 +160,7 @@
           display: block; box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       }
       .image-caption {
-        text-align: left; /* Pie de imagen alineado a la izquierda */
+        text-align: left; 
         font-size: 0.85em;
         color: var(--color-text-medium);
         margin-top: var(--spacing-xs);
@@ -147,7 +173,7 @@
           text-align: left; padding-bottom: var(--spacing-sm); border-bottom: 2px solid var(--color-modern-accent-2); 
           color: var(--color-text-light); font-family: var(--font-title);
       }
-      .blog-post-page .post-content h2::after { display:none; }
+      .blog-post-page .post-content h2::after { display:none; } 
       .blog-post-page .post-content p { 
           margin-bottom: var(--spacing-md); 
           line-height: 1.8; 
@@ -158,7 +184,7 @@
       }
       
       .blog-post-page .post-content blockquote {
-        margin: var(--spacing-md) var(--spacing-sm); 
+        margin: var(--spacing-md) 0; /* Ajustado para que no se pegue a los bordes en móvil */
         padding: var(--spacing-sm) var(--spacing-md);
         border-left: 4px solid var(--color-secondary-accent); 
         background-color: rgba(39, 39, 42, 0.2); 
@@ -191,35 +217,82 @@
       }
       .btn-gradient:hover, .btn-gradient:focus { color: var(--color-text-dark); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); transform: translateY(-2px); }
       .btn-gradient:active { transform: translateY(0); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
+      
+      /*------------------------------------*\
+        #FOOTER STYLES 
+      \*------------------------------------*/
       footer { 
-        background-color: var(--color-dark-bg); color: var(--color-text-medium); 
-        padding-top: var(--spacing-lg); padding-bottom: var(--spacing-md); 
-        margin-top: auto; border-top: 3px solid var(--color-modern-accent-3); 
+        background-color: var(--color-dark-bg); 
+        color: var(--color-text-medium); 
+        padding-top: var(--spacing-lg); 
+        padding-bottom: var(--spacing-md); 
+        margin-top: auto; 
+        border-top: 3px solid var(--color-modern-accent-3); 
       }
-      .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--spacing-md); margin-bottom: var(--spacing-lg); }
-      .footer-about, .footer-links, .footer-contact { flex: 1; min-width: 250px; margin-bottom: var(--spacing-md); }
+      .footer-content { 
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: space-between; 
+        gap: var(--spacing-md); 
+        margin-bottom: var(--spacing-lg); 
+      }
+      .footer-about, .footer-links, .footer-contact { 
+        flex: 1; 
+        min-width: 250px; 
+        margin-bottom: var(--spacing-md); 
+      }
       .footer-about h4, .footer-links h4, .footer-contact h4 {
-        font-family: var(--font-title); color: var(--color-text-light); font-size: 1.15rem; 
-        margin-bottom: var(--spacing-sm); position: relative; padding-bottom: var(--spacing-xs);
+        font-family: var(--font-title); 
+        color: var(--color-text-light); 
+        font-size: 1.15rem; 
+        margin-bottom: var(--spacing-sm); 
+        position: relative; 
+        padding-bottom: var(--spacing-xs);
         letter-spacing: 0.5px;
       }
       .footer-about h4::after, .footer-links h4::after, .footer-contact h4::after {
-        content: ''; position: absolute; left: 0; bottom: 0; width: 40px; 
-        height: 2px; background-color: var(--color-secondary-accent); 
+        content: ''; 
+        position: absolute; 
+        left: 0; 
+        bottom: 0; 
+        width: 40px; 
+        height: 2px; 
+        background-color: var(--color-secondary-accent); 
       }
-      .footer-about p, .footer-links ul, .footer-contact p { font-size: 0.9rem; line-height: 1.6; color: var(--color-text-medium); }
+      .footer-about p, .footer-links ul, .footer-contact p { 
+        font-size: 0.9rem; 
+        line-height: 1.6; 
+        color: var(--color-text-medium); 
+      }
       .footer-links ul { list-style: none; padding-left: 0; }
       .footer-links ul li { margin-bottom: calc(var(--spacing-xs) * 0.8); }
       .footer-links ul li a { color: var(--color-text-medium); transition: color var(--transition-speed) ease; }
       .footer-links ul li a:hover { color: var(--color-secondary-accent); }
-      .footer-contact p i.fas { margin-right: var(--spacing-xs); color: var(--color-modern-accent-2); }
+      .footer-contact p i.fas, .footer-contact p i.fab { 
+          margin-right: var(--spacing-xs); 
+          color: var(--color-modern-accent-2); 
+          width: 20px; 
+          text-align: center;
+      }
       .footer-contact p a { color: var(--color-text-medium); }
       .footer-contact p a:hover { color: var(--color-secondary-accent); }
+
       .payment-methods { margin-top: var(--spacing-sm); }
-      .payment-methods span { display: block; margin-bottom: var(--spacing-xs); font-size: 0.9rem; color: var(--color-text-medium); }
+      .payment-methods span { 
+        display: block; 
+        margin-bottom: var(--spacing-xs); 
+        font-size: 0.9rem; 
+        color: var(--color-text-medium); 
+      }
       .payment-icons { display: flex; gap: var(--spacing-sm); align-items: center; }
-      .payment-icons img { height: 25px; width: auto; opacity: 0.7; transition: opacity var(--transition-speed) ease; }
+      .payment-icons img { 
+        height: 25px; 
+        width: auto; 
+        opacity: 0.7; 
+        transition: opacity var(--transition-speed) ease; 
+      }
       .payment-icons img:hover { opacity: 1; }
+
       .footer-bottom { 
         padding-top: var(--spacing-md); 
         border-top: 1px solid var(--color-background-medium); 
@@ -231,31 +304,98 @@
         margin: 0; 
         color: var(--color-text-medium); 
       }
-      @media (max-width: 992px) { .footer-about, .footer-links, .footer-contact { flex-basis: 45%; } }
-      @media (max-width: 767px) { 
-        .footer-content { flex-direction: column; align-items: flex-start; }
-        .footer-about, .footer-links, .footer-contact { flex-basis: 100%; min-width: 100%; margin-bottom: var(--spacing-md); text-align: left; }
-        .footer-about h4::after, .footer-links h4::after, .footer-contact h4::after { left: 0; transform: none; } 
-        .payment-icons { justify-content: flex-start; }
+
+      /*------------------------------------*\
+        #BACK TO TOP BUTTON
+      \*------------------------------------*/
+      @keyframes backToTopGradientAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
       }
+
+      #back-to-top-btn {
+        position: fixed; bottom: 30px; right: 30px;
+        width: 45px; 
+        height: 45px; 
+        background-image: var(--back-to-top-gradient); 
+        background-size: 200% 200%; 
+        animation: backToTopGradientAnimation 6s ease infinite; 
+        color: var(--color-text-light); 
+        border: none; border-radius: 50%; font-size: 1.3rem; 
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25), 
+                    0 0 15px 3px rgba(var(--color-modern-accent-1-rgb), 0.35); 
+        opacity: 0; visibility: hidden; transform: translateY(20px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        z-index: 999;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+      }
+      #back-to-top-btn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+      #back-to-top-btn:hover,
+      #back-to-top-btn:focus { 
+        color: var(--color-text-dark); 
+        transform: translateY(-2px) scale(1.05); 
+        box-shadow: 0 6px 18px rgba(0,0,0,0.3), 
+                    0 0 20px 5px rgba(var(--color-modern-accent-2-rgb), 0.45); 
+        outline: none;
+      }
+      #back-to-top-btn .fas { 
+        transition: color 0.3s ease;
+      }
+      #back-to-top-btn:hover .fas,
+      #back-to-top-btn:focus .fas {
+        color: var(--color-text-dark);
+      }
+
+      /* Media Queries para responsividad general y de blog posts */
       @media (max-width: 992px) { 
-        .blog-post-page .post-container-inner { 
-            padding: var(--spacing-sm); 
-            margin-left: var(--spacing-sm); 
-            margin-right: var(--spacing-sm); 
-            width: auto; 
-            max-width: 95%; 
-        } 
+          main {
+              padding-top: var(--header-height-mobile); /* Asumiendo que tienes esta variable definida para el header en móvil */
+          }
+          .footer-about, .footer-links, .footer-contact { flex-basis: 45%; } 
+          .blog-post-page .post-container-inner { 
+              padding: var(--spacing-sm); 
+              margin-left: var(--spacing-sm); 
+              margin-right: var(--spacing-sm); 
+              width: auto; 
+              max-width: 95%; 
+          } 
+          .blog-post-page .post-content blockquote {
+            margin-left: 0; /* Ajuste para móvil */
+            margin-right: 0; /* Ajuste para móvil */
+          }
+      }
+      @media (max-width: 767px) { 
+          .footer-content { flex-direction: column; align-items: flex-start; }
+          .footer-about, .footer-links, .footer-contact { flex-basis: 100%; min-width: 100%; margin-bottom: var(--spacing-md); text-align: left; }
+          .footer-about h4::after, .footer-links h4::after, .footer-contact h4::after { left: 0; transform: none; } 
+          .payment-icons { justify-content: flex-start; }
       }
       @media (max-width: 480px) { 
-        .blog-post-page .post-header h1 { font-size: clamp(1.6rem, 7vw, 2rem); } 
-        .blog-post-page .post-container-inner {
-             max-width: 100%; 
-        }
+          .blog-post-page .post-header h1 { font-size: clamp(1.6rem, 7vw, 2rem); } 
+          .blog-post-page .post-container-inner {
+               max-width: 100%; 
+               padding-left: var(--spacing-xs); 
+               padding-right: var(--spacing-xs);
+          }
+          .image-caption {
+              padding: 0 var(--spacing-xs);
+          }
+          #back-to-top-btn { 
+            width: 45px; height: 45px; font-size: 1.2rem;
+            bottom: 20px; right: 20px;
+          }
       }
     </style>
 </head>
 <body class="blog-page-body" data-lang="es">
+
+    <a href="../index.html" class="blog-fixed-logo-link" aria-label="Volver a la página principal de Chill Chess Club">
+        <img src="../images/logo.png" alt="Logo Chill Chess Club" onerror="this.onerror=null; this.src='https://placehold.co/100x48/1a1a1d/f4f4f5?text=Logo+CCC'; this.style.border='1px solid #3F3F46'; this.style.padding='5px';">
+    </a>
 
     <div class="language-selector">
         <button class="lang-button active" data-lang-switch="es" aria-pressed="true" title="Cambiar a Español">ES</button>
@@ -275,7 +415,7 @@
             </header>
 
             <figure class="featured-image-figure">
-                <img src="images/blog-2-ajedrez-surf-ola-luminosa-energia.jpg" 
+                <img src="/images/blog-2-redescubre-vibrante-esencia.jpg" 
                      alt="[Piezas de ajedrez surfeando una ola de luz energética]" 
                      class="post-image-featured"
                      onerror="this.onerror=null; this.src='https://placehold.co/800x400/F97316/18181B?text=Ajedrez+Apasionante';">
@@ -309,7 +449,7 @@
             </article>
 
             <div class="back-to-blog-container">
-                <a href="#" class="btn btn-gradient" data-translate-key="backToBlogLink">Volver al Blog</a>
+                <a href="../index.html#blog" class="btn btn-gradient" data-translate-key="backToBlogLink">Volver al Blog</a>
             </div>
         </div>
     </main>
@@ -322,25 +462,25 @@
                 <div class="footer-links">
                     <h4 data-translate-key="footerLinksTitleIndex">Enlaces Rápidos</h4>
                     <ul>
-                        <li><a href="index.html#instructor" class="scroll-to" data-translate-key="navAbout">Sobre Mí</a></li>
-                        <li><a href="index.html#cursos" class="scroll-to" data-translate-key="navCourses">Cursos</a></li>
-                        <li><a href="index.html#metodo" class="scroll-to" data-translate-key="navMethod">Método</a></li>
-                        <li><a href="index.html#faq" class="scroll-to" data-translate-key="navFaq">FAQ</a></li> 
-                        <li><a href="index.html#contacto" class="scroll-to" data-translate-key="navContact">Contacto</a></li>
-                        <li><a href="politica-privacidad.html" data-translate-key="footerPrivacyLinkIndex">Política de Privacidad</a></li> 
-                        <li><a href="terminos-servicio.html" data-translate-key="footerTermsLinkIndex">Términos de Servicio</a></li> 
+                        <li><a href="../index.html#instructor" data-translate-key="navAbout">Sobre Mí</a></li>
+                        <li><a href="../index.html#cursos" data-translate-key="navCourses">Cursos</a></li>
+                        <li><a href="../index.html#metodo" data-translate-key="navMethod">Método</a></li>
+                        <li><a href="../index.html#faq" data-translate-key="navFaq">FAQ</a></li> 
+                        <li><a href="../index.html#contacto" data-translate-key="navContact">Contacto</a></li>
+                        <li><a href="../politica-privacidad.html" data-translate-key="footerPrivacyLinkIndex">Política de Privacidad</a></li> 
+                        <li><a href="../terminos-servicio.html" data-translate-key="footerTermsLinkIndex">Términos de Servicio</a></li> 
                     </ul>
                 </div>
                 <div class="footer-contact">
                     <h4 data-translate-key="footerContactTitleIndex">Contacto Rápido</h4>
                     <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:santiago.narvaez.84@gmail.com">santiago.narvaez.84@gmail.com</a></p>
-                    <p><i class="fas fa-info-circle" aria-hidden="true"></i> <a href="#contacto" class="scroll-to" data-translate-key="footerContactFormLinkIndex">Formulario de Contacto</a></p>
+                    <p><i class="fas fa-info-circle" aria-hidden="true"></i> <a href="../index.html#contacto" data-translate-key="footerContactFormLinkIndex">Formulario de Contacto</a></p>
                     <div class="payment-methods">
                         <span data-translate-key="footerPaymentTextIndex">Pagos Seguros con:</span>
                         <div class="payment-icons">
-                            <img src="paypal.png" alt="PayPal" title="PayPal" class="payment-logo" onerror="this.style.display='none'">
-                            <img src="payoneer.png" alt="Payoneer" title="Payoneer" class="payment-logo" onerror="this.style.display='none'">
-                            <img src="binance.png" alt="Binance" title="Binance" class="payment-logo" onerror="this.style.display='none'">
+                            <img src="../images/paypal.png" alt="PayPal" title="PayPal" class="payment-logo" onerror="this.style.display='none'">
+                            <img src="../images/payoneer.png" alt="Payoneer" title="Payoneer" class="payment-logo" onerror="this.style.display='none'">
+                            <img src="../images/binance.png" alt="Binance" title="Binance" class="payment-logo" onerror="this.style.display='none'">
                         </div>
                     </div>
                 </div>
@@ -351,6 +491,10 @@
         </div>
     </footer>
 
+    <button id="back-to-top-btn" title="Volver arriba" aria-label="Volver arriba" data-translate-key="backToTopTitle|title,ariaLabelBackToTop|aria-label">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const langButtons = document.querySelectorAll('.lang-button[data-lang-switch]');
@@ -358,6 +502,7 @@
         let currentLang = document.body.getAttribute('data-lang') || 'es';
 
         function toTitleCase(str) {
+            if (!str) return '';
             return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
         }
 
@@ -383,7 +528,9 @@
                 footerPrivacyLinkIndex: "Política de Privacidad", footerTermsLinkIndex: "Términos de Servicio", 
                 footerContactTitleIndex: "Contacto Rápido", footerContactFormLinkIndex: "Formulario de Contacto", 
                 footerPaymentTextIndex: "Pagos Seguros con:",
-                footerCopyrightIndex: "© {year} Chill Chess Club. Todos los derechos reservados." 
+                footerCopyrightIndex: "© {year} Chill Chess Club. Todos los derechos reservados.",
+                backToTopTitle: "Volver arriba",
+                ariaLabelBackToTop: "Volver arriba"
             },
             en: {
                 pageTitleBlogVibranteEsencia: "Chess: Rediscover its Vibrant Essence - My Blog",
@@ -391,13 +538,13 @@
                 publishedDateVe: "Published on May 14, 2025", 
                 authorNameVe: "Santiagovskiy", 
                 imageCaptionVibranteEsencia: "Beyond the image of serene geniuses, chess reveals a hidden intensity, a singular beauty, and an enduring relevance. We invite you to question old ideas and look anew.",
-                postIntroVibrante1: "If the word \"chess\" suggests to you images of geniuses engrossed in such concentration that the clock hands beg for mercy, or of duels that extend until dust settles familiarly on the board, we invite you to look a little further.",
-                postIntroVibrante2: "Allow us to show you the intensity hidden beneath its apparent calm, the singular beauty of its creativity, and the deep roots of its enduring relevance. It is time, indeed, to question old ideas and observe anew.",
-                postParagraph1Vibrante: "The popular imagination often envelops chess in an aura of almost reverential stillness. One thinks of long hours of deep silence, gazes fixed on an immobile board, an intellectual contest that seems to advance with a leisurely, ancient rhythm. And there is truth in this: chess knows the pause, that inner murmur where strategy matures. But to reduce its essence to this superficial calm, to a slowness without true passion, is to ignore the deep internal currents that animate it. The proposal is clear: rediscover its vibrant essence. Revelation awaits those who dare to look more closely.",
-                postParagraph2Vibrante: "Because in those moments of silence, in that apparent immobility, duels of great intensity are fought. It is not only the clear structure of logic that operates; it is also a mirror of human experience: the tension of precise calculation, the shadow of anguish before error, the silent euphoria of a clear idea. Each piece moved is a word in a voiceless dialogue, a pulse in the struggle of wills where the opponent's mind feels almost tangible. Slow? Perhaps for the eye that only sees movement. Exciting, undoubtedly, for one who experiences the vertigo of possibilities, the pressure of time, the sudden force of a combination that shatters the most elaborate plans.",
-                postParagraph3Vibrante: "The creative beauty of chess is another of its qualities, often hidden from the uninitiated. Far from being a mere exercise of predictable calculation, the board becomes a canvas where imagination traces surprising geometries, where intuition, that spark of understanding, sometimes surpasses pure logic. A game can be the narration of an epic, a sequence of precise movements, a form molded in time. There are breathtaking sacrifices, defenses that move by their tenacity, attacks that advance with natural force. This capacity to generate astonishment, to reveal the new within a framework of ancient rules, is one of the pillars of its remarkable persistence.",
-                postParagraph4Vibrante: "Its long journey through the centuries testifies to this richness. From the banks of the Indus, where chaturanga began to sketch the first strategies of symbolic combat, the game undertook its long journey: Persia welcomed and transformed it, and from there, like a persistent idea, it crossed continents, integrated into diverse cultures, always adapting, always challenging, always finding new adepts. It would not have survived fifteen centuries, watching empires, fashions, and frankly questionable hairstyles pass by, if it were a simple pastime for placid temperaments or incurious minds. Its longevity stems from its astonishing ability to be, at the same time, exact science and free art, intense struggle and calm reflection.",
-                postParagraph5Vibrante: "Thus, the apparent \"slowness\" of chess might well be the productive silence, the necessary space where its complexity unfolds. It is the time that allows for deep immersion, the antechamber of that understanding that, when it arrives, illuminates the board and the mind with a sudden and stimulating clarity. It is not the passivity of the patient genius that defines the player, but the active, sometimes intense, pursuit of truth and beauty in that universe of 64 squares. The answer, then, goes beyond a simple choice; it lies in the understanding that in the heart of chess's calm burns a lasting fire, a flame that has captivated humanity. It is time to leave behind old labels and rediscover that flame. Without a doubt, it will continue to shine.",
+                postIntroVe1: "If the word \"chess\" suggests to you images of geniuses engrossed in such concentration that the clock hands beg for mercy, or of duels that extend until dust settles familiarly on the board, we invite you to look a little further.",
+                postIntroVe2: "Allow us to show you the intensity hidden beneath its apparent calm, the singular beauty of its creativity, and the deep roots of its enduring relevance. It is time, indeed, to question old ideas and observe anew.",
+                postParagraph1Ve: "The popular imagination often envelops chess in an aura of almost reverential stillness. One thinks of long hours of deep silence, gazes fixed on an immobile board, an intellectual contest that seems to advance with a leisurely, ancient rhythm. And there is truth in this: chess knows the pause, that inner murmur where strategy matures. But to reduce its essence to this superficial calm, to a slowness without true passion, is to ignore the deep internal currents that animate it. The proposal is clear: rediscover its vibrant essence. Revelation awaits those who dare to look more closely.",
+                postParagraph2Ve: "Because in those moments of silence, in that apparent immobility, duels of great intensity are fought. It is not only the clear structure of logic that operates; it is also a mirror of human experience: the tension of precise calculation, the shadow of anguish before error, the silent euphoria of a clear idea. Each piece moved is a word in a voiceless dialogue, a pulse in the struggle of wills where the opponent's mind feels almost tangible. Slow? Perhaps for the eye that only sees movement. Exciting, undoubtedly, for one who experiences the vertigo of possibilities, the pressure of time, the sudden force of a combination that shatters the most elaborate plans.",
+                postParagraph3Ve: "The creative beauty of chess is another of its qualities, often hidden from the uninitiated. Far from being a mere exercise of predictable calculation, the board becomes a canvas where imagination traces surprising geometries, where intuition, that spark of understanding, sometimes surpasses pure logic. A game can be the narration of an epic, a sequence of precise movements, a form molded in time. There are breathtaking sacrifices, defenses that move by their tenacity, attacks that advance with natural force. This capacity to generate astonishment, to reveal the new within a framework of ancient rules, is one of the pillars of its remarkable persistence.",
+                postParagraph4Ve: "Its long journey through the centuries testifies to this richness. From the banks of the Indus, where chaturanga began to sketch the first strategies of symbolic combat, the game undertook its long journey: Persia welcomed and transformed it, and from there, like a persistent idea, it crossed continents, integrated into diverse cultures, always adapting, always challenging, always finding new adepts. It would not have survived fifteen centuries, watching empires, fashions, and frankly questionable hairstyles pass by, if it were a simple pastime for placid temperaments or incurious minds. Its longevity stems from its astonishing ability to be, at the same time, exact science and free art, intense struggle and calm reflection.",
+                postParagraph5Ve: "Thus, the apparent \"slowness\" of chess might well be the productive silence, the necessary space where its complexity unfolds. It is the time that allows for deep immersion, the antechamber of that understanding that, when it arrives, illuminates the board and the mind with a sudden and stimulating clarity. It is not the passivity of the patient genius that defines the player, but the active, sometimes intense, pursuit of truth and beauty in that universe of 64 squares. The answer, then, goes beyond a simple choice; it lies in the understanding that in the heart of chess's calm burns a lasting fire, a flame that has captivated humanity. It is time to leave behind old labels and rediscover that flame. Without a doubt, it will continue to shine.",
                 backToBlogLink: "Back to Blog",
                 footerAboutTitleIndex: "Chill Chess Club", 
                 footerAboutDescIndex: "Chess classes for beginners and intermediate players. A personalized and technologically assisted method to transform your game.", 
@@ -406,7 +553,9 @@
                 footerPrivacyLinkIndex: "Privacy Policy", footerTermsLinkIndex: "Terms of Service", 
                 footerContactTitleIndex: "Quick Contact", footerContactFormLinkIndex: "Contact Form", 
                 footerPaymentTextIndex: "Secure Payments with:",
-                footerCopyrightIndex: "© {year} Chill Chess Club. All rights reserved."
+                footerCopyrightIndex: "© {year} Chill Chess Club. All rights reserved.",
+                backToTopTitle: "Back to Top",
+                ariaLabelBackToTop: "Back to Top"
             }
         };
 
@@ -414,29 +563,66 @@
             translatableElements.forEach(el => {
                 const key = el.getAttribute('data-translate-key');
                 let translationText = "";
+
                 if (translations[lang] && translations[lang][key]) {
                     translationText = translations[lang][key];
                 } else if (translations['es'][key]) { 
                      translationText = translations['es'][key];
                 }
-                if (key === "footerLinksTitleIndex" || key === "footerContactTitleIndex" || 
-                    key === "footerPrivacyLinkIndex" || key === "footerTermsLinkIndex" || 
-                    key === "footerContactFormLinkIndex") {
-                    if (key !== "footerAboutTitleIndex") {
-                         translationText = toTitleCase(translationText);
+                
+                if (key.startsWith("footerLink") || key === "footerContactTitleIndex" || key === "footerLinksTitleIndex" || 
+                    key.startsWith("nav")) {
+                     translationText = toTitleCase(translationText);
+                }
+                if (key === "footerAboutTitleIndex") {
+                     if (translations[lang] && translations[lang][key]) {
+                        translationText = translations[lang][key];
+                    } else if (translations['es'][key]) {
+                        translationText = translations['es'][key];
                     }
                 }
+
                 if (key === "footerCopyrightIndex") {
                     translationText = translationText.replace("{year}", new Date().getFullYear());
                 }
-                if (key === "pageTitleBlogVibranteEsencia" && el.tagName === 'TITLE') { 
-                    document.title = translationText;
+                
+                if (el.hasAttribute('data-translate-key') && el.dataset.translateKey.includes('|')) {
+                    const parts = el.dataset.translateKey.split('|');
+                    const mainKey = parts[0]; 
+                    const attributeName = parts[1].split(',')[0]; 
+
+                    let attrText = "";
+                    if(translations[lang] && translations[lang][mainKey]) {
+                        attrText = translations[lang][mainKey];
+                    } else if (translations['es'][mainKey]) { 
+                        attrText = translations['es'][mainKey];
+                    }
+                    el.setAttribute(attributeName, attrText);
+
                 } else {
-                    el.innerHTML = translationText; 
+                    if (key === "pageTitleBlogVibranteEsencia" && el.tagName === 'TITLE') { 
+                        document.title = translationText;
+                    } else {
+                        el.innerHTML = translationText; 
+                    }
                 }
             });
             document.documentElement.lang = lang; 
             document.body.setAttribute('data-lang', lang); 
+            localStorage.setItem('preferredLang', lang);
+        }
+        
+        const preferredLang = localStorage.getItem('preferredLang');
+        if (preferredLang && translations[preferredLang]) {
+            currentLang = preferredLang;
+            langButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
+                if (btn.getAttribute('data-lang-switch') === currentLang) {
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-pressed', 'true');
+                }
+            });
         }
 
         langButtons.forEach(button => {
@@ -458,6 +644,28 @@
                 }, parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--lang-transition-speed').replace('s', '') || '0.25') * 1000);
             });
         });
+        
+        const backToTopButton = document.getElementById("back-to-top-btn");
+
+        if (backToTopButton) {
+            window.onscroll = function() {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    backToTopButton.classList.add("visible");
+                } else {
+                    backToTopButton.classList.remove("visible");
+                }
+            };
+
+            backToTopButton.onclick = function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            };
+        }
+        
+        const yearSpan = document.getElementById('current-year');
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+
         updateTexts(currentLang); 
     });
     </script>
