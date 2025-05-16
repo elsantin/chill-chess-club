@@ -16,7 +16,7 @@
     <link rel="manifest" href="../manifest.json">
 
     <style>
-      /* styles.css - Versión integrada para la página del post del blog */
+      /* Estilos CSS integrados (basados en tu archivo de referencia) */
       :root {
         --color-dark: #18181B;
         --color-background-medium: #27272A;
@@ -34,8 +34,8 @@
         --title-gradient-color-3: var(--color-modern-accent-2); 
         --color-text-light: #f4f4f5;    
         --color-text-medium: #a1a1aa;   
-        --color-text-dark: #18181B; /* Color oscuro para iconos en hover */
-        --color-text-light-rgb: 244, 244, 245; /* Para bordes con opacidad */
+        --color-text-dark: #18181B; 
+        --color-text-light-rgb: 244, 244, 245; 
         --color-dark-bg: #1a1a1d; 
         --color-dark-bg-secondary: #222225; 
         --border-radius-sm: 4px;
@@ -59,11 +59,17 @@
       html { scroll-behavior: smooth; }
       body {
         font-family: var(--font-body); line-height: 1.7; color: var(--color-text-light);
-        background-color: var(--color-dark-bg-secondary); min-height: 100vh; font-size: 16px;
+        background-color: var(--color-dark-bg-secondary); 
+        min-height: 100vh; 
+        font-size: 16px;
         overflow-x: hidden; opacity: 1; transition: opacity var(--lang-transition-speed) ease-in-out;
-        cursor: default; display: flex; flex-direction: column; 
+        cursor: default; 
+        display: flex; 
+        flex-direction: column; 
       }
-      main.blog-post-page { flex-grow: 1; }
+      main.blog-post-page { 
+        flex-grow: 1; 
+      }
       body.fade-out { opacity: 0; }
       h1, h2, h3, h4, h5, h6 {
         font-family: var(--font-title); margin-bottom: var(--spacing-sm); color: var(--color-text-light); 
@@ -83,12 +89,14 @@
         position: fixed; top: 20px; left: 20px; z-index: 1050; display: block;
         transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: var(--border-radius-sm); 
       }
-      .blog-fixed-logo-link img { height: 48px; width: auto; display: block; border-radius: var(--border-radius-sm); }
+      .blog-fixed-logo-link img { 
+        height: 48px; width: auto; display: block; border-radius: var(--border-radius-sm); 
+      }
       .blog-fixed-logo-link:hover { transform: scale(1.08); box-shadow: 0 0 15px rgba(var(--color-modern-accent-1-rgb), 0.5); }
 
       .language-selector {
         display: flex; align-items: center; gap: 5px; position: fixed; 
-        top: var(--spacing-sm); right: var(--spacing-md); z-index: 1020; /* Elevado para estar sobre flechas si es necesario */
+        top: var(--spacing-sm); right: var(--spacing-md); z-index: 1020; 
         background-color: rgba(39, 39, 42, 0.7); padding: var(--spacing-xs) var(--spacing-sm);
         border-radius: var(--border-radius-md); backdrop-filter: blur(5px);
       }
@@ -149,109 +157,46 @@
       .blog-post-page .post-content blockquote p { margin-bottom: var(--spacing-xs); color: inherit; font-size: 0.95rem; }
       .blog-post-page .post-content blockquote cite { display: block; text-align: right; margin-top: var(--spacing-sm); font-size: 0.85rem; color: var(--color-text-medium); }
       
-      /* --- ESTILOS PARA NAVEGACIÓN DE POSTS (LATERAL FIJA) --- */
       .post-navigation {
-        /* Este contenedor <nav> es solo semántico y no debe afectar el flujo. */
-        height: 0; 
-        margin: 0;
-        padding: 0;
-        border: none;
-        overflow: hidden; /* Asegura que no ocupe espacio */
+        height: 0; margin: 0; padding: 0; border: none; overflow: hidden; 
       }
-
-      @keyframes animatedArrowNavGradient { /* Animación para el degradado de las flechas */
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-      }
-
+      @keyframes animatedArrowNavGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
       .nav-arrow { 
-        position: fixed;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 1010; 
-        
-        display: flex; 
-        align-items: center;
-        justify-content: center;
-        width: 48px; 
-        height: 48px; 
-        
+        position: fixed; top: 50%; transform: translateY(-50%); z-index: 1010; 
+        display: flex; align-items: center; justify-content: center;
+        width: 48px; height: 48px; 
         background-image: var(--arrow-nav-gradient); 
         background-size: 250% 250%; 
         animation: animatedArrowNavGradient 7s ease infinite; 
-        
-        border-radius: 50%; 
-        box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+        border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.35);
         text-decoration: none;
         transition: opacity var(--transition-speed) ease-out, transform var(--transition-speed) ease-out, box-shadow var(--transition-speed) ease-out;
-        opacity: 0.75; 
-        border: 1px solid rgba(var(--color-text-light-rgb), 0.1); 
-        backdrop-filter: blur(4px);
-        cursor: pointer;
+        opacity: 0.75; border: 1px solid rgba(var(--color-text-light-rgb), 0.1); 
+        backdrop-filter: blur(4px); cursor: pointer;
       }
-
-      .nav-arrow .fas { /* Estilo del icono por defecto */
-        color: var(--color-text-light); 
-        font-size: 1.5rem; 
-        line-height: 1; 
+      .nav-arrow .fas { 
+        color: var(--color-text-light); font-size: 1.5rem; line-height: 1; 
         text-shadow: 0 1px 2px rgba(0,0,0,0.25);
         transition: color var(--transition-speed) ease-out, transform var(--transition-speed) ease-out; 
       }
-      
-      .nav-arrow:hover,
-      .nav-arrow:focus-visible { /* Usar focus-visible para mejor accesibilidad */
-        opacity: 1;
-        transform: translateY(-50%) scale(1.15); 
+      .nav-arrow:hover, .nav-arrow:focus-visible { 
+        opacity: 1; transform: translateY(-50%) scale(1.15); 
         box-shadow: 0 6px 20px rgba(var(--color-modern-accent-1-rgb), 0.4);
         outline: none; 
       }
-
-      .nav-arrow:hover .fas,
-      .nav-arrow:focus-visible .fas { /* Icono oscuro en hover/focus */
-        color: var(--color-text-dark); 
-      }
-      
-      .nav-arrow span { 
-        display: none; /* Ocultar texto "Anterior/Siguiente" */
-      }
-
-      #prev-post-link {
-        left: var(--spacing-md); 
-      }
-      #prev-post-link:hover .fas {
-        animation: pulseArrowLeft 0.6s infinite alternate ease-in-out;
-      }
-
-      #next-post-link {
-        right: var(--spacing-md); 
-      }
-      #next-post-link:hover .fas {
-        animation: pulseArrowRight 0.6s infinite alternate ease-in-out;
-      }
-
-      @keyframes pulseArrowLeft {
-        from { transform: translateX(0px); }
-        to { transform: translateX(-3px); }
-      }
-      @keyframes pulseArrowRight {
-        from { transform: translateX(0px); }
-        to { transform: translateX(3px); }
-      }
-      
-      @media (max-width: 1024px) { 
-        .nav-arrow {
-          display: none; 
-        }
-      }
-      /* --- FIN DE ESTILOS PARA NAVEGACIÓN --- */
+      .nav-arrow:hover .fas, .nav-arrow:focus-visible .fas { color: var(--color-text-dark); }
+      .nav-arrow span { display: none; } 
+      #prev-post-link { left: var(--spacing-md); }
+      #prev-post-link:hover .fas { animation: pulseArrowLeft 0.6s infinite alternate ease-in-out; }
+      #next-post-link { right: var(--spacing-md); }
+      #next-post-link:hover .fas { animation: pulseArrowRight 0.6s infinite alternate ease-in-out; }
+      @keyframes pulseArrowLeft { from { transform: translateX(0px); } to { transform: translateX(-3px); } }
+      @keyframes pulseArrowRight { from { transform: translateX(0px); } to { transform: translateX(3px); } }
+      @media (max-width: 1024px) { .nav-arrow { display: none; } }
 
       .blog-post-page .back-to-blog-container { 
-        display: block; 
-        text-align: center; 
-        margin-top: var(--spacing-xl); 
-        padding-top: var(--spacing-md); 
-        border-top: 1px solid var(--color-background-medium); 
+        display: block; text-align: center; margin-top: var(--spacing-xl); 
+        padding-top: var(--spacing-md); border-top: 1px solid var(--color-background-medium); 
       }
       @keyframes animatedGradientBackground { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
       .btn {
@@ -375,7 +320,6 @@
       #back-to-top-btn:hover .fas, #back-to-top-btn:focus .fas { color: var(--color-text-dark); }
       
       @media (max-width: 992px) { 
-          /* No aplicar padding-top al main en blog-page-body ya que no tiene header fijo */
           .footer-about, .footer-links, .footer-contact { flex-basis: 45%; } 
           .blog-post-page .post-container-inner { padding: var(--spacing-sm); margin-left: var(--spacing-sm); margin-right: var(--spacing-sm); width: auto; max-width: 95%; } 
       }
@@ -417,10 +361,10 @@
             </header>
 
             <figure class="featured-image-figure">
-                <img src="images/blog-1-ecos-del-tablero.jpg" 
+                <img src="../images/blog-1-ecos-del-tablero.jpg" 
                      alt="[Pintura de estilo clásico de hombres jugando ajedrez en un balcón al atardecer]" 
                      class="post-image-featured"
-                     onerror="this.onerror=null; this.src='https://placehold.co/800x400/222225/a1a1aa?text=Error+al+cargar+imagen%0Aimages/blog-1-ecos-del-tablero.jpg';">
+                     onerror="this.onerror=null; this.src='https://placehold.co/800x400/222225/a1a1aa?text=Error+al+cargar+imagen%0A../images/blog-1-ecos-del-tablero.jpg';">
                 <figcaption class="image-caption" data-translate-key="imageCaptionHistoria">
                     Sesenta y cuatro escaques: un antiguo espejo donde estrategia y pasión se cruzan, reflejando la aventura del intelecto humano. Una historia que, como el juego mismo, siempre continúa.
                 </figcaption>
@@ -514,7 +458,7 @@
     <button id="back-to-top-btn" 
         title="Volver arriba" 
         aria-label="Volver arriba" 
-        data-translate-key="backToTopTitle|title">
+        data-translate-key="backToTopTitle|title"> 
     <i class="fas fa-arrow-up"></i>
 </button>
 
@@ -529,12 +473,12 @@
             return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
         }
 
-        const translations = { // TODO: Asegúrate de que este objeto contenga TODAS tus traducciones para el blog 1
+        const translations = { 
             es: {
                 pageTitleBlogHistoria: "Ecos del Tablero: Crónica del Ajedrez - Mi Blog",
                 postTitleHistoriaAjedrez: "Ecos del Tablero: Una Crónica del Ajedrez y su Alma Humana",
-                publishedDate: "Publicado el 14 de Mayo, 2025",
-                authorName: "Santiagovskiy",
+                publishedDate: "Publicado el 14 de Mayo, 2025", 
+                authorName: "Santiagovskiy", 
                 imageCaptionHistoria: "Sesenta y cuatro escaques: un antiguo espejo donde estrategia y pasión se cruzan, reflejando la aventura del intelecto humano. Una historia que, como el juego mismo, siempre continúa.",
                 histIntro1: "Existen juegos diseñados para el olvido momentáneo, distracciones efímeras. El ajedrez se sitúa en otra categoría.",
                 histIntro2: "Una creación de asombrosa tenacidad: un tablero, unas piezas talladas y un conjunto de reglas que ha alimentado una obsesión intelectual –y muy humana– durante más de mil años.",
@@ -584,30 +528,30 @@
                 imageCaptionHistoria: "Sixty-four squares: an ancient mirror where strategy and passion intersect, reflecting the adventure of the human intellect. A story that, like the game itself, always continues.",
                 histIntro1: "There are games designed for momentary oblivion, ephemeral distractions. Chess stands in another category.",
                 histIntro2: "A creation of astonishing tenacity: a board, carved pieces, and a set of rules that has fueled an intellectual – and very human – obsession for over a thousand years.",
-                histIntro3: "To wonder how this seemingly simple creation has managed to captivate the imagination...",
+                histIntro3: "To wonder how this seemingly simple creation has managed to captivate the imagination of entire civilizations, whispering secrets to kings and commoners, to sages and those who flirt with madness, is to open a door to a mystery with many answers. It rather resembles a complex and nuanced position, whose truths are revealed layer by layer, often with austere logic, and sometimes, with a paradox that provokes a knowing smile.",
                 histSubtitleOrigenes: "Ancient Origins: From Chaturanga to Persian Refinement",
-                histIndia1: "The firmest trace of its origins leads us to India, around the 6th century...",
-                histIndia2: "It was, in essence, a mirror of society...",
-                histIndia3: "It is inevitable to imagine those first strategists...",
-                histPersia1: "From India, the game, like an idea with a life of its own...",
-                histPersia2: "It was in this new home that the element of chance began to disappear...",
-                histPersia3: "In the rich crucible of Sasanian Persia...",
+                histIndia1: "The firmest trace of its origins leads us to India, around the 6th century. In that crucible of cultures, chaturanga was born, conceived as a symbolic reflection of war: infantry, cavalry, elephants (precursors to the current bishops, with a rather clumsy movement for what is expected of a pachyderm in battle) and chariots, all under the command of a Rajah.",
+                histIndia2: "It was, in essence, a mirror of society and its conflicts, a small world where strategy began to separate from pure chance – although some scholars, with that characteristic mischief of the historian who enjoys unearthing inconvenient details, suggest the influence of dice in its beginnings, perhaps so the gods also had a say in the outcome.",
+                histIndia3: "It is inevitable to imagine those first strategists, frowning, seeing in each move not only a tactic, but the echo of their deep vital tensions, an early manifestation of human will in its eternal struggle to find an order, however fragile, in the face of immense uncertainty.",
+                histPersia1: "From India, the game, like an idea with a life of its own, undertook a silent but unstoppable conquest. It slipped along caravan routes, was whispered in bazaars, and finally took root in Persia, where it was embraced with the fervor that the Persian soul reserves for poetry and beauty. There it was renamed Shatranj.",
+                histPersia2: "It was in this new home that the element of chance began to disappear, like a shadow before the light, allowing skill, foresight, and calculation to become the true judges of the game. The \"Shah\" (King) and his inevitable end, the \"Shah Mat\" (the king has fallen, or more plainly, is done for), became the axes of this intellectual drama.",
+                histPersia3: "In the rich crucible of Sasanian Persia and, later, under the mantle of Islamic civilization, Shatranj rose to the status of a mental discipline, almost an austere art. Figures like As-Suli, whose name became synonymous with remarkable mastery, emerged as examples of a dedication bordering on holy (or not so holy) obsession. What inner flame consumed these men? A great thirst for logical order, an impulse to master the chaos of so many variations, or perhaps an abstraction so profound that it created a parallel reality, more vivid and intense than daily life? One can almost imagine them, in moonlit courtyards, engrossed for hours in the analysis of a single position, their lives symbolically suspended in the fragile balance of a few pieces, an intensity bordering on the sublime and, let's not fool ourselves, also the subtly disturbing.",
                 histSubtitleEuropaMedieval: "Expansion to the West and the Queen's Revolution",
-                histParagraphEuropaMedieval1: "The wave of Arab expansion was the vehicle...",
-                histParagraphEuropaMedieval2: "In medieval Europe, chess underwent a significant change...",
-                histParagraphEuropaMedieval3: "The ancient Firzan, a counselor of modest movements...",
+                histParagraphEuropaMedieval1: "The wave of Arab expansion was the vehicle that transported Shatranj to Europe. Through the Iberian Peninsula and Sicily, the game spread northward with the force of pollen in spring. Even the rugged Vikings, those navigators of firm gaze and bold spirit, seem to have succumbed to its appeal during their long voyages, perhaps as an exercise to keep their minds sharp between one raid and the next, or simply to avoid being bored to tears.",
+                histParagraphEuropaMedieval2: "In medieval Europe, chess underwent a significant change, adapting like a living being to a new cultural context. The most radical change, which undoubtedly gave it surprising speed, was the spectacular empowerment of the Queen.",
+                histParagraphEuropaMedieval3: "The ancient Firzan, a counselor of modest movements and single-step diagonals – rather a cautious bureaucrat than a true power behind the throne – evolved (some chroniclers hint, with almost indecent haste) into the most dynamic and lethal piece on the board. This \"enraged lady,\" as she was known with astonishment and perhaps a subtle fear, with a touch of misogyny, revolutionized the game, adding a tactical complexity that catapulted it into a new era. It is an irony worthy of a comedy that, in such rigidly patriarchal societies, the female figure on the board acquired such power, a fact that invites reflection on the symbolic tensions of a culture, or perhaps, more simply, on the impatience of some medieval queen who, tired of endless games, demanded a piece that would settle the matter once and for all.",
                 histSubtitleRenacimientoIlustracion: "The Intellect at Play: Renaissance, Enlightenment, and Romanticism",
-                histParagraphRenacimientoIlustracion: "With the arrival of the Renaissance and the subsequent Age of Enlightenment...",
-                histParagraphEraRomantica: "The 19th century brought the Romantic era...",
+                histParagraphRenacimientoIlustracion: "With the arrival of the Renaissance and the subsequent Age of Enlightenment, chess was consolidated as an exercise for the intellect. The first treatises came to light, serious and profound attempts to systematize its study, to reveal its mysteries and codify its principles (a difficult task, as chess, with its false modesty, guards its secrets well). Figures like the Spanish clergyman Ruy López de Segura not only played; they investigated, looking for patterns with the care of a naturalist. The search for beauty in combination was united with that of logical truth, a human longing to find a clear order behind the veil of its apparent infinite complexity.",
+                histParagraphEraRomantica: "The 19th century brought the Romantic era, a time of bold play, of gambits offered with theatrical disdain and combinations that fell upon the board like sentences of fate (or, for the loser, like a cosmic joke in very bad taste). Names like Anderssen and, above all, Paul Morphy, are symbols of this audacious spirit. Morphy, a young prodigy from New Orleans, dazzled Europe with an ease that was almost insulting. His games, even today, radiate clarity and strength. However, as in stories with a tinge of tragic romanticism, his star shone with dazzling intensity but briefly. His early retirement and subsequent personal decline are a somber reminder of the pressures of exceptional talent and the loneliness that often enveloped him; an internal tension with a somewhat disheartening echo.",
                 histSubtitleEraCientifica: "Towards Modern Understanding: Positional Science and Titan Duels",
-                histParagraphEraCientifica1: "After the romantic outburst, the style of play began to shift...",
-                histParagraphEraCientifica2: "The patient accumulation of small advantages...",
+                histParagraphEraCientifica1: "After the romantic outburst, the style of play began to shift towards a more scientific conception, or at least, a more methodical attempt to understand its infinite possibilities. Wilhelm Steinitz, whom history (always in need of labels) recognizes as the first official world champion, was the great promoter of this new era, articulating the principles of positional strategy.",
+                histParagraphEraCientifica2: "The patient accumulation of small advantages, defensive solidity (sometimes to the boredom of the spectator), and long-term strategic logic became the new principles of chess. A series of champions, from Emanuel Lasker, with his psychological and practical approach, to José Raúl Capablanca, an almost insulting natural talent, through Alexander Alekhine, of strong will and sometimes turbulent genius, and the formidable Soviet school led by Mikhail Botvinnik (the \"Patriarch,\" who seemed to have a plan for everything, even breakfast), deepened this legacy. The struggles for the world championship became great sagas, duels of enormous psychological and intellectual charge, where personalities and philosophies clashed with intensity, fueled by industrial quantities of coffee, tobacco, and the nervous expectation of their analysts, who probably slept less than the contenders themselves.",
                 histSubtitleGuerraFria: "Chess in Modern Times: Geopolitics and Digital Revolution", 
-                histParagraphGuerraFria: "The Cold War, with its particular and sometimes tense bipolar \"charm\"...",
-                histParagraphEraDigital: "In our days, the arrival of digital technology has profoundly...",
-                histParagraphDigitalHumano: "However, far from exhausting its mystery...",
+                histParagraphGuerraFria: "The Cold War, with its particular and sometimes tense bipolar \"charm,\" cast its long shadow over chess. The great Soviet dominance in the game was used as a symbol of intellectual superiority. Therefore, the challenges from the West, especially that of the unique, charismatic, and very eccentric figure of Bobby Fischer, were charged with a political symbolism that went far beyond sport. Fischer's victory in Reykjavik in 1972 was a cultural phenomenon, the narrative of the lone genius against a system, so valued in the West. A story with a clear touch of nonconformity and raw honesty, with often tragic consequences for its protagonist.",
+                histParagraphEraDigital: "In our days, the arrival of digital technology has profoundly and irreversibly changed chess. Analysis engines, those silicon oracles, calculate millions of variations per second, surpassing human capacity, to the delight of some and slight melancholy of others. Access to information is almost unlimited, and the possibility of competing globally without moving from one's armchair (and sometimes in pajamas, let's be honest) has been democratized in a way that Morphy or Capablanca would never have dreamed of (although it is likely that both would have complained about the lack of etiquette of some anonymous rivals in the chat).",
+                histParagraphDigitalHumano: "However, far from exhausting its mystery, this new reality might be highlighting the unique value of human decision-making. The machine calculates with astonishing precision; the human being interprets, intuits, creates, and, crucially, makes mistakes, some glorious, others simply disastrous. It is in that imperfection, in that spark of intuition that defies logic, and in the audacity to take risks (sometimes with a recklessness bordering on the comical, but which makes the game infinitely more entertaining) where the constant and vibrant tension of chess resides.",
                 histSubtitleEpilogo: "Epilogue: The Board as an Eternal Mirror",
-                histParagraphEpilogo: "Chess, in short, remains a surprisingly faithful...",
+                histParagraphEpilogo: "Chess, in short, remains a surprisingly faithful, and often very lucid, reflection of the human condition: our capacity for the purest logic and, at the same time, for the most intense passion; for meticulous strategy and for impulsive and sometimes colossal error. Each game is a confrontation with uncertainty, an affirmation of will, and, in the end, a small drama in 64 squares. And as long as two souls, with their lights and shadows, sit before the board ready to undertake this silent dialogue of intellects (and, let's be honest, also, from time to time, of wounded egos), the endless story of chess will continue to be written, adding new and fascinating layers to its profound, complex, and ever-resonant narrative.",
                 backToBlogLink: "Back to Blog",
                 footerAboutTitleIndex: "Chill Chess Club", 
                 footerAboutDescIndex: "Chess classes for beginners and intermediate players...", 
@@ -708,6 +652,8 @@
                 const nextIndex = (currentIndex + 1) % articles.length;
                 prevPostLink.href = articles[prevIndex].url;
                 nextPostLink.href = articles[nextIndex].url;
+                prevPostLink.style.display = 'flex';
+                nextPostLink.style.display = 'flex';
             } else {
                 if (prevPostLink) prevPostLink.style.display = 'none';
                 if (nextPostLink) nextPostLink.style.display = 'none';
