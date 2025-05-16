@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-translate-key="pageTitleBlogPasosOnline">5 Pasos Hacia el Ajedrez Online - Mi Blog</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icons/android-icon-192x192.png">
+    <link rel="manifest" href="../manifest.json">
+    
     <style>
       /* styles.css - Versión integrada para la página del post del blog */
       :root {
@@ -306,7 +314,7 @@
       }
 
       /*------------------------------------*\
-        #BACK TO TOP BUTTON
+        #BACK TO TOP BUTTON (Estilos Mejorados y Unificados)
       \*------------------------------------*/
       @keyframes backToTopGradientAnimation {
         0% { background-position: 0% 50%; }
@@ -350,10 +358,11 @@
         color: var(--color-text-dark);
       }
 
+
       /* Media Queries para responsividad general y de blog posts */
       @media (max-width: 992px) { 
           main {
-              padding-top: var(--header-height-mobile); 
+              padding-top: var(--header-height-mobile);
           }
           .footer-about, .footer-links, .footer-contact { flex-basis: 45%; } 
           .blog-post-page .post-container-inner { 
@@ -363,10 +372,6 @@
               width: auto; 
               max-width: 95%; 
           } 
-           .blog-post-page .post-content blockquote {
-            margin-left: 0; 
-            margin-right: 0; 
-          }
       }
       @media (max-width: 767px) { 
           .footer-content { flex-direction: column; align-items: flex-start; }
@@ -391,6 +396,7 @@
       }
     </style>
 </head>
+
 <body class="blog-page-body" data-lang="es">
 
     <a href="../index.html" class="blog-fixed-logo-link" aria-label="Volver a la página principal de Chill Chess Club">
@@ -485,9 +491,9 @@
                     <div class="payment-methods">
                         <span data-translate-key="footerPaymentTextIndex">Pagos Seguros con:</span>
                         <div class="payment-icons">
-                            <img src="../images/paypal.png" alt="PayPal" title="PayPal" class="payment-logo" onerror="this.style.display='none'">
-                            <img src="../images/payoneer.png" alt="Payoneer" title="Payoneer" class="payment-logo" onerror="this.style.display='none'">
-                            <img src="../images/binance.png" alt="Binance" title="Binance" class="payment-logo" onerror="this.style.display='none'">
+                            <img src="../icons/paypal.png" alt="PayPal" title="PayPal" class="payment-logo" onerror="this.style.display='none'">
+                            <img src="../icons/payoneer.png" alt="Payoneer" title="Payoneer" class="payment-logo" onerror="this.style.display='none'">
+                            <img src="../icons/binance.png" alt="Binance" title="Binance" class="payment-logo" onerror="this.style.display='none'">
                         </div>
                     </div>
                 </div>

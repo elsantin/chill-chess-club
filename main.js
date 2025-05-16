@@ -150,14 +150,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             blogTitle: "Desde Nuestro Blog",
             blogIntro: "Un espacio dedicado a la exploración del ajedrez. Artículos, perspectivas y curiosidades para profundizar tu entendimiento y aprecio por el juego.",
-            blogPost1Title: "El Legado del Ajedrez: Un Viaje a Través del Tiempo y las Culturas",
-            blogPost1Excerpt: "Explora la rica evolución del ajedrez, desde sus orígenes ancestrales y su travesía por diversas culturas, hasta consolidarse como el desafío intelectual que conocemos hoy.",
+            // --- TEXTOS DEL BLOG ACTUALIZADOS ---
+            blogPost1Title: "Ecos del Tablero: Una Crónica del Ajedrez y su Alma Humana",
+            blogPost1Excerpt: "Sesenta y cuatro escaques: un antiguo espejo donde estrategia y pasión se cruzan, reflejando la aventura del intelecto humano. Una historia que, como el juego mismo, siempre continúa.",
             blogPost1ImgAlt: "Ilustración de estilo tapiz medieval de dos personas jugando ajedrez, para el artículo sobre la historia del ajedrez en el blog de Chill Chess Club",
-            blogPost2Title: "Ajedrez: ¿Juego Lento o Desafío Apasionante? La Respuesta Podría Sorprenderte",
-            blogPost2Excerpt: "Si crees que el ajedrez es solo para genios pacientes, permítenos mostrarte su intensidad, su belleza creativa y por qué se ha mantenido relevante por siglos.",
+            blogPost2Title: "Ajedrez: Redescubre su Vibrante Esencia, Olvida lo que Creías Saber",
+            blogPost2Excerpt: "Más allá de la imagen de genios serenos, el ajedrez revela una intensidad oculta, una belleza singular y una relevancia perdurable. Le invitamos a cuestionar viejas ideas y observar de nuevo.",
             blogPost2ImgAlt: "Piezas de ajedrez surfeando sobre una ola de luz vibrante, ilustrando el concepto de 'ajedrez chill' en el blog de Chill Chess Club",
-            blogPost3Title: "Tu Camino al Ajedrez Online: 5 Pasos Fáciles para un Comienzo Gratuito",
-            blogPost3Excerpt: "Comenzar en el ajedrez online es simple. Sigue esta guía de cinco pasos para acceder a plataformas gratuitas y disfrutar de la experiencia internacional del ajedrez rápidamente.",
+            blogPost3Title: "5 Pasos Hacia el Ajedrez Online: Tu Refugio Digital y Gratuito",
+            blogPost3Excerpt: "El ajedrez digital es un océano de posibilidades al alcance de tu mano; para navegarlo, bastan cinco movimientos iniciales, sencillos y gratuitos, que esta guía te desvela.",
             blogPost3ImgAlt: "Laptop mostrando una partida de ajedrez online en un ambiente relajado con vista al mar, para el artículo sobre cómo empezar a jugar online en Chill Chess Club",
             blogReadMore: "Leer Más",
 
@@ -411,15 +412,16 @@ document.addEventListener('DOMContentLoaded', () => {
             resourcesCta: "If this information resonates with you, <a href=\"#cursos\" class=\"scroll-to\">discover our courses</a> and deepen your knowledge with a personalized approach.",
 
             blogTitle: "From Our Blog",
-            blogIntro: "A space dedicated to the exploration of chess. Articles, perspectives, and curiosities to deepen your understanding and appreciation for the game.",
-            blogPost1Title: "The Legacy of Chess: A Journey Through Time and Cultures",
-            blogPost1Excerpt: "Explore the rich evolution of chess, from its ancient origins and its journey through diverse cultures, to its consolidation as the intellectual challenge we know today.",
+            blogIntro: "A space dedicated to the exploration of chess. Articles, perspectives, and curiosidades to deepen your understanding and appreciation for the game.",
+            // --- BLOG TEXTS UPDATED ---
+            blogPost1Title: "Echoes of the Board: A Chronicle of Chess and its Human Soul",
+            blogPost1Excerpt: "Sixty-four squares: an ancient mirror where strategy and passion intersect, reflecting the adventure of the human intellect. A story that, like the game itself, always continues.",
             blogPost1ImgAlt: "Medieval tapestry-style illustration of two people playing chess, for the article on chess history on Chill Chess Club's blog",
-            blogPost2Title: "Chess: Slow Game or Exciting Challenge? The Answer Might Surprise You",
-            blogPost2Excerpt: "If you think chess is only for patient geniuses, allow us to show you its intensity, its creative beauty, and why it has remained relevant for centuries.",
+            blogPost2Title: "Chess: Rediscover its Vibrant Essence, Forget What You Thought You Knew",
+            blogPost2Excerpt: "Beyond the image of serene geniuses, chess reveals a hidden intensity, a singular beauty, and an enduring relevance. We invite you to question old ideas and look anew.",
             blogPost2ImgAlt: "Chess pieces surfing on a vibrant wave of light, illustrating the 'chill chess' concept on Chill Chess Club's blog",
-            blogPost3Title: "Your Path to Online Chess: 5 Easy Steps for a Free Start",
-            blogPost3Excerpt: "Starting online chess is simple. Follow this five-step guide to access free platforms and enjoy the international chess experience quickly.",
+            blogPost3Title: "5 Steps Towards Online Chess: Your Digital and Free Refuge",
+            blogPost3Excerpt: "Digital chess is an ocean of possibilities at your fingertips; to navigate it, five initial, simple, and free moves are all it takes, which this guide unveils.",
             blogPost3ImgAlt: "Laptop displaying an online chess game in a relaxed setting overlooking the sea, for the article on starting to play online at Chill Chess Club",
             blogReadMore: "Read More",
 
@@ -534,14 +536,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const langButtons = document.querySelectorAll('.lang-button');
-    const translatableElements = document.querySelectorAll('[data-lang-key]');
+    // --- Selectors (moved from main_js_complete_with_blog_translations for consistency with user's file structure) ---
+    const langButtons = document.querySelectorAll('.lang-button'); // Assuming this is the correct selector from user's HTML
+    const translatableElements = document.querySelectorAll('[data-lang-key]'); // Corrected to data-lang-key as per user's HTML
     const backToTopButton = document.getElementById('back-to-top-btn');
-    const bodyElement = document.body;
+    const bodyElement = document.body; // Used for fade effect
+    const menuToggle = document.querySelector('.menu-toggle'); // From user's file
+    const navLinksContainer = document.querySelector('.nav-links'); // From user's file, renamed for clarity
+    const contactForm = document.getElementById('contactForm'); // From user's file
+    const formStatus = document.getElementById('form-status'); // From user's file
+    const yearSpan = document.getElementById('current-year'); // From user's file
+    const particlesElement = document.getElementById('particles-js'); // From user's file
 
-    // Function to set the language
+    // Function to set the language (adapted from user's provided main.js)
     const setLanguage = (lang) => {
-        console.log(`Attempting to set language to: ${lang}`); // DEBUG
+        console.log(`Attempting to set language to: ${lang}`);
         if (!translations[lang]) {
             console.error(`Language ${lang} not found in translations.`);
             return;
@@ -552,20 +561,21 @@ document.addEventListener('DOMContentLoaded', () => {
         langButtons.forEach(btn => btn.disabled = true); 
 
         setTimeout(() => {
-            console.log(`Updating elements for language: ${lang}`); // DEBUG
+            console.log(`Updating elements for language: ${lang}`);
             translatableElements.forEach(el => {
-                const keyAttr = el.dataset.langKey;
+                const keyAttr = el.dataset.langKey; // Corrected from el.dataset.langKey to el.dataset.langKey
                 const [key, attribute] = keyAttr.split('|');
 
                 if (translations[lang][key]) {
                     let translation = translations[lang][key];
 
-                    if (key === 'footerCopyright') {
+                    if (key === 'footerCopyright') { // User's key for copyright
                         translation = translation.replace('[YEAR]', new Date().getFullYear());
                     }
 
                     if (attribute) {
                         el.setAttribute(attribute, translation);
+                        // Specific handling for meta descriptions and image alts as in user's original file
                         if (key === 'metaDescription' && attribute === 'content') {
                             const mainMetaDesc = document.querySelector('head > meta[name="description"][data-lang-key="metaDescription|content"]');
                             if (mainMetaDesc) mainMetaDesc.setAttribute('content', translation);
@@ -575,9 +585,9 @@ document.addEventListener('DOMContentLoaded', () => {
                               key === 'courseBeginnerImgAlt' || 
                               key === 'courseIntermediateImgAlt' || 
                               key === 'courseCustomImgAlt' ||
-                              key === 'blogPost1ImgAlt' ||
-                              key === 'blogPost2ImgAlt' ||
-                              key === 'blogPost3ImgAlt') && attribute === 'alt') {
+                              key === 'blogPost1ImgAlt' || // Ensure these are in your translations
+                              key === 'blogPost2ImgAlt' || // Ensure these are in your translations
+                              key === 'blogPost3ImgAlt') && attribute === 'alt') { // Ensure these are in your translations
                             el.setAttribute('alt', translation);
                          }
                          if (key === 'metaDescriptionPrivacy' && attribute === 'content') {
@@ -589,6 +599,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             if (metaDescTerms) metaDescTerms.setAttribute('content', translation);
                          }
                     } else if (
+                        // List of keys that should use innerHTML (from user's file)
                         key === 'courseBeginnerTitle' ||
                         key === 'courseIntermediateTitle' ||
                         key === 'courseCustomTitle' ||
@@ -611,12 +622,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     ) {
                         el.innerHTML = translation; 
                     } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
-                        if (el.id === 'back-to-top-btn') {
+                        if (el.id === 'back-to-top-btn') { // User's key for backToTop
                              el.setAttribute('aria-label', translations[lang]['backToTop'] || 'Back to top');
                              el.setAttribute('title', translations[lang]['backToTop'] || 'Back to top');
                         } else {
-                            el.value = translation;
-                            el.innerHTML = translation; 
+                            el.value = translation; // For input buttons
+                            el.innerHTML = translation; // For button elements
                         }
                     } else if (el.tagName === 'TITLE') { 
                         document.title = translation;
@@ -625,15 +636,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         el.textContent = translation;
                     }
                 } else {
-                    // console.warn(`Translation key "${key}" not found for language "${lang}". Element:`, el); // DEBUG
+                    // console.warn(`Translation key "${key}" not found for language "${lang}". Element:`, el);
                 }
             });
 
             document.documentElement.lang = lang;
-            console.log(`Document language set to: ${document.documentElement.lang}`); // DEBUG
+            console.log(`Document language set to: ${document.documentElement.lang}`);
 
             langButtons.forEach(btn => {
-                if (btn.dataset.lang === lang) {
+                // Assuming lang buttons in user's HTML have data-lang attribute
+                if (btn.dataset.lang === lang) { 
                     btn.classList.add('active');
                     btn.setAttribute('aria-current', 'page');
                 } else {
@@ -652,23 +664,24 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 langButtons.forEach(btn => btn.disabled = false);
             }, 50); 
-            console.log(`Language update to ${lang} complete.`); // DEBUG
+            console.log(`Language update to ${lang} complete.`);
         }, transitionDuration);
     };
 
+    // Function for initial language update (adapted from user's provided main.js)
     const initialUpdateLanguage = (lang) => {
-        console.log(`Initial language update to: ${lang}`); // DEBUG
+        console.log(`Initial language update to: ${lang}`);
         if (!translations[lang]) {
             console.error(`Initial language ${lang} not found.`);
             return;
         }
 
         translatableElements.forEach(el => {
-             const keyAttr = el.dataset.langKey;
+             const keyAttr = el.dataset.langKey; // Corrected
              const [key, attribute] = keyAttr.split('|');
              if (translations[lang][key]) {
                  let translation = translations[lang][key];
-                 if (key === 'footerCopyright') {
+                 if (key === 'footerCopyright') { // User's key
                      translation = translation.replace('[YEAR]', new Date().getFullYear());
                  }
                  if (attribute) {
@@ -696,6 +709,7 @@ document.addEventListener('DOMContentLoaded', () => {
                          if (metaDescTerms) metaDescTerms.setAttribute('content', translation);
                       }
                  } else if (
+                    // List of keys that should use innerHTML (from user's file)
                     key === 'courseBeginnerTitle' ||
                     key === 'courseIntermediateTitle' ||
                     key === 'courseCustomTitle' ||
@@ -718,7 +732,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ) {
                      el.innerHTML = translation; 
                 } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
-                     if (el.id === 'back-to-top-btn') {
+                     if (el.id === 'back-to-top-btn') { // User's key
                           el.setAttribute('aria-label', translations[lang]['backToTop'] || 'Back to top');
                           el.setAttribute('title', translations[lang]['backToTop'] || 'Back to top');
                      } else {
@@ -732,12 +746,13 @@ document.addEventListener('DOMContentLoaded', () => {
                      el.textContent = translation;
                  }
              } else {
-                // console.warn(`Key "${key}" not found for initial language "${lang}". Element:`, el); // DEBUG
+                // console.warn(`Key "${key}" not found for initial language "${lang}". Element:`, el);
              }
         });
         document.documentElement.lang = lang;
         langButtons.forEach(btn => {
-             if (btn.dataset.lang === lang) {
+             // Assuming lang buttons in user's HTML have data-lang attribute
+             if (btn.dataset.lang === lang) { 
                  btn.classList.add('active');
                  btn.setAttribute('aria-current', 'page');
              } else {
@@ -745,9 +760,10 @@ document.addEventListener('DOMContentLoaded', () => {
                  btn.removeAttribute('aria-current');
              }
         });
-        console.log(`Initial language update to ${lang} applied.`); //DEBUG
+        console.log(`Initial language update to ${lang} applied.`);
     };
 
+    // Determine and set initial language (from user's file)
     let preferredLanguage = 'es'; 
      try {
         const savedLang = localStorage.getItem('preferredLanguage');
@@ -762,28 +778,32 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (e) {
         console.warn("Could not read language preference from localStorage. Defaulting to 'es'.");
     }
-    initialUpdateLanguage(preferredLanguage);
+    initialUpdateLanguage(preferredLanguage); // Call initial update
 
+    // Event listener for language buttons (from user's file)
     langButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            console.log(`Language button clicked: ${e.target.dataset.lang}`); // DEBUG
+            console.log(`Language button clicked: ${e.target.dataset.lang}`);
             if (bodyElement.classList.contains('fade-out') || e.target.classList.contains('active')) {
                 return;
             }
-            const selectedLang = e.target.dataset.lang;
+            const selectedLang = e.target.dataset.lang; // Ensure buttons have data-lang attribute
             setLanguage(selectedLang);
         });
     });
     
-    AOS.init({
-        duration: 800, 
-        once: true,     
-        offset: 50,     
-    });
+    // Initialize AOS (from user's file)
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 800, 
+            once: true,     
+            offset: 50,     
+        });
+    }
 
-    const particlesElement = document.getElementById('particles-js');
-    if (particlesElement) { // Only initialize if the #particles-js div exists
-        particlesJS('particles-js', {
+    // Initialize Particles.js (from user's file, with check)
+    if (particlesElement) { 
+        particlesJS('particles-js', { /* User's particlesJS config */
             "particles": {
                 "number": {"value": 80, "density": {"enable": true, "value_area": 800}},
                 "color": {"value": ["#EC4899", "#F97316", "#8B5CF6", "#d4af37"]},
@@ -808,12 +828,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (menuToggle && navLinks) {
+    // Mobile Menu Toggle (from user's file)
+    if (menuToggle && navLinksContainer) {
         menuToggle.addEventListener('click', () => {
-            const isActive = navLinks.classList.toggle('active');
+            const isActive = navLinksContainer.classList.toggle('active');
             menuToggle.setAttribute('aria-expanded', isActive);
             const icon = menuToggle.querySelector('i');
             if (isActive) {
@@ -825,12 +843,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        navLinks.querySelectorAll('a').forEach(link => {
+        navLinksContainer.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 const linkHref = link.getAttribute('href');
-                if (linkHref.startsWith('#') || linkHref.includes('.html')) {
-                    if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
+                if (linkHref.startsWith('#') || linkHref.includes('.html')) { // Close on nav or page link
+                    if (navLinksContainer.classList.contains('active')) {
+                        navLinksContainer.classList.remove('active');
                         menuToggle.setAttribute('aria-expanded', 'false');
                         const icon = menuToggle.querySelector('i');
                         icon.classList.remove('fa-times');
@@ -840,11 +858,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-         document.addEventListener('click', (event) => {
-            if (navLinks.classList.contains('active') &&
-                !navLinks.contains(event.target) && 
+         document.addEventListener('click', (event) => { // Close on outside click
+            if (navLinksContainer.classList.contains('active') &&
+                !navLinksContainer.contains(event.target) && 
                 !menuToggle.contains(event.target)) { 
-                navLinks.classList.remove('active');
+                navLinksContainer.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
                 const icon = menuToggle.querySelector('i');
                 icon.classList.remove('fa-times');
@@ -853,6 +871,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
+    // Smooth Scroll (from user's file)
     document.querySelectorAll('a.scroll-to, .nav-links a[href*="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
@@ -862,8 +881,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const [pathToFile, hash] = href.split('#');
                 const targetId = `#${hash}`;
                 
+                // If link is to a different page (index.html) and has a hash
                 if (pathToFile && pathToFile !== currentPath && pathToFile === 'index.html') {
-                    // Allow default browser navigation to index.html, then jump to hash
+                    // Allow default browser navigation to index.html, browser will handle hash
                     return; 
                 }
 
@@ -882,13 +902,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             behavior: 'smooth'
                         });
 
-                        // Pre-fill contact form subject if applicable (only on index.html or where form exists)
+                        // Pre-fill contact form subject if applicable (from user's file)
                         if (targetId === '#contacto') {
                             const contactFormOnPage = document.getElementById('contactForm');
-                            if (contactFormOnPage) { // Check if contact form is on the current page
+                            if (contactFormOnPage) { 
                                 const subjectValue = this.getAttribute('data-subject');
-                                const subjectSelect = document.getElementById('subject');
-                                const firstInput = document.querySelector('#contactForm #name');
+                                const subjectSelect = document.getElementById('subject'); // Assuming your select has id="subject"
+                                const firstInput = document.querySelector('#contactForm #name'); // Assuming your name input has id="name"
 
                                 if (subjectValue && subjectSelect) {
                                     subjectSelect.value = subjectValue;
@@ -904,9 +924,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    const contactForm = document.getElementById('contactForm');
-    const formStatus = document.getElementById('form-status');
-
+    // Contact Form Simulation (from user's file)
      if (contactForm && formStatus) { 
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault(); 
@@ -932,10 +950,11 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Back to Top Button (from user's file)
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) { 
-                backToTopButton.classList.add('show');
+                backToTopButton.classList.add('show'); // Assuming 'show' class makes it visible
             } else {
                 backToTopButton.classList.remove('show');
             }
@@ -945,7 +964,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-     const yearSpan = document.getElementById('current-year');
+    // Update current year (from user's file)
      if (yearSpan) {
          yearSpan.textContent = new Date().getFullYear();
      }

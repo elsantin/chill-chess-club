@@ -15,11 +15,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
-    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/android-icon-192x192.png">
+<link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#18181B">
 </head>
 <body>
@@ -41,7 +42,7 @@
                         </button>
                     <ul class="nav-links">
                         <li class="mobile-menu-header">
-                            <img src="logo.png" alt="Chill Chess Club Logo" data-lang-key="logoAlt|alt" class="mobile-menu-logo">
+                            <img src="/images/logo.png" alt="Chill Chess Club Logo" data-lang-key="logoAlt|alt" class="mobile-menu-logo">
                         </li>
                         <li><a href="#instructor" data-lang-key="navAbout" class="scroll-to">Sobre Mí</a></li>
                         <li><a href="#cursos" data-lang-key="navCourses" class="scroll-to">Cursos</a></li>
@@ -58,30 +59,30 @@
     </header>
 
     <main>
-        <section id="inicio" class="hero">
-            <div id="particles-js"></div> 
-            <div class="container hero-content-container">
-                <div class="hero-content">
-                    <h1 data-lang-key="heroTitle">Domina el ajedrez con un enfoque inmersivo y personalizado</h1>
-                    <p class="lead" data-lang-key="heroSubtitle">Método exclusivo diseñado para ayudarte a progresar desde principiante hasta nivel intermedio, con instrucción personalizada y asistida por IA.</p>
-                    <div class="hero-cta">
-                        <a href="#contacto" class="btn btn-primary scroll-to" data-lang-key="heroCtaTrial">Solicita tu clase introductoria gratuita</a>
-                        <a href="#metodo" class="btn btn-gradient-border scroll-to" data-lang-key="heroCtaMethod">Descubre mi método</a>
+            <section id="inicio" class="hero">
+                <div id="particles-js"></div> 
+                <div class="container hero-content-container">
+                    <div class="hero-content">
+                        <h1 data-lang-key="heroTitle">Domina el ajedrez con un enfoque inmersivo y personalizado</h1>
+                        <p class="lead" data-lang-key="heroSubtitle">Método exclusivo diseñado para ayudarte a progresar desde principiante hasta nivel intermedio, con instrucción personalizada y asistida por IA.</p>
+                        <div class="hero-cta">
+                            <a href="#contacto" class="btn btn-primary scroll-to" data-lang-key="heroCtaTrial">Solicita tu clase introductoria gratuita</a>
+                            <a href="#metodo" class="btn btn-gradient-border scroll-to" data-lang-key="heroCtaMethod">Descubre mi método</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="instructor" class="about">
-            <div class="container">
-                <h2 data-lang-key="aboutTitle" data-aos="fade-up">Sobre Mí</h2>
+            <section id="instructor" class="about">
+                <div class="container">
+                    <h2 data-lang-key="aboutTitle" data-aos="fade-up">Sobre Mí</h2>
                 <blockquote class="about-quote" data-aos="fade-up" data-aos-delay="50">
                     <p data-lang-key="aboutQuoteText">"El ajedrez es un mar en el cual un mosquito puede beber y un elefante puede bañarse."</p>
                     <cite data-lang-key="aboutQuoteCite">- Proverbio Indio</cite>
                 </blockquote>
                 <div class="about-content">
                     <div class="about-image" data-aos="fade-right" data-aos-delay="100">
-                        <img src="profile.jpg" alt="Foto de perfil artística del instructor jugando ajedrez en la playa" data-lang-key="aboutImageAlt|alt" onerror="this.onerror=null; this.src='https://placehold.co/400x400/3F3F46/f4f4f5?text=Instructor';">
+                        <img src="/images/profile.jpg" alt="Foto de perfil artística del instructor jugando ajedrez en la playa" data-lang-key="aboutImageAlt|alt" onerror="this.onerror=null; this.src='https://placehold.co/400x400/3F3F46/f4f4f5?text=Instructor';">
                     </div>
                     <div class="about-text" data-aos="fade-left" data-aos-delay="200">
                         <h3 data-lang-key="aboutSubtitle">Un enfoque único para el aprendizaje del ajedrez</h3>
@@ -362,81 +363,76 @@
       Explora artículos, consejos y curiosidades del mundo del ajedrez con nuestro toque "chill".
     </p>
     <div class="blog-grid">
-      <!-- Blog 1 -->
-      <article class="blog-post-card" data-aos="fade-up" data-aos-delay="100">
+    <article class="blog-post-card" data-aos="fade-up" data-aos-delay="100">
         <div class="blog-post-image">
-          <a href="blog/blog-1-ecos-del-tablero.html">
-            <img src="images/blog-1-ecos-del-tablero.jpg"
-                 alt="Portada del blog Ecos del Tablero"
-                 data-lang-key="blogPost1ImgAlt|alt"
-                 onerror="this.onerror=null; this.src='https://placehold.co/400x250/EC4899/18181B?text=Ecos+del+Tablero';">
-          </a>
+            <a href="blog/blog-1-ecos-del-tablero.html">
+                <img src="images/blog-1-ecos-del-tablero.jpg"
+                     alt="Portada del blog Ecos del Tablero"
+                     data-lang-key="blogPost1ImgAlt|alt" onerror="this.onerror=null; this.src='https://placehold.co/400x250/EC4899/18181B?text=Ecos+del+Tablero';">
+            </a>
         </div>
         <div class="blog-post-content">
-          <h3 class="blog-post-title">
-            <a href="blog/blog-1-ecos-del-tablero.html" data-lang-key="blogPost1Title">
-              Ecos del Tablero: Resonancias y Lecciones de una Partida
+            <h3 class="blog-post-title">
+                <a href="blog/blog-1-ecos-del-tablero.html" data-lang-key="blogPost1Title">
+                    Ecos del Tablero: Una Crónica del Ajedrez y su Alma Humana
+                </a>
+            </h3>
+            <p class="blog-post-excerpt" data-lang-key="blogPost1Excerpt">
+                Sesenta y cuatro escaques: un antiguo espejo donde estrategia y pasión se cruzan, reflejando la aventura del intelecto humano. Una historia que, como el juego mismo, siempre continúa.
+            </p>
+            <a href="blog/blog-1-ecos-del-tablero.html" class="btn btn-gradient-border blog-read-more" data-lang-key="blogReadMore">
+                Leer Más
             </a>
-          </h3>
-          <p class="blog-post-excerpt" data-lang-key="blogPost1Excerpt">
-            Descubre cómo cada partida deja huellas en tu juego y en tu forma de pensar. Reflexiones y aprendizajes para todos los niveles.
-          </p>
-          <a href="blog/blog-1-ecos-del-tablero.html" class="btn btn-gradient-border blog-read-more" data-lang-key="blogReadMore">
-            Leer Más
-          </a>
         </div>
-      </article>
-      <!-- Blog 2 -->
-      <article class="blog-post-card" data-aos="fade-up" data-aos-delay="200">
+    </article>
+
+    <article class="blog-post-card" data-aos="fade-up" data-aos-delay="200">
         <div class="blog-post-image">
-          <a href="blog/blog-2-redescubre-vibrante-esencia.html">
-            <img src="images/blog-2-redescubre-vibrante-esencia.jpg"
-                 alt="Portada del blog Redescubre la Vibrante Esencia"
-                 data-lang-key="blogPost2ImgAlt|alt"
-                 onerror="this.onerror=null; this.src='https://placehold.co/400x250/F97316/18181B?text=Vibrante+Esencia';">
-          </a>
+            <a href="blog/blog-2-redescubre-vibrante-esencia.html">
+                <img src="images/blog-2-redescubre-vibrante-esencia.jpg"
+                     alt="Portada del blog Redescubre la Vibrante Esencia"
+                     data-lang-key="blogPost2ImgAlt|alt" onerror="this.onerror=null; this.src='https://placehold.co/400x250/F97316/18181B?text=Vibrante+Esencia';">
+            </a>
         </div>
         <div class="blog-post-content">
-          <h3 class="blog-post-title">
-            <a href="blog/blog-2-redescubre-vibrante-esencia.html" data-lang-key="blogPost2Title">
-              Redescubre la Vibrante Esencia del Ajedrez
+            <h3 class="blog-post-title">
+                <a href="blog/blog-2-redescubre-vibrante-esencia.html" data-lang-key="blogPost2Title">
+                    Ajedrez: Redescubre su Vibrante Esencia, Olvida lo que Creías Saber
+                </a>
+            </h3>
+            <p class="blog-post-excerpt" data-lang-key="blogPost2Excerpt">
+                Más allá de la imagen de genios serenos, el ajedrez revela una intensidad oculta, una belleza singular y una relevancia perdurable. Le invitamos a cuestionar viejas ideas y observar de nuevo.
+            </p>
+            <a href="blog/blog-2-redescubre-vibrante-esencia.html" class="btn btn-gradient-border blog-read-more" data-lang-key="blogReadMore">
+                Leer Más
             </a>
-          </h3>
-          <p class="blog-post-excerpt" data-lang-key="blogPost2Excerpt">
-            El ajedrez es mucho más que un juego lento: es creatividad, emoción y desafío. Te invitamos a verlo con nuevos ojos.
-          </p>
-          <a href="blog/blog-2-redescubre-vibrante-esencia.html" class="btn btn-gradient-border blog-read-more" data-lang-key="blogReadMore">
-            Leer Más
-          </a>
         </div>
-      </article>
-      <!-- Blog 3 -->
-      <article class="blog-post-card" data-aos="fade-up" data-aos-delay="300">
+    </article>
+
+    <article class="blog-post-card" data-aos="fade-up" data-aos-delay="300">
         <div class="blog-post-image">
-          <a href="blog/blog-3-5-pasos-hacia-ajedrez-online.html">
-            <img src="images/blog-3-5-pasos-hacia-ajedrez-online.jpg"
-                 alt="Portada del blog 5 Pasos hacia el Ajedrez Online"
-                 data-lang-key="blogPost3ImgAlt|alt"
-                 onerror="this.onerror=null; this.src='https://placehold.co/400x250/8B5CF6/18181B?text=Jugar+Online';">
-          </a>
+            <a href="blog/blog-3-5-pasos-hacia-ajedrez-online.html">
+                <img src="images/blog-3-5-pasos-hacia-ajedrez-online.jpg"
+                     alt="Portada del blog 5 Pasos hacia el Ajedrez Online"
+                     data-lang-key="blogPost3ImgAlt|alt" onerror="this.onerror=null; this.src='https://placehold.co/400x250/8B5CF6/18181B?text=Jugar+Online';">
+            </a>
         </div>
         <div class="blog-post-content">
-          <h3 class="blog-post-title">
-            <a href="blog/blog-3-5-pasos-hacia-ajedrez-online.html" data-lang-key="blogPost3Title">
-              5 Pasos para Empezar a Jugar Ajedrez Online
+            <h3 class="blog-post-title">
+                <a href="blog/blog-3-5-pasos-hacia-ajedrez-online.html" data-lang-key="blogPost3Title">
+                    5 Pasos Hacia el Ajedrez Online: Tu Refugio Digital y Gratuito
+                </a>
+            </h3>
+            <p class="blog-post-excerpt" data-lang-key="blogPost3Excerpt">
+                El ajedrez digital es un océano de posibilidades al alcance de tu mano; para navegarlo, bastan cinco movimientos iniciales, sencillos y gratuitos, que esta guía te desvela.
+            </p>
+            <a href="blog/blog-3-5-pasos-hacia-ajedrez-online.html" class="btn btn-gradient-border blog-read-more" data-lang-key="blogReadMore">
+                Leer Más
             </a>
-          </h3>
-          <p class="blog-post-excerpt" data-lang-key="blogPost3Excerpt">
-            Una guía sencilla para dar tus primeros pasos en el ajedrez online, desde crear tu cuenta hasta jugar tu primera partida.
-          </p>
-          <a href="blog/blog-3-5-pasos-hacia-ajedrez-online.html" class="btn btn-gradient-border blog-read-more" data-lang-key="blogReadMore">
-            Leer Más
-          </a>
         </div>
-      </article>
-    </div>
-  </div>
-</section>
+    </article>
+</div>
+
         <section id="faq" class="faq-section">
             <div class="container">
                 <h2 data-lang-key="faqTitle" data-aos="fade-up">Preguntas Frecuentes</h2>
@@ -563,9 +559,9 @@
                     <div class="payment-methods">
                         <span data-lang-key="footerPaymentText">Pagos Seguros con:</span>
                         <div class="payment-icons">
-                            <img src="paypal.png" alt="PayPal" title="PayPal" class="payment-logo">
-                            <img src="payoneer.png" alt="Payoneer" title="Payoneer" class="payment-logo">
-                            <img src="binance.png" alt="Binance" title="Binance" class="payment-logo">
+                            <img src="/icons/paypal.png" alt="PayPal" title="PayPal" class="payment-logo">
+                            <img src="/icons/payoneer.png" alt="Payoneer" title="Payoneer" class="payment-logo">
+                            <img src="/icons/binance.png" alt="Binance" title="Binance" class="payment-logo">
                         </div>
                     </div>
                 </div>
