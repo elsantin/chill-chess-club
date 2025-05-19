@@ -860,33 +860,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 const [pathToFile, hash] = href.split('#');
                 const targetId = `#${hash}`;
                 
-                // If the link points to a different file (e.g. from a blog post back to index.html#contact)
-                // let the default browser navigation handle it.
                 if (pathToFile && pathToFile !== currentPath && pathToFile === 'index.html') {
-                    // This case is for when on a subpage (e.g. blog/article.html) and linking to index.html#section
-                    // The default behavior of the link (e.g. <a href="../index.html#contact">) should work.
-                    // So, we don't preventDefault here if pathToFile is present and different from currentPath.
-                    // However, if pathToFile is 'index.html' and currentPath is also 'index.html', it's a same-page link.
-                    return; // Allow default navigation if it's to index.html from another page
+                    return; 
                 }
 
-                // Handle same-page navigation
                 if (!pathToFile || pathToFile === currentPath) {
-                    e.preventDefault(); // Prevent default only for same-page hash links
+                    e.preventDefault(); 
                     const targetElement = document.querySelector(targetId);
 
                     if (targetElement) {
                         const baseHeaderHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue(window.innerWidth <= 992 ? '--header-height-mobile' : '--header-height-desktop').trim() || '65');
-                        
-                        let extraOffset = 15; // Offset general por defecto
-
+                        let extraOffset = 15; 
                         if (targetId === '#contacto') {
                             extraOffset = 20; 
-                            // console.log('--- DEBUG SCROLL A #contacto ---');
-                            // console.log('Target Element:', targetElement);
-                            // console.log('Target Element offsetTop:', targetElement.offsetTop);
-                            // console.log('Base Header Height (CSS var):', baseHeaderHeight);
-                            // console.log('Extra Offset específico para #contacto:', extraOffset);
                         }
                         
                         const headerOffsetTotal = baseHeaderHeight + extraOffset;
@@ -894,32 +880,29 @@ document.addEventListener('DOMContentLoaded', () => {
                         const currentScrollY = window.pageYOffset;
                         const offsetPosition = elementPosition + currentScrollY - headerOffsetTotal;
 
-                        // if (targetId === '#contacto') { // Keep logs commented unless debugging
-                        //     console.log('Total Header Offset (base + extra):', headerOffsetTotal);
-                        //     console.log('Element Position (getBoundingClientRect().top):', elementPosition);
-                        //     console.log('Current window.pageYOffset:', currentScrollY);
-                        //     console.log('Calculated Scroll Position (offsetPosition):', offsetPosition);
-                        // }
-
                         window.scrollTo({
                             top: offsetPosition,
                             behavior: 'smooth'
                         });
 
-                        // Pre-fill subject if scrolling to contact
+                        // After smooth scroll, explicitly update scrollspy
+                        // Use a timeout to allow the scroll animation to (mostly) finish
+                        setTimeout(() => {
+                            // Manually set the active class on the clicked link first
+                            navItemsForSpy.forEach(item => item.classList.remove('nav-active'));
+                            this.classList.add('nav-active'); 
+                            // Then call handleScrollSpy to confirm or correct based on final position
+                            handleScrollSpy(); 
+                        }, 700); // Adjust timeout if needed, 700ms is a general estimate for smooth scroll
+
                         if (targetId === '#contacto') {
                             const contactFormOnPage = document.getElementById('contactForm');
                             if (contactFormOnPage) { 
                                 const subjectValue = this.getAttribute('data-subject');
                                 const subjectSelect = document.getElementById('subject'); 
-                                // const firstInput = document.querySelector('#contactForm #name'); // Focus was causing issues
-
                                 if (subjectValue && subjectSelect) {
                                     subjectSelect.value = subjectValue;
                                 }
-                                // if(firstInput) { // Focus was causing issues
-                                    // setTimeout(() => firstInput.focus(), 300); 
-                                // }
                             }
                         }
                     } else {
@@ -941,10 +924,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const docHeight = document.documentElement.scrollHeight;
         const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue(window.innerWidth <= 992 ? '--header-height-mobile' : '--header-height-desktop').trim() || '65');
         
-        // Point in the viewport (from the top) to check against section tops.
-        // A common choice is slightly below the fixed header.
-        // Let's try making this point higher up (closer to the header) to make sections activate sooner.
-        const activationPointInViewport = headerHeight + 1; // Only 1px below the header. Adjust as needed.
+        const activationPointInViewport = headerHeight + 1; // 1px buffer below the header
 
         // --- DEBUG LOGS (Uncomment to see values) ---
         // console.clear(); 
@@ -980,7 +960,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // If no section was found by the loop (e.g., we are above the first "real" section)
         // and we are very close to the top, activate 'inicio' if it's the first.
         else if (currentSectionId === '' && scrollY < (sectionsForSpy[0]?.offsetTop || headerHeight + 10)) { 
-             // If currentSectionId is still empty and we're near the top (below where the first section starts)
             if (sectionsForSpy.length > 0 && sectionsForSpy[0].id === 'inicio') {
                 currentSectionId = 'inicio';
                 // console.log(`Near top, forced to: ${currentSectionId}`);
