@@ -202,118 +202,6 @@
 
   section {
     padding: var(--spacing-xl) 0;
-    overflow: hidden;
-  }
-
-  /* ESTILOS DE HEADER Y NAVEGACIÓN (PARA PÁGINAS QUE SÍ LO USAN, COMO INDEX.HTML) */
-  /* Asegúrate de que este header NO esté en tus HTML de blog */
-  header {
-    padding: var(--spacing-xs) 0; 
-    position: fixed; 
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000; 
-    background-color: rgba(24, 24, 27, 0.85); 
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, padding 0.3s ease;
-  }
-  .header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md); 
-    width: 100%;
-    min-height: var(--header-height-mobile); 
-  }
-   @media (min-width: 993px) {
-    .header-container {
-      min-height: var(--header-height-desktop);
-    }
-  }
-  .logo-link {
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      align-items: center;
-      gap: calc(var(--spacing-sm) * 0.8); 
-      flex-shrink: 1; 
-      min-width: 0; 
-      overflow: hidden; 
-  }
-  .logo-link #site-logo-img {
-    height: 55px; 
-    width: auto;
-    display: block;
-    transition: transform 0.3s ease;
-    border: none; 
-    box-shadow: none;
-    outline: none;
-    flex-shrink: 0; 
-  }
-  .logo-link .site-name-text {
-    font-family: var(--font-title);
-    font-size: 1.80rem; 
-    font-weight: 800;
-    color: var(--color-text-light);
-    text-shadow: 0 0 5px rgba(236, 72, 153, 0.3),
-                0 0 8px rgba(249, 115, 22, 0.2);
-    letter-spacing: 1px; 
-    white-space: nowrap; 
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-    overflow: hidden;
-    text-overflow: ellipsis; 
-  }
-  .header-controls-right { 
-      display: flex;
-      align-items: center;
-      gap: var(--spacing-sm); 
-      flex-shrink: 0; 
-  }
-  .main-nav { 
-    display: flex; 
-    align-items: center;
-    flex-shrink: 0; 
-  }
-  .nav-links { 
-    display: none; 
-    list-style: none;
-  }
-  @media (min-width: 993px) { 
-      .nav-links { display: flex; align-items: center; position: static; transform: none; visibility: visible; width: auto; height: auto; background: transparent; box-shadow: none; padding-top: 0;}
-      .nav-links li { margin: 0 var(--spacing-sm); }
-      .nav-links li.mobile-menu-header { display: none; }
-      .nav-links a { color: var(--color-text-light); font-weight: 500; position: relative; padding: 5px 0; font-size: 0.95rem; transition: color var(--transition-speed) ease, transform var(--transition-speed) ease; cursor: pointer; display: inline-block; border-bottom: none; text-align: left; }
-      .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--color-modern-accent-1); transition: width var(--transition-speed) ease; display: block; }
-      .nav-links a:hover, .nav-links a:focus { color: var(--color-modern-accent-1); transform: translateY(-2px); background-color: transparent; }
-      .nav-links a:hover::after, .nav-links a:focus::after { width: 100%; }
-      .menu-toggle { display: none; }
-  }
-  .menu-toggle { background: none; border: none; font-size: 1.5rem; color: var(--color-text-light); cursor: pointer; padding: 8px; z-index: 1002; position: relative; width: 40px; height: 40px; -webkit-tap-highlight-color: transparent; user-select: none; }
-  .menu-toggle .fa-bars, .menu-toggle .fa-times { transition: transform 0.3s ease-in-out, opacity 0.2s ease; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; }
-  .menu-toggle .fa-times { opacity: 0; transform: translate(-50%, -50%) rotate(-45deg) scale(0.8); }
-  .menu-toggle[aria-expanded="true"] .fa-bars { opacity: 0; transform: translate(-50%, -50%) rotate(45deg) scale(0.8); }
-  .menu-toggle[aria-expanded="true"] .fa-times { opacity: 1; transform: translate(-50%, -50%) rotate(0deg) scale(1); }
-  .language-selector { display: flex; align-items: center; gap: 5px; z-index: 1001; position: fixed; top: var(--spacing-sm); right: var(--spacing-md); }
-  .lang-button { background: none; border: none; padding: 4px 8px; cursor: pointer; color: var(--color-text-medium); font-size: 0.9rem; font-weight: 700; border-radius: 3px; transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, opacity var(--transition-speed) ease; border-bottom: 2px solid transparent; }
-  .lang-button:hover { color: var(--color-text-light); }
-  .lang-button.active { color: var(--color-modern-accent-1); border-bottom-color: var(--color-modern-accent-1); cursor: default; }
-  .lang-button:disabled {  cursor: not-allowed; opacity: 0.5; }
-
-  /*------------------------------------*\
-    #LAYOUT Y HELPERS
-  \*------------------------------------*/
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
-  }
-
-  section {
-    padding: var(--spacing-xl) 0;
     overflow: hidden; 
   }
 
@@ -326,7 +214,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1000; /* Asegurar que el header principal esté por encima de otros contenidos */
+    z-index: 1000; 
     background-color: rgba(24, 24, 27, 0.85); 
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
@@ -1222,6 +1110,7 @@
     background-color: rgba(24, 24, 27, 0.6);
     border-radius: 12px;
     border-top: 2px solid var(--color-modern-accent-1);
+    margin-bottom: var(--spacing-xl); /* AÑADIDO: Margen inferior para separar del siguiente título */
   }
   .benefits-cta p {
     color: var(--color-text-medium);
@@ -2139,7 +2028,7 @@
   }
 
   .faq-question::after { 
-    content: '\f078'; 
+    content: '\\f078'; 
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     position: absolute;
@@ -2259,7 +2148,6 @@
       color: var(--color-text-medium);
   }
 
-CSS
 
   /*------------------------------------*\
     #BLOG POST PAGE STYLES (Diseño con "barra de título", sin header principal)
@@ -2276,25 +2164,22 @@ CSS
       margin-top: var(--spacing-xl); /* Espacio desde el tope de la ventana */
       margin-bottom: var(--spacing-xl); 
       padding: 0; 
-      /* background-color ya está en body.blog-page-body */
   }
 
-  /* El .container DENTRO de .blog-post-page es la "barra de título" y contenido */
   .blog-post-page .container {
       max-width: 850px; 
       margin-left: auto; 
       margin-right: auto; 
-      background-color: var(--color-dark-bg); /* Fondo oscuro para la barra/panel */
-      padding: var(--spacing-md); /* Padding interno para el contenido de la barra */
+      background-color: var(--color-dark-bg); 
+      padding: var(--spacing-md); 
       border-radius: var(--border-radius-lg); 
       box-shadow: 0 8px 25px rgba(0,0,0,0.25); 
       border: 1px solid var(--color-modern-accent-1); 
   }
 
-  /* Encabezado del post (título y metadatos) DENTRO de .container */
   .blog-post-page .post-header { 
-      padding-top: var(--spacing-sm); /* Espacio arriba del título DENTRO de la barra */
-      margin-bottom: var(--spacing-md); /* Espacio después de la metainformación, ANTES de la imagen */
+      padding-top: var(--spacing-sm); 
+      margin-bottom: var(--spacing-md); 
       text-align: center;
   }
 
@@ -2318,21 +2203,15 @@ CSS
       margin: 0 10px;
   }
 
-  /* Imagen destacada, DESPUÉS del .post-header, pero DENTRO del .container */
   .blog-post-page .post-image-featured {
       width: 100%;
       max-height: 450px; 
       object-fit: cover; 
       border-radius: var(--border-radius-md);
-      margin-top: 0; /* El .post-header ya tiene margin-bottom */
+      margin-top: 0; 
       margin-bottom: var(--spacing-lg); 
       border: 1px solid var(--color-background-light); 
       display: block; 
-  }
-
-  /* Contenido textual del post, DENTRO del .container */
-  .blog-post-page .post-content {
-    /* No necesita padding-top si el .post-image-featured ya tiene margin-bottom */
   }
 
   .blog-post-page .post-content h2 {
@@ -2357,12 +2236,10 @@ CSS
       text-align: left; 
   }
 
-  /* Botón "Volver al Blog", DENTRO del .container */
   .blog-post-page .back-to-blog {
       display: block;
       text-align: center;
       margin-top: var(--spacing-xl);
-      /* margin-bottom: var(--spacing-md); /* El padding del .container ya da espacio abajo */
   }
 
   .blog-post-page .back-to-blog a {
@@ -2380,17 +2257,16 @@ CSS
       color: var(--color-text-light);
   }
 
-  /* Media Query para móviles (páginas de blog sin header principal) */
   @media (max-width: 992px) {
       .blog-post-page {
-          margin-top: var(--spacing-lg); /* Menor margen superior en móviles */
+          margin-top: var(--spacing-lg); 
           margin-bottom: var(--spacing-lg);
       }
       .blog-post-page .container {
-          padding: var(--spacing-sm); /* Menor padding interno para la barra en móviles */
-          margin-left: var(--spacing-sm); /* Para que no pegue a los bordes */
+          padding: var(--spacing-sm); 
+          margin-left: var(--spacing-sm); 
           margin-right: var(--spacing-sm);
-          width: auto; /* Para que ocupe el ancho disponible menos los márgenes */
+          width: auto; 
       }
       .blog-post-page .post-header h1 {
         font-size: clamp(1.8rem, 5vw, 2.5rem); 
@@ -2400,52 +2276,8 @@ CSS
       }
   }
 
-/* Fondos específicos si son diferentes */
-.blog-post-page {
-    background-color: var(--color-dark-bg-secondary);
-}
-.content-page-section { 
-    background-color: var(--color-dark); 
-}
-.legal-content-section { 
-    background-color: var(--color-dark); 
-}
-
-/* Comentamos la sección móvil de estas reglas por ahora */
-/*
-@media (max-width: 992px) {
-    .blog-post-page,
-    .content-page-section, 
-    .legal-content-section {
-        margin-top: var(--spacing-xl); 
-    }
-
-    .blog-post-page .post-header {
-      padding-top: calc(var(--spacing-sm) + var(--spacing-xs)); 
-    }
-    .blog-post-page .post-header h1 {
-      font-size: clamp(1.8rem, 4.5vw, 2.5rem); 
-    }
-    .blog-post-page .post-image-featured {
-        margin-top: var(--spacing-xs); 
-    }
-}
-
-  /*------------------------------------*\
-  #GLOBAL BODY PADDING & CONTENT MARGINS FOR FIXED HEADER
-\*------------------------------------*/
 body.blog-page-body, 
 body.content-page-body,
 body.legal-page {
-    padding-top: var(--header-height-desktop); /* Reserva espacio para el header fijo */
+    padding-top: var(--header-height-desktop); 
 }
-
-/* Comentamos la versión móvil por ahora para simplificar */
-/* @media (max-width: 992px) {
-    body.blog-page-body,
-    body.content-page-body,
-    body.legal-page {
-        padding-top: var(--header-height-mobile); 
-    }
-} */
-

@@ -871,58 +871,63 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Smooth Scroll (from user's file)
-    document.querySelectorAll('a.scroll-to, .nav-links a[href*="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            const currentPath = window.location.pathname.split("/").pop() || "index.html"; 
+    // Smooth Scroll
+document.querySelectorAll('a.scroll-to, .nav-links a[href*="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        const currentPath = window.location.pathname.split("/").pop() || "index.html"; 
 
-            if (href && href.includes('#')) {
-                const [pathToFile, hash] = href.split('#');
-                const targetId = `#${hash}`;
-                
-                // If link is to a different page (index.html) and has a hash
-                if (pathToFile && pathToFile !== currentPath && pathToFile === 'index.html') {
-                    // Allow default browser navigation to index.html, browser will handle hash
-                    return; 
-                }
+        if (href && href.includes('#')) {
+            const [pathToFile, hash] = href.split('#');
+            const targetId = `#${hash}`;
+            
+            if (!pathToFile || pathToFile === currentPath) {
+                e.preventDefault();
+                const targetElement = document.querySelector(targetId);
 
-                // If the link is to a section on the current page
-                if (!pathToFile || pathToFile === currentPath) {
-                    e.preventDefault();
-                    const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const baseHeaderHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue(window.innerWidth <= 992 ? '--header-height-mobile' : '--header-height-desktop').trim() || '65');
+                    
+                    let extraOffset = 15; // Offset general que parece funcionar para otras secciones
 
-                    if (targetElement) {
-                        const headerOffset = parseInt(getComputedStyle(document.documentElement).getPropertyValue(window.innerWidth <= 992 ? '--header-height-mobile' : '--header-height-desktop') || '65') + 10;
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    // Ajuste específico para la sección de contacto
+                    if (targetId === '#contacto') {
+                        extraOffset = 0; // O un valor más pequeño, ej. 5 o -5. Necesitarás experimentar.
+                                         // Si se pasa, prueba con 0 o un valor negativo pequeño.
+                                         // Si aún no llega, prueba con un valor positivo pequeño.
+                    }
+                    
+                    const headerOffset = baseHeaderHeight + extraOffset;
+                    
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
 
-                        // Pre-fill contact form subject if applicable (from user's file)
-                        if (targetId === '#contacto') {
-                            const contactFormOnPage = document.getElementById('contactForm');
-                            if (contactFormOnPage) { 
-                                const subjectValue = this.getAttribute('data-subject');
-                                const subjectSelect = document.getElementById('subject'); // Assuming your select has id="subject"
-                                const firstInput = document.querySelector('#contactForm #name'); // Assuming your name input has id="name"
+                    // Pre-fill contact form subject if applicable
+                    if (targetId === '#contacto') {
+                        const contactFormOnPage = document.getElementById('contactForm');
+                        if (contactFormOnPage) { 
+                            const subjectValue = this.getAttribute('data-subject');
+                            const subjectSelect = document.getElementById('subject'); 
+                            const firstInput = document.querySelector('#contactForm #name'); 
 
-                                if (subjectValue && subjectSelect) {
-                                    subjectSelect.value = subjectValue;
-                                }
-                                if(firstInput) { 
-                                    setTimeout(() => firstInput.focus(), 300); 
-                                }
+                            if (subjectValue && subjectSelect) {
+                                subjectSelect.value = subjectValue;
+                            }
+                            if(firstInput) { 
+                                setTimeout(() => firstInput.focus(), 300); 
                             }
                         }
                     }
                 }
             }
-        });
+        }
     });
+});
 
     // Contact Form Simulation (from user's file)
      if (contactForm && formStatus) { 
