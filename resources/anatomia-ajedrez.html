@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-key="pageTitleRecursoAnatomia">Anatomía del Ajedrez: Piezas, Fases y Valor - Chill Chess Club</title>
+    <meta name="description" content="Una mirada al flujo de la partida de ajedrez, desde la apertura hasta el final, y cómo el valor y las características de cada pieza definen tu estrategia." data-translate-key="metaDescriptionRecursoAnatomia|content">
+
+    <link rel="alternate" hreflang="es" href="anatomia-ajedrez.html" />
+    <link rel="alternate" hreflang="en" href="anatomia-ajedrez.html" />
+    <link rel="alternate" hreflang="x-default" href="anatomia-ajedrez.html" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icons/android-icon-192x192.png">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#18181B">
+
+    <style>
+      /* Estilos CSS integrados (basados en blog-1-ecos-del-tablero.html) */
+      :root {
+        --color-dark: #18181B;
+        --color-background-medium: #27272A;
+        --color-background-card: #3F3F46;
+        --color-primary-accent: #6a102a; 
+        --color-secondary-accent: #d4af37; 
+        --color-modern-accent-1: #EC4899; /* Rosa Moderno */
+        --color-modern-accent-1-rgb: 236, 72, 153;
+        --color-modern-accent-2: #F97316; /* Naranja Moderno */
+        --color-modern-accent-2-rgb: 249, 115, 22;
+        --color-modern-accent-3: #8B5CF6; /* Púrpura Moderno */
+        --color-modern-accent-3-rgb: 139, 92, 246;
+        --title-gradient-color-1: var(--color-modern-accent-3); 
+        --title-gradient-color-2: var(--color-modern-accent-1); 
+        --title-gradient-color-3: var(--color-modern-accent-2); 
+        --color-text-light: #f4f4f5;    
+        --color-text-medium: #a1a1aa;   
+        --color-text-dark: #18181B; 
+        --color-text-light-rgb: 244, 244, 245; 
+        --color-dark-bg: #1a1a1d; 
+        --color-dark-bg-secondary: #222225; 
+        --border-radius-sm: 4px;
+        --border-radius-md: 8px;
+        --border-radius-lg: 12px;
+        --font-title: 'Playfair Display', serif;
+        --font-body: 'Roboto', sans-serif;
+        --spacing-xs: 0.5rem;
+        --spacing-sm: 1rem;
+        --spacing-md: 2rem;
+        --spacing-lg: 4rem;
+        --spacing-xl: 6rem;
+        --transition-speed: 0.3s;
+        --lang-transition-speed: 0.25s;
+        --gradient-container-border-modern: linear-gradient(145deg, var(--color-modern-accent-3), var(--color-modern-accent-1), var(--color-modern-accent-2));
+        --animated-gradient-colors: var(--color-modern-accent-3), var(--color-modern-accent-1), var(--color-modern-accent-2), var(--color-modern-accent-3);
+        --back-to-top-gradient: linear-gradient(135deg, var(--color-modern-accent-1) 0%, var(--color-modern-accent-2) 70%, var(--color-modern-accent-1) 100%);
+        --arrow-nav-gradient: linear-gradient(135deg, var(--color-modern-accent-3), var(--color-modern-accent-1), var(--color-modern-accent-2), var(--color-modern-accent-3));
+      }
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: var(--font-body); line-height: 1.7; color: var(--color-text-light);
+        background-color: var(--color-dark-bg-secondary); 
+        min-height: 100vh; 
+        font-size: 16px;
+        overflow-x: hidden; opacity: 1; transition: opacity var(--lang-transition-speed) ease-in-out;
+        cursor: default; 
+        display: flex; 
+        flex-direction: column; 
+      }
+      main.blog-post-page { 
+        flex-grow: 1; 
+      }
+      body.fade-out { opacity: 0; }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-title); margin-bottom: var(--spacing-sm); color: var(--color-text-light); 
+        font-weight: 700; letter-spacing: 0.5px; line-height: 1.3;
+      }
+      p { 
+        margin-bottom: var(--spacing-md); 
+        max-width: 70ch; 
+        color: var(--color-text-light); 
+      }
+      a { color: var(--color-secondary-accent); text-decoration: none; transition: color var(--transition-speed) ease; }
+      a:hover, a:focus { color: var(--color-modern-accent-1); }
+      .container { max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: var(--spacing-md); padding-right: var(--spacing-md); }
+      @media (max-width: 768px) { .container { padding-left: var(--spacing-sm); padding-right: var(--spacing-sm); } }
+      
+      .blog-fixed-logo-link {
+        position: fixed; top: 20px; left: 20px; z-index: 1050; display: block;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: var(--border-radius-sm); 
+      }
+      .blog-fixed-logo-link img { 
+        height: 48px; width: auto; display: block; border-radius: var(--border-radius-sm); 
+      }
+      .blog-fixed-logo-link:hover { transform: scale(1.08); box-shadow: 0 0 15px rgba(var(--color-modern-accent-1-rgb), 0.5); }
+
+      .language-selector {
+        display: flex; align-items: center; gap: 5px; position: fixed; 
+        top: var(--spacing-sm); right: var(--spacing-md); z-index: 1020; 
+        background-color: rgba(39, 39, 42, 0.7); padding: var(--spacing-xs) var(--spacing-sm);
+        border-radius: var(--border-radius-md); backdrop-filter: blur(5px);
+      }
+      .lang-button {
+        background: none; border: none; padding: 4px 8px; cursor: pointer; color: var(--color-text-medium);
+        font-size: 0.9rem; font-weight: 700; border-radius: var(--border-radius-sm);
+        transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, opacity var(--transition-speed) ease;
+        border-bottom: 2px solid transparent;
+      }
+      .lang-button:hover { color: var(--color-text-light); }
+      .lang-button.active { color: var(--color-modern-accent-1); border-bottom-color: var(--color-modern-accent-1); cursor: default; }
+      .lang-button:disabled { cursor: not-allowed; opacity: 0.5; }
+      .language-selector span { color: var(--color-text-medium); }
+      body.blog-page-body { padding-top: 0; } 
+      body.blog-page-body > header { display: none !important; } 
+      
+      .blog-post-page { 
+          margin-top: var(--spacing-xl); 
+          margin-bottom: var(--spacing-xl); 
+          padding: 0; 
+      }
+      .post-container-inner { 
+          max-width: 900px; 
+          margin-left: auto; margin-right: auto; background-color: var(--color-dark-bg); 
+          padding: var(--spacing-md); border-radius: var(--border-radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+          border: 2px solid transparent; background-clip: padding-box; position: relative; 
+      }
+      .post-container-inner::before { 
+        content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1; margin: -2px; border-radius: inherit; 
+        background: var(--gradient-container-border-modern); 
+      }
+      .post-header { 
+          padding-top: var(--spacing-sm); 
+          margin-bottom: var(--spacing-md); 
+          text-align: center; 
+      }
+      @keyframes titleGradientAnimation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+      .post-header h1 { 
+          margin-top: 0; margin-bottom: var(--spacing-sm); font-size: clamp(2rem, 4.5vw, 2.8rem); 
+          font-weight: 700; font-family: var(--font-title); padding-bottom: 5px; line-height: 1.2;
+          background-image: linear-gradient(135deg, var(--title-gradient-color-1), var(--title-gradient-color-2), var(--title-gradient-color-3), var(--title-gradient-color-1));
+          background-size: 300% 300%; -webkit-background-clip: text; background-clip: text;
+          color: transparent; animation: titleGradientAnimation 12s ease infinite; 
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; 
+      }
+      .post-header h1:hover { transform: scale(1.02); }
+      
+      .post-content h2, .post-content h3 { 
+          font-size: clamp(1.5rem, 3.5vw, 2rem); 
+          margin-top: var(--spacing-xl); 
+          margin-bottom: var(--spacing-md); 
+          text-align: left; 
+          padding-bottom: var(--spacing-sm); 
+          border-bottom: 2px solid var(--color-modern-accent-2); 
+          color: var(--color-text-light); 
+          font-family: var(--font-title);
+      }
+      .post-content h3 { 
+          font-size: clamp(1.3rem, 3vw, 1.8rem);
+          border-bottom-color: var(--color-modern-accent-3); 
+      }
+      .post-content h2::after, .post-content h3::after { display:none; } 
+      .post-content p { margin-bottom: var(--spacing-md); line-height: 1.8; color: var(--color-text-light); font-size: 1.05rem; text-align: left; max-width: none; }
+      .post-content ul { list-style-position: outside; padding-left: 20px; margin-bottom: var(--spacing-md); }
+      .post-content ul li { margin-bottom: var(--spacing-xs); }
+      .post-content ul ul { margin-top: var(--spacing-xs); padding-left: var(--spacing-md); }
+      .post-content strong { color: var(--color-secondary-accent); } 
+      .post-content .concept { 
+        font-style: italic;
+        color: var(--color-modern-accent-1); 
+      }
+      .post-content .chess-piece { 
+        font-weight: bold;
+        color: var(--color-modern-accent-3); 
+      }
+
+      .post-navigation { 
+        height: 0; margin: 0; padding: 0; border: none; overflow: hidden; 
+      }
+      @keyframes animatedArrowNavGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+      .nav-arrow { 
+        position: fixed; top: 50%; transform: translateY(-50%); z-index: 1010; 
+        display: flex; align-items: center; justify-content: center;
+        width: 48px; height: 48px; 
+        background-image: var(--arrow-nav-gradient); 
+        background-size: 250% 250%; 
+        animation: animatedArrowNavGradient 7s ease infinite; 
+        border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+        text-decoration: none;
+        transition: opacity var(--transition-speed) ease-out, transform var(--transition-speed) ease-out, box-shadow var(--transition-speed) ease-out;
+        opacity: 0.75; border: 1px solid rgba(var(--color-text-light-rgb), 0.1); 
+        backdrop-filter: blur(4px); cursor: pointer;
+      }
+      .nav-arrow .fas { 
+        color: var(--color-text-light); font-size: 1.5rem; line-height: 1; 
+        text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+        transition: color var(--transition-speed) ease-out, transform var(--transition-speed) ease-out; 
+      }
+      .nav-arrow:hover, .nav-arrow:focus-visible { 
+        opacity: 1; transform: translateY(-50%) scale(1.15); 
+        box-shadow: 0 6px 20px rgba(var(--color-modern-accent-1-rgb), 0.4);
+        outline: none; 
+      }
+      .nav-arrow:hover .fas, .nav-arrow:focus-visible .fas { color: var(--color-text-dark); }
+      .nav-arrow span { display: none; } 
+      #prev-post-link { left: var(--spacing-md); }
+      #prev-post-link:hover .fas { animation: pulseArrowLeft 0.6s infinite alternate ease-in-out; }
+      #next-post-link { right: var(--spacing-md); }
+      #next-post-link:hover .fas { animation: pulseArrowRight 0.6s infinite alternate ease-in-out; }
+      @keyframes pulseArrowLeft { from { transform: translateX(0px); } to { transform: translateX(-3px); } }
+      @keyframes pulseArrowRight { from { transform: translateX(0px); } to { transform: translateX(3px); } }
+      @media (max-width: 1024px) { .nav-arrow { display: none; } } 
+
+      .back-to-blog-container { 
+        display: block; text-align: center; margin-top: var(--spacing-xl); 
+        padding-top: var(--spacing-md); border-top: 1px solid var(--color-background-medium); 
+      }
+      @keyframes animatedGradientBackground { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+      .btn { 
+        display: inline-block; font-family: var(--font-body); font-weight: 600; text-decoration: none;
+        border-radius: var(--border-radius-md); padding: 0.8rem 2rem; transition: all var(--transition-speed) ease;
+        cursor: pointer; text-align: center; letter-spacing: 0.5px; font-size: 1rem;
+      }
+      .btn-gradient { 
+        color: var(--color-text-light); 
+        background-image: linear-gradient(120deg, var(--animated-gradient-colors));
+        background-size: 250% auto; border: none; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        animation: animatedGradientBackground 10s ease infinite; text-transform: uppercase; 
+      }
+      .btn-gradient:hover, .btn-gradient:focus { color: var(--color-text-dark); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); transform: translateY(-2px); }
+      .btn-gradient:active { transform: translateY(0); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
+      
+      footer { 
+        background-color: var(--color-dark-bg); 
+        color: var(--color-text-medium); 
+        padding-top: var(--spacing-lg); 
+        padding-bottom: var(--spacing-md); 
+        margin-top: auto; 
+        border-top: 3px solid var(--color-modern-accent-3); 
+      }
+      .footer-content { 
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: space-between; 
+        gap: var(--spacing-md); 
+        margin-bottom: var(--spacing-lg); 
+      }
+      .footer-about, .footer-links, .footer-contact { 
+        flex: 1; 
+        min-width: 250px; 
+        margin-bottom: var(--spacing-md); 
+      }
+      .footer-about h4, .footer-links h4, .footer-contact h4 {
+        font-family: var(--font-title); 
+        color: var(--color-text-light); 
+        font-size: 1.15rem; 
+        margin-bottom: var(--spacing-sm); 
+        position: relative; 
+        padding-bottom: var(--spacing-xs);
+        letter-spacing: 0.5px;
+      }
+      .footer-about h4::after, .footer-links h4::after, .footer-contact h4::after {
+        content: ''; 
+        position: absolute; 
+        left: 0; 
+        bottom: 0; 
+        width: 40px; 
+        height: 2px; 
+        background-color: var(--color-secondary-accent); 
+      }
+      .footer-about p, .footer-links ul, .footer-contact p { 
+        font-size: 0.9rem; 
+        line-height: 1.6; 
+        color: var(--color-text-medium); 
+      }
+      .footer-links ul { list-style: none; padding-left: 0; }
+      .footer-links ul li { margin-bottom: calc(var(--spacing-xs) * 0.8); }
+      .footer-links ul li a { color: var(--color-text-medium); transition: color var(--transition-speed) ease; }
+      .footer-links ul li a:hover { color: var(--color-secondary-accent); }
+      .footer-contact p i.fas, .footer-contact p i.fab { 
+          margin-right: var(--spacing-xs); 
+          color: var(--color-modern-accent-2); 
+          width: 20px; 
+          text-align: center;
+      }
+      .footer-contact p a { color: var(--color-text-medium); }
+      .footer-contact p a:hover { color: var(--color-secondary-accent); }
+      .payment-methods { margin-top: var(--spacing-sm); }
+      .payment-methods span { 
+        display: block; 
+        margin-bottom: var(--spacing-xs); 
+        font-size: 0.9rem; 
+        color: var(--color-text-medium); 
+      }
+      .payment-icons { display: flex; gap: var(--spacing-sm); align-items: center; }
+      .payment-icons img { 
+        height: 25px; 
+        width: auto; 
+        opacity: 0.7; 
+        transition: opacity var(--transition-speed) ease; 
+      }
+      .payment-icons img:hover { opacity: 1; }
+      .footer-bottom { 
+        padding-top: var(--spacing-md); 
+        border-top: 1px solid var(--color-background-medium); 
+        font-size: 0.85rem; 
+        text-align: center; 
+      }
+      .footer-bottom p { 
+        display: inline-block; 
+        margin: 0; 
+        color: var(--color-text-medium); 
+      }
+      @keyframes backToTopGradientAnimation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+      #back-to-top-btn {
+        position: fixed; bottom: 30px; right: 30px;
+        width: 45px; height: 45px; 
+        background-image: var(--back-to-top-gradient); 
+        background-size: 200% 200%; 
+        animation: backToTopGradientAnimation 6s ease infinite; 
+        color: var(--color-text-light); 
+        border: none; border-radius: 50%; font-size: 1.3rem; 
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25), 0 0 15px 3px rgba(var(--color-modern-accent-1-rgb), 0.35); 
+        opacity: 0; visibility: hidden; transform: translateY(20px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        z-index: 999; display: flex; align-items: center; justify-content: center;
+      }
+      #back-to-top-btn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+      #back-to-top-btn:hover, #back-to-top-btn:focus { 
+        color: var(--color-text-dark); 
+        transform: translateY(-2px) scale(1.05); 
+        box-shadow: 0 6px 18px rgba(0,0,0,0.3), 0 0 20px 5px rgba(var(--color-modern-accent-2-rgb), 0.45); 
+        outline: none;
+      }
+      #back-to-top-btn .fas { transition: color 0.3s ease; }
+      #back-to-top-btn:hover .fas, #back-to-top-btn:focus .fas { color: var(--color-text-dark); }
+      
+      @media (max-width: 992px) { 
+          .footer-about, .footer-links, .footer-contact { flex-basis: 45%; } 
+          .post-container-inner { 
+              padding: var(--spacing-sm); 
+              margin-left: var(--spacing-sm); 
+              margin-right: var(--spacing-sm); 
+              width: auto; 
+              max-width: 95%; 
+          } 
+      }
+      @media (max-width: 767px) { 
+          .footer-content { flex-direction: column; align-items: flex-start; }
+          .footer-about, .footer-links, .footer-contact { flex-basis: 100%; min-width: 100%; margin-bottom: var(--spacing-md); text-align: left; }
+          .footer-about h4::after, .footer-links h4::after, .footer-contact h4::after { left: 0; transform: none; } 
+          .payment-icons { justify-content: flex-start; }
+      }
+      @media (max-width: 480px) { 
+          .post-header h1 { font-size: clamp(1.6rem, 7vw, 2rem); } 
+          .post-container-inner { 
+               max-width: 100%; 
+               padding-left: var(--spacing-xs); 
+               padding-right: var(--spacing-xs);
+          }
+          #back-to-top-btn { width: 45px; height: 45px; font-size: 1.2rem; bottom: 20px; right: 20px; }
+      }
+    </style>
+</head>
+<body class="blog-page-body" data-lang="es">
+    <a href="../index.html" class="blog-fixed-logo-link" aria-label="Volver a la página principal de Chill Chess Club">
+        <img src="../images/logo.png" alt="Logo Chill Chess Club" onerror="this.onerror=null; this.src='https://placehold.co/100x48/1a1a1d/f4f4f5?text=Logo+CCC'; this.style.border='1px solid #3F3F46'; this.style.padding='5px';">
+    </a>
+
+    <div class="language-selector">
+        <button class="lang-button active" data-lang-switch="es" aria-pressed="true" title="Cambiar a Español">ES</button>
+        <span>|</span>
+        <button class="lang-button" data-lang-switch="en" aria-pressed="false" title="Switch to English">EN</button>
+    </div>
+
+    <nav class="post-navigation" aria-label="Navegación entre recursos">
+        <a href="#" id="prev-post-link" class="nav-arrow prev">
+            <i class="fas fa-chevron-left"></i>
+            <span data-translate-key="resourceNavPrev">Anterior</span>
+        </a>
+        <a href="#" id="next-post-link" class="nav-arrow next">
+            <span data-translate-key="resourceNavNext">Siguiente</span>
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </nav>
+
+    <main class="blog-post-page"> 
+        <div class="post-container-inner">
+            <header class="post-header">
+                <h1 data-translate-key="anatomiaTituloPrincipal">Anatomía del Ajedrez: Piezas, Fases y su Valor Estratégico</h1>
+            </header>
+
+            <article class="post-content">
+                <p data-translate-key="anatomiaIntro">Profundizar en la "anatomía" de una partida de ajedrez trasciende el mero conocimiento del movimiento de las piezas. Implica discernir su valor intrínseco y, de forma crucial, cómo este se transforma y redefine según la fase en que se encuentre el juego. Esta guía se adentra en el flujo de la partida y en el papel estratégico que cada combatiente desempeña sobre el tablero.</p>
+                
+                <h2 data-translate-key="anatomiaValorPiezasTitulo">El Valor de las Piezas: Una Perspectiva Más Allá de los Números</h2>
+                <p data-translate-key="anatomiaValorPiezasDesc1">De forma tradicional, se atribuye un valor numérico a las piezas, una suerte de brújula inicial para que el principiante pueda orientarse en la evaluación de los intercambios:</p>
+                <ul>
+                    <li data-translate-key="anatomiaValorPeon"><span class="chess-piece">Peón</span>: 1 punto</li>
+                    <li data-translate-key="anatomiaValorCaballo"><span class="chess-piece">Caballo</span>: 3 puntos</li>
+                    <li data-translate-key="anatomiaValorAlfil"><span class="chess-piece">Alfil</span>: 3 puntos (en ocasiones, se le concede una ligera prima, hasta 3.25, por su notable alcance en posiciones abiertas)</li>
+                    <li data-translate-key="anatomiaValorTorre"><span class="chess-piece">Torre</span>: 5 puntos</li>
+                    <li data-translate-key="anatomiaValorDama"><span class="chess-piece">Dama</span>: 9 puntos</li>
+                    <li data-translate-key="anatomiaValorRey"><span class="chess-piece">Rey</span>: Un valor conceptualmente infinito, pues su pérdida dictamina el fin de la partida.</li>
+                </ul>
+                <p data-translate-key="anatomiaValorPiezasDesc2">No obstante, es imperativo comprender que este valor es eminentemente <span class="concept">relativo y dinámico</span>. Una pieza estratégicamente situada, que ejerce control sobre casillas cruciales o que participa activamente en un ataque con visos de ser decisivo, puede ostentar una valía muy superior a su puntuación base. Por ejemplo, un caballo anclado en un puesto avanzado central, inmune al desalojo por peones contrarios, podría superar en importancia a una torre relegada a la pasividad.</p>
+
+                <h3 data-translate-key="anatomiaFactoresTitulo">Factores que Modulan el Valor Real:</h3>
+                <ul>
+                    <li data-translate-key="anatomiaFactorActividad"><strong>Actividad:</strong> ¿Sobre cuántas casillas de relevancia ejerce influencia la pieza? ¿Se halla implicada de forma activa en el desarrollo del juego?</li>
+                    <li data-translate-key="anatomiaFactorCoordinacion"><strong>Coordinación:</strong> ¿De qué manera interactúa la pieza con el resto de tus fuerzas, en una sinergia armónica?</li>
+                    <li data-translate-key="anatomiaFactorSeguridad"><strong>Seguridad:</strong> ¿Se encuentra la pieza adecuadamente defendida o, por el contrario, es vulnerable a las incursiones del adversario?</li>
+                    <li data-translate-key="anatomiaFactorEstructura"><strong>Estructura de Peones:</strong> La disposición de los peones puede tanto limitar como potenciar la efectividad de ciertas piezas (así, los alfiles anhelan diagonales despejadas, mientras que los caballos a menudo prosperan en posiciones de carácter cerrado).</li>
+                    <li data-translate-key="anatomiaFactorOponente"><strong>Piezas del Oponente:</strong> El valor de tus propias piezas también está intrínsecamente ligado a las fuerzas remanentes del adversario y a la disposición de estas sobre el tablero.</li>
+                </ul>
+
+                <h2 data-translate-key="anatomiaFasesTitulo">Las Fases de la Partida: Un Flujo Continuo</h2>
+                <p data-translate-key="anatomiaFasesIntro">Una partida de ajedrez, en su desarrollo, suele transitar por tres fases principales, aunque es importante notar que las transiciones entre ellas son a menudo graduales y fluidas, más que divisiones estancas:</p>
+
+                <h3 data-translate-key="anatomiaFaseAperturaTitulo">1. Apertura</h3>
+                <p data-translate-key="anatomiaFaseAperturaDesc1">Esta fase comprende, aproximadamente, los primeros 10 a 15 movimientos. Los objetivos primordiales en esta etapa inicial son:</p>
+                <ul>
+                    <li data-translate-key="anatomiaAperturaObjControl"><strong>Controlar el centro:</strong> Procurar la ocupación o, al menos, la influencia sobre las casillas centrales mediante el uso de peones y piezas.</li>
+                    <li data-translate-key="anatomiaAperturaObjDesarrollo"><strong>Desarrollar las piezas menores:</strong> Movilizar caballos y alfiles desde sus casillas de origen hacia posiciones activas y prometedoras.</li>
+                    <li data-translate-key="anatomiaAperturaObjResguardo"><strong>Resguardar al Rey:</strong> Generalmente, esto se consigue a través del enroque, buscando un refugio seguro para el monarca.</li>
+                    <li data-translate-key="anatomiaAperturaObjConectar"><strong>Conectar las torres:</strong> Prepararlas para que puedan entrar en juego de manera coordinada y efectiva.</li>
+                </ul>
+                <p data-translate-key="anatomiaFaseAperturaDesc2">En esta fase, se observan los <span class="concept">principios fundamentales de la apertura</span> y, a menudo, se recurre a <span class="concept">aperturas teóricas</span> –secuencias de movimientos estudiadas y contrastadas por la experiencia, como la Apertura Española o la Defensa Siciliana–. El valor de las piezas tiende a asemejarse a su valor nominal, pero la celeridad en el desarrollo y la pugna por el dominio central son de una importancia crucial.</p>
+
+                <h3 data-translate-key="anatomiaFaseMedioTitulo">2. Medio Juego</h3>
+                <p data-translate-key="anatomiaFaseMedioDesc1">El medio juego da inicio una vez que la mayoría de las piezas han sido desarrolladas y, usualmente, el enroque ya se ha efectuado. Constituye la fase más intrincada y rica de la partida, el escenario donde se despliegan los planes estratégicos y donde la táctica florece en forma de combinaciones.</p>
+                <p data-translate-key="anatomiaFaseMedioDesc2"><strong>Características y Objetivos:</strong></p>
+                <ul>
+                    <li data-translate-key="anatomiaMedioObjPlan"><strong>Formulación de un plan:</strong> Basado en una atenta evaluación de las debilidades en la posición del oponente y el reconocimiento de las propias fortalezas.</li>
+                    <li data-translate-key="anatomiaMedioObjTactica"><strong>Táctica:</strong> La búsqueda incesante de combinaciones, la consideración de sacrificios y la creación de amenazas directas. El <span class="chess-piece">Caballo</span> y el <span class="chess-piece">Alfil</span>, con su capacidad para tejer redes de amenazas complejas, suelen brillar con luz propia en esta etapa.</li>
+                    <li data-translate-key="anatomiaMedioObjMejora"><strong>Mejora posicional de las piezas:</strong> Conducir las piezas hacia sus escaques óptimos, estableciendo puestos avanzados y mejorando su influencia.</li>
+                    <li data-translate-key="anatomiaMedioObjPeones"><strong>Juego de peones:</strong> La creación de rupturas, el avance de peones pasados con potencial de promoción, y la restricción de las opciones del adversario mediante la estructura de peones.</li>
+                    <li data-translate-key="anatomiaMedioObjAtaque"><strong>Ataque al Rey:</strong> Si las circunstancias son propicias, la organización de un asalto directo contra el monarca enemigo.</li>
+                </ul>
+                <p data-translate-key="anatomiaFaseMedioDesc3">El valor de las piezas se torna aquí sumamente <span class="concept">dinámico</span>. Una <span class="chess-piece">Torre</span> que domina una columna abierta o que se infiltra en la séptima fila puede adquirir una fuerza devastadora. La <span class="chess-piece">Dama</span>, por su parte, se erige como una pieza de formidable potencia tanto en el ataque como en la defensa.</p>
+
+                <h3 data-translate-key="anatomiaFaseFinalTitulo">3. Final</h3>
+                <p data-translate-key="anatomiaFaseFinalDesc1">Se alcanza la fase de final cuando el número de piezas sobre el tablero se ha reducido considerablemente. La naturaleza del juego experimenta entonces una transformación drástica.</p>
+                <p data-translate-key="anatomiaFaseFinalDesc2"><strong>Características y Objetivos:</strong></p>
+                <ul>
+                    <li data-translate-key="anatomiaFinalObjActivacion"><strong>Activación del Rey:</strong> El Rey abandona su rol pasivo y se convierte en una pieza de combate activa, debiendo, por lo general, participar en el centro del tablero.</li>
+                    <li data-translate-key="anatomiaFinalObjPromocion"><strong>Promoción de peones:</strong> El avance de los peones con el objetivo de coronarlos (transformarlos en una pieza de mayor valor, usualmente una Dama) se convierte, con frecuencia, en el objetivo primordial. Un solo peón puede inclinar la balanza y decidir el resultado de la partida.</li>
+                    <li data-translate-key="anatomiaFinalObjCalculo"><strong>Cálculo preciso:</strong> Los finales exigen una gran exactitud en el cálculo, pues un único error puede tener consecuencias fatales e irreversibles.</li>
+                    <li data-translate-key="anatomiaFinalObjConocimiento"><strong>Conocimiento de finales teóricos:</strong> Existe un vasto repertorio de posiciones de final que han sido profundamente estudiadas, cuyo conocimiento resulta esencial (por ejemplo, los mates básicos, los finales de peones, o los complejos finales de torres).</li>
+                </ul>
+                <p data-translate-key="anatomiaFaseFinalDesc3">En esta etapa, el valor de los <span class="chess-piece">Peones</span> se incrementa de manera exponencial. Las <span class="chess-piece">Torres</span> conservan una notable fortaleza. El <span class="chess-piece">Rey</span> se transforma en una pieza clave, tanto en la ofensiva como en la defensiva.</p>
+                
+                <p data-translate-key="anatomiaConclusion">Comprender cómo la partida fluye a través de estas fases, y cómo el valor y el rol de tus piezas se adaptan y evolucionan, te permitirá tomar decisiones estratégicas y tácticas más aquilatadas y profundas. Cada pieza, en el gran teatro del ajedrez, aguarda su momento para brillar.</p>
+            </article>
+
+            <div class="back-to-blog-container"> 
+                <a href="../index.html#recursos" class="btn btn-gradient" data-translate-key="backToResourcesLink">Volver a Recursos</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                 <div class="footer-about">
+                    <h4 data-translate-key="footerAboutTitleIndex">Chill Chess Club</h4>
+                    <p data-translate-key="footerAboutDescIndex">Transformando tu juego con un método personalizado y efectivo. Clases para principiantes e intermedios.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-translate-key="footerLinksTitleIndex">Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="../index.html#instructor" data-translate-key="navAbout">Sobre Mí</a></li>
+                        <li><a href="../index.html#cursos" data-translate-key="navCourses">Cursos</a></li>
+                        <li><a href="../index.html#metodo" data-translate-key="navMethod">Método</a></li>
+                        <li><a href="../index.html#faq" data-translate-key="navFaq">FAQ</a></li> 
+                        <li><a href="../index.html#contacto" data-translate-key="navContact">Contacto</a></li>
+                        <li><a href="../politica-privacidad.html" data-translate-key="footerPrivacyLinkIndex">Política de Privacidad</a></li> 
+                        <li><a href="../terminos-servicio.html" data-translate-key="footerTermsLinkIndex">Términos de Servicio</a></li> 
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-translate-key="footerContactTitleIndex">Contacto Rápido</h4>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:santiago.narvaez.84@gmail.com">santiago.narvaez.84@gmail.com</a></p>
+                    <p><i class="fas fa-info-circle" aria-hidden="true"></i> <a href="../index.html#contacto" data-translate-key="footerContactFormLinkIndex">Formulario de Contacto</a></p>
+                    <div class="payment-methods">
+                        <span data-translate-key="footerPaymentTextIndex">Pagos Seguros con:</span>
+                        <div class="payment-icons">
+                            <img src="../icons/paypal.png" alt="PayPal" title="PayPal" class="payment-logo" onerror="this.style.display='none'">
+                            <img src="../icons/payoneer.png" alt="Payoneer" title="Payoneer" class="payment-logo" onerror="this.style.display='none'">
+                            <img src="../icons/binance.png" alt="Binance" title="Binance" class="payment-logo" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerCopyrightIndex">© <span id="current-year"></span> Chill Chess Club. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top-btn" 
+        title="Volver arriba" 
+        aria-label="Volver arriba" 
+        data-translate-key="backToTopTitle|title"> 
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const langButtons = document.querySelectorAll('.lang-button[data-lang-switch]');
+        const translatableElements = document.querySelectorAll('[data-translate-key]');
+        let currentLang = document.body.getAttribute('data-lang') || 'es';
+
+        function toTitleCase(str) { 
+            if (!str) return '';
+            return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        }
+
+        const translations = { 
+            es: {
+                pageTitleRecursoAnatomia: "Anatomía del Ajedrez: Piezas, Fases y Valor - Chill Chess Club",
+                metaDescriptionRecursoAnatomia: "Una mirada al flujo de la partida de ajedrez, desde la apertura hasta el final, y cómo el valor y las características de cada pieza definen tu estrategia.",
+                anatomiaTituloPrincipal: "Anatomía del Ajedrez: Piezas, Fases y su Valor Estratégico",
+                anatomiaIntro: "Profundizar en la \"anatomía\" de una partida de ajedrez trasciende el mero conocimiento del movimiento de las piezas. Implica discernir su valor intrínseco y, de forma crucial, cómo este se transforma y redefine según la fase en que se encuentre el juego. Esta guía se adentra en el flujo de la partida y en el papel estratégico que cada combatiente desempeña sobre el tablero.",
+                anatomiaValorPiezasTitulo: "El Valor de las Piezas: Una Perspectiva Más Allá de los Números",
+                anatomiaValorPiezasDesc1: "De forma tradicional, se atribuye un valor numérico a las piezas, una suerte de brújula inicial para que el principiante pueda orientarse en la evaluación de los intercambios:",
+                anatomiaValorPeon: "<span class=\"chess-piece\">Peón</span>: 1 punto",
+                anatomiaValorCaballo: "<span class=\"chess-piece\">Caballo</span>: 3 puntos",
+                anatomiaValorAlfil: "<span class=\"chess-piece\">Alfil</span>: 3 puntos (en ocasiones, se le concede una ligera prima, hasta 3.25, por su notable alcance en posiciones abiertas)",
+                anatomiaValorTorre: "<span class=\"chess-piece\">Torre</span>: 5 puntos",
+                anatomiaValorDama: "<span class=\"chess-piece\">Dama</span>: 9 puntos",
+                anatomiaValorRey: "<span class=\"chess-piece\">Rey</span>: Un valor conceptualmente infinito, pues su pérdida dictamina el fin de la partida.",
+                anatomiaValorPiezasDesc2: "No obstante, es imperativo comprender que este valor es eminentemente <span class=\"concept\">relativo y dinámico</span>. Una pieza estratégicamente situada, que ejerce control sobre casillas cruciales o que participa activamente en un ataque con visos de ser decisivo, puede ostentar una valía muy superior a su puntuación base. Por ejemplo, un caballo anclado en un puesto avanzado central, inmune al desalojo por peones contrarios, podría superar en importancia a una torre relegada a la pasividad.",
+                anatomiaFactoresTitulo: "Factores que Modulan el Valor Real:",
+                anatomiaFactorActividad: "<strong>Actividad:</strong> ¿Sobre cuántas casillas de relevancia ejerce influencia la pieza? ¿Se halla implicada de forma activa en el desarrollo del juego?",
+                anatomiaFactorCoordinacion: "<strong>Coordinación:</strong> ¿De qué manera interactúa la pieza con el resto de tus fuerzas, en una sinergia armónica?",
+                anatomiaFactorSeguridad: "<strong>Seguridad:</strong> ¿Se encuentra la pieza adecuadamente defendida o, por el contrario, es vulnerable a las incursiones del adversario?",
+                anatomiaFactorEstructura: "<strong>Estructura de Peones:</strong> La disposición de los peones puede tanto limitar como potenciar la efectividad de ciertas piezas (así, los alfiles anhelan diagonales despejadas, mientras que los caballos a menudo prosperan en posiciones de carácter cerrado).",
+                anatomiaFactorOponente: "<strong>Piezas del Oponente:</strong> El valor de tus propias piezas también está intrínsecamente ligado a las fuerzas remanentes del adversario y a la disposición de estas sobre el tablero.",
+                anatomiaFasesTitulo: "Las Fases de la Partida: Un Flujo Continuo",
+                anatomiaFasesIntro: "Una partida de ajedrez, en su desarrollo, suele transitar por tres fases principales, aunque es importante notar que las transiciones entre ellas son a menudo graduales y fluidas, más que divisiones estancas:",
+                anatomiaFaseAperturaTitulo: "1. Apertura",
+                anatomiaFaseAperturaDesc1: "Esta fase comprende, aproximadamente, los primeros 10 a 15 movimientos. Los objetivos primordiales en esta etapa inicial son:",
+                anatomiaAperturaObjControl: "<strong>Controlar el centro:</strong> Procurar la ocupación o, al menos, la influencia sobre las casillas centrales mediante el uso de peones y piezas.",
+                anatomiaAperturaObjDesarrollo: "<strong>Desarrollar las piezas menores:</strong> Movilizar caballos y alfiles desde sus casillas de origen hacia posiciones activas y prometedoras.",
+                anatomiaAperturaObjResguardo: "<strong>Resguardar al Rey:</strong> Generalmente, esto se consigue a través del enroque, buscando un refugio seguro para el monarca.",
+                anatomiaAperturaObjConectar: "<strong>Conectar las torres:</strong> Prepararlas para que puedan entrar en juego de manera coordinada y efectiva.",
+                anatomiaFaseAperturaDesc2: "En esta fase, se observan los <span class=\"concept\">principios fundamentales de la apertura</span> y, a menudo, se recurre a <span class=\"concept\">aperturas teóricas</span> –secuencias de movimientos estudiadas y contrastadas por la experiencia, como la Apertura Española o la Defensa Siciliana–. El valor de las piezas tiende a asemejarse a su valor nominal, pero la celeridad en el desarrollo y la pugna por el dominio central son de una importancia crucial.",
+                anatomiaFaseMedioTitulo: "2. Medio Juego",
+                anatomiaFaseMedioDesc1: "El medio juego da inicio una vez que la mayoría de las piezas han sido desarrolladas y, usualmente, el enroque ya se ha efectuado. Constituye la fase más intrincada y rica de la partida, el escenario donde se despliegan los planes estratégicos y donde la táctica florece en forma de combinaciones.",
+                anatomiaFaseMedioDesc2: "<strong>Características y Objetivos:</strong>",
+                anatomiaMedioObjPlan: "<strong>Formulación de un plan:</strong> Basado en una atenta evaluación de las debilidades en la posición del oponente y el reconocimiento de las propias fortalezas.",
+                anatomiaMedioObjTactica: "<strong>Táctica:</strong> La búsqueda incesante de combinaciones, la consideración de sacrificios y la creación de amenazas directas. El <span class=\"chess-piece\">Caballo</span> y el <span class=\"chess-piece\">Alfil</span>, con su capacidad para tejer redes de amenazas complejas, suelen brillar con luz propia en esta etapa.",
+                anatomiaMedioObjMejora: "<strong>Mejora posicional de las piezas:</strong> Conducir las piezas hacia sus escaques óptimos, estableciendo puestos avanzados y mejorando su influencia.",
+                anatomiaMedioObjPeones: "<strong>Juego de peones:</strong> La creación de rupturas, el avance de peones pasados con potencial de promoción, y la restricción de las opciones del adversario mediante la estructura de peones.",
+                anatomiaMedioObjAtaque: "<strong>Ataque al Rey:</strong> Si las circunstancias son propicias, la organización de un asalto directo contra el monarca enemigo.",
+                anatomiaFaseMedioDesc3: "El valor de las piezas se torna aquí sumamente <span class=\"concept\">dinámico</span>. Una <span class=\"chess-piece\">Torre</span> que domina una columna abierta o que se infiltra en la séptima fila puede adquirir una fuerza devastadora. La <span class=\"chess-piece\">Dama</span>, por su parte, se erige como una pieza de formidable potencia tanto en el ataque como en la defensa.",
+                anatomiaFaseFinalTitulo: "3. Final",
+                anatomiaFaseFinalDesc1: "Se alcanza la fase de final cuando el número de piezas sobre el tablero se ha reducido considerablemente. La naturaleza del juego experimenta entonces una transformación drástica.",
+                anatomiaFaseFinalDesc2: "<strong>Características y Objetivos:</strong>",
+                anatomiaFinalObjActivacion: "<strong>Activación del Rey:</strong> El Rey abandona su rol pasivo y se convierte en una pieza de combate activa, debiendo, por lo general, participar en el centro del tablero.",
+                anatomiaFinalObjPromocion: "<strong>Promoción de peones:</strong> El avance de los peones con el objetivo de coronarlos (transformarlos en una pieza de mayor valor, usualmente una Dama) se convierte, con frecuencia, en el objetivo primordial. Un solo peón puede inclinar la balanza y decidir el resultado de la partida.",
+                anatomiaFinalObjCalculo: "<strong>Cálculo preciso:</strong> Los finales exigen una gran exactitud en el cálculo, pues un único error puede tener consecuencias fatales e irreversibles.",
+                anatomiaFinalObjConocimiento: "<strong>Conocimiento de finales teóricos:</strong> Existe un vasto repertorio de posiciones de final que han sido profundamente estudiadas, cuyo conocimiento resulta esencial (por ejemplo, los mates básicos, los finales de peones, o los complejos finales de torres).",
+                anatomiaFaseFinalDesc3: "En esta etapa, el valor de los <span class=\"chess-piece\">Peones</span> se incrementa de manera exponencial. Las <span class=\"chess-piece\">Torres</span> conservan una notable fortaleza. El <span class=\"chess-piece\">Rey</span> se transforma en una pieza clave, tanto en la ofensiva como en la defensiva.",
+                anatomiaConclusion: "Comprender cómo la partida fluye a través de estas fases, y cómo el valor y el rol de tus piezas se adaptan y evolucionan, te permitirá tomar decisiones estratégicas y tácticas más aquilatadas y profundas. Cada pieza, en el gran teatro del ajedrez, aguarda su momento para brillar.",
+                backToResourcesLink: "Volver a Recursos",
+                resourceNavPrev: "Anterior", 
+                resourceNavNext: "Siguiente",
+                footerAboutTitleIndex: "Chill Chess Club",
+                footerAboutDescIndex: "Transformando tu juego con un método personalizado y efectivo. Clases para principiantes e intermedios.", 
+                footerLinksTitleIndex: "Enlaces Rápidos", 
+                navAbout: "Sobre Mí", navCourses: "Cursos", navMethod: "Método", navFaq: "FAQ", navContact: "Contacto",
+                footerPrivacyLinkIndex: "Política de Privacidad", footerTermsLinkIndex: "Términos de Servicio", 
+                footerContactTitleIndex: "Contacto Rápido", footerContactFormLinkIndex: "Formulario de Contacto", 
+                footerPaymentTextIndex: "Pagos Seguros con:",
+                footerCopyrightIndex: "© {year} Chill Chess Club. Todos los derechos reservados.",
+                backToTopTitle: "Volver arriba",
+                ariaLabelBackToTop: "Volver arriba"
+            },
+            en: { 
+                pageTitleRecursoAnatomia: "Anatomy of Chess: Pieces, Phases, and Strategic Value - Chill Chess Club",
+                metaDescriptionRecursoAnatomia: "A look at the flow of a chess game, from opening to endgame, and how the value and characteristics of each piece define your strategy.",
+                anatomiaTituloPrincipal: "Anatomy of Chess: Pieces, Phases, and Their Strategic Value",
+                anatomiaIntro: "Delving into the \"anatomy\" of a chess game transcends mere knowledge of piece movement. It involves discerning their intrinsic value and, crucially, how this value transforms and redefines itself according to the phase of the game. This guide explores the flow of the game and the strategic role each combatant plays on the board.",
+                anatomiaValorPiezasTitulo: "The Value of Pieces: A Perspective Beyond Numbers",
+                anatomiaValorPiezasDesc1: "Traditionally, a numerical value is attributed to the pieces, a sort of initial compass for beginners to orient themselves in evaluating exchanges:",
+                anatomiaValorPeon: "<span class=\"chess-piece\">Pawn</span>: 1 point",
+                anatomiaValorCaballo: "<span class=\"chess-piece\">Knight</span>: 3 points",
+                anatomiaValorAlfil: "<span class=\"chess-piece\">Bishop</span>: 3 points (sometimes given a slight premium, up to 3.25, for its notable range in open positions)",
+                anatomiaValorTorre: "<span class=\"chess-piece\">Rook</span>: 5 points",
+                anatomiaValorDama: "<span class=\"chess-piece\">Queen</span>: 9 points",
+                anatomiaValorRey: "<span class=\"chess-piece\">King</span>: A conceptually infinite value, as its loss dictates the end of the game.",
+                anatomiaValorPiezasDesc2: "However, it is imperative to understand that this value is eminently <span class=\"concept\">relative and dynamic</span>. A strategically placed piece, controlling crucial squares or actively participating in a seemingly decisive attack, can hold a much higher worth than its base score. For example, a knight anchored in a central outpost, immune to dislodgement by opposing pawns, could surpass a passively relegated rook in importance.",
+                anatomiaFactoresTitulo: "Factors That Modulate Real Value:",
+                anatomiaFactorActividad: "<strong>Activity:</strong> How many relevant squares does the piece influence? Is it actively involved in the game's development?",
+                anatomiaFactorCoordinacion: "<strong>Coordination:</strong> How does the piece interact with the rest of your forces in harmonic synergy?",
+                anatomiaFactorSeguridad: "<strong>Safety:</strong> Is the piece adequately defended, or, conversely, is it vulnerable to opponent incursions?",
+                anatomiaFactorEstructura: "<strong>Pawn Structure:</strong> The pawn arrangement can both limit and enhance the effectiveness of certain pieces (thus, bishops crave clear diagonals, while knights often thrive in closed positions).",
+                anatomiaFactorOponente: "<strong>Opponent's Pieces:</strong> The value of your own pieces is also intrinsically linked to the opponent's remaining forces and their disposition on the board.",
+                anatomiaFasesTitulo: "The Phases of the Game: A Continuous Flow",
+                anatomiaFasesIntro: "A chess game, in its development, usually transitions through three main phases, although it is important to note that the transitions between them are often gradual and fluid, rather than watertight divisions:",
+                anatomiaFaseAperturaTitulo: "1. Opening",
+                anatomiaFaseAperturaDesc1: "This phase comprises, approximately, the first 10 to 15 moves. The primary objectives in this initial stage are:",
+                anatomiaAperturaObjControl: "<strong>Control the center:</strong> Strive for occupation or, at least, influence over the central squares using pawns and pieces.",
+                anatomiaAperturaObjDesarrollo: "<strong>Develop minor pieces:</strong> Mobilize knights and bishops from their starting squares to active and promising positions.",
+                anatomiaAperturaObjResguardo: "<strong>Safeguard the King:</strong> Generally, this is achieved through castling, seeking a safe haven for the monarch.",
+                anatomiaAperturaObjConectar: "<strong>Connect the rooks:</strong> Prepare them to enter the game in a coordinated and effective manner.",
+                anatomiaFaseAperturaDesc2: "In this phase, the <span class=\"concept\">fundamental principles of the opening</span> are observed, and <span class=\"concept\">theoretical openings</span> – sequences of moves studied and tested by experience, such as the Ruy Lopez or the Sicilian Defense – are often employed. The value of the pieces tends to resemble their nominal value, but speed in development and the struggle for central dominance are of crucial importance.",
+                anatomiaFaseMedioTitulo: "2. Middlegame",
+                anatomiaFaseMedioDesc1: "The middlegame begins once most pieces have been developed and, usually, castling has been completed. It constitutes the most intricate and rich phase of the game, the stage where strategic plans unfold and tactics flourish in the form of combinations.",
+                anatomiaFaseMedioDesc2: "<strong>Characteristics and Objectives:</strong>",
+                anatomiaMedioObjPlan: "<strong>Formulation of a plan:</strong> Based on a careful assessment of weaknesses in the opponent's position and recognition of one's own strengths.",
+                anatomiaMedioObjTactica: "<strong>Tactics:</strong> The relentless search for combinations, consideration of sacrifices, and creation of direct threats. The <span class=\"chess-piece\">Knight</span> and <span class=\"chess-piece\">Bishop</span>, with their ability to weave complex networks of threats, often shine brightly in this stage.",
+                anatomiaMedioObjMejora: "<strong>Positional improvement of pieces:</strong> Leading pieces to their optimal squares, establishing outposts, and enhancing their influence.",
+                anatomiaMedioObjPeones: "<strong>Pawn play:</strong> Creating breakthroughs, advancing passed pawns with promotion potential, and restricting the opponent's options through pawn structure.",
+                anatomiaMedioObjAtaque: "<strong>King attack:</strong> If circumstances are favorable, organizing a direct assault against the enemy monarch.",
+                anatomiaFaseMedioDesc3: "The value of the pieces becomes extremely <span class=\"concept\">dynamic</span> here. A <span class=\"chess-piece\">Rook</span> dominating an open file or infiltrating the seventh rank can acquire devastating force. The <span class=\"chess-piece\">Queen</span>, for its part, stands as a piece of formidable power in both attack and defense.",
+                anatomiaFaseFinalTitulo: "3. Endgame",
+                anatomiaFaseFinalDesc1: "The endgame phase is reached when the number of pieces on the board has been considerably reduced. The nature of the game then undergoes a drastic transformation.",
+                anatomiaFaseFinalDesc2: "<strong>Characteristics and Objectives:</strong>",
+                anatomiaFinalObjActivacion: "<strong>King activation:</strong> The King abandons its passive role and becomes an active fighting piece, generally needing to participate in the center of the board.",
+                anatomiaFinalObjPromocion: "<strong>Pawn promotion:</strong> Advancing pawns with the aim of queening them (transforming them into a more valuable piece, usually a Queen) frequently becomes the primary objective. A single pawn can tip the scales and decide the outcome of the game.",
+                anatomiaFinalObjCalculo: "<strong>Precise calculation:</strong> Endgames demand great accuracy in calculation, as a single mistake can have fatal and irreversible consequences.",
+                anatomiaFinalObjConocimiento: "<strong>Knowledge of theoretical endgames:</strong> There is a vast repertoire of endgame positions that have been thoroughly studied, the knowledge of which is essential (e.g., basic checkmates, pawn endgames, or complex rook endgames).",
+                anatomiaFaseFinalDesc3: "In this stage, the value of <span class=\"chess-piece\">Pawns</span> increases exponentially. <span class=\"chess-piece\">Rooks</span> retain notable strength. The <span class=\"chess-piece\">King</span> transforms into a key piece, both offensively and defensively.",
+                anatomiaConclusion: "Understanding how the game flows through these phases, and how the value and role of your pieces adapt and evolve, will allow you to make more considered and profound strategic and tactical decisions. Each piece, in the grand theater of chess, awaits its moment to shine.",
+                backToResourcesLink: "Back to Resources",
+                resourceNavPrev: "Previous", 
+                resourceNavNext: "Next",
+                footerAboutTitleIndex: "Chill Chess Club", 
+                footerAboutDescIndex: "Transforming your game with a personalized and effective method. Classes for beginners and intermediates.", 
+                footerLinksTitleIndex: "Quick Links", 
+                navAbout: "About Me", navCourses: "Courses", navMethod: "Method", navFaq: "FAQ", navContact: "Contact",
+                footerPrivacyLinkIndex: "Privacy Policy", footerTermsLinkIndex: "Terms of Service", 
+                footerContactTitleIndex: "Quick Contact", footerContactFormLinkIndex: "Contact Form", 
+                footerPaymentTextIndex: "Secure Payments with:",
+                footerCopyrightIndex: "© {year} Chill Chess Club. All rights reserved.",
+                backToTopTitle: "Back to Top",
+                ariaLabelBackToTop: "Back to Top"
+            }
+        };
+
+        function updateTexts(lang) {
+            translatableElements.forEach(el => {
+                const originalKey = el.dataset.translateKey;
+                if (!originalKey) return;
+                let textKey = originalKey;
+                let attributeToUpdate = null;
+                if (originalKey.includes('|')) {
+                    const parts = originalKey.split('|');
+                    textKey = parts[0];
+                    attributeToUpdate = parts[1];
+                }
+                let translationText = (translations[lang] && translations[lang][textKey]) || (translations['es'] && translations['es'][textKey]) || '';
+                if (textKey.startsWith("footerLink") || textKey === "footerContactTitleIndex" || textKey === "footerLinksTitleIndex" || textKey.startsWith("nav")) {
+                     if (textKey !== "footerAboutTitleIndex") translationText = toTitleCase(translationText);
+                }
+                if (textKey === "footerCopyrightIndex") {
+                    translationText = translationText.replace("{year}", new Date().getFullYear());
+                }
+                if (attributeToUpdate) {
+                    el.setAttribute(attributeToUpdate, translationText);
+                    if (textKey === 'metaDescriptionRecursoAnatomia' && attributeToUpdate === 'content') { 
+                        const metaDescTag = document.querySelector('meta[name="description"]');
+                        if (metaDescTag) metaDescTag.setAttribute('content', translationText);
+                    }
+                } else {
+                    if (el.tagName === 'TITLE') document.title = translationText;
+                    else el.innerHTML = translationText; 
+                }
+            });
+            document.documentElement.lang = lang; 
+            document.body.setAttribute('data-lang', lang); 
+            localStorage.setItem('preferredLang', lang);
+            
+            if (document.getElementById('prev-post-link') && document.getElementById('next-post-link')) {
+                setupResourceNavigation(lang);
+            }
+        }
+        
+        const preferredLangStored = localStorage.getItem('preferredLang');
+        if (preferredLangStored && translations[preferredLangStored]) {
+            currentLang = preferredLangStored;
+            langButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang-switch') === currentLang);
+                btn.setAttribute('aria-pressed', btn.getAttribute('data-lang-switch') === currentLang);
+            });
+        }
+
+        langButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                const selectedLang = button.getAttribute('data-lang-switch');
+                if (selectedLang === currentLang) return; 
+                document.body.classList.add('fade-out'); 
+                setTimeout(() => {
+                    currentLang = selectedLang; 
+                    updateTexts(currentLang); 
+                    langButtons.forEach(btn => {
+                        btn.classList.toggle('active', btn.getAttribute('data-lang-switch') === currentLang);
+                        btn.setAttribute('aria-pressed', btn.getAttribute('data-lang-switch') === currentLang);
+                    });
+                    document.body.classList.remove('fade-out'); 
+                }, parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--lang-transition-speed').replace('s', '') || '0.25') * 1000);
+            });
+        });
+        
+        const backToTopButton = document.getElementById("back-to-top-btn");
+        if (backToTopButton) {
+            window.onscroll = function() { backToTopButton.classList.toggle("visible", document.body.scrollTop > 100 || document.documentElement.scrollTop > 100); };
+            backToTopButton.onclick = function() { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+        }
+        
+        const yearSpan = document.getElementById('current-year');
+        if (yearSpan) { yearSpan.textContent = new Date().getFullYear(); }
+
+        function setupResourceNavigation(currentLangParam) {
+            const resources = [
+                { id: 'recurso-1', url: 'iniciacion-ajedrez.html', titleEs: 'Iniciación al Ajedrez', titleEn: 'Chess Initiation' },
+                { id: 'recurso-2', url: 'fundamentos-estrategicos.html', titleEs: 'Fundamentos Estratégicos', titleEn: 'Strategic Fundamentals' },
+                { id: 'recurso-3', url: 'anatomia-ajedrez.html', titleEs: 'Anatomía del Ajedrez', titleEn: 'Chess Anatomy' }
+            ];
+            const currentPagePath = window.location.pathname.split('/').pop();
+            const currentIndex = resources.findIndex(resource => resource.url === currentPagePath);
+
+            const prevPostLink = document.getElementById('prev-post-link');
+            const nextPostLink = document.getElementById('next-post-link');
+
+            if (currentIndex !== -1 && prevPostLink && nextPostLink) {
+                const prevIndex = (currentIndex - 1 + resources.length) % resources.length;
+                const nextIndex = (currentIndex + 1) % resources.length;
+
+                prevPostLink.href = resources[prevIndex].url;
+                const prevTitle = currentLangParam === 'es' ? resources[prevIndex].titleEs : resources[prevIndex].titleEn;
+                const prevAriaLabelBase = currentLangParam === 'es' ? 'Recurso anterior' : 'Previous resource';
+                prevPostLink.setAttribute('aria-label', `${prevAriaLabelBase}: ${prevTitle}`);
+                prevPostLink.setAttribute('title', `${prevAriaLabelBase}: ${prevTitle}`);
+
+                nextPostLink.href = resources[nextIndex].url;
+                const nextTitle = currentLangParam === 'es' ? resources[nextIndex].titleEs : resources[nextIndex].titleEn;
+                const nextAriaLabelBase = currentLangParam === 'es' ? 'Siguiente recurso' : 'Next resource';
+                nextPostLink.setAttribute('aria-label', `${nextAriaLabelBase}: ${nextTitle}`);
+                nextPostLink.setAttribute('title', `${nextAriaLabelBase}: ${nextTitle}`);
+                
+                prevPostLink.style.display = 'flex';
+                nextPostLink.style.display = 'flex';
+            } else {
+                if (prevPostLink) prevPostLink.style.display = 'none';
+                if (nextPostLink) nextPostLink.style.display = 'none';
+            }
+        }
+        updateTexts(currentLang); 
+    });
+    </script>
+</body>
+</html>

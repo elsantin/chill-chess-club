@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-translate-key="pageTitleRecursoFundamentos">Fundamentos Estratégicos del Ajedrez - Chill Chess Club</title>
+    <meta name="description" content="Principios estratégicos fundamentales que guían tus decisiones en el ajedrez, desde la apertura hasta el final." data-translate-key="metaDescriptionRecursoFundamentos|content">
+
+    <link rel="alternate" hreflang="es" href="fundamentos-estrategicos.html" />
+    <link rel="alternate" hreflang="en" href="fundamentos-estrategicos.html" />
+    <link rel="alternate" hreflang="x-default" href="fundamentos-estrategicos.html" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icons/android-icon-192x192.png">
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#18181B">
+
+    <style>
+      /* Estilos CSS integrados (basados en blog-1-ecos-del-tablero.html) */
+      :root {
+        --color-dark: #18181B;
+        --color-background-medium: #27272A;
+        --color-background-card: #3F3F46;
+        --color-primary-accent: #6a102a; 
+        --color-secondary-accent: #d4af37; 
+        --color-modern-accent-1: #EC4899; /* Rosa Moderno */
+        --color-modern-accent-1-rgb: 236, 72, 153;
+        --color-modern-accent-2: #F97316; /* Naranja Moderno */
+        --color-modern-accent-2-rgb: 249, 115, 22;
+        --color-modern-accent-3: #8B5CF6; /* Púrpura Moderno */
+        --color-modern-accent-3-rgb: 139, 92, 246;
+        --title-gradient-color-1: var(--color-modern-accent-3); 
+        --title-gradient-color-2: var(--color-modern-accent-1); 
+        --title-gradient-color-3: var(--color-modern-accent-2); 
+        --color-text-light: #f4f4f5;    
+        --color-text-medium: #a1a1aa;   
+        --color-text-dark: #18181B; 
+        --color-text-light-rgb: 244, 244, 245; 
+        --color-dark-bg: #1a1a1d; 
+        --color-dark-bg-secondary: #222225; 
+        --border-radius-sm: 4px;
+        --border-radius-md: 8px;
+        --border-radius-lg: 12px;
+        --font-title: 'Playfair Display', serif;
+        --font-body: 'Roboto', sans-serif;
+        --spacing-xs: 0.5rem;
+        --spacing-sm: 1rem;
+        --spacing-md: 2rem;
+        --spacing-lg: 4rem;
+        --spacing-xl: 6rem;
+        --transition-speed: 0.3s;
+        --lang-transition-speed: 0.25s;
+        --gradient-container-border-modern: linear-gradient(145deg, var(--color-modern-accent-3), var(--color-modern-accent-1), var(--color-modern-accent-2));
+        --animated-gradient-colors: var(--color-modern-accent-3), var(--color-modern-accent-1), var(--color-modern-accent-2), var(--color-modern-accent-3);
+        --back-to-top-gradient: linear-gradient(135deg, var(--color-modern-accent-1) 0%, var(--color-modern-accent-2) 70%, var(--color-modern-accent-1) 100%);
+        --arrow-nav-gradient: linear-gradient(135deg, var(--color-modern-accent-3), var(--color-modern-accent-1), var(--color-modern-accent-2), var(--color-modern-accent-3));
+      }
+      *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        font-family: var(--font-body); line-height: 1.7; color: var(--color-text-light);
+        background-color: var(--color-dark-bg-secondary); 
+        min-height: 100vh; 
+        font-size: 16px;
+        overflow-x: hidden; opacity: 1; transition: opacity var(--lang-transition-speed) ease-in-out;
+        cursor: default; 
+        display: flex; 
+        flex-direction: column; 
+      }
+      main.blog-post-page { 
+        flex-grow: 1; 
+      }
+      body.fade-out { opacity: 0; }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-title); margin-bottom: var(--spacing-sm); color: var(--color-text-light); 
+        font-weight: 700; letter-spacing: 0.5px; line-height: 1.3;
+      }
+      p { 
+        margin-bottom: var(--spacing-md); 
+        max-width: 70ch; 
+        color: var(--color-text-light); 
+      }
+      a { color: var(--color-secondary-accent); text-decoration: none; transition: color var(--transition-speed) ease; }
+      a:hover, a:focus { color: var(--color-modern-accent-1); }
+      .container { max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: var(--spacing-md); padding-right: var(--spacing-md); }
+      @media (max-width: 768px) { .container { padding-left: var(--spacing-sm); padding-right: var(--spacing-sm); } }
+      
+      .blog-fixed-logo-link {
+        position: fixed; top: 20px; left: 20px; z-index: 1050; display: block;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; border-radius: var(--border-radius-sm); 
+      }
+      .blog-fixed-logo-link img { 
+        height: 48px; width: auto; display: block; border-radius: var(--border-radius-sm); 
+      }
+      .blog-fixed-logo-link:hover { transform: scale(1.08); box-shadow: 0 0 15px rgba(var(--color-modern-accent-1-rgb), 0.5); }
+
+      .language-selector {
+        display: flex; align-items: center; gap: 5px; position: fixed; 
+        top: var(--spacing-sm); right: var(--spacing-md); z-index: 1020; 
+        background-color: rgba(39, 39, 42, 0.7); padding: var(--spacing-xs) var(--spacing-sm);
+        border-radius: var(--border-radius-md); backdrop-filter: blur(5px);
+      }
+      .lang-button {
+        background: none; border: none; padding: 4px 8px; cursor: pointer; color: var(--color-text-medium);
+        font-size: 0.9rem; font-weight: 700; border-radius: var(--border-radius-sm);
+        transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, opacity var(--transition-speed) ease;
+        border-bottom: 2px solid transparent;
+      }
+      .lang-button:hover { color: var(--color-text-light); }
+      .lang-button.active { color: var(--color-modern-accent-1); border-bottom-color: var(--color-modern-accent-1); cursor: default; }
+      .lang-button:disabled { cursor: not-allowed; opacity: 0.5; }
+      .language-selector span { color: var(--color-text-medium); }
+      body.blog-page-body { padding-top: 0; } 
+      body.blog-page-body > header { display: none !important; } 
+      
+      .blog-post-page { 
+          margin-top: var(--spacing-xl); 
+          margin-bottom: var(--spacing-xl); 
+          padding: 0; 
+      }
+      .post-container-inner { 
+          max-width: 900px; 
+          margin-left: auto; margin-right: auto; background-color: var(--color-dark-bg); 
+          padding: var(--spacing-md); border-radius: var(--border-radius-lg); box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+          border: 2px solid transparent; background-clip: padding-box; position: relative; 
+      }
+      .post-container-inner::before { 
+        content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1; margin: -2px; border-radius: inherit; 
+        background: var(--gradient-container-border-modern); 
+      }
+      .post-header { 
+          padding-top: var(--spacing-sm); 
+          margin-bottom: var(--spacing-md); 
+          text-align: center; 
+      }
+      @keyframes titleGradientAnimation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+      .post-header h1 { 
+          margin-top: 0; margin-bottom: var(--spacing-sm); font-size: clamp(2rem, 4.5vw, 2.8rem); 
+          font-weight: 700; font-family: var(--font-title); padding-bottom: 5px; line-height: 1.2;
+          background-image: linear-gradient(135deg, var(--title-gradient-color-1), var(--title-gradient-color-2), var(--title-gradient-color-3), var(--title-gradient-color-1));
+          background-size: 300% 300%; -webkit-background-clip: text; background-clip: text;
+          color: transparent; animation: titleGradientAnimation 12s ease infinite; 
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); transition: transform 0.3s ease; 
+      }
+      .post-header h1:hover { transform: scale(1.02); }
+      
+      .post-content h2, .post-content h3 { 
+          font-size: clamp(1.5rem, 3.5vw, 2rem); 
+          margin-top: var(--spacing-xl); 
+          margin-bottom: var(--spacing-md); 
+          text-align: left; 
+          padding-bottom: var(--spacing-sm); 
+          border-bottom: 2px solid var(--color-modern-accent-2); 
+          color: var(--color-text-light); 
+          font-family: var(--font-title);
+      }
+      .post-content h3 { 
+          font-size: clamp(1.3rem, 3vw, 1.8rem);
+          border-bottom-color: var(--color-modern-accent-3); 
+      }
+      .post-content h2::after, .post-content h3::after { display:none; } 
+      .post-content p { margin-bottom: var(--spacing-md); line-height: 1.8; color: var(--color-text-light); font-size: 1.05rem; text-align: left; max-width: none; }
+      .post-content ul { list-style-position: outside; padding-left: 20px; margin-bottom: var(--spacing-md); }
+      .post-content ul li { margin-bottom: var(--spacing-xs); }
+      .post-content ul ul { margin-top: var(--spacing-xs); padding-left: var(--spacing-md); }
+      .post-content strong { color: var(--color-secondary-accent); } 
+      .post-content .concept { 
+        font-style: italic;
+        color: var(--color-modern-accent-1); 
+      }
+      .post-content .chess-piece { 
+        font-weight: bold;
+        color: var(--color-modern-accent-3); 
+      }
+
+      .post-navigation { 
+        height: 0; margin: 0; padding: 0; border: none; overflow: hidden; 
+      }
+      @keyframes animatedArrowNavGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+      .nav-arrow { 
+        position: fixed; top: 50%; transform: translateY(-50%); z-index: 1010; 
+        display: flex; align-items: center; justify-content: center;
+        width: 48px; height: 48px; 
+        background-image: var(--arrow-nav-gradient); 
+        background-size: 250% 250%; 
+        animation: animatedArrowNavGradient 7s ease infinite; 
+        border-radius: 50%; box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+        text-decoration: none;
+        transition: opacity var(--transition-speed) ease-out, transform var(--transition-speed) ease-out, box-shadow var(--transition-speed) ease-out;
+        opacity: 0.75; border: 1px solid rgba(var(--color-text-light-rgb), 0.1); 
+        backdrop-filter: blur(4px); cursor: pointer;
+      }
+      .nav-arrow .fas { 
+        color: var(--color-text-light); font-size: 1.5rem; line-height: 1; 
+        text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+        transition: color var(--transition-speed) ease-out, transform var(--transition-speed) ease-out; 
+      }
+      .nav-arrow:hover, .nav-arrow:focus-visible { 
+        opacity: 1; transform: translateY(-50%) scale(1.15); 
+        box-shadow: 0 6px 20px rgba(var(--color-modern-accent-1-rgb), 0.4);
+        outline: none; 
+      }
+      .nav-arrow:hover .fas, .nav-arrow:focus-visible .fas { color: var(--color-text-dark); }
+      .nav-arrow span { display: none; } 
+      #prev-post-link { left: var(--spacing-md); }
+      #prev-post-link:hover .fas { animation: pulseArrowLeft 0.6s infinite alternate ease-in-out; }
+      #next-post-link { right: var(--spacing-md); }
+      #next-post-link:hover .fas { animation: pulseArrowRight 0.6s infinite alternate ease-in-out; }
+      @keyframes pulseArrowLeft { from { transform: translateX(0px); } to { transform: translateX(-3px); } }
+      @keyframes pulseArrowRight { from { transform: translateX(0px); } to { transform: translateX(3px); } }
+      @media (max-width: 1024px) { .nav-arrow { display: none; } } 
+
+      .back-to-blog-container { 
+        display: block; text-align: center; margin-top: var(--spacing-xl); 
+        padding-top: var(--spacing-md); border-top: 1px solid var(--color-background-medium); 
+      }
+      @keyframes animatedGradientBackground { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+      .btn { 
+        display: inline-block; font-family: var(--font-body); font-weight: 600; text-decoration: none;
+        border-radius: var(--border-radius-md); padding: 0.8rem 2rem; transition: all var(--transition-speed) ease;
+        cursor: pointer; text-align: center; letter-spacing: 0.5px; font-size: 1rem;
+      }
+      .btn-gradient { 
+        color: var(--color-text-light); 
+        background-image: linear-gradient(120deg, var(--animated-gradient-colors));
+        background-size: 250% auto; border: none; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        animation: animatedGradientBackground 10s ease infinite; text-transform: uppercase; 
+      }
+      .btn-gradient:hover, .btn-gradient:focus { color: var(--color-text-dark); box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); transform: translateY(-2px); }
+      .btn-gradient:active { transform: translateY(0); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); }
+      
+      footer { 
+        background-color: var(--color-dark-bg); 
+        color: var(--color-text-medium); 
+        padding-top: var(--spacing-lg); 
+        padding-bottom: var(--spacing-md); 
+        margin-top: auto; 
+        border-top: 3px solid var(--color-modern-accent-3); 
+      }
+      .footer-content { 
+        display: flex; 
+        flex-wrap: wrap; 
+        justify-content: space-between; 
+        gap: var(--spacing-md); 
+        margin-bottom: var(--spacing-lg); 
+      }
+      .footer-about, .footer-links, .footer-contact { 
+        flex: 1; 
+        min-width: 250px; 
+        margin-bottom: var(--spacing-md); 
+      }
+      .footer-about h4, .footer-links h4, .footer-contact h4 {
+        font-family: var(--font-title); 
+        color: var(--color-text-light); 
+        font-size: 1.15rem; 
+        margin-bottom: var(--spacing-sm); 
+        position: relative; 
+        padding-bottom: var(--spacing-xs);
+        letter-spacing: 0.5px;
+      }
+      .footer-about h4::after, .footer-links h4::after, .footer-contact h4::after {
+        content: ''; 
+        position: absolute; 
+        left: 0; 
+        bottom: 0; 
+        width: 40px; 
+        height: 2px; 
+        background-color: var(--color-secondary-accent); 
+      }
+      .footer-about p, .footer-links ul, .footer-contact p { 
+        font-size: 0.9rem; 
+        line-height: 1.6; 
+        color: var(--color-text-medium); 
+      }
+      .footer-links ul { list-style: none; padding-left: 0; }
+      .footer-links ul li { margin-bottom: calc(var(--spacing-xs) * 0.8); }
+      .footer-links ul li a { color: var(--color-text-medium); transition: color var(--transition-speed) ease; }
+      .footer-links ul li a:hover { color: var(--color-secondary-accent); }
+      .footer-contact p i.fas, .footer-contact p i.fab { 
+          margin-right: var(--spacing-xs); 
+          color: var(--color-modern-accent-2); 
+          width: 20px; 
+          text-align: center;
+      }
+      .footer-contact p a { color: var(--color-text-medium); }
+      .footer-contact p a:hover { color: var(--color-secondary-accent); }
+      .payment-methods { margin-top: var(--spacing-sm); }
+      .payment-methods span { 
+        display: block; 
+        margin-bottom: var(--spacing-xs); 
+        font-size: 0.9rem; 
+        color: var(--color-text-medium); 
+      }
+      .payment-icons { display: flex; gap: var(--spacing-sm); align-items: center; }
+      .payment-icons img { 
+        height: 25px; 
+        width: auto; 
+        opacity: 0.7; 
+        transition: opacity var(--transition-speed) ease; 
+      }
+      .payment-icons img:hover { opacity: 1; }
+      .footer-bottom { 
+        padding-top: var(--spacing-md); 
+        border-top: 1px solid var(--color-background-medium); 
+        font-size: 0.85rem; 
+        text-align: center; 
+      }
+      .footer-bottom p { 
+        display: inline-block; 
+        margin: 0; 
+        color: var(--color-text-medium); 
+      }
+      @keyframes backToTopGradientAnimation { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+      #back-to-top-btn {
+        position: fixed; bottom: 30px; right: 30px;
+        width: 45px; height: 45px; 
+        background-image: var(--back-to-top-gradient); 
+        background-size: 200% 200%; 
+        animation: backToTopGradientAnimation 6s ease infinite; 
+        color: var(--color-text-light); 
+        border: none; border-radius: 50%; font-size: 1.3rem; 
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25), 0 0 15px 3px rgba(var(--color-modern-accent-1-rgb), 0.35); 
+        opacity: 0; visibility: hidden; transform: translateY(20px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+        z-index: 999; display: flex; align-items: center; justify-content: center;
+      }
+      #back-to-top-btn.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+      #back-to-top-btn:hover, #back-to-top-btn:focus { 
+        color: var(--color-text-dark); 
+        transform: translateY(-2px) scale(1.05); 
+        box-shadow: 0 6px 18px rgba(0,0,0,0.3), 0 0 20px 5px rgba(var(--color-modern-accent-2-rgb), 0.45); 
+        outline: none;
+      }
+      #back-to-top-btn .fas { transition: color 0.3s ease; }
+      #back-to-top-btn:hover .fas, #back-to-top-btn:focus .fas { color: var(--color-text-dark); }
+      
+      @media (max-width: 992px) { 
+          .footer-about, .footer-links, .footer-contact { flex-basis: 45%; } 
+          .post-container-inner { 
+              padding: var(--spacing-sm); 
+              margin-left: var(--spacing-sm); 
+              margin-right: var(--spacing-sm); 
+              width: auto; 
+              max-width: 95%; 
+          } 
+      }
+      @media (max-width: 767px) { 
+          .footer-content { flex-direction: column; align-items: flex-start; }
+          .footer-about, .footer-links, .footer-contact { flex-basis: 100%; min-width: 100%; margin-bottom: var(--spacing-md); text-align: left; }
+          .footer-about h4::after, .footer-links h4::after, .footer-contact h4::after { left: 0; transform: none; } 
+          .payment-icons { justify-content: flex-start; }
+      }
+      @media (max-width: 480px) { 
+          .post-header h1 { font-size: clamp(1.6rem, 7vw, 2rem); } 
+          .post-container-inner { 
+               max-width: 100%; 
+               padding-left: var(--spacing-xs); 
+               padding-right: var(--spacing-xs);
+          }
+          #back-to-top-btn { width: 45px; height: 45px; font-size: 1.2rem; bottom: 20px; right: 20px; }
+      }
+    </style>
+</head>
+<body class="blog-page-body" data-lang="es">
+    <a href="../index.html" class="blog-fixed-logo-link" aria-label="Volver a la página principal de Chill Chess Club">
+        <img src="../images/logo.png" alt="Logo Chill Chess Club" onerror="this.onerror=null; this.src='https://placehold.co/100x48/1a1a1d/f4f4f5?text=Logo+CCC'; this.style.border='1px solid #3F3F46'; this.style.padding='5px';">
+    </a>
+
+    <div class="language-selector">
+        <button class="lang-button active" data-lang-switch="es" aria-pressed="true" title="Cambiar a Español">ES</button>
+        <span>|</span>
+        <button class="lang-button" data-lang-switch="en" aria-pressed="false" title="Switch to English">EN</button>
+    </div>
+
+    <nav class="post-navigation" aria-label="Navegación entre recursos">
+        <a href="#" id="prev-post-link" class="nav-arrow prev">
+            <i class="fas fa-chevron-left"></i>
+            <span data-translate-key="resourceNavPrev">Anterior</span>
+        </a>
+        <a href="#" id="next-post-link" class="nav-arrow next">
+            <span data-translate-key="resourceNavNext">Siguiente</span>
+            <i class="fas fa-chevron-right"></i>
+        </a>
+    </nav>
+
+    <main class="blog-post-page"> 
+        <div class="post-container-inner">
+            <header class="post-header">
+                <h1 data-translate-key="fundamentosTituloPrincipal">Fundamentos Estratégicos del Ajedrez: Guía para el Jugador Reflexivo</h1>
+            </header>
+
+            <article class="post-content">
+                <p data-translate-key="fundamentosIntro">Más allá del conocimiento individual del movimiento de las piezas, el ajedrez se despliega a través de principios estratégicos fundamentales –auténticos <span class="concept">preceptos</span>– que orientan las decisiones desde los albores de la apertura hasta la consumación del final. La comprensión de estos conceptos es el cimiento sobre el cual se edifican planes sólidos y se juega con un propósito más hondo.</p>
+                
+                <h2 data-translate-key="fundamentosDominioCentroTitulo">1. El Dominio del Centro</h2>
+                <p data-translate-key="fundamentosDominioCentroDesc1">Las casillas centrales del tablero (principalmente <span class="chess-piece">d4, e4, d5, y e5</span>) poseen un valor estratégico primordial. Las piezas que desde allí operan ejercen control sobre un mayor número de escaques, gozando de una movilidad y un abanico de opciones superiores.</p>
+                <p data-translate-key="fundamentosDominioCentroDesc2"><strong>Propósito:</strong> Procurar la ocupación o, cuando menos, la influencia sobre el centro con tus peones y piezas desde las primeras jugadas. Un centro robusto confiere ventaja espacial y limita las alternativas del adversario.</p>
+                <ul>
+                    <li data-translate-key="fundamentosDominioCentroTip1">Considera iniciar la partida avanzando uno o dos de tus peones centrales (usualmente el peón de Rey a e4 o el peón de Dama a d4).</li>
+                    <li data-translate-key="fundamentosDominioCentroTip2">Dirige el desarrollo de tus caballos y alfiles hacia casillas que ejerzan control o brinden apoyo a este sector vital del tablero.</li>
+                </ul>
+
+                <h2 data-translate-key="fundamentosDesarrolloAgilTitulo">2. Desarrollo Ágil y Consciente de las Piezas</h2>
+                <p data-translate-key="fundamentosDesarrolloAgilDesc1">Durante la fase de apertura, el objetivo reside en movilizar tus piezas menores (caballos y alfiles) desde sus posiciones iniciales hacia escaques activos, con la mayor celeridad y eficiencia posibles. Es crucial evitar que las piezas permanezcan "adormecidas" en la primera fila.</p>
+                <p data-translate-key="fundamentosDesarrolloAgilDesc2"><strong>Propósito:</strong> Poner en juego la totalidad de tus piezas menores antes de embarcarse en ofensivas prematuras. Cada pieza debe tener un papel, una contribución al plan general.</p>
+                <ul>
+                    <li data-translate-key="fundamentosDesarrolloAgilTip1">En numerosas aperturas, suele ser prudente priorizar el desarrollo de los caballos antes que el de los alfiles.</li>
+                    <li data-translate-key="fundamentosDesarrolloAgilTip2">Procura no mover la misma pieza repetidamente durante la apertura, salvo que una necesidad táctica o estratégica imperiosa así lo justifique.</li>
+                    <li data-translate-key="fundamentosDesarrolloAgilTip3">Busca la conexión de tus torres, un objetivo que habitualmente se alcanza tras el desarrollo de las piezas menores y la ejecución del enroque.</li>
+                </ul>
+
+                <h2 data-translate-key="fundamentosSalvaguardaReyTitulo">3. La Salvaguarda del Rey</h2>
+                <p data-translate-key="fundamentosSalvaguardaReyDesc1">La protección de tu Rey es un deber insoslayable. Un Rey expuesto se convierte en un blanco vulnerable, susceptible a ataques que pueden resultar definitivos.</p>
+                <p data-translate-key="fundamentosSalvaguardaReyDesc2"><strong>Propósito:</strong> Conducir a tu Rey hacia una posición de seguridad, lo cual se logra comúnmente mediante el <span class="concept">enroque</span>, durante la etapa inicial de la partida.</p>
+                <ul>
+                    <li data-translate-key="fundamentosSalvaguardaReyTip1">Procura enrocar en una fase temprana del juego (generalmente dentro de los primeros diez movimientos).</li>
+                    <li data-translate-key="fundamentosSalvaguardaReyTip2">Evita el avance innecesario de los peones que custodian a tu Rey enrocado, pues tales movimientos pueden generar debilidades estructurales.</li>
+                    <li data-translate-key="fundamentosSalvaguardaReyTip3">Si tu Rey se encuentra bajo amenaza, asegúrate de mantener piezas defensoras en su proximidad.</li>
+                </ul>
+
+                <h2 data-translate-key="fundamentosValorRelativoTitulo">4. El Valor Relativo de las Piezas</h2>
+                <p data-translate-key="fundamentosValorRelativoDesc1">Si bien cada pieza posee un valor numérico orientativo (Peón=1, Caballo=3, Alfil=3, Torre=5, Dama=9), su verdadera valía es siempre <span class="concept">relativa</span> y se encuentra supeditada a la configuración específica de la posición en el tablero.</p>
+                <p data-translate-key="fundamentosValorRelativoDesc2"><strong>Propósito:</strong> Eludir la pérdida innecesaria de material y discernir los intercambios que resulten favorables. Una pieza estratégicamente bien ubicada puede superar con creces su valor nominal.</p>
+                <ul>
+                    <li data-translate-key="fundamentosValorRelativoTip1">No entregues una pieza de mayor valor intrínseco por una de menor valor sin obtener una compensación clara y tangible (sea esta un ataque prometedor, una ventaja posicional duradera, o la simplificación hacia un final ganado).</li>
+                    <li data-translate-key="fundamentosValorRelativoTip2">Un alfil tiende a ser ligeramente más valioso que un caballo en posiciones de carácter abierto; inversamente, un caballo puede demostrar superioridad en posiciones cerradas y con puntos de apoyo firmes.</li>
+                </ul>
+                
+                <h2 data-translate-key="fundamentosEstructuraPeonesTitulo">5. La Estructura de Peones</h2>
+                <p data-translate-key="fundamentosEstructuraPeonesDesc1">La configuración que adoptan tus peones –la <span class="concept">estructura de peones</span>– ejerce una influencia significativa sobre el carácter de la partida. Esta define líneas abiertas, establece puestos avanzados para tus piezas y condiciona la seguridad de tu monarca.</p>
+                <p data-translate-key="fundamentosEstructuraPeonesDesc2"><strong>Propósito:</strong> Forjar una estructura de peones sólida y coherente, evitando la creación de debilidades como peones aislados, doblados o retrasados. Utiliza tus peones para ganar espacio, restringir la movilidad del oponente y consolidar tu posición.</p>
+                <ul>
+                    <li data-translate-key="fundamentosEstructuraPeonesTip1">Reflexiona cuidadosamente antes de avanzar un peón, pues su movimiento es irreversible.</li>
+                    <li data-translate-key="fundamentosEstructuraPeonesTip2">Los peones que avanzan unidos, apoyándose mutuamente, conforman una fuerza considerable.</li>
+                </ul>
+
+                <h2 data-translate-key="fundamentosCoordinacionArmonicaTitulo">6. La Coordinación Armónica de las Piezas</h2>
+                <p data-translate-key="fundamentosCoordinacionArmonicaDesc1">Tus piezas deben operar en concierto, como los miembros de una orquesta bien afinada. Una <span class="concept">coordinación</span> eficaz implica que tus piezas se protegen y apoyan mutuamente, colaborando de forma sinérgica tanto en la defensa como en el ataque.</p>
+                <p data-translate-key="fundamentosCoordinacionArmonicaDesc2"><strong>Propósito:</strong> Buscar disposiciones donde tus piezas armonicen sus fuerzas y controlen casillas clave de manera conjunta.</p>
+                <ul>
+                    <li data-translate-key="fundamentosCoordinacionArmonicaTip1">Evita mantener piezas inactivas o aquellas que obstruyan la acción de otras piezas propias.</li>
+                    <li data-translate-key="fundamentosCoordinacionArmonicaTip2">Las torres revelan su máxima potencia en columnas abiertas o semiabiertas, y a menudo cooperan de forma decisiva cuando se doblan en la séptima u octava fila.</li>
+                </ul>
+
+                <h2 data-translate-key="fundamentosConsideracionPlanesTitulo">7. La Consideración de los Planes del Adversario</h2>
+                <p data-translate-key="fundamentosConsideracionPlanesDesc1">El ajedrez es un diálogo, no un monólogo. Es fundamental interrogarse constantemente: <span class="concept">"¿Cuál es la intención de mi oponente? ¿Qué amenaza subyace en su última jugada?"</span>.</p>
+                <p data-translate-key="fundamentosConsideracionPlanesDesc2"><strong>Propósito:</strong> Anticipar las intenciones del rival, organizar una defensa adecuada contra sus amenazas y, de ser posible, desbaratar sus planes.</p>
+                <ul>
+                    <li data-translate-key="fundamentosConsideracionPlanesTip1">Tras cada movimiento de tu oponente, dedica un momento a evaluar los cambios en la posición y las nuevas posibilidades que se abren para él.</li>
+                </ul>
+
+                <p data-translate-key="fundamentosConclusion">Estos preceptos han de entenderse como guías generales, faros que iluminan el camino, no como reglas inquebrantables. Con la acumulación de experiencia, aprenderás a discernir cuándo y cómo aplicarlos, e incluso cuándo transgredirlos conscientemente para obtener una ventaja. La clave reside en la práctica constante y en el análisis reflexivo de tus propias partidas.</p>
+            </article>
+
+            <div class="back-to-blog-container"> 
+                <a href="../index.html#recursos" class="btn btn-gradient" data-translate-key="backToResourcesLink">Volver a Recursos</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                 <div class="footer-about">
+                    <h4 data-translate-key="footerAboutTitleIndex">Chill Chess Club</h4>
+                    <p data-translate-key="footerAboutDescIndex">Transformando tu juego con un método personalizado y efectivo. Clases para principiantes e intermedios.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 data-translate-key="footerLinksTitleIndex">Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="../index.html#instructor" data-translate-key="navAbout">Sobre Mí</a></li>
+                        <li><a href="../index.html#cursos" data-translate-key="navCourses">Cursos</a></li>
+                        <li><a href="../index.html#metodo" data-translate-key="navMethod">Método</a></li>
+                        <li><a href="../index.html#faq" data-translate-key="navFaq">FAQ</a></li> 
+                        <li><a href="../index.html#contacto" data-translate-key="navContact">Contacto</a></li>
+                        <li><a href="../politica-privacidad.html" data-translate-key="footerPrivacyLinkIndex">Política de Privacidad</a></li> 
+                        <li><a href="../terminos-servicio.html" data-translate-key="footerTermsLinkIndex">Términos de Servicio</a></li> 
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4 data-translate-key="footerContactTitleIndex">Contacto Rápido</h4>
+                    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:santiago.narvaez.84@gmail.com">santiago.narvaez.84@gmail.com</a></p>
+                    <p><i class="fas fa-info-circle" aria-hidden="true"></i> <a href="../index.html#contacto" data-translate-key="footerContactFormLinkIndex">Formulario de Contacto</a></p>
+                    <div class="payment-methods">
+                        <span data-translate-key="footerPaymentTextIndex">Pagos Seguros con:</span>
+                        <div class="payment-icons">
+                            <img src="../icons/paypal.png" alt="PayPal" title="PayPal" class="payment-logo" onerror="this.style.display='none'">
+                            <img src="../icons/payoneer.png" alt="Payoneer" title="Payoneer" class="payment-logo" onerror="this.style.display='none'">
+                            <img src="../icons/binance.png" alt="Binance" title="Binance" class="payment-logo" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-translate-key="footerCopyrightIndex">© <span id="current-year"></span> Chill Chess Club. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top-btn" 
+        title="Volver arriba" 
+        aria-label="Volver arriba" 
+        data-translate-key="backToTopTitle|title"> 
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const langButtons = document.querySelectorAll('.lang-button[data-lang-switch]');
+        const translatableElements = document.querySelectorAll('[data-translate-key]');
+        let currentLang = document.body.getAttribute('data-lang') || 'es';
+
+        function toTitleCase(str) { 
+            if (!str) return '';
+            return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        }
+
+        const translations = { 
+            es: {
+                pageTitleRecursoFundamentos: "Fundamentos Estratégicos del Ajedrez - Chill Chess Club",
+                metaDescriptionRecursoFundamentos: "Principios estratégicos fundamentales que guían tus decisiones en el ajedrez, desde la apertura hasta el final.",
+                fundamentosTituloPrincipal: "Fundamentos Estratégicos del Ajedrez: Guía para el Jugador Reflexivo",
+                fundamentosIntro: "Más allá del conocimiento individual del movimiento de las piezas, el ajedrez se despliega a través de principios estratégicos fundamentales –auténticos <span class=\"concept\">preceptos</span>– que orientan las decisiones desde los albores de la apertura hasta la consumación del final. La comprensión de estos conceptos es el cimiento sobre el cual se edifican planes sólidos y se juega con un propósito más hondo.",
+                fundamentosDominioCentroTitulo: "1. El Dominio del Centro",
+                fundamentosDominioCentroDesc1: "Las casillas centrales del tablero (principalmente <span class=\"chess-piece\">d4, e4, d5, y e5</span>) poseen un valor estratégico primordial. Las piezas que desde allí operan ejercen control sobre un mayor número de escaques, gozando de una movilidad y un abanico de opciones superiores.",
+                fundamentosDominioCentroDesc2: "<strong>Propósito:</strong> Procurar la ocupación o, cuando menos, la influencia sobre el centro con tus peones y piezas desde las primeras jugadas. Un centro robusto confiere ventaja espacial y limita las alternativas del adversario.",
+                fundamentosDominioCentroTip1: "Considera iniciar la partida avanzando uno o dos de tus peones centrales (usualmente el peón de Rey a e4 o el peón de Dama a d4).",
+                fundamentosDominioCentroTip2: "Dirige el desarrollo de tus caballos y alfiles hacia casillas que ejerzan control o brinden apoyo a este sector vital del tablero.",
+                fundamentosDesarrolloAgilTitulo: "2. Desarrollo Ágil y Consciente de las Piezas",
+                fundamentosDesarrolloAgilDesc1: "Durante la fase de apertura, el objetivo reside en movilizar tus piezas menores (caballos y alfiles) desde sus posiciones iniciales hacia escaques activos, con la mayor celeridad y eficiencia posibles. Es crucial evitar que las piezas permanezcan \"adormecidas\" en la primera fila.",
+                fundamentosDesarrolloAgilDesc2: "<strong>Propósito:</strong> Poner en juego la totalidad de tus piezas menores antes de embarcarse en ofensivas prematuras. Cada pieza debe tener un papel, una contribución al plan general.",
+                fundamentosDesarrolloAgilTip1: "En numerosas aperturas, suele ser prudente priorizar el desarrollo de los caballos antes que el de los alfiles.",
+                fundamentosDesarrolloAgilTip2: "Procura no mover la misma pieza repetidamente durante la apertura, salvo que una necesidad táctica o estratégica imperiosa así lo justifique.",
+                fundamentosDesarrolloAgilTip3: "Busca la conexión de tus torres, un objetivo que habitualmente se alcanza tras el desarrollo de las piezas menores y la ejecución del enroque.",
+                fundamentosSalvaguardaReyTitulo: "3. La Salvaguarda del Rey",
+                fundamentosSalvaguardaReyDesc1: "La protección de tu Rey es un deber insoslayable. Un Rey expuesto se convierte en un blanco vulnerable, susceptible a ataques que pueden resultar definitivos.",
+                fundamentosSalvaguardaReyDesc2: "<strong>Propósito:</strong> Conducir a tu Rey hacia una posición de seguridad, lo cual se logra comúnmente mediante el <span class=\"concept\">enroque</span>, durante la etapa inicial de la partida.",
+                fundamentosSalvaguardaReyTip1: "Procura enrocar en una fase temprana del juego (generalmente dentro de los primeros diez movimientos).",
+                fundamentosSalvaguardaReyTip2: "Evita el avance innecesario de los peones que custodian a tu Rey enrocado, pues tales movimientos pueden generar debilidades estructurales.",
+                fundamentosSalvaguardaReyTip3: "Si tu Rey se encuentra bajo amenaza, asegúrate de mantener piezas defensoras en su proximidad.",
+                fundamentosValorRelativoTitulo: "4. El Valor Relativo de las Piezas",
+                fundamentosValorRelativoDesc1: "Si bien cada pieza posee un valor numérico orientativo (Peón=1, Caballo=3, Alfil=3, Torre=5, Dama=9), su verdadera valía es siempre <span class=\"concept\">relativa</span> y se encuentra supeditada a la configuración específica de la posición en el tablero.",
+                fundamentosValorRelativoDesc2: "<strong>Propósito:</strong> Eludir la pérdida innecesaria de material y discernir los intercambios que resulten favorables. Una pieza estratégicamente bien ubicada puede superar con creces su valor nominal.",
+                fundamentosValorRelativoTip1: "No entregues una pieza de mayor valor intrínseco por una de menor valor sin obtener una compensación clara y tangible (sea esta un ataque prometedor, una ventaja posicional duradera, o la simplificación hacia un final ganado).",
+                fundamentosValorRelativoTip2: "Un alfil tiende a ser ligeramente más valioso que un caballo en posiciones de carácter abierto; inversamente, un caballo puede demostrar superioridad en posiciones cerradas y con puntos de apoyo firmes.",
+                fundamentosEstructuraPeonesTitulo: "5. La Estructura de Peones",
+                fundamentosEstructuraPeonesDesc1: "La configuración que adoptan tus peones –la <span class=\"concept\">estructura de peones</span>– ejerce una influencia significativa sobre el carácter de la partida. Esta define líneas abiertas, establece puestos avanzados para tus piezas y condiciona la seguridad de tu monarca.",
+                fundamentosEstructuraPeonesDesc2: "<strong>Propósito:</strong> Forjar una estructura de peones sólida y coherente, evitando la creación de debilidades como peones aislados, doblados o retrasados. Utiliza tus peones para ganar espacio, restringir la movilidad del oponente y consolidar tu posición.",
+                fundamentosEstructuraPeonesTip1: "Reflexiona cuidadosamente antes de avanzar un peón, pues su movimiento es irreversible.",
+                fundamentosEstructuraPeonesTip2: "Los peones que avanzan unidos, apoyándose mutuamente, conforman una fuerza considerable.",
+                fundamentosCoordinacionArmonicaTitulo: "6. La Coordinación Armónica de las Piezas",
+                fundamentosCoordinacionArmonicaDesc1: "Tus piezas deben operar en concierto, como los miembros de una orquesta bien afinada. Una <span class=\"concept\">coordinación</span> eficaz implica que tus piezas se protegen y apoyan mutuamente, colaborando de forma sinérgica tanto en la defensa como en el ataque.",
+                fundamentosCoordinacionArmonicaDesc2: "<strong>Propósito:</strong> Buscar disposiciones donde tus piezas armonicen sus fuerzas y controlen casillas clave de manera conjunta.",
+                fundamentosCoordinacionArmonicaTip1: "Evita mantener piezas inactivas o aquellas que obstruyan la acción de otras piezas propias.",
+                fundamentosCoordinacionArmonicaTip2: "Las torres revelan su máxima potencia en columnas abiertas o semiabiertas, y a menudo cooperan de forma decisiva cuando se doblan en la séptima u octava fila.",
+                fundamentosConsideracionPlanesTitulo: "7. La Consideración de los Planes del Adversario",
+                fundamentosConsideracionPlanesDesc1: "El ajedrez es un diálogo, no un monólogo. Es fundamental interrogarse constantemente: <span class=\"concept\">\"¿Cuál es la intención de mi oponente? ¿Qué amenaza subyace en su última jugada?\"</span>.",
+                fundamentosConsideracionPlanesDesc2: "<strong>Propósito:</strong> Anticipar las intenciones del rival, organizar una defensa adecuada contra sus amenazas y, de ser posible, desbaratar sus planes.",
+                fundamentosConsideracionPlanesTip1: "Tras cada movimiento de tu oponente, dedica un momento a evaluar los cambios en la posición y las nuevas posibilidades que se abren para él.",
+                fundamentosConclusion: "Estos preceptos han de entenderse como guías generales, faros que iluminan el camino, no como reglas inquebrantables. Con la acumulación de experiencia, aprenderás a discernir cuándo y cómo aplicarlos, e incluso cuándo transgredirlos conscientemente para obtener una ventaja. La clave reside en la práctica constante y en el análisis reflexivo de tus propias partidas.",
+                backToResourcesLink: "Volver a Recursos",
+                resourceNavPrev: "Anterior", 
+                resourceNavNext: "Siguiente",
+                footerAboutTitleIndex: "Chill Chess Club",
+                footerAboutDescIndex: "Transformando tu juego con un método personalizado y efectivo. Clases para principiantes e intermedios.", 
+                footerLinksTitleIndex: "Enlaces Rápidos", 
+                navAbout: "Sobre Mí", navCourses: "Cursos", navMethod: "Método", navFaq: "FAQ", navContact: "Contacto",
+                footerPrivacyLinkIndex: "Política de Privacidad", footerTermsLinkIndex: "Términos de Servicio", 
+                footerContactTitleIndex: "Contacto Rápido", footerContactFormLinkIndex: "Formulario de Contacto", 
+                footerPaymentTextIndex: "Pagos Seguros con:",
+                footerCopyrightIndex: "© {year} Chill Chess Club. Todos los derechos reservados.",
+                backToTopTitle: "Volver arriba",
+                ariaLabelBackToTop: "Volver arriba"
+            },
+            en: { 
+                pageTitleRecursoFundamentos: "Strategic Chess Fundamentals - Chill Chess Club",
+                metaDescriptionRecursoFundamentos: "Fundamental strategic principles that guide your decisions in chess, from opening to endgame.",
+                fundamentosTituloPrincipal: "Strategic Chess Fundamentals: A Guide for the Reflective Player",
+                fundamentosIntro: "Beyond individual knowledge of piece movement, chess unfolds through fundamental strategic principles – true <span class=\"concept\">precepts</span> – that guide decisions from the dawn of the opening to the consummation of the endgame. Understanding these concepts is the foundation upon which solid plans are built and one plays with deeper purpose.",
+                fundamentosDominioCentroTitulo: "1. Dominion of the Center",
+                fundamentosDominioCentroDesc1: "The central squares of the board (mainly <span class=\"chess-piece\">d4, e4, d5, and e5</span>) possess paramount strategic value. Pieces operating from there control a greater number of squares, enjoying superior mobility and a wider range of options.",
+                fundamentosDominioCentroDesc2: "<strong>Purpose:</strong> Strive for occupation or, at least, influence over the center with your pawns and pieces from the earliest moves. A robust center confers spatial advantage and limits the adversary's alternatives.",
+                fundamentosDominioCentroTip1: "Consider starting the game by advancing one or two of your central pawns (usually the King's pawn to e4 or the Queen's pawn to d4).",
+                fundamentosDominioCentroTip2: "Direct the development of your knights and bishops towards squares that exert control or provide support to this vital sector of the board.",
+                fundamentosDesarrolloAgilTitulo: "2. Agile and Conscious Piece Development",
+                fundamentosDesarrolloAgilDesc1: "During the opening phase, the objective is to mobilize your minor pieces (knights and bishops) from their initial positions to active squares, with the greatest possible speed and efficiency. It is crucial to prevent pieces from remaining \"dormant\" on the back rank.",
+                fundamentosDesarrolloAgilDesc2: "<strong>Purpose:</strong> Bring all your minor pieces into play before embarking on premature offensives. Each piece must have a role, a contribution to the overall plan.",
+                fundamentosDesarrolloAgilTip1: "In numerous openings, it is often prudent to prioritize the development of knights before that of bishops.",
+                fundamentosDesarrolloAgilTip2: "Try not to move the same piece repeatedly during the opening, unless a compelling tactical or strategic need justifies it.",
+                fundamentosDesarrolloAgilTip3: "Seek to connect your rooks, an objective usually achieved after developing minor pieces and castling.",
+                fundamentosSalvaguardaReyTitulo: "3. Safeguarding the King",
+                fundamentosSalvaguardaReyDesc1: "Protecting your King is an unavoidable duty. An exposed King becomes a vulnerable target, susceptible to attacks that can be definitive.",
+                fundamentosSalvaguardaReyDesc2: "<strong>Purpose:</strong> Lead your King to a position of safety, commonly achieved through <span class=\"concept\">castling</span>, during the initial stage of the game.",
+                fundamentosSalvaguardaReyTip1: "Try to castle early in the game (generally within the first ten moves).",
+                fundamentosSalvaguardaReyTip2: "Avoid unnecessarily advancing the pawns guarding your castled King, as such moves can create structural weaknesses.",
+                fundamentosSalvaguardaReyTip3: "If your King is under threat, ensure defensive pieces are kept in its vicinity.",
+                fundamentosValorRelativoTitulo: "4. The Relative Value of Pieces",
+                fundamentosValorRelativoDesc1: "While each piece has an indicative numerical value (Pawn=1, Knight=3, Bishop=3, Rook=5, Queen=9), its true worth is always <span class=\"concept\">relative</span> and is subject to the specific configuration of the position on the board.",
+                fundamentosValorRelativoDesc2: "<strong>Purpose:</strong> Avoid the unnecessary loss of material and discern favorable exchanges. A strategically well-placed piece can far exceed its nominal value.",
+                fundamentosValorRelativoTip1: "Do not give up a piece of greater intrinsic value for one of lesser value without obtaining clear and tangible compensation (be it a promising attack, a lasting positional advantage, or simplification into a won endgame).",
+                fundamentosValorRelativoTip2: "A bishop tends to be slightly more valuable than a knight in open positions; conversely, a knight can demonstrate superiority in closed positions with firm support points.",
+                fundamentosEstructuraPeonesTitulo: "5. Pawn Structure",
+                fundamentosEstructuraPeonesDesc1: "The configuration your pawns adopt – the <span class=\"concept\">pawn structure</span> – significantly influences the character of the game. It defines open lines, establishes outposts for your pieces, and conditions the safety of your monarch.",
+                fundamentosEstructuraPeonesDesc2: "<strong>Purpose:</strong> Forge a solid and coherent pawn structure, avoiding the creation of weaknesses such as isolated, doubled, or backward pawns. Use your pawns to gain space, restrict the opponent's mobility, and consolidate your position.",
+                fundamentosEstructuraPeonesTip1: "Think carefully before advancing a pawn, as its movement is irreversible.",
+                fundamentosEstructuraPeonesTip2: "Pawns that advance together, supporting each other, form a considerable force.",
+                fundamentosCoordinacionArmonicaTitulo: "6. Harmonious Piece Coordination",
+                fundamentosCoordinacionArmonicaDesc1: "Your pieces must operate in concert, like members of a well-tuned orchestra. Effective <span class=\"concept\">coordination</span> implies that your pieces protect and support each other, collaborating synergistically in both defense and attack.",
+                fundamentosCoordinacionArmonicaDesc2: "<strong>Purpose:</strong> Seek arrangements where your pieces harmonize their forces and control key squares jointly.",
+                fundamentosCoordinacionArmonicaTip1: "Avoid keeping pieces inactive or those that obstruct the action of other friendly pieces.",
+                fundamentosCoordinacionArmonicaTip2: "Rooks reveal their maximum power on open or semi-open files, and often cooperate decisively when doubled on the seventh or eighth rank.",
+                fundamentosConsideracionPlanesTitulo: "7. Consideration of the Adversary's Plans",
+                fundamentosConsideracionPlanesDesc1: "Chess is a dialogue, not a monologue. It is essential to constantly ask oneself: <span class=\"concept\">\"What is my opponent's intention? What threat underlies their last move?\"</span>.",
+                fundamentosConsideracionPlanesDesc2: "<strong>Purpose:</strong> Anticipate the rival's intentions, organize an adequate defense against their threats, and, if possible, disrupt their plans.",
+                fundamentosConsideracionPlanesTip1: "After each of your opponent's moves, take a moment to evaluate the changes in the position and the new possibilities that open up for them.",
+                fundamentosConclusion: "These precepts should be understood as general guides, beacons that illuminate the path, not as unbreakable rules. With the accumulation of experience, you will learn to discern when and how to apply them, and even when to consciously transgress them to gain an advantage. The key lies in constant practice and in the reflective analysis of your own games.",
+                backToResourcesLink: "Back to Resources",
+                resourceNavPrev: "Previous", 
+                resourceNavNext: "Next",
+                footerAboutTitleIndex: "Chill Chess Club", 
+                footerAboutDescIndex: "Transforming your game with a personalized and effective method. Classes for beginners and intermediates.", 
+                footerLinksTitleIndex: "Quick Links", 
+                navAbout: "About Me", navCourses: "Courses", navMethod: "Method", navFaq: "FAQ", navContact: "Contact",
+                footerPrivacyLinkIndex: "Privacy Policy", footerTermsLinkIndex: "Terms of Service", 
+                footerContactTitleIndex: "Quick Contact", footerContactFormLinkIndex: "Contact Form", 
+                footerPaymentTextIndex: "Secure Payments with:",
+                footerCopyrightIndex: "© {year} Chill Chess Club. All rights reserved.",
+                backToTopTitle: "Back to Top",
+                ariaLabelBackToTop: "Back to Top"
+            }
+        };
+
+        function updateTexts(lang) {
+            translatableElements.forEach(el => {
+                const originalKey = el.dataset.translateKey;
+                if (!originalKey) return;
+                let textKey = originalKey;
+                let attributeToUpdate = null;
+                if (originalKey.includes('|')) {
+                    const parts = originalKey.split('|');
+                    textKey = parts[0];
+                    attributeToUpdate = parts[1];
+                }
+                let translationText = (translations[lang] && translations[lang][textKey]) || (translations['es'] && translations['es'][textKey]) || '';
+                if (textKey.startsWith("footerLink") || textKey === "footerContactTitleIndex" || textKey === "footerLinksTitleIndex" || textKey.startsWith("nav")) {
+                     if (textKey !== "footerAboutTitleIndex") translationText = toTitleCase(translationText);
+                }
+                if (textKey === "footerCopyrightIndex") {
+                    translationText = translationText.replace("{year}", new Date().getFullYear());
+                }
+                if (attributeToUpdate) {
+                    el.setAttribute(attributeToUpdate, translationText);
+                    if (textKey === 'metaDescriptionRecursoFundamentos' && attributeToUpdate === 'content') { 
+                        const metaDescTag = document.querySelector('meta[name="description"]');
+                        if (metaDescTag) metaDescTag.setAttribute('content', translationText);
+                    }
+                } else {
+                    if (el.tagName === 'TITLE') document.title = translationText;
+                    else el.innerHTML = translationText; 
+                }
+            });
+            document.documentElement.lang = lang; 
+            document.body.setAttribute('data-lang', lang); 
+            localStorage.setItem('preferredLang', lang);
+            
+            if (document.getElementById('prev-post-link') && document.getElementById('next-post-link')) {
+                setupResourceNavigation(lang);
+            }
+        }
+        
+        const preferredLangStored = localStorage.getItem('preferredLang');
+        if (preferredLangStored && translations[preferredLangStored]) {
+            currentLang = preferredLangStored;
+            langButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang-switch') === currentLang);
+                btn.setAttribute('aria-pressed', btn.getAttribute('data-lang-switch') === currentLang);
+            });
+        }
+
+        langButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                const selectedLang = button.getAttribute('data-lang-switch');
+                if (selectedLang === currentLang) return; 
+                document.body.classList.add('fade-out'); 
+                setTimeout(() => {
+                    currentLang = selectedLang; 
+                    updateTexts(currentLang); 
+                    langButtons.forEach(btn => {
+                        btn.classList.toggle('active', btn.getAttribute('data-lang-switch') === currentLang);
+                        btn.setAttribute('aria-pressed', btn.getAttribute('data-lang-switch') === currentLang);
+                    });
+                    document.body.classList.remove('fade-out'); 
+                }, parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--lang-transition-speed').replace('s', '') || '0.25') * 1000);
+            });
+        });
+        
+        const backToTopButton = document.getElementById("back-to-top-btn");
+        if (backToTopButton) {
+            window.onscroll = function() { backToTopButton.classList.toggle("visible", document.body.scrollTop > 100 || document.documentElement.scrollTop > 100); };
+            backToTopButton.onclick = function() { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+        }
+        
+        const yearSpan = document.getElementById('current-year');
+        if (yearSpan) { yearSpan.textContent = new Date().getFullYear(); }
+
+        function setupResourceNavigation(currentLangParam) {
+            const resources = [
+                { id: 'recurso-1', url: 'iniciacion-ajedrez.html', titleEs: 'Iniciación al Ajedrez', titleEn: 'Chess Initiation' },
+                { id: 'recurso-2', url: 'fundamentos-estrategicos.html', titleEs: 'Fundamentos Estratégicos', titleEn: 'Strategic Fundamentals' },
+                { id: 'recurso-3', url: 'anatomia-ajedrez.html', titleEs: 'Anatomía del Ajedrez', titleEn: 'Chess Anatomy' }
+            ];
+            const currentPagePath = window.location.pathname.split('/').pop();
+            const currentIndex = resources.findIndex(resource => resource.url === currentPagePath);
+
+            const prevPostLink = document.getElementById('prev-post-link');
+            const nextPostLink = document.getElementById('next-post-link');
+
+            if (currentIndex !== -1 && prevPostLink && nextPostLink) {
+                const prevIndex = (currentIndex - 1 + resources.length) % resources.length;
+                const nextIndex = (currentIndex + 1) % resources.length;
+
+                prevPostLink.href = resources[prevIndex].url;
+                const prevTitle = currentLangParam === 'es' ? resources[prevIndex].titleEs : resources[prevIndex].titleEn;
+                const prevAriaLabelBase = currentLangParam === 'es' ? 'Recurso anterior' : 'Previous resource';
+                prevPostLink.setAttribute('aria-label', `${prevAriaLabelBase}: ${prevTitle}`);
+                prevPostLink.setAttribute('title', `${prevAriaLabelBase}: ${prevTitle}`);
+
+                nextPostLink.href = resources[nextIndex].url;
+                const nextTitle = currentLangParam === 'es' ? resources[nextIndex].titleEs : resources[nextIndex].titleEn;
+                const nextAriaLabelBase = currentLangParam === 'es' ? 'Siguiente recurso' : 'Next resource';
+                nextPostLink.setAttribute('aria-label', `${nextAriaLabelBase}: ${nextTitle}`);
+                nextPostLink.setAttribute('title', `${nextAriaLabelBase}: ${nextTitle}`);
+                
+                prevPostLink.style.display = 'flex';
+                nextPostLink.style.display = 'flex';
+            } else {
+                if (prevPostLink) prevPostLink.style.display = 'none';
+                if (nextPostLink) nextPostLink.style.display = 'none';
+            }
+        }
+        updateTexts(currentLang); 
+    });
+    </script>
+</body>
+</html>
