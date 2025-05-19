@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', () => {
             termsUserConductTitle: "Conducta del Usuario",
             termsUserConductDesc: "Aceptas no utilizar los Servicios para ningún propósito ilegal o prohibido por estos Términos. No puedes usar los Servicios de ninguna manera que pueda dañar, deshabilitar, sobrecargar o deteriorar el Servicio.",
             termsLimitationLiabilityTitle: "Limitación de Responsabilidad",
-            termsLimitationLiabilityDesc: "En no evento Chill Chess Club, ni sus directores, empleados, socios, agentes, proveedores o afiliados, serán responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluyendo sin limitación, pérdida de ganancias, datos, uso, buena voluntad u otras pérdidas intangibles, resultantes de tu acceso o uso o incapacidad para acceder o usar el Servicio.",
+            termsLimitationLiabilityDesc: "En ningún caso Chill Chess Club, ni sus directores, empleados, socios, agentes, proveedores o afiliados, serán responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluyendo sin limitación, pérdida de ganancias, datos, uso, buena voluntad u otras pérdidas intangibles, resultantes de tu acceso o uso o incapacidad para acceder o usar el Servicio.",
             termsChangesTitle: "Cambios a los Términos",
             termsChangesDesc: "Nos reservamos el derecho, a nuestra sola discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, intentaremos proporcionar al menos 30 días de aviso antes de que los nuevos términos entren en vigor. Lo que constituye un cambio material será determinado a nuestra sola discreción.",
             termsContactUsTitle: "Contáctanos",
@@ -483,7 +483,7 @@ document.addEventListener('DOMContentLoaded', () => {
             privacyUseDisputes: "Resolve disputes and troubleshoot problems.",
             privacyDataDisclosureTitle: "Disclosure of Your Information",
             privacyDataDisclosureDesc: "We will not share your information with third parties except as described in this Privacy Policy or with your consent. We may disclose your information in the following situations:",
-            privacyDisclosureLaw: "<strong>By Law or to Protect Rights:</strong> If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others.",
+            privacyDisclosureLaw: "<strong>By Ley o para Proteger Derechos:</strong> If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others.",
             privacyDisclosureProviders: "<strong>Third-Party Service Providers:</strong> We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.",
             privacySecurityTitle: "Security of Your Information",
             privacySecurityDesc: "We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.",
@@ -529,6 +529,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const formStatus = document.getElementById('form-status'); 
     const yearSpan = document.getElementById('current-year'); 
     const particlesElement = document.getElementById('particles-js'); 
+    // --- Scrollspy Selectors ---
+    const sectionsForSpy = Array.from(document.querySelectorAll('main section[id]'));
+    const navItemsForSpy = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+
 
     // Function to set the language
     const setLanguage = (lang) => {
@@ -819,6 +823,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinksContainer.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 const linkHref = link.getAttribute('href');
+                // Close mobile menu if a link to a section on the same page or another .html page is clicked
                 if (linkHref.startsWith('#') || linkHref.includes('.html')) { 
                     if (navLinksContainer.classList.contains('active')) {
                         navLinksContainer.classList.remove('active');
@@ -831,6 +836,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+         // Close mobile menu when clicking outside
          document.addEventListener('click', (event) => { 
             if (navLinksContainer.classList.contains('active') &&
                 !navLinksContainer.contains(event.target) && 
@@ -854,12 +860,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 const [pathToFile, hash] = href.split('#');
                 const targetId = `#${hash}`;
                 
+                // If the link points to a different file (e.g. from a blog post back to index.html#contact)
+                // let the default browser navigation handle it.
                 if (pathToFile && pathToFile !== currentPath && pathToFile === 'index.html') {
-                    return; 
+                    // This case is for when on a subpage (e.g. blog/article.html) and linking to index.html#section
+                    // The default behavior of the link (e.g. <a href="../index.html#contact">) should work.
+                    // So, we don't preventDefault here if pathToFile is present and different from currentPath.
+                    // However, if pathToFile is 'index.html' and currentPath is also 'index.html', it's a same-page link.
+                    return; // Allow default navigation if it's to index.html from another page
                 }
 
+                // Handle same-page navigation
                 if (!pathToFile || pathToFile === currentPath) {
-                    e.preventDefault();
+                    e.preventDefault(); // Prevent default only for same-page hash links
                     const targetElement = document.querySelector(targetId);
 
                     if (targetElement) {
@@ -868,12 +881,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         let extraOffset = 15; // Offset general por defecto
 
                         if (targetId === '#contacto') {
-                            extraOffset = 20; // Mantenemos este ajuste por ahora
-                            console.log('--- DEBUG SCROLL A #contacto ---');
-                            console.log('Target Element:', targetElement);
-                            console.log('Target Element offsetTop:', targetElement.offsetTop);
-                            console.log('Base Header Height (CSS var):', baseHeaderHeight);
-                            console.log('Extra Offset específico para #contacto:', extraOffset);
+                            extraOffset = 20; 
+                            // console.log('--- DEBUG SCROLL A #contacto ---');
+                            // console.log('Target Element:', targetElement);
+                            // console.log('Target Element offsetTop:', targetElement.offsetTop);
+                            // console.log('Base Header Height (CSS var):', baseHeaderHeight);
+                            // console.log('Extra Offset específico para #contacto:', extraOffset);
                         }
                         
                         const headerOffsetTotal = baseHeaderHeight + extraOffset;
@@ -881,30 +894,30 @@ document.addEventListener('DOMContentLoaded', () => {
                         const currentScrollY = window.pageYOffset;
                         const offsetPosition = elementPosition + currentScrollY - headerOffsetTotal;
 
-                        if (targetId === '#contacto') {
-                            console.log('Total Header Offset (base + extra):', headerOffsetTotal);
-                            console.log('Element Position (getBoundingClientRect().top):', elementPosition);
-                            console.log('Current window.pageYOffset:', currentScrollY);
-                            console.log('Calculated Scroll Position (offsetPosition):', offsetPosition);
-                        }
+                        // if (targetId === '#contacto') { // Keep logs commented unless debugging
+                        //     console.log('Total Header Offset (base + extra):', headerOffsetTotal);
+                        //     console.log('Element Position (getBoundingClientRect().top):', elementPosition);
+                        //     console.log('Current window.pageYOffset:', currentScrollY);
+                        //     console.log('Calculated Scroll Position (offsetPosition):', offsetPosition);
+                        // }
 
                         window.scrollTo({
                             top: offsetPosition,
                             behavior: 'smooth'
                         });
 
+                        // Pre-fill subject if scrolling to contact
                         if (targetId === '#contacto') {
                             const contactFormOnPage = document.getElementById('contactForm');
                             if (contactFormOnPage) { 
                                 const subjectValue = this.getAttribute('data-subject');
                                 const subjectSelect = document.getElementById('subject'); 
-                                // const firstInput = document.querySelector('#contactForm #name'); // TEMPORALMENTE COMENTADO
+                                // const firstInput = document.querySelector('#contactForm #name'); // Focus was causing issues
 
                                 if (subjectValue && subjectSelect) {
                                     subjectSelect.value = subjectValue;
                                 }
-                                // if(firstInput) { // TEMPORALMENTE COMENTADO
-                                    // Brief timeout to ensure the scroll has finished and element is focusable
+                                // if(firstInput) { // Focus was causing issues
                                     // setTimeout(() => firstInput.focus(), 300); 
                                 // }
                             }
@@ -916,6 +929,81 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // --- Scrollspy Functionality ---
+    const handleScrollSpy = () => {
+        if (!sectionsForSpy.length || !navItemsForSpy.length) {
+            return;
+        }
+
+        const scrollY = window.pageYOffset;
+        const windowHeight = window.innerHeight;
+        const docHeight = document.documentElement.scrollHeight;
+        const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue(window.innerWidth <= 992 ? '--header-height-mobile' : '--header-height-desktop').trim() || '65');
+        
+        // Point in the viewport (from the top) to check against section tops.
+        // A common choice is slightly below the fixed header.
+        // Let's try making this point higher up (closer to the header) to make sections activate sooner.
+        const activationPointInViewport = headerHeight + 1; // Only 1px below the header. Adjust as needed.
+
+        // --- DEBUG LOGS (Uncomment to see values) ---
+        // console.clear(); 
+        // console.log(`ScrollY: ${scrollY.toFixed(0)}, ActivationPointInViewport: ${activationPointInViewport.toFixed(0)}, HeaderHeight: ${headerHeight}`);
+        // sectionsForSpy.forEach(s => {
+        //     const rect = s.getBoundingClientRect();
+        //     console.log(`Section: ${s.id}, ViewportTop: ${rect.top.toFixed(0)}, ViewportBottom: ${rect.bottom.toFixed(0)}, Height: ${rect.height.toFixed(0)}`);
+        // });
+        // --- END DEBUG LOGS ---
+
+        let currentSectionId = '';
+
+        // Iterate from the last section upwards
+        for (let i = sectionsForSpy.length - 1; i >= 0; i--) {
+            const section = sectionsForSpy[i];
+            const sectionRect = section.getBoundingClientRect(); // Position relative to viewport
+
+            // If the top of the section is at or above our activation line in the viewport
+            if (sectionRect.top <= activationPointInViewport) {
+                currentSectionId = section.id;
+                // console.log(`Selected by reverse loop: ${currentSectionId} (sectionRect.top: ${sectionRect.top.toFixed(0)} <= activationPointInViewport: ${activationPointInViewport.toFixed(0)})`);
+                break; 
+            }
+        }
+        
+        // If scrolled to the very bottom, ensure the last section is active
+        if (scrollY + windowHeight >= docHeight - 10) { // 10px buffer for bottom
+            if (sectionsForSpy.length > 0) {
+                currentSectionId = sectionsForSpy[sectionsForSpy.length - 1].id;
+                // console.log(`At bottom, forced to: ${currentSectionId}`);
+            }
+        }
+        // If no section was found by the loop (e.g., we are above the first "real" section)
+        // and we are very close to the top, activate 'inicio' if it's the first.
+        else if (currentSectionId === '' && scrollY < (sectionsForSpy[0]?.offsetTop || headerHeight + 10)) { 
+             // If currentSectionId is still empty and we're near the top (below where the first section starts)
+            if (sectionsForSpy.length > 0 && sectionsForSpy[0].id === 'inicio') {
+                currentSectionId = 'inicio';
+                // console.log(`Near top, forced to: ${currentSectionId}`);
+            }
+        }
+        
+        // console.log(`Final Active Section ID: ${currentSectionId}`);
+
+        navItemsForSpy.forEach(link => {
+            link.classList.remove('nav-active');
+            if (link.getAttribute('href') === `#${currentSectionId}`) {
+                link.classList.add('nav-active');
+            }
+        });
+    };
+    
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(handleScrollSpy, 50); // Throttle scroll handler
+    });
+    handleScrollSpy(); // Initial call
+
 
     // Contact Form Submission
      if (contactForm && formStatus) { 
@@ -945,6 +1033,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (response.ok) {
                     return response.json(); 
                 }
+                // Try to parse error from Formspree if not ok
                 return response.json().then(errorData => {
                     throw new Error(errorData.error || translations[currentLang]?.formError || 'Hubo un error.');
                 });

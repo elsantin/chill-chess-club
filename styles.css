@@ -356,6 +356,32 @@
       .menu-toggle {
           display: none; 
       }
+      /* Estilos para el enlace de navegación activo (Scrollspy) */
+.nav-links a.nav-active {
+    color: var(--color-modern-accent-1); /* Color del texto activo */
+    font-weight: 700; /* Un poco más de énfasis */
+}
+
+/* Subrayado para el enlace activo en la navegación de escritorio */
+@media (min-width: 993px) {
+    .nav-links a.nav-active::after {
+        width: 100%; /* Asegura que el subrayado esté completo */
+    }
+    /* Opcional: Evitar el salto del efecto translateY si ya está activo */
+    .nav-links a.nav-active {
+        transform: translateY(0); 
+    }
+}
+
+/* Estilo de fondo para el enlace activo en la navegación móvil */
+@media (max-width: 992px) {
+    .nav-links a.nav-active {
+        background-color: var(--color-background-medium); /* Similar al hover/focus para consistencia */
+        /* O puedes usar un color ligeramente diferente si lo prefieres, ej: 
+           background-color: rgba(236, 72, 153, 0.1); // Un tinte del color de acento
+        */
+    }
+}
   }
 
 
