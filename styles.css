@@ -214,7 +214,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 1000; 
+    z-index: 1000; /* Asegurar que el header principal esté por encima de otros contenidos */
     background-color: rgba(24, 24, 27, 0.85); 
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);

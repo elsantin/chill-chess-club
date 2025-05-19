@@ -150,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             blogTitle: "Desde Nuestro Blog",
             blogIntro: "Un espacio dedicado a la exploración del ajedrez. Artículos, perspectivas y curiosidades para profundizar tu entendimiento y aprecio por el juego.",
-            // --- TEXTOS DEL BLOG ACTUALIZADOS ---
             blogPost1Title: "Ecos del Tablero: Una Crónica del Ajedrez y su Alma Humana",
             blogPost1Excerpt: "Sesenta y cuatro escaques: un antiguo espejo donde estrategia y pasión se cruzan, reflejando la aventura del intelecto humano. Una historia que, como el juego mismo, siempre continúa.",
             blogPost1ImgAlt: "Ilustración de estilo tapiz medieval de dos personas jugando ajedrez, para el artículo sobre la historia del ajedrez en el blog de Chill Chess Club",
@@ -212,10 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
             submitting: "Enviando...",
             backToTop: "Volver arriba",
             
-            // ========================================================================
-            // START: NUEVAS CLAVES PARA PÁGINAS LEGALES (CON CONTENIDO GENÉRICO)
-            // ¡IMPORTANTE! REVISA Y ADAPTA ESTE CONTENIDO. REEMPLAZA PLACEHOLDERS.
-            // ========================================================================
             pageTitlePrivacy: "Política de Privacidad - Chill Chess Club",
             metaDescriptionPrivacy: "Conoce cómo Chill Chess Club protege y utiliza tu información personal. Lee nuestra política de privacidad.",
             privacyPolicyTitle: "Política de Privacidad",
@@ -243,7 +238,6 @@ document.addEventListener('DOMContentLoaded', () => {
             privacyContactUsTitle: "Contáctanos",
             privacyContactUsDesc: "Si tienes preguntas o comentarios sobre esta Política de Privacidad, por favor contáctanos en: [TU-EMAIL-DE-CONTACTO@ejemplo.com]",
 
-            // --- Términos de Servicio ---
             pageTitleTerms: "Términos de Servicio - Chill Chess Club",
             metaDescriptionTerms: "Lee los Términos y Condiciones de Uso para el sitio web y los servicios de Chill Chess Club.",
             termsServiceTitle: "Términos de Servicio",
@@ -262,14 +256,11 @@ document.addEventListener('DOMContentLoaded', () => {
             termsUserConductTitle: "Conducta del Usuario",
             termsUserConductDesc: "Aceptas no utilizar los Servicios para ningún propósito ilegal o prohibido por estos Términos. No puedes usar los Servicios de ninguna manera que pueda dañar, deshabilitar, sobrecargar o deteriorar el Servicio.",
             termsLimitationLiabilityTitle: "Limitación de Responsabilidad",
-            termsLimitationLiabilityDesc: "En ningún caso Chill Chess Club, ni sus directores, empleados, socios, agentes, proveedores o afiliados, serán responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluyendo sin limitación, pérdida de ganancias, datos, uso, buena voluntad u otras pérdidas intangibles, resultantes de tu acceso o uso o incapacidad para acceder o usar el Servicio.",
+            termsLimitationLiabilityDesc: "En no evento Chill Chess Club, ni sus directores, empleados, socios, agentes, proveedores o afiliados, serán responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluyendo sin limitación, pérdida de ganancias, datos, uso, buena voluntad u otras pérdidas intangibles, resultantes de tu acceso o uso o incapacidad para acceder o usar el Servicio.",
             termsChangesTitle: "Cambios a los Términos",
             termsChangesDesc: "Nos reservamos el derecho, a nuestra sola discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, intentaremos proporcionar al menos 30 días de aviso antes de que los nuevos términos entren en vigor. Lo que constituye un cambio material será determinado a nuestra sola discreción.",
             termsContactUsTitle: "Contáctanos",
             termsContactUsDesc: "Si tienes alguna pregunta sobre estos Términos, por favor contáctanos en: [TU-EMAIL-DE-CONTACTO@ejemplo.com]"
-            // ========================================================================
-            // END: NUEVAS CLAVES PARA PÁGINAS LEGALES
-            // ========================================================================
         },
         en: {
             // ========================================================================
@@ -413,7 +404,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             blogTitle: "From Our Blog",
             blogIntro: "A space dedicated to the exploration of chess. Articles, perspectives, and curiosidades to deepen your understanding and appreciation for the game.",
-            // --- BLOG TEXTS UPDATED ---
             blogPost1Title: "Echoes of the Board: A Chronicle of Chess and its Human Soul",
             blogPost1Excerpt: "Sixty-four squares: an ancient mirror where strategy and passion intersect, reflecting the adventure of the human intellect. A story that, like the game itself, always continues.",
             blogPost1ImgAlt: "Medieval tapestry-style illustration of two people playing chess, for the article on chess history on Chill Chess Club's blog",
@@ -461,7 +451,7 @@ document.addEventListener('DOMContentLoaded', () => {
             contactTrialBtn: "Request Now",
 
             footerAboutTitle: "Chill Chess Club",
-            footerAboutDesc: "Chess classes for beginners and intermediates. A personalized and technologically assisted method to transform your game.",
+            footerAboutDesc: "Chess classes for beginners and intermediate players. A personalized and technologically assisted method to transform your game.",
             footerLinksTitle: "Quick Links",
             footerPrivacyLink: "Privacy Policy",
             footerTermsLink: "Terms of Service",
@@ -475,10 +465,6 @@ document.addEventListener('DOMContentLoaded', () => {
             submitting: "Sending...",
             backToTop: "Back to top",
 
-            // ========================================================================
-            // START: NUEVAS CLAVES PARA PÁGINAS LEGALES (CON CONTENIDO GENÉRICO)
-            // ¡IMPORTANTE! REVISA Y ADAPTA ESTE CONTENIDO. REEMPLAZA PLACEHOLDERS.
-            // ========================================================================
             pageTitlePrivacy: "Privacy Policy - Chill Chess Club",
             metaDescriptionPrivacy: "Learn how Chill Chess Club protects and uses your personal information. Read our privacy policy.",
             privacyPolicyTitle: "Privacy Policy",
@@ -506,7 +492,6 @@ document.addEventListener('DOMContentLoaded', () => {
             privacyContactUsTitle: "Contact Us",
             privacyContactUsDesc: "If you have questions or comments about this Privacy Policy, please contact us at: [YOUR-CONTACT-EMAIL@example.com]",
 
-            // --- Terms of Service ---
             pageTitleTerms: "Terms of Service - Chill Chess Club",
             metaDescriptionTerms: "Read the Terms and Conditions of Use for the Chill Chess Club website and services.",
             termsServiceTitle: "Terms of Service",
@@ -530,25 +515,22 @@ document.addEventListener('DOMContentLoaded', () => {
             termsChangesDesc: "We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.",
             termsContactUsTitle: "Contact Us",
             termsContactUsDesc: "If you have any questions about these Terms, please contact us at: [YOUR-CONTACT-EMAIL@example.com]"
-            // ========================================================================
-            // END: NUEVAS CLAVES PARA PÁGINAS LEGALES
-            // ========================================================================
         }
     };
 
-    // --- Selectors (moved from main_js_complete_with_blog_translations for consistency with user's file structure) ---
-    const langButtons = document.querySelectorAll('.lang-button'); // Assuming this is the correct selector from user's HTML
-    const translatableElements = document.querySelectorAll('[data-lang-key]'); // Corrected to data-lang-key as per user's HTML
+    // --- Selectors ---
+    const langButtons = document.querySelectorAll('.lang-button'); 
+    const translatableElements = document.querySelectorAll('[data-lang-key]'); 
     const backToTopButton = document.getElementById('back-to-top-btn');
-    const bodyElement = document.body; // Used for fade effect
-    const menuToggle = document.querySelector('.menu-toggle'); // From user's file
-    const navLinksContainer = document.querySelector('.nav-links'); // From user's file, renamed for clarity
-    const contactForm = document.getElementById('contactForm'); // From user's file
-    const formStatus = document.getElementById('form-status'); // From user's file
-    const yearSpan = document.getElementById('current-year'); // From user's file
-    const particlesElement = document.getElementById('particles-js'); // From user's file
+    const bodyElement = document.body; 
+    const menuToggle = document.querySelector('.menu-toggle'); 
+    const navLinksContainer = document.querySelector('.nav-links'); 
+    const contactForm = document.getElementById('contactForm'); 
+    const formStatus = document.getElementById('form-status'); 
+    const yearSpan = document.getElementById('current-year'); 
+    const particlesElement = document.getElementById('particles-js'); 
 
-    // Function to set the language (adapted from user's provided main.js)
+    // Function to set the language
     const setLanguage = (lang) => {
         console.log(`Attempting to set language to: ${lang}`);
         if (!translations[lang]) {
@@ -563,19 +545,18 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             console.log(`Updating elements for language: ${lang}`);
             translatableElements.forEach(el => {
-                const keyAttr = el.dataset.langKey; // Corrected from el.dataset.langKey to el.dataset.langKey
+                const keyAttr = el.dataset.langKey; 
                 const [key, attribute] = keyAttr.split('|');
 
                 if (translations[lang][key]) {
                     let translation = translations[lang][key];
 
-                    if (key === 'footerCopyright') { // User's key for copyright
+                    if (key === 'footerCopyright') { 
                         translation = translation.replace('[YEAR]', new Date().getFullYear());
                     }
 
                     if (attribute) {
                         el.setAttribute(attribute, translation);
-                        // Specific handling for meta descriptions and image alts as in user's original file
                         if (key === 'metaDescription' && attribute === 'content') {
                             const mainMetaDesc = document.querySelector('head > meta[name="description"][data-lang-key="metaDescription|content"]');
                             if (mainMetaDesc) mainMetaDesc.setAttribute('content', translation);
@@ -585,9 +566,9 @@ document.addEventListener('DOMContentLoaded', () => {
                               key === 'courseBeginnerImgAlt' || 
                               key === 'courseIntermediateImgAlt' || 
                               key === 'courseCustomImgAlt' ||
-                              key === 'blogPost1ImgAlt' || // Ensure these are in your translations
-                              key === 'blogPost2ImgAlt' || // Ensure these are in your translations
-                              key === 'blogPost3ImgAlt') && attribute === 'alt') { // Ensure these are in your translations
+                              key === 'blogPost1ImgAlt' || 
+                              key === 'blogPost2ImgAlt' || 
+                              key === 'blogPost3ImgAlt') && attribute === 'alt') { 
                             el.setAttribute('alt', translation);
                          }
                          if (key === 'metaDescriptionPrivacy' && attribute === 'content') {
@@ -599,7 +580,6 @@ document.addEventListener('DOMContentLoaded', () => {
                             if (metaDescTerms) metaDescTerms.setAttribute('content', translation);
                          }
                     } else if (
-                        // List of keys that should use innerHTML (from user's file)
                         key === 'courseBeginnerTitle' ||
                         key === 'courseIntermediateTitle' ||
                         key === 'courseCustomTitle' ||
@@ -622,12 +602,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     ) {
                         el.innerHTML = translation; 
                     } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
-                        if (el.id === 'back-to-top-btn') { // User's key for backToTop
+                        if (el.id === 'back-to-top-btn') { 
                              el.setAttribute('aria-label', translations[lang]['backToTop'] || 'Back to top');
                              el.setAttribute('title', translations[lang]['backToTop'] || 'Back to top');
                         } else {
-                            el.value = translation; // For input buttons
-                            el.innerHTML = translation; // For button elements
+                            el.value = translation; 
+                            el.innerHTML = translation; 
                         }
                     } else if (el.tagName === 'TITLE') { 
                         document.title = translation;
@@ -635,8 +615,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     else {
                         el.textContent = translation;
                     }
-                } else {
-                    // console.warn(`Translation key "${key}" not found for language "${lang}". Element:`, el);
                 }
             });
 
@@ -644,7 +622,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log(`Document language set to: ${document.documentElement.lang}`);
 
             langButtons.forEach(btn => {
-                // Assuming lang buttons in user's HTML have data-lang attribute
                 if (btn.dataset.lang === lang) { 
                     btn.classList.add('active');
                     btn.setAttribute('aria-current', 'page');
@@ -668,7 +645,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, transitionDuration);
     };
 
-    // Function for initial language update (adapted from user's provided main.js)
+    // Function for initial language update
     const initialUpdateLanguage = (lang) => {
         console.log(`Initial language update to: ${lang}`);
         if (!translations[lang]) {
@@ -677,11 +654,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         translatableElements.forEach(el => {
-             const keyAttr = el.dataset.langKey; // Corrected
+             const keyAttr = el.dataset.langKey; 
              const [key, attribute] = keyAttr.split('|');
              if (translations[lang][key]) {
                  let translation = translations[lang][key];
-                 if (key === 'footerCopyright') { // User's key
+                 if (key === 'footerCopyright') { 
                      translation = translation.replace('[YEAR]', new Date().getFullYear());
                  }
                  if (attribute) {
@@ -709,7 +686,6 @@ document.addEventListener('DOMContentLoaded', () => {
                          if (metaDescTerms) metaDescTerms.setAttribute('content', translation);
                       }
                  } else if (
-                    // List of keys that should use innerHTML (from user's file)
                     key === 'courseBeginnerTitle' ||
                     key === 'courseIntermediateTitle' ||
                     key === 'courseCustomTitle' ||
@@ -732,7 +708,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ) {
                      el.innerHTML = translation; 
                 } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
-                     if (el.id === 'back-to-top-btn') { // User's key
+                     if (el.id === 'back-to-top-btn') { 
                           el.setAttribute('aria-label', translations[lang]['backToTop'] || 'Back to top');
                           el.setAttribute('title', translations[lang]['backToTop'] || 'Back to top');
                      } else {
@@ -745,13 +721,10 @@ document.addEventListener('DOMContentLoaded', () => {
                  else {
                      el.textContent = translation;
                  }
-             } else {
-                // console.warn(`Key "${key}" not found for initial language "${lang}". Element:`, el);
              }
         });
         document.documentElement.lang = lang;
         langButtons.forEach(btn => {
-             // Assuming lang buttons in user's HTML have data-lang attribute
              if (btn.dataset.lang === lang) { 
                  btn.classList.add('active');
                  btn.setAttribute('aria-current', 'page');
@@ -763,7 +736,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Initial language update to ${lang} applied.`);
     };
 
-    // Determine and set initial language (from user's file)
+    // Determine and set initial language
     let preferredLanguage = 'es'; 
      try {
         const savedLang = localStorage.getItem('preferredLanguage');
@@ -778,21 +751,21 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (e) {
         console.warn("Could not read language preference from localStorage. Defaulting to 'es'.");
     }
-    initialUpdateLanguage(preferredLanguage); // Call initial update
+    initialUpdateLanguage(preferredLanguage); 
 
-    // Event listener for language buttons (from user's file)
+    // Event listener for language buttons
     langButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             console.log(`Language button clicked: ${e.target.dataset.lang}`);
             if (bodyElement.classList.contains('fade-out') || e.target.classList.contains('active')) {
                 return;
             }
-            const selectedLang = e.target.dataset.lang; // Ensure buttons have data-lang attribute
+            const selectedLang = e.target.dataset.lang; 
             setLanguage(selectedLang);
         });
     });
     
-    // Initialize AOS (from user's file)
+    // Initialize AOS 
     if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 800, 
@@ -801,9 +774,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initialize Particles.js (from user's file, with check)
+    // Initialize Particles.js
     if (particlesElement) { 
-        particlesJS('particles-js', { /* User's particlesJS config */
+        particlesJS('particles-js', { 
             "particles": {
                 "number": {"value": 80, "density": {"enable": true, "value_area": 800}},
                 "color": {"value": ["#EC4899", "#F97316", "#8B5CF6", "#d4af37"]},
@@ -828,7 +801,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Mobile Menu Toggle (from user's file)
+    // Mobile Menu Toggle
     if (menuToggle && navLinksContainer) {
         menuToggle.addEventListener('click', () => {
             const isActive = navLinksContainer.classList.toggle('active');
@@ -846,7 +819,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinksContainer.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 const linkHref = link.getAttribute('href');
-                if (linkHref.startsWith('#') || linkHref.includes('.html')) { // Close on nav or page link
+                if (linkHref.startsWith('#') || linkHref.includes('.html')) { 
                     if (navLinksContainer.classList.contains('active')) {
                         navLinksContainer.classList.remove('active');
                         menuToggle.setAttribute('aria-expanded', 'false');
@@ -858,7 +831,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-         document.addEventListener('click', (event) => { // Close on outside click
+         document.addEventListener('click', (event) => { 
             if (navLinksContainer.classList.contains('active') &&
                 !navLinksContainer.contains(event.target) && 
                 !menuToggle.contains(event.target)) { 
@@ -872,94 +845,137 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Smooth Scroll
-document.querySelectorAll('a.scroll-to, .nav-links a[href*="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        const currentPath = window.location.pathname.split("/").pop() || "index.html"; 
+    document.querySelectorAll('a.scroll-to, .nav-links a[href*="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            const currentPath = window.location.pathname.split("/").pop() || "index.html"; 
 
-        if (href && href.includes('#')) {
-            const [pathToFile, hash] = href.split('#');
-            const targetId = `#${hash}`;
-            
-            if (!pathToFile || pathToFile === currentPath) {
-                e.preventDefault();
-                const targetElement = document.querySelector(targetId);
+            if (href && href.includes('#')) {
+                const [pathToFile, hash] = href.split('#');
+                const targetId = `#${hash}`;
+                
+                if (pathToFile && pathToFile !== currentPath && pathToFile === 'index.html') {
+                    return; 
+                }
 
-                if (targetElement) {
-                    const baseHeaderHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue(window.innerWidth <= 992 ? '--header-height-mobile' : '--header-height-desktop').trim() || '65');
-                    
-                    let extraOffset = 15; // Offset general que parece funcionar para otras secciones
+                if (!pathToFile || pathToFile === currentPath) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
 
-                    // Ajuste específico para la sección de contacto
-                    if (targetId === '#contacto') {
-                        extraOffset = 0; // O un valor más pequeño, ej. 5 o -5. Necesitarás experimentar.
-                                         // Si se pasa, prueba con 0 o un valor negativo pequeño.
-                                         // Si aún no llega, prueba con un valor positivo pequeño.
-                    }
-                    
-                    const headerOffset = baseHeaderHeight + extraOffset;
-                    
-                    const elementPosition = targetElement.getBoundingClientRect().top;
-                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    if (targetElement) {
+                        const baseHeaderHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue(window.innerWidth <= 992 ? '--header-height-mobile' : '--header-height-desktop').trim() || '65');
+                        
+                        let extraOffset = 15; // Offset general por defecto
 
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
+                        if (targetId === '#contacto') {
+                            extraOffset = 20; // Mantenemos este ajuste por ahora
+                            console.log('--- DEBUG SCROLL A #contacto ---');
+                            console.log('Target Element:', targetElement);
+                            console.log('Target Element offsetTop:', targetElement.offsetTop);
+                            console.log('Base Header Height (CSS var):', baseHeaderHeight);
+                            console.log('Extra Offset específico para #contacto:', extraOffset);
+                        }
+                        
+                        const headerOffsetTotal = baseHeaderHeight + extraOffset;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const currentScrollY = window.pageYOffset;
+                        const offsetPosition = elementPosition + currentScrollY - headerOffsetTotal;
 
-                    // Pre-fill contact form subject if applicable
-                    if (targetId === '#contacto') {
-                        const contactFormOnPage = document.getElementById('contactForm');
-                        if (contactFormOnPage) { 
-                            const subjectValue = this.getAttribute('data-subject');
-                            const subjectSelect = document.getElementById('subject'); 
-                            const firstInput = document.querySelector('#contactForm #name'); 
+                        if (targetId === '#contacto') {
+                            console.log('Total Header Offset (base + extra):', headerOffsetTotal);
+                            console.log('Element Position (getBoundingClientRect().top):', elementPosition);
+                            console.log('Current window.pageYOffset:', currentScrollY);
+                            console.log('Calculated Scroll Position (offsetPosition):', offsetPosition);
+                        }
 
-                            if (subjectValue && subjectSelect) {
-                                subjectSelect.value = subjectValue;
-                            }
-                            if(firstInput) { 
-                                setTimeout(() => firstInput.focus(), 300); 
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+
+                        if (targetId === '#contacto') {
+                            const contactFormOnPage = document.getElementById('contactForm');
+                            if (contactFormOnPage) { 
+                                const subjectValue = this.getAttribute('data-subject');
+                                const subjectSelect = document.getElementById('subject'); 
+                                // const firstInput = document.querySelector('#contactForm #name'); // TEMPORALMENTE COMENTADO
+
+                                if (subjectValue && subjectSelect) {
+                                    subjectSelect.value = subjectValue;
+                                }
+                                // if(firstInput) { // TEMPORALMENTE COMENTADO
+                                    // Brief timeout to ensure the scroll has finished and element is focusable
+                                    // setTimeout(() => firstInput.focus(), 300); 
+                                // }
                             }
                         }
+                    } else {
+                        console.warn('Target element for scroll not found:', targetId);
                     }
                 }
             }
-        }
+        });
     });
-});
 
-    // Contact Form Simulation (from user's file)
+    // Contact Form Submission
      if (contactForm && formStatus) { 
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault(); 
             const currentLang = document.documentElement.lang || 'es'; 
-            formStatus.textContent = translations[currentLang]?.submitting || 'Enviando...';
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.textContent;
+            
+            submitButton.textContent = translations[currentLang]?.submitting || 'Enviando...';
+            submitButton.disabled = true;
+
+            formStatus.textContent = ''; 
             formStatus.className = 'status'; 
-            formStatus.style.display = 'block';
-            setTimeout(() => {
-                const isSuccess = Math.random() > 0.2; 
-                if (isSuccess) {
-                    formStatus.textContent = translations[currentLang]?.formSuccess || '¡Mensaje enviado con éxito! Te contactaremos pronto.';
-                    formStatus.classList.add('success');
-                    contactForm.reset(); 
-                } else {
-                    formStatus.textContent = translations[currentLang]?.formError || 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o usa el email de contacto.';
-                    formStatus.classList.add('error');
+            formStatus.style.display = 'none'; 
+
+            const formData = new FormData(contactForm);
+            
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData, 
+                headers: {
+                    'Accept': 'application/json' 
                 }
-                 setTimeout(() => {
-                    formStatus.style.display = 'none';
-                    formStatus.className = 'status'; 
-                 }, 5000);
-            }, 1500);
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json(); 
+                }
+                return response.json().then(errorData => {
+                    throw new Error(errorData.error || translations[currentLang]?.formError || 'Hubo un error.');
+                });
+            })
+            .then(data => { 
+                formStatus.textContent = translations[currentLang]?.formSuccess || '¡Mensaje enviado con éxito! Te contactaremos pronto.';
+                formStatus.className = 'status success';
+                formStatus.style.display = 'block';
+                contactForm.reset(); 
+            })
+            .catch(error => {
+                formStatus.textContent = error.message || translations[currentLang]?.formError || 'Hubo un error al enviar. Intenta de nuevo.';
+                formStatus.className = 'status error';
+                formStatus.style.display = 'block';
+            })
+            .finally(() => {
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+                setTimeout(() => {
+                   // formStatus.style.display = 'none'; // Optionally hide after some time
+                   // formStatus.className = 'status'; 
+                }, 7000); 
+            });
         });
     }
 
-    // Back to Top Button (from user's file)
+    // Back to Top Button
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) { 
-                backToTopButton.classList.add('show'); // Assuming 'show' class makes it visible
+                backToTopButton.classList.add('show'); 
             } else {
                 backToTopButton.classList.remove('show');
             }
@@ -969,7 +985,7 @@ document.querySelectorAll('a.scroll-to, .nav-links a[href*="#"]').forEach(anchor
         });
     }
 
-    // Update current year (from user's file)
+    // Update current year
      if (yearSpan) {
          yearSpan.textContent = new Date().getFullYear();
      }
