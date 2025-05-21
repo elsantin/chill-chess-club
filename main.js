@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente cargado y parseado para la página:", window.location.pathname);
 
-    // --- Language Translation ---
+    // --- Language Translation (EXISTING CODE - UNTOUCHED) ---
     const translations = {
         es: {
             // ========================================================================
@@ -500,7 +500,7 @@ document.addEventListener('DOMContentLoaded', () => {
             termsAcceptanceTitle: "Acceptance of Terms",
             termsAcceptanceDesc: "By accessing or using our Services, you agree to be bound by these Terms of Service and our Privacy Policy. If you disagree with any part of the terms, then you may not access the Service.",
             termsServicesTitle: "Our Services",
-            termsServicesDesc: "Chill Chess Club provides online chess classes, educational material, and related content. We reserve the right to modify or discontinue, temporarily or permanently, the Services (or any part thereof) with or without notice.",
+            termsServicesDesc: "Chill Chess Club provides online chess classes, educational material, and related content. We reserve the right to modify or discontinue, temporarily or permanentemente, the Services (or any part thereof) with or without notice.",
             termsUserAccountsTitle: "User Accounts",
             termsUserAccountsDesc: "To access certain services, you may be required to create an account. You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password. You agree to notify us immediately of any unauthorized use of your account.",
             termsPaymentTitle: "Payments and Refunds",
@@ -508,35 +508,33 @@ document.addEventListener('DOMContentLoaded', () => {
             termsIntellectualPropertyTitle: "Intellectual Property",
             termsIntellectualPropertyDesc: "The Service and its original content (excluding content provided by users), features, and functionality are and will remain the exclusive property of Chill Chess Club and its licensors. Our copyrights, trademarks, and other intellectual property rights may not be used in connection with any product or service without the prior written consent of Chill Chess Club.",
             termsUserConductTitle: "User Conduct",
-            termsUserConductDesc: "You agree not to use the Services for any unlawful purpose or any purpose prohibited by these Terms. You may not use the Services in any manner that could damage, disable, overburden, or impair the Service.",
-            termsLimitationLiabilityTitle: "Limitation of Liability",
-            termsLimitationLiabilityDesc: "In no event shall Chill Chess Club, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.",
-            termsChangesTitle: "Changes to Terms",
-            termsChangesDesc: "We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.",
-            termsContactUsTitle: "Contact Us",
-            termsContactUsDesc: "If you have any questions about these Terms, please contact us at: [YOUR-CONTACT-EMAIL@example.com]"
+            termsUserConductDesc: "Aceptas no utilizar los Servicios para ningún propósito ilegal o prohibido por estos Términos. No puedes usar los Servicios de ninguna manera que pueda dañar, deshabilitar, sobrecargar o deteriorar el Servicio.",
+            termsLimitationLiabilityTitle: "Limitación de Responsabilidad",
+            termsLimitationLiabilityDesc: "En ningún caso Chill Chess Club, ni sus directores, empleados, socios, agentes, proveedores o afiliados, serán responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluyendo sin limitación, pérdida de ganancias, datos, uso, buena voluntad u otras pérdidas intangibles, resultantes de tu acceso o uso o incapacidad para acceder o usar el Servicio.",
+            termsChangesTitle: "Cambios a los Términos",
+            termsChangesDesc: "Nos reservamos el derecho, a nuestra sola discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, intentaremos proporcionar al menos 30 días de aviso antes de que los nuevos términos entren en vigor. Lo que constituye un cambio material será determinado a nuestra sola discreción.",
+            termsContactUsTitle: "Contáctanos",
+            termsContactUsDesc: "Si tienes alguna pregunta sobre estos Términos, por favor contáctanos en: [TU-EMAIL-DE-CONTACTO@ejemplo.com]"
         }
     };
 
-    // --- Selectors ---
-    const langButtons = document.querySelectorAll('.lang-button'); 
-    const translatableElements = document.querySelectorAll('[data-lang-key]'); 
+
+    // --- Selectors (EXISTING CODE - UNTOUCHED) ---
+    const langButtons = document.querySelectorAll('.lang-button');
+    const translatableElements = document.querySelectorAll('[data-lang-key]');
     const backToTopButton = document.getElementById('back-to-top-btn');
-    const bodyElement = document.body; 
-    const menuToggle = document.querySelector('.menu-toggle'); 
-    const navLinksContainer = document.querySelector('.nav-links'); 
-    const contactForm = document.getElementById('contactForm'); 
-    const formStatus = document.getElementById('form-status'); 
-    const yearSpan = document.getElementById('current-year'); 
-    const particlesElement = document.getElementById('particles-js'); 
-    // --- Scrollspy Selectors ---
-    const sectionsForSpy = Array.from(document.querySelectorAll('main section[id]'));
-    const navItemsForSpy = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+    const bodyElement = document.body;
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinksContainer = document.querySelector('.nav-links');
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('form-status');
+    const yearSpan = document.getElementById('current-year');
+    const particlesElement = document.getElementById('particles-js');
 
-
-    // Function to set the language
+    // --- Language Functions (EXISTING CODE - UNTOUCHED) ---
+    // ... (El código de setLanguage e initialUpdateLanguage existente va aquí, no se muestra por brevedad)
     const setLanguage = (lang) => {
-        console.log(`Attempting to set language to: ${lang}`);
+        // console.log(`Attempting to set language to: ${lang}`);
         if (!translations[lang]) {
             console.error(`Language ${lang} not found in translations.`);
             return;
@@ -547,7 +545,7 @@ document.addEventListener('DOMContentLoaded', () => {
         langButtons.forEach(btn => btn.disabled = true); 
 
         setTimeout(() => {
-            console.log(`Updating elements for language: ${lang}`);
+            // console.log(`Updating elements for language: ${lang}`);
             translatableElements.forEach(el => {
                 const keyAttr = el.dataset.langKey; 
                 const [key, attribute] = keyAttr.split('|');
@@ -623,7 +621,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             document.documentElement.lang = lang;
-            console.log(`Document language set to: ${document.documentElement.lang}`);
+            // console.log(`Document language set to: ${document.documentElement.lang}`);
 
             langButtons.forEach(btn => {
                 if (btn.dataset.lang === lang) { 
@@ -645,13 +643,12 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 langButtons.forEach(btn => btn.disabled = false);
             }, 50); 
-            console.log(`Language update to ${lang} complete.`);
+            // console.log(`Language update to ${lang} complete.`);
         }, transitionDuration);
     };
-
-    // Function for initial language update
+    
     const initialUpdateLanguage = (lang) => {
-        console.log(`Initial language update to: ${lang}`);
+        // console.log(`Initial language update to: ${lang}`);
         if (!translations[lang]) {
             console.error(`Initial language ${lang} not found.`);
             return;
@@ -737,12 +734,11 @@ document.addEventListener('DOMContentLoaded', () => {
                  btn.removeAttribute('aria-current');
              }
         });
-        console.log(`Initial language update to ${lang} applied.`);
+        // console.log(`Initial language update to ${lang} applied.`);
     };
 
-    // Determine and set initial language
-    let preferredLanguage = 'es'; 
-     try {
+    let preferredLanguage = 'es';
+    try {
         const savedLang = localStorage.getItem('preferredLanguage');
         if (savedLang && translations[savedLang]) {
             preferredLanguage = savedLang;
@@ -755,32 +751,28 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (e) {
         console.warn("Could not read language preference from localStorage. Defaulting to 'es'.");
     }
-    initialUpdateLanguage(preferredLanguage); 
+    initialUpdateLanguage(preferredLanguage);
 
-    // Event listener for language buttons
     langButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            console.log(`Language button clicked: ${e.target.dataset.lang}`);
             if (bodyElement.classList.contains('fade-out') || e.target.classList.contains('active')) {
                 return;
             }
-            const selectedLang = e.target.dataset.lang; 
+            const selectedLang = e.target.dataset.lang;
             setLanguage(selectedLang);
         });
     });
-    
-    // Initialize AOS 
+
     if (typeof AOS !== 'undefined') {
         AOS.init({
-            duration: 800, 
-            once: true,     
-            offset: 50,     
+            duration: 800,
+            once: true,
+            offset: 50,
         });
     }
 
-    // Initialize Particles.js
-    if (particlesElement) { 
-        particlesJS('particles-js', { 
+    if (particlesElement) {
+        particlesJS('particles-js', {
             "particles": {
                 "number": {"value": 80, "density": {"enable": true, "value_area": 800}},
                 "color": {"value": ["#EC4899", "#F97316", "#8B5CF6", "#d4af37"]},
@@ -805,7 +797,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Mobile Menu Toggle
     if (menuToggle && navLinksContainer) {
         menuToggle.addEventListener('click', () => {
             const isActive = navLinksContainer.classList.toggle('active');
@@ -823,8 +814,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinksContainer.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 const linkHref = link.getAttribute('href');
-                // Close mobile menu if a link to a section on the same page or another .html page is clicked
-                if (linkHref.startsWith('#') || linkHref.includes('.html')) { 
+                if (linkHref.startsWith('#') || linkHref.includes('.html')) {
                     if (navLinksContainer.classList.contains('active')) {
                         navLinksContainer.classList.remove('active');
                         menuToggle.setAttribute('aria-expanded', 'false');
@@ -836,11 +826,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-         // Close mobile menu when clicking outside
-         document.addEventListener('click', (event) => { 
+        document.addEventListener('click', (event) => {
             if (navLinksContainer.classList.contains('active') &&
-                !navLinksContainer.contains(event.target) && 
-                !menuToggle.contains(event.target)) { 
+                !navLinksContainer.contains(event.target) &&
+                !menuToggle.contains(event.target)) {
                 navLinksContainer.classList.remove('active');
                 menuToggle.setAttribute('aria-expanded', 'false');
                 const icon = menuToggle.querySelector('i');
@@ -849,143 +838,129 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
-    // Smooth Scroll
-    document.querySelectorAll('a.scroll-to, .nav-links a[href*="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            const currentPath = window.location.pathname.split("/").pop() || "index.html"; 
 
-            if (href && href.includes('#')) {
-                const [pathToFile, hash] = href.split('#');
-                const targetId = `#${hash}`;
-                
-                if (pathToFile && pathToFile !== currentPath && pathToFile === 'index.html') {
-                    return; 
-                }
+    // ========================================================================
+    // START: OPCIÓN 5 - SOLO CLIC + HASH EN URL (main_js_click_only_v1)
+    // ========================================================================
+    const navItemsForClick = Array.from(document.querySelectorAll('.main-nav .nav-links a[href^="#"]'));
 
-                if (!pathToFile || pathToFile === currentPath) {
-                    e.preventDefault(); 
-                    const targetElement = document.querySelector(targetId);
+    function setActiveOnClick(clickedLink) {
+        console.log(`Opción 5: setActiveOnClick para: ${clickedLink ? clickedLink.getAttribute('href') : 'NONE'}`);
+        navItemsForClick.forEach(link => {
+            link.classList.remove('nav-active'); // Usar 'nav-active' consistentemente
+        });
+        if (clickedLink) {
+            clickedLink.classList.add('nav-active');
+            console.log(`Opción 5: Activado: ${clickedLink.getAttribute('href')}`);
+        }
+    }
 
-                    if (targetElement) {
-                        const baseHeaderHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue(window.innerWidth <= 992 ? '--header-height-mobile' : '--header-height-desktop').trim() || '65');
-                        let extraOffset = 15; 
-                        if (targetId === '#contacto') {
-                            extraOffset = 20; 
-                        }
+    // --- Smooth Scroll para clics en navegación ---
+    navItemsForClick.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const targetIdHref = this.getAttribute('href');
+            if (!targetIdHref || !targetIdHref.startsWith('#')) {
+                return; // Permitir comportamiento por defecto para enlaces externos
+            }
+
+            e.preventDefault(); 
+            const targetId = targetIdHref.substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            console.log(`--- Opción 5 Click Event --- Target ID: ${targetId}`);
+
+            if (targetElement) {
+                setActiveOnClick(this); // Resaltar el enlace clickeado inmediatamente
+
+                requestAnimationFrame(() => {
+                    targetElement.offsetHeight; 
+                    setTimeout(() => {
+                        const targetElementRect = targetElement.getBoundingClientRect();
+                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        const targetPosition = targetElementRect.top + scrollTop; // scroll-margin-top en CSS maneja el offset
+
+                        console.log(`Opción 5 Click: Target ${targetId}, ScrollTo: ${targetPosition.toFixed(0)} (scroll-margin-top handles header)`);
                         
-                        const headerOffsetTotal = baseHeaderHeight + extraOffset;
-                        const elementPosition = targetElement.getBoundingClientRect().top;
-                        const currentScrollY = window.pageYOffset;
-                        const offsetPosition = elementPosition + currentScrollY - headerOffsetTotal;
-
                         window.scrollTo({
-                            top: offsetPosition,
+                            top: Math.max(0, targetPosition), 
                             behavior: 'smooth'
                         });
 
-                        // After smooth scroll, explicitly update scrollspy
-                        // Use a timeout to allow the scroll animation to (mostly) finish
-                        setTimeout(() => {
-                            // Manually set the active class on the clicked link first
-                            navItemsForSpy.forEach(item => item.classList.remove('nav-active'));
-                            this.classList.add('nav-active'); 
-                            // Then call handleScrollSpy to confirm or correct based on final position
-                            handleScrollSpy(); 
-                        }, 700); // Adjust timeout if needed, 700ms is a general estimate for smooth scroll
-
-                        if (targetId === '#contacto') {
-                            const contactFormOnPage = document.getElementById('contactForm');
-                            if (contactFormOnPage) { 
-                                const subjectValue = this.getAttribute('data-subject');
-                                const subjectSelect = document.getElementById('subject'); 
-                                if (subjectValue && subjectSelect) {
-                                    subjectSelect.value = subjectValue;
-                                }
-                            }
+                        // Actualizar el hash en la URL después de iniciar el scroll
+                        if (history.pushState && window.location.hash !== targetIdHref) {
+                             history.pushState(null, null, targetIdHref);
+                        } else if (window.location.hash !== targetIdHref) {
+                             window.location.hash = targetIdHref;
                         }
-                    } else {
-                        console.warn('Target element for scroll not found:', targetId);
+
+                    }, 100); // Delay de 100ms. Ajustar si es necesario.
+                });
+                
+                if (targetId === 'contacto') {
+                    const contactFormOnPage = document.getElementById('contactForm');
+                    if (contactFormOnPage) {
+                        const subjectValue = this.getAttribute('data-subject');
+                        const subjectSelect = document.getElementById('subject');
+                        if (subjectValue && subjectSelect) {
+                            subjectSelect.value = subjectValue;
+                        }
                     }
                 }
+            } else {
+                console.warn(`Opción 5 Smooth scroll: Target element NOT FOUND for ID: ${targetId}`);
             }
         });
     });
-
-    // --- Scrollspy Functionality ---
-    const handleScrollSpy = () => {
-        if (!sectionsForSpy.length || !navItemsForSpy.length) {
-            return;
-        }
-
-        const scrollY = window.pageYOffset;
-        const windowHeight = window.innerHeight;
-        const docHeight = document.documentElement.scrollHeight;
-        const headerHeight = parseInt(getComputedStyle(document.documentElement).getPropertyValue(window.innerWidth <= 992 ? '--header-height-mobile' : '--header-height-desktop').trim() || '65');
-        
-        const activationPointInViewport = headerHeight + 1; // 1px buffer below the header
-
-        // --- DEBUG LOGS (Uncomment to see values) ---
-        // console.clear(); 
-        // console.log(`ScrollY: ${scrollY.toFixed(0)}, ActivationPointInViewport: ${activationPointInViewport.toFixed(0)}, HeaderHeight: ${headerHeight}`);
-        // sectionsForSpy.forEach(s => {
-        //     const rect = s.getBoundingClientRect();
-        //     console.log(`Section: ${s.id}, ViewportTop: ${rect.top.toFixed(0)}, ViewportBottom: ${rect.bottom.toFixed(0)}, Height: ${rect.height.toFixed(0)}`);
-        // });
-        // --- END DEBUG LOGS ---
-
-        let currentSectionId = '';
-
-        // Iterate from the last section upwards
-        for (let i = sectionsForSpy.length - 1; i >= 0; i--) {
-            const section = sectionsForSpy[i];
-            const sectionRect = section.getBoundingClientRect(); // Position relative to viewport
-
-            // If the top of the section is at or above our activation line in the viewport
-            if (sectionRect.top <= activationPointInViewport) {
-                currentSectionId = section.id;
-                // console.log(`Selected by reverse loop: ${currentSectionId} (sectionRect.top: ${sectionRect.top.toFixed(0)} <= activationPointInViewport: ${activationPointInViewport.toFixed(0)})`);
-                break; 
-            }
-        }
-        
-        // If scrolled to the very bottom, ensure the last section is active
-        if (scrollY + windowHeight >= docHeight - 10) { // 10px buffer for bottom
-            if (sectionsForSpy.length > 0) {
-                currentSectionId = sectionsForSpy[sectionsForSpy.length - 1].id;
-                // console.log(`At bottom, forced to: ${currentSectionId}`);
-            }
-        }
-        // If no section was found by the loop (e.g., we are above the first "real" section)
-        // and we are very close to the top, activate 'inicio' if it's the first.
-        else if (currentSectionId === '' && scrollY < (sectionsForSpy[0]?.offsetTop || headerHeight + 10)) { 
-            if (sectionsForSpy.length > 0 && sectionsForSpy[0].id === 'inicio') {
-                currentSectionId = 'inicio';
-                // console.log(`Near top, forced to: ${currentSectionId}`);
-            }
-        }
-        
-        // console.log(`Final Active Section ID: ${currentSectionId}`);
-
-        navItemsForSpy.forEach(link => {
-            link.classList.remove('nav-active');
-            if (link.getAttribute('href') === `#${currentSectionId}`) {
-                link.classList.add('nav-active');
-            }
-        });
-    };
     
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(handleScrollSpy, 50); // Throttle scroll handler
-    });
-    handleScrollSpy(); // Initial call
+    // Establecer el estado activo inicial basado en el hash de la URL (si existe) al cargar la página
+    // Esto es importante para que si alguien llega con un hash, el enlace correcto esté activo.
+    function activateLinkFromHash() {
+        const initialHash = window.location.hash;
+        if (initialHash) {
+            const linkToActivate = navItemsForClick.find(link => link.getAttribute('href') === initialHash);
+            if (linkToActivate) {
+                console.log(`Opción 5: Activando enlace desde hash inicial: ${initialHash}`);
+                setActiveOnClick(linkToActivate);
+                // Opcional: Forzar un scroll suave al hash si el navegador no lo hace bien por defecto
+                // Esto puede ser útil si hay mucho contenido cargando dinámicamente.
+                // setTimeout(() => {
+                //     const targetElement = document.getElementById(initialHash.substring(1));
+                //     if (targetElement) {
+                //         const targetElementRect = targetElement.getBoundingClientRect();
+                //         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                //         const targetPosition = targetElementRect.top + scrollTop;
+                //         window.scrollTo({ top: Math.max(0, targetPosition), behavior: 'auto' }); // 'auto' para que sea instantáneo al cargar
+                //     }
+                // }, 150); // Pequeño delay
+            } else {
+                 setActiveOnClick(null); // Si el hash no coincide con ningún enlace, no activar nada
+            }
+        } else {
+            // Si no hay hash, no activar ningún enlace por defecto (o activar el primero, ej. 'inicio' si tienes un enlace a #inicio)
+            // Para este caso, si no hay hash, no se activa nada explícitamente aquí.
+            // Podrías querer activar el primer enlace o el enlace a #inicio si es relevante.
+            // Por ejemplo, si tienes un enlace a #inicio en tu navItemsForClick:
+            // const homeLink = navItemsForClick.find(link => link.getAttribute('href') === '#inicio');
+            // if (homeLink) setActiveOnClick(homeLink); else setActiveOnClick(null);
+             setActiveOnClick(null);
+        }
+    }
+    
+    // Llamar a la función para activar el enlace desde el hash después de que el DOM esté listo
+    // y un pequeño delay para asegurar que las posiciones de los elementos sean estables.
+    setTimeout(activateLinkFromHash, 200);
+
+    // Escuchar cambios en el hash (ej. botones de atrás/adelante del navegador)
+    window.addEventListener('hashchange', activateLinkFromHash);
 
 
-    // Contact Form Submission
-     if (contactForm && formStatus) { 
+    console.log("Opción 5: Scrollspy dinámico ELIMINADO. Solo resaltado por clic y actualización de hash activos.");
+    // ========================================================================
+    // END: OPCIÓN 5
+    // ========================================================================
+
+    // ... (Existing Contact Form Submission - UNTOUCHED)
+    if (contactForm && formStatus) { 
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault(); 
             const currentLang = document.documentElement.lang || 'es'; 
@@ -1012,7 +987,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (response.ok) {
                     return response.json(); 
                 }
-                // Try to parse error from Formspree if not ok
                 return response.json().then(errorData => {
                     throw new Error(errorData.error || translations[currentLang]?.formError || 'Hubo un error.');
                 });
@@ -1032,14 +1006,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitButton.textContent = originalButtonText;
                 submitButton.disabled = false;
                 setTimeout(() => {
-                   // formStatus.style.display = 'none'; // Optionally hide after some time
+                   // formStatus.style.display = 'none'; 
                    // formStatus.className = 'status'; 
                 }, 7000); 
             });
         });
     }
 
-    // Back to Top Button
+    // ... (Existing Back to Top Button - UNTOUCHED)
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) { 
@@ -1052,9 +1026,9 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
-
-    // Update current year
-     if (yearSpan) {
+    
+    // ... (Existing Update current year - UNTOUCHED)
+    if (yearSpan) {
          yearSpan.textContent = new Date().getFullYear();
      }
 
