@@ -1140,7 +1140,7 @@
     background-color: rgba(24, 24, 27, 0.6);
     border-radius: 12px;
     border-top: 2px solid var(--color-modern-accent-1);
-    margin-bottom: var(--spacing-xl); /* AÑADIDO: Margen inferior para separar del siguiente título */
+    margin-bottom: var(--spacing-xl); 
   }
   .benefits-cta p {
     color: var(--color-text-medium);
@@ -1690,7 +1690,8 @@
       padding: var(--spacing-md);
     }
     .about-image {
-      margin-bottom: var(--spacing-lg); 
+      /* MODIFICADO: Reducir el margen inferior a 0.5rem (usando --spacing-xs) */
+      margin-bottom: var(--spacing-xs); 
       max-width: 350px; 
       margin-left: auto; 
       margin-right: auto; 
@@ -2059,22 +2060,20 @@
     text-fill-color: transparent;
     background-size: 250% 250%;
     animation: animatedGradientBackground 5s ease infinite;
-    /* padding-bottom: calc(var(--spacing-md) - 1px);  MODIFICADO: Ajustar padding para el ícono abajo */
   }
 
   .faq-question {
-    /* MODIFICADO: Aumentar padding inferior para hacer espacio al ícono */
     padding: var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) + 1.5rem) var(--spacing-md); 
     font-family: var(--font-body);
     font-size: 1.15rem;
     font-weight: 700;
     color: var(--color-text-light);
     cursor: pointer;
-    position: relative; /* Necesario para posicionar el ::after absoluto dentro */
+    position: relative; 
     list-style: none; 
     transition: color var(--transition-speed-faq) ease;
     outline: none; 
-    display: block; /* Asegurar que <summary> ocupe todo el ancho */
+    display: block; 
     width: 100%;
   }
 
@@ -2082,43 +2081,37 @@
     display: none;
   }
 
-  /* MODIFICADO v5: Usando SVG para el ícono de la flecha */
-.faq-question::after { 
-  content: ''; /* Contenido vacío ya que usamos background/mask */
-  display: block; 
-  width: 1em; /* Tamaño del ícono, relativo al font-size del .faq-question */
-  height: 1em; /* Tamaño del ícono */
-  
-  /* Usamos mask-image para poder cambiar el color con background-color */
-  background-color: var(--color-text-medium); /* Color inicial del SVG */
-  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z'/%3E%3C/svg%3E");
-  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: contain; /* Asegura que el SVG escale dentro del contenedor */
-  
-  position: absolute;
-  bottom: var(--spacing-sm); /* Ajustado para un poco más de espacio desde abajo */
-  left: 50%; 
-  transform: translateX(-50%) rotate(0deg); 
-  transition: transform var(--transition-speed-faq) ease-in-out, background-color var(--transition-speed-faq) ease; /* Transición para background-color */
-}
+  .faq-question::after { 
+    content: ''; 
+    display: block; 
+    width: 1em; 
+    height: 1em; 
+    background-color: var(--color-text-medium); 
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z'/%3E%3C/svg%3E");
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    position: absolute;
+    bottom: var(--spacing-sm); 
+    left: 50%; 
+    transform: translateX(-50%) rotate(0deg); 
+    transition: transform var(--transition-speed-faq) ease-in-out, background-color var(--transition-speed-faq) ease;
+  }
 
-.faq-item[open] .faq-question::after {
-  transform: translateX(-50%) rotate(-180deg); 
-  background-color: var(--color-modern-accent-3); /* Color cuando está abierto */
-}
+  .faq-item[open] .faq-question::after {
+    transform: translateX(-50%) rotate(-180deg); 
+    background-color: var(--color-modern-accent-3); 
+  }
 
-.faq-question:hover::after { /* Color del ícono al hacer hover sobre la pregunta */
-    background-color: var(--color-secondary-accent);
-}
-/* Fin de la modificación para el ícono SVG */
+  .faq-question:hover::after { 
+      background-color: var(--color-secondary-accent);
+  }
+
 
   .faq-question:hover,
   .faq-question:focus-visible { 
     color: var(--color-secondary-accent);
-  }
-  .faq-question:hover::after {
-      color: var(--color-secondary-accent);
   }
 
 
