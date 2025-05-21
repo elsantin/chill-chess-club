@@ -2059,52 +2059,59 @@
     text-fill-color: transparent;
     background-size: 250% 250%;
     animation: animatedGradientBackground 5s ease infinite;
-    padding-bottom: calc(var(--spacing-md) - 1px); 
+    /* padding-bottom: calc(var(--spacing-md) - 1px);  MODIFICADO: Ajustar padding para el ícono abajo */
   }
 
   .faq-question {
-    padding: var(--spacing-md);
+    /* MODIFICADO: Aumentar padding inferior para hacer espacio al ícono */
+    padding: var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) + 1.5rem) var(--spacing-md); 
     font-family: var(--font-body);
     font-size: 1.15rem;
     font-weight: 700;
     color: var(--color-text-light);
     cursor: pointer;
-    position: relative;
+    position: relative; /* Necesario para posicionar el ::after absoluto dentro */
     list-style: none; 
     transition: color var(--transition-speed-faq) ease;
     outline: none; 
+    display: block; /* Asegurar que <summary> ocupe todo el ancho */
+    width: 100%;
   }
 
   .faq-question::-webkit-details-marker { 
     display: none;
   }
 
-  /* MODIFICADO: Añadidas propiedades para mejorar el renderizado del ícono de Font Awesome */
-  .faq-question::after { 
-    content: '\\f078'; /* Unicode para fa-chevron-down */
-    font-family: 'Font Awesome 6 Free'; /* Asegurar que sea el nombre correcto de la fuente */
-    font-weight: 900; /* Peso para íconos sólidos */
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    display: inline-block; /* Asegura que se trate como un bloque para renderizado de fuente */
-    speak: none; /* Para lectores de pantalla, si el ícono es puramente decorativo */
-    
-    position: absolute;
-    right: var(--spacing-md);
-    top: 50%;
-    transform: translateY(-50%) rotate(0deg);
-    transition: transform var(--transition-speed-faq) ease-in-out, color var(--transition-speed-faq) ease;
-    color: var(--color-text-medium);
-    font-size: 1rem; /* Ajustar si es necesario */
-  }
+  /* MODIFICADO v5: Usando SVG para el ícono de la flecha */
+.faq-question::after { 
+  content: ''; /* Contenido vacío ya que usamos background/mask */
+  display: block; 
+  width: 1em; /* Tamaño del ícono, relativo al font-size del .faq-question */
+  height: 1em; /* Tamaño del ícono */
+  
+  /* Usamos mask-image para poder cambiar el color con background-color */
+  background-color: var(--color-text-medium); /* Color inicial del SVG */
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain; /* Asegura que el SVG escale dentro del contenedor */
+  
+  position: absolute;
+  bottom: var(--spacing-sm); /* Ajustado para un poco más de espacio desde abajo */
+  left: 50%; 
+  transform: translateX(-50%) rotate(0deg); 
+  transition: transform var(--transition-speed-faq) ease-in-out, background-color var(--transition-speed-faq) ease; /* Transición para background-color */
+}
 
-  .faq-item[open] .faq-question::after {
-    transform: translateY(-50%) rotate(-180deg); 
-    color: var(--color-modern-accent-3);
-  }
+.faq-item[open] .faq-question::after {
+  transform: translateX(-50%) rotate(-180deg); 
+  background-color: var(--color-modern-accent-3); /* Color cuando está abierto */
+}
+
+.faq-question:hover::after { /* Color del ícono al hacer hover sobre la pregunta */
+    background-color: var(--color-secondary-accent);
+}
+/* Fin de la modificación para el ícono SVG */
 
   .faq-question:hover,
   .faq-question:focus-visible { 

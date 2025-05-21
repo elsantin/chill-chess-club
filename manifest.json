@@ -3,7 +3,7 @@
   "short_name": "ChillChess",
   "description": "Aprende ajedrez online con el método personalizado de Chill Chess Club. Clases para principiantes e intermedios con asistencia IA.",
   "lang": "es",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#1a1a1d",
   "theme_color": "#EC4899",
@@ -14,6 +14,5 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
- 
   ]
 }
