@@ -1032,4 +1032,42 @@ document.addEventListener('DOMContentLoaded', () => {
          yearSpan.textContent = new Date().getFullYear();
      }
 
+    // --- START: Service Worker Registration ---
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            // Determinar la ruta base para el service worker.
+            // Si el sitio está en un subdirectorio (ej. /chill-chess-club/),
+            // el sw.js debería estar en ese subdirectorio y la ruta de registro también.
+            // Si el sitio está en la raíz del dominio, la ruta es simplemente '/sw.js'.
+            let swPath = '/sw.js'; // Asumir raíz por defecto
+            const baseHref = document.querySelector('base[href]')?.getAttribute('href');
+            
+            if (baseHref && baseHref !== '/') {
+                // Si hay un <base href> y no es solo "/", asumimos que es un subdirectorio.
+                // Asegurarse de que termine con / y luego añadir sw.js
+                swPath = (baseHref.endsWith('/') ? baseHref : baseHref + '/') + 'sw.js';
+            } else if (window.location.pathname.includes('/chill-chess-club/')) {
+                // Fallback si no hay <base href> pero la ruta indica el subdirectorio conocido.
+                // Esto es una suposición y podría necesitar ajuste basado en tu estructura de despliegue.
+                swPath = '/chill-chess-club/sw.js';
+            }
+            // Si tu manifest.json tiene "scope": "/chill-chess-club/",
+            // el service worker DEBE estar en ese scope o uno superior.
+            // Lo más simple es poner sw.js en la raíz del scope, es decir, /chill-chess-club/sw.js
+
+            console.log(`[Main.js] Attempting to register Service Worker at: ${swPath}`);
+
+            navigator.serviceWorker.register(swPath, { scope: './' }) // El scope aquí es relativo al swPath
+                .then(registration => {
+                    console.log('[Main.js] Service Worker registered successfully with scope:', registration.scope);
+                })
+                .catch(error => {
+                    console.error('[Main.js] Service Worker registration failed:', error);
+                });
+        });
+    } else {
+        console.log('[Main.js] Service Worker not supported in this browser.');
+    }
+    // --- END: Service Worker Registration ---
+
 }); // End DOMContentLoaded

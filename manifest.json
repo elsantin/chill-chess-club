@@ -5,6 +5,7 @@
   "lang": "es",
   "start_url": "./index.html",
   "display": "standalone",
+  "scope": "/chill-chess-club/",
   "background_color": "#1a1a1d",
   "theme_color": "#EC4899",
   "icons": [
