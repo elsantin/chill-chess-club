@@ -78,17 +78,6 @@
     cursor: default;
   }
 
-   /* Padding para el header fijo en páginas que NO son de blog/contenido específico sin header */
-   /* main:not(.blog-main-content):not(.content-page-main):not(.legal-main) { */
-     /* padding-top: var(--header-height-desktop); */
-   /* } */
-
-  /* @media (max-width: 992px) { */
-      /* main:not(.blog-main-content):not(.content-page-main):not(.legal-main) { */
-        /* padding-top: var(--header-height-mobile); */
-      /* } */
-  /* } */
-
   body.fade-out {
     opacity: 0;
   }
@@ -1391,27 +1380,65 @@
     min-width: 180px;
   }
 
+  /* Estilos específicos para la línea del email en .contact-info */
+  .contact-info p.contact-email-line {
+      display: flex;
+      align-items: flex-start; 
+      margin-bottom: var(--spacing-md);
+      color: var(--color-text-medium);
+      font-size: 1rem; 
+  }
 
-  .contact-info p {
+  .contact-info p.contact-email-line i.fa-envelope {
+      color: var(--color-modern-accent-2);
+      margin-right: 10px; 
+      width: auto; 
+      min-width: 18px; 
+      text-align: center;
+      font-size: 1em; 
+      flex-shrink: 0; 
+      margin-top: 0.2em; 
+      line-height: 1; 
+  }
+
+  .contact-info p.contact-email-line a {
+      overflow-wrap: break-word; 
+      word-wrap: break-word; 
+      color: var(--color-secondary-accent); 
+      line-height: 1.5; 
+      flex-grow: 1; 
+  }
+   .contact-info p.contact-email-line a:hover {
+      color: var(--color-modern-accent-1); 
+  }
+
+  .contact-info p[data-lang-key="contactTrialDesc"] {
+      display: block; 
+      margin-bottom: var(--spacing-md);
+      color: var(--color-text-medium);
+      font-size: 1rem;
+  }
+  
+  .contact-info {
+    /* Estilos existentes... */
+  }
+
+  .contact-info h3 { 
     margin-bottom: var(--spacing-md);
-    display: flex;
-    align-items: center;
-    color: var(--color-text-medium);
-    font-size: 1rem;
-    word-break: break-word; 
-    overflow-wrap: break-word; 
+    color: var(--color-secondary-accent);
+    font-size: 1.5rem;
   }
-  .contact-info p a { 
-      word-break: break-all; 
-  }
-  .contact-info i {
+  
+  .contact-info p:not(.contact-email-line) i { 
     color: var(--color-modern-accent-2);
     margin-right: 12px;
     width: 20px;
     text-align: center;
     font-size: 1.1rem;
     flex-shrink: 0; 
+     margin-top: 0.15em; 
   }
+
 
   .contact-info h4 {
     margin-top: var(--spacing-lg);
@@ -1496,25 +1523,25 @@
     color: var(--color-modern-accent-1);
     padding-left: 8px;
   }
-  .footer-contact p {
+  .footer-contact p { 
     margin-bottom: var(--spacing-sm);
     display: flex;
     align-items: center;
     font-size: 0.95rem;
     color: var(--color-text-medium);
   }
-  .footer-contact i { 
+  .footer-contact p i { 
     color: var(--color-modern-accent-2);
     margin-right: 10px;
     width: 20px;
     text-align: center;
     flex-shrink: 0;
   }
-  .footer-contact a {
+  .footer-contact p a { 
     color: var(--color-text-medium);
     word-break: break-all; 
   }
-  .footer-contact a:hover, .footer-contact a:focus {
+  .footer-contact p a:hover, .footer-contact p a:focus {
     color: var(--color-modern-accent-1);
   }
 
@@ -1690,7 +1717,6 @@
       padding: var(--spacing-md);
     }
     .about-image {
-      /* MODIFICADO: Reducir el margen inferior a 0.5rem (usando --spacing-xs) */
       margin-bottom: var(--spacing-xs); 
       max-width: 350px; 
       margin-left: auto; 
@@ -1716,15 +1742,27 @@
       text-align: center;
       padding: 0 var(--spacing-sm); 
     }
-    .contact-info p { 
+    
+    .contact-info p.contact-email-line {
+        font-size: 0.95rem; 
+    }
+    .contact-info p.contact-email-line i.fa-envelope {
+        font-size: 1em; 
+        margin-right: 8px; 
+    }
+     .contact-info p.contact-email-line a {
+        line-height: 1.45; 
+    }
+
+    .contact-info p:not(.contact-email-line) {
       justify-content: center; 
       font-size: 0.9rem; 
-      word-break: break-word; 
-      overflow-wrap: break-word;
     }
-    .contact-info p a {
+    .contact-info p:not(.contact-email-line) a {
       word-break: break-all; 
     }
+
+
     .contact-info h3 {
       font-size: 1.3rem; 
     }
@@ -1760,11 +1798,11 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    .footer-contact p { justify-content: center; }
+    .footer-contact p { justify-content: center; } 
     .payment-methods { justify-content: center; }
   }
 
-  @media (max-width: 768px) { /* Móviles */
+  @media (max-width: 768px) { /* Móviles más pequeños */
     body { font-size: 15px;  } 
     header { 
       padding: calc(var(--spacing-xs) / 2) 0; 
@@ -1952,6 +1990,25 @@
     .contact-info {
       padding: 0; 
     }
+     /* --- INICIO: Estilos para ícono encima del email en móvil --- */
+    .contact-info p.contact-email-line {
+        flex-direction: column; 
+        align-items: center;   
+        text-align: center;    
+        font-size: 1rem;       
+    }
+    .contact-info p.contact-email-line i.fa-envelope {
+        margin-right: 0;        
+        margin-bottom: var(--spacing-xs); 
+        font-size: 1.5em;       
+        margin-top: 0;          
+    }
+    .contact-info p.contact-email-line a {
+        line-height: 1.4;       
+        font-size: inherit;     
+    }
+    /* --- FIN: Estilos para ícono encima del email en móvil --- */
+
     .contact-info .btn {
       padding: 10px 15px; 
       font-size: 0.85rem;
@@ -1968,7 +2025,7 @@
       left: 50%;
       transform: translateX(-50%);
     }
-    .footer-contact p { justify-content: center; }
+    .footer-contact p { justify-content: center; } 
     
     .payment-methods { 
       justify-content: center; 
@@ -2063,7 +2120,8 @@
   }
 
   .faq-question {
-    padding: var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) + 1.5rem) var(--spacing-md); 
+    padding: var(--spacing-md); 
+    padding-right: calc(var(--spacing-md) + 30px); 
     font-family: var(--font-body);
     font-size: 1.15rem;
     font-weight: 700;
@@ -2080,32 +2138,30 @@
   .faq-question::-webkit-details-marker { 
     display: none;
   }
-
-  .faq-question::after { 
-    content: ''; 
-    display: block; 
-    width: 1em; 
-    height: 1em; 
-    background-color: var(--color-text-medium); 
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z'/%3E%3C/svg%3E");
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: contain;
-    
+  
+  .faq-question .faq-arrow-svg {
+    display: block; /* Asegurar que el SVG sea un bloque */
+    opacity: 1; /* Asegurar que no sea transparente */
     position: absolute;
-    bottom: var(--spacing-sm); 
-    left: 50%; 
-    transform: translateX(-50%) rotate(0deg); 
-    transition: transform var(--transition-speed-faq) ease-in-out, background-color var(--transition-speed-faq) ease;
+    right: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%) rotate(0deg);
+    width: 20px; 
+    height: 20px; 
+    fill: red !important; /* DIAGNÓSTICO: Forzar color rojo */
+    /* fill: var(--color-text-medium); */ /* Color original */
+    transition: transform var(--transition-speed-faq) ease-in-out, fill var(--transition-speed-faq) ease;
   }
 
-  .faq-item[open] .faq-question::after {
-    transform: translateX(-50%) rotate(-180deg); 
-    background-color: var(--color-modern-accent-3); 
+  .faq-item[open] .faq-question .faq-arrow-svg {
+    transform: translateY(-50%) rotate(-180deg); 
+    fill: var(--color-modern-accent-3) !important; /* DIAGNÓSTICO: Forzar color o usar el original */
+    /* fill: var(--color-modern-accent-3); */ /* Color original */
   }
 
-  .faq-question:hover::after { 
-      background-color: var(--color-secondary-accent);
+  .faq-question:hover .faq-arrow-svg { 
+      fill: var(--color-secondary-accent) !important; /* DIAGNÓSTICO: Forzar color o usar el original */
+      /* fill: var(--color-secondary-accent); */ /* Color original */
   }
 
 
@@ -2183,8 +2239,8 @@
       padding-bottom: var(--spacing-xs);
       color: var(--color-secondary-accent); 
   }
-  .legal-content-section h2::after {
-      display: none; 
+  .legal-content-section h2::after { 
+      display:none; 
   }
   .legal-content-section p, 
   .legal-content-section ul {
@@ -2214,15 +2270,13 @@
     #BLOG POST PAGE STYLES (Diseño con "barra de título", sin header principal)
   \*------------------------------------*/
   
-  /* Estilo para el fondo de la página del artículo de blog */
   body.blog-page-body {
-    background-color: var(--color-dark-bg-secondary); /* Fondo general de la página del artículo */
-    padding-top: 0; /* Sin padding-top si no hay header fijo en estas páginas */
+    background-color: var(--color-dark-bg-secondary); 
+    padding-top: 0; 
   }
 
-  /* Contenedor principal del artículo */
   .blog-post-page { 
-      margin-top: var(--spacing-xl); /* Espacio desde el tope de la ventana */
+      margin-top: var(--spacing-xl); 
       margin-bottom: var(--spacing-xl); 
       padding: 0; 
   }
