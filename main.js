@@ -3,7 +3,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente cargado y parseado para la página:", window.location.pathname);
 
-    // --- Language Translation (EXISTING CODE - UNTOUCHED) ---
+    // --- Language Translation ---
     const translations = {
         es: {
             // ========================================================================
@@ -514,12 +514,12 @@ document.addEventListener('DOMContentLoaded', () => {
             termsChangesTitle: "Cambios a los Términos",
             termsChangesDesc: "Nos reservamos el derecho, a nuestra sola discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, intentaremos proporcionar al menos 30 días de aviso antes de que los nuevos términos entren en vigor. Lo que constituye un cambio material será determinado a nuestra sola discreción.",
             termsContactUsTitle: "Contáctanos",
-            termsContactUsDesc: "Si tienes alguna pregunta sobre estos Términos, por favor contáctanos en: [TU-EMAIL-DE-CONTACTO@ejemplo.com]"
+            termsContactUsDesc: "Si tienes alguna pregunta sobre estos Términos, por favor contáctanos en: [TU-EMAIL-DE-CONTACTO@example.com]"
         }
     };
 
 
-    // --- Selectors (EXISTING CODE - UNTOUCHED) ---
+    // --- Selectors ---
     const langButtons = document.querySelectorAll('.lang-button');
     const translatableElements = document.querySelectorAll('[data-lang-key]');
     const backToTopButton = document.getElementById('back-to-top-btn');
@@ -529,12 +529,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('form-status');
     const yearSpan = document.getElementById('current-year');
-    const particlesElement = document.getElementById('particles-js');
+    const particlesElement = document.getElementById('particles-js'); // Selector para Particles.js
 
-    // --- Language Functions (EXISTING CODE - UNTOUCHED) ---
-    // ... (El código de setLanguage e initialUpdateLanguage existente va aquí, no se muestra por brevedad)
+    // --- Language Functions ---
     const setLanguage = (lang) => {
-        // console.log(`Attempting to set language to: ${lang}`);
         if (!translations[lang]) {
             console.error(`Language ${lang} not found in translations.`);
             return;
@@ -545,62 +543,24 @@ document.addEventListener('DOMContentLoaded', () => {
         langButtons.forEach(btn => btn.disabled = true); 
 
         setTimeout(() => {
-            // console.log(`Updating elements for language: ${lang}`);
             translatableElements.forEach(el => {
                 const keyAttr = el.dataset.langKey; 
                 const [key, attribute] = keyAttr.split('|');
 
                 if (translations[lang][key]) {
                     let translation = translations[lang][key];
-
                     if (key === 'footerCopyright') { 
                         translation = translation.replace('[YEAR]', new Date().getFullYear());
                     }
-
                     if (attribute) {
                         el.setAttribute(attribute, translation);
-                        if (key === 'metaDescription' && attribute === 'content') {
-                            const mainMetaDesc = document.querySelector('head > meta[name="description"][data-lang-key="metaDescription|content"]');
-                            if (mainMetaDesc) mainMetaDesc.setAttribute('content', translation);
-                        }
-                         if ((key === 'logoAlt' || 
-                              key === 'aboutImageAlt' || 
-                              key === 'courseBeginnerImgAlt' || 
-                              key === 'courseIntermediateImgAlt' || 
-                              key === 'courseCustomImgAlt' ||
-                              key === 'blogPost1ImgAlt' || 
-                              key === 'blogPost2ImgAlt' || 
-                              key === 'blogPost3ImgAlt') && attribute === 'alt') { 
-                            el.setAttribute('alt', translation);
-                         }
-                         if (key === 'metaDescriptionPrivacy' && attribute === 'content') {
-                            const metaDescPrivacy = document.querySelector('head > meta[data-lang-key="metaDescriptionPrivacy|content"]');
-                            if (metaDescPrivacy) metaDescPrivacy.setAttribute('content', translation);
-                         }
-                         if (key === 'metaDescriptionTerms' && attribute === 'content') {
-                            const metaDescTerms = document.querySelector('head > meta[data-lang-key="metaDescriptionTerms|content"]');
-                            if (metaDescTerms) metaDescTerms.setAttribute('content', translation);
-                         }
                     } else if (
-                        key === 'courseBeginnerTitle' ||
-                        key === 'courseIntermediateTitle' ||
-                        key === 'courseCustomTitle' ||
-                        key === 'resourcesCta' || 
-                        key === 'coursesCtaText' ||
-                        key === 'benefitsIntro' ||
-                        key === 'benefitsCtaText' ||
-                        key === 'benefitsCtaMethod' ||
-                        key === 'methodKeyBenefitsDesc' ||
-                        key === 'aboutQuoteText' ||
-                        key === 'faqIntro' || 
-                        key === 'faqA1' || 
-                        key === 'faqA2' ||
-                        key === 'privacyDataPersonal' || 
-                        key === 'privacyDataDerivative' ||
-                        key === 'privacyDisclosureLaw' ||
-                        key === 'privacyDisclosureProviders' ||
-                        key === 'termsAcceptanceDesc' || 
-                        key === 'termsIntellectualPropertyDesc'
+                        key === 'courseBeginnerTitle' || key === 'courseIntermediateTitle' || key === 'courseCustomTitle' ||
+                        key === 'resourcesCta' || key === 'coursesCtaText' || key === 'benefitsIntro' ||
+                        key === 'benefitsCtaText' || key === 'benefitsCtaMethod' || key === 'methodKeyBenefitsDesc' ||
+                        key === 'aboutQuoteText' || key === 'faqIntro' || key === 'faqA1' || key === 'faqA2' ||
+                        key === 'privacyDataPersonal' || key === 'privacyDataDerivative' || key === 'privacyDisclosureLaw' ||
+                        key === 'privacyDisclosureProviders' || key === 'termsAcceptanceDesc' || key === 'termsIntellectualPropertyDesc'
                     ) {
                         el.innerHTML = translation; 
                     } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
@@ -621,16 +581,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             document.documentElement.lang = lang;
-            // console.log(`Document language set to: ${document.documentElement.lang}`);
-
             langButtons.forEach(btn => {
-                if (btn.dataset.lang === lang) { 
-                    btn.classList.add('active');
-                    btn.setAttribute('aria-current', 'page');
-                } else {
-                    btn.classList.remove('active');
-                    btn.removeAttribute('aria-current');
-                }
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+                btn.setAttribute('aria-current', btn.dataset.lang === lang ? 'page' : 'false');
             });
 
             try {
@@ -643,17 +596,14 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 langButtons.forEach(btn => btn.disabled = false);
             }, 50); 
-            // console.log(`Language update to ${lang} complete.`);
         }, transitionDuration);
     };
     
     const initialUpdateLanguage = (lang) => {
-        // console.log(`Initial language update to: ${lang}`);
         if (!translations[lang]) {
             console.error(`Initial language ${lang} not found.`);
             return;
         }
-
         translatableElements.forEach(el => {
              const keyAttr = el.dataset.langKey; 
              const [key, attribute] = keyAttr.split('|');
@@ -664,48 +614,13 @@ document.addEventListener('DOMContentLoaded', () => {
                  }
                  if (attribute) {
                      el.setAttribute(attribute, translation);
-                     if (key === 'metaDescription' && attribute === 'content') {
-                        const mainMetaDesc = document.querySelector('head > meta[name="description"][data-lang-key="metaDescription|content"]');
-                        if (mainMetaDesc) mainMetaDesc.setAttribute('content', translation);
-                     }
-                      if ((key === 'logoAlt' || 
-                           key === 'aboutImageAlt' || 
-                           key === 'courseBeginnerImgAlt' || 
-                           key === 'courseIntermediateImgAlt' || 
-                           key === 'courseCustomImgAlt' ||
-                           key === 'blogPost1ImgAlt' ||
-                           key === 'blogPost2ImgAlt' ||
-                           key === 'blogPost3ImgAlt') && attribute === 'alt') {
-                         el.setAttribute('alt', translation);
-                      }
-                      if (key === 'metaDescriptionPrivacy' && attribute === 'content') {
-                        const metaDescPrivacy = document.querySelector('head > meta[data-lang-key="metaDescriptionPrivacy|content"]');
-                        if (metaDescPrivacy) metaDescPrivacy.setAttribute('content', translation);
-                      }
-                      if (key === 'metaDescriptionTerms' && attribute === 'content') {
-                         const metaDescTerms = document.querySelector('head > meta[data-lang-key="metaDescriptionTerms|content"]');
-                         if (metaDescTerms) metaDescTerms.setAttribute('content', translation);
-                      }
                  } else if (
-                    key === 'courseBeginnerTitle' ||
-                    key === 'courseIntermediateTitle' ||
-                    key === 'courseCustomTitle' ||
-                    key === 'resourcesCta' || 
-                    key === 'coursesCtaText' ||
-                    key === 'benefitsIntro' ||
-                    key === 'benefitsCtaText' ||
-                    key === 'benefitsCtaMethod' ||
-                    key === 'methodKeyBenefitsDesc' ||
-                    key === 'aboutQuoteText' ||
-                    key === 'faqIntro' || 
-                    key === 'faqA1' || 
-                    key === 'faqA2' ||
-                    key === 'privacyDataPersonal' || 
-                    key === 'privacyDataDerivative' ||
-                    key === 'privacyDisclosureLaw' ||
-                    key === 'privacyDisclosureProviders' ||
-                    key === 'termsAcceptanceDesc' || 
-                    key === 'termsIntellectualPropertyDesc'  
+                    key === 'courseBeginnerTitle' || key === 'courseIntermediateTitle' || key === 'courseCustomTitle' ||
+                    key === 'resourcesCta' || key === 'coursesCtaText' || key === 'benefitsIntro' ||
+                    key === 'benefitsCtaText' || key === 'benefitsCtaMethod' || key === 'methodKeyBenefitsDesc' ||
+                    key === 'aboutQuoteText' || key === 'faqIntro' || key === 'faqA1' || key === 'faqA2' ||
+                    key === 'privacyDataPersonal' || key === 'privacyDataDerivative' || key === 'privacyDisclosureLaw' ||
+                    key === 'privacyDisclosureProviders' || key === 'termsAcceptanceDesc' || key === 'termsIntellectualPropertyDesc'  
                 ) {
                      el.innerHTML = translation; 
                 } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
@@ -726,15 +641,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         document.documentElement.lang = lang;
         langButtons.forEach(btn => {
-             if (btn.dataset.lang === lang) { 
-                 btn.classList.add('active');
-                 btn.setAttribute('aria-current', 'page');
-             } else {
-                 btn.classList.remove('active');
-                 btn.removeAttribute('aria-current');
-             }
+             btn.classList.toggle('active', btn.dataset.lang === lang);
+             btn.setAttribute('aria-current', btn.dataset.lang === lang ? 'page' : 'false');
         });
-        // console.log(`Initial language update to ${lang} applied.`);
     };
 
     let preferredLanguage = 'es';
@@ -763,6 +672,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- AOS Initialization ---
     if (typeof AOS !== 'undefined') {
         AOS.init({
             duration: 800,
@@ -771,6 +681,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Particles.js Initialization ---
     if (particlesElement) {
         particlesJS('particles-js', {
             "particles": {
@@ -797,6 +708,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Mobile Menu Toggle ---
     if (menuToggle && navLinksContainer) {
         menuToggle.addEventListener('click', () => {
             const isActive = navLinksContainer.classList.toggle('active');
@@ -840,60 +752,59 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ========================================================================
-    // START: OPCIÓN 5 - SOLO CLIC + HASH EN URL (main_js_click_only_v1)
+    // START: OPCIÓN 5 - SOLO CLIC + HASH EN URL 
+    // (Scrollspy dinámico ELIMINADO)
     // ========================================================================
     const navItemsForClick = Array.from(document.querySelectorAll('.main-nav .nav-links a[href^="#"]'));
 
     function setActiveOnClick(clickedLink) {
-        console.log(`Opción 5: setActiveOnClick para: ${clickedLink ? clickedLink.getAttribute('href') : 'NONE'}`);
+        // console.log(`Opción 5: setActiveOnClick para: ${clickedLink ? clickedLink.getAttribute('href') : 'NONE'}`);
         navItemsForClick.forEach(link => {
-            link.classList.remove('nav-active'); // Usar 'nav-active' consistentemente
+            link.classList.remove('nav-active'); 
         });
         if (clickedLink) {
             clickedLink.classList.add('nav-active');
-            console.log(`Opción 5: Activado: ${clickedLink.getAttribute('href')}`);
+            // console.log(`Opción 5: Activado: ${clickedLink.getAttribute('href')}`);
         }
     }
 
-    // --- Smooth Scroll para clics en navegación ---
     navItemsForClick.forEach(link => {
         link.addEventListener('click', function(e) {
             const targetIdHref = this.getAttribute('href');
             if (!targetIdHref || !targetIdHref.startsWith('#')) {
-                return; // Permitir comportamiento por defecto para enlaces externos
+                return; 
             }
 
             e.preventDefault(); 
             const targetId = targetIdHref.substring(1);
             const targetElement = document.getElementById(targetId);
 
-            console.log(`--- Opción 5 Click Event --- Target ID: ${targetId}`);
+            // console.log(`--- Opción 5 Click Event --- Target ID: ${targetId}`);
 
             if (targetElement) {
-                setActiveOnClick(this); // Resaltar el enlace clickeado inmediatamente
+                setActiveOnClick(this); 
 
                 requestAnimationFrame(() => {
                     targetElement.offsetHeight; 
                     setTimeout(() => {
                         const targetElementRect = targetElement.getBoundingClientRect();
                         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                        const targetPosition = targetElementRect.top + scrollTop; // scroll-margin-top en CSS maneja el offset
+                        const targetPosition = targetElementRect.top + scrollTop; 
 
-                        console.log(`Opción 5 Click: Target ${targetId}, ScrollTo: ${targetPosition.toFixed(0)} (scroll-margin-top handles header)`);
+                        // console.log(`Opción 5 Click: Target ${targetId}, ScrollTo: ${targetPosition.toFixed(0)} (scroll-margin-top handles header)`);
                         
                         window.scrollTo({
                             top: Math.max(0, targetPosition), 
                             behavior: 'smooth'
                         });
 
-                        // Actualizar el hash en la URL después de iniciar el scroll
                         if (history.pushState && window.location.hash !== targetIdHref) {
                              history.pushState(null, null, targetIdHref);
                         } else if (window.location.hash !== targetIdHref) {
                              window.location.hash = targetIdHref;
                         }
 
-                    }, 100); // Delay de 100ms. Ajustar si es necesario.
+                    }, 100); 
                 });
                 
                 if (targetId === 'contacto') {
@@ -907,59 +818,35 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             } else {
-                console.warn(`Opción 5 Smooth scroll: Target element NOT FOUND for ID: ${targetId}`);
+                // console.warn(`Opción 5 Smooth scroll: Target element NOT FOUND for ID: ${targetId}`);
             }
         });
     });
     
-    // Establecer el estado activo inicial basado en el hash de la URL (si existe) al cargar la página
-    // Esto es importante para que si alguien llega con un hash, el enlace correcto esté activo.
     function activateLinkFromHash() {
         const initialHash = window.location.hash;
         if (initialHash) {
             const linkToActivate = navItemsForClick.find(link => link.getAttribute('href') === initialHash);
             if (linkToActivate) {
-                console.log(`Opción 5: Activando enlace desde hash inicial: ${initialHash}`);
+                // console.log(`Opción 5: Activando enlace desde hash inicial: ${initialHash}`);
                 setActiveOnClick(linkToActivate);
-                // Opcional: Forzar un scroll suave al hash si el navegador no lo hace bien por defecto
-                // Esto puede ser útil si hay mucho contenido cargando dinámicamente.
-                // setTimeout(() => {
-                //     const targetElement = document.getElementById(initialHash.substring(1));
-                //     if (targetElement) {
-                //         const targetElementRect = targetElement.getBoundingClientRect();
-                //         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                //         const targetPosition = targetElementRect.top + scrollTop;
-                //         window.scrollTo({ top: Math.max(0, targetPosition), behavior: 'auto' }); // 'auto' para que sea instantáneo al cargar
-                //     }
-                // }, 150); // Pequeño delay
             } else {
-                 setActiveOnClick(null); // Si el hash no coincide con ningún enlace, no activar nada
+                 setActiveOnClick(null); 
             }
         } else {
-            // Si no hay hash, no activar ningún enlace por defecto (o activar el primero, ej. 'inicio' si tienes un enlace a #inicio)
-            // Para este caso, si no hay hash, no se activa nada explícitamente aquí.
-            // Podrías querer activar el primer enlace o el enlace a #inicio si es relevante.
-            // Por ejemplo, si tienes un enlace a #inicio en tu navItemsForClick:
-            // const homeLink = navItemsForClick.find(link => link.getAttribute('href') === '#inicio');
-            // if (homeLink) setActiveOnClick(homeLink); else setActiveOnClick(null);
              setActiveOnClick(null);
         }
     }
     
-    // Llamar a la función para activar el enlace desde el hash después de que el DOM esté listo
-    // y un pequeño delay para asegurar que las posiciones de los elementos sean estables.
     setTimeout(activateLinkFromHash, 200);
-
-    // Escuchar cambios en el hash (ej. botones de atrás/adelante del navegador)
     window.addEventListener('hashchange', activateLinkFromHash);
 
-
-    console.log("Opción 5: Scrollspy dinámico ELIMINADO. Solo resaltado por clic y actualización de hash activos.");
+    // console.log("Opción 5: Scrollspy dinámico ELIMINADO. Solo resaltado por clic y actualización de hash activos.");
     // ========================================================================
     // END: OPCIÓN 5
     // ========================================================================
 
-    // ... (Existing Contact Form Submission - UNTOUCHED)
+    // --- Contact Form Submission ---
     if (contactForm && formStatus) { 
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault(); 
@@ -1013,7 +900,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ... (Existing Back to Top Button - UNTOUCHED)
+    // --- Back to Top Button ---
     if (backToTopButton) {
         window.addEventListener('scroll', () => {
             if (window.pageYOffset > 300) { 
@@ -1027,47 +914,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // ... (Existing Update current year - UNTOUCHED)
+    // --- Update current year ---
     if (yearSpan) {
          yearSpan.textContent = new Date().getFullYear();
      }
-
-    // --- START: Service Worker Registration ---
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            // Determinar la ruta base para el service worker.
-            // Si el sitio está en un subdirectorio (ej. /chill-chess-club/),
-            // el sw.js debería estar en ese subdirectorio y la ruta de registro también.
-            // Si el sitio está en la raíz del dominio, la ruta es simplemente '/sw.js'.
-            let swPath = '/sw.js'; // Asumir raíz por defecto
-            const baseHref = document.querySelector('base[href]')?.getAttribute('href');
-            
-            if (baseHref && baseHref !== '/') {
-                // Si hay un <base href> y no es solo "/", asumimos que es un subdirectorio.
-                // Asegurarse de que termine con / y luego añadir sw.js
-                swPath = (baseHref.endsWith('/') ? baseHref : baseHref + '/') + 'sw.js';
-            } else if (window.location.pathname.includes('/chill-chess-club/')) {
-                // Fallback si no hay <base href> pero la ruta indica el subdirectorio conocido.
-                // Esto es una suposición y podría necesitar ajuste basado en tu estructura de despliegue.
-                swPath = '/chill-chess-club/sw.js';
-            }
-            // Si tu manifest.json tiene "scope": "/chill-chess-club/",
-            // el service worker DEBE estar en ese scope o uno superior.
-            // Lo más simple es poner sw.js en la raíz del scope, es decir, /chill-chess-club/sw.js
-
-            console.log(`[Main.js] Attempting to register Service Worker at: ${swPath}`);
-
-            navigator.serviceWorker.register(swPath, { scope: './' }) // El scope aquí es relativo al swPath
-                .then(registration => {
-                    console.log('[Main.js] Service Worker registered successfully with scope:', registration.scope);
-                })
-                .catch(error => {
-                    console.error('[Main.js] Service Worker registration failed:', error);
-                });
-        });
-    } else {
-        console.log('[Main.js] Service Worker not supported in this browser.');
-    }
-    // --- END: Service Worker Registration ---
 
 }); // End DOMContentLoaded
