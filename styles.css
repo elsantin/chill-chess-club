@@ -78,17 +78,6 @@
     cursor: default;
   }
 
-   /* Padding para el header fijo en páginas que NO son de blog/contenido específico sin header */
-   /* main:not(.blog-main-content):not(.content-page-main):not(.legal-main) { */
-     /* padding-top: var(--header-height-desktop); */
-   /* } */
-
-  /* @media (max-width: 992px) { */
-      /* main:not(.blog-main-content):not(.content-page-main):not(.legal-main) { */
-        /* padding-top: var(--header-height-mobile); */
-      /* } */
-  /* } */
-
   body.fade-out {
     opacity: 0;
   }
@@ -772,18 +761,18 @@
   .level-dot.active { background: var(--color-modern-accent-2); }
 
   .course-image {
-    width: 100%;
-    /* height: 200px; */ /* Comenta o elimina esta línea */
-    overflow: hidden;
-    display: block;
-}
+      width: 100%;
+      /* height: 200px; */ /* Altura fija eliminada para Opción B */
+      overflow: hidden;
+      display: block;
+  }
   .course-image img {
-    width: 100%;
-    height: auto; /* Cambia de 100% a auto */
-    /* object-fit: cover; */ /* Comenta o elimina esta línea */
-    display: block;
-    transition: transform var(--transition-speed) ease;
-}
+      width: 100%;
+      height: auto; /* Cambiado a auto para Opción B */
+      /* object-fit: cover; */ /* Comentado para Opción B */
+      display: block;
+      transition: transform var(--transition-speed) ease;
+  }
   .course-card:hover .course-image img {
       transform: scale(1.05);
   }
@@ -850,9 +839,8 @@
     background: var(--color-modern-accent-2);
     border-color: var(--color-modern-accent-2);
     color: var(--color-text-light);
-
-    padding: 8px 20px;
-    font-size: 0.9rem;
+    padding: 10px 25px; /* AUMENTADO */
+    font-size: 0.95rem;  /* AUMENTADO */
     letter-spacing: 0.5px;
     min-width: auto;
     white-space: nowrap;
@@ -1690,7 +1678,6 @@
       padding: var(--spacing-md);
     }
     .about-image {
-      /* MODIFICADO: Reducido el margen inferior a 0.5rem (usando --spacing-xs) */
       margin-bottom: var(--spacing-xs);
       max-width: 350px;
       margin-left: auto;
@@ -2063,8 +2050,7 @@
   }
 
   .faq-question {
-    /* Ajustado el padding, especialmente el derecho para el nuevo icono SVG */
-    padding: var(--spacing-md) calc(var(--spacing-md) + 24px + var(--spacing-xs)) var(--spacing-md) var(--spacing-md); /* DEBUG: Aumentado padding-right para icono de 24px */
+    padding: var(--spacing-md) calc(var(--spacing-md) + 24px + var(--spacing-xs)) var(--spacing-md) var(--spacing-md); 
     font-family: var(--font-body);
     font-size: 1.15rem;
     font-weight: 700;
@@ -2082,59 +2068,24 @@
     display: none;
   }
 
-  /* === INICIO: Icono de flecha con pseudo-elemento (AHORA COMENTADO) === */
-  /*
-  .faq-question::after {
-    content: '';
-    display: block;
-    width: 1em;
-    height: 1em;
-    background-color: var(--color-text-medium);
-    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z'/%3E%3C/svg%3E");
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M11.9997 13.1714L16.9495 8.22168L18.3637 9.63589L11.9997 15.9999L5.63574 9.63589L7.04996 8.22168L11.9997 13.1714Z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-size: contain;
-
-    position: absolute;
-    bottom: var(--spacing-sm);
-    left: 50%;
-    transform: translateX(-50%) rotate(0deg);
-    transition: transform var(--transition-speed-faq) ease-in-out, background-color var(--transition-speed-faq) ease;
-  }
-
-  .faq-item[open] .faq-question::after {
-    transform: translateX(-50%) rotate(-180deg);
-    background-color: var(--color-modern-accent-3);
-  }
-
-  .faq-question:hover::after {
-      background-color: var(--color-secondary-accent);
-  }
-  */
-  /* === FIN: Icono de flecha con pseudo-elemento (AHORA COMENTADO) === */
-
-
-  /* === INICIO: Nuevos estilos para el SVG inline === */
   .faq-icon-wrapper {
       position: absolute;
       right: var(--spacing-md);
       top: 50%;
       transform: translateY(-50%);
-      display: flex; /* DEBUG: Asegurar display flex */
+      display: flex; 
       align-items: center;
       justify-content: center;
-      width: 24px; /* DEBUG: Tamaño fijo para el wrapper */
-      height: 24px; /* DEBUG: Tamaño fijo para el wrapper */
+      width: 24px; 
+      height: 24px; 
       pointer-events: none;
-      /* DEBUG: Borde para visualización */
-      /* border: 1px solid red; */
   }
 
-  .faq-icon { /* Estilos para el SVG que está en el HTML */
-      display: block; /* DEBUG: Asegurar que ocupe espacio */
-      width: 24px; /* DEBUG: Tamaño fijo del SVG */
-      height: 24px; /* DEBUG: Tamaño fijo del SVG */
-      fill: lime; /* DEBUG: Color de relleno muy visible */
+  .faq-icon { 
+      display: block; 
+      width: 24px; 
+      height: 24px; 
+      fill: lime; 
       transition: transform var(--transition-speed-faq) ease-in-out, fill var(--transition-speed-faq) ease;
   }
 
@@ -2147,8 +2098,6 @@
   .faq-question:focus-visible .faq-icon {
       fill: var(--color-secondary-accent);
   }
-  /* === FIN: Nuevos estilos para el SVG inline === */
-
 
   .faq-question:hover,
   .faq-question:focus-visible {
@@ -2188,7 +2137,7 @@
   .faq-item .faq-answer {
       opacity: 0;
       max-height: 0;
-      overflow: hidden; /* Mantenido hidden por ahora, pero se puede probar 'visible' */
+      overflow: hidden; 
       transition: opacity var(--transition-speed-faq) cubic-bezier(0.25, 0.1, 0.25, 1),
                   max-height var(--transition-speed-faq) cubic-bezier(0.25, 0.1, 0.25, 1),
                   padding var(--transition-speed-faq) cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -2199,8 +2148,8 @@
 
   .faq-item[open] .faq-answer {
       opacity: 1;
-      max-height: 1500px; /* AUMENTADO para prueba */
-      overflow: visible; /* AÑADIDO para prueba, para ver si el contenido completo aparece */
+      max-height: 1500px; 
+      overflow: visible; 
       padding-top: var(--spacing-md);
       padding-bottom: var(--spacing-md);
   }
