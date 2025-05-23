@@ -745,7 +745,7 @@
   .course-header {
     padding: var(--spacing-md);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: flex-start;
     background-color: rgba(0,0,0,0.15);
     min-height: 80px;
@@ -755,21 +755,25 @@
     font-size: 1.4rem;
     color: var(--color-secondary-accent);
     line-height: 1.3;
+    flex-grow: 1; /* AÑADIDO para permitir que ocupe espacio */
+    text-align: center; /* AÑADIDO para centrar el texto del título */
+    /* Considerar añadir un pequeño padding o margen si el texto está muy pegado al indicador de nivel */
+    /* Por ejemplo: padding-right: var(--spacing-xs); si el indicador está a la derecha */
   }
-  .course-level { display: flex; gap: 6px; }
+  .course-level { display: flex; gap: 6px; flex-shrink: 0; /* Evita que el indicador de nivel se encoja */ }
   .level-dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(244, 244, 245, 0.3); transition: background-color var(--transition-speed) ease; }
   .level-dot.active { background: var(--color-modern-accent-2); }
 
   .course-image {
       width: 100%;
-      /* height: 200px; */ /* Altura fija eliminada para Opción B */
+      /* height: 200px; */ 
       overflow: hidden;
       display: block;
   }
   .course-image img {
       width: 100%;
-      height: auto; /* Cambiado a auto para Opción B */
-      /* object-fit: cover; */ /* Comentado para Opción B */
+      height: auto; 
+      /* object-fit: cover; */ 
       display: block;
       transition: transform var(--transition-speed) ease;
   }
@@ -839,8 +843,8 @@
     background: var(--color-modern-accent-2);
     border-color: var(--color-modern-accent-2);
     color: var(--color-text-light);
-    padding: 10px 25px; /* AUMENTADO */
-    font-size: 0.95rem;  /* AUMENTADO */
+    padding: 10px 25px; 
+    font-size: 0.95rem;  
     letter-spacing: 0.5px;
     min-width: auto;
     white-space: nowrap;
@@ -1703,12 +1707,14 @@
       text-align: center;
       padding: 0 var(--spacing-sm);
     }
+    
     .contact-info p {
-      justify-content: center;
+      justify-content: center; 
       font-size: 0.9rem;
       word-break: break-word;
       overflow-wrap: break-word;
     }
+    
     .contact-info p a {
       word-break: break-all;
     }
@@ -1936,9 +1942,29 @@
     .contact-wrapper {
         padding: var(--spacing-sm);
     }
+    
+    /* AJUSTES PARA CONTACT INFO EN MÓVIL */
     .contact-info {
       padding: 0;
     }
+    .contact-info p {
+      display: flex; /* Habilitar Flexbox */
+      flex-direction: column; /* Apilar elementos verticalmente */
+      align-items: center; /* Centrar elementos horizontalmente */
+      text-align: center; /* Centrar texto dentro de los elementos */
+      /* justify-content: center; Ya no es necesario si se usa align-items y text-align */
+    }
+    .contact-info p i.fa-envelope {
+        margin-bottom: var(--spacing-xs); /* Espacio entre el icono y el email */
+        /* text-align: center; ya cubierto por el text-align del p padre */
+    }
+    .contact-info p i.fa-envelope + a {
+        display: block; /* Asegurar que el enlace sea un bloque para centrarlo */
+        word-break: break-all; /* Romper palabra para el email largo */
+        /* text-align: center; ya cubierto por el text-align del p padre */
+    }
+    /* Fin de Ajustes para Contact Info en Móvil */
+
     .contact-info .btn {
       padding: 10px 15px;
       font-size: 0.85rem;
