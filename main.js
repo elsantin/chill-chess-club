@@ -53,11 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
             courseBeginnerFeat2: "Aprende los principios esenciales para iniciar bien tus partidas (aperturas).",
             courseBeginnerFeat3: "Domina las tácticas básicas para ganar material y controlar el juego.",
             courseBeginnerFeat4: "Aprende los finales fundamentales para cerrar bien tus partidas.",
-            courseBeginnerFeat5: "8 clases en vivo (uno a uno) para construir tus cimientos en el ajedrez, con ritmo y ejemplos adaptados a ti.",
+            courseBeginnerFeat5: "Clases en vivo (uno a uno) para construir tus cimientos en el ajedrez, con ritmo y ejemplos adaptados a ti.", // Modificado para omitir número de clases
             courseBeginnerFeat6: "Acceso a material de estudio digital bilingüe (español/inglés) creado por mí para guiar tu práctica.",
             courseBeginnerFeat7: "Ejercicios y ejemplos que selecciono y adapto con IA según tus intereses para hacer el estudio del temario más ameno y efectivo.",
-            courseBeginnerPrice: "$120 USD",
-            coursePriceNoteHour: "Paquete de 8 clases (solo $15 USD/hora). Planes de pago disponibles",
+            courseBeginnerPrice: "$15 USD", // Actualizado a precio por hora
+            courseBeginnerPriceNoteHour: "/ hora. Flexibilidad total. Planes de pago disponibles.", // Actualizado
             courseEnrollBtn: "Empezar Ahora",
 
             courseIntermediateTitle: "Curso Intermedio:<br>Estratega",
@@ -67,26 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
             courseIntermediateFeat2: "Desarrolla un repertorio de aperturas que se adapte a tu estilo de juego.",
             courseIntermediateFeat3: "Domina combinaciones tácticas más complejas para crear ventajas decisivas.",
             courseIntermediateFeat4: "Aplica con precisión los finales prácticos esenciales para convertir tus ventajas en victorias.",
-            courseIntermediateFeat5: "16 clases en vivo (uno a uno) para refinar tu juego estratégico y táctico, con un enfoque adaptado a tus áreas de mejora.",
+            courseIntermediateFeat5: "Clases en vivo (uno a uno) para refinar tu juego estratégico y táctico, con un enfoque adaptado a tus áreas de mejora.", // Modificado
             courseIntermediateFeat6: "Análisis detallado de tus partidas: identifico patrones y áreas clave con el apoyo de herramientas de IA para guiar nuestra revisión.",
             courseIntermediateFeat7: "Un plan de estudio estructurado que complemento con material y ejercicios adaptados por mí (asistido por IA) a tus objetivos y estilo dentro del programa.",
-            courseIntermediatePrice: "$320 USD",
-            courseIntermediatePriceNoteHour: "Paquete de 16 clases (solo $20 USD/hora). Planes de pago disponibles",
-
-            courseCustomTitle: "Clases Personalizadas:<br>Tu Juego",
-            courseCustomLevelAriaLabel: "Nivel Personalizado",
-            courseCustomImgAlt: "Rey de ajedrez en un trono de piezas en la playa al atardecer, representando la naturaleza a medida de las clases personalizadas de Chill Chess Club",
-            courseCustomFeat1: "Un plan de estudio totalmente co-creado contigo, diseñado desde cero para tus metas únicas en el ajedrez.",
-            courseCustomFeat2: "Nos centramos 100% en tus objetivos específicos, áreas de interés o cualquier aspecto del juego que quieras explorar o mejorar.",
-            courseCustomFeat3: "Máxima flexibilidad en horarios, frecuencia de clases y duración del programa, adaptándonos a tu vida.",
-            courseCustomFeat4: "Sesiones uno a uno, donde cada minuto está dedicado exclusivamente a tu progreso y a resolver tus dudas.",
-            courseCustomFeat5: "Análisis profundo y práctico de tus propias partidas para un feedback totalmente personalizado.",
-            courseCustomFeat6: "Creación de material didáctico y selección de recursos exclusivos para ti, donde utilizo la IA para ayudarte a construir el camino más efectivo hacia tus objetivos.",
-            courseCustomFeat7: "Acompañamiento y soporte continuo entre sesiones para mantener tu motivación y resolver dudas sobre la marcha.",
-            courseCustomPrice: "$25 USD",
-            courseCustomPriceNoteHour: "/ hora (clases en vivo)",
-            courseConsultBtn: "Consultar Disponibilidad",
-
+            courseIntermediatePrice: "$20 USD", // Actualizado a precio por hora
+            courseIntermediatePriceNoteHour: "/ hora. Avanza a tu propio ritmo. Planes de pago disponibles.", // Actualizado
+            
             coursesCtaText: "¿No estás seguro qué opción es mejor para ti? Agenda una sesión introductoria gratuita y recibe una evaluación personalizada.",
             coursesCtaBtn: "Solicitar Clase de Prueba Gratis",
 
@@ -146,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resource3Title: "Anatomía del Juego: Piezas, Fases y Su Valor Estratégico",
             resource3Desc: "Una mirada al flujo de la partida, desde la apertura hasta el final, y cómo el valor y las características de cada pieza definen tu estrategia.",
             resourceLinkText: "Explorar Contenido",
-            resourcesCta: "Si esta información resuena contigo, <a href=\"#cursos\" class=\"scroll-to\">descubre nuestros cursos</a> y profundiza tu conocimiento con un enfoque personalizado.",
+            // resourcesCta: "Si esta información resuena contigo, <a href=\"#cursos\" class=\"scroll-to\">descubre nuestros cursos</a> y profundiza tu conocimiento con un enfoque personalizado.", // Clave eliminada
 
             blogTitle: "Desde Nuestro Blog",
             blogIntro: "Un espacio dedicado a la exploración del ajedrez. Artículos, perspectivas y curiosidades para profundizar tu entendimiento y aprecio por el juego.",
@@ -178,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
             faqQ7: "¿Qué herramientas o plataformas de IA se utilizan y cómo me benefician?",
             faqA7: "Empleo una combinación de software de análisis de ajedrez reconocido y herramientas de IA para la creación de contenido. Estas tecnologías me ayudan a identificar patrones en tu juego, generar ejercicios adaptados a tus necesidades, y crear materiales de estudio (como resúmenes o guías) más eficientes y personalizados. El objetivo es enriquecer tu aprendizaje, no reemplazar la interacción humana.",
 
-            contactTitle: "Contacta Conmigo",
+            contactTitle: "Contáctame", // ACTUALIZADO
             contactIntro: "Si deseas comenzar tu exploración del ajedrez o tienes alguna consulta, puedes comunicarte a través del formulario o utilizando mis datos de contacto directo.",
             contactFormTitle: "Formulario de Contacto",
             contactNameLabel: "Nombre:",
@@ -188,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
             contactSubjectOpt2: "Solicitar Clase de Prueba Gratuita",
             contactSubjectOpt3: "Info Curso Principiante",
             contactSubjectOpt4: "Info Curso Intermedio",
-            contactSubjectOpt5: "Info Clases Personalizadas",
+            // contactSubjectOpt5: "Info Clases Personalizadas", // Clave eliminada
             contactMessageLabel: "Mensaje:",
             contactSubmitBtn: "Enviar Mensaje",
             contactInfoTitle: "Información de Contacto",
@@ -310,11 +296,11 @@ document.addEventListener('DOMContentLoaded', () => {
             courseBeginnerFeat2: "Learn the essential principles to start your games well (openings).",
             courseBeginnerFeat3: "Master basic tactics to win material and control the game.",
             courseBeginnerFeat4: "Learn fundamental endgames to close your games well.",
-            courseBeginnerFeat5: "8 live one-on-one classes to build your chess foundations, with pace and examples adapted to you.",
+            courseBeginnerFeat5: "Live one-on-one classes to build your chess foundations, with pace and examples adapted to you.", // Modified
             courseBeginnerFeat6: "Access to bilingual digital study material (Spanish/English) created by me to guide your practice.",
             courseBeginnerFeat7: "Exercises and examples that I select and adapt with AI according to your interests to make studying the syllabus more enjoyable and effective.",
-            courseBeginnerPrice: "$120 USD",
-            coursePriceNoteHour: "8-class package (only $15 USD/hour). Payment plans available",
+            courseBeginnerPrice: "$15 USD", // Updated to per-hour price
+            courseBeginnerPriceNoteHour: "/ hour. Total flexibility. Payment plans available.", // Updated
             courseEnrollBtn: "Start Now",
 
             courseIntermediateTitle: "Intermediate Course:<br>Strategist",
@@ -324,25 +310,14 @@ document.addEventListener('DOMContentLoaded', () => {
             courseIntermediateFeat2: "Develop an opening repertoire that suits your playing style.",
             courseIntermediateFeat3: "Master more complex tactical combinations to create decisive advantages.",
             courseIntermediateFeat4: "Accurately apply essential practical endgames to convert your advantages into wins.",
-            courseIntermediateFeat5: "16 live one-on-one classes to refine your strategic and tactical play, with a focus adapted to your areas of improvement.",
+            courseIntermediateFeat5: "Live one-on-one classes to refine your strategic and tactical play, with a focus adapted to your areas of improvement.", // Modified
             courseIntermediateFeat6: "Detailed analysis of your games: I identify patterns and key areas with the support of AI tools to guide our review.",
             courseIntermediateFeat7: "A structured study plan that I complement with material and exercises adapted by me (AI-assisted) to your goals and style within the program.",
-            courseIntermediatePrice: "$320 USD",
-            courseIntermediatePriceNoteHour: "16-class package (only $20 USD/hour). Payment plans available",
+            courseIntermediatePrice: "$20 USD", // Updated to per-hour price
+            courseIntermediatePriceNoteHour: "/ hour. Progress at your own pace. Payment plans available.", // Updated
 
-            courseCustomTitle: "Personalized Classes:<br>Your Game",
-            courseCustomLevelAriaLabel: "Custom Level",
-            courseCustomImgAlt: "Chess king on a throne of pieces on the beach at sunset, representing the bespoke nature of Chill Chess Club's personalized classes",
-            courseCustomFeat1: "A study plan totally co-created with you, designed from scratch for your unique chess goals.",
-            courseCustomFeat2: "We focus 100% on your specific objectives, areas of interest, or any aspect of the game you want to explore or improve.",
-            courseCustomFeat3: "Maximum flexibility in schedules, class frequency, and program duration, adapting to your life.",
-            courseCustomFeat4: "One-on-one sessions, where every minute is exclusively dedicated to your progress and resolving your doubts.",
-            courseCustomFeat5: "In-depth and practical analysis of your own games for fully personalized feedback.",
-            courseCustomFeat6: "Creation of teaching material and selection of exclusive resources for you, where I use AI to help you build the most effective path towards your goals.",
-            courseCustomFeat7: "Continuous support and follow-up between sessions to maintain your motivation and resolve doubts along the way.",
-            courseCustomPrice: "$25 USD",
-            courseCustomPriceNoteHour: "/ hour (live classes)",
-            courseConsultBtn: "Check Availability",
+            coursesCtaText: "Not sure which option is best for you? Schedule a free introductory session and receive a personalized assessment.",
+            coursesCtaBtn: "Request Free Trial Class",
 
             methodTitle: "My Method: Immersive and Personalized Learning with a Unique Technological Touch",
             methodIntro: "Discover how my approach, combining a deep understanding of chess with advanced skills in AI-assisted digital content creation, transforms your learning into an experience fully tailored to you: your style, your pace, and your interests.",
@@ -400,7 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
             resource3Title: "Anatomy of the Game: Pieces, Phases, and Their Strategic Value",
             resource3Desc: "A look at the game's flow, from opening to endgame, and how each piece's value and characteristics define your strategy.",
             resourceLinkText: "Explore Content",
-            resourcesCta: "If this information resonates with you, <a href=\"#cursos\" class=\"scroll-to\">discover our courses</a> and deepen your knowledge with a personalized approach.",
+            // resourcesCta: "If this information resonates with you, <a href=\"#cursos\" class=\"scroll-to\">discover our courses</a> and deepen your knowledge with a personalized approach.", // Key removed
 
             blogTitle: "From Our Blog",
             blogIntro: "A space dedicated to the exploration of chess. Articles, perspectives, and curiosidades to deepen your understanding and appreciation for the game.",
@@ -432,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
             faqQ7: "What AI tools or platforms are used and how do they benefit me?",
             faqA7: "I use a combination of recognized chess analysis software and AI tools for content creation. These technologies help me identify patterns in your game, generate exercises tailored to your needs, and create more efficient and personalized study materials (such as summaries or guides). The goal is to enrich your learning, not replace human interaction.",
 
-            contactTitle: "Contact Me",
+            contactTitle: "Contact Me", // UPDATED
             contactIntro: "If you wish to begin your chess exploration or have any questions, you can get in touch using the form or by using my direct contact details.",
             contactFormTitle: "Contact Form",
             contactNameLabel: "Name:",
@@ -442,7 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
             contactSubjectOpt2: "Request Free Trial Class",
             contactSubjectOpt3: "Info Beginner Course",
             contactSubjectOpt4: "Info Intermediate Course",
-            contactSubjectOpt5: "Info Personalized Classes",
+            // contactSubjectOpt5: "Info Personalized Classes", // Key removed
             contactMessageLabel: "Message:",
             contactSubmitBtn: "Send Message",
             contactInfoTitle: "Contact Information",
@@ -529,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('form-status');
     const yearSpan = document.getElementById('current-year');
-    const particlesElement = document.getElementById('particles-js'); // Selector para Particles.js
+    const particlesElement = document.getElementById('particles-js'); 
 
     // --- Language Functions ---
     const setLanguage = (lang) => {
@@ -555,8 +530,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (attribute) {
                         el.setAttribute(attribute, translation);
                     } else if (
-                        key === 'courseBeginnerTitle' || key === 'courseIntermediateTitle' || key === 'courseCustomTitle' ||
-                        key === 'resourcesCta' || key === 'coursesCtaText' || key === 'benefitsIntro' ||
+                        key === 'courseBeginnerTitle' || key === 'courseIntermediateTitle' || 
+                        /* key === 'resourcesCta' || */ // Clave eliminada
+                        key === 'coursesCtaText' || key === 'benefitsIntro' ||
                         key === 'benefitsCtaText' || key === 'benefitsCtaMethod' || key === 'methodKeyBenefitsDesc' ||
                         key === 'aboutQuoteText' || key === 'faqIntro' || key === 'faqA1' || key === 'faqA2' ||
                         key === 'privacyDataPersonal' || key === 'privacyDataDerivative' || key === 'privacyDisclosureLaw' ||
@@ -577,6 +553,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     else {
                         el.textContent = translation;
                     }
+                } else if (key === 'resourcesCta' || key === 'contactSubjectOpt5') {
+                    // Si la clave fue eliminada, no hacemos nada para evitar errores.
                 }
             });
 
@@ -615,8 +593,9 @@ document.addEventListener('DOMContentLoaded', () => {
                  if (attribute) {
                      el.setAttribute(attribute, translation);
                  } else if (
-                    key === 'courseBeginnerTitle' || key === 'courseIntermediateTitle' || key === 'courseCustomTitle' ||
-                    key === 'resourcesCta' || key === 'coursesCtaText' || key === 'benefitsIntro' ||
+                    key === 'courseBeginnerTitle' || key === 'courseIntermediateTitle' || 
+                    /* key === 'resourcesCta' || */ // Clave eliminada
+                    key === 'coursesCtaText' || key === 'benefitsIntro' ||
                     key === 'benefitsCtaText' || key === 'benefitsCtaMethod' || key === 'methodKeyBenefitsDesc' ||
                     key === 'aboutQuoteText' || key === 'faqIntro' || key === 'faqA1' || key === 'faqA2' ||
                     key === 'privacyDataPersonal' || key === 'privacyDataDerivative' || key === 'privacyDisclosureLaw' ||
@@ -637,6 +616,8 @@ document.addEventListener('DOMContentLoaded', () => {
                  else {
                      el.textContent = translation;
                  }
+             } else if (key === 'resourcesCta' || key === 'contactSubjectOpt5') {
+                // Si la clave fue eliminada, no hacemos nada.
              }
         });
         document.documentElement.lang = lang;
@@ -758,13 +739,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const navItemsForClick = Array.from(document.querySelectorAll('.main-nav .nav-links a[href^="#"]'));
 
     function setActiveOnClick(clickedLink) {
-        // console.log(`Opción 5: setActiveOnClick para: ${clickedLink ? clickedLink.getAttribute('href') : 'NONE'}`);
         navItemsForClick.forEach(link => {
             link.classList.remove('nav-active'); 
         });
         if (clickedLink) {
             clickedLink.classList.add('nav-active');
-            // console.log(`Opción 5: Activado: ${clickedLink.getAttribute('href')}`);
         }
     }
 
@@ -779,8 +758,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = targetIdHref.substring(1);
             const targetElement = document.getElementById(targetId);
 
-            // console.log(`--- Opción 5 Click Event --- Target ID: ${targetId}`);
-
             if (targetElement) {
                 setActiveOnClick(this); 
 
@@ -790,8 +767,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         const targetElementRect = targetElement.getBoundingClientRect();
                         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                         const targetPosition = targetElementRect.top + scrollTop; 
-
-                        // console.log(`Opción 5 Click: Target ${targetId}, ScrollTo: ${targetPosition.toFixed(0)} (scroll-margin-top handles header)`);
                         
                         window.scrollTo({
                             top: Math.max(0, targetPosition), 
@@ -817,8 +792,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     }
                 }
-            } else {
-                // console.warn(`Opción 5 Smooth scroll: Target element NOT FOUND for ID: ${targetId}`);
             }
         });
     });
@@ -828,7 +801,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (initialHash) {
             const linkToActivate = navItemsForClick.find(link => link.getAttribute('href') === initialHash);
             if (linkToActivate) {
-                // console.log(`Opción 5: Activando enlace desde hash inicial: ${initialHash}`);
                 setActiveOnClick(linkToActivate);
             } else {
                  setActiveOnClick(null); 
@@ -840,8 +812,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     setTimeout(activateLinkFromHash, 200);
     window.addEventListener('hashchange', activateLinkFromHash);
-
-    // console.log("Opción 5: Scrollspy dinámico ELIMINADO. Solo resaltado por clic y actualización de hash activos.");
     // ========================================================================
     // END: OPCIÓN 5
     // ========================================================================
