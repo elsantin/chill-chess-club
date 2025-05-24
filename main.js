@@ -53,8 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
             courseBeginnerFeat5: "Clases en vivo (uno a uno) para construir tus cimientos en el ajedrez, con ritmo y ejemplos adaptados a ti.",
             courseBeginnerFeat6: "Material y ejercicios adaptados por mí (asistido por IA) a tus objetivos y estilo dentro del programa.",
             courseBeginnerFeat7: "Análisis detallado de tus partidas para guiar nuestra revisión y tu progreso.", 
-            courseBeginnerPrice: "$15 USD /Hora", // ACTUALIZADO
-            courseBeginnerPriceNoteHour: "Flexibilidad total. Avanza a tu propio ritmo. Planes de pago disponibles.", // ACTUALIZADO
+            courseBeginnerPrice: "$15 USD /Hora", 
+            courseBeginnerPriceNoteHour: "Flexibilidad total. Avanza a tu propio ritmo. Planes de pago disponibles.", 
             courseEnrollBtn: "Empezar Ahora",
 
             courseIntermediateTitle: "Curso Intermedio:<br>Estratega",
@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
             courseIntermediateFeat5: "Clases en vivo (uno a uno) para refinar tu juego estratégico y táctico, con un enfoque adaptado a tus áreas de mejora.",
             courseIntermediateFeat6: "Análisis detallado de tus partidas para guiar nuestra revisión y tu progreso.", 
             courseIntermediateFeat7: "Material y ejercicios adaptados por mí (asistido por IA) a tus objetivos y estilo dentro del programa.",
-            courseIntermediatePrice: "$20 USD /Hora", // ACTUALIZADO
-            courseIntermediatePriceNoteHour: "Flexibilidad total. Avanza a tu propio ritmo. Planes de pago disponibles.", // ACTUALIZADO
+            courseIntermediatePrice: "$20 USD /Hora", 
+            courseIntermediatePriceNoteHour: "Flexibilidad total. Avanza a tu propio ritmo. Planes de pago disponibles.", 
             
             coursesCtaText: "¿No estás seguro qué opción es mejor para ti? Agenda una sesión introductoria gratuita y recibe una evaluación personalizada.",
             coursesCtaBtn: "Solicitar Clase de Prueba Gratis",
@@ -122,12 +122,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             resourcesTitle: "Recursos Gratuitos Esenciales",
             resourcesIntro: "Inicia tu exploración del ajedrez o redescubre sus fundamentos. Estos materiales esenciales son el punto de partida hacia una comprensión más profunda del juego.",
-            resource1Title: "Ajedrez Esencial: Comprendiendo Movimientos y Reglas",
-            resource1Desc: "Domina el tablero moviendo tus piezas con seguridad. Presentamos las reglas básicas de una forma directa y comprensible.",
-            resource2Title: "Preceptos del Ajedrez: Guía Fundamental para Principiantes",
-            resource2Desc: "Descubre los conceptos fundamentales que orientarán tus primeras partidas y te ayudarán a construir una base estratégica sólida y reflexiva.",
-            resource3Title: "Anatomía del Juego: Piezas, Fases y Su Valor Estratégico",
-            resource3Desc: "Una mirada al flujo de la partida, desde la apertura hasta el final, y cómo el valor y las características de cada pieza definen tu estrategia.",
+            resource1Title: "Iniciación al Ajedrez: Movimientos y Esencia del Juego", // ACTUALIZADO
+            resource1Desc: "Una guía clara de los elementos fundamentales: el tablero, las piezas y las reglas que dan inicio a la partida.", 
+            resource2Title: "Fundamentos Estratégicos del Ajedrez: Guía para el Jugador Reflexivo", // ACTUALIZADO
+            resource2Desc: "Descubre los conceptos fundamentales que orientarán tus primeras partidas y te ayudarán a construir una base estratégica sólida y reflexiva.", 
+            resource3Title: "Anatomía del Ajedrez: Piezas, Fases y su Valor Estratégico", // MANTENIDO
+            resource3Desc: "Una mirada al flujo de la partida, desde la apertura hasta el final, y cómo el valor y las características de cada pieza definen tu estrategia.", 
             resourceLinkText: "Explorar Contenido",
 
             blogTitle: "Desde Nuestro Blog",
@@ -196,51 +196,12 @@ document.addEventListener('DOMContentLoaded', () => {
             metaDescriptionPrivacy: "Conoce cómo Chill Chess Club protege y utiliza tu información personal. Lee nuestra política de privacidad.",
             privacyPolicyTitle: "Política de Privacidad",
             privacyLastUpdated: "Última actualización: 13 de mayo de 2025",
-            privacyIntro: "Bienvenido a Chill Chess Club. Nos comprometemos a proteger tu privacidad. Esta Política de Privacidad explica cómo recopilamos, usamos, divulgamos y salvaguardamos tu información cuando visitas nuestro sitio web [TU-SITIO-WEB.com] y utilizas nuestros servicios. Por favor, lee esta política de privacidad cuidadosamente. Si no estás de acuerdo con los términos de esta política de privacidad, por favor no accedas al sitio.",
-            privacyDataCollectionTitle: "Recopilación de tu Información",
-            privacyDataCollectionDesc: "Podemos recopilar información sobre ti de varias maneras. La información que podemos recopilar en el Sitio incluye:",
-            privacyDataPersonal: "<strong>Datos Personales:</strong> Información de identificación personal, como tu nombre, dirección de correo electrónico y número de teléfono, que nos proporcionas voluntariamente cuando te registras en el Sitio o eliges participar en diversas actividades relacionadas con el Sitio, como formularios de contacto o suscripciones a boletines.",
-            privacyDataDerivative: "<strong>Datos Derivados:</strong> Información que nuestros servidores recopilan automáticamente cuando accedes al Sitio, como tu dirección IP, tipo de navegador, sistema operativo, tiempos de acceso y las páginas que has visto directamente antes y después de acceder al Sitio.",
-            privacyDataUseTitle: "Uso de tu Información",
-            privacyDataUseDesc: "Tener información precisa sobre ti nos permite ofrecerte una experiencia fluida, eficiente y personalizada. Específicamente, podemos usar la información recopilada sobre ti a través del Sitio para:",
-            privacyUseAccount: "Crear y gestionar tu cuenta.",
-            privacyUseComms: "Enviarte correos electrónicos sobre tu cuenta o pedido.",
-            privacyUseServices: "Proporcionarte los servicios solicitados, como el acceso a cursos y materiales.",
-            privacyUseImprove: "Mejorar la eficiencia y el funcionamiento del Sitio.",
-            privacyUseDisputes: "Resolver disputas y solucionar problemas.",
-            privacyDataDisclosureTitle: "Divulgación de tu Información",
-            privacyDataDisclosureDesc: "No compartiremos tu información con terceros excepto como se describe en esta Política de Privacidad o con tu consentimiento. Podemos divulgar tu información en las siguientes situaciones:",
-            privacyDisclosureLaw: "<strong>Por Ley o para Proteger Derechos:</strong> Si creemos que la divulgación es necesaria para responder a un proceso legal, investigar o remediar posibles violaciones de nuestras políticas, o proteger los derechos, la propiedad y la seguridad de otros.",
-            privacyDisclosureProviders: "<strong>Proveedores de Servicios de Terceros:</strong> Podemos compartir tu información con terceros que realizan servicios para nosotros o en nuestro nombre, incluido el procesamiento de pagos, análisis de datos, envío de correos electrónicos, servicios de alojamiento, servicio al cliente y asistencia de marketing.",
-            privacySecurityTitle: "Seguridad de tu Información",
-            privacySecurityDesc: "Utilizamos medidas de seguridad administrativas, técnicas y físicas para ayudar a proteger tu información personal. Si bien hemos tomado medidas razonables para asegurar la información personal que nos proporcionas, ten en cuenta que ninguna medida de seguridad es perfecta o impenetrable, y ningún método de transmisión de datos puede garantizarse contra cualquier intercepción u otro tipo de uso indebido.",
-            privacyPolicyChangesTitle: "Cambios a esta Política de Privacidad",
-            privacyPolicyChangesDesc: "Podemos actualizar esta Política de Privacidad de vez en cuando. Te notificaremos cualquier cambio publicando la nueva Política de Privacidad en el Sitio. Se te aconseja revisar esta Política de Privacidad periódicamente para cualquier cambio. Los cambios a esta Política de Privacidad son efectivos cuando se publican en esta página.",
-            privacyContactUsTitle: "Contáctanos",
             privacyContactUsDesc: "Si tienes preguntas o comentarios sobre esta Política de Privacidad, por favor contáctanos en: [TU-EMAIL-DE-CONTACTO@ejemplo.com]",
 
             pageTitleTerms: "Términos de Servicio - Chill Chess Club",
             metaDescriptionTerms: "Lee los Términos y Condiciones de Uso para el sitio web y los servicios de Chill Chess Club.",
             termsServiceTitle: "Términos de Servicio",
             termsLastUpdated: "Última actualización: 13 de mayo de 2025",
-            termsIntro: "Estos Términos de Servicio rigen tu acceso y uso de los servicios ofrecidos por Chill Chess Club (\"nosotros\", \"nuestro\"), incluyendo nuestro sitio web [TU-SITIO-WEB.com] y cualquier contenido, funcionalidad y servicios ofrecidos en o a través del sitio. Por favor, lee estos términos cuidadosamente antes de usar nuestros Servicios.",
-            termsAcceptanceTitle: "Aceptación de los Términos",
-            termsAcceptanceDesc: "Al acceder o utilizar nuestros Servicios, aceptas estar sujeto a estos Términos de Servicio y a nuestra Política de Privacidad. Si no estás de acuerdo con alguna parte de los términos, entonces no puedes acceder al Servicio.",
-            termsServicesTitle: "Nuestros Servicios",
-            termsServicesDesc: "Chill Chess Club proporciona clases de ajedrez online, material educativo y contenido relacionado. Nos reservamos el derecho de modificar o descontinuar, temporal o permanentemente, los Servicios (o cualquier parte de ellos) con o sin previo aviso.",
-            termsUserAccountsTitle: "Cuentas de Usuario",
-            termsUserAccountsDesc: "Para acceder a ciertos servicios, es posible que se te solicite crear una cuenta. Eres responsable de salvaguardar la contraseña que utilizas para acceder al Servicio y de cualquier actividad o acciones bajo tu contraseña. Aceptas notificarnos inmediatamente sobre cualquier uso no autorizado de tu cuenta.",
-            termsPaymentTitle: "Pagos y Reembolsos",
-            termsPaymentDesc: "Las tarifas por nuestros cursos y servicios se describen en el Sitio. Nos reservamos el derecho de cambiar nuestras tarifas en cualquier momento. Todas las compras pueden estar sujetas a políticas de reembolso específicas que se detallarán en el momento de la compra.",
-            termsIntellectualPropertyTitle: "Propiedad Intelectual",
-            termsIntellectualPropertyDesc: "El Servicio y su contenido original (excluyendo el contenido proporcionado por los usuarios), características y funcionalidad son y seguirán siendo propiedad exclusiva de Chill Chess Club y sus licenciantes. Nuestros derechos de autor, marcas comerciales y otros derechos de propiedad intelectual no pueden ser utilizados en conexión con ningún producto o servicio sin el consentimiento previo por escrito de Chill Chess Club.",
-            termsUserConductTitle: "Conducta del Usuario",
-            termsUserConductDesc: "Aceptas no utilizar los Servicios para ningún propósito ilegal o prohibido por estos Términos. No puedes usar los Servicios de ninguna manera que pueda dañar, deshabilitar, sobrecargar o deteriorar el Servicio.",
-            termsLimitationLiabilityTitle: "Limitación de Responsabilidad",
-            termsLimitationLiabilityDesc: "En ningún caso Chill Chess Club, ni sus directores, empleados, socios, agentes, proveedores o afiliados, serán responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluyendo sin limitación, pérdida de ganancias, datos, uso, buena voluntad u otras pérdidas intangibles, resultantes de tu acceso o uso o incapacidad para acceder o usar el Servicio.",
-            termsChangesTitle: "Cambios a los Términos",
-            termsChangesDesc: "Nos reservamos el derecho, a nuestra sola discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, intentaremos proporcionar al menos 30 días de aviso antes de que los nuevos términos entren en vigor. Lo que constituye un cambio material será determinado a nuestra sola discreción.",
-            termsContactUsTitle: "Contáctanos",
             termsContactUsDesc: "Si tienes alguna pregunta sobre estos Términos, por favor contáctanos en: [TU-EMAIL-DE-CONTACTO@ejemplo.com]"
         },
         en: {
@@ -289,10 +250,10 @@ document.addEventListener('DOMContentLoaded', () => {
             courseBeginnerFeat3: "Master basic tactics to win material and control the game.",
             courseBeginnerFeat4: "Learn fundamental endgames to close your games well.",
             courseBeginnerFeat5: "Live one-on-one classes to build your chess foundations, with pace and examples adapted to you.",
-            courseBeginnerFeat6: "Materials and exercises adapted by me (AI-assisted) to your goals and style within the program.", // UPDATED
+            courseBeginnerFeat6: "Materials and exercises adapted by me (AI-assisted) to your goals and style within the program.", 
             courseBeginnerFeat7: "Detailed analysis of your games to guide our review and your progress.",
-            courseBeginnerPrice: "$15 USD /Hour", // UPDATED
-            courseBeginnerPriceNoteHour: "Total flexibility. Progress at your own pace. Payment plans available.", // UPDATED
+            courseBeginnerPrice: "$15 USD /Hour", 
+            courseBeginnerPriceNoteHour: "Total flexibility. Progress at your own pace. Payment plans available.", 
             courseEnrollBtn: "Start Now",
 
             courseIntermediateTitle: "Intermediate Course:<br>Strategist",
@@ -304,9 +265,9 @@ document.addEventListener('DOMContentLoaded', () => {
             courseIntermediateFeat4: "Accurately apply essential practical endgames to convert your advantages into wins.",
             courseIntermediateFeat5: "Live one-on-one classes to refine your strategic and tactical play, with a focus adapted to your areas of improvement.",
             courseIntermediateFeat6: "Detailed analysis of your games to guide our review and your progress.",
-            courseIntermediateFeat7: "Materials and exercises adapted by me (AI-assisted) to your goals and style within the program.", // UPDATED
-            courseIntermediatePrice: "$20 USD /Hour", // UPDATED
-            courseIntermediatePriceNoteHour: "Total flexibility. Progress at your own pace. Payment plans available.", // UPDATED
+            courseIntermediateFeat7: "Materials and exercises adapted by me (AI-assisted) to your goals and style within the program.", 
+            courseIntermediatePrice: "$20 USD /Hour", 
+            courseIntermediatePriceNoteHour: "Total flexibility. Progress at your own pace. Payment plans available.", 
 
             coursesCtaText: "Not sure which option is best for you? Schedule a free introductory session and receive a personalized assessment.",
             coursesCtaBtn: "Request Free Trial Class",
@@ -360,12 +321,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             resourcesTitle: "Essential Free Resources",
             resourcesIntro: "Begin your chess exploration or rediscover its fundamentals. These essential materials are the starting point towards a deeper understanding of the game.",
-            resource1Title: "Essential Chess: Understanding Moves and Rules",
-            resource1Desc: "Master the board by moving your pieces with confidence. We present the basic rules in a direct and understandable way.",
-            resource2Title: "Chess Precepts: A Fundamental Guide for Beginners",
-            resource2Desc: "Discover the fundamental concepts that will guide your first games and help you build a solid and thoughtful strategic foundation.",
-            resource3Title: "Anatomy of the Game: Pieces, Phases, and Their Strategic Value",
-            resource3Desc: "A look at the game's flow, from opening to endgame, and how each piece's value and characteristics define your strategy.",
+            resource1Title: "Chess Initiation: Movements and Essence of the Game", // UPDATED
+            resource1Desc: "A clear guide to the fundamental elements: the board, the pieces, and the rules that start the game.", 
+            resource2Title: "Strategic Chess Fundamentals: A Guide for the Thoughtful Player", // UPDATED
+            resource2Desc: "Discover the fundamental concepts that will guide your first games and help you build a solid and thoughtful strategic foundation.", 
+            resource3Title: "Anatomy of Chess: Pieces, Phases, and Their Strategic Value", // MAINTAINED
+            resource3Desc: "A look at the game's flow, from opening to endgame, and how each piece's value and characteristics define your strategy.", 
             resourceLinkText: "Explore Content",
 
             blogTitle: "From Our Blog",
@@ -434,52 +395,13 @@ document.addEventListener('DOMContentLoaded', () => {
             metaDescriptionPrivacy: "Learn how Chill Chess Club protects and uses your personal information. Read our privacy policy.",
             privacyPolicyTitle: "Privacy Policy",
             privacyLastUpdated: "Last Updated: May 13, 2025",
-            privacyIntro: "Welcome to Chill Chess Club. We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website [YOUR-WEBSITE-NAME.com] and use our services. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.",
-            privacyDataCollectionTitle: "Collection of Your Information",
-            privacyDataCollectionDesc: "We may collect information about you in a variety of ways. The information we may collect on the Site includes:",
-            privacyDataPersonal: "<strong>Personal Data:</strong> Personally identifiable information, such as your name, email address, and telephone number, that you voluntarily give to us when you register with the Site or when you choose to participate in various activities related to the Site, such as contact forms or newsletter subscriptions.",
-            privacyDataDerivative: "<strong>Derivative Data:</strong> Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site.",
-            privacyDataUseTitle: "Use of Your Information",
-            privacyDataUseDesc: "Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Site to:",
-            privacyUseAccount: "Create and manage your account.",
-            privacyUseComms: "Email you regarding your account or order.",
-            privacyUseServices: "Provide you with requested services, such as access to courses and materials.",
-            privacyUseImprove: "Improve the efficiency and operation of the Site.",
-            privacyUseDisputes: "Resolve disputes and troubleshoot problems.",
-            privacyDataDisclosureTitle: "Disclosure of Your Information",
-            privacyDataDisclosureDesc: "We will not share your information with third parties except as described in this Privacy Policy or with your consent. We may disclose your information in the following situations:",
-            privacyDisclosureLaw: "<strong>By Ley o para Proteger Derechos:</strong> If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others.",
-            privacyDisclosureProviders: "<strong>Third-Party Service Providers:</strong> We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.",
-            privacySecurityTitle: "Security of Your Information",
-            privacySecurityDesc: "We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.",
-            privacyPolicyChangesTitle: "Changes to This Privacy Policy",
-            privacyPolicyChangesDesc: "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on the Site. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.",
-            privacyContactUsTitle: "Contact Us",
             privacyContactUsDesc: "If you have questions or comments about this Privacy Policy, please contact us at: [YOUR-CONTACT-EMAIL@example.com]",
 
             pageTitleTerms: "Terms of Service - Chill Chess Club",
             metaDescriptionTerms: "Read the Terms and Conditions of Use for the Chill Chess Club website and services.",
             termsServiceTitle: "Terms of Service",
             termsLastUpdated: "Last Updated: May 13, 2025",
-            termsIntro: "These Terms of Service govern your access to and use of the services offered by Chill Chess Club (\"us\", \"we\", or \"our\"), including our website [YOUR-WEBSITE-NAME.com] and any content, functionality, and services offered on or through the site. Please read these terms carefully before using our Services.",
-            termsAcceptanceTitle: "Acceptance of Terms",
-            termsAcceptanceDesc: "By accessing or using our Services, you agree to be bound by these Terms of Service and our Privacy Policy. If you disagree with any part of the terms, then you may not access the Service.",
-            termsServicesTitle: "Our Services",
-            termsServicesDesc: "Chill Chess Club provides online chess classes, educational material, and related content. We reserve the right to modify or discontinue, temporarily or permanentemente, the Services (or any part thereof) with or without notice.",
-            termsUserAccountsTitle: "User Accounts",
-            termsUserAccountsDesc: "To access certain services, you may be required to create an account. You are responsible for safeguarding the password that you use to access the Service and for any activities or actions under your password. You agree to notify us immediately of any unauthorized use of your account.",
-            termsPaymentTitle: "Payments and Refunds",
-            termsPaymentDesc: "Fees for our courses and services are described on the Site. We reserve the right to change our fees at any time. All purchases may be subject to specific refund policies detailed at the time of purchase.",
-            termsIntellectualPropertyTitle: "Intellectual Property",
-            termsIntellectualPropertyDesc: "The Service and its original content (excluding content provided by users), features, and functionality are and will remain the exclusive property of Chill Chess Club and its licensors. Our copyrights, trademarks, and other intellectual property rights may not be used in connection with any product or service without the prior written consent of Chill Chess Club.",
-            termsUserConductTitle: "User Conduct",
-            termsUserConductDesc: "Aceptas no utilizar los Servicios para ningún propósito ilegal o prohibido por estos Términos. No puedes usar los Servicios de ninguna manera que pueda dañar, deshabilitar, sobrecargar o deteriorar el Servicio.",
-            termsLimitationLiabilityTitle: "Limitación de Responsabilidad",
-            termsLimitationLiabilityDesc: "En ningún caso Chill Chess Club, ni sus directores, empleados, socios, agentes, proveedores o afiliados, serán responsables por daños indirectos, incidentales, especiales, consecuentes o punitivos, incluyendo sin limitación, pérdida de ganancias, datos, uso, buena voluntad u otras pérdidas intangibles, resultantes de tu acceso o uso o incapacidad para acceder o usar el Servicio.",
-            termsChangesTitle: "Cambios a los Términos",
-            termsChangesDesc: "Nos reservamos el derecho, a nuestra sola discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, intentaremos proporcionar al menos 30 días de aviso antes de que los nuevos términos entren en vigor. Lo que constituye un cambio material será determinado a nuestra sola discreción.",
-            termsContactUsTitle: "Contáctanos",
-            termsContactUsDesc: "Si tienes alguna pregunta sobre estos Términos, por favor contáctanos en: [TU-EMAIL-DE-CONTACTO@ejemplo.com]"
+            termsContactUsDesc: "If you have questions or comments about these Terms, please contact us at: [YOUR-CONTACT-EMAIL@example.com]"
         }
     };
 
@@ -517,16 +439,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (key === 'footerCopyright') { 
                         translation = translation.replace('[YEAR]', new Date().getFullYear());
                     }
+                    
+                    const keysForInnerHTML = [
+                        'courseBeginnerTitle', 'courseIntermediateTitle',
+                        'coursesCtaText', 'benefitsIntro',
+                        'benefitsCtaText', 'benefitsCtaMethod', 'methodKeyBenefitsDesc',
+                        'aboutQuoteText', 'faqIntro', 'faqA1', 'faqA2', 
+                        'resource1Desc', 'resource2Desc', 'resource3Desc',
+                        'privacyDataPersonal', 'privacyDataDerivative', 'privacyDisclosureLaw',
+                        'privacyDisclosureProviders', 'termsAcceptanceDesc', 'termsIntellectualPropertyDesc'
+                    ];
+
                     if (attribute) {
                         el.setAttribute(attribute, translation);
-                    } else if (
-                        key === 'courseBeginnerTitle' || key === 'courseIntermediateTitle' || 
-                        key === 'coursesCtaText' || key === 'benefitsIntro' ||
-                        key === 'benefitsCtaText' || key === 'benefitsCtaMethod' || key === 'methodKeyBenefitsDesc' ||
-                        key === 'aboutQuoteText' || key === 'faqIntro' || key === 'faqA1' || key === 'faqA2' ||
-                        key === 'privacyDataPersonal' || key === 'privacyDataDerivative' || key === 'privacyDisclosureLaw' ||
-                        key === 'privacyDisclosureProviders' || key === 'termsAcceptanceDesc' || key === 'termsIntellectualPropertyDesc'
-                    ) {
+                    } else if (keysForInnerHTML.includes(key)) {
                         el.innerHTML = translation; 
                     } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
                         if (el.id === 'back-to-top-btn') { 
@@ -543,7 +469,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         el.textContent = translation;
                     }
                 } else if (key === 'resourcesCta' || key === 'contactSubjectOpt5') {
-                    // Si la clave fue eliminada, no hacemos nada para evitar errores.
+                    // Claves eliminadas del HTML, no hacer nada
                 }
             });
 
@@ -579,17 +505,21 @@ document.addEventListener('DOMContentLoaded', () => {
                  if (key === 'footerCopyright') { 
                      translation = translation.replace('[YEAR]', new Date().getFullYear());
                  }
+
+                 const keysForInnerHTML = [
+                    'courseBeginnerTitle', 'courseIntermediateTitle',
+                    'coursesCtaText', 'benefitsIntro',
+                    'benefitsCtaText', 'benefitsCtaMethod', 'methodKeyBenefitsDesc',
+                    'aboutQuoteText', 'faqIntro', 'faqA1', 'faqA2',
+                    'resource1Desc', 'resource2Desc', 'resource3Desc',
+                    'privacyDataPersonal', 'privacyDataDerivative', 'privacyDisclosureLaw',
+                    'privacyDisclosureProviders', 'termsAcceptanceDesc', 'termsIntellectualPropertyDesc'
+                ];
+
                  if (attribute) {
                      el.setAttribute(attribute, translation);
-                 } else if (
-                    key === 'courseBeginnerTitle' || key === 'courseIntermediateTitle' || 
-                    key === 'coursesCtaText' || key === 'benefitsIntro' ||
-                    key === 'benefitsCtaText' || key === 'benefitsCtaMethod' || key === 'methodKeyBenefitsDesc' ||
-                    key === 'aboutQuoteText' || key === 'faqIntro' || key === 'faqA1' || key === 'faqA2' ||
-                    key === 'privacyDataPersonal' || key === 'privacyDataDerivative' || key === 'privacyDisclosureLaw' ||
-                    key === 'privacyDisclosureProviders' || key === 'termsAcceptanceDesc' || key === 'termsIntellectualPropertyDesc'  
-                ) {
-                     el.innerHTML = translation; 
+                 } else if (keysForInnerHTML.includes(key)) {
+                    el.innerHTML = translation; 
                 } else if (el.tagName === 'INPUT' && (el.type === 'submit' || el.type === 'button') || el.tagName === 'BUTTON') {
                      if (el.id === 'back-to-top-btn') { 
                           el.setAttribute('aria-label', translations[lang]['backToTop'] || 'Back to top');
@@ -605,7 +535,7 @@ document.addEventListener('DOMContentLoaded', () => {
                      el.textContent = translation;
                  }
              } else if (key === 'resourcesCta' || key === 'contactSubjectOpt5') {
-                // Si la clave fue eliminada, no hacemos nada.
+                // Claves eliminadas
              }
         });
         document.documentElement.lang = lang;
