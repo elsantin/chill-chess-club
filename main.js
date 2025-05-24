@@ -122,11 +122,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             resourcesTitle: "Recursos Gratuitos Esenciales",
             resourcesIntro: "Inicia tu exploración del ajedrez o redescubre sus fundamentos. Estos materiales esenciales son el punto de partida hacia una comprensión más profunda del juego.",
-            resource1Title: "Iniciación al Ajedrez: Movimientos y Esencia del Juego", // ACTUALIZADO
+            resource1Title: "Iniciación al Ajedrez: Movimientos y Esencia del Juego", 
             resource1Desc: "Una guía clara de los elementos fundamentales: el tablero, las piezas y las reglas que dan inicio a la partida.", 
-            resource2Title: "Fundamentos Estratégicos del Ajedrez: Guía para el Jugador Reflexivo", // ACTUALIZADO
+            resource2Title: "Fundamentos Estratégicos del Ajedrez: Guía para el Jugador Reflexivo", 
             resource2Desc: "Descubre los conceptos fundamentales que orientarán tus primeras partidas y te ayudarán a construir una base estratégica sólida y reflexiva.", 
-            resource3Title: "Anatomía del Ajedrez: Piezas, Fases y su Valor Estratégico", // MANTENIDO
+            resource3Title: "Anatomía del Ajedrez: Piezas, Fases y su Valor Estratégico", 
             resource3Desc: "Una mirada al flujo de la partida, desde la apertura hasta el final, y cómo el valor y las características de cada pieza definen tu estrategia.", 
             resourceLinkText: "Explorar Contenido",
 
@@ -321,11 +321,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             resourcesTitle: "Essential Free Resources",
             resourcesIntro: "Begin your chess exploration or rediscover its fundamentals. These essential materials are the starting point towards a deeper understanding of the game.",
-            resource1Title: "Chess Initiation: Movements and Essence of the Game", // UPDATED
+            resource1Title: "Chess Initiation: Movements and Essence of the Game", 
             resource1Desc: "A clear guide to the fundamental elements: the board, the pieces, and the rules that start the game.", 
-            resource2Title: "Strategic Chess Fundamentals: A Guide for the Thoughtful Player", // UPDATED
+            resource2Title: "Strategic Chess Fundamentals: A Guide for the Thoughtful Player", 
             resource2Desc: "Discover the fundamental concepts that will guide your first games and help you build a solid and thoughtful strategic foundation.", 
-            resource3Title: "Anatomy of Chess: Pieces, Phases, and Their Strategic Value", // MAINTAINED
+            resource3Title: "Anatomy of Chess: Pieces, Phases, and Their Strategic Value", 
             resource3Desc: "A look at the game's flow, from opening to endgame, and how each piece's value and characteristics define your strategy.", 
             resourceLinkText: "Explore Content",
 
@@ -404,7 +404,6 @@ document.addEventListener('DOMContentLoaded', () => {
             termsContactUsDesc: "If you have questions or comments about these Terms, please contact us at: [YOUR-CONTACT-EMAIL@example.com]"
         }
     };
-
 
     // --- Selectors ---
     const langButtons = document.querySelectorAll('.lang-button');
@@ -740,13 +739,15 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault(); 
             const currentLang = document.documentElement.lang || 'es'; 
             const submitButton = contactForm.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.textContent;
+            const originalButtonText = submitButton.textContent; // Guardar texto original del botón
             
+            // Usar traducciones para el estado "Enviando..."
             submitButton.textContent = translations[currentLang]?.submitting || 'Enviando...';
             submitButton.disabled = true;
 
+            // Limpiar y ocultar estado previo
             formStatus.textContent = ''; 
-            formStatus.className = 'status'; 
+            formStatus.className = 'status'; // Clase base para el mensaje de estado
             formStatus.style.display = 'none'; 
 
             const formData = new FormData(contactForm);
@@ -755,35 +756,53 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 body: formData, 
                 headers: {
-                    'Accept': 'application/json' 
+                    'Accept': 'application/json' // Solicita respuesta JSON a FormSubmit
                 }
             })
             .then(response => {
                 if (response.ok) {
-                    return response.json(); 
+                    return response.json(); // Si la respuesta es exitosa (2xx), se espera JSON
                 }
-                return response.json().then(errorData => {
-                    throw new Error(errorData.error || translations[currentLang]?.formError || 'Hubo un error.');
+                // Si la respuesta no es OK (ej. 4xx, 5xx), intentar obtener el cuerpo como texto
+                return response.text().then(text => {
+                    try {
+                        // Intentar parsear el texto como JSON (esperado de FormSubmit para errores)
+                        const errorData = JSON.parse(text);
+                        // Construir un error con el mensaje de FormSubmit o uno genérico
+                        throw new Error(errorData.error || errorData.message || translations[currentLang]?.formError || 'Hubo un error procesando la solicitud.');
+                    } catch (jsonError) {
+                        // Si el texto no era JSON (inesperado), usar un mensaje más genérico
+                        console.error("Respuesta de error no JSON recibida:", text);
+                        throw new Error(translations[currentLang]?.formError || `Error del servidor (${response.status}).`);
+                    }
                 });
             })
             .then(data => { 
+                // 'data' es el JSON de una respuesta exitosa de FormSubmit
                 formStatus.textContent = translations[currentLang]?.formSuccess || '¡Mensaje enviado con éxito! Te contactaremos pronto.';
-                formStatus.className = 'status success';
+                formStatus.className = 'status success'; // Asegúrate de tener CSS para .status.success
                 formStatus.style.display = 'block';
-                contactForm.reset(); 
+                contactForm.reset(); // Limpiar el formulario
             })
             .catch(error => {
-                formStatus.textContent = error.message || translations[currentLang]?.formError || 'Hubo un error al enviar. Intenta de nuevo.';
-                formStatus.className = 'status error';
+                // Captura errores de red o los errores lanzados desde los bloques .then()
+                formStatus.textContent = error.message; // Muestra el mensaje de error construido
+                formStatus.className = 'status error'; // Asegúrate de tener CSS para .status.error
                 formStatus.style.display = 'block';
             })
             .finally(() => {
+                // Restaurar el botón a su estado original
                 submitButton.textContent = originalButtonText;
                 submitButton.disabled = false;
+                // Opcional: Ocultar el mensaje de estado después de un tiempo
+                /*
                 setTimeout(() => {
-                   // formStatus.style.display = 'none'; 
-                   // formStatus.className = 'status'; 
+                   if (formStatus.className.includes('success')) { 
+                       formStatus.style.display = 'none'; 
+                       formStatus.className = 'status'; 
+                   }
                 }, 7000); 
+                */
             });
         });
     }
