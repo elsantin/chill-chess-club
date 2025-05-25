@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
             footerPaymentText: "Pagos Seguros con:",
             footerCopyright: "© [YEAR] Chill Chess Club. Todos los derechos reservados.",
 
-            formSuccess: "¡Mensaje enviado con éxito! Te contactaremos pronto.",
+            formSuccess: "Enviado. Gracias por tu interés, te escribiré en breve.", // <-- MENSAJE ACTUALIZADO
             formError: "Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o usa el email de contacto.",
             submitting: "Enviando...",
             backToTop: "Volver arriba",
@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
             termsLastUpdated: "Última actualización: 13 de mayo de 2025",
             termsContactUsDesc: "Si tienes alguna pregunta sobre estos Términos, por favor contáctanos en: [TU-EMAIL-DE-CONTACTO@ejemplo.com]"
         },
-        en: { // Ensure English translations are complete as in your original file
+        en: { // Ensure English translations are complete as in your original file and update formSuccess
             pageTitle: "Personalized Online Chess Classes | Chill Chess Club",
             metaDescription: "Learn chess online with Chill Chess Club's personalized method. AI-assisted classes for beginners and intermediates. Elevate your game!",
             logoAlt: "Chill Chess Club Logo: Silhouettes of chess pieces (rooks, bishop, king, knight) with a stylized setting sun",
@@ -372,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
             footerContactFormLink: "Contact Form",
             footerPaymentText: "Secure Payments with:",
             footerCopyright: "© [YEAR] Chill Chess Club. All rights reserved.",
-            formSuccess: "Message sent successfully! We will contact you soon.",
+            formSuccess: "Sent. Thanks for your interest, I'll write to you shortly.", // <-- EXAMPLE ENGLISH VERSION
             formError: "There was an error sending the message. Please try again or use the contact email.",
             submitting: "Sending...",
             backToTop: "Back to top",
