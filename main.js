@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
             termsLastUpdated: "Última actualización: 13 de mayo de 2025",
             termsContactUsDesc: "Si tienes alguna pregunta sobre estos Términos, por favor contáctanos en: [TU-EMAIL-DE-CONTACTO@ejemplo.com]"
         },
-        en: {
+        en: { // Ensure English translations are complete as in your original file
             pageTitle: "Personalized Online Chess Classes | Chill Chess Club",
             metaDescription: "Learn chess online with Chill Chess Club's personalized method. AI-assisted classes for beginners and intermediates. Elevate your game!",
             logoAlt: "Chill Chess Club Logo: Silhouettes of chess pieces (rooks, bishop, king, knight) with a stylized setting sun",
@@ -218,12 +218,10 @@ document.addEventListener('DOMContentLoaded', () => {
             navBlog: "Blog",
             navFaq: "FAQ",
             navContact: "Contact",
-
             heroTitle: "Discover chess your way: an immersive and personalized experience",
             heroSubtitle: "Feel how chess flows with you. My method is fine-tuned with AI, allowing me to adapt lessons and materials to your tastes and interests, so your understanding of the game expands naturally.",
             heroCtaTrial: "Try your first class for free",
             heroCtaMethod: "How do I do it?",
-
             aboutTitle: "About Me",
             aboutQuoteText: "\"Chess is a sea in which a gnat may drink and an elephant may bathe.\"",
             aboutQuoteCite: "- Indian Proverb",
@@ -238,10 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutPlatformChesscom: "My Chess.com Profile",
             aboutPlatformLichess: "My Lichess.org Profile",
             aboutCtaConnect: "Ready to start?",
-
             coursesTitle: "Explore Courses: Your Chess, Your Pace",
             coursesIntro: "Discover the ideal program for you, designed to boost your game regardless of your experience. Each option offers you: bilingual study material, lessons and exercises that I adapt to your interests with AI assistance, and my continuous support for you to achieve your goals.",
-
             courseBeginnerTitle: "Beginner Course:<br>Liftoff",
             courseBeginnerLevelAriaLabel: "Beginner Level",
             courseBeginnerImgAlt: "Black pawn toppling a white king on a chessboard over water at sunset, representing the learning start in Chill Chess Club's beginner course",
@@ -255,7 +251,6 @@ document.addEventListener('DOMContentLoaded', () => {
             courseBeginnerPrice: "$15 USD /Hour", 
             courseBeginnerPriceNoteHour: "Total flexibility. Progress at your own pace. Payment plans available.", 
             courseEnrollBtn: "Start Now",
-
             courseIntermediateTitle: "Intermediate Course:<br>Strategist",
             courseIntermediateLevelAriaLabel: "Intermediate Level",
             courseIntermediateImgAlt: "Chess knight on a board with an explosion of vibrant colored powder behind, symbolizing dynamic strategy in Chill Chess Club's intermediate course",
@@ -268,10 +263,8 @@ document.addEventListener('DOMContentLoaded', () => {
             courseIntermediateFeat7: "Materials and exercises adapted by me (AI-assisted) to your goals and style within the program.", 
             courseIntermediatePrice: "$20 USD /Hour", 
             courseIntermediatePriceNoteHour: "Total flexibility. Progress at your own pace. Payment plans available.", 
-
             coursesCtaText: "Not sure which option is best for you? Schedule a free introductory session and receive a personalized assessment.",
             coursesCtaBtn: "Request Free Trial Class",
-
             methodTitle: "My Method: Immersive and Personalized Learning with a Unique Technological Touch",
             methodIntro: "Discover how my approach, combining an understanding of chess with advanced skills in AI-assisted digital content creation, transforms your learning into an experience fully tailored to you: your style, your pace, and your interests.",
             methodStep1Title: "Connection and Initial Assessment",
@@ -287,7 +280,6 @@ document.addEventListener('DOMContentLoaded', () => {
             methodKeyBenefitsTitle: "How Does My Method Truly Help You?",
             methodKeyBenefitsDesc: "My method is designed to offer you a chess learning experience that goes beyond the conventional. I combine my personalized attention and passion for teaching with a unique mastery of digital and AI tools to create a path tailored exactly to you. You'll focus on what truly drives your progress, in an effective, deeply enjoyable, and life-adapted way.",
             methodExploreBenefitsBtn: "Discover All the Benefits of Chess",
-
             benefitsTitle: "Enrich Your Life with Chess. At Any Age.",
             benefitsIntro: "Playing chess is much more than a simple game; it's a powerful tool to activate your mind, strengthen your character, and connect with others, no matter what stage of life you're in. At Chill Chess Club, we show you how this ancient game boosts your personal growth in surprising ways, whether you're young, an adult, or a senior.",
             benefitsPascalQuoteText: "\"Chess is the gymnasium of the mind.\"",
@@ -318,17 +310,15 @@ document.addEventListener('DOMContentLoaded', () => {
             benefitsCtaText: "Ready to start (or continue) your transformation?",
             benefitsCtaMethod: "Our personalized method is designed to guide you on this fascinating journey, helping you develop not only your game but also valuable life skills, no matter when you decide to start.",
             benefitsCtaBtn: "Join the Club!",
-
             resourcesTitle: "Essential Free Resources",
             resourcesIntro: "Begin your chess exploration or rediscover its fundamentals. These essential materials are the starting point towards a deeper understanding of the game.",
-            resource1Title: "Chess Initiation: Movements and Essence of the Game", 
-            resource1Desc: "A clear guide to the fundamental elements: the board, the pieces, and the rules that start the game.", 
-            resource2Title: "Strategic Chess Fundamentals: A Guide for the Thoughtful Player", 
-            resource2Desc: "Discover the fundamental concepts that will guide your first games and help you build a solid and thoughtful strategic foundation.", 
-            resource3Title: "Anatomy of Chess: Pieces, Phases, and Their Strategic Value", 
-            resource3Desc: "A look at the game's flow, from opening to endgame, and how each piece's value and characteristics define your strategy.", 
+            resource1Title: "Chess Initiation: Movements and Essence of the Game",
+            resource1Desc: "A clear guide to the fundamental elements: the board, the pieces, and the rules that start the game.",
+            resource2Title: "Strategic Chess Fundamentals: A Guide for the Thoughtful Player",
+            resource2Desc: "Discover the fundamental concepts that will guide your first games and help you build a solid and thoughtful strategic foundation.",
+            resource3Title: "Anatomy of Chess: Pieces, Phases, and Their Strategic Value",
+            resource3Desc: "A look at the game's flow, from opening to endgame, and how each piece's value and characteristics define your strategy.",
             resourceLinkText: "Explore Content",
-
             blogTitle: "From Our Blog",
             blogIntro: "A space dedicated to the exploration of chess. Articles, perspectives, and curiosidades to deepen your understanding and appreciation for the game.",
             blogPost1Title: "Echoes of the Board: A Chronicle of Chess and its Human Soul",
@@ -341,7 +331,6 @@ document.addEventListener('DOMContentLoaded', () => {
             blogPost3Excerpt: "Digital chess is an ocean of possibilities at your fingertips; to navigate it, five initial, simple, and free moves are all it takes, which this guide unveils.",
             blogPost3ImgAlt: "Laptop displaying an online chess game in a relaxed setting overlooking the sea, for the article on starting to play online at Chill Chess Club",
             blogReadMore: "Read More",
-
             faqTitle: "Frequently Asked Questions",
             faqIntro: "Here you'll find answers to the most common inquiries. If your doubt isn't resolved, feel free to <a href='#contacto' class='scroll-to'>contact me directly</a>.",
             faqQ1: "What do I need to start the chess classes?",
@@ -358,7 +347,6 @@ document.addEventListener('DOMContentLoaded', () => {
             faqA6: "Yes, of course. As part of the method, you will receive access to bilingual digital study material, selected exercises, and game analysis (with AI support) so you can consolidate your learning and practice at your own pace.",
             faqQ7: "What AI tools or platforms are used and how do they benefit me?",
             faqA7: "I use a combination of recognized chess analysis software and AI tools for content creation. These technologies help me identify patterns in your game, generate exercises tailored to your needs, and create more efficient and personalized study materials (such as summaries or guides). The goal is to enrich your learning, not replace human interaction.",
-
             contactTitle: "Contact Me", 
             contactIntro: "If you wish to begin your chess exploration or have any questions, you can get in touch using the form or by using my direct contact details.",
             contactFormTitle: "Contact Form",
@@ -375,7 +363,6 @@ document.addEventListener('DOMContentLoaded', () => {
             contactTrialTitle: "Request Your Free Introductory Class",
             contactTrialDesc: "A 30-minute session dedicated to an initial conversation, assessing your current level, and outlining a plan to achieve your chess goals.",
             contactTrialBtn: "Request Now",
-
             footerAboutTitle: "Chill Chess Club",
             footerAboutDesc: "Chess classes for beginners and intermediate players. A personalized and technologically assisted method to transform your game.",
             footerLinksTitle: "Quick Links",
@@ -385,18 +372,15 @@ document.addEventListener('DOMContentLoaded', () => {
             footerContactFormLink: "Contact Form",
             footerPaymentText: "Secure Payments with:",
             footerCopyright: "© [YEAR] Chill Chess Club. All rights reserved.",
-
             formSuccess: "Message sent successfully! We will contact you soon.",
             formError: "There was an error sending the message. Please try again or use the contact email.",
             submitting: "Sending...",
             backToTop: "Back to top",
-
             pageTitlePrivacy: "Privacy Policy - Chill Chess Club",
             metaDescriptionPrivacy: "Learn how Chill Chess Club protects and uses your personal information. Read our privacy policy.",
             privacyPolicyTitle: "Privacy Policy",
             privacyLastUpdated: "Last Updated: May 13, 2025",
             privacyContactUsDesc: "If you have questions or comments about this Privacy Policy, please contact us at: [YOUR-CONTACT-EMAIL@example.com]",
-
             pageTitleTerms: "Terms of Service - Chill Chess Club",
             metaDescriptionTerms: "Read the Terms and Conditions of Use for the Chill Chess Club website and services.",
             termsServiceTitle: "Terms of Service",
@@ -739,15 +723,13 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault(); 
             const currentLang = document.documentElement.lang || 'es'; 
             const submitButton = contactForm.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.textContent; // Guardar texto original del botón
+            const originalButtonText = submitButton.textContent;
             
-            // Usar traducciones para el estado "Enviando..."
             submitButton.textContent = translations[currentLang]?.submitting || 'Enviando...';
             submitButton.disabled = true;
 
-            // Limpiar y ocultar estado previo
             formStatus.textContent = ''; 
-            formStatus.className = 'status'; // Clase base para el mensaje de estado
+            formStatus.className = 'status'; 
             formStatus.style.display = 'none'; 
 
             const formData = new FormData(contactForm);
@@ -756,53 +738,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 body: formData, 
                 headers: {
-                    'Accept': 'application/json' // Solicita respuesta JSON a FormSubmit
+                    'Accept': 'application/json' // Mantenemos esto por si acaso FormSubmit cambia su comportamiento
                 }
             })
             .then(response => {
                 if (response.ok) {
-                    return response.json(); // Si la respuesta es exitosa (2xx), se espera JSON
+                    // Como los correos SÍ llegan, y response.ok es true (ej. estado 200),
+                    // asumimos éxito aquí sin intentar parsear el cuerpo de la respuesta como JSON
+                    // porque sabemos que FormSubmit está devolviendo HTML.
+                    return Promise.resolve({ success: true }); // Simulamos un objeto de éxito para el siguiente .then()
                 }
-                // Si la respuesta no es OK (ej. 4xx, 5xx), intentar obtener el cuerpo como texto
+                // Si la respuesta no es OK (ej. error 4xx o 5xx de FormSubmit)
+                // Intentamos obtener más detalles del error, si es posible como texto.
                 return response.text().then(text => {
                     try {
-                        // Intentar parsear el texto como JSON (esperado de FormSubmit para errores)
+                        // Aunque no esperamos JSON en caso de error de FormSubmit, intentamos por si acaso.
                         const errorData = JSON.parse(text);
-                        // Construir un error con el mensaje de FormSubmit o uno genérico
                         throw new Error(errorData.error || errorData.message || translations[currentLang]?.formError || 'Hubo un error procesando la solicitud.');
                     } catch (jsonError) {
-                        // Si el texto no era JSON (inesperado), usar un mensaje más genérico
-                        console.error("Respuesta de error no JSON recibida:", text);
+                        // Si la respuesta de error no era JSON (ej. una página de error HTML de FormSubmit o un error de red)
+                        console.error("Respuesta de error no JSON (o no OK) recibida:", text);
                         throw new Error(translations[currentLang]?.formError || `Error del servidor (${response.status}).`);
                     }
                 });
             })
             .then(data => { 
-                // 'data' es el JSON de una respuesta exitosa de FormSubmit
-                formStatus.textContent = translations[currentLang]?.formSuccess || '¡Mensaje enviado con éxito! Te contactaremos pronto.';
-                formStatus.className = 'status success'; // Asegúrate de tener CSS para .status.success
-                formStatus.style.display = 'block';
-                contactForm.reset(); // Limpiar el formulario
+                // 'data' aquí será el objeto { success: true } que creamos si response.ok era true.
+                if (data.success) {
+                    formStatus.textContent = translations[currentLang]?.formSuccess || '¡Mensaje enviado con éxito! Te contactaremos pronto.';
+                    formStatus.className = 'status success';
+                    formStatus.style.display = 'block';
+                    contactForm.reset(); 
+                } else {
+                    // Este bloque 'else' podría no alcanzarse si solo creamos { success: true } arriba
+                    // pero lo dejamos por si la lógica de error en el .then(response) anterior
+                    // devolviera un objeto con success: false.
+                    formStatus.textContent = 'Error: ' + (data.message || translations[currentLang]?.formError || 'No se pudo enviar el mensaje.');
+                    formStatus.className = 'status error'; 
+                    formStatus.style.display = 'block';
+                }
             })
             .catch(error => {
-                // Captura errores de red o los errores lanzados desde los bloques .then()
-                formStatus.textContent = error.message; // Muestra el mensaje de error construido
-                formStatus.className = 'status error'; // Asegúrate de tener CSS para .status.error
+                formStatus.textContent = error.message;
+                formStatus.className = 'status error';
                 formStatus.style.display = 'block';
             })
             .finally(() => {
-                // Restaurar el botón a su estado original
                 submitButton.textContent = originalButtonText;
                 submitButton.disabled = false;
-                // Opcional: Ocultar el mensaje de estado después de un tiempo
-                /*
-                setTimeout(() => {
-                   if (formStatus.className.includes('success')) { 
-                       formStatus.style.display = 'none'; 
-                       formStatus.className = 'status'; 
-                   }
-                }, 7000); 
-                */
             });
         });
     }
