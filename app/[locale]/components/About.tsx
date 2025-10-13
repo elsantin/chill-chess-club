@@ -51,12 +51,12 @@ export default function About() {
             viewport={{ once: true }}
             className="relative flex justify-center md:justify-start"
           >
-            <div className="relative rounded-2xl overflow-hidden border-2 border-sunset-500/50 shadow-neumorphic-lg hover:shadow-glow-sunset transition-all duration-300 max-w-sm">
+            <div className="relative rounded-2xl overflow-hidden border-2 border-sunset-500/50 shadow-neumorphic-lg hover:shadow-glow-sunset transition-all duration-300 max-w-xs">
               <Image
                 src={imagePlaceholders.profile.src}
                 alt={imagePlaceholders.profile.alt}
-                width={400}
-                height={533}
+                width={350}
+                height={467}
                 className="w-full h-auto object-cover"
                 priority
               />

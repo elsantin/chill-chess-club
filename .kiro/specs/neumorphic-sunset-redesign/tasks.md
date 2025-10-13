@@ -87,7 +87,8 @@
   - Suavizar animaciones de entrada
   - _Requirements: 1.1, 7.1, 7.2, 13.1, 13.2_
 
-- [ ] 7. Rediseñar Courses section
+- [x] 7. Rediseñar Courses section
+
 - [ ] 7.1 Actualizar cards de cursos
 
   - Usar NeumorphicCard para cada curso
