@@ -6,6 +6,7 @@ import Image from "next/image";
 import { FaCalendarAlt, FaUser, FaArrowRight } from "react-icons/fa";
 import { imagePlaceholders } from "@/lib/utils";
 import { AnimatedTitle } from "./neumorphic/AnimatedTitle";
+import { NeumorphicCard } from "./neumorphic/NeumorphicCard";
 
 export default function Blog() {
   const t = useTranslations("blog");
@@ -17,7 +18,7 @@ export default function Blog() {
   ];
 
   return (
-    <section id="blog" className="py-20 px-4 bg-slate-900">
+    <section id="blog" className="py-20 px-4 bg-warmGray-950">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <motion.div
@@ -33,7 +34,12 @@ export default function Blog() {
           >
             {t("title")}
           </AnimatedTitle>
-          <p className="text-xl text-slate-300">{t("subtitle")}</p>
+          <p
+            className="text-xl !text-warmGray-200"
+            style={{ color: "#e7e5e4" }}
+          >
+            {t("subtitle")}
+          </p>
         </motion.div>
 
         {/* Blog Articles Grid */}
@@ -51,63 +57,83 @@ export default function Blog() {
               key={article.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{
+                duration: 0.6,
+                ease: [0.25, 0.1, 0.25, 1],
+                delay: index * 0.1,
+              }}
               viewport={{ once: true }}
-              className="bg-slate-800 rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300 shadow-xl hover:shadow-2xl hover:shadow-pink-500/20 group"
+              className="group"
             >
-              {/* Article Image */}
-              <div className="relative h-48 overflow-hidden">
-                {/* TODO: Reemplazar placeholder con imagen real en /public/images/ */}
-                <Image
-                  src={blogImages[index].src}
-                  alt={blogImages[index].alt}
-                  width={blogImages[index].width}
-                  height={blogImages[index].height}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent" />
-              </div>
-
-              {/* Article Content */}
-              <div className="p-6">
-                {/* Meta Information */}
-                <div className="flex items-center gap-4 text-sm text-slate-400 mb-3">
-                  <div className="flex items-center gap-1">
-                    <FaCalendarAlt className="text-pink-500" />
-                    <span>
-                      {new Date(article.date).toLocaleDateString("es-ES", {
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      })}
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <FaUser className="text-purple-500" />
-                    <span>{article.author}</span>
-                  </div>
+              <NeumorphicCard
+                className="bg-warmGray-900 overflow-hidden"
+                interactive={true}
+              >
+                {/* Article Image */}
+                <div className="relative h-48 overflow-hidden">
+                  {/* TODO: Reemplazar placeholder con imagen real en /public/images/ */}
+                  <Image
+                    src={blogImages[index].src}
+                    alt={blogImages[index].alt}
+                    width={blogImages[index].width}
+                    height={blogImages[index].height}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-warmGray-900/80 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-sunset-500/20 via-rose-500/10 to-purple-500/20 mix-blend-overlay" />
                 </div>
 
-                {/* Title */}
-                <h3 className="text-xl font-playfair font-bold text-white mb-3 group-hover:text-pink-500 transition-colors">
-                  {article.title}
-                </h3>
+                {/* Article Content */}
+                <div className="p-6">
+                  {/* Meta Information */}
+                  <div
+                    className="flex items-center gap-4 text-sm !text-warmGray-300 mb-3"
+                    style={{ color: "#d6d3d1" }}
+                  >
+                    <div className="flex items-center gap-1">
+                      <FaCalendarAlt className="text-sunset-400" />
+                      <span>
+                        {new Date(article.date).toLocaleDateString("es-ES", {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        })}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <FaUser className="text-sunset-400" />
+                      <span>{article.author}</span>
+                    </div>
+                  </div>
 
-                {/* Excerpt */}
-                <p className="text-slate-300 mb-4 line-clamp-3">
-                  {article.excerpt}
-                </p>
+                  {/* Title */}
+                  <h3
+                    className="text-xl font-playfair font-bold !text-warmGray-50 mb-3 group-hover:text-sunset-300 transition-colors"
+                    style={{ color: "#fafaf9" }}
+                  >
+                    {article.title}
+                  </h3>
 
-                {/* Read More Link */}
-                <a
-                  href={`#blog-${article.id}`}
-                  className="inline-flex items-center gap-2 text-pink-500 hover:text-pink-400 font-semibold transition-colors group/link"
-                >
-                  <span>{t("readMore")}</span>
-                  <FaArrowRight className="group-hover/link:translate-x-1 transition-transform" />
-                </a>
-              </div>
+                  {/* Excerpt */}
+                  <p
+                    className="!text-warmGray-200 mb-4 line-clamp-3"
+                    style={{ color: "#e7e5e4" }}
+                  >
+                    {article.excerpt}
+                  </p>
+
+                  {/* Read More Link */}
+                  <a
+                    href={`#blog-${article.id}`}
+                    className="inline-flex items-center gap-2 !text-sunset-400 hover:!text-sunset-300 font-semibold transition-colors group/link"
+                    style={{ color: "#fb923c" }}
+                  >
+                    <span>{t("readMore")}</span>
+                    <FaArrowRight className="group-hover/link:translate-x-1 transition-transform" />
+                  </a>
+                </div>
+              </NeumorphicCard>
             </motion.article>
           ))}
         </div>

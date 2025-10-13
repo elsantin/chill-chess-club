@@ -74,8 +74,8 @@ export default function FAQ() {
           className="bg-gradient-to-br from-warmGray-800 to-warmGray-900 shadow-neumorphic-lg rounded-xl p-8 md:p-12 text-center border border-sunset-500/20"
         >
           <h3
-            className="text-2xl md:text-3xl font-playfair font-bold !text-white mb-4"
-            style={{ color: "#ffffff" }}
+            className="text-2xl md:text-3xl font-playfair font-bold !text-warmGray-50 mb-4"
+            style={{ color: "#fafaf9" }}
           >
             {t("ctaTitle")}
           </h3>
