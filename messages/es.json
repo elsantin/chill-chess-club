@@ -1,0 +1,222 @@
+{
+  "metadata": {
+    "title": "Clases de Ajedrez Online Personalizadas | Chill Chess Club",
+    "description": "Aprende ajedrez online con el método personalizado de Chill Chess Club. Clases para principiantes e intermedios con asistencia IA."
+  },
+  "nav": {
+    "about": "Sobre Mí",
+    "courses": "Cursos",
+    "method": "Método",
+    "benefits": "Beneficios",
+    "resources": "Recursos",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Domina el Ajedrez con Clases Personalizadas y Asistencia de IA",
+    "subtitle": "Aprende ajedrez de forma efectiva con un método adaptado a tu nivel y estilo. Clases individuales online para principiantes e intermedios, con material personalizado y análisis detallado de tus partidas.",
+    "cta1": "Solicita tu Clase Gratuita",
+    "cta2": "Conoce el Método"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "subtitle": "Tu Instructor de Ajedrez: Enseñanza Clara y Personalizada",
+    "quote": {
+      "text": "El ajedrez es un mar en el cual un mosquito puede beber y un elefante puede bañarse.",
+      "author": "Proverbio Indio"
+    },
+    "paragraph1": "Soy Santiago Narváez, instructor de ajedrez especializado en enseñanza para principiantes e intermedios. Mi pasión es hacer que el ajedrez sea accesible y emocionante para todos, sin importar tu nivel inicial. Con años de experiencia enseñando online, he desarrollado un método que combina la instrucción tradicional con tecnología de IA para crear una experiencia de aprendizaje verdaderamente personalizada.",
+    "paragraph2": "Mi fortaleza está en mi capacidad para explicar conceptos complejos de forma simple y clara. No soy un gran maestro de torneos, pero eso me permite conectar mejor con estudiantes que están comenzando su viaje en el ajedrez. Entiendo tus desafíos porque yo también los he enfrentado. Actualmente imparto clases online desde Isla de Margarita, Venezuela, ayudando a estudiantes de todo el mundo a mejorar su juego.",
+    "philosophyTitle": "Método de Enseñanza: Personalizado, Práctico y Efectivo",
+    "philosophyText": "Mi método combina teoría con práctica constante, adaptado específicamente a tu nivel y objetivos. Utilizo IA para crear material de estudio personalizado, analizar tus partidas en profundidad y diseñar ejercicios que fortalezcan tus áreas débiles. Cada clase es individual (uno a uno), lo que me permite ajustar el ritmo y el contenido a tus necesidades específicas.",
+    "platformsTitle": "Plataformas Utilizadas",
+    "platformsDesc": "Utilizamos las siguientes plataformas para nuestras clases y análisis. Es necesario que tengas una cuenta (gratuita) y la aplicación instalada:",
+    "chesscomLink": "Mi Perfil en Chess.com",
+    "lichessLink": "Mi Perfil en Lichess.org",
+    "cta": "Comienza tu Aprendizaje"
+  },
+  "courses": {
+    "title": "Programas de Ajedrez: Elige tu Nivel",
+    "intro": "Programas diseñados específicamente para principiantes e intermedios. Incluyen: clases individuales en vivo, material de estudio personalizado con IA, análisis detallado de tus partidas, y soporte continuo. Todo en español e inglés.",
+    "beginner": {
+      "title": "Curso Principiante: El Despegue",
+      "level": "Principiante",
+      "features": [
+        "Domina las reglas y movimientos de todas las piezas con claridad total.",
+        "Aprende aperturas sólidas para comenzar tus partidas con confianza.",
+        "Descubre tácticas básicas para ganar material y crear ventajas decisivas.",
+        "Aprende finales fundamentales para convertir ventajas en victorias.",
+        "Clases individuales en vivo adaptadas a tu ritmo de aprendizaje.",
+        "Material de estudio personalizado con IA según tus fortalezas y debilidades.",
+        "Análisis profundo de tus partidas para identificar áreas de mejora."
+      ],
+      "price": "$15 USD /Hora",
+      "priceNote": "Flexibilidad total. Avanza a tu propio ritmo. Planes de pago disponibles.",
+      "cta": "Empezar Ahora"
+    },
+    "intermediate": {
+      "title": "Curso Intermedio: Estratega",
+      "level": "Intermedio",
+      "features": [
+        "Desarrolla comprensión estratégica profunda para controlar el juego.",
+        "Construye un repertorio de aperturas sólido adaptado a tu estilo.",
+        "Domina combinaciones tácticas complejas para crear ventajas decisivas.",
+        "Perfecciona finales prácticos para convertir ventajas en victorias.",
+        "Clases individuales enfocadas en tus áreas específicas de mejora.",
+        "Análisis exhaustivo de partidas para eliminar errores recurrentes."
+      ],
+      "price": "$20 USD /Hora",
+      "priceNote": "Flexibilidad total. Avanza a tu propio ritmo. Planes de pago disponibles.",
+      "cta": "Empezar Ahora"
+    },
+    "trustSignals": [
+      { "icon": "FaUserCheck", "text": "Clases 1-a-1" },
+      { "icon": "FaLanguage", "text": "Español e Inglés" },
+      { "icon": "FaRobot", "text": "Asistido por IA" },
+      { "icon": "FaCalendarAlt", "text": "Horarios Flexibles" }
+    ]
+  },
+  "method": {
+    "title": "Mi Método de Enseñanza: 5 Pasos hacia la Maestría",
+    "intro": "Un enfoque estructurado que combina lo mejor de la enseñanza tradicional con tecnología de IA para maximizar tu progreso.",
+    "steps": [
+      {
+        "number": "01",
+        "icon": "FaComments",
+        "title": "Evaluación Inicial Personalizada",
+        "description": "Comenzamos con una clase gratuita donde evaluamos tu nivel actual, identificamos tus objetivos y diseñamos un plan de estudio adaptado a ti."
+      },
+      {
+        "number": "02",
+        "icon": "FaBrain",
+        "title": "Material de Estudio con IA",
+        "description": "Creo contenido educativo personalizado usando IA: ejercicios tácticos, repertorios de aperturas y guías estratégicas adaptadas a tu nivel y estilo de juego."
+      },
+      {
+        "number": "03",
+        "icon": "FaChalkboardTeacher",
+        "title": "Clases Individuales Interactivas",
+        "description": "Sesiones uno-a-uno donde trabajamos conceptos, analizamos posiciones y resolvemos ejercicios juntos. Tú marcas el ritmo."
+      },
+      {
+        "number": "04",
+        "icon": "FaChess",
+        "title": "Sesiones Inmersivas y Prácticas",
+        "description": "Jugamos partidas de práctica donde aplicas lo aprendido. Luego analizamos cada movimiento para identificar oportunidades de mejora."
+      },
+      {
+        "number": "05",
+        "icon": "FaChartLine",
+        "title": "Evolución Continua con IA",
+        "description": "Uso herramientas de IA para analizar tus partidas, identificar patrones en tus errores y ajustar el material de estudio continuamente."
+      }
+    ],
+    "benefitsTitle": "¿Por Qué Funciona Este Método?",
+    "benefitsDesc": "Combino atención personalizada con tecnología de IA para crear un camino de aprendizaje hecho a tu medida. Efectivo, disfrutable y adaptado a tu vida.",
+    "cta": "Descubre los Beneficios del Ajedrez"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "intro": "Aquí encontrarás respuestas a las consultas más comunes. Si tu duda no está resuelta, no dudes en contactarme directamente.",
+    "questions": [
+      {
+        "q": "¿Qué necesito para empezar las clases de ajedrez?",
+        "a": "Principalmente, una conexión a internet estable y una cuenta gratuita en Chess.com y/o Lichess.org, según lo que acordemos para nuestras sesiones. Un micrófono es recomendable para una comunicación fluida, y por supuesto, entusiasmo por explorar el mundo del ajedrez."
+      },
+      {
+        "q": "¿Cómo funcionan los pagos de los cursos?",
+        "a": "Los pagos se gestionan de forma segura a través de plataformas como PayPal, Payoneer o Binance. Una vez que definamos el curso o paquete de clases que mejor se adapta a ti, te facilitaré los detalles para realizar la transacción. Si necesitas un plan de pagos, podemos conversarlo."
+      },
+      {
+        "q": "¿Son estos cursos adecuados si nunca antes he jugado ajedrez?",
+        "a": "Definitivamente. El 'Curso Principiante: El Despegue' está especialmente diseñado para quienes se acercan al ajedrez por primera vez. Te acompañaré desde los movimientos básicos de las piezas hasta tus primeras estrategias, todo en un ambiente de aprendizaje paciente y motivador."
+      },
+      {
+        "q": "¿En qué se diferencia tu método de enseñanza de otros cursos online?",
+        "a": "Mi enfoque distintivo radica en la personalización profunda, potenciada con herramientas de IA. Esto me permite adaptar cada lección, material de estudio y ejercicio a tu ritmo individual, estilo de aprendizaje y áreas de interés específicas."
+      },
+      {
+        "q": "¿Cuánto tiempo duran las clases y cuál es la frecuencia recomendada?",
+        "a": "Las clases individuales estándar tienen una duración de 60 minutos. En cuanto a la frecuencia, sugiero una o dos clases por semana para un progreso constante y una buena asimilación de los conceptos, aunque siempre podemos ajustarlo a tu disponibilidad y objetivos."
+      },
+      {
+        "q": "¿Se proporciona material de estudio o ejercicios para practicar entre clases?",
+        "a": "Sí, por supuesto. Como parte del método, recibirás acceso a material de estudio digital bilingüe, ejercicios seleccionados y análisis de partidas (con apoyo de IA) para que puedas consolidar tu aprendizaje y practicar a tu propio ritmo."
+      },
+      {
+        "q": "¿Qué herramientas o plataformas de IA se utilizan y cómo me benefician?",
+        "a": "Empleo una combinación de software de análisis de ajedrez reconocido y herramientas de IA para la creación de contenido. Estas tecnologías me ayudan a identificar patrones en tu juego, generar ejercicios adaptados a tus necesidades, y crear materiales de estudio más eficientes y personalizados."
+      }
+    ],
+    "ctaTitle": "¿Listo para Comenzar tu Viaje en el Ajedrez?",
+    "ctaDesc": "Solicita tu clase introductoria gratuita y descubre cómo mi método personalizado puede ayudarte a alcanzar tus objetivos.",
+    "ctaButton": "Solicitar Clase Gratuita"
+  },
+  "contact": {
+    "title": "Contáctame",
+    "subtitle": "¿Listo para Comenzar?",
+    "description": "Solicita tu clase introductoria gratuita. Es una sesión de 30-45 minutos donde conoceremos tu nivel actual, discutiremos tus objetivos y verás cómo funciona mi método.",
+    "form": {
+      "name": "Nombre Completo",
+      "namePlaceholder": "Tu nombre",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "tu@email.com",
+      "subject": "Asunto",
+      "subjectPlaceholder": "Selecciona un asunto",
+      "subjectOptions": [
+        {
+          "value": "clase_prueba",
+          "label": "Solicitar Clase de Prueba Gratuita"
+        },
+        {
+          "value": "curso_principiante",
+          "label": "Información sobre Curso Principiante"
+        },
+        {
+          "value": "curso_intermedio",
+          "label": "Información sobre Curso Intermedio"
+        },
+        { "value": "otro", "label": "Otro" }
+      ],
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntame sobre tu experiencia con el ajedrez y qué te gustaría lograr...",
+      "submit": "Enviar Mensaje",
+      "success": "¡Mensaje enviado! Te responderé pronto.",
+      "error": "Error al enviar. Intenta de nuevo."
+    }
+  },
+  "blog": {
+    "title": "Blog de Ajedrez",
+    "subtitle": "Artículos, consejos y estrategias para mejorar tu juego",
+    "readMore": "Leer más",
+    "articles": [
+      {
+        "id": "echoes-from-the-board",
+        "title": "Ecos del Tablero",
+        "excerpt": "Descubre las historias y lecciones que resuenan desde cada partida de ajedrez.",
+        "date": "2025-01-15",
+        "author": "Santiago Narváez"
+      },
+      {
+        "id": "rediscover-vibrant-essence",
+        "title": "Redescubre la Vibrante Esencia",
+        "excerpt": "Explora la belleza y la pasión que hace del ajedrez un juego único y emocionante.",
+        "date": "2025-01-10",
+        "author": "Santiago Narváez"
+      },
+      {
+        "id": "5-steps-to-online-chess",
+        "title": "5 Pasos hacia el Ajedrez Online",
+        "excerpt": "Una guía práctica para comenzar tu aventura en el ajedrez online con confianza.",
+        "date": "2025-01-05",
+        "author": "Santiago Narváez"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2025 Chill Chess Club. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio"
+  }
+}

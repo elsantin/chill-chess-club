@@ -1,0 +1,219 @@
+{
+  "metadata": {
+    "title": "Personalized Online Chess Classes | Chill Chess Club",
+    "description": "Learn chess online with Chill Chess Club's personalized method. Classes for beginners and intermediates with AI assistance."
+  },
+  "nav": {
+    "about": "About Me",
+    "courses": "Courses",
+    "method": "Method",
+    "benefits": "Benefits",
+    "resources": "Resources",
+    "blog": "Blog",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Master Chess with Personalized Classes and AI Assistance",
+    "subtitle": "Learn chess effectively with a method adapted to your level and style. Individual online classes for beginners and intermediates, with personalized material and detailed analysis of your games.",
+    "cta1": "Request Your Free Class",
+    "cta2": "Discover the Method"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Your Chess Instructor: Clear and Personalized Teaching",
+    "quote": {
+      "text": "Chess is a sea in which a gnat may drink and an elephant may bathe.",
+      "author": "Indian Proverb"
+    },
+    "paragraph1": "I'm Santiago Narváez, a chess instructor specialized in teaching beginners and intermediates. My passion is making chess accessible and exciting for everyone, regardless of your starting level. With years of experience teaching online, I've developed a method that combines traditional instruction with AI technology to create a truly personalized learning experience.",
+    "paragraph2": "My strength lies in my ability to explain complex concepts in a simple and clear way. I'm not a tournament grandmaster, but that allows me to connect better with students who are beginning their chess journey. I understand your challenges because I've faced them too. I currently teach online classes from Margarita Island, Venezuela, helping students from around the world improve their game.",
+    "philosophyTitle": "Teaching Method: Personalized, Practical and Effective",
+    "philosophyText": "My method combines theory with constant practice, specifically adapted to your level and goals. I use AI to create personalized study material, analyze your games in depth, and design exercises that strengthen your weak areas. Each class is individual (one-on-one), which allows me to adjust the pace and content to your specific needs.",
+    "platformsTitle": "Platforms Used",
+    "platformsDesc": "We use the following platforms for our classes and analysis. You need to have a (free) account and the application installed:",
+    "chesscomLink": "My Chess.com Profile",
+    "lichessLink": "My Lichess.org Profile",
+    "cta": "Start Your Learning"
+  },
+  "courses": {
+    "title": "Chess Programs: Choose Your Level",
+    "intro": "Programs specifically designed for beginners and intermediates. Include: individual live classes, AI-personalized study material, detailed analysis of your games, and continuous support. All in Spanish and English.",
+    "beginner": {
+      "title": "Beginner Course: Liftoff",
+      "level": "Beginner",
+      "features": [
+        "Master the rules and movements of all pieces with total clarity.",
+        "Learn solid openings to start your games with confidence.",
+        "Discover basic tactics to win material and create decisive advantages.",
+        "Learn fundamental endgames to convert advantages into victories.",
+        "Individual live classes adapted to your learning pace.",
+        "AI-personalized study material according to your strengths and weaknesses.",
+        "Deep analysis of your games to identify areas for improvement."
+      ],
+      "price": "$15 USD /Hour",
+      "priceNote": "Total flexibility. Advance at your own pace. Payment plans available.",
+      "cta": "Start Now"
+    },
+    "intermediate": {
+      "title": "Intermediate Course: Strategist",
+      "level": "Intermediate",
+      "features": [
+        "Develop deep strategic understanding to control the game.",
+        "Build a solid opening repertoire adapted to your style.",
+        "Master complex tactical combinations to create decisive advantages.",
+        "Perfect practical endgames to convert advantages into victories.",
+        "Individual classes focused on your specific areas of improvement.",
+        "Exhaustive game analysis to eliminate recurring errors."
+      ],
+      "price": "$20 USD /Hour",
+      "priceNote": "Total flexibility. Advance at your own pace. Payment plans available.",
+      "cta": "Start Now"
+    },
+    "trustSignals": [
+      { "icon": "FaUserCheck", "text": "1-on-1 Classes" },
+      { "icon": "FaLanguage", "text": "Spanish & English" },
+      { "icon": "FaRobot", "text": "AI-Assisted" },
+      { "icon": "FaCalendarAlt", "text": "Flexible Schedule" }
+    ]
+  },
+  "method": {
+    "title": "My Teaching Method: 5 Steps to Mastery",
+    "intro": "A structured approach that combines the best of traditional teaching with AI technology to maximize your progress.",
+    "steps": [
+      {
+        "number": "01",
+        "icon": "FaComments",
+        "title": "Personalized Initial Assessment",
+        "description": "We start with a free class where we evaluate your current level, identify your goals, and design a study plan adapted to you."
+      },
+      {
+        "number": "02",
+        "icon": "FaBrain",
+        "title": "AI-Powered Study Material",
+        "description": "I create personalized educational content using AI: tactical exercises, opening repertoires, and strategic guides adapted to your level and playing style."
+      },
+      {
+        "number": "03",
+        "icon": "FaChalkboardTeacher",
+        "title": "Interactive Individual Classes",
+        "description": "One-on-one sessions where we work on concepts, analyze positions, and solve exercises together. You set the pace."
+      },
+      {
+        "number": "04",
+        "icon": "FaChess",
+        "title": "Immersive and Practical Sessions",
+        "description": "We play practice games where you apply what you've learned. Then we analyze each move to identify improvement opportunities."
+      },
+      {
+        "number": "05",
+        "icon": "FaChartLine",
+        "title": "Continuous Evolution with AI",
+        "description": "I use AI tools to analyze your games, identify patterns in your mistakes, and continuously adjust the study material."
+      }
+    ],
+    "benefitsTitle": "Why Does This Method Work?",
+    "benefitsDesc": "I combine personalized attention with AI technology to create a learning path tailored to you. Effective, enjoyable, and adapted to your life.",
+    "cta": "Discover the Benefits of Chess"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "intro": "Here you'll find answers to the most common inquiries. If your doubt isn't resolved, feel free to contact me directly.",
+    "questions": [
+      {
+        "q": "What do I need to start the chess classes?",
+        "a": "Mainly, a stable internet connection and a free account on Chess.com and/or Lichess.org, as we agree for our sessions. A microphone is recommended for smooth communication, and of course, enthusiasm to explore the world of chess!"
+      },
+      {
+        "q": "How do course payments work?",
+        "a": "Payments are securely managed through platforms like PayPal, Payoneer, or Binance. Once we define the course or class package that best suits you, I will provide the details to make the transaction. If you need a payment plan, we can discuss it."
+      },
+      {
+        "q": "Are these courses suitable if I've never played chess before?",
+        "a": "Definitely! The 'Beginner Course: Liftoff' is specially designed for those approaching chess for the first time. I will accompany you from the basic movements of the pieces to your first strategies, all in a patient and motivating learning environment."
+      },
+      {
+        "q": "How does your teaching method differ from other online courses?",
+        "a": "My distinctive approach lies in deep personalization, enhanced with AI tools. This allows me to adapt each lesson, study material, and exercise to your individual pace, learning style, and specific areas of interest."
+      },
+      {
+        "q": "How long are the classes and what is the recommended frequency?",
+        "a": "Standard individual classes are 60 minutes long. Regarding frequency, I suggest one or two classes per week for consistent progress and good assimilation of concepts, although we can always adjust it to your availability and goals."
+      },
+      {
+        "q": "Is study material or exercises provided to practice between classes?",
+        "a": "Yes, of course. As part of the method, you will receive access to bilingual digital study material, selected exercises, and game analysis (with AI support) so you can consolidate your learning and practice at your own pace."
+      },
+      {
+        "q": "What AI tools or platforms are used and how do they benefit me?",
+        "a": "I use a combination of recognized chess analysis software and AI tools for content creation. These technologies help me identify patterns in your game, generate exercises tailored to your needs, and create more efficient and personalized study materials."
+      }
+    ],
+    "ctaTitle": "Ready to Start Your Chess Journey?",
+    "ctaDesc": "Request your free introductory class and discover how my personalized method can help you achieve your goals.",
+    "ctaButton": "Request Free Class"
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Ready to Start?",
+    "description": "Request your free introductory class. It's a 30-45 minute session where we'll get to know your current level, discuss your goals, and you'll see how my method works.",
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Your name",
+      "email": "Email Address",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "Select a subject",
+      "subjectOptions": [
+        { "value": "clase_prueba", "label": "Request Free Trial Class" },
+        {
+          "value": "curso_principiante",
+          "label": "Beginner Course Information"
+        },
+        {
+          "value": "curso_intermedio",
+          "label": "Intermediate Course Information"
+        },
+        { "value": "otro", "label": "Other" }
+      ],
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your chess experience and what you'd like to achieve...",
+      "submit": "Send Message",
+      "success": "Message sent! I'll respond soon.",
+      "error": "Error sending. Please try again."
+    }
+  },
+  "blog": {
+    "title": "Chess Blog",
+    "subtitle": "Articles, tips and strategies to improve your game",
+    "readMore": "Read more",
+    "articles": [
+      {
+        "id": "echoes-from-the-board",
+        "title": "Echoes from the Board",
+        "excerpt": "Discover the stories and lessons that resonate from every chess game.",
+        "date": "2025-01-15",
+        "author": "Santiago Narváez"
+      },
+      {
+        "id": "rediscover-vibrant-essence",
+        "title": "Rediscover the Vibrant Essence",
+        "excerpt": "Explore the beauty and passion that makes chess a unique and exciting game.",
+        "date": "2025-01-10",
+        "author": "Santiago Narváez"
+      },
+      {
+        "id": "5-steps-to-online-chess",
+        "title": "5 Steps to Online Chess",
+        "excerpt": "A practical guide to start your online chess adventure with confidence.",
+        "date": "2025-01-05",
+        "author": "Santiago Narváez"
+      }
+    ]
+  },
+  "footer": {
+    "copyright": "© 2025 Chill Chess Club. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}
