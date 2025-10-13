@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { imagePlaceholders } from "@/lib/utils";
+import { SunsetGradientText } from "./neumorphic/SunsetGradientText";
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -20,9 +21,13 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image */}
-      {/* TODO: Reemplazar placeholder con imagen real en /public/images/hero.webp */}
-      <div className="absolute inset-0 z-0">
+      {/* Background Image with Parallax */}
+      <motion.div
+        className="absolute inset-0 z-0"
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
+      >
         <Image
           src={imagePlaceholders.hero.src}
           alt={imagePlaceholders.hero.alt}
@@ -30,80 +35,137 @@ export default function Hero() {
           className="object-cover"
           priority
         />
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-slate-950/70" />
-      </div>
+        {/* Sunset gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-warmGray-950 via-warmGray-950/80 to-warmGray-900/60" />
+        {/* Sunset color overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-sunset-500/20 via-rose-500/10 to-purple-500/20 mix-blend-overlay" />
+      </motion.div>
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-radial from-pink-500/10 via-transparent to-transparent opacity-50 z-10" />
+      {/* Animated gradient orbs */}
+      <div className="absolute inset-0 z-10 overflow-hidden">
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-1/4 -left-1/4 w-96 h-96 bg-sunset-500/30 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1,
+          }}
+          className="absolute bottom-1/4 -right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
+        />
+      </div>
 
       <div className="container mx-auto px-4 py-32 relative z-20">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center max-w-5xl mx-auto"
+          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+          className="text-center max-w-5xl ml-auto mr-0 md:mr-8"
         >
-          {/* Title */}
+          {/* Title with Sunset Gradient */}
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold mb-6 leading-tight"
           >
-            <span className="bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            <SunsetGradientText variant="full" className="drop-shadow-2xl">
               {t("title")}
-            </span>
+            </SunsetGradientText>
           </motion.h1>
 
           {/* Subtitle */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl lg:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed"
+            transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+            className="text-lg md:text-xl lg:text-2xl !text-warmGray-100 mb-12 mx-auto leading-relaxed drop-shadow-lg"
+            style={{ color: "#f5f5f4" }}
           >
             {t("subtitle")}
           </motion.p>
 
           {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            transition={{ duration: 1, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center"
           >
             {/* Primary CTA */}
-            <button
+            <motion.button
               onClick={() => handleCTAClick("#contact")}
-              className="px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-pink-500/50 w-full sm:w-auto"
+              className="px-8 py-4 bg-gradient-to-r from-sunset-500 via-rose-500 to-pink-600 !text-white font-bold rounded-xl transition-all duration-300 shadow-neumorphic-lg w-full sm:w-auto"
+              style={{
+                background:
+                  "linear-gradient(to right, #f97316, #f43f5e, #ec4899)",
+                color: "#ffffff",
+              }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 30px rgba(249, 115, 22, 0.5)",
+              }}
+              whileTap={{ scale: 0.95 }}
             >
               {t("cta1")}
-            </button>
+            </motion.button>
 
             {/* Secondary CTA */}
-            <button
+            <motion.button
               onClick={() => handleCTAClick("#method")}
-              className="px-8 py-4 border-2 border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 w-full sm:w-auto"
+              className="px-8 py-4 border-2 border-sunset-400 !text-sunset-300 hover:bg-sunset-500/10 font-bold rounded-xl transition-all duration-300 backdrop-blur-sm bg-warmGray-900/30 w-full sm:w-auto"
+              style={{ color: "#fdba74" }}
+              whileHover={{
+                scale: 1.05,
+                borderColor: "#fb923c",
+              }}
+              whileTap={{ scale: 0.95 }}
             >
               {t("cta2")}
-            </button>
+            </motion.button>
           </motion.div>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator with sunset colors */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         >
           <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-pink-500 rounded-full flex items-start justify-center p-2"
+            animate={{ y: [0, 12, 0] }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              ease: [0.25, 0.1, 0.25, 1],
+            }}
+            className="w-6 h-10 border-2 border-sunset-400 rounded-full flex items-start justify-center p-2"
           >
-            <motion.div className="w-1 h-2 bg-pink-500 rounded-full" />
+            <motion.div
+              animate={{ height: ["8px", "16px", "8px"] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
+              className="w-1 bg-gradient-to-b from-sunset-400 to-rose-500 rounded-full"
+            />
           </motion.div>
         </motion.div>
       </div>

@@ -9,6 +9,7 @@ import {
   FaChess,
   FaChartLine,
 } from "react-icons/fa";
+import { AnimatedTitle } from "./neumorphic/AnimatedTitle";
 
 export default function Method() {
   const t = useTranslations("method");
@@ -42,9 +43,12 @@ export default function Method() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white mb-4">
+          <AnimatedTitle
+            className="text-4xl md:text-5xl font-playfair font-bold mb-4"
+            delay={0.3}
+          >
             {t("title")}
-          </h2>
+          </AnimatedTitle>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             {t("intro")}
           </p>

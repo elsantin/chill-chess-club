@@ -11,6 +11,7 @@ import {
   FaCalendarAlt,
 } from "react-icons/fa";
 import { imagePlaceholders } from "@/lib/utils";
+import { AnimatedTitle } from "./neumorphic/AnimatedTitle";
 
 export default function Courses() {
   const t = useTranslations("courses");
@@ -54,9 +55,9 @@ export default function Courses() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white mb-4">
+          <AnimatedTitle className="text-4xl md:text-5xl font-playfair font-bold mb-4">
             {t("title")}
-          </h2>
+          </AnimatedTitle>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
             {t("intro")}
           </p>

@@ -11,6 +11,7 @@ import {
   FaExclamationCircle,
 } from "react-icons/fa";
 import { contactSchema, type ContactFormData } from "@/lib/validations";
+import { AnimatedTitle } from "./neumorphic/AnimatedTitle";
 
 export default function Contact() {
   const t = useTranslations("contact");
@@ -76,9 +77,12 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white mb-4">
+          <AnimatedTitle
+            className="text-4xl md:text-5xl font-playfair font-bold mb-4"
+            delay={1.2}
+          >
             {t("title")}
-          </h2>
+          </AnimatedTitle>
           <p className="text-2xl text-pink-500 font-semibold mb-4">
             {t("subtitle")}
           </p>

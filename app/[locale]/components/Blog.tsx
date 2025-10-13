@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaCalendarAlt, FaUser, FaArrowRight } from "react-icons/fa";
 import { imagePlaceholders } from "@/lib/utils";
+import { AnimatedTitle } from "./neumorphic/AnimatedTitle";
 
 export default function Blog() {
   const t = useTranslations("blog");
@@ -26,9 +27,12 @@ export default function Blog() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-playfair font-bold text-white mb-4">
+          <AnimatedTitle
+            className="text-4xl md:text-5xl font-playfair font-bold mb-4"
+            delay={0.6}
+          >
             {t("title")}
-          </h2>
+          </AnimatedTitle>
           <p className="text-xl text-slate-300">{t("subtitle")}</p>
         </motion.div>
 
