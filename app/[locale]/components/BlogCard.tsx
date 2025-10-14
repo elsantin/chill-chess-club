@@ -71,7 +71,7 @@ export function BlogCard({ post, index = 0 }: BlogCardProps) {
             </div>
 
             {/* Title */}
-            <h3 className="text-xl font-playfair font-bold text-warmGray-50 mb-3 group-hover:text-sunset-400 transition-colors">
+            <h3 className="text-xl font-playfair font-bold text-warmGray-50 mb-3">
               {post.title}
             </h3>
 
@@ -81,9 +81,9 @@ export function BlogCard({ post, index = 0 }: BlogCardProps) {
             </p>
 
             {/* Read more */}
-            <div className="flex items-center gap-2 text-sunset-400 font-semibold group-hover:gap-3 transition-all">
+            <div className="flex items-center gap-2 text-sunset-400 font-semibold">
               <span>Leer más</span>
-              <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
+              <FaArrowRight />
             </div>
           </div>
         </NeumorphicCard>
