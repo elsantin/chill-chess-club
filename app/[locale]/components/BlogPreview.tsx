@@ -11,7 +11,7 @@ import { getRecentBlogPosts } from "@/lib/blog-data";
 export default function BlogPreview() {
   const locale = useLocale();
   const t = useTranslations("blog");
-  const recentPosts = getRecentBlogPosts(3);
+  const recentPosts = getRecentBlogPosts(3, locale);
 
   return (
     <section id="blog-preview" className="py-20 px-4 bg-warmGray-950">
