@@ -23,7 +23,7 @@ export default function RecursosPage() {
             className="text-center mb-16"
           >
             <AnimatedTitle className="text-4xl md:text-6xl font-playfair font-bold mb-6">
-              📖 Recursos Gratuitos
+              Recursos Gratuitos
             </AnimatedTitle>
             <p className="text-xl text-warmGray-200 max-w-3xl mx-auto">
               Guías prácticas y explicaciones detalladas sobre ajedrez para

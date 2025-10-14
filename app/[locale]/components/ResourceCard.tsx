@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useLocale } from "next-intl";
 import {
   FaClock,
   FaCalendar,
@@ -18,6 +19,8 @@ interface ResourceCardProps {
 }
 
 export function ResourceCard({ resource, index = 0 }: ResourceCardProps) {
+  const locale = useLocale();
+
   const difficultyColors = {
     Principiante: "from-green-500 to-emerald-500",
     Intermedio: "from-sunset-500 to-rose-500",
@@ -36,7 +39,7 @@ export function ResourceCard({ resource, index = 0 }: ResourceCardProps) {
       viewport={{ once: true }}
       className="group h-full"
     >
-      <Link href={`/recursos/${resource.slug}`}>
+      <Link href={`/${locale}/recursos/${resource.slug}`}>
         <NeumorphicCard
           className="bg-warmGray-900 overflow-hidden h-full flex flex-col"
           interactive={true}

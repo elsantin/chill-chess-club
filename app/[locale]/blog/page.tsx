@@ -23,7 +23,7 @@ export default function BlogPage() {
             className="text-center mb-16"
           >
             <AnimatedTitle className="text-4xl md:text-6xl font-playfair font-bold mb-6">
-              📚 Blog de Ajedrez
+              Blog de Ajedrez
             </AnimatedTitle>
             <p className="text-xl text-warmGray-200 max-w-3xl mx-auto">
               Artículos, reflexiones y estrategias para mejorar tu juego y
