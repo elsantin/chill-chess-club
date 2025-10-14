@@ -11,20 +11,23 @@ import {
   FaGraduationCap,
 } from "react-icons/fa";
 import { NeumorphicCard } from "./neumorphic/NeumorphicCard";
-import { Resource } from "@/lib/resources-data";
+import { LocalizedResource } from "@/lib/resources-data";
 
 interface ResourceCardProps {
-  resource: Resource;
+  resource: LocalizedResource;
   index?: number;
 }
 
 export function ResourceCard({ resource, index = 0 }: ResourceCardProps) {
   const locale = useLocale();
 
-  const difficultyColors = {
+  const difficultyColors: Record<string, string> = {
     Principiante: "from-green-500 to-emerald-500",
+    Beginner: "from-green-500 to-emerald-500",
     Intermedio: "from-sunset-500 to-rose-500",
+    Intermediate: "from-sunset-500 to-rose-500",
     Avanzado: "from-purple-500 to-pink-500",
+    Advanced: "from-purple-500 to-pink-500",
   };
 
   return (

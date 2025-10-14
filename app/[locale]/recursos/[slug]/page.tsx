@@ -12,7 +12,7 @@ import {
   FaUser,
   FaGraduationCap,
 } from "react-icons/fa";
-import { getResource } from "@/lib/resources-data";
+import { getLocalizedResource } from "@/lib/resources-data";
 import { NeumorphicCard } from "../../components/neumorphic/NeumorphicCard";
 import { AnimatedTitle } from "../../components/neumorphic/AnimatedTitle";
 import Header from "../../components/Header";
@@ -27,7 +27,7 @@ export default function ResourcePage({
 }) {
   const { slug } = use(params);
   const locale = useLocale();
-  const resource = getResource(slug);
+  const resource = getLocalizedResource(slug, locale);
 
   if (!resource) {
     notFound();
@@ -141,17 +141,7 @@ export default function ResourcePage({
           >
             <NeumorphicCard className="bg-warmGray-900 p-8 md:p-12">
               <div
-                className="prose prose-invert prose-lg max-w-none
-                  prose-headings:font-playfair prose-headings:text-warmGray-50
-                  prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
-                  prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
-                  prose-p:text-warmGray-200 prose-p:leading-relaxed prose-p:mb-6
-                  prose-a:text-sunset-400 prose-a:no-underline hover:prose-a:text-sunset-300
-                  prose-strong:text-warmGray-50 prose-strong:font-semibold
-                  prose-ul:text-warmGray-200 prose-ul:my-6
-                  prose-li:my-2
-                  prose-blockquote:border-l-4 prose-blockquote:border-sunset-400
-                  prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-warmGray-300"
+                className="prose prose-lg prose-invert max-w-none"
                 dangerouslySetInnerHTML={{ __html: resource.content }}
               />
             </NeumorphicCard>

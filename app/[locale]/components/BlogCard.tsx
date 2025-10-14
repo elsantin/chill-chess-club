@@ -6,10 +6,10 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { FaClock, FaCalendar, FaArrowRight } from "react-icons/fa";
 import { NeumorphicCard } from "./neumorphic/NeumorphicCard";
-import { BlogPost } from "@/lib/blog-data";
+import { LocalizedBlogPost } from "@/lib/blog-data";
 
 interface BlogCardProps {
-  post: BlogPost;
+  post: LocalizedBlogPost;
   index?: number;
 }
 

@@ -1,4 +1,22 @@
+export interface LocalizedContent {
+  es: string;
+  en: string;
+}
+
 export interface BlogPost {
+  id: string;
+  slug: string;
+  title: LocalizedContent;
+  excerpt: LocalizedContent;
+  content: LocalizedContent;
+  date: string;
+  author: string;
+  image: string;
+  category?: LocalizedContent;
+  readTime?: string;
+}
+
+export interface LocalizedBlogPost {
   id: string;
   slug: string;
   title: string;
@@ -16,10 +34,16 @@ export const blogPosts: BlogPost[] = [
   {
     id: "1",
     slug: "echoes-from-the-board",
-    title: "Ecos del Tablero: Una Crónica del Ajedrez y su Alma Humana",
-    excerpt:
-      "Sesenta y cuatro escaques: un antiguo espejo donde estrategia y pasión se cruzan, reflejando la aventura del intelecto humano. Una historia que, como el juego mismo, siempre continúa.",
-    content: `
+    title: {
+      es: "Ecos del Tablero: Una Crónica del Ajedrez y su Alma Humana",
+      en: "Chess Echoes: A Chronicle of Chess and its Human Soul",
+    },
+    excerpt: {
+      es: "Sesenta y cuatro escaques: un antiguo espejo donde estrategia y pasión se cruzan, reflejando la aventura del intelecto humano. Una historia que, como el juego mismo, siempre continúa.",
+      en: "Sixty-four squares: an ancient mirror where strategy and passion intersect, reflecting the adventure of the human intellect. A story that, like the game itself, always continues.",
+    },
+    content: {
+      es: `
 <p>Existen juegos diseñados para el olvido momentáneo, distracciones efímeras. El ajedrez se sitúa en otra categoría.</p>
 
 <p>Una creación de asombrosa tenacidad: un tablero, unas piezas talladas y un conjunto de reglas que ha alimentado una obsesión intelectual –y muy humana– durante más de mil años.</p>
@@ -72,20 +96,76 @@ export const blogPosts: BlogPost[] = [
 
 <p>El ajedrez, en definitiva, sigue siendo un reflejo sorprendentemente fiel, y a menudo muy lúcido, de la condición humana: nuestra capacidad para la lógica más pura y, al mismo tiempo, para la pasión más intensa; para la estrategia meticulosa y para el error impulsivo y a veces garrafal. Cada partida es una confrontación con la incertidumbre, una afirmación de la voluntad y, al final, un pequeño drama en 64 cuadros. Y mientras dos almas, con sus luces y sombras, se sienten ante el tablero dispuestas a emprender este diálogo silencioso de intelectos (y, seamos honestos, también, de vez en cuando, de egos heridos), la interminable historia del ajedrez seguirá escribiéndose, añadiendo nuevas y fascinantes capas a su narrativa profunda, compleja y siempre resonante.</p>
     `,
+      en: `
+<p>There are games designed for momentary oblivion, ephemeral distractions. Chess stands in another category.</p>
+
+<p>A creation of astonishing tenacity: a board, carved pieces, and a set of rules that has fueled an intellectual – and very human – obsession for over a thousand years.</p>
+
+<p>To wonder how this seemingly simple creation has managed to captivate the imagination of entire civilizations, whispering secrets to kings and commoners, to sages and those who flirt with madness, is to open a door to a mystery with many answers. It rather resembles a complex and nuanced position, whose truths are revealed layer by layer, often with austere logic, and sometimes, with a paradox that provokes a knowing smile.</p>
+
+<h2>Ancient Origins: From Chaturanga to Persian Refinement</h2>
+
+<p>The firmest trace of its origins leads us to India, around the 6th century. In that crucible of cultures, chaturanga was born, conceived as a symbolic reflection of war: infantry, cavalry, elephants (precursors to the current bishops, with a rather clumsy movement for what is expected of a pachyderm in battle) and chariots, all under the command of a Rajah.</p>
+
+<p>It was, in essence, a mirror of society and its conflicts, a small world where strategy began to separate from pure chance – although some scholars, with that characteristic mischief of the historian who enjoys unearthing inconvenient details, suggest the influence of dice in its beginnings, perhaps so the gods also had a say in the outcome.</p>
+
+<p>It is inevitable to imagine those first strategists, frowning, seeing in each move not only a tactic, but the echo of their deep vital tensions, an early manifestation of human will in its eternal struggle to find an order, however fragile, in the face of immense uncertainty.</p>
+
+<p>From India, the game undertook a silent but unstoppable conquest, slipped along caravan routes, was whispered in bazaars, and finally took root in Persia, where it was embraced with the fervor that the Persian soul reserves for poetry and beauty. There it was renamed Shatranj.</p>
+
+<p>It was in this new home that the element of chance began to disappear, allowing skill, foresight, and calculation to become the true judges of the game. The "Shah" (King) and his inevitable end, the "Shah Mat" (the king has fallen), became the axes of this intellectual drama.</p>
+
+<p>In the rich crucible of Sasanian Persia, and under Islamic civilization, Shatranj rose to the status of a mental discipline, almost an austere art. Figures like As-Suli, whose name became synonymous with remarkable mastery, emerged as examples of dedication bordering on obsession. One can almost imagine them, in moonlit courtyards, engrossed for hours in the analysis of a single position, lives symbolically suspended in the balance of a few pieces, an intensity bordering on the sublime.</p>
+
+<h2>Expansion to the West and the Queen's Revolution</h2>
+
+<p>The wave of Arab expansion brought Shatranj to Europe. Through the Iberian Peninsula, Sicily, and northward, the game spread with the force of pollen in spring. Even the Vikings seem to have succumbed to its appeal on long voyages.</p>
+
+<p>In medieval Europe, chess adapted to a new cultural context. The most radical change was the empowerment of the Queen. The ancient Firzan, a counselor of modest movement, evolved into the most dynamic and lethal piece on the board: "the enraged lady." This revolution added tactical complexity and catapulted chess into a new era. It is an irony that, in rigidly patriarchal societies, the female figure on the board acquired such power.</p>
+
+<h2>The Intellect at Play: Renaissance, Enlightenment, and Romanticism</h2>
+
+<p>With the Renaissance and Enlightenment, chess became an intellectual exercise. The first treatises appeared, attempts to systematize its study. Figures like Ruy López de Segura not only played but investigated, searching for patterns and principles.</p>
+
+<p>The 19th century brought the Romantic era, a time of bold play and gambits offered with theatrical disdain. Names like Anderssen and Paul Morphy symbolize this audacious spirit. Morphy, a prodigy, dazzled Europe with clarity and strength that shone briefly, reminding us of pressures and loneliness often enveloping exceptional talent.</p>
+
+<h2>Towards Modern Understanding: Positional Science and Titan Duels</h2>
+
+<p>Play style shifted toward scientific conception. Wilhelm Steinitz, the first world champion, promoted positional strategy and defensive solidity. Champions like Emanuel Lasker, Capablanca, Alekhine, and Botvinnik deepened the legacy, turning world championship struggles into sagas of psychological and intellectual charge.</p>
+
+<h2>Chess in Modern Times: Geopolitics and Digital Revolution</h2>
+
+<p>The Cold War cast its shadow, Soviet dominance symbolizing intellectual superiority, and the challenges from the West—especially Bobby Fischer—had political symbolism. Fischer's victory in 1972 was a cultural phenomenon, the lone genius against the system.</p>
+
+<p>Today, digital technology has irreversibly changed chess. Analysis engines surpass human capacity. Competing globally is democratized—something Morphy or Capablanca would never have dreamed of. Yet, the unique value of human decision-making, intuition, and imperfection remains.</p>
+
+<h2>Epilogue: The Board as an Eternal Mirror</h2>
+
+<p>Chess remains a faithful reflection of the human condition: logic and passion, strategy and error, a confrontation with uncertainty. Each game is an affirmation of will, a small drama in 64 squares. The endless story of chess continues as long as two souls sit before the board to undertake this silent dialogue of intellects.</p>
+    `,
+    },
     date: "2025-05-14",
     author: "Santiagovskiy",
     image: "/images/blog-1-echoes-from-the-board.webp",
-    category: "Historia",
+    category: {
+      es: "Historia",
+      en: "History",
+    },
     readTime: "15 min",
   },
   {
     id: "2",
     slug: "rediscover-vibrant-essence",
-    title:
-      "Ajedrez: Redescubre su Vibrante Esencia, Olvida lo que Creías Saber",
-    excerpt:
-      "Más allá de la imagen de genios serenos, el ajedrez revela una intensidad oculta, una belleza singular y una relevancia perdurable. Le invitamos a cuestionar viejas ideas y observar de nuevo.",
-    content: `
+    title: {
+      es: "Ajedrez: Redescubre su Vibrante Esencia, Olvida lo que Creías Saber",
+      en: "Chess: Rediscover its Vibrant Essence, Forget What You Thought You Knew",
+    },
+    excerpt: {
+      es: "Más allá de la imagen de genios serenos, el ajedrez revela una intensidad oculta, una belleza singular y una relevancia perdurable. Le invitamos a cuestionar viejas ideas y observar de nuevo.",
+      en: "Beyond the image of serene geniuses, chess reveals a hidden intensity, a singular beauty, and an enduring relevance. We invite you to question old ideas and look anew.",
+    },
+    content: {
+      es: `
 <p>Si la palabra "ajedrez" le sugiere imágenes de genios enfrascados en una concentración tal que las manecillas del reloj piden clemencia, o de duelos que se extienden hasta que el polvo se asienta con familiaridad sobre el tablero, le invitamos a mirar un poco más allá.</p>
 
 <p>Permítanos mostrarle la intensidad que se esconde bajo su calma aparente, la belleza singular de su creatividad, y las profundas raíces de su perdurable relevancia. Es tiempo, ciertamente, de cuestionar viejas ideas y observar de nuevo.</p>
@@ -100,19 +180,44 @@ export const blogPosts: BlogPost[] = [
 
 <p>Así, la aparente "lentitud" del ajedrez bien podría ser el silencio productivo, el espacio necesario donde su complejidad se despliega. Es el tiempo que permite la inmersión profunda, la antesala de esa comprensión que, al llegar, ilumina el tablero y la mente con una claridad súbita y estimulante. No es la pasividad del genio paciente lo que define al jugador, sino la búsqueda activa, a veces intensa, de la verdad y la belleza en ese universo de 64 escaques. La respuesta, entonces, va más allá de una simple elección; reside en la comprensión de que en el corazón de la calma ajedrecística arde un fuego duradero, una llama que ha cautivado a la humanidad. Es el momento de dejar atrás viejas etiquetas y redescubrir esa llama. Sin duda, seguirá brillando.</p>
     `,
+      en: `
+<p>If the word "chess" suggests to you images of geniuses engrossed in such concentration that the clock hands beg for mercy, or of duels that extend until dust settles familiarly on the board, we invite you to look a little further.</p>
+
+<p>Allow us to show you the intensity hidden beneath its apparent calm, the singular beauty of its creativity, and the deep roots of its enduring relevance. It is time, indeed, to question old ideas and observe anew.</p>
+
+<p>The popular imagination often envelops chess in an aura of almost reverential stillness. One thinks of long hours of deep silence, gazes fixed on an immobile board, an intellectual contest that seems to advance with a leisurely, ancient rhythm. And there is truth in this: chess knows the pause, that inner murmur where strategy matures. But to reduce its essence to this superficial calm, to a slowness without true passion, is to ignore the deep internal currents that animate it. The proposal is clear: rediscover its vibrant essence. Revelation awaits those who dare to look more closely.</p>
+
+<p>Because in those moments of silence, in that apparent immobility, duels of great intensity are fought. It is not only the clear structure of logic that operates; it is also a mirror of human experience: the tension of precise calculation, the shadow of anguish before error, the silent euphoria of a clear idea. Each piece moved is a word in a voiceless dialogue, a pulse in the struggle of wills where the opponent's mind feels almost tangible. Slow? Perhaps for the eye that only sees movement. Exciting, undoubtedly, for one who experiences the vertigo of possibilities, the pressure of time, the sudden force of a combination that shatters the most elaborate plans.</p>
+
+<p>The creative beauty of chess is another of its qualities, often hidden from the uninitiated. Far from being a mere exercise of predictable calculation, the board becomes a canvas where imagination traces surprising geometries, where intuition, that spark of understanding, sometimes surpasses pure logic. A game can be the narration of an epic, a sequence of precise movements, a form molded in time. There are breathtaking sacrifices, defenses that move by their tenacity, attacks that advance with natural force. This capacity to generate astonishment, to reveal the new within a framework of ancient rules, is one of the pillars of its remarkable persistence.</p>
+
+<p>Its long journey through the centuries testifies to this richness. From the banks of the Indus, where chaturanga began to sketch the first strategies of symbolic combat, the game undertook its long journey: Persia welcomed and transformed it, and from there, like a persistent idea, it crossed continents, integrated into diverse cultures, always adapting, always challenging, always finding new adepts. It would not have survived fifteen centuries, watching empires, fashions, and frankly questionable hairstyles pass by, if it were a simple pastime for placid temperaments or incurious minds. Its longevity stems from its astonishing ability to be, at the same time, exact science and free art, intense struggle and calm reflection.</p>
+
+<p>Thus, the apparent "slowness" of chess might well be the productive silence, the necessary space where its complexity unfolds. It is the time that allows for deep immersion, the antechamber of that understanding that, when it arrives, illuminates the board and the mind with a sudden and stimulating clarity. It is not the passivity of the patient genius that defines the player, but the active, sometimes intense, pursuit of truth and beauty in that universe of 64 squares. The answer, then, goes beyond a simple choice; it lies in the understanding that in the heart of chess's calm burns a lasting fire, a flame that has captivated humanity. It is time to leave behind old labels and rediscover that flame. Without a doubt, it will continue to shine.</p>
+    `,
+    },
     date: "2025-05-14",
     author: "Santiagovskiy",
     image: "/images/blog-2-rediscover-vibrant-essence.webp",
-    category: "Inspiración",
+    category: {
+      es: "Inspiración",
+      en: "Inspiration",
+    },
     readTime: "7 min",
   },
   {
     id: "3",
     slug: "5-steps-to-online-chess",
-    title: "5 Pasos Hacia el Ajedrez Online: Tu Refugio Digital y Gratuito",
-    excerpt:
-      "El ajedrez digital es un océano de posibilidades al alcance de tu mano; para navegarlo, bastan cinco movimientos iniciales, sencillos y gratuitos, que esta guía te desvela.",
-    content: `
+    title: {
+      es: "5 Pasos Hacia el Ajedrez Online: Tu Refugio Digital y Gratuito",
+      en: "5 Steps Towards Online Chess: Your Digital and Free Refuge",
+    },
+    excerpt: {
+      es: "El ajedrez digital es un océano de posibilidades al alcance de tu mano; para navegarlo, bastan cinco movimientos iniciales, sencillos y gratuitos, que esta guía te desvela.",
+      en: "Digital chess is an ocean of possibilities at your fingertips; to navigate it, five initial, simple, and free moves are all it takes, which this guide reveals to you.",
+    },
+    content: {
+      es: `
 <p>Imagina una pausa al caer la tarde. El horizonte se tiñe de colores cálidos, y en la quietud de tu espacio personal –quizás con el suave murmullo de las olas de fondo o el confort de una manta–, la pantalla de tu portátil se ilumina. No con el estrépito del mundo exterior, sino con la promesa silenciosa de un desafío ancestral, ahora accesible y acogedor. Así, con esta serenidad, puedes iniciar tu viaje en el ajedrez online. Lejos de la solemnidad de antiguos salones o la urgencia de torneos presenciales, el ajedrez digital te ofrece un refugio, un tablero infinito al alcance de tu mano. Esta guía, en cinco pasos claros y sin coste alguno, te acompañará a descubrirlo.</p>
 
 <h2>Paso 1: Eligiendo tu Rincón en el Ágora Digital</h2>
@@ -141,10 +246,43 @@ export const blogPosts: BlogPost[] = [
 
 <p>Estos cinco pasos son solo el comienzo. Las herramientas están dispuestas, el acceso es libre, y la comunidad global te espera. El tablero infinito del ajedrez online aguarda en la calma de tu espacio personal, listo para ofrecerte desafíos, aprendizaje y la conexión con una tradición milenaria que se siente más viva y accesible que nunca. Permite que tu intuición te guíe; el juego mismo te mostrará el camino.</p>
     `,
+      en: `
+<p>Imagine a pause as evening falls. The horizon is tinged with warm colors, and in the quiet of your personal space – perhaps with the gentle murmur of waves in the background or the comfort of a blanket – your laptop screen lights up. Not with the clamor of the outside world, but with the silent promise of an ancestral challenge, now accessible and welcoming. Thus, with this serenity, you can begin your journey in online chess. Far from the solemnity of ancient halls or the urgency of in-person tournaments, digital chess offers you a refuge, an infinite board at your fingertips. This guide, in five clear steps and at no cost, will accompany you to discover it.</p>
+
+<h2>Step 1: Choosing Your Nook in the Digital Agora</h2>
+
+<p>The first move is to find your place in the vast online universe. Like choosing that perfect spot by the window where the light is ideal, selecting your initial platform is key. For a free and full start, Lichess.org presents itself as a diaphanous space, community-driven and free of frills. On the other hand, Chess.com offers a robust ecosystem with a generous free offering, and the option to explore further if you wish. Both are doors to a world of possibilities. Consider which of these "digital nooks" feels most like your chess home.</p>
+
+<h2>Step 2: The Birth of Your Online Presence</h2>
+
+<p>Once you've chosen your space, the next step is a simple ritual: creating your account. A username – your signature on this digital canvas – and a password will be your credentials. It's as natural a process as opening a new notebook. This act, though brief, is the birth of your presence in this serene universe of 64 virtual squares. Take a moment for that name; it will be the echo of your game on the net.</p>
+
+<h2>Step 3: Contemplating the New Digital Landscape</h2>
+
+<p>With your account active, the interface unfolds like a landscape to be discovered. At first, you might perceive an abundance of paths and options. There's no rush. Like one contemplating a new horizon, take a few moments to observe. You'll see intuitive buttons for "Play," "New Game," and also invitations to "Learn" or solve "Puzzles" which are like little strategic meditations. Let your curiosity guide you; familiarity will come as gently as waves caress the shore.</p>
+
+<h2>Step 4: Your First Dialogues Over the Board</h2>
+
+<p>Now, it's time to immerse yourself, calmly, in your first game. Choose a pace that matches your breath – perhaps 10 or 15 minutes per player – and let the system find you a playing partner. These first games are like initial conversations: there will be discoveries, mistakes that are just learning, and the beauty of seeing intentions intertwine. Each encounter is a lesson in itself. Remember kindness: a digital greeting, an acknowledgment at the end. These are the small gestures that weave the community.</p>
+
+<h2>Step 5: When the Horizon Expands From Your Screen</h2>
+
+<p>Once you've found your rhythm in this digital flow, a horizon of possibilities will unfold before you, without needing to leave your refuge. Online platforms are much more than simple boards; they are libraries, mental gyms, and meeting places. Tactical "puzzles" will sharpen your gaze as the evening sun outlines silhouettes. Interactive lessons and the analysis of your own games (often with free tools) will allow you to grow at your own pace. This is your personal journey, nourished by curiosity.</p>
+
+<h2>Conclusion: The Infinite Board in the Calm of Your Space</h2>
+
+<p>Think about it for a moment: there was a time when, to cross swords with an opponent from other latitudes, or simply to find an openings book, one had to undertake searches that would seem epic to us today. Or, at best, wait weeks for a carrier pigeon (probably exhausted and with little desire to return for more work) to bring the next move. Today, from the comfort of your favorite corner, perhaps with that same blanket and the sea view that inspires these lines, you can access a universe of knowledge while waiting for the water for coffee to boil. What a privilege to be able to unfurl the sails of our chess curiosity with such freedom and serenity.</p>
+
+<p>These five steps are just the beginning. The tools are available, access is free, and the global community awaits you. The infinite board of online chess awaits in the calm of your personal space, ready to offer you challenges, learning, and the connection with a millennial tradition that today beats stronger than ever. Allow your intuition to guide you; the game itself will show you the way.</p>
+    `,
+    },
     date: "2025-05-14",
     author: "Santiagovskiy",
     image: "/images/blog-3-5-steps-to-online-chess.webp",
-    category: "Guías",
+    category: {
+      es: "Guías",
+      en: "Guides",
+    },
     readTime: "8 min",
   },
 ];
@@ -153,6 +291,35 @@ export function getBlogPost(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);
 }
 
-export function getRecentBlogPosts(count: number = 3): BlogPost[] {
-  return blogPosts.slice(0, count);
+export function getLocalizedBlogPost(
+  slug: string,
+  locale: string = "es"
+): LocalizedBlogPost | undefined {
+  const post = getBlogPost(slug);
+  if (!post) return undefined;
+
+  const safeLocale = locale === "en" || locale === "es" ? locale : "es";
+
+  return {
+    ...post,
+    title: post.title[safeLocale] || post.title.es,
+    excerpt: post.excerpt[safeLocale] || post.excerpt.es,
+    content: post.content[safeLocale] || post.content.es,
+    category: post.category?.[safeLocale] || post.category?.es,
+  };
+}
+
+export function getRecentBlogPosts(
+  count: number = 3,
+  locale: string = "es"
+): LocalizedBlogPost[] {
+  const safeLocale = locale === "en" || locale === "es" ? locale : "es";
+
+  return blogPosts.slice(0, count).map((post) => ({
+    ...post,
+    title: post.title[safeLocale] || post.title.es,
+    excerpt: post.excerpt[safeLocale] || post.excerpt.es,
+    content: post.content[safeLocale] || post.content.es,
+    category: post.category?.[safeLocale] || post.category?.es,
+  }));
 }

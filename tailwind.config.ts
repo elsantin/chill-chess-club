@@ -166,9 +166,130 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      typography: (theme: (path: string) => string) => ({
+        DEFAULT: {
+          css: {
+            // Base prose styles
+            color: theme("colors.warmGray.200"),
+            maxWidth: "none",
+
+            // Headings
+            h2: {
+              color: theme("colors.warmGray.100"),
+              fontFamily: "var(--font-playfair), serif",
+              fontWeight: "700",
+              fontSize: theme("fontSize.3xl"),
+              marginTop: theme("spacing.12"),
+              marginBottom: theme("spacing.6"),
+              lineHeight: theme("lineHeight.tight"),
+            },
+            h3: {
+              color: theme("colors.warmGray.100"),
+              fontFamily: "var(--font-playfair), serif",
+              fontWeight: "600",
+              fontSize: theme("fontSize.2xl"),
+              marginTop: theme("spacing.8"),
+              marginBottom: theme("spacing.4"),
+              lineHeight: theme("lineHeight.snug"),
+            },
+
+            // Paragraphs
+            p: {
+              color: theme("colors.warmGray.200"),
+              lineHeight: theme("lineHeight.relaxed"),
+              marginBottom: theme("spacing.4"),
+            },
+
+            // Lists
+            ul: {
+              color: theme("colors.warmGray.200"),
+              listStyleType: "disc",
+              paddingLeft: theme("spacing.6"),
+              marginTop: theme("spacing.4"),
+              marginBottom: theme("spacing.4"),
+            },
+            ol: {
+              color: theme("colors.warmGray.200"),
+              listStyleType: "decimal",
+              paddingLeft: theme("spacing.6"),
+              marginTop: theme("spacing.4"),
+              marginBottom: theme("spacing.4"),
+            },
+            li: {
+              color: theme("colors.warmGray.200"),
+              marginTop: theme("spacing.2"),
+              marginBottom: theme("spacing.2"),
+            },
+            "ul > li": {
+              paddingLeft: theme("spacing.2"),
+            },
+            "ol > li": {
+              paddingLeft: theme("spacing.2"),
+            },
+
+            // Strong and emphasis
+            strong: {
+              color: theme("colors.warmGray.100"),
+              fontWeight: "700",
+            },
+            em: {
+              color: theme("colors.warmGray.200"),
+              fontStyle: "italic",
+            },
+
+            // Blockquotes
+            blockquote: {
+              borderLeftColor: theme("colors.sunset.500"),
+              borderLeftWidth: "4px",
+              paddingLeft: theme("spacing.6"),
+              paddingTop: theme("spacing.4"),
+              paddingBottom: theme("spacing.4"),
+              paddingRight: theme("spacing.6"),
+              fontStyle: "italic",
+              color: theme("colors.warmGray.200"),
+              backgroundColor: theme("colors.warmGray.900"),
+              borderRadius: theme("borderRadius.lg"),
+              marginTop: theme("spacing.6"),
+              marginBottom: theme("spacing.6"),
+              quotes: "none",
+            },
+            "blockquote p:first-of-type::before": {
+              content: "none",
+            },
+            "blockquote p:last-of-type::after": {
+              content: "none",
+            },
+
+            // Links
+            a: {
+              color: theme("colors.sunset.400"),
+              textDecoration: "underline",
+              fontWeight: "500",
+              "&:hover": {
+                color: theme("colors.sunset.300"),
+              },
+            },
+
+            // Code (if present)
+            code: {
+              color: theme("colors.sunset.300"),
+              backgroundColor: theme("colors.warmGray.900"),
+              padding: theme("spacing.1"),
+              borderRadius: theme("borderRadius.sm"),
+              fontWeight: "500",
+            },
+            "code::before": {
+              content: "none",
+            },
+            "code::after": {
+              content: "none",
+            },
+          },
+        },
+      }),
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography"), require("tailwindcss-animate")],
 };
 
 export default config;

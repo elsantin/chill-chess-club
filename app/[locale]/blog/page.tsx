@@ -1,14 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useLocale } from "next-intl";
 import { AnimatedTitle } from "../components/neumorphic/AnimatedTitle";
 import { BlogCard } from "../components/BlogCard";
-import { blogPosts } from "@/lib/blog-data";
+import { getRecentBlogPosts } from "@/lib/blog-data";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ScrollToTop from "../components/ScrollToTop";
 
 export default function BlogPage() {
+  const locale = useLocale();
+  const blogPosts = getRecentBlogPosts(10, locale);
   return (
     <main className="bg-warmGray-950 min-h-screen">
       <Header />
