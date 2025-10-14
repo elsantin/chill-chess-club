@@ -44,22 +44,40 @@ export default function Header() {
 
   // Navigation items
   const navItems = [
-    { key: "about", href: "#about" },
-    { key: "courses", href: "#courses" },
-    { key: "method", href: "#method" },
-    { key: "blog", href: "#blog" },
-    { key: "faq", href: "#faq" },
-    { key: "contact", href: "#contact" },
+    { key: "about", href: "#about", isSection: true },
+    { key: "courses", href: "#courses", isSection: true },
+    { key: "method", href: "#method", isSection: true },
+    { key: "blog", href: `/${locale}/blog`, isSection: false },
+    { key: "recursos", href: `/${locale}/recursos`, isSection: false },
+    { key: "faq", href: "#faq", isSection: true },
+    { key: "contact", href: "#contact", isSection: true },
   ];
+
+  // Check if we're on the home page
+  const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
 
   // Handle smooth scroll
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
+    isSection: boolean
   ) => {
+    if (!isSection) {
+      // For page links (Blog, Recursos), let the default behavior happen
+      setIsMenuOpen(false);
+      return;
+    }
+
     e.preventDefault();
     setIsMenuOpen(false);
 
+    // If we're on a section link but not on home page, go to home first
+    if (!isHomePage) {
+      router.push(`/${locale}${href}`);
+      return;
+    }
+
+    // If we're on home page, smooth scroll to section
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -72,11 +90,18 @@ export default function Header() {
     router.push(newPathname);
   };
 
-  // Scroll to top
-  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+  // Handle logo click - go to home
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setIsMenuOpen(false);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    if (isHomePage) {
+      // If already on home, scroll to top
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // If on another page, navigate to home
+      router.push(`/${locale}`);
+    }
   };
 
   return (
@@ -85,9 +110,9 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.a
-            href="#"
-            onClick={scrollToTop}
-            className="flex items-center space-x-2 group"
+            href={`/${locale}`}
+            onClick={handleLogoClick}
+            className="flex items-center space-x-2 group cursor-pointer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.2 }}
@@ -110,7 +135,7 @@ export default function Header() {
                 <motion.a
                   key={item.key}
                   href={item.href}
-                  onClick={(e) => handleNavClick(e, item.href)}
+                  onClick={(e) => handleNavClick(e, item.href, item.isSection)}
                   className={`relative px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${
                     isActive
                       ? "!text-sunset-400"
@@ -203,7 +228,9 @@ export default function Header() {
                       <motion.a
                         key={item.key}
                         href={item.href}
-                        onClick={(e) => handleNavClick(e, item.href)}
+                        onClick={(e) =>
+                          handleNavClick(e, item.href, item.isSection)
+                        }
                         className={`px-4 py-3 rounded-lg font-semibold transition-all duration-300 ${
                           isActive
                             ? "bg-warmGray-800 !text-sunset-400 shadow-neumorphic-sm"

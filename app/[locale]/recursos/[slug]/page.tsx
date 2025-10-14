@@ -1,0 +1,188 @@
+"use client";
+
+import { use } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { useLocale } from "next-intl";
+import {
+  FaArrowLeft,
+  FaClock,
+  FaCalendar,
+  FaUser,
+  FaGraduationCap,
+} from "react-icons/fa";
+import { getResource } from "@/lib/resources-data";
+import { NeumorphicCard } from "../../components/neumorphic/NeumorphicCard";
+import { AnimatedTitle } from "../../components/neumorphic/AnimatedTitle";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import ScrollToTop from "../../components/ScrollToTop";
+import { notFound } from "next/navigation";
+
+export default function ResourcePage({
+  params,
+}: {
+  params: Promise<{ slug: string; locale: string }>;
+}) {
+  const { slug } = use(params);
+  const locale = useLocale();
+  const resource = getResource(slug);
+
+  if (!resource) {
+    notFound();
+  }
+
+  const difficultyColors = {
+    Principiante: "from-green-500 to-emerald-500",
+    Intermedio: "from-sunset-500 to-rose-500",
+    Avanzado: "from-purple-500 to-pink-500",
+  };
+
+  return (
+    <main className="bg-warmGray-950 min-h-screen">
+      <Header />
+
+      <article className="py-20 px-4">
+        <div className="container mx-auto max-w-4xl">
+          {/* Back button */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
+            <Link
+              href={`/${locale}/recursos`}
+              className="inline-flex items-center gap-2 text-sunset-400 hover:text-sunset-300 transition-colors"
+            >
+              <FaArrowLeft />
+              <span>Volver a Recursos</span>
+            </Link>
+          </motion.div>
+
+          {/* Resource Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <NeumorphicCard className="bg-warmGray-900 overflow-hidden mb-8">
+              {/* Featured Image */}
+              <div className="relative h-96 overflow-hidden bg-warmGray-800">
+                <Image
+                  src={resource.image}
+                  alt={resource.title}
+                  width={1200}
+                  height={600}
+                  className="w-full h-full object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-warmGray-900 via-warmGray-900/50 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-br from-sunset-500/20 via-rose-500/10 to-purple-500/20 mix-blend-overlay" />
+
+                {/* Difficulty badge */}
+                <div
+                  className={`absolute top-6 right-6 px-4 py-2 bg-gradient-to-r ${
+                    difficultyColors[resource.difficulty]
+                  } text-white font-semibold rounded-full flex items-center gap-2`}
+                >
+                  <FaGraduationCap />
+                  <span>{resource.difficulty}</span>
+                </div>
+
+                {/* Category badge */}
+                <div className="absolute top-6 left-6 px-4 py-2 bg-warmGray-900/80 backdrop-blur-sm text-sunset-400 font-semibold rounded-full">
+                  {resource.category}
+                </div>
+              </div>
+
+              {/* Resource Meta */}
+              <div className="p-8">
+                <AnimatedTitle className="text-3xl md:text-5xl font-playfair font-bold text-warmGray-50 mb-6">
+                  {resource.title}
+                </AnimatedTitle>
+
+                <div className="flex flex-wrap items-center gap-6 text-warmGray-400 mb-6">
+                  <div className="flex items-center gap-2">
+                    <FaUser className="text-sunset-400" />
+                    <span>{resource.author}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <FaCalendar className="text-sunset-400" />
+                    <span>
+                      {new Date(resource.date).toLocaleDateString("es-ES", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      })}
+                    </span>
+                  </div>
+                  {resource.readTime && (
+                    <div className="flex items-center gap-2">
+                      <FaClock className="text-sunset-400" />
+                      <span>{resource.readTime} de lectura</span>
+                    </div>
+                  )}
+                </div>
+
+                <p className="text-xl text-warmGray-300 leading-relaxed">
+                  {resource.excerpt}
+                </p>
+              </div>
+            </NeumorphicCard>
+          </motion.div>
+
+          {/* Resource Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <NeumorphicCard className="bg-warmGray-900 p-8 md:p-12">
+              <div
+                className="prose prose-invert prose-lg max-w-none
+                  prose-headings:font-playfair prose-headings:text-warmGray-50
+                  prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+                  prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+                  prose-p:text-warmGray-200 prose-p:leading-relaxed prose-p:mb-6
+                  prose-a:text-sunset-400 prose-a:no-underline hover:prose-a:text-sunset-300
+                  prose-strong:text-warmGray-50 prose-strong:font-semibold
+                  prose-ul:text-warmGray-200 prose-ul:my-6
+                  prose-li:my-2
+                  prose-blockquote:border-l-4 prose-blockquote:border-sunset-400
+                  prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-warmGray-300"
+                dangerouslySetInnerHTML={{ __html: resource.content }}
+              />
+            </NeumorphicCard>
+          </motion.div>
+
+          {/* Back to resources CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mt-12 text-center"
+          >
+            <Link href={`/${locale}/recursos`}>
+              <motion.button
+                className="px-8 py-4 bg-gradient-to-r from-sunset-500 via-rose-500 to-pink-600 text-white font-bold rounded-xl shadow-neumorphic-lg transition-all duration-300 inline-flex items-center gap-3"
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 0 30px rgba(249, 115, 22, 0.5)",
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <FaArrowLeft />
+                <span>Ver Más Recursos</span>
+              </motion.button>
+            </Link>
+          </motion.div>
+        </div>
+      </article>
+
+      <Footer />
+      <ScrollToTop />
+    </main>
+  );
+}

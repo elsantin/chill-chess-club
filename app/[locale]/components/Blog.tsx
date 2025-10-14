@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaCalendarAlt, FaUser, FaArrowRight } from "react-icons/fa";
@@ -10,6 +10,7 @@ import { NeumorphicCard } from "./neumorphic/NeumorphicCard";
 
 export default function Blog() {
   const t = useTranslations("blog");
+  const locale = useLocale();
 
   const blogImages = [
     imagePlaceholders.blog.echoesFromTheBoard,
@@ -125,7 +126,7 @@ export default function Blog() {
 
                   {/* Read More Link */}
                   <a
-                    href={`#blog-${article.id}`}
+                    href={`/${locale}/blog/${article.id}`}
                     className="inline-flex items-center gap-2 !text-sunset-400 hover:!text-sunset-300 font-semibold transition-colors group/link"
                     style={{ color: "#fb923c" }}
                   >

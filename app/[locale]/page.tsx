@@ -3,7 +3,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Courses from "./components/Courses";
 import Method from "./components/Method";
-import Blog from "./components/Blog";
+import BlogPreview from "./components/BlogPreview";
 import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -17,7 +17,7 @@ export default function HomePage() {
       <About />
       <Courses />
       <Method />
-      <Blog />
+      <BlogPreview />
       <FAQ />
       <Contact />
       <Footer />
