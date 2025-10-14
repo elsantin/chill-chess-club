@@ -198,14 +198,89 @@ export const resources: Resource[] = [
     excerpt:
       "Recorrido desde la apertura hasta el final, mostrando cómo el valor y características de cada pieza definen tu estrategia.",
     content: `
-<p>Contenido en desarrollo. Este recurso estará disponible próximamente.</p>
+<p>Profundizar en la "anatomía" de una partida de ajedrez trasciende el mero conocimiento del movimiento de las piezas. Implica discernir su valor intrínseco y, de forma crucial, cómo este se transforma y redefine según la fase en que se encuentre el juego. Esta guía se adentra en el flujo de la partida y en el papel estratégico que cada combatiente desempeña sobre el tablero.</p>
+
+<h2>El Valor de las Piezas: Una Perspectiva Más Allá de los Números</h2>
+
+<p>De forma tradicional, se atribuye un valor numérico a las piezas, una suerte de brújula inicial para que el principiante pueda orientarse en la evaluación de los intercambios:</p>
+
+<ul>
+<li><strong>Peón:</strong> 1 punto</li>
+<li><strong>Caballo:</strong> 3 puntos</li>
+<li><strong>Alfil:</strong> 3 puntos (en ocasiones, se le concede una ligera prima, hasta 3.25, por su notable alcance en posiciones abiertas)</li>
+<li><strong>Torre:</strong> 5 puntos</li>
+<li><strong>Dama:</strong> 9 puntos</li>
+<li><strong>Rey:</strong> Un valor conceptualmente infinito, pues su pérdida dictamina el fin de la partida.</li>
+</ul>
+
+<p>No obstante, es imperativo comprender que este valor es eminentemente relativo y dinámico. Una pieza estratégicamente situada, que ejerce control sobre casillas cruciales o que participa activamente en un ataque con visos de ser decisivo, puede ostentar una valía muy superior a su puntuación base. Por ejemplo, un caballo anclado en un puesto avanzado central, inmune al desalojo por peones contrarios, podría superar en importancia a una torre relegada a la pasividad.</p>
+
+<h3>Factores que Modulan el Valor Real:</h3>
+
+<ul>
+<li><strong>Actividad:</strong> ¿Sobre cuántas casillas de relevancia ejerce influencia la pieza? ¿Se halla implicada de forma activa en el desarrollo del juego?</li>
+<li><strong>Coordinación:</strong> ¿De qué manera interactúa la pieza con el resto de tus fuerzas, en una sinergia armónica?</li>
+<li><strong>Seguridad:</strong> ¿Se encuentra la pieza adecuadamente defendida o, por el contrario, es vulnerable a las incursiones del adversario?</li>
+<li><strong>Estructura de Peones:</strong> La disposición de los peones puede tanto limitar como potenciar la efectividad de ciertas piezas (así, los alfiles anhelan diagonales despejadas, mientras que los caballos a menudo prosperan en posiciones de carácter cerrado).</li>
+<li><strong>Piezas del Oponente:</strong> El valor de tus propias piezas también está intrínsecamente ligado a las fuerzas remanentes del adversario y a la disposición de estas sobre el tablero.</li>
+</ul>
+
+<h2>Las Fases de la Partida: Un Flujo Continuo</h2>
+
+<p>Una partida de ajedrez, en su desarrollo, suele transitar por tres fases principales, aunque es importante notar que las transiciones entre ellas son a menudo graduales y fluidas, más que divisiones estancas:</p>
+
+<h3>1. Apertura</h3>
+
+<p>Esta fase comprende, aproximadamente, los primeros 10 a 15 movimientos. Los objetivos primordiales en esta etapa inicial son:</p>
+
+<ul>
+<li><strong>Controlar el centro:</strong> Procurar la ocupación o, al menos, la influencia sobre las casillas centrales mediante el uso de peones y piezas.</li>
+<li><strong>Desarrollar las piezas menores:</strong> Movilizar caballos y alfiles desde sus casillas de origen hacia posiciones activas y prometedoras.</li>
+<li><strong>Resguardar al Rey:</strong> Generalmente, esto se consigue a través del enroque, buscando un refugio seguro para el monarca.</li>
+<li><strong>Conectar las torres:</strong> Prepararlas para que puedan entrar en juego de manera coordinada y efectiva.</li>
+</ul>
+
+<p>En esta fase, se observan los principios fundamentales de la apertura y, a menudo, se recurre a aperturas teóricas –secuencias de movimientos estudiadas y contrastadas por la experiencia, como la Apertura Española o la Defensa Siciliana–. El valor de las piezas tiende a asemejarse a su valor nominal, pero la celeridad en el desarrollo y la pugna por el dominio central son de una importancia crucial.</p>
+
+<h3>2. Medio Juego</h3>
+
+<p>El medio juego da inicio una vez que la mayoría de las piezas han sido desarrolladas y, usualmente, el enroque ya se ha efectuado. Constituye la fase más intrincada y rica de la partida, el escenario donde se despliegan los planes estratégicos y donde la táctica florece en forma de combinaciones.</p>
+
+<p><strong>Características y Objetivos:</strong></p>
+
+<ul>
+<li><strong>Formulación de un plan:</strong> Basado en una atenta evaluación de las debilidades en la posición del oponente y el reconocimiento de las propias fortalezas.</li>
+<li><strong>Táctica:</strong> La búsqueda incesante de combinaciones, la consideración de sacrificios y la creación de amenazas directas. El Caballo y el Alfil, con su capacidad para tejer redes de amenazas complejas, suelen brillar con luz propia en esta etapa.</li>
+<li><strong>Mejora posicional de las piezas:</strong> Conducir las piezas hacia sus escaques óptimos, estableciendo puestos avanzados y mejorando su influencia.</li>
+<li><strong>Juego de peones:</strong> La creación de rupturas, el avance de peones pasados con potencial de promoción, y la restricción de las opciones del adversario mediante la estructura de peones.</li>
+<li><strong>Ataque al Rey:</strong> Si las circunstancias son propicias, la organización de un asalto directo contra el monarca enemigo.</li>
+</ul>
+
+<p>El valor de las piezas se torna aquí sumamente dinámico. Una Torre que domina una columna abierta o que se infiltra en la séptima fila puede adquirir una fuerza devastadora. La Dama, por su parte, se erige como una pieza de formidable potencia tanto en el ataque como en la defensa.</p>
+
+<h3>3. Final</h3>
+
+<p>Se alcanza la fase de final cuando el número de piezas sobre el tablero se ha reducido considerablemente. La naturaleza del juego experimenta entonces una transformación drástica.</p>
+
+<p><strong>Características y Objetivos:</strong></p>
+
+<ul>
+<li><strong>Activación del Rey:</strong> El Rey abandona su rol pasivo y se convierte en una pieza de combate activa, debiendo, por lo general, participar en el centro del tablero.</li>
+<li><strong>Promoción de peones:</strong> El avance de los peones con el objetivo de coronarlos (transformarlos en una pieza de mayor valor, usualmente una Dama) se convierte, con frecuencia, en el objetivo primordial. Un solo peón puede inclinar la balanza y decidir el resultado de la partida.</li>
+<li><strong>Cálculo preciso:</strong> Los finales exigen una gran exactitud en el cálculo, pues un único error puede tener consecuencias fatales e irreversibles.</li>
+<li><strong>Conocimiento de finales teóricos:</strong> Existe un vasto repertorio de posiciones de final que han sido profundamente estudiadas, cuyo conocimiento resulta esencial (por ejemplo, los mates básicos, los finales de peones, o los complejos finales de torres).</li>
+</ul>
+
+<p>En esta etapa, el valor de los Peones se incrementa de manera exponencial. Las Torres conservan una notable fortaleza. El Rey se transforma en una pieza clave, tanto en la ofensiva como en la defensiva.</p>
+
+<p>Comprender cómo la partida fluye a través de estas fases, y cómo el valor y el rol de tus piezas se adaptan y evolucionan, te permitirá tomar decisiones estratégicas y tácticas más aquilatadas y profundas. Cada pieza, en el gran teatro del ajedrez, aguarda su momento para brillar.</p>
     `,
     date: "2025-01-03",
     author: "Santiago Narváez",
     image: "/images/resource-king-pawn-endgame.webp",
     category: "Fundamentos",
     difficulty: "Principiante",
-    readTime: "12 min",
+    readTime: "18 min",
   },
 ];
 
