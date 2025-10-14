@@ -167,7 +167,7 @@ export default function About() {
           {/* Platform Links */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <motion.a
-              href="https://www.chess.com"
+              href="https://www.chess.com/member/santiagovskiy"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-6 py-3 bg-warmGray-800 rounded-xl shadow-neumorphic-md transition-all duration-300 hover:shadow-glow-sunset group w-full sm:w-auto justify-center border border-warmGray-700/50"
@@ -188,7 +188,7 @@ export default function About() {
             </motion.a>
 
             <motion.a
-              href="https://lichess.org"
+              href="https://lichess.org/@/Santiagovskiy"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-6 py-3 bg-warmGray-800 rounded-xl shadow-neumorphic-md transition-all duration-300 hover:shadow-glow-sunset group w-full sm:w-auto justify-center border border-warmGray-700/50"
