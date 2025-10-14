@@ -98,18 +98,98 @@ export const resources: Resource[] = [
     id: "2",
     slug: "fundamentos-estrategicos",
     title:
-      "Fundamentos Estratégicos de Ajedrez: Una Guía para el Jugador Reflexivo",
+      "Fundamentos Estratégicos de Ajedrez: Guía para el Jugador Reflexivo",
     excerpt:
       "Conceptos clave para tus primeras partidas y para construir una base estratégica sólida.",
     content: `
-<p>Contenido en desarrollo. Este recurso estará disponible próximamente.</p>
+<p>Más allá del conocimiento individual del movimiento de las piezas, el ajedrez se despliega a través de principios estratégicos fundamentales –auténticos preceptos– que orientan las decisiones desde los albores de la apertura hasta la consumación del final. La comprensión de estos conceptos es el cimiento sobre el cual se edifican planes sólidos y se juega con un propósito más hondo.</p>
+
+<h2>1. El Dominio del Centro</h2>
+
+<p>Las casillas centrales del tablero (principalmente d4, e4, d5, y e5) poseen un valor estratégico primordial. Las piezas que desde allí operan ejercen control sobre un mayor número de escaques, gozando de una movilidad y un abanico de opciones superiores.</p>
+
+<p><strong>Propósito:</strong> Procurar la ocupación o, cuando menos, la influencia sobre el centro con tus peones y piezas desde las primeras jugadas. Un centro robusto confiere ventaja espacial y limita las alternativas del adversario.</p>
+
+<ul>
+<li>Considera iniciar la partida avanzando uno o dos de tus peones centrales (usualmente el peón de Rey a e4 o el peón de Dama a d4).</li>
+<li>Dirige el desarrollo de tus caballos y alfiles hacia casillas que ejerzan control o brinden apoyo a este sector vital del tablero.</li>
+</ul>
+
+<h2>2. Desarrollo Ágil y Consciente de las Piezas</h2>
+
+<p>Durante la fase de apertura, el objetivo reside en movilizar tus piezas menores (caballos y alfiles) desde sus posiciones iniciales hacia escaques activos, con la mayor celeridad y eficiencia posibles. Es crucial evitar que las piezas permanezcan "adormecidas" en la primera fila.</p>
+
+<p><strong>Propósito:</strong> Poner en juego la totalidad de tus piezas menores antes de embarcarse en ofensivas prematuras. Cada pieza debe tener un papel, una contribución al plan general.</p>
+
+<ul>
+<li>En numerosas aperturas, suele ser prudente priorizar el desarrollo de los caballos antes que el de los alfiles.</li>
+<li>Procura no mover la misma pieza repetidamente durante la apertura, salvo que una necesidad táctica o estratégica imperiosa así lo justifique.</li>
+<li>Busca la conexión de tus torres, un objetivo que habitualmente se alcanza tras el desarrollo de las piezas menores y la ejecución del enroque.</li>
+</ul>
+
+<h2>3. La Salvaguarda del Rey</h2>
+
+<p>La protección de tu Rey es un deber insoslayable. Un Rey expuesto se convierte en un blanco vulnerable, susceptible a ataques que pueden resultar definitivos.</p>
+
+<p><strong>Propósito:</strong> Conducir a tu Rey hacia una posición de seguridad, lo cual se logra comúnmente mediante el enroque, durante la etapa inicial de la partida.</p>
+
+<ul>
+<li>Procura enrocar en una fase temprana del juego (generalmente dentro de los primeros diez movimientos).</li>
+<li>Evita el avance innecesario de los peones que custodian a tu Rey enrocado, pues tales movimientos pueden generar debilidades estructurales.</li>
+<li>Si tu Rey se encuentra bajo amenaza, asegúrate de mantener piezas defensoras en su proximidad.</li>
+</ul>
+
+<h2>4. El Valor Relativo de las Piezas</h2>
+
+<p>Si bien cada pieza posee un valor numérico orientativo (Peón=1, Caballo=3, Alfil=3, Torre=5, Dama=9), su verdadera valía es siempre relativa y se encuentra supeditada a la configuración específica de la posición en el tablero.</p>
+
+<p><strong>Propósito:</strong> Eludir la pérdida innecesaria de material y discernir los intercambios que resulten favorables. Una pieza estratégicamente bien ubicada puede superar con creces su valor nominal.</p>
+
+<ul>
+<li>No entregues una pieza de mayor valor intrínseco por una de menor valor sin obtener una compensación clara y tangible (sea esta un ataque prometedor, una ventaja posicional duradera, o la simplificación hacia un final ganado).</li>
+<li>Un alfil tiende a ser ligeramente más valioso que un caballo en posiciones de carácter abierto; inversamente, un caballo puede demostrar superioridad en posiciones cerradas y con puntos de apoyo firmes.</li>
+</ul>
+
+<h2>5. La Estructura de Peones</h2>
+
+<p>La configuración que adoptan tus peones –la estructura de peones– ejerce una influencia significativa sobre el carácter de la partida. Esta define líneas abiertas, establece puestos avanzados para tus piezas y condiciona la seguridad de tu monarca.</p>
+
+<p><strong>Propósito:</strong> Forjar una estructura de peones sólida y coherente, evitando la creación de debilidades como peones aislados, doblados o retrasados. Utiliza tus peones para ganar espacio, restringir la movilidad del oponente y consolidar tu posición.</p>
+
+<ul>
+<li>Reflexiona cuidadosamente antes de avanzar un peón, pues su movimiento es irreversible.</li>
+<li>Los peones que avanzan unidos, apoyándose mutuamente, conforman una fuerza considerable.</li>
+</ul>
+
+<h2>6. La Coordinación Armónica de las Piezas</h2>
+
+<p>Tus piezas deben operar en concierto, como los miembros de una orquesta bien afinada. Una coordinación eficaz implica que tus piezas se protegen y apoyan mutuamente, colaborando de forma sinérgica tanto en la defensa como en el ataque.</p>
+
+<p><strong>Propósito:</strong> Buscar disposiciones donde tus piezas armonicen sus fuerzas y controlen casillas clave de manera conjunta.</p>
+
+<ul>
+<li>Evita mantener piezas inactivas o aquellas que obstruyan la acción de otras piezas propias.</li>
+<li>Las torres revelan su máxima potencia en columnas abiertas o semiabiertas, y a menudo cooperan de forma decisiva cuando se doblan en la séptima u octava fila.</li>
+</ul>
+
+<h2>7. La Consideración de los Planes del Adversario</h2>
+
+<p>El ajedrez es un diálogo, no un monólogo. Es fundamental interrogarse constantemente: "¿Cuál es la intención de mi oponente? ¿Qué amenaza subyace en su última jugada?".</p>
+
+<p><strong>Propósito:</strong> Anticipar las intenciones del rival, organizar una defensa adecuada contra sus amenazas y, de ser posible, desbaratar sus planes.</p>
+
+<ul>
+<li>Tras cada movimiento de tu oponente, dedica un momento a evaluar los cambios en la posición y las nuevas posibilidades que se abren para él.</li>
+</ul>
+
+<p>Estos preceptos han de entenderse como guías generales, faros que iluminan el camino, no como reglas inquebrantables. Con la acumulación de experiencia, aprenderás a discernir cuándo y cómo aplicarlos, e incluso cuándo transgredirlos conscientemente para obtener una ventaja. La clave reside en la práctica constante y en el análisis reflexivo de tus propias partidas.</p>
     `,
     date: "2025-01-08",
     author: "Santiago Narváez",
     image: "/images/resource-checkmate-tactics.webp",
     category: "Estrategia",
     difficulty: "Principiante",
-    readTime: "10 min",
+    readTime: "15 min",
   },
   {
     id: "3",
