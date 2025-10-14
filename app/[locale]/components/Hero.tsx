@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { imagePlaceholders } from "@/lib/utils";
 import { SunsetGradientText } from "./neumorphic/SunsetGradientText";
+import { TwinklingStars } from "./neumorphic/TwinklingStars";
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -41,33 +42,9 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-br from-sunset-500/20 via-rose-500/10 to-purple-500/20 mix-blend-overlay" />
       </motion.div>
 
-      {/* Animated gradient orbs */}
-      <div className="absolute inset-0 z-10 overflow-hidden">
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-1/4 -left-1/4 w-96 h-96 bg-sunset-500/30 rounded-full blur-3xl"
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-          className="absolute bottom-1/4 -right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
-        />
+      {/* Twinkling Stars Animation - Minimalista */}
+      <div className="absolute inset-0 z-10">
+        <TwinklingStars />
       </div>
 
       <div className="container mx-auto px-4 py-32 relative z-20">
