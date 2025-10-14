@@ -1,0 +1,31 @@
+[1mdiff --git a/lib/resources-data.ts b/lib/resources-data.ts[m
+[1mindex 0e5fac1..9b1f352 100644[m
+[1m--- a/lib/resources-data.ts[m
+[1m+++ b/lib/resources-data.ts[m
+[36m@@ -183,7 +183,7 @@[m [mexport const resources: Resource[] = [[m
+     },[m
+     date: "2025-01-12",[m
+     author: "Santiago Narváez",[m
+[31m-    image: "/images/resource-openings-guide.webp",[m
+[32m+[m[32m    image: "/images/resource-1-chess-initiation.webp",[m
+     category: {[m
+       es: "Fundamentos",[m
+       en: "Fundamentals",[m
+[36m@@ -375,7 +375,7 @@[m [mexport const resources: Resource[] = [[m
+     },[m
+     date: "2025-01-08",[m
+     author: "Santiago Narváez",[m
+[31m-    image: "/images/resource-checkmate-tactics.webp",[m
+[32m+[m[32m    image: "/images/resource-2-strategic-fundamentals.webp",[m
+     category: {[m
+       es: "Estrategia",[m
+       en: "Strategy",[m
+[36m@@ -557,7 +557,7 @@[m [mexport const resources: Resource[] = [[m
+     },[m
+     date: "2025-01-03",[m
+     author: "Santiago Narváez",[m
+[31m-    image: "/images/resource-king-pawn-endgame.webp",[m
+[32m+[m[32m    image: "/images/resource-3-chess-anatomy.webp",[m
+     category: {[m
+       es: "Fundamentos",[m
+       en: "Fundamentals",[m
