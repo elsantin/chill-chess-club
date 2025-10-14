@@ -3,7 +3,7 @@
 import { use } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import {
   FaArrowLeft,
   FaClock,
@@ -25,6 +25,7 @@ export default function ResourcePage({
 }) {
   const { slug } = use(params);
   const locale = useLocale();
+  const t = useTranslations("resources");
   const resource = getLocalizedResource(slug, locale);
 
   if (!resource) {
@@ -50,7 +51,7 @@ export default function ResourcePage({
               className="inline-flex items-center gap-2 text-sunset-400 hover:text-sunset-300 transition-colors"
             >
               <FaArrowLeft />
-              <span>Volver a Recursos</span>
+              <span>{t("backToResources")}</span>
             </Link>
           </div>
 
@@ -154,7 +155,7 @@ export default function ResourcePage({
             <Link href={`/${locale}/recursos`}>
               <button className="px-8 py-4 bg-gradient-to-r from-sunset-500 via-rose-500 to-pink-600 text-white font-bold rounded-xl shadow-neumorphic-lg hover:shadow-[0_0_30px_rgba(249,115,22,0.5)] transition-all duration-300 inline-flex items-center gap-3 hover:scale-105 active:scale-95">
                 <FaArrowLeft />
-                <span>Ver Más Recursos</span>
+                <span>{t("viewMoreResources")}</span>
               </button>
             </Link>
           </div>

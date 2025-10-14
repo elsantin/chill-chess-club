@@ -191,6 +191,8 @@
     "comingSoon": "New articles coming soon...",
     "readMore": "Read more",
     "viewAll": "View All Articles",
+    "viewMoreArticles": "View More Articles",
+    "backToBlog": "Back to Blog",
     "articles": [
       {
         "id": "echoes-from-the-board",
@@ -220,7 +222,9 @@
     "pageTitle": "Free Resources",
     "pageSubtitle": "Practical guides and detailed explanations about chess to improve your understanding of the game",
     "comingSoon": "New resources coming soon...",
-    "readMore": "Read more"
+    "readMore": "Read more",
+    "viewMoreResources": "View More Resources",
+    "backToResources": "Back to Resources"
   },
   "footer": {
     "description": "Chess classes for beginners and intermediates. A personalized and technologically assisted method to transform your game.",

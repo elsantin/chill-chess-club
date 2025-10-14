@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { FaClock, FaCalendar, FaArrowRight } from "react-icons/fa";
 import { NeumorphicCard } from "./neumorphic/NeumorphicCard";
 import { LocalizedBlogPost } from "@/lib/blog-data";
@@ -15,6 +15,7 @@ interface BlogCardProps {
 
 export function BlogCard({ post, index = 0 }: BlogCardProps) {
   const locale = useLocale();
+  const t = useTranslations("blog");
 
   return (
     <motion.div
@@ -82,7 +83,7 @@ export function BlogCard({ post, index = 0 }: BlogCardProps) {
 
             {/* Read more */}
             <div className="flex items-center gap-2 text-sunset-400 font-semibold">
-              <span>Leer más</span>
+              <span>{t("readMore")}</span>
               <FaArrowRight />
             </div>
           </div>

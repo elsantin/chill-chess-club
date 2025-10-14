@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import {
   FaClock,
   FaCalendar,
@@ -20,6 +20,7 @@ interface ResourceCardProps {
 
 export function ResourceCard({ resource, index = 0 }: ResourceCardProps) {
   const locale = useLocale();
+  const t = useTranslations("resources");
 
   const difficultyColors: Record<string, string> = {
     Principiante: "from-green-500 to-emerald-500",
@@ -106,7 +107,7 @@ export function ResourceCard({ resource, index = 0 }: ResourceCardProps) {
 
             {/* Read more */}
             <div className="flex items-center gap-2 text-sunset-400 font-semibold">
-              <span>Leer guía</span>
+              <span>{t("readMore")}</span>
               <FaArrowRight />
             </div>
           </div>

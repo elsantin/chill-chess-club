@@ -3,7 +3,7 @@
 import { use } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { FaArrowLeft, FaClock, FaCalendar, FaUser } from "react-icons/fa";
 import { getLocalizedBlogPost } from "@/lib/blog-data";
 import { NeumorphicCard } from "../../components/neumorphic/NeumorphicCard";
@@ -19,6 +19,7 @@ export default function BlogPostPage({
 }) {
   const { slug } = use(params);
   const locale = useLocale();
+  const t = useTranslations("blog");
   const post = getLocalizedBlogPost(slug, locale);
 
   if (!post) {
@@ -38,7 +39,7 @@ export default function BlogPostPage({
               className="inline-flex items-center gap-2 text-sunset-400 hover:text-sunset-300 transition-colors"
             >
               <FaArrowLeft />
-              <span>Volver al Blog</span>
+              <span>{t("backToBlog")}</span>
             </Link>
           </div>
 
@@ -134,7 +135,7 @@ export default function BlogPostPage({
             <Link href={`/${locale}/blog`}>
               <button className="px-8 py-4 bg-gradient-to-r from-sunset-500 via-rose-500 to-pink-600 text-white font-bold rounded-xl shadow-neumorphic-lg hover:shadow-[0_0_30px_rgba(249,115,22,0.5)] transition-all duration-300 inline-flex items-center gap-3 hover:scale-105 active:scale-95">
                 <FaArrowLeft />
-                <span>Ver Más Artículos</span>
+                <span>{t("viewMoreArticles")}</span>
               </button>
             </Link>
           </div>

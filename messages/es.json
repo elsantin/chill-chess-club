@@ -194,6 +194,8 @@
     "comingSoon": "Próximamente nuevos artículos...",
     "readMore": "Leer más",
     "viewAll": "Ver Todos los Artículos",
+    "viewMoreArticles": "Ver Más Artículos",
+    "backToBlog": "Volver al Blog",
     "articles": [
       {
         "id": "echoes-from-the-board",
@@ -223,7 +225,9 @@
     "pageTitle": "Recursos Gratuitos",
     "pageSubtitle": "Guías prácticas y explicaciones detalladas sobre ajedrez para mejorar tu comprensión del juego",
     "comingSoon": "Próximamente nuevos recursos...",
-    "readMore": "Leer más"
+    "readMore": "Leer guía",
+    "viewMoreResources": "Ver Más Recursos",
+    "backToResources": "Volver a Recursos"
   },
   "footer": {
     "description": "Clases de ajedrez para principiantes e intermedios. Un método personalizado y tecnológicamente asistido para transformar tu juego.",
