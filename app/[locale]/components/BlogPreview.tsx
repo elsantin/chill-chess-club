@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { FaArrowRight } from "react-icons/fa";
 import { AnimatedTitle } from "./neumorphic/AnimatedTitle";
 import { BlogCard } from "./BlogCard";
@@ -10,6 +10,7 @@ import { getRecentBlogPosts } from "@/lib/blog-data";
 
 export default function BlogPreview() {
   const locale = useLocale();
+  const t = useTranslations("blog");
   const recentPosts = getRecentBlogPosts(3);
 
   return (
@@ -24,10 +25,10 @@ export default function BlogPreview() {
           className="text-center mb-16"
         >
           <AnimatedTitle className="text-4xl md:text-5xl font-playfair font-bold mb-4">
-            Blog de Ajedrez
+            {t("title")}
           </AnimatedTitle>
           <p className="text-xl text-warmGray-200 max-w-3xl mx-auto">
-            Artículos, consejos y estrategias para mejorar tu juego
+            {t("subtitle")}
           </p>
         </motion.div>
 
@@ -55,7 +56,7 @@ export default function BlogPreview() {
               }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Ver Todos los Artículos</span>
+              <span>{t("viewAll")}</span>
               <FaArrowRight />
             </motion.button>
           </Link>

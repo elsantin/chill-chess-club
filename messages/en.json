@@ -187,6 +187,7 @@
     "title": "Chess Blog",
     "subtitle": "Articles, tips and strategies to improve your game",
     "readMore": "Read more",
+    "viewAll": "View All Articles",
     "articles": [
       {
         "id": "echoes-from-the-board",

@@ -190,6 +190,7 @@
     "title": "Blog de Ajedrez",
     "subtitle": "Artículos, consejos y estrategias para mejorar tu juego",
     "readMore": "Leer más",
+    "viewAll": "Ver Todos los Artículos",
     "articles": [
       {
         "id": "echoes-from-the-board",
