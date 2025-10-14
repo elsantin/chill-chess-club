@@ -144,7 +144,7 @@ export default function Header() {
                 onClick={() => handleLanguageChange("es")}
                 className={`px-4 py-2 rounded-lg font-bold transition-all duration-300 ${
                   locale === "es"
-                    ? "bg-gradient-to-r from-sunset-500 to-rose-500 !text-white shadow-neumorphic-sm shadow-glow-sunset"
+                    ? "bg-gradient-to-r from-sunset-500 to-rose-500 !text-white shadow-glow-sunset"
                     : "!text-white hover:!text-sunset-300 hover:bg-warmGray-800/50"
                 }`}
                 style={{
@@ -159,7 +159,7 @@ export default function Header() {
                 onClick={() => handleLanguageChange("en")}
                 className={`px-4 py-2 rounded-lg font-bold transition-all duration-300 ${
                   locale === "en"
-                    ? "bg-gradient-to-r from-sunset-500 to-rose-500 !text-white shadow-neumorphic-sm shadow-glow-sunset"
+                    ? "bg-gradient-to-r from-sunset-500 to-rose-500 !text-white shadow-glow-sunset"
                     : "!text-white hover:!text-sunset-300 hover:bg-warmGray-800/50"
                 }`}
                 style={{

@@ -212,6 +212,11 @@
     ]
   },
   "footer": {
+    "description": "Chess classes for beginners and intermediates. A personalized and technologically assisted method to transform your game.",
+    "quickLinks": "Quick Links",
+    "quickContact": "Quick Contact",
+    "securePayments": "Secure Payments with",
+    "madeBy": "Web Development from Margarita Island, Venezuela 🏝️",
     "copyright": "© 2025 Chill Chess Club. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"

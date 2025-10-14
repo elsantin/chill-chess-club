@@ -57,7 +57,7 @@ export default function Method() {
   };
 
   return (
-    <section id="method" className="py-20 px-4 bg-warmGray-900">
+    <section id="method" className="py-20 px-4 bg-warmGray-950">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <motion.div

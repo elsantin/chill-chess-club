@@ -215,6 +215,11 @@
     ]
   },
   "footer": {
+    "description": "Clases de ajedrez para principiantes e intermedios. Un método personalizado y tecnológicamente asistido para transformar tu juego.",
+    "quickLinks": "Enlaces Rápidos",
+    "quickContact": "Contacto Rápido",
+    "securePayments": "Pagos Seguros con",
+    "madeBy": "Desarrollo Web desde la Isla de Margarita, Venezuela 🏝️",
     "copyright": "© 2025 Chill Chess Club. Todos los derechos reservados.",
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio"

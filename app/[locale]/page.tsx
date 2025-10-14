@@ -11,7 +11,7 @@ import ScrollToTop from "./components/ScrollToTop";
 
 export default function HomePage() {
   return (
-    <main className="bg-slate-950">
+    <main className="bg-warmGray-950">
       <Header />
       <Hero />
       <About />

@@ -152,6 +152,7 @@
   - Personalizar mensajes de error con colores cálidos
   - Implementar loading state con animación elegante
   - Crear confirmación de éxito con animación celebratoria sutil
+
   - _Requirements: 8.3, 8.4, 8.5, 13.3_
 
 - [ ] 12. Crear Footer con sección de agencia
@@ -160,6 +161,7 @@
   - Crear app/[locale]/components/Footer.tsx
   - Diseñar layout con sección de agencia destacada
   - Aplicar estilo neumórfico consistente
+
   - _Requirements: 5.1, 5.2_
 
 - [ ] 12.2 Agregar contenido del footer
@@ -167,6 +169,7 @@
   - Integrar logo y enlace de la agencia
   - Agregar copyright dinámico
   - Incluir enlaces a políticas (Privacy, Terms)
+
   - Asegurar apertura en nueva pestaña para enlace externo
   - _Requirements: 5.2, 5.3, 5.4_
 
