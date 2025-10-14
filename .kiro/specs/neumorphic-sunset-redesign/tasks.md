@@ -125,14 +125,14 @@
 
 - [x] 10. Rediseñar FAQ section con shadcn Accordion
 
-- [ ] 10.1 Implementar Accordion de shadcn
+- [x] 10.1 Implementar Accordion de shadcn
 
   - Reemplazar acordeón custom con componente shadcn
   - Personalizar estilos con efectos neumórficos
   - Aplicar glow sunset a pregunta activa
   - _Requirements: 9.1, 9.3, 3.3_
 
-- [ ] 10.2 Mejorar animaciones FAQ
+- [x] 10.2 Mejorar animaciones FAQ
 
   - Suavizar animaciones de expansión/colapso
   - Agregar transiciones de color suaves
@@ -251,7 +251,56 @@
   - Verificar navegación completa por teclado
   - _Requirements: 14.1, 14.2, 14.3, 14.4, 14.5_
 
-- [ ] 17. Documentación y limpieza
+- [x] 17. Optimizaciones de producción (Fase Polish)
+
+- [x] 17.1 Implementar soporte para prefers-reduced-motion
+
+  - Agregar media query en globals.css
+  - Deshabilitar animaciones complejas cuando está activo
+  - Mantener transiciones esenciales
+  - _Requirements: 14.2_
+
+- [x] 17.2 Agregar meta tags SEO en layout principal
+
+  - Implementar Open Graph tags
+  - Agregar Twitter Card tags
+  - Configurar robots meta tags
+  - Agregar keywords relevantes
+  - _Requirements: SEO básico_
+
+- [x] 17.3 Crear documentación de configuración de email
+
+  - Crear docs/EMAIL_SETUP.md
+  - Documentar configuración de Resend
+  - Incluir variables de entorno necesarias
+  - Agregar troubleshooting común
+  - _Requirements: Documentación_
+
+- [x] 17.4 Crear página 404 personalizada
+
+  - Implementar app/[locale]/not-found.tsx con diseño neumórfico
+  - Agregar animación de estrellas titilantes
+  - Incluir botones de navegación (Volver, Inicio, Cursos)
+  - Crear ruta catch-all para forzar uso del componente
+  - Soporte completo para i18n (es/en)
+  - _Requirements: UX, Navegación_
+
+- [x] 17.5 Simplificar animación TwinklingStars
+
+  - Eliminar interacción con mouse para mejor rendimiento
+  - Mantener solo animación de titileo automático
+  - Reducir complejidad del código
+  - _Requirements: 10.1, 10.2_
+
+- [ ] 17.6 Crear imagen Open Graph
+
+  - Diseñar imagen OG (1200x630px)
+  - Incluir branding y título del sitio
+  - Aplicar estética sunset neumórfica
+  - Optimizar para redes sociales
+  - _Requirements: SEO, Marketing_
+
+- [ ] 18. Documentación y limpieza
   - Actualizar PROJECT-CONTEXT.md con nuevo sistema de diseño
   - Documentar componentes neumórficos en README
   - Limpiar código legacy y comentarios TODO
