@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { AnimatedTitle } from "../components/neumorphic/AnimatedTitle";
 import { ResourceCard } from "../components/ResourceCard";
 import { getRecentResources } from "@/lib/resources-data";
@@ -11,6 +11,7 @@ import ScrollToTop from "../components/ScrollToTop";
 
 export default function RecursosPage() {
   const locale = useLocale();
+  const t = useTranslations("resources");
   const resources = getRecentResources(10, locale);
   return (
     <main className="bg-warmGray-950 min-h-screen">
@@ -26,11 +27,10 @@ export default function RecursosPage() {
             className="text-center mb-16"
           >
             <AnimatedTitle className="text-4xl md:text-6xl font-playfair font-bold mb-6">
-              Recursos Gratuitos
+              {t("pageTitle")}
             </AnimatedTitle>
             <p className="text-xl text-warmGray-200 max-w-3xl mx-auto">
-              Guías prácticas y explicaciones detalladas sobre ajedrez para
-              mejorar tu comprensión del juego
+              {t("pageSubtitle")}
             </p>
           </motion.div>
 
@@ -52,9 +52,7 @@ export default function RecursosPage() {
               animate={{ opacity: 1 }}
               className="text-center py-20"
             >
-              <p className="text-2xl text-warmGray-400">
-                Próximamente nuevos recursos...
-              </p>
+              <p className="text-2xl text-warmGray-400">{t("comingSoon")}</p>
             </motion.div>
           )}
         </div>

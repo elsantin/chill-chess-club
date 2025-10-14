@@ -186,6 +186,9 @@
   "blog": {
     "title": "Chess Blog",
     "subtitle": "Articles, tips and strategies to improve your game",
+    "pageTitle": "Chess Blog",
+    "pageSubtitle": "Articles, reflections and strategies to improve your game and enjoy chess more",
+    "comingSoon": "New articles coming soon...",
     "readMore": "Read more",
     "viewAll": "View All Articles",
     "articles": [
@@ -211,6 +214,13 @@
         "author": "Santiago Narváez"
       }
     ]
+  },
+  "resources": {
+    "title": "Free Resources",
+    "pageTitle": "Free Resources",
+    "pageSubtitle": "Practical guides and detailed explanations about chess to improve your understanding of the game",
+    "comingSoon": "New resources coming soon...",
+    "readMore": "Read more"
   },
   "footer": {
     "description": "Chess classes for beginners and intermediates. A personalized and technologically assisted method to transform your game.",

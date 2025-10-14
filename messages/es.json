@@ -189,6 +189,9 @@
   "blog": {
     "title": "Blog de Ajedrez",
     "subtitle": "Artículos, consejos y estrategias para mejorar tu juego",
+    "pageTitle": "Blog de Ajedrez",
+    "pageSubtitle": "Artículos, reflexiones y estrategias para mejorar tu juego y disfrutar más del ajedrez",
+    "comingSoon": "Próximamente nuevos artículos...",
     "readMore": "Leer más",
     "viewAll": "Ver Todos los Artículos",
     "articles": [
@@ -214,6 +217,13 @@
         "author": "Santiago Narváez"
       }
     ]
+  },
+  "resources": {
+    "title": "Recursos Gratuitos",
+    "pageTitle": "Recursos Gratuitos",
+    "pageSubtitle": "Guías prácticas y explicaciones detalladas sobre ajedrez para mejorar tu comprensión del juego",
+    "comingSoon": "Próximamente nuevos recursos...",
+    "readMore": "Leer más"
   },
   "footer": {
     "description": "Clases de ajedrez para principiantes e intermedios. Un método personalizado y tecnológicamente asistido para transformar tu juego.",
