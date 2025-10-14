@@ -1,7 +1,6 @@
 "use client";
 
 import { use } from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale } from "next-intl";
@@ -14,7 +13,6 @@ import {
 } from "react-icons/fa";
 import { getLocalizedResource } from "@/lib/resources-data";
 import { NeumorphicCard } from "../../components/neumorphic/NeumorphicCard";
-import { AnimatedTitle } from "../../components/neumorphic/AnimatedTitle";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ScrollToTop from "../../components/ScrollToTop";
@@ -33,7 +31,7 @@ export default function ResourcePage({
     notFound();
   }
 
-  const difficultyColors = {
+  const difficultyColors: Record<string, string> = {
     Principiante: "from-green-500 to-emerald-500",
     Intermedio: "from-sunset-500 to-rose-500",
     Avanzado: "from-purple-500 to-pink-500",
@@ -46,12 +44,7 @@ export default function ResourcePage({
       <article className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           {/* Back button */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            className="mb-8"
-          >
+          <div className="mb-8">
             <Link
               href={`/${locale}/recursos`}
               className="inline-flex items-center gap-2 text-sunset-400 hover:text-sunset-300 transition-colors"
@@ -59,15 +52,14 @@ export default function ResourcePage({
               <FaArrowLeft />
               <span>Volver a Recursos</span>
             </Link>
-          </motion.div>
+          </div>
 
           {/* Resource Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-          >
-            <NeumorphicCard className="bg-warmGray-900 overflow-hidden mb-8">
+          <div>
+            <NeumorphicCard
+              className="bg-warmGray-900 overflow-hidden mb-8"
+              interactive={false}
+            >
               {/* Featured Image */}
               <div className="relative h-96 overflow-hidden bg-warmGray-800">
                 <Image
@@ -99,9 +91,19 @@ export default function ResourcePage({
 
               {/* Resource Meta */}
               <div className="p-8">
-                <AnimatedTitle className="text-3xl md:text-5xl font-playfair font-bold text-warmGray-50 mb-6">
+                <h1
+                  className="text-3xl md:text-5xl font-playfair font-bold mb-6"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #fafaf9 0%, #fde68a 50%, #fafaf9 100%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                    backgroundClip: "text",
+                    animation: "none",
+                  }}
+                >
                   {resource.title}
-                </AnimatedTitle>
+                </h1>
 
                 <div className="flex flex-wrap items-center gap-6 text-warmGray-400 mb-6">
                   <div className="flex items-center gap-2">
@@ -131,43 +133,31 @@ export default function ResourcePage({
                 </p>
               </div>
             </NeumorphicCard>
-          </motion.div>
+          </div>
 
           {/* Resource Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <NeumorphicCard className="bg-warmGray-900 p-8 md:p-12">
+          <div>
+            <NeumorphicCard
+              className="bg-warmGray-900 p-8 md:p-12"
+              interactive={false}
+            >
               <div
-                className="prose prose-lg prose-invert max-w-none"
+                className="prose prose-lg prose-invert max-w-none [&_*]:!animate-none [&_h1]:!animate-none [&_h2]:!animate-none [&_h3]:!animate-none [&_h4]:!animate-none"
+                style={{ animation: "none" }}
                 dangerouslySetInnerHTML={{ __html: resource.content }}
               />
             </NeumorphicCard>
-          </motion.div>
+          </div>
 
           {/* Back to resources CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="mt-12 text-center"
-          >
+          <div className="mt-12 text-center">
             <Link href={`/${locale}/recursos`}>
-              <motion.button
-                className="px-8 py-4 bg-gradient-to-r from-sunset-500 via-rose-500 to-pink-600 text-white font-bold rounded-xl shadow-neumorphic-lg transition-all duration-300 inline-flex items-center gap-3"
-                whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 0 30px rgba(249, 115, 22, 0.5)",
-                }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <button className="px-8 py-4 bg-gradient-to-r from-sunset-500 via-rose-500 to-pink-600 text-white font-bold rounded-xl shadow-neumorphic-lg hover:shadow-[0_0_30px_rgba(249,115,22,0.5)] transition-all duration-300 inline-flex items-center gap-3 hover:scale-105 active:scale-95">
                 <FaArrowLeft />
                 <span>Ver Más Recursos</span>
-              </motion.button>
+              </button>
             </Link>
-          </motion.div>
+          </div>
         </div>
       </article>
 
