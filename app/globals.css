@@ -95,9 +95,3 @@
     scroll-behavior: auto !important;
   }
 }
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-}
