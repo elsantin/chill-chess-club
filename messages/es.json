@@ -222,5 +222,12 @@
     "copyright": "© 2025 Chill Chess Club. Todos los derechos reservados.",
     "privacy": "Política de Privacidad",
     "terms": "Términos de Servicio"
+  },
+  "notFound": {
+    "title": "Página No Encontrada",
+    "description": "Esta página no existe. Quizás escribiste mal la URL o la página fue movida.",
+    "backButton": "Volver Atrás",
+    "homeButton": "Ir al Inicio",
+    "coursesButton": "Ver Cursos"
   }
 }

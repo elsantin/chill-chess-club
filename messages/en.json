@@ -219,5 +219,12 @@
     "copyright": "© 2025 Chill Chess Club. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms of Service"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "This page doesn't exist. You may have mistyped the URL or the page was moved.",
+    "backButton": "Go Back",
+    "homeButton": "Go to Home",
+    "coursesButton": "View Courses"
   }
 }

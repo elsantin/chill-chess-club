@@ -32,9 +32,61 @@ export async function generateMetadata({
   const messages = await getMessages({ locale });
   const metadata = messages.metadata as { title: string; description: string };
 
+  const siteUrl = "https://chillchessclub.com"; // TODO: Update with your actual domain
+  const ogImage = `${siteUrl}/og-image.jpg`; // TODO: Create OG image
+
   return {
     title: metadata.title,
     description: metadata.description,
+    keywords: [
+      "ajedrez online",
+      "clases de ajedrez",
+      "chess lessons",
+      "online chess",
+      "chess coaching",
+      "IA chess",
+      "personalized chess training",
+    ],
+    authors: [{ name: "Santiago Narváez - Chill Chess Club" }],
+    creator: "Santiago Narváez",
+    openGraph: {
+      type: "website",
+      locale: locale,
+      url: siteUrl,
+      title: metadata.title,
+      description: metadata.description,
+      siteName: "Chill Chess Club",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "Chill Chess Club - Clases de Ajedrez Online",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: metadata.title,
+      description: metadata.description,
+      images: [ogImage],
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
+    verification: {
+      // TODO: Add verification codes when available
+      // google: 'your-google-verification-code',
+      // yandex: 'your-yandex-verification-code',
+    },
   };
 }
 
