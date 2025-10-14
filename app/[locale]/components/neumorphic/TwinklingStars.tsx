@@ -7,12 +7,10 @@ import { useEffect, useRef } from "react";
  *
  * Pequeños puntos de luz que aparecen y desaparecen suavemente,
  * como estrellas encendiéndose en una constelación.
- * Interactivas: se iluminan cuando el mouse pasa cerca.
- * Extremadamente sutil y minimalista.
+ * Versión simplificada sin interacción con el mouse.
  */
 export function TwinklingStars() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const mouseRef = useRef<{ x: number; y: number }>({ x: -1000, y: -1000 });
   const animationRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
@@ -32,15 +30,6 @@ export function TwinklingStars() {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    // Mouse tracking
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseRef.current = {
-        x: e.clientX,
-        y: e.clientY,
-      };
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-
     // Star configuration
     interface Star {
       x: number;
@@ -52,32 +41,32 @@ export function TwinklingStars() {
       color: { r: number; g: number; b: number };
       delay: number;
       currentDelay: number;
-      baseOpacity: number;
+      maxOpacity: number;
     }
 
     const colors = [
-      { r: 251, g: 146, b: 60 }, // sunset-400 (más suave)
+      { r: 251, g: 146, b: 60 }, // sunset-400
       { r: 252, g: 165, b: 165 }, // rose-300
       { r: 216, g: 180, b: 254 }, // purple-300
       { r: 253, g: 224, b: 71 }, // amber-300
     ];
 
     // Create stars distributed across the screen
-    const starCount = 40; // Cantidad moderada
+    const starCount = 40;
     const stars: Star[] = [];
 
     for (let i = 0; i < starCount; i++) {
       stars.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 1.5 + 0.8, // Tamaño más pequeño: 0.8-2.3px
+        size: Math.random() * 1.5 + 0.8,
         opacity: 0,
-        fadeSpeed: Math.random() * 0.008 + 0.003, // Velocidad más lenta
+        fadeSpeed: Math.random() * 0.008 + 0.003,
         fadeDirection: 1,
         color: colors[Math.floor(Math.random() * colors.length)],
-        delay: Math.random() * 200, // Delay aleatorio para efecto escalonado
+        delay: Math.random() * 200,
         currentDelay: 0,
-        baseOpacity: Math.random() * 0.3 + 0.3, // Opacidad base: 0.3-0.6
+        maxOpacity: Math.random() * 0.3 + 0.3,
       });
     }
 
@@ -92,27 +81,11 @@ export function TwinklingStars() {
           return;
         }
 
-        // Calculate distance to mouse
-        const dx = star.x - mouseRef.current.x;
-        const dy = star.y - mouseRef.current.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const mouseInfluenceRadius = 150;
-
-        // Mouse influence: stars near cursor brighten faster
-        let currentFadeSpeed = star.fadeSpeed;
-        let maxOpacity = star.baseOpacity;
-
-        if (distance < mouseInfluenceRadius) {
-          const influence = 1 - distance / mouseInfluenceRadius;
-          currentFadeSpeed = star.fadeSpeed * (1 + influence * 3); // Fade faster
-          maxOpacity = star.baseOpacity + influence * 0.4; // Brighter
-        }
-
         // Fade in/out
-        star.opacity += currentFadeSpeed * star.fadeDirection;
+        star.opacity += star.fadeSpeed * star.fadeDirection;
 
         // Reverse direction at limits
-        if (star.opacity >= maxOpacity) {
+        if (star.opacity >= star.maxOpacity) {
           star.fadeDirection = -1;
         } else if (star.opacity <= 0) {
           star.fadeDirection = 1;
@@ -122,7 +95,7 @@ export function TwinklingStars() {
         }
 
         // Clamp opacity
-        star.opacity = Math.max(0, Math.min(maxOpacity, star.opacity));
+        star.opacity = Math.max(0, Math.min(star.maxOpacity, star.opacity));
 
         // Draw star with glow
         if (star.opacity > 0) {
@@ -157,7 +130,7 @@ export function TwinklingStars() {
           ctx.arc(star.x, star.y, star.size * 3, 0, Math.PI * 2);
           ctx.fill();
 
-          // Core star (brighter center, más pequeño)
+          // Core star
           ctx.fillStyle = `rgba(${star.color.r}, ${star.color.g}, ${
             star.color.b
           }, ${star.opacity * 0.9})`;
@@ -175,7 +148,6 @@ export function TwinklingStars() {
     // Cleanup
     return () => {
       window.removeEventListener("resize", resizeCanvas);
-      window.removeEventListener("mousemove", handleMouseMove);
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
