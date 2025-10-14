@@ -36,10 +36,10 @@ export default function Hero() {
           className="object-cover"
           priority
         />
-        {/* Sunset gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-warmGray-950 via-warmGray-950/80 to-warmGray-900/60" />
+        {/* Sunset gradient overlay - Más luminoso */}
+        <div className="absolute inset-0 bg-gradient-to-t from-warmGray-950/70 via-warmGray-950/40 to-warmGray-900/30" />
         {/* Sunset color overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-sunset-500/20 via-rose-500/10 to-purple-500/20 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-br from-sunset-500/25 via-rose-500/15 to-purple-500/25 mix-blend-overlay" />
       </motion.div>
 
       {/* Twinkling Stars Animation - Minimalista */}
