@@ -183,7 +183,7 @@ export const resources: Resource[] = [
     },
     date: "2025-01-12",
     author: "Santiago Narváez",
-    image: "/images/resource-openings-guide.webp",
+    image: "/images/resource-1-chess-initiation.webp",
     category: {
       es: "Fundamentos",
       en: "Fundamentals",
@@ -375,7 +375,7 @@ export const resources: Resource[] = [
     },
     date: "2025-01-08",
     author: "Santiago Narváez",
-    image: "/images/resource-checkmate-tactics.webp",
+    image: "/images/resource-2-strategic-fundamentals.webp",
     category: {
       es: "Estrategia",
       en: "Strategy",
@@ -557,7 +557,7 @@ export const resources: Resource[] = [
     },
     date: "2025-01-03",
     author: "Santiago Narváez",
-    image: "/images/resource-king-pawn-endgame.webp",
+    image: "/images/resource-3-chess-anatomy.webp",
     category: {
       es: "Fundamentos",
       en: "Fundamentals",
