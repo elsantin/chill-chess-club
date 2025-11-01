@@ -122,27 +122,58 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Agency Credit - At the very bottom */}
+          {/* Agency Credit - SunsetLabs Branding */}
           <div className="text-center pt-6 border-t border-warmGray-800/50">
             <a
-              href="https://elsantin-labs.vercel.app/"
+              href="https://sunsetlabs.dev"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block group"
             >
-              <div className="flex items-center justify-center gap-2 mb-2">
-                <span className="text-sunset-500 text-xs group-hover:text-sunset-400 transition-colors">
+              <div className="flex items-center justify-center gap-1 mb-2">
+                {/* Opening Bracket */}
+                <span
+                  className="text-[#C682B1] text-lg font-mono group-hover:text-[#FE1784] transition-all duration-300"
+                  style={{ textShadow: "0 0 10px rgba(198, 130, 177, 0.3)" }}
+                >
                   {"{"}
                 </span>
-                <span className="text-warmGray-500 text-xs">elsantin</span>
-                <span className="text-sunset-500 font-bold text-sm group-hover:text-sunset-400 transition-colors">
+
+                {/* Sunset - Orange */}
+                <span
+                  className="text-[#FDAD1F] font-bold text-base tracking-wide group-hover:text-[#FDAD1F] transition-all duration-300"
+                  style={{
+                    textShadow: "0 0 15px rgba(253, 173, 31, 0.4)",
+                    fontFamily: "var(--font-roboto)",
+                  }}
+                >
+                  Sunset
+                </span>
+
+                {/* Labs - Pink */}
+                <span
+                  className="text-[#C682B1] font-bold text-base tracking-wide group-hover:text-[#FE1784] transition-all duration-300"
+                  style={{
+                    textShadow: "0 0 15px rgba(198, 130, 177, 0.4)",
+                    fontFamily: "var(--font-roboto)",
+                  }}
+                >
                   Labs
                 </span>
-                <span className="text-sunset-500 text-xs group-hover:text-sunset-400 transition-colors">
+
+                {/* Closing Bracket */}
+                <span
+                  className="text-[#C682B1] text-lg font-mono group-hover:text-[#FE1784] transition-all duration-300"
+                  style={{ textShadow: "0 0 10px rgba(198, 130, 177, 0.3)" }}
+                >
                   {"}"}
                 </span>
               </div>
-              <p className="text-warmGray-400 text-xs">{t("madeBy")}</p>
+
+              {/* Subtitle */}
+              <p className="text-warmGray-400 text-xs group-hover:text-warmGray-300 transition-colors">
+                {t("madeBy")}
+              </p>
             </a>
           </div>
         </div>

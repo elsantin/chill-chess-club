@@ -84,6 +84,13 @@ module.exports = {
           DEFAULT: "#f59e0b",
           dark: "#d97706",
         },
+        sunsetlabs: {
+          orange: "#FDAD1F",
+          pink: "#C682B1",
+          magenta: "#FE1784",
+          blue: "#3E7FF1",
+          dark: "#070C20",
+        },
       },
       boxShadow: {
         "neumorphic-sm":
