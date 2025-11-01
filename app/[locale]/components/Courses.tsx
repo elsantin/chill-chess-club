@@ -88,13 +88,13 @@ export default function Courses() {
                 interactive={true}
               >
                 {/* Course Image */}
-                <div className="relative h-80 overflow-hidden bg-warmGray-800">
+                <div className="relative h-80 overflow-hidden">
                   <Image
                     src={course.image.src}
                     alt={course.image.alt}
                     width={course.image.width}
                     height={course.image.height}
-                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
                   {/* Sunset gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-warmGray-900 via-warmGray-900/50 to-transparent" />
