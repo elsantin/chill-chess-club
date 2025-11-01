@@ -36,9 +36,9 @@ export function AnimatedTitle({
         WebkitBackgroundClip: "text",
         WebkitTextFillColor: "transparent",
         backgroundClip: "text",
-        paddingTop: "0.1em",
-        paddingBottom: "0.2em",
-        lineHeight: "1.2",
+        paddingTop: "0.15em",
+        paddingBottom: "0.35em",
+        lineHeight: "1.3",
       }}
     >
       {children}
