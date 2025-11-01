@@ -155,7 +155,7 @@ export default function Contact() {
               <select
                 {...register("subject")}
                 id="subject"
-                className="w-full px-4 py-3 bg-warmGray-800 border border-warmGray-600 rounded-lg focus:border-sunset-500 focus:ring-2 focus:ring-sunset-500/20 outline-none transition-all text-warmGray-100 shadow-neumorphic-inset-sm"
+                className="w-full px-4 py-3 bg-warmGray-800 border border-warmGray-600 rounded-lg focus:border-sunset-500 focus:ring-2 focus:ring-sunset-500/20 outline-none transition-all text-warmGray-100 shadow-neumorphic-inset-sm [&>option]:bg-warmGray-800 [&>option]:text-warmGray-100 [&>option:checked]:bg-sunset-500 [&>option:hover]:bg-warmGray-700"
               >
                 <option value="">{t("form.subjectPlaceholder")}</option>
                 {(

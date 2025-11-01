@@ -1,12 +1,12 @@
 # Plan de Implementación
 
-- [-] 1. Crear rama de desarrollo para ajustes visuales
+- [x] 1. Crear rama de desarrollo para ajustes visuales
 
   - Crear nueva rama `ui-refinements` desde la rama principal
   - Asegurar que el entorno de desarrollo esté limpio
   - _Requirements: 1.1, 2.1, 3.1_
 
-- [ ] 2. Ajustar espaciado en la sección About
+- [x] 2. Ajustar espaciado en la sección About
 
   - Abrir el archivo `app/[locale]/components/About.tsx`
   - Localizar el div con clase `grid md:grid-cols-2 gap-8` (línea ~52)
@@ -14,7 +14,7 @@
   - Verificar visualmente en vista desktop que el cambio mejora la armonía
   - _Requirements: 1.1, 1.2, 1.3_
 
-- [ ] 3. Aumentar padding superior en contenido del acordeón FAQ
+- [x] 3. Aumentar padding superior en contenido del acordeón FAQ
 
   - Abrir el archivo `components/ui/accordion.tsx`
   - Localizar el componente `AccordionContent` (línea ~52)
@@ -22,7 +22,7 @@
   - Verificar que el degradado superior sea visible al expandir preguntas
   - _Requirements: 2.1, 2.2, 2.3_
 
-- [ ] 4. Aplicar estilos personalizados al dropdown del formulario
+- [x] 4. Aplicar estilos personalizados al dropdown del formulario
 
   - Abrir el archivo `app/[locale]/components/Contact.tsx`
   - Localizar el elemento `<select>` del campo subject (línea ~115)
@@ -30,7 +30,7 @@
   - Verificar que las opciones del dropdown usen los colores del tema
   - _Requirements: 3.1, 3.2, 3.3_
 
-- [ ] 5. Implementar scrollbar personalizada global
+- [x] 5. Implementar scrollbar personalizada global
 
   - Abrir el archivo `app/globals.css`
   - Añadir estilos CSS al final del archivo para scrollbar webkit y Firefox

@@ -1,0 +1,1247 @@
+# 🎯 PROMPT COMPLETO: Recrear Chill Chess Club en Next.js + TypeScript
+
+**INSTRUCCIONES PARA LA IA:**
+
+Necesito que crees un sitio web profesional desde cero usando Next.js 14, TypeScript y Tailwind CSS. Debes seguir EXACTAMENTE las especificaciones de este documento. No omitas ningún detalle.
+
+---
+
+## 📋 ESPECIFICACIONES TÉCNICAS
+
+### Stack Tecnológico (OBLIGATORIO)
+
+```json
+
+{
+
+  "framework": "Next.js 14 (App Router)",
+
+  "language": "TypeScript",
+
+  "styling": "Tailwind CSS",
+
+  "i18n": "next-intl",
+
+  "animations": "Framer Motion",
+
+  "forms": "React Hook Form + Zod",
+
+  "icons": "React Icons (Font Awesome)",
+
+  "deployment": "Vercel"
+
+}
+
+```
+
+### Comandos de Instalación
+
+```bash
+
+npx create-next-app@latest chill-chess-club --typescript --tailwind --app --no-src-dir
+
+cd chill-chess-club
+
+npm install next-intl framer-motion react-hook-form zod react-icons
+
+```
+
+---
+
+## 🎨 DISEÑO Y ESTILO
+
+### Paleta de Colores (EXACTA)
+
+```typescript
+
+// tailwind.config.ts
+
+const colors = {
+
+  primary: {
+
+    DEFAULT: "#ec4899", // Pink-500
+
+    dark: "#be185d", // Pink-700
+
+    light: "#f9a8d4", // Pink-300
+
+  },
+
+  secondary: {
+
+    DEFAULT: "#8b5cf6", // Purple-500
+
+    dark: "#6d28d9", // Purple-700
+
+    light: "#c4b5fd", // Purple-300
+
+  },
+
+  accent: {
+
+    DEFAULT: "#f59e0b", // Amber-500
+
+    dark: "#d97706", // Amber-600
+
+  },
+
+  dark: {
+
+    bg: "#0f172a", // Slate-900
+
+    darker: "#020617", // Slate-950
+
+    card: "#1e293b", // Slate-800
+
+  },
+
+  text: {
+
+    primary: "#f8fafc", // Slate-50
+
+    secondary: "#cbd5e1", // Slate-300
+
+  },
+
+};
+
+```
+
+### Tipografía
+
+```typescript
+
+// app/layout.tsx
+
+import { Playfair_Display, Roboto } from "next/font/google";
+
+const playfair = Playfair_Display({
+
+  subsets: ["latin"],
+
+  variable: "--font-playfair",
+
+  display: "swap",
+
+});
+
+const roboto = Roboto({
+
+  weight: ["300", "400", "500", "700"],
+
+  subsets: ["latin"],
+
+  variable: "--font-roboto",
+
+  display: "swap",
+
+});
+
+// Usar:
+
+// Headings: font-playfair
+
+// Body: font-roboto
+
+```
+
+### Gradientes
+
+```css
+
+.gradient-primary {
+
+  background: linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%);
+
+}
+
+.gradient-secondary {
+
+  background: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
+
+}
+
+```
+
+---
+
+## 📁 ESTRUCTURA DEL PROYECTO (EXACTA)
+
+```
+
+chill-chess-club/
+
+├── app/
+
+│   ├── [locale]/
+
+│   │   ├── layout.tsx
+
+│   │   ├── page.tsx
+
+│   │   └── components/
+
+│   │       ├── Header.tsx
+
+│   │       ├── Hero.tsx
+
+│   │       ├── About.tsx
+
+│   │       ├── Courses.tsx
+
+│   │       ├── Method.tsx
+
+│   │       ├── Benefits.tsx
+
+│   │       ├── FAQ.tsx
+
+│   │       ├── Contact.tsx
+
+│   │       └── Footer.tsx
+
+│   ├── api/
+
+│   │   └── contact/
+
+│   │       └── route.ts
+
+│   └── globals.css
+
+├── messages/
+
+│   ├── es.json
+
+│   └── en.json
+
+├── public/
+
+│   └── images/
+
+│       ├── logo.svg
+
+│       ├── santiago-profile.webp
+
+│       ├── beginner-course.webp
+
+│       ├── intermediate-course.webp
+
+│       └── palm-silhouette.svg
+
+├── lib/
+
+│   ├── i18n.ts
+
+│   └── utils.ts
+
+├── middleware.ts
+
+├── next.config.js
+
+├── tailwind.config.ts
+
+└── tsconfig.json
+
+```
+
+---
+
+## 🖼️ IMÁGENES (UBICACIÓN EXACTA)
+
+### IMPORTANTE: Placeholder de Imágenes
+
+Como no puedes generar las imágenes reales, usa placeholders con las dimensiones exactas:
+
+```typescript
+
+const images = {
+
+  logo: {
+
+    src: "/images/logo.svg",
+
+    alt: "Logo de Chill Chess Club: Siluetas de piezas de ajedrez con sol poniente",
+
+    placeholder:
+
+      "https://placehold.co/200x60/ec4899/ffffff?text=Chill+Chess+Club",
+
+  },
+
+  about: {
+
+    profile: {
+
+      src: "/images/santiago-profile.webp",
+
+      alt: "Santiago Narváez, instructor de Chill Chess Club, jugando ajedrez en la playa",
+
+      dimensions: "600x800",
+
+      placeholder:
+
+        "https://placehold.co/600x800/1e293b/ffffff?text=Santiago+Profile",
+
+    },
+
+  },
+
+  courses: {
+
+    beginner: {
+
+      src: "/images/beginner-course.webp",
+
+      alt: "Peón derribando al rey, representando el curso de principiantes",
+
+      dimensions: "800x600",
+
+      placeholder:
+
+        "https://placehold.co/800x600/ec4899/ffffff?text=Beginner+Course",
+
+    },
+
+    intermediate: {
+
+      src: "/images/intermediate-course.webp",
+
+      alt: "Caballo de ajedrez con explosión de colores, simbolizando estrategia dinámica",
+
+      dimensions: "800x600",
+
+      placeholder:
+
+        "https://placehold.co/800x600/8b5cf6/ffffff?text=Intermediate+Course",
+
+    },
+
+  },
+
+};
+
+```
+
+**INSTRUCCIÓN:** En cada componente que use imágenes, incluye un comentario que diga:
+
+```typescript
+
+// TODO: Reemplazar placeholder con imagen real en /public/images/
+
+```
+
+---
+
+## 📝 CONTENIDO COMPLETO (COPIAR EXACTAMENTE)
+
+### messages/es.json
+
+```json
+
+{
+
+  "metadata": {
+
+    "title": "Clases de Ajedrez Online Personalizadas | Chill Chess Club",
+
+    "description": "Aprende ajedrez online con el método personalizado de Chill Chess Club. Clases para principiantes e intermedios con asistencia IA."
+
+  },
+
+  "nav": {
+
+    "about": "Sobre Mí",
+
+    "courses": "Cursos",
+
+    "method": "Método",
+
+    "benefits": "Beneficios",
+
+    "resources": "Recursos",
+
+    "blog": "Blog",
+
+    "faq": "FAQ",
+
+    "contact": "Contacto"
+
+  },
+
+  "hero": {
+
+    "title": "Domina el Ajedrez con Clases Personalizadas y Asistencia de IA",
+
+    "subtitle": "Aprende ajedrez de forma efectiva con un método adaptado a tu nivel y estilo. Clases individuales online para principiantes e intermedios, con material personalizado y análisis detallado de tus partidas.",
+
+    "cta1": "Solicita tu Clase Gratuita",
+
+    "cta2": "Conoce el Método"
+
+  },
+
+```
+
+"about": {
+
+"title": "Sobre Mí",
+
+"subtitle": "Tu Instructor de Ajedrez: Enseñanza Clara y Personalizada",
+
+"quote": {
+
+"text": "El ajedrez es un mar en el cual un mosquito puede beber y un elefante puede bañarse.",
+
+"author": "Proverbio Indio"
+
+},
+
+"paragraph1": "Soy Santiago Narváez, instructor de ajedrez especializado en enseñanza para principiantes e intermedios. Mi pasión es hacer que el ajedrez sea accesible y emocionante para todos, sin importar tu nivel inicial. Con años de experiencia enseñando online, he desarrollado un método que combina la instrucción tradicional con tecnología de IA para crear una experiencia de aprendizaje verdaderamente personalizada.",
+
+"paragraph2": "Mi fortaleza está en mi capacidad para explicar conceptos complejos de forma simple y clara. No soy un gran maestro de torneos, pero eso me permite conectar mejor con estudiantes que están comenzando su viaje en el ajedrez. Entiendo tus desafíos porque yo también los he enfrentado. Actualmente imparto clases online desde Isla de Margarita, Venezuela, ayudando a estudiantes de todo el mundo a mejorar su juego.",
+
+"philosophyTitle": "Método de Enseñanza: Personalizado, Práctico y Efectivo",
+
+"philosophyText": "Mi método combina teoría con práctica constante, adaptado específicamente a tu nivel y objetivos. Utilizo IA para crear material de estudio personalizado, analizar tus partidas en profundidad y diseñar ejercicios que fortalezcan tus áreas débiles. Cada clase es individual (uno a uno), lo que me permite ajustar el ritmo y el contenido a tus necesidades específicas.",
+
+"platformsTitle": "Plataformas Utilizadas",
+
+"platformsDesc": "Utilizamos las siguientes plataformas para nuestras clases y análisis. Es necesario que tengas una cuenta (gratuita) y la aplicación instalada:",
+
+"chesscomLink": "Mi Perfil en Chess.com",
+
+"lichessLink": "Mi Perfil en Lichess.org",
+
+"cta": "Comienza tu Aprendizaje"
+
+},
+
+"courses": {
+
+"title": "Programas de Ajedrez: Elige tu Nivel",
+
+"intro": "Programas diseñados específicamente para principiantes e intermedios. Incluyen: clases individuales en vivo, material de estudio personalizado con IA, análisis detallado de tus partidas, y soporte continuo. Todo en español e inglés.",
+
+"beginner": {
+
+"title": "Curso Principiante: El Despegue",
+
+"level": "Principiante",
+
+"features": [
+
+"Domina las reglas y movimientos de todas las piezas con claridad total.",
+
+"Aprende aperturas sólidas para comenzar tus partidas con confianza.",
+
+"Descubre tácticas básicas para ganar material y crear ventajas decisivas.",
+
+"Aprende finales fundamentales para convertir ventajas en victorias.",
+
+"Clases individuales en vivo adaptadas a tu ritmo de aprendizaje.",
+
+"Material de estudio personalizado con IA según tus fortalezas y debilidades.",
+
+"Análisis profundo de tus partidas para identificar áreas de mejora."
+
+],
+
+"price": "$15 USD /Hora",
+
+"priceNote": "Flexibilidad total. Avanza a tu propio ritmo. Planes de pago disponibles.",
+
+"cta": "Empezar Ahora"
+
+},
+
+"intermediate": {
+
+"title": "Curso Intermedio: Estratega",
+
+"level": "Intermedio",
+
+"features": [
+
+"Desarrolla comprensión estratégica profunda para controlar el juego.",
+
+"Construye un repertorio de aperturas sólido adaptado a tu estilo.",
+
+"Domina combinaciones tácticas complejas para crear ventajas decisivas.",
+
+"Perfecciona finales prácticos para convertir ventajas en victorias.",
+
+"Clases individuales enfocadas en tus áreas específicas de mejora.",
+
+"Análisis exhaustivo de partidas para eliminar errores recurrentes."
+
+],
+
+"price": "$20 USD /Hora",
+
+"priceNote": "Flexibilidad total. Avanza a tu propio ritmo. Planes de pago disponibles.",
+
+"cta": "Empezar Ahora"
+
+},
+
+"trustSignals": [
+
+{ "icon": "FaUserCheck", "text": "Clases 1-a-1" },
+
+{ "icon": "FaLanguage", "text": "Español e Inglés" },
+
+{ "icon": "FaRobot", "text": "Asistido por IA" },
+
+{ "icon": "FaCalendarAlt", "text": "Horarios Flexibles" }
+
+]
+
+},
+
+"method": {
+
+"title": "Mi Método de Enseñanza: 5 Pasos hacia la Maestría",
+
+"intro": "Un enfoque estructurado que combina lo mejor de la enseñanza tradicional con tecnología de IA para maximizar tu progreso.",
+
+"steps": [
+
+{
+
+"number": "01",
+
+"icon": "FaComments",
+
+"title": "Evaluación Inicial Personalizada",
+
+"description": "Comenzamos con una clase gratuita donde evaluamos tu nivel actual, identificamos tus objetivos y diseñamos un plan de estudio adaptado a ti."
+
+},
+
+{
+
+"number": "02",
+
+"icon": "FaBrain",
+
+"title": "Material de Estudio con IA",
+
+"description": "Creo contenido educativo personalizado usando IA: ejercicios tácticos, repertorios de aperturas y guías estratégicas adaptadas a tu nivel y estilo de juego."
+
+},
+
+{
+
+"number": "03",
+
+"icon": "FaChalkboardTeacher",
+
+"title": "Clases Individuales Interactivas",
+
+"description": "Sesiones uno-a-uno donde trabajamos conceptos, analizamos posiciones y resolvemos ejercicios juntos. Tú marcas el ritmo."
+
+},
+
+{
+
+"number": "04",
+
+"icon": "FaChess",
+
+"title": "Sesiones Inmersivas y Prácticas",
+
+"description": "Jugamos partidas de práctica donde aplicas lo aprendido. Luego analizamos cada movimiento para identificar oportunidades de mejora."
+
+},
+
+{
+
+"number": "05",
+
+"icon": "FaChartLine",
+
+"title": "Evolución Continua con IA",
+
+"description": "Uso herramientas de IA para analizar tus partidas, identificar patrones en tus errores y ajustar el material de estudio continuamente."
+
+}
+
+],
+
+"benefitsTitle": "¿Por Qué Funciona Este Método?",
+
+"benefitsDesc": "Combino atención personalizada con tecnología de IA para crear un camino de aprendizaje hecho a tu medida. Efectivo, disfrutable y adaptado a tu vida.",
+
+"cta": "Descubre los Beneficios del Ajedrez"
+
+},
+
+"faq": {
+
+"title": "Preguntas Frecuentes",
+
+"intro": "Aquí encontrarás respuestas a las consultas más comunes. Si tu duda no está resuelta, no dudes en contactarme directamente.",
+
+"questions": [
+
+{
+
+"q": "¿Qué necesito para empezar las clases de ajedrez?",
+
+"a": "Principalmente, una conexión a internet estable y una cuenta gratuita en Chess.com y/o Lichess.org, según lo que acordemos para nuestras sesiones. Un micrófono es recomendable para una comunicación fluida, y por supuesto, entusiasmo por explorar el mundo del ajedrez."
+
+},
+
+{
+
+"q": "¿Cómo funcionan los pagos de los cursos?",
+
+"a": "Los pagos se gestionan de forma segura a través de plataformas como PayPal, Payoneer o Binance. Una vez que definamos el curso o paquete de clases que mejor se adapta a ti, te facilitaré los detalles para realizar la transacción. Si necesitas un plan de pagos, podemos conversarlo."
+
+},
+
+{
+
+"q": "¿Son estos cursos adecuados si nunca antes he jugado ajedrez?",
+
+"a": "Definitivamente. El 'Curso Principiante: El Despegue' está especialmente diseñado para quienes se acercan al ajedrez por primera vez. Te acompañaré desde los movimientos básicos de las piezas hasta tus primeras estrategias, todo en un ambiente de aprendizaje paciente y motivador."
+
+},
+
+{
+
+"q": "¿En qué se diferencia tu método de enseñanza de otros cursos online?",
+
+"a": "Mi enfoque distintivo radica en la personalización profunda, potenciada con herramientas de IA. Esto me permite adaptar cada lección, material de estudio y ejercicio a tu ritmo individual, estilo de aprendizaje y áreas de interés específicas."
+
+},
+
+{
+
+"q": "¿Cuánto tiempo duran las clases y cuál es la frecuencia recomendada?",
+
+"a": "Las clases individuales estándar tienen una duración de 60 minutos. En cuanto a la frecuencia, sugiero una o dos clases por semana para un progreso constante y una buena asimilación de los conceptos, aunque siempre podemos ajustarlo a tu disponibilidad y objetivos."
+
+},
+
+{
+
+"q": "¿Se proporciona material de estudio o ejercicios para practicar entre clases?",
+
+"a": "Sí, por supuesto. Como parte del método, recibirás acceso a material de estudio digital bilingüe, ejercicios seleccionados y análisis de partidas (con apoyo de IA) para que puedas consolidar tu aprendizaje y practicar a tu propio ritmo."
+
+},
+
+{
+
+"q": "¿Qué herramientas o plataformas de IA se utilizan y cómo me benefician?",
+
+"a": "Empleo una combinación de software de análisis de ajedrez reconocido y herramientas de IA para la creación de contenido. Estas tecnologías me ayudan a identificar patrones en tu juego, generar ejercicios adaptados a tus necesidades, y crear materiales de estudio más eficientes y personalizados."
+
+}
+
+],
+
+"ctaTitle": "¿Listo para Comenzar tu Viaje en el Ajedrez?",
+
+"ctaDesc": "Solicita tu clase introductoria gratuita y descubre cómo mi método personalizado puede ayudarte a alcanzar tus objetivos.",
+
+"ctaButton": "Solicitar Clase Gratuita"
+
+},
+
+"contact": {
+
+"title": "Contáctame",
+
+"subtitle": "¿Listo para Comenzar?",
+
+"description": "Solicita tu clase introductoria gratuita. Es una sesión de 30-45 minutos donde conoceremos tu nivel actual, discutiremos tus objetivos y verás cómo funciona mi método.",
+
+"form": {
+
+"name": "Nombre Completo",
+
+"namePlaceholder": "Tu nombre",
+
+"email": "Correo Electrónico",
+
+"emailPlaceholder": "tu@email.com",
+
+"subject": "Asunto",
+
+"subjectPlaceholder": "Selecciona un asunto",
+
+"subjectOptions": [
+
+{ "value": "clase_prueba", "label": "Solicitar Clase de Prueba Gratuita" },
+
+{ "value": "curso_principiante", "label": "Información sobre Curso Principiante" },
+
+{ "value": "curso_intermedio", "label": "Información sobre Curso Intermedio" },
+
+{ "value": "otro", "label": "Otro" }
+
+],
+
+"message": "Mensaje",
+
+"messagePlaceholder": "Cuéntame sobre tu experiencia con el ajedrez y qué te gustaría lograr...",
+
+"submit": "Enviar Mensaje",
+
+"success": "¡Mensaje enviado! Te responderé pronto.",
+
+"error": "Error al enviar. Intenta de nuevo."
+
+}
+
+},
+
+"footer": {
+
+"copyright": "© 2025 Chill Chess Club. Todos los derechos reservados.",
+
+"privacy": "Política de Privacidad",
+
+"terms": "Términos de Servicio"
+
+}
+
+}
+
+````
+
+### messages/en.json
+
+```json
+
+{
+
+  "metadata": {
+
+    "title": "Personalized Online Chess Classes | Chill Chess Club",
+
+    "description": "Learn chess online with Chill Chess Club's personalized method. Classes for beginners and intermediates with AI assistance."
+
+  },
+
+  "nav": {
+
+    "about": "About Me",
+
+    "courses": "Courses",
+
+    "method": "Method",
+
+    "benefits": "Benefits",
+
+    "resources": "Resources",
+
+    "blog": "Blog",
+
+    "faq": "FAQ",
+
+    "contact": "Contact"
+
+  },
+
+  "hero": {
+
+    "title": "Master Chess with Personalized Classes and AI Assistance",
+
+    "subtitle": "Learn chess effectively with a method adapted to your level and style. Individual online classes for beginners and intermediates, with personalized material and detailed analysis of your games.",
+
+    "cta1": "Request Your Free Class",
+
+    "cta2": "Discover the Method"
+
+  },
+
+````
+
+"about": {
+
+"title": "About Me",
+
+"subtitle": "Your Chess Instructor: Clear and Personalized Teaching",
+
+"quote": {
+
+"text": "Chess is a sea in which a gnat may drink and an elephant may bathe.",
+
+"author": "Indian Proverb"
+
+},
+
+"paragraph1": "I'm Santiago Narváez, a chess instructor specialized in teaching beginners and intermediates. My passion is making chess accessible and exciting for everyone, regardless of your starting level. With years of experience teaching online, I've developed a method that combines traditional instruction with AI technology to create a truly personalized learning experience.",
+
+"paragraph2": "My strength lies in my ability to explain complex concepts in a simple and clear way. I'm not a tournament grandmaster, but that allows me to connect better with students who are beginning their chess journey. I understand your challenges because I've faced them too. I currently teach online classes from Margarita Island, Venezuela, helping students from around the world improve their game.",
+
+"philosophyTitle": "Teaching Method: Personalized, Practical and Effective",
+
+"philosophyText": "My method combines theory with constant practice, specifically adapted to your level and goals. I use AI to create personalized study material, analyze your games in depth, and design exercises that strengthen your weak areas. Each class is individual (one-on-one), which allows me to adjust the pace and content to your specific needs.",
+
+"platformsTitle": "Platforms Used",
+
+"platformsDesc": "We use the following platforms for our classes and analysis. You need to have a (free) account and the application installed:",
+
+"chesscomLink": "My Chess.com Profile",
+
+"lichessLink": "My Lichess.org Profile",
+
+"cta": "Start Your Learning"
+
+},
+
+"courses": {
+
+"title": "Chess Programs: Choose Your Level",
+
+"intro": "Programs specifically designed for beginners and intermediates. Include: individual live classes, AI-personalized study material, detailed analysis of your games, and continuous support. All in Spanish and English.",
+
+"beginner": {
+
+"title": "Beginner Course: Liftoff",
+
+"level": "Beginner",
+
+"features": [
+
+"Master the rules and movements of all pieces with total clarity.",
+
+"Learn solid openings to start your games with confidence.",
+
+"Discover basic tactics to win material and create decisive advantages.",
+
+"Learn fundamental endgames to convert advantages into victories.",
+
+"Individual live classes adapted to your learning pace.",
+
+"AI-personalized study material according to your strengths and weaknesses.",
+
+"Deep analysis of your games to identify areas for improvement."
+
+],
+
+"price": "$15 USD /Hour",
+
+"priceNote": "Total flexibility. Advance at your own pace. Payment plans available.",
+
+"cta": "Start Now"
+
+},
+
+"intermediate": {
+
+"title": "Intermediate Course: Strategist",
+
+"level": "Intermediate",
+
+"features": [
+
+"Develop deep strategic understanding to control the game.",
+
+"Build a solid opening repertoire adapted to your style.",
+
+"Master complex tactical combinations to create decisive advantages.",
+
+"Perfect practical endgames to convert advantages into victories.",
+
+"Individual classes focused on your specific areas of improvement.",
+
+"Exhaustive game analysis to eliminate recurring errors."
+
+],
+
+"price": "$20 USD /Hour",
+
+"priceNote": "Total flexibility. Advance at your own pace. Payment plans available.",
+
+"cta": "Start Now"
+
+},
+
+"trustSignals": [
+
+{ "icon": "FaUserCheck", "text": "1-on-1 Classes" },
+
+{ "icon": "FaLanguage", "text": "Spanish & English" },
+
+{ "icon": "FaRobot", "text": "AI-Assisted" },
+
+{ "icon": "FaCalendarAlt", "text": "Flexible Schedule" }
+
+]
+
+},
+
+"method": {
+
+"title": "My Teaching Method: 5 Steps to Mastery",
+
+"intro": "A structured approach that combines the best of traditional teaching with AI technology to maximize your progress.",
+
+"steps": [
+
+{
+
+"number": "01",
+
+"icon": "FaComments",
+
+"title": "Personalized Initial Assessment",
+
+"description": "We start with a free class where we evaluate your current level, identify your goals, and design a study plan adapted to you."
+
+},
+
+{
+
+"number": "02",
+
+"icon": "FaBrain",
+
+"title": "AI-Powered Study Material",
+
+"description": "I create personalized educational content using AI: tactical exercises, opening repertoires, and strategic guides adapted to your level and playing style."
+
+},
+
+{
+
+"number": "03",
+
+"icon": "FaChalkboardTeacher",
+
+"title": "Interactive Individual Classes",
+
+"description": "One-on-one sessions where we work on concepts, analyze positions, and solve exercises together. You set the pace."
+
+},
+
+{
+
+"number": "04",
+
+"icon": "FaChess",
+
+"title": "Immersive and Practical Sessions",
+
+"description": "We play practice games where you apply what you've learned. Then we analyze each move to identify improvement opportunities."
+
+},
+
+{
+
+"number": "05",
+
+"icon": "FaChartLine",
+
+"title": "Continuous Evolution with AI",
+
+"description": "I use AI tools to analyze your games, identify patterns in your mistakes, and continuously adjust the study material."
+
+}
+
+],
+
+"benefitsTitle": "Why Does This Method Work?",
+
+"benefitsDesc": "I combine personalized attention with AI technology to create a learning path tailored to you. Effective, enjoyable, and adapted to your life.",
+
+"cta": "Discover the Benefits of Chess"
+
+},
+
+"faq": {
+
+"title": "Frequently Asked Questions",
+
+"intro": "Here you'll find answers to the most common inquiries. If your doubt isn't resolved, feel free to contact me directly.",
+
+"questions": [
+
+{
+
+"q": "What do I need to start the chess classes?",
+
+"a": "Mainly, a stable internet connection and a free account on Chess.com and/or Lichess.org, as we agree for our sessions. A microphone is recommended for smooth communication, and of course, enthusiasm to explore the world of chess!"
+
+},
+
+{
+
+"q": "How do course payments work?",
+
+"a": "Payments are securely managed through platforms like PayPal, Payoneer, or Binance. Once we define the course or class package that best suits you, I will provide the details to make the transaction. If you need a payment plan, we can discuss it."
+
+},
+
+{
+
+"q": "Are these courses suitable if I've never played chess before?",
+
+"a": "Definitely! The 'Beginner Course: Liftoff' is specially designed for those approaching chess for the first time. I will accompany you from the basic movements of the pieces to your first strategies, all in a patient and motivating learning environment."
+
+},
+
+{
+
+"q": "How does your teaching method differ from other online courses?",
+
+"a": "My distinctive approach lies in deep personalization, enhanced with AI tools. This allows me to adapt each lesson, study material, and exercise to your individual pace, learning style, and specific areas of interest."
+
+},
+
+{
+
+"q": "How long are the classes and what is the recommended frequency?",
+
+"a": "Standard individual classes are 60 minutes long. Regarding frequency, I suggest one or two classes per week for consistent progress and good assimilation of concepts, although we can always adjust it to your availability and goals."
+
+},
+
+{
+
+"q": "Is study material or exercises provided to practice between classes?",
+
+"a": "Yes, of course. As part of the method, you will receive access to bilingual digital study material, selected exercises, and game analysis (with AI support) so you can consolidate your learning and practice at your own pace."
+
+},
+
+{
+
+"q": "What AI tools or platforms are used and how do they benefit me?",
+
+"a": "I use a combination of recognized chess analysis software and AI tools for content creation. These technologies help me identify patterns in your game, generate exercises tailored to your needs, and create more efficient and personalized study materials."
+
+}
+
+],
+
+"ctaTitle": "Ready to Start Your Chess Journey?",
+
+"ctaDesc": "Request your free introductory class and discover how my personalized method can help you achieve your goals.",
+
+"ctaButton": "Request Free Class"
+
+},
+
+"contact": {
+
+"title": "Contact Me",
+
+"subtitle": "Ready to Start?",
+
+"description": "Request your free introductory class. It's a 30-45 minute session where we'll get to know your current level, discuss your goals, and you'll see how my method works.",
+
+"form": {
+
+"name": "Full Name",
+
+"namePlaceholder": "Your name",
+
+"email": "Email Address",
+
+"emailPlaceholder": "your@email.com",
+
+"subject": "Subject",
+
+"subjectPlaceholder": "Select a subject",
+
+"subjectOptions": [
+
+{ "value": "clase_prueba", "label": "Request Free Trial Class" },
+
+{ "value": "curso_principiante", "label": "Beginner Course Information" },
+
+{ "value": "curso_intermedio", "label": "Intermediate Course Information" },
+
+{ "value": "otro", "label": "Other" }
+
+],
+
+"message": "Message",
+
+"messagePlaceholder": "Tell me about your chess experience and what you'd like to achieve...",
+
+"submit": "Send Message",
+
+"success": "Message sent! I'll respond soon.",
+
+"error": "Error sending. Please try again."
+
+}
+
+},
+
+"footer": {
+
+"copyright": "© 2025 Chill Chess Club. All rights reserved.",
+
+"privacy": "Privacy Policy",
+
+"terms": "Terms of Service"
+
+}
+
+}
+
+```
+
+---
+
+## 🎯 INSTRUCCIONES DE IMPLEMENTACIÓN
+
+### PASO 1: Configuración Inicial
+
+1. Crear proyecto Next.js con TypeScript y Tailwind
+
+2. Instalar dependencias: `next-intl`, `framer-motion`, `react-hook-form`, `zod`, `react-icons`
+
+3. Configurar `next-intl` para i18n (español/inglés)
+
+4. Configurar Tailwind con colores y fuentes personalizadas
+
+### PASO 2: Crear Archivos de Traducción
+
+1. Crear `messages/es.json` con TODO el contenido en español (arriba)
+
+2. Crear `messages/en.json` con TODO el contenido en inglés (arriba)
+
+3. Configurar middleware para detección de idioma
+
+### PASO 3: Crear Componentes (EN ESTE ORDEN)
+
+1. **Header.tsx** - Navegación sticky con cambio de idioma
+
+2. **Hero.tsx** - Sección hero con efecto particles (usar `tsparticles` o similar)
+
+3. **About.tsx** - Sección sobre el instructor con imagen
+
+4. **Courses.tsx** - Cards de cursos con imágenes y features
+
+5. **Method.tsx** - 5 pasos del método con iconos
+
+6. **FAQ.tsx** - Acordeón de preguntas con CTA al final
+
+7. **Contact.tsx** - Formulario con validación (React Hook Form + Zod)
+
+8. **Footer.tsx** - Footer simple con copyright
+
+### PASO 4: Estilos y Animaciones
+
+- Usar Tailwind para todos los estilos
+
+- Agregar animaciones con Framer Motion en scroll
+
+- Implementar smooth scroll para navegación
+
+- Responsive design (mobile-first)
+
+### PASO 5: Funcionalidad
+
+- Sistema de traducción funcionando perfectamente
+
+- Formulario de contacto con validación
+
+- Navegación smooth scroll
+
+- Cambio de idioma sin recargar página
+
+---
+
+## ✅ CHECKLIST DE COMPLETITUD
+
+Antes de entregar el código, verifica que:
+
+- [ ] Todos los componentes están creados
+
+- [ ] Sistema de traducción funciona (ES/EN)
+
+- [ ] Todas las imágenes tienen placeholders con comentarios TODO
+
+- [ ] Formulario de contacto funciona con validación
+
+- [ ] Navegación smooth scroll funciona
+
+- [ ] Diseño es responsive (mobile, tablet, desktop)
+
+- [ ] Colores exactos de la paleta
+
+- [ ] Tipografía correcta (Playfair + Roboto)
+
+- [ ] Animaciones suaves con Framer Motion
+
+- [ ] Código TypeScript sin errores
+
+- [ ] Código limpio y comentado
+
+---
+
+## 🚨 REGLAS ESTRICTAS
+
+1. **NO OMITAS CONTENIDO:** Todo el texto de los JSON debe estar en el sitio
+
+2. **USA PLACEHOLDERS:** Para imágenes, usa placeholders con dimensiones exactas
+
+3. **TYPESCRIPT:** Todo debe ser TypeScript, no JavaScript
+
+4. **TAILWIND:** No uses CSS custom, solo Tailwind
+
+5. **COMPONENTES SEPARADOS:** Un archivo por componente
+
+6. **COMENTARIOS:** Agrega comentarios donde uses placeholders de imágenes
+
+7. **RESPONSIVE:** Mobile-first design
+
+8. **ACCESIBILIDAD:** Usa semantic HTML y ARIA labels
+
+---
+
+## 📦 ENTREGABLES
+
+Debes entregar:
+
+1. Código completo del proyecto Next.js
+
+2. Archivos de configuración (tailwind.config.ts, next.config.js, etc.)
+
+3. Todos los componentes
+
+4. Archivos de traducción (es.json, en.json)
+
+5. README.md con instrucciones de instalación y ejecución
+
+---
+
+## 🎨 REFERENCIA VISUAL
+
+El sitio debe tener:
+
+- **Fondo oscuro** (slate-900/slate-950)
+
+- **Acentos en rosa/púrpura** (gradientes)
+
+- **Tipografía elegante** (Playfair para títulos)
+
+- **Animaciones suaves** (fade-in, slide-up)
+
+- **Navegación sticky** con cambio de idioma
+
+- **CTAs prominentes** con gradientes
+
+- **Cards con hover effects**
+
+- **Formulario moderno** con validación en tiempo real
+
+---
+
+**IMPORTANTE FINAL:**
+
+Este sitio es para un instructor de ajedrez profesional. Debe verse elegante, moderno y confiable. La experiencia de usuario debe ser impecable, especialmente el sistema de traducción que NO debe tener bugs.
+
+¿Entendiste todas las instrucciones? Procede a crear el proyecto completo.
+
+```
