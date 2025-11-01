@@ -23,12 +23,12 @@ export function ResourceCard({ resource, index = 0 }: ResourceCardProps) {
   const t = useTranslations("resources");
 
   const difficultyColors: Record<string, string> = {
-    Principiante: "from-green-500 to-emerald-500",
-    Beginner: "from-green-500 to-emerald-500",
+    Principiante: "from-sunset-400 to-sunset-500",
+    Beginner: "from-sunset-400 to-sunset-500",
     Intermedio: "from-sunset-500 to-rose-500",
     Intermediate: "from-sunset-500 to-rose-500",
-    Avanzado: "from-purple-500 to-pink-500",
-    Advanced: "from-purple-500 to-pink-500",
+    Avanzado: "from-rose-500 to-pink-600",
+    Advanced: "from-rose-500 to-pink-600",
   };
 
   return (

@@ -26,7 +26,7 @@ export default function RecursosPage() {
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             className="text-center mb-16"
           >
-            <AnimatedTitle className="text-4xl md:text-6xl font-playfair font-bold mb-6">
+            <AnimatedTitle className="text-4xl md:text-6xl font-playfair font-bold mb-6 overflow-visible pb-2">
               {t("pageTitle")}
             </AnimatedTitle>
             <p className="text-xl text-warmGray-200 max-w-3xl mx-auto">
