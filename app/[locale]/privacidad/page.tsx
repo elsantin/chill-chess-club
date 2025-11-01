@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { AnimatedTitle } from "../components/neumorphic/AnimatedTitle";
+import LegalFooter from "../components/LegalFooter";
 
 export default function PrivacyPage() {
   const t = useTranslations("privacy");
@@ -108,6 +109,7 @@ export default function PrivacyPage() {
           </div>
         </motion.div>
       </div>
+      <LegalFooter />
     </main>
   );
 }

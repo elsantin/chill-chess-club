@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { AnimatedTitle } from "../components/neumorphic/AnimatedTitle";
+import LegalFooter from "../components/LegalFooter";
 
 export default function TermsPage() {
   const t = useTranslations("terms");
@@ -103,6 +104,7 @@ export default function TermsPage() {
           </div>
         </motion.div>
       </div>
+      <LegalFooter />
     </main>
   );
 }
