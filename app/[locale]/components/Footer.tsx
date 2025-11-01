@@ -1,11 +1,12 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 
 export default function Footer() {
   const t = useTranslations("footer");
   const tNav = useTranslations("nav");
+  const locale = useLocale();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -108,13 +109,13 @@ export default function Footer() {
             </p>
             <div className="flex gap-6">
               <Link
-                href="/privacidad"
+                href={`/${locale}/privacidad`}
                 className="text-warmGray-500 hover:text-sunset-400 text-xs"
               >
                 {t("privacy")}
               </Link>
               <Link
-                href="/terminos"
+                href={`/${locale}/terminos`}
                 className="text-warmGray-500 hover:text-sunset-400 text-xs"
               >
                 {t("terms")}
