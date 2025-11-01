@@ -93,7 +93,7 @@ export default function ResourcePage({
               {/* Resource Meta */}
               <div className="p-8">
                 <h1
-                  className="text-3xl md:text-5xl font-playfair font-bold mb-6"
+                  className="text-3xl md:text-5xl font-playfair font-bold mb-6 pb-2"
                   style={{
                     background:
                       "linear-gradient(135deg, #fafaf9 0%, #fde68a 50%, #fafaf9 100%)",
@@ -101,6 +101,7 @@ export default function ResourcePage({
                     WebkitTextFillColor: "transparent",
                     backgroundClip: "text",
                     animation: "none",
+                    lineHeight: "1.5",
                   }}
                 >
                   {resource.title}
