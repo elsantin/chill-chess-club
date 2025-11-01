@@ -51,7 +51,7 @@
         "Individual live classes adapted to your learning pace.",
         "AI-personalized material and analysis of your games."
       ],
-      "price": "$15 USD /Hour",
+      "price": "$13 USD /Hour",
       "priceNote": "Total flexibility. Advance at your own pace. Payment plans available.",
       "cta": "Start Now"
     },
@@ -66,7 +66,7 @@
         "Individual classes focused on your specific areas of improvement.",
         "Exhaustive game analysis to eliminate recurring errors."
       ],
-      "price": "$20 USD /Hour",
+      "price": "$16 USD /Hour",
       "priceNote": "Total flexibility. Advance at your own pace. Payment plans available.",
       "cta": "Start Now"
     },
@@ -242,5 +242,100 @@
     "backButton": "Go Back",
     "homeButton": "Go to Home",
     "coursesButton": "View Courses"
+  },
+  "terms": {
+    "title": "Terms and Conditions",
+    "lastUpdated": "Last updated",
+    "date": "November 1, 2025",
+    "section1": {
+      "title": "1. Acceptance of Terms",
+      "content": "By accessing and using Chill Chess Club services, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you should not use our services."
+    },
+    "section2": {
+      "title": "2. Description of Services",
+      "content": "Chill Chess Club offers personalized online chess classes for beginners and intermediates. Our services include:",
+      "items": [
+        "Individual live classes (1-on-1) via video conferencing platforms",
+        "Personalized study material generated with AI assistance",
+        "Detailed game analysis",
+        "Continuous support via email or messaging",
+        "Flexible schedules adapted to your time zone"
+      ]
+    },
+    "section3": {
+      "title": "3. Pricing and Payments",
+      "content": "Our service prices are: $13 USD per hour for Beginner level and $16 USD per hour for Intermediate level. Payments are processed securely through platforms such as PayPal, Payoneer, or Binance. Payment must be made before or immediately after each class, as agreed. We offer flexible payment plans that can be discussed individually."
+    },
+    "section4": {
+      "title": "4. Cancellation and Refund Policy",
+      "content": "Classes can be canceled or rescheduled with at least 24 hours notice at no charge. Cancellations with less than 24 hours notice may be subject to a 50% class charge. No refunds are offered for completed classes. In case of serious technical problems that prevent the class from taking place, a replacement class will be offered at no additional cost."
+    },
+    "section5": {
+      "title": "5. Intellectual Property",
+      "content": "All study material, game analysis, and educational content provided by Chill Chess Club is the exclusive property of Santiago Narváez. Students may use this material only for their personal learning and may not redistribute, sell, or use it for commercial purposes without express authorization."
+    },
+    "section6": {
+      "title": "6. User Conduct",
+      "content": "Students agree to maintain respectful behavior during classes and in all communications. Chill Chess Club reserves the right to terminate services to any student who displays inappropriate conduct, harassment, or disrespect toward the instructor or other students."
+    },
+    "section7": {
+      "title": "7. Limitation of Liability",
+      "content": "Chill Chess Club does not guarantee specific results in students' chess progress, as learning depends on multiple individual factors. We are not responsible for technical problems beyond our control (internet connection, third-party platform failures, etc.)."
+    },
+    "section8": {
+      "title": "8. Modifications to Terms",
+      "content": "Chill Chess Club reserves the right to modify these Terms and Conditions at any time. Changes will be notified to active students via email. Continued use of services after notification constitutes acceptance of the new terms."
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated",
+    "date": "November 1, 2025",
+    "section1": {
+      "title": "1. Information We Collect",
+      "content": "At Chill Chess Club, we collect only the information necessary to provide our chess teaching services. This information includes: full name, email address, contact information (WhatsApp, Telegram, Discord, etc.), time zone and schedule preferences, chess level and learning goals, and payment information necessary to process transactions."
+    },
+    "section2": {
+      "title": "2. How We Use Your Information",
+      "content": "We use the collected information for the following purposes:",
+      "items": [
+        "Coordinate and schedule chess classes",
+        "Personalize study material and learning plan",
+        "Communicate with you about your classes, progress, and service updates",
+        "Process payments securely",
+        "Analyze your chess games to provide personalized feedback",
+        "Improve our services and teaching methods"
+      ]
+    },
+    "section3": {
+      "title": "3. Sharing Information with Third Parties",
+      "content": "We do not sell, rent, or share your personal information with third parties, except in the following cases:",
+      "items": [
+        "Payment platforms (PayPal, Payoneer, Binance) to process transactions",
+        "Video conferencing platforms (Zoom, Google Meet, Discord) to conduct classes",
+        "Chess analysis tools (Chess.com, Lichess) when necessary for game analysis",
+        "When required by law or to protect our legal rights"
+      ]
+    },
+    "section4": {
+      "title": "4. Data Security",
+      "content": "We implement reasonable security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. However, no method of internet transmission or electronic storage is 100% secure, so we cannot guarantee absolute security."
+    },
+    "section5": {
+      "title": "5. Cookies and Tracking Technologies",
+      "content": "Our website may use cookies and similar technologies to improve user experience, analyze site traffic, and personalize content. You can configure your browser to reject cookies, although this may affect site functionality."
+    },
+    "section6": {
+      "title": "6. Your Rights",
+      "content": "You have the right to access, correct, or delete your personal information at any time. You can also request a copy of the data we have about you or request that we stop processing your information. To exercise these rights, contact us directly through the contact form on our website."
+    },
+    "section7": {
+      "title": "7. Data Retention",
+      "content": "We retain your personal information only for as long as necessary to fulfill the purposes described in this policy, unless the law requires or permits a longer retention period. If you decide to stop using our services, you can request deletion of your data."
+    },
+    "section8": {
+      "title": "8. Changes to This Policy",
+      "content": "We may update this Privacy Policy occasionally to reflect changes in our practices or for legal reasons. We will notify you of significant changes by posting the new policy on our website and, if applicable, sending you an email. We recommend reviewing this page periodically."
+    }
   }
 }

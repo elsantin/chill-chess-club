@@ -51,7 +51,7 @@
         "Clases individuales en vivo adaptadas a tu ritmo de aprendizaje.",
         "Material personalizado con IA y análisis de tus partidas."
       ],
-      "price": "$15 USD /Hora",
+      "price": "$13 USD /Hora",
       "priceNote": "Flexibilidad total. Avanza a tu propio ritmo. Planes de pago disponibles.",
       "cta": "Empezar Ahora"
     },
@@ -66,7 +66,7 @@
         "Clases individuales enfocadas en tus áreas específicas de mejora.",
         "Análisis exhaustivo de partidas para eliminar errores recurrentes."
       ],
-      "price": "$20 USD /Hora",
+      "price": "$16 USD /Hora",
       "priceNote": "Flexibilidad total. Avanza a tu propio ritmo. Planes de pago disponibles.",
       "cta": "Empezar Ahora"
     },
@@ -245,5 +245,100 @@
     "backButton": "Volver Atrás",
     "homeButton": "Ir al Inicio",
     "coursesButton": "Ver Cursos"
+  },
+  "terms": {
+    "title": "Términos y Condiciones",
+    "lastUpdated": "Última actualización",
+    "date": "1 de noviembre de 2025",
+    "section1": {
+      "title": "1. Aceptación de los Términos",
+      "content": "Al acceder y utilizar los servicios de Chill Chess Club, aceptas estar sujeto a estos Términos y Condiciones. Si no estás de acuerdo con alguna parte de estos términos, no debes utilizar nuestros servicios."
+    },
+    "section2": {
+      "title": "2. Descripción de los Servicios",
+      "content": "Chill Chess Club ofrece clases de ajedrez personalizadas en línea para principiantes e intermedios. Nuestros servicios incluyen:",
+      "items": [
+        "Clases individuales en vivo (1-a-1) vía plataformas de videoconferencia",
+        "Material de estudio personalizado generado con asistencia de IA",
+        "Análisis detallado de partidas",
+        "Soporte continuo vía email o mensajería",
+        "Horarios flexibles adaptados a tu zona horaria"
+      ]
+    },
+    "section3": {
+      "title": "3. Precios y Pagos",
+      "content": "Los precios de nuestros servicios son: $13 USD por hora para el nivel Principiante y $16 USD por hora para el nivel Intermedio. Los pagos se procesan de forma segura a través de plataformas como PayPal, Payoneer o Binance. El pago debe realizarse antes o inmediatamente después de cada clase, según lo acordado. Ofrecemos planes de pago flexibles que pueden ser discutidos individualmente."
+    },
+    "section4": {
+      "title": "4. Política de Cancelación y Reembolsos",
+      "content": "Las clases pueden ser canceladas o reprogramadas con al menos 24 horas de anticipación sin cargo alguno. Cancelaciones con menos de 24 horas de anticipación pueden estar sujetas a un cargo del 50% de la clase. No se ofrecen reembolsos por clases ya completadas. En caso de problemas técnicos graves que impidan la realización de la clase, se ofrecerá una clase de reemplazo sin costo adicional."
+    },
+    "section5": {
+      "title": "5. Propiedad Intelectual",
+      "content": "Todo el material de estudio, análisis de partidas, y contenido educativo proporcionado por Chill Chess Club es propiedad exclusiva de Santiago Narváez. Los estudiantes pueden utilizar este material únicamente para su aprendizaje personal y no pueden redistribuirlo, venderlo o utilizarlo con fines comerciales sin autorización expresa."
+    },
+    "section6": {
+      "title": "6. Conducta del Usuario",
+      "content": "Los estudiantes se comprometen a mantener un comportamiento respetuoso durante las clases y en todas las comunicaciones. Chill Chess Club se reserva el derecho de terminar los servicios a cualquier estudiante que muestre conducta inapropiada, acoso, o falta de respeto hacia el instructor o hacia otros estudiantes."
+    },
+    "section7": {
+      "title": "7. Limitación de Responsabilidad",
+      "content": "Chill Chess Club no garantiza resultados específicos en el progreso ajedrecístico de los estudiantes, ya que el aprendizaje depende de múltiples factores individuales. No nos hacemos responsables por problemas técnicos fuera de nuestro control (conexión a internet, fallos de plataformas de terceros, etc.)."
+    },
+    "section8": {
+      "title": "8. Modificaciones de los Términos",
+      "content": "Chill Chess Club se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento. Los cambios serán notificados a los estudiantes activos vía email. El uso continuado de los servicios después de la notificación constituye la aceptación de los nuevos términos."
+    }
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización",
+    "date": "1 de noviembre de 2025",
+    "section1": {
+      "title": "1. Información que Recopilamos",
+      "content": "En Chill Chess Club, recopilamos únicamente la información necesaria para proporcionar nuestros servicios de enseñanza de ajedrez. Esta información incluye: nombre completo, dirección de correo electrónico, información de contacto (WhatsApp, Telegram, Discord, etc.), zona horaria y preferencias de horario, nivel de ajedrez y objetivos de aprendizaje, e información de pago necesaria para procesar transacciones."
+    },
+    "section2": {
+      "title": "2. Cómo Utilizamos tu Información",
+      "content": "Utilizamos la información recopilada para los siguientes propósitos:",
+      "items": [
+        "Coordinar y programar clases de ajedrez",
+        "Personalizar el material de estudio y el plan de aprendizaje",
+        "Comunicarnos contigo sobre tus clases, progreso y actualizaciones del servicio",
+        "Procesar pagos de forma segura",
+        "Analizar tus partidas de ajedrez para proporcionar retroalimentación personalizada",
+        "Mejorar nuestros servicios y métodos de enseñanza"
+      ]
+    },
+    "section3": {
+      "title": "3. Compartir Información con Terceros",
+      "content": "No vendemos, alquilamos ni compartimos tu información personal con terceros, excepto en los siguientes casos:",
+      "items": [
+        "Plataformas de pago (PayPal, Payoneer, Binance) para procesar transacciones",
+        "Plataformas de videoconferencia (Zoom, Google Meet, Discord) para realizar las clases",
+        "Herramientas de análisis de ajedrez (Chess.com, Lichess) cuando sea necesario para el análisis de partidas",
+        "Cuando sea requerido por ley o para proteger nuestros derechos legales"
+      ]
+    },
+    "section4": {
+      "title": "4. Seguridad de los Datos",
+      "content": "Implementamos medidas de seguridad razonables para proteger tu información personal contra acceso no autorizado, alteración, divulgación o destrucción. Sin embargo, ningún método de transmisión por internet o almacenamiento electrónico es 100% seguro, por lo que no podemos garantizar seguridad absoluta."
+    },
+    "section5": {
+      "title": "5. Cookies y Tecnologías de Seguimiento",
+      "content": "Nuestro sitio web puede utilizar cookies y tecnologías similares para mejorar la experiencia del usuario, analizar el tráfico del sitio y personalizar el contenido. Puedes configurar tu navegador para rechazar cookies, aunque esto puede afectar la funcionalidad del sitio."
+    },
+    "section6": {
+      "title": "6. Tus Derechos",
+      "content": "Tienes derecho a acceder, corregir o eliminar tu información personal en cualquier momento. También puedes solicitar una copia de los datos que tenemos sobre ti o solicitar que dejemos de procesar tu información. Para ejercer estos derechos, contáctanos directamente a través del formulario de contacto en nuestro sitio web."
+    },
+    "section7": {
+      "title": "7. Retención de Datos",
+      "content": "Conservamos tu información personal solo durante el tiempo necesario para cumplir con los propósitos descritos en esta política, a menos que la ley requiera o permita un período de retención más largo. Si decides dejar de utilizar nuestros servicios, puedes solicitar la eliminación de tus datos."
+    },
+    "section8": {
+      "title": "8. Cambios a esta Política",
+      "content": "Podemos actualizar esta Política de Privacidad ocasionalmente para reflejar cambios en nuestras prácticas o por razones legales. Te notificaremos sobre cambios significativos publicando la nueva política en nuestro sitio web y, si corresponde, enviándote un correo electrónico. Te recomendamos revisar esta página periódicamente."
+    }
   }
 }

@@ -108,13 +108,13 @@ export default function Footer() {
             </p>
             <div className="flex gap-6">
               <Link
-                href="/privacy"
+                href="/privacidad"
                 className="text-warmGray-500 hover:text-sunset-400 text-xs"
               >
                 {t("privacy")}
               </Link>
               <Link
-                href="/terms"
+                href="/terminos"
                 className="text-warmGray-500 hover:text-sunset-400 text-xs"
               >
                 {t("terms")}
