@@ -42,14 +42,14 @@ export default function About() {
         </motion.div>
 
         {/* Main Content Grid */}
-        <div className="grid md:grid-cols-2 gap-2 items-center mb-16">
+        <div className="grid md:grid-cols-2 gap-0 items-center mb-16">
           {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
             viewport={{ once: true }}
-            className="relative flex justify-center md:justify-start"
+            className="relative flex justify-center md:justify-end md:pr-4"
           >
             <div className="relative rounded-2xl overflow-hidden border-2 border-sunset-500/50 shadow-neumorphic-lg hover:shadow-glow-sunset transition-all duration-300 max-w-xs">
               <Image

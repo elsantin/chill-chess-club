@@ -128,28 +128,66 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  accent-color: #f97316 !important; /* sunset-500 */
+  color-scheme: dark;
 }
 
-/* Remove blue outline from select and options */
+/* Force sunset color on focus - override browser blue */
 select:focus,
-select:focus-visible {
-  outline: none !important;
-  box-shadow: none !important;
+select:focus-visible,
+select:active {
+  outline: 2px solid #f97316 !important; /* sunset-500 */
+  outline-offset: 0px !important;
+  border-color: #f97316 !important;
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2) !important;
+}
+
+/* Remove default browser focus ring */
+select::-moz-focus-inner {
+  border: 0 !important;
+  outline: 0 !important;
+}
+
+/* Firefox specific - force orange outline */
+select:-moz-focusring {
+  color: transparent !important;
+  text-shadow: 0 0 0 #f5f5f4 !important;
+  outline: 2px solid #f97316 !important;
+  outline-offset: 0px !important;
+}
+
+/* Webkit/Chrome specific - force orange highlight */
+select::-webkit-details-marker {
+  display: none;
 }
 
 /* Style for select options */
 select option {
   background-color: #292524 !important; /* warmGray-800 */
   color: #f5f5f4 !important; /* warmGray-100 */
-  padding: 8px !important;
+  padding: 8px 12px !important;
 }
 
-select option:checked,
-select option:hover {
-  background: linear-gradient(
-    135deg,
-    #f97316 0%,
-    #ec4899 100%
-  ) !important; /* sunset gradient */
+/* Selected option - force sunset color */
+select option:checked {
+  background: linear-gradient(135deg, #f97316 0%, #ec4899 100%) !important;
+  background-color: #f97316 !important;
   color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* Hover state */
+select option:hover {
+  background: #fb923c !important; /* sunset-400 */
+  background-color: #fb923c !important;
+  color: #ffffff !important;
+}
+
+/* Force scrollbar color in dropdown */
+select::-webkit-scrollbar-thumb {
+  background: #f97316 !important;
+}
+
+select::-webkit-scrollbar-track {
+  background: #292524 !important;
 }
