@@ -1,8 +1,8 @@
 # 🎯 PROJECT CONTEXT - Chill Chess Club Website
 
-**Última actualización:** 2025-01-13
-**Estado del proyecto:** ✅ Implementación completa - Listo para producción
-**Versión:** 1.0.0
+**Última actualización:** 2025-02-01
+**Estado del proyecto:** ✅ Optimizado y listo para monetización
+**Versión:** 1.2.0
 
 ---
 
@@ -62,6 +62,22 @@ chill-chess-club-nextjs/
 │   ├── [locale]/                    # Rutas internacionalizadas
 │   │   ├── layout.tsx              # Layout principal con fuentes
 │   │   ├── page.tsx                # Página principal (compone todos los componentes)
+│   │   ├── blog/
+│   │   │   ├── page.tsx            # Lista de artículos (Server Component)
+│   │   │   ├── loading.tsx         # Loading state
+│   │   │   └── [slug]/
+│   │   │       ├── page.tsx        # Artículo individual
+│   │   │       └── loading.tsx     # Loading state
+│   │   ├── recursos/
+│   │   │   ├── page.tsx            # Lista de recursos (Server Component)
+│   │   │   ├── loading.tsx         # Loading state
+│   │   │   └── [slug]/
+│   │   │       ├── page.tsx        # Recurso individual
+│   │   │       └── loading.tsx     # Loading state
+│   │   ├── terminos/
+│   │   │   └── page.tsx            # Términos de servicio
+│   │   ├── privacidad/
+│   │   │   └── page.tsx            # Política de privacidad
 │   │   └── components/             # Componentes de la página
 │   │       ├── Header.tsx          # Navegación sticky + selector idioma
 │   │       ├── Hero.tsx            # Sección hero con imagen de fondo
@@ -69,28 +85,39 @@ chill-chess-club-nextjs/
 │   │       ├── Courses.tsx         # Cards de cursos (2)
 │   │       ├── Method.tsx          # 5 pasos del método
 │   │       ├── Blog.tsx            # Grid de artículos (3)
+│   │       ├── BlogCard.tsx        # Card individual de blog
+│   │       ├── BlogPageClient.tsx  # Cliente para página de blog
+│   │       ├── ResourceCard.tsx    # Card individual de recurso
+│   │       ├── RecursosPageClient.tsx # Cliente para página de recursos
 │   │       ├── FAQ.tsx             # Acordeón de preguntas (7)
 │   │       ├── Contact.tsx         # Formulario con validación
-│   │       └── Footer.tsx          # Footer simple
+│   │       ├── Footer.tsx          # Footer principal
+│   │       └── LegalFooter.tsx     # Footer minimalista para páginas legales
 │   ├── api/
 │   │   └── contact/
 │   │       └── route.ts            # API endpoint para formulario
-│   └── globals.css                 # Estilos globales + Tailwind
+│   └── globals.css                 # Estilos globales + Tailwind + scrollbar
 ├── messages/
 │   ├── es.json                     # Traducciones español (completo)
 │   └── en.json                     # Traducciones inglés (completo)
 ├── lib/
 │   ├── i18n.ts                     # Configuración next-intl
 │   ├── utils.ts                    # Utilidades (cn, imagePlaceholders)
-│   └── validations.ts              # Schemas Zod
+│   ├── validations.ts              # Schemas Zod
+│   ├── blog-data.ts                # Datos de artículos de blog
+│   └── resources-data.ts           # Datos de recursos
 ├── public/
 │   └── images/                     # Imágenes del sitio (8 total)
 ├── .kiro/
 │   └── specs/
-│       └── chill-chess-club-website/
-│           ├── requirements.md     # 15 requisitos detallados
-│           ├── design.md           # Diseño completo
-│           └── tasks.md            # 25 tareas (todas completadas)
+│       ├── chill-chess-club-website/
+│       │   ├── requirements.md     # 15 requisitos detallados
+│       │   ├── design.md           # Diseño completo
+│       │   └── tasks.md            # 25 tareas (todas completadas)
+│       └── ui-refinements/
+│           ├── requirements.md     # Refinamientos UI
+│           ├── design.md           # Decisiones de diseño
+│           └── tasks.md            # Tareas completadas
 ├── middleware.ts                   # Middleware i18n
 ├── next.config.ts                  # Config Next.js + next-intl
 ├── tailwind.config.ts              # Config Tailwind personalizada
@@ -461,6 +488,10 @@ rm -rf .next             # Limpia caché de Next.js (Windows: rmdir /s /q .next)
 - [x] Accesibilidad (semantic HTML, ARIA)
 - [x] TypeScript sin errores
 - [x] Build exitoso
+- [x] **Refinamientos UI (v1.1)** - Espaciado, colores, imágenes
+- [x] **Páginas legales** - Términos y Privacidad (ES/EN)
+- [x] **Precios actualizados** - $13 y $16
+- [x] **Optimización de rendimiento (v1.2)** - Server Components
 
 ### Pendiente
 
@@ -494,6 +525,12 @@ npm install -D tailwindcss@3 postcss autoprefixer
 
 **Problema:** Next.js Image no permite dominios no configurados
 **Solución:** Agregar `placehold.co` a `remotePatterns` en `next.config.ts`
+
+### 4. Navegación lenta entre páginas (RESUELTO - v1.2)
+
+**Problema:** Las páginas de blog y recursos eran client-side, causando navegación lenta
+**Solución:** Convertidas a Server Components con componentes client separados para animaciones
+**Resultado:** Mejora significativa en velocidad de navegación y mejor SEO
 
 ---
 
@@ -672,6 +709,67 @@ Route (app)                    Size      First Load JS
 - **Implementado por:** Kiro AI Agent
 - **Fecha:** Enero 2025
 - **Versión:** 1.0.0
+
+---
+
+## 🆕 HISTORIAL DE CAMBIOS
+
+### v1.2.0 (2025-02-01) - Optimización de Rendimiento
+
+**Cambios principales:**
+
+- ✅ Convertidas páginas de blog y recursos a Server Components
+- ✅ Separados componentes client para animaciones (BlogPageClient, RecursosPageClient)
+- ✅ Agregados loading states con spinners
+- ✅ Mejora significativa en velocidad de navegación
+- ✅ Mejor SEO y caché automático de Next.js
+
+**Archivos modificados:**
+
+- `app/[locale]/blog/page.tsx` - Ahora es Server Component
+- `app/[locale]/recursos/page.tsx` - Ahora es Server Component
+- Nuevos: `BlogPageClient.tsx`, `RecursosPageClient.tsx`
+- Nuevos: 4 archivos `loading.tsx`
+
+### v1.1.0 (2025-01-31) - Refinamientos UI y Páginas Legales
+
+**Cambios principales:**
+
+- ✅ Ajustes de espaciado en About (foto más cerca del texto)
+- ✅ Formulario de contacto con colores del tema (naranja/fucsia)
+- ✅ Páginas legales: Términos y Privacidad (ES/EN)
+- ✅ Footer minimalista para páginas legales
+- ✅ Precios actualizados: $13 (Principiante) y $16 (Intermedio)
+- ✅ Badges de recursos con colores sunset
+- ✅ Imágenes de tarjetas con más altura (h-80)
+- ✅ Títulos con line-height correcto (sin cortes)
+- ✅ Scrollbar personalizada con colores del tema
+
+**Archivos modificados:**
+
+- `app/[locale]/components/About.tsx` - gap-0, md:pr-4
+- `app/[locale]/components/Contact.tsx` - accentColor, colorScheme
+- `app/[locale]/components/ResourceCard.tsx` - colores sunset
+- `app/[locale]/components/BlogCard.tsx` - altura h-80
+- `app/[locale]/components/Courses.tsx` - altura h-80
+- `app/[locale]/components/neumorphic/AnimatedTitle.tsx` - line-height 1.5
+- `app/[locale]/blog/[slug]/page.tsx` - line-height y pb-2
+- `app/[locale]/recursos/[slug]/page.tsx` - line-height y pb-2
+- `app/globals.css` - scrollbar, accent-color
+- `messages/es.json` y `messages/en.json` - precios y páginas legales
+- Nuevos: `LegalFooter.tsx`, `terminos/page.tsx`, `privacidad/page.tsx`
+
+### v1.0.0 (2025-01-13) - Lanzamiento Inicial
+
+**Implementación completa:**
+
+- ✅ Landing page de una sola página
+- ✅ Sistema de internacionalización (ES/EN)
+- ✅ 9 componentes principales
+- ✅ Diseño responsive
+- ✅ Animaciones con Framer Motion
+- ✅ Formulario con validación
+- ✅ API endpoint para contacto
 
 ---
 
