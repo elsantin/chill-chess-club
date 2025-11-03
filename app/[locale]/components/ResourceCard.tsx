@@ -101,7 +101,8 @@ export function ResourceCard({ resource, index = 0 }: ResourceCardProps) {
             </h3>
 
             {/* Excerpt */}
-            <p className="text-warmGray-300 mb-4 flex-grow line-clamp-3">
+            {/* Accessibility: Changed from warmGray-300 to warmGray-200 for WCAG 2.0 AA contrast */}
+            <p className="text-warmGray-200 mb-4 flex-grow line-clamp-3">
               {resource.excerpt}
             </p>
 

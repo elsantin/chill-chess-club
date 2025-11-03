@@ -1,6 +1,6 @@
 # Implementation Plan - Accessibility Audit Fixes
 
-- [ ] 1. Restructure main landmark on all pages
+- [x] 1. Restructure main landmark on all pages
 
   - [x] 1.1 Update home page (app/[locale]/page.tsx) to move Header and Footer outside main element
 
@@ -44,7 +44,7 @@
     - Ensure consistent landmark structure
     - _Requirements: 1.1, 1.2, 1.3, 1.4_
 
-  - [-] 1.7 Verify CSS selectors and background styling after main restructuring
+  - [x] 1.7 Verify CSS selectors and background styling after main restructuring
 
     - Check if any CSS rules target main element directly
     - Ensure bg-warmGray-950 background is maintained
@@ -52,23 +52,23 @@
     - Test responsive layouts at all breakpoints
     - _Requirements: 1.4, 1.5_
 
-- [ ] 2. Audit and fix focus management for aria-hidden elements
+- [x] 2. Audit and fix focus management for aria-hidden elements
 
-  - [ ] 2.1 Search codebase for all aria-hidden attributes
+  - [x] 2.1 Search codebase for all aria-hidden attributes
 
     - Use grep/search to find all instances of aria-hidden
     - Document each occurrence with file path and context
     - Identify which elements are decorative vs interactive
     - _Requirements: 2.1, 2.2, 2.3_
 
-  - [ ] 2.2 Fix TwinklingStars component if it has aria-hidden
+  - [x] 2.2 Fix TwinklingStars component if it has aria-hidden
 
     - Ensure decorative stars cannot receive focus
     - Add tabIndex={-1} if aria-hidden is present
     - Verify no interactive children exist
     - _Requirements: 2.1, 2.2, 2.3, 2.4_
 
-  - [ ] 2.3 Audit third-party components (Framer Motion, Radix UI) for aria-hidden focus issues
+  - [x] 2.3 Audit third-party components (Framer Motion, Radix UI) for aria-hidden focus issues
 
     - Check GlassmorphicHeader for decorative elements
     - Review Accordion components from shadcn/ui
@@ -76,22 +76,23 @@
     - Fix any focusable elements with aria-hidden
     - _Requirements: 2.1, 2.2, 2.3, 2.4_
 
-  - [ ] 2.4 Verify ScrollToTop button is not marked as aria-hidden
+  - [x] 2.4 Verify ScrollToTop button is not marked as aria-hidden
+
     - Ensure button is keyboard accessible
     - Verify proper focus management
     - Test with keyboard navigation
     - _Requirements: 2.1, 2.4_
 
-- [ ] 3. Fix color contrast issues to meet WCAG 2.0 AA standards
+- [x] 3. Fix color contrast issues to meet WCAG 2.0 AA standards
 
-  - [ ] 3.1 Run Lighthouse audit to identify specific contrast failures
+  - [x] 3.1 Run Lighthouse audit to identify specific contrast failures
 
     - Document all failing elements with current colors
     - Calculate current contrast ratios
     - Determine minimum required adjustments
     - _Requirements: 3.1, 3.2, 3.3_
 
-  - [ ] 3.2 Update Footer component text colors for sufficient contrast
+  - [x] 3.2 Update Footer component text colors for sufficient contrast
 
     - Change text-warmGray-300 to text-warmGray-200 or lighter
     - Update text-warmGray-400 to text-warmGray-300 minimum
@@ -99,7 +100,7 @@
     - Verify copyright text meets 4.5:1 ratio
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5_
 
-  - [ ] 3.3 Audit and fix contrast in all page components
+  - [x] 3.3 Audit and fix contrast in all page components
 
     - Check Hero component text colors
     - Review About, Courses, Method sections
@@ -107,7 +108,7 @@
     - Update BlogCard and ResourceCard text colors
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5_
 
-  - [ ] 3.4 Update Header component navigation text for contrast compliance
+  - [x] 3.4 Update Header component navigation text for contrast compliance
 
     - Verify nav link colors meet contrast requirements
     - Check mobile menu text colors
@@ -115,7 +116,8 @@
     - Test hover and active states
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5_
 
-  - [ ] 3.5 Verify sunset accent colors maintain sufficient contrast
+  - [x] 3.5 Verify sunset accent colors maintain sufficient contrast
+
     - Test sunset-400, sunset-300, sunset-500 on dark backgrounds
     - Ensure CTA buttons meet contrast requirements
     - Check gradient text readability

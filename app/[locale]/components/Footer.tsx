@@ -18,7 +18,8 @@ export default function Footer() {
             <h3 className="text-xl font-bold text-sunset-400">
               Chill Chess Club
             </h3>
-            <p className="text-warmGray-300 text-sm">{t("description")}</p>
+            {/* Accessibility: Changed from warmGray-300 to warmGray-200 for WCAG 2.0 AA contrast (4.5:1) */}
+            <p className="text-warmGray-200 text-sm">{t("description")}</p>
           </div>
 
           {/* Quick Links */}
@@ -26,11 +27,12 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-sunset-400 mb-4">
               {t("quickLinks")}
             </h4>
+            {/* Accessibility: Changed from warmGray-300 to warmGray-200 for WCAG 2.0 AA contrast */}
             <ul className="space-y-2">
               <li>
                 <a
                   href="#about"
-                  className="text-warmGray-300 hover:text-sunset-400 text-sm"
+                  className="text-warmGray-200 hover:text-sunset-400 text-sm"
                 >
                   {tNav("about")}
                 </a>
@@ -38,7 +40,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#courses"
-                  className="text-warmGray-300 hover:text-sunset-400 text-sm"
+                  className="text-warmGray-200 hover:text-sunset-400 text-sm"
                 >
                   {tNav("courses")}
                 </a>
@@ -46,7 +48,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#method"
-                  className="text-warmGray-300 hover:text-sunset-400 text-sm"
+                  className="text-warmGray-200 hover:text-sunset-400 text-sm"
                 >
                   {tNav("method")}
                 </a>
@@ -54,7 +56,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#faq"
-                  className="text-warmGray-300 hover:text-sunset-400 text-sm"
+                  className="text-warmGray-200 hover:text-sunset-400 text-sm"
                 >
                   {tNav("faq")}
                 </a>
@@ -62,7 +64,7 @@ export default function Footer() {
               <li>
                 <a
                   href="#contact"
-                  className="text-warmGray-300 hover:text-sunset-400 text-sm"
+                  className="text-warmGray-200 hover:text-sunset-400 text-sm"
                 >
                   {tNav("contact")}
                 </a>
@@ -75,11 +77,13 @@ export default function Footer() {
             <h4 className="text-lg font-semibold text-sunset-400 mb-4">
               {t("quickContact")}
             </h4>
-            <p className="text-warmGray-300 text-sm mb-4">
+            {/* Accessibility: Changed from warmGray-300 to warmGray-200 for WCAG 2.0 AA contrast */}
+            <p className="text-warmGray-200 text-sm mb-4">
               santiago.narvaez.84@gmail.com
             </p>
             <div className="space-y-2">
-              <p className="text-warmGray-400 text-xs">
+              {/* Accessibility: Changed from warmGray-400 to warmGray-300 for WCAG 2.0 AA contrast */}
+              <p className="text-warmGray-300 text-xs">
                 {t("securePayments")}:
               </p>
               <div className="flex gap-2">
@@ -98,9 +102,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar - Copyright and Links */}
+        {/* Accessibility: Changed from warmGray-500 to warmGray-400 for WCAG 2.0 AA contrast */}
         <div className="border-t border-warmGray-800 pt-8 mb-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-6">
-            <p className="text-warmGray-500 text-xs">
+            <p className="text-warmGray-400 text-xs">
               © {currentYear} Chill Chess Club.{" "}
               {t("copyright").replace(
                 `© ${currentYear} Chill Chess Club. `,
@@ -110,13 +115,13 @@ export default function Footer() {
             <div className="flex gap-6">
               <Link
                 href={`/${locale}/privacidad`}
-                className="text-warmGray-500 hover:text-sunset-400 text-xs"
+                className="text-warmGray-400 hover:text-sunset-400 text-xs"
               >
                 {t("privacy")}
               </Link>
               <Link
                 href={`/${locale}/terminos`}
-                className="text-warmGray-500 hover:text-sunset-400 text-xs"
+                className="text-warmGray-400 hover:text-sunset-400 text-xs"
               >
                 {t("terms")}
               </Link>
@@ -172,7 +177,8 @@ export default function Footer() {
               </div>
 
               {/* Subtitle */}
-              <p className="text-warmGray-400 text-xs group-hover:text-warmGray-300 transition-colors">
+              {/* Accessibility: Changed from warmGray-400 to warmGray-300 for WCAG 2.0 AA contrast */}
+              <p className="text-warmGray-300 text-xs group-hover:text-warmGray-200 transition-colors">
                 {t("madeBy")}
               </p>
             </a>
