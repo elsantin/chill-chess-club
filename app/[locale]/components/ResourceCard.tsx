@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import { NeumorphicCard } from "./neumorphic/NeumorphicCard";
 import { LocalizedResource } from "@/lib/resources-data";
+import { blurPlaceholders } from "@/lib/image-blur";
 
 interface ResourceCardProps {
   resource: LocalizedResource;
@@ -44,20 +45,24 @@ export function ResourceCard({ resource, index = 0 }: ResourceCardProps) {
       viewport={{ once: true, margin: "0px 0px -100px 0px" }}
       className="group h-full"
     >
-      <Link href={`/${locale}/recursos/${resource.slug}`}>
+      {/* Performance: Added prefetch for instant navigation */}
+      <Link href={`/${locale}/recursos/${resource.slug}`} prefetch={true}>
         <NeumorphicCard
           className="bg-warmGray-900 overflow-hidden h-full flex flex-col"
           interactive={true}
         >
           {/* Image */}
           <div className="relative h-64 overflow-hidden bg-warmGray-800">
-            {/* Performance: Added loading="lazy" and reduced image size for faster loading */}
+            {/* Performance: Optimized with lazy loading, quality control, and blur placeholder */}
             <Image
               src={resource.image}
               alt={resource.title}
               width={600}
               height={400}
               loading="lazy"
+              quality={85}
+              placeholder="blur"
+              blurDataURL={blurPlaceholders.card}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
             />
             {/* Gradient overlay */}

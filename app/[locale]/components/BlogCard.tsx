@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { FaClock, FaCalendar, FaArrowRight } from "react-icons/fa";
 import { NeumorphicCard } from "./neumorphic/NeumorphicCard";
 import { LocalizedBlogPost } from "@/lib/blog-data";
+import { blurPlaceholders } from "@/lib/image-blur";
 
 interface BlogCardProps {
   post: LocalizedBlogPost;
@@ -30,20 +31,24 @@ export function BlogCard({ post, index = 0 }: BlogCardProps) {
       viewport={{ once: true, margin: "0px 0px -100px 0px" }}
       className="group h-full"
     >
-      <Link href={`/${locale}/blog/${post.slug}`}>
+      {/* Performance: Added prefetch for instant navigation */}
+      <Link href={`/${locale}/blog/${post.slug}`} prefetch={true}>
         <NeumorphicCard
           className="bg-warmGray-900 overflow-hidden h-full flex flex-col"
           interactive={true}
         >
           {/* Image */}
           <div className="relative h-64 overflow-hidden bg-warmGray-800">
-            {/* Performance: Added loading="lazy" and reduced image size for faster loading */}
+            {/* Performance: Optimized with lazy loading, quality control, and blur placeholder */}
             <Image
               src={post.image}
               alt={post.title}
               width={600}
               height={400}
               loading="lazy"
+              quality={85}
+              placeholder="blur"
+              blurDataURL={blurPlaceholders.card}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
             />
             {/* Gradient overlay */}

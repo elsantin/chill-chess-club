@@ -13,6 +13,7 @@ import {
 } from "react-icons/fa";
 import { getLocalizedResource } from "@/lib/resources-data";
 import { NeumorphicCard } from "../../components/neumorphic/NeumorphicCard";
+import { blurPlaceholders } from "@/lib/image-blur";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ScrollToTop from "../../components/ScrollToTop";
@@ -65,6 +66,7 @@ export default function ResourcePage({
               >
                 {/* Featured Image */}
                 <div className="relative h-96 overflow-hidden bg-warmGray-800">
+                  {/* Performance: Hero image with priority loading, quality control, and blur placeholder */}
                   <Image
                     src={resource.image}
                     alt={resource.title}
@@ -72,6 +74,9 @@ export default function ResourcePage({
                     height={600}
                     className="w-full h-full object-cover"
                     priority
+                    quality={90}
+                    placeholder="blur"
+                    blurDataURL={blurPlaceholders.hero}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-warmGray-900 via-warmGray-900/50 to-transparent" />
                   <div className="absolute inset-0 bg-gradient-to-br from-sunset-500/20 via-rose-500/10 to-purple-500/20 mix-blend-overlay" />

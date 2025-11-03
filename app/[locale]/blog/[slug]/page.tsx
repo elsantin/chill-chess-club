@@ -7,6 +7,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { FaArrowLeft, FaClock, FaCalendar, FaUser } from "react-icons/fa";
 import { getLocalizedBlogPost } from "@/lib/blog-data";
 import { NeumorphicCard } from "../../components/neumorphic/NeumorphicCard";
+import { blurPlaceholders } from "@/lib/image-blur";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import ScrollToTop from "../../components/ScrollToTop";
@@ -53,6 +54,7 @@ export default function BlogPostPage({
               >
                 {/* Featured Image */}
                 <div className="relative h-96 overflow-hidden">
+                  {/* Performance: Hero image with priority loading, quality control, and blur placeholder */}
                   <Image
                     src={post.image}
                     alt={post.title}
@@ -60,6 +62,9 @@ export default function BlogPostPage({
                     height={600}
                     className="w-full h-full object-cover"
                     priority
+                    quality={90}
+                    placeholder="blur"
+                    blurDataURL={blurPlaceholders.hero}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-warmGray-900 via-warmGray-900/50 to-transparent" />
                   <div className="absolute inset-0 bg-gradient-to-br from-sunset-500/20 via-rose-500/10 to-purple-500/20 mix-blend-overlay" />
