@@ -124,9 +124,9 @@
     - Validate focus indicators are visible
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5_
 
-- [ ] 4. Validate and document accessibility improvements
+- [x] 4. Validate and document accessibility improvements
 
-  - [ ] 4.1 Run Lighthouse accessibility audit on all pages
+  - [x] 4.1 Run Lighthouse accessibility audit on all pages
 
     - Test home page
     - Test blog and recursos listing pages
@@ -135,7 +135,7 @@
     - Document scores and remaining issues
     - _Requirements: 4.2, 4.3_
 
-  - [ ] 4.2 Perform keyboard navigation testing
+  - [x] 4.2 Perform keyboard navigation testing
 
     - Tab through all interactive elements on each page
     - Verify focus indicators are visible
@@ -143,7 +143,7 @@
     - Ensure no focus traps exist
     - _Requirements: 4.2, 4.4_
 
-  - [ ] 4.3 Add code comments documenting accessibility changes
+  - [x] 4.3 Add code comments documenting accessibility changes
 
     - Comment main landmark restructuring
     - Document aria-hidden focus fixes
