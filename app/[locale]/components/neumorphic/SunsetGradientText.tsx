@@ -33,30 +33,43 @@ export function SunsetGradientText({
   };
 
   return (
-    <Component className={cn("relative inline-block", className)}>
-      {/* Capa de sombra/resplandor - texto con color sólido */}
+    <Component
+      className={cn("relative inline-block", className)}
+      style={{
+        // Performance: GPU acceleration for smooth rendering
+        willChange: "transform",
+        transform: "translateZ(0)",
+      }}
+    >
+      {/* Performance: Optimized shadow layer with GPU acceleration */}
       <span
         className="absolute inset-0"
         style={{
           color: "#fb923c", // sunset-400
           textShadow: `
-            0 0 40px rgba(251, 146, 60, 0.4),
-            0 0 80px rgba(251, 146, 60, 0.2),
-            0 2px 4px rgba(0, 0, 0, 0.8),
-            0 4px 8px rgba(0, 0, 0, 0.6)
+            0 0 30px rgba(251, 146, 60, 0.3),
+            0 0 60px rgba(251, 146, 60, 0.15),
+            0 2px 4px rgba(0, 0, 0, 0.8)
           `,
+          willChange: "transform",
+          transform: "translateZ(0)",
         }}
         aria-hidden="true"
+        tabIndex={-1}
       >
         {children}
       </span>
 
-      {/* Capa de gradiente - texto transparente con gradiente */}
+      {/* Performance: Optimized gradient layer with GPU acceleration */}
       <span
         className={cn(
           "relative bg-gradient-to-r bg-clip-text text-transparent",
           gradients[variant]
         )}
+        style={{
+          willChange: "transform",
+          transform: "translateZ(0)",
+        }}
       >
         {children}
       </span>

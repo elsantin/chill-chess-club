@@ -39,6 +39,10 @@ export function AnimatedTitle({
         paddingTop: "0.2em",
         paddingBottom: "0.4em",
         lineHeight: "1.5",
+        // Performance: GPU acceleration for smooth animation
+        willChange: "opacity",
+        transform: "translateZ(0)",
+        backfaceVisibility: "hidden",
       }}
     >
       {children}

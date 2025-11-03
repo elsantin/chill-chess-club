@@ -130,6 +130,19 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} className={`${playfair.variable} ${roboto.variable}`}>
+      {/* Performance: Preload critical fonts for smooth animations */}
+      <head>
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className="font-roboto antialiased">
         <NextIntlClientProvider messages={messages}>
           {children}

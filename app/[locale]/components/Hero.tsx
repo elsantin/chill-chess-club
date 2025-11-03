@@ -23,11 +23,16 @@ export default function Hero() {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Image with Parallax */}
+      {/* Performance: Optimized with GPU acceleration and faster animation */}
       <motion.div
         className="absolute inset-0 z-0"
         initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
-        transition={{ duration: 1.5, ease: [0.25, 0.1, 0.25, 1] }}
+        transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+        style={{
+          willChange: "transform",
+          transform: "translateZ(0)",
+        }}
       >
         <Image
           src={imagePlaceholders.hero.src}
@@ -48,18 +53,33 @@ export default function Hero() {
       </div>
 
       <div className="container mx-auto px-4 py-32 relative z-20">
+        {/* Performance: Optimized container with GPU acceleration */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
           className="text-center max-w-5xl ml-auto mr-0 md:mr-8"
+          style={{
+            willChange: "transform, opacity",
+            transform: "translateZ(0)",
+          }}
         >
           {/* Title with Sunset Gradient */}
+          {/* Performance: Faster animation with GPU acceleration */}
           <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{
+              duration: 0.6,
+              delay: 0.15,
+              ease: [0.25, 0.1, 0.25, 1],
+            }}
             className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold mb-6 leading-tight"
+            style={{
+              willChange: "transform, opacity",
+              transform: "translateZ(0)",
+              backfaceVisibility: "hidden",
+            }}
           >
             <SunsetGradientText variant="full" className="drop-shadow-2xl">
               {t("title")}
@@ -67,24 +87,43 @@ export default function Hero() {
           </motion.h1>
 
           {/* Subtitle */}
+          {/* Performance: Faster animation with GPU acceleration */}
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{
+              duration: 0.6,
+              delay: 0.25,
+              ease: [0.25, 0.1, 0.25, 1],
+            }}
             className="text-lg md:text-xl lg:text-2xl !text-warmGray-100 mb-12 mx-auto leading-relaxed drop-shadow-lg"
-            style={{ color: "#f5f5f4" }}
+            style={{
+              color: "#f5f5f4",
+              willChange: "transform, opacity",
+              transform: "translateZ(0)",
+            }}
           >
             {t("subtitle")}
           </motion.p>
 
           {/* CTAs */}
+          {/* Performance: Faster animation with GPU acceleration */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            transition={{
+              duration: 0.6,
+              delay: 0.35,
+              ease: [0.25, 0.1, 0.25, 1],
+            }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-stretch sm:items-center"
+            style={{
+              willChange: "transform, opacity",
+              transform: "translateZ(0)",
+            }}
           >
             {/* Primary CTA */}
+            {/* Performance: GPU-accelerated hover animations */}
             <motion.button
               onClick={() => handleCTAClick("#contact")}
               className="px-8 py-4 bg-gradient-to-r from-sunset-500 via-rose-500 to-pink-600 !text-white font-bold rounded-xl transition-all duration-300 shadow-neumorphic-lg w-full sm:w-auto"
@@ -92,6 +131,8 @@ export default function Hero() {
                 background:
                   "linear-gradient(to right, #f97316, #f43f5e, #ec4899)",
                 color: "#ffffff",
+                willChange: "transform",
+                transform: "translateZ(0)",
               }}
               whileHover={{
                 scale: 1.05,
@@ -103,10 +144,15 @@ export default function Hero() {
             </motion.button>
 
             {/* Secondary CTA */}
+            {/* Performance: GPU-accelerated hover animations */}
             <motion.button
               onClick={() => handleCTAClick("#method")}
               className="px-8 py-4 border-2 border-sunset-400 !text-sunset-300 hover:bg-sunset-500/10 font-bold rounded-xl transition-all duration-300 backdrop-blur-sm bg-warmGray-900/30 w-full sm:w-auto"
-              style={{ color: "#fdba74" }}
+              style={{
+                color: "#fdba74",
+                willChange: "transform",
+                transform: "translateZ(0)",
+              }}
               whileHover={{
                 scale: 1.05,
                 borderColor: "#fb923c",
