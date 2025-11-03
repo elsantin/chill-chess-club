@@ -11,17 +11,21 @@ import ScrollToTop from "./components/ScrollToTop";
 
 export default function HomePage() {
   return (
-    <main className="bg-warmGray-950">
+    // Accessibility: Restructured to place Header and Footer outside main landmark (WCAG 2.0)
+    // Main element now wraps only primary content for proper semantic structure
+    <div className="bg-warmGray-950">
       <Header />
-      <Hero />
-      <About />
-      <Courses />
-      <Method />
-      <BlogPreview />
-      <FAQ />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Courses />
+        <Method />
+        <BlogPreview />
+        <FAQ />
+        <Contact />
+      </main>
       <Footer />
       <ScrollToTop />
-    </main>
+    </div>
   );
 }

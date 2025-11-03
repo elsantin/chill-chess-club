@@ -14,16 +14,19 @@ export default async function BlogPage({
   const t = await getTranslations("blog");
   const blogPosts = getRecentBlogPosts(10, locale);
   return (
-    <main className="bg-warmGray-950 min-h-screen">
+    // Accessibility: Restructured to place Header and Footer outside main landmark (WCAG 2.0)
+    <div className="bg-warmGray-950 min-h-screen">
       <Header />
-      <BlogPageClient
-        blogPosts={blogPosts}
-        pageTitle={t("pageTitle")}
-        pageSubtitle={t("pageSubtitle")}
-        comingSoon={t("comingSoon")}
-      />
+      <main>
+        <BlogPageClient
+          blogPosts={blogPosts}
+          pageTitle={t("pageTitle")}
+          pageSubtitle={t("pageSubtitle")}
+          comingSoon={t("comingSoon")}
+        />
+      </main>
       <Footer />
       <ScrollToTop />
-    </main>
+    </div>
   );
 }

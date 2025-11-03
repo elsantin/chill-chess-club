@@ -2,49 +2,50 @@
 
 - [ ] 1. Restructure main landmark on all pages
 
-  - [ ] 1.1 Update home page (app/[locale]/page.tsx) to move Header and Footer outside main element
+  - [x] 1.1 Update home page (app/[locale]/page.tsx) to move Header and Footer outside main element
 
     - Move `<Header />` before `<main>`
     - Move `<Footer />` and `<ScrollToTop />` after `</main>`
     - Keep background class on main or move to parent wrapper
     - _Requirements: 1.1, 1.2, 1.3, 1.4_
 
-  - [ ] 1.2 Update blog listing page (app/[locale]/blog/page.tsx) with correct main landmark structure
+  - [x] 1.2 Update blog listing page (app/[locale]/blog/page.tsx) with correct main landmark structure
 
     - Restructure to place Header outside main
     - Ensure BlogPageClient content is within main
     - Move Footer and ScrollToTop outside main
     - _Requirements: 1.1, 1.2, 1.3, 1.4_
 
-  - [ ] 1.3 Update resources listing page (app/[locale]/recursos/page.tsx) with correct main landmark structure
+  - [x] 1.3 Update resources listing page (app/[locale]/recursos/page.tsx) with correct main landmark structure
 
     - Restructure to place Header outside main
     - Ensure RecursosPageClient content is within main
     - Move Footer and ScrollToTop outside main
     - _Requirements: 1.1, 1.2, 1.3, 1.4_
 
-  - [ ] 1.4 Update blog detail page (app/[locale]/blog/[slug]/page.tsx) with correct main landmark structure
+  - [x] 1.4 Update blog detail page (app/[locale]/blog/[slug]/page.tsx) with correct main landmark structure
 
     - Restructure to place Header outside main
     - Ensure article content is within main
     - Move Footer and ScrollToTop outside main
     - _Requirements: 1.1, 1.2, 1.3, 1.4_
 
-  - [ ] 1.5 Update resource detail page (app/[locale]/recursos/[slug]/page.tsx) with correct main landmark structure
+  - [x] 1.5 Update resource detail page (app/[locale]/recursos/[slug]/page.tsx) with correct main landmark structure
 
     - Restructure to place Header outside main
     - Ensure resource content is within main
     - Move Footer and ScrollToTop outside main
     - _Requirements: 1.1, 1.2, 1.3, 1.4_
 
-  - [ ] 1.6 Update legal pages (privacidad and terminos) with correct main landmark structure
+  - [x] 1.6 Update legal pages (privacidad and terminos) with correct main landmark structure
 
     - Update app/[locale]/privacidad/page.tsx
     - Update app/[locale]/terminos/page.tsx
     - Ensure consistent landmark structure
     - _Requirements: 1.1, 1.2, 1.3, 1.4_
 
-  - [ ] 1.7 Verify CSS selectors and background styling after main restructuring
+  - [-] 1.7 Verify CSS selectors and background styling after main restructuring
+
     - Check if any CSS rules target main element directly
     - Ensure bg-warmGray-950 background is maintained
     - Update globals.css if needed

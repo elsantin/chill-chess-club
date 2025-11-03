@@ -14,16 +14,19 @@ export default async function RecursosPage({
   const t = await getTranslations("resources");
   const resources = getRecentResources(10, locale);
   return (
-    <main className="bg-warmGray-950 min-h-screen">
+    // Accessibility: Restructured to place Header and Footer outside main landmark (WCAG 2.0)
+    <div className="bg-warmGray-950 min-h-screen">
       <Header />
-      <RecursosPageClient
-        resources={resources}
-        pageTitle={t("pageTitle")}
-        pageSubtitle={t("pageSubtitle")}
-        comingSoon={t("comingSoon")}
-      />
+      <main>
+        <RecursosPageClient
+          resources={resources}
+          pageTitle={t("pageTitle")}
+          pageSubtitle={t("pageSubtitle")}
+          comingSoon={t("comingSoon")}
+        />
+      </main>
       <Footer />
       <ScrollToTop />
-    </main>
+    </div>
   );
 }
