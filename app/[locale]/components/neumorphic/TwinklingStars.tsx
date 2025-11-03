@@ -155,10 +155,13 @@ export function TwinklingStars() {
   }, []);
 
   return (
+    // Accessibility: Decorative canvas, hidden from screen readers and not focusable
     <canvas
       ref={canvasRef}
       className="absolute inset-0 pointer-events-none"
       style={{ opacity: 0.85 }}
+      aria-hidden="true"
+      tabIndex={-1}
     />
   );
 }

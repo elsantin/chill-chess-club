@@ -86,14 +86,15 @@ export default function Footer() {
               <p className="text-warmGray-300 text-xs">
                 {t("securePayments")}:
               </p>
+              {/* Accessibility: Changed blue-400 to blue-300 and blue-500 to blue-400 for WCAG 2.0 AA contrast (4.5:1) */}
               <div className="flex gap-2">
-                <span className="bg-warmGray-800 px-2 py-1 rounded text-blue-400 text-xs">
+                <span className="bg-warmGray-800 px-2 py-1 rounded text-blue-300 text-xs">
                   PayPal
                 </span>
-                <span className="bg-warmGray-800 px-2 py-1 rounded text-blue-500 text-xs">
+                <span className="bg-warmGray-800 px-2 py-1 rounded text-blue-400 text-xs">
                   Payoneer
                 </span>
-                <span className="bg-warmGray-800 px-2 py-1 rounded text-yellow-500 text-xs">
+                <span className="bg-warmGray-800 px-2 py-1 rounded text-yellow-400 text-xs">
                   Binance
                 </span>
               </div>

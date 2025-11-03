@@ -17,11 +17,13 @@ export default function LegalFooter() {
             href={`/${locale}`}
             className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-sunset-500 via-rose-500 to-pink-600 text-white font-semibold rounded-xl shadow-neumorphic-md hover:shadow-glow-sunset transition-all duration-300"
           >
+            {/* Accessibility: SVG is decorative, hidden from screen readers */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
               viewBox="0 0 20 20"
               fill="currentColor"
+              aria-hidden="true"
             >
               <path
                 fillRule="evenodd"
