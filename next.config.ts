@@ -13,6 +13,21 @@ const nextConfig: NextConfig = {
         pathname: "/**",
       },
     ],
+    formats: ["image/avif", "image/webp"],
+  },
+  // Ensure OG image is accessible
+  async headers() {
+    return [
+      {
+        source: "/og-image.jpg",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+    ];
   },
 };
 

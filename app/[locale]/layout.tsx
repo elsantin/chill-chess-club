@@ -32,23 +32,51 @@ export async function generateMetadata({
   const messages = await getMessages({ locale });
   const metadata = messages.metadata as { title: string; description: string };
 
-  const siteUrl = "https://chillchessclub.com"; // TODO: Update with your actual domain
-  const ogImage = `${siteUrl}/og-image.jpg`; // TODO: Create OG image
+  // Site configuration
+  const siteUrl = "https://chill-chess-club.vercel.app";
+  const ogImage = `${siteUrl}/og-image.jpg`;
+  const siteName = "Chill Chess Club";
+
+  // Locale mapping for Open Graph
+  const ogLocale = locale === "es" ? "es_ES" : "en_US";
+  const alternateLocale = locale === "es" ? "en_US" : "es_ES";
 
   return {
+    // Basic metadata
     title: metadata.title,
     description: metadata.description,
+
+    // Keywords for SEO
     keywords: [
-      "ajedrez online",
-      "clases de ajedrez",
-      "chess lessons",
-      "online chess",
+      locale === "es" ? "ajedrez online" : "online chess",
+      locale === "es" ? "clases de ajedrez" : "chess lessons",
+      locale === "es" ? "instructor de ajedrez" : "chess instructor",
+      locale === "es" ? "aprender ajedrez" : "learn chess",
       "chess coaching",
-      "IA chess",
+      "AI chess",
       "personalized chess training",
+      "Santiago Narváez",
+      "Chill Chess Club",
+      locale === "es" ? "ajedrez para principiantes" : "chess for beginners",
+      locale === "es" ? "clases particulares ajedrez" : "private chess lessons",
     ],
-    authors: [{ name: "Santiago Narváez - Chill Chess Club" }],
+
+    // Authors and creator
+    authors: [{ name: "Santiago Narváez", url: siteUrl }],
     creator: "Santiago Narváez",
+    publisher: "Chill Chess Club",
+
+    // Canonical URL
+    metadataBase: new URL(siteUrl),
+    alternates: {
+      canonical: `/${locale}`,
+      languages: {
+        es: "/es",
+        en: "/en",
+      },
+    },
+
+    // Icons
     icons: {
       icon: [
         { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -69,31 +97,45 @@ export async function generateMetadata({
         },
       ],
     },
+
+    // Open Graph (Facebook, LinkedIn, WhatsApp)
     openGraph: {
       type: "website",
-      locale: locale,
-      url: siteUrl,
+      locale: ogLocale,
+      alternateLocale: [alternateLocale],
+      url: `${siteUrl}/${locale}`,
       title: metadata.title,
       description: metadata.description,
-      siteName: "Chill Chess Club",
+      siteName: siteName,
       images: [
         {
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: "Chill Chess Club - Clases de Ajedrez Online",
+          alt:
+            locale === "es"
+              ? "Chill Chess Club - Clases de Ajedrez Online Personalizadas"
+              : "Chill Chess Club - Personalized Online Chess Classes",
+          type: "image/jpeg",
         },
       ],
     },
+
+    // Twitter Card
     twitter: {
       card: "summary_large_image",
       title: metadata.title,
       description: metadata.description,
       images: [ogImage],
+      creator: "@chillchessclub", // TODO: Update with actual Twitter handle
+      site: "@chillchessclub", // TODO: Update with actual Twitter handle
     },
+
+    // Robots and indexing
     robots: {
       index: true,
       follow: true,
+      nocache: false,
       googleBot: {
         index: true,
         follow: true,
@@ -102,11 +144,17 @@ export async function generateMetadata({
         "max-snippet": -1,
       },
     },
+
+    // Verification codes (add when available)
     verification: {
-      // TODO: Add verification codes when available
       // google: 'your-google-verification-code',
       // yandex: 'your-yandex-verification-code',
+      // other: 'your-other-verification-code',
     },
+
+    // Additional metadata
+    category: "Education",
+    classification: "Chess Education, Online Learning",
   };
 }
 
