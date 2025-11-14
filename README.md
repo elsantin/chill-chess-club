@@ -11,6 +11,7 @@ Sitio web profesional para clases de ajedrez online personalizadas con asistenci
 - **Animations**: Framer Motion
 - **Forms**: React Hook Form + Zod
 - **Icons**: React Icons (Font Awesome)
+- **OG Images**: @vercel/og (Dynamic generation)
 
 ## 📦 Instalación
 
@@ -78,6 +79,23 @@ Las imágenes actualmente usan placeholders de placehold.co. Para usar imágenes
    - `intermediate-course.webp` (800x600)
 
 2. Los componentes están configurados para usar estas rutas automáticamente.
+
+### Open Graph Images (Redes Sociales)
+
+El sitio genera imágenes OG dinámicas automáticamente para cada página:
+
+- **API Route**: `/api/og` genera imágenes PNG de 1200x630px
+- **Tecnología**: `@vercel/og` con Edge Runtime
+- **Features**:
+  - Logo centrado (180x180px)
+  - Título dinámico por página
+  - Badges para blog y recursos
+  - Soporte multi-idioma (es/en)
+  - Caché de 1 año
+
+**Documentación completa**: Ver `docs/DYNAMIC-OG-IMPLEMENTATION.md`
+
+**Testing**: Ver `docs/SOCIAL-MEDIA-TESTING.md`
 
 ## 🔧 Configuración
 

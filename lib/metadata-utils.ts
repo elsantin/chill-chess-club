@@ -5,6 +5,28 @@
 
 import { Metadata } from "next";
 
+/**
+ * Constructs a dynamic OG image URL
+ * @param params - Parameters for the OG image
+ * @returns Fully qualified URL to the dynamic OG image
+ */
+export function buildOGImageUrl(params: {
+  title: string;
+  locale: string;
+  type?: "default" | "blog" | "resource";
+}): string {
+  const siteUrl = "https://chill-chess-club.vercel.app";
+  const { title, locale, type = "default" } = params;
+
+  // Encode parameters for URL
+  const encodedTitle = encodeURIComponent(title);
+  const encodedLocale = encodeURIComponent(locale);
+  const encodedType = encodeURIComponent(type);
+
+  // Construct the OG image URL
+  return `${siteUrl}/api/og?title=${encodedTitle}&locale=${encodedLocale}&type=${encodedType}`;
+}
+
 interface GenerateMetadataParams {
   title: string;
   description: string;
@@ -36,7 +58,16 @@ export function generatePageMetadata({
   tags = [],
 }: GenerateMetadataParams): Metadata {
   const siteUrl = "https://chill-chess-club.vercel.app";
-  const ogImage = image || `${siteUrl}/og-image.jpg`;
+
+  // Use dynamic OG image by default, fallback to static if no title provided
+  const ogImage =
+    image ||
+    buildOGImageUrl({
+      title,
+      locale,
+      type: type === "article" ? "blog" : "default",
+    });
+
   const siteName = "Chill Chess Club";
   const fullUrl = `${siteUrl}/${locale}${path}`;
 
@@ -76,7 +107,7 @@ export function generatePageMetadata({
             locale === "es"
               ? `${title} - Chill Chess Club`
               : `${title} - Chill Chess Club`,
-          type: "image/jpeg",
+          type: "image/png",
         },
       ],
     },
@@ -146,12 +177,21 @@ export function generateBlogMetadata({
   tags?: string[];
   image?: string;
 }): Metadata {
+  // Use dynamic OG image with blog type if no custom image provided
+  const ogImage =
+    image ||
+    buildOGImageUrl({
+      title,
+      locale,
+      type: "blog",
+    });
+
   return generatePageMetadata({
     title: `${title} | Chill Chess Club Blog`,
     description,
     locale,
     path: `/blog/${slug}`,
-    image,
+    image: ogImage,
     type: "article",
     publishedTime,
     modifiedTime,
@@ -176,12 +216,21 @@ export function generateResourceMetadata({
   slug: string;
   image?: string;
 }): Metadata {
+  // Use dynamic OG image with resource type if no custom image provided
+  const ogImage =
+    image ||
+    buildOGImageUrl({
+      title,
+      locale,
+      type: "resource",
+    });
+
   return generatePageMetadata({
     title: `${title} | Chill Chess Club Resources`,
     description,
     locale,
     path: `/recursos/${slug}`,
-    image,
+    image: ogImage,
     type: "article",
   });
 }
@@ -191,7 +240,14 @@ export function generateResourceMetadata({
  */
 export function generateStructuredData(
   type: "Organization" | "Article",
-  data: any
+  data?: {
+    title?: string;
+    description?: string;
+    image?: string;
+    publishedTime?: string;
+    modifiedTime?: string;
+    author?: string;
+  }
 ) {
   const baseUrl = "https://chill-chess-club.vercel.app";
 
@@ -220,7 +276,7 @@ export function generateStructuredData(
     };
   }
 
-  if (type === "Article") {
+  if (type === "Article" && data) {
     return {
       "@context": "https://schema.org",
       "@type": "Article",

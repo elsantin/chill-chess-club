@@ -4,6 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { locales } from "@/lib/i18n";
+import { buildOGImageUrl } from "@/lib/metadata-utils";
 import "../globals.css";
 
 const playfair = Playfair_Display({
@@ -34,8 +35,14 @@ export async function generateMetadata({
 
   // Site configuration
   const siteUrl = "https://chill-chess-club.vercel.app";
-  const ogImage = `${siteUrl}/og-image.jpg`;
   const siteName = "Chill Chess Club";
+
+  // Generate dynamic OG image
+  const ogImage = buildOGImageUrl({
+    title: metadata.title,
+    locale,
+    type: "default",
+  });
 
   // Locale mapping for Open Graph
   const ogLocale = locale === "es" ? "es_ES" : "en_US";
@@ -116,7 +123,7 @@ export async function generateMetadata({
             locale === "es"
               ? "Chill Chess Club - Clases de Ajedrez Online Personalizadas"
               : "Chill Chess Club - Personalized Online Chess Classes",
-          type: "image/jpeg",
+          type: "image/png",
         },
       ],
     },
