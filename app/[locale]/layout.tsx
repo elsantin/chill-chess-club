@@ -133,9 +133,15 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: metadata.title,
       description: metadata.description,
-      images: [ogImage],
-      creator: "@chillchessclub", // TODO: Update with actual Twitter handle
-      site: "@chillchessclub", // TODO: Update with actual Twitter handle
+      images: {
+        url: ogImage,
+        alt:
+          locale === "es"
+            ? "Chill Chess Club - Clases de Ajedrez Online Personalizadas"
+            : "Chill Chess Club - Personalized Online Chess Classes",
+      },
+      creator: "@chillchessclub",
+      site: "@chillchessclub",
     },
 
     // Robots and indexing
