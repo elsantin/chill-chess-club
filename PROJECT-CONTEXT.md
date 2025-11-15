@@ -1,8 +1,8 @@
 # 🎯 PROJECT CONTEXT - Chill Chess Club Website
 
-**Última actualización:** 2025-11-03
+**Última actualización:** 2025-11-15
 **Estado del proyecto:** ✅ Accesible, optimizado y listo para monetización
-**Versión:** 1.3.0
+**Versión:** 1.4.0
 
 ---
 
@@ -33,15 +33,23 @@ Convertir visitantes en estudiantes mediante una narrativa clara: presentar al i
   "react": "19.1.0",
   "react-dom": "19.1.0",
   "typescript": "^5",
-  "tailwindcss": "^3",
+  "tailwindcss": "^3.4.18",
   "next-intl": "^4.3.12",
   "framer-motion": "^12.23.24",
   "react-hook-form": "^7.65.0",
-  "@hookform/resolvers": "latest",
+  "@hookform/resolvers": "^5.2.2",
   "zod": "^4.1.12",
   "react-icons": "^5.5.0",
-  "clsx": "latest",
-  "tailwind-merge": "latest"
+  "lucide-react": "^0.545.0",
+  "@radix-ui/react-accordion": "^1.2.12",
+  "@radix-ui/react-label": "^2.1.7",
+  "@radix-ui/react-slot": "^1.2.3",
+  "@tailwindcss/typography": "^0.5.19",
+  "@vercel/og": "^0.8.5",
+  "class-variance-authority": "^0.7.1",
+  "clsx": "^2.1.1",
+  "tailwind-merge": "^3.3.1",
+  "tailwindcss-animate": "^1.0.7"
 }
 ```
 
@@ -78,7 +86,7 @@ chill-chess-club-nextjs/
 │   │   │   └── page.tsx            # Términos de servicio
 │   │   ├── privacidad/
 │   │   │   └── page.tsx            # Política de privacidad
-│   │   └── components/             # Componentes de la página
+│   │   └── components/             # Componentes de la página (22 componentes)
 │   │       ├── Header.tsx          # Navegación sticky + selector idioma
 │   │       ├── Hero.tsx            # Sección hero con imagen de fondo
 │   │       ├── About.tsx           # Sobre el instructor
@@ -86,28 +94,69 @@ chill-chess-club-nextjs/
 │   │       ├── Method.tsx          # 5 pasos del método
 │   │       ├── Blog.tsx            # Grid de artículos (3)
 │   │       ├── BlogCard.tsx        # Card individual de blog
+│   │       ├── BlogPreview.tsx     # Preview de blog en homepage
 │   │       ├── BlogPageClient.tsx  # Cliente para página de blog
 │   │       ├── ResourceCard.tsx    # Card individual de recurso
 │   │       ├── RecursosPageClient.tsx # Cliente para página de recursos
 │   │       ├── FAQ.tsx             # Acordeón de preguntas (7)
 │   │       ├── Contact.tsx         # Formulario con validación
 │   │       ├── Footer.tsx          # Footer principal
-│   │       └── LegalFooter.tsx     # Footer minimalista para páginas legales
-│   ├── api/
-│   │   └── contact/
-│   │       └── route.ts            # API endpoint para formulario
+│   │       ├── LegalFooter.tsx     # Footer minimalista para páginas legales
+│   │       ├── ScrollToTop.tsx     # Botón scroll to top
+│   │       └── neumorphic/         # Componentes de diseño neumórfico (5)
+│   │           ├── AnimatedTitle.tsx        # Títulos animados
+│   │           ├── GlassmorphicHeader.tsx   # Header con efecto glassmorphic
+│   │           ├── NeumorphicCard.tsx       # Cards con efecto neumórfico
+│   │           ├── SunsetGradientText.tsx   # Texto con gradiente sunset
+│   │           └── TwinklingStars.tsx       # Fondo de estrellas animadas
+│   ├── api/                        # API routes
+│   │   ├── contact/
+│   │   │   └── route.ts            # API endpoint para formulario
+│   │   └── og/
+│   │       └── route.tsx           # Dynamic OG image generation (Open Graph)
 │   └── globals.css                 # Estilos globales + Tailwind + scrollbar
 ├── messages/
 │   ├── es.json                     # Traducciones español (completo)
 │   └── en.json                     # Traducciones inglés (completo)
-├── lib/
+├── lib/                            # Shared utilities and data (9 archivos)
 │   ├── i18n.ts                     # Configuración next-intl
 │   ├── utils.ts                    # Utilidades (cn, imagePlaceholders)
 │   ├── validations.ts              # Schemas Zod
-│   ├── blog-data.ts                # Datos de artículos de blog
-│   └── resources-data.ts           # Datos de recursos
+│   ├── design-tokens.ts            # Color palette definitions
+│   ├── blog-data.ts                # Datos de artículos de blog (3 artículos)
+│   ├── resources-data.ts           # Datos de recursos (3 recursos)
+│   ├── metadata-utils.ts           # SEO metadata helpers
+│   ├── image-blur.ts               # Blur placeholder generator
+│   └── neumorphic-utils.ts         # Neumorphic design utilities
+├── components/                     # Shared UI components
+│   └── ui/                         # Reusable UI primitives (6 componentes)
+│       ├── accordion.tsx           # Componente acordeón (Radix UI)
+│       ├── button.tsx              # Botones reutilizables
+│       ├── card.tsx                # Cards base
+│       ├── input.tsx               # Inputs de formulario
+│       ├── label.tsx               # Labels de formulario
+│       └── textarea.tsx            # Textarea de formulario
 ├── public/
 │   └── images/                     # Imágenes del sitio (8 total)
+├── docs/                           # Project documentation (11 archivos)
+│   ├── DEPLOYMENT-VERIFICATION.md  # Guía de verificación de deployment
+│   ├── DYNAMIC-OG-IMPLEMENTATION.md # Implementación de Open Graph
+│   ├── EMAIL_SETUP.md              # Configuración de email
+│   ├── OG-IMAGE-QUICK-GUIDE.md     # Guía rápida de imágenes OG
+│   ├── OG-IMPLEMENTATION-SUMMARY.md # Resumen de implementación OG
+│   ├── OG-PREVIEW-EXAMPLES.md      # Ejemplos de preview OG
+│   ├── OG-REUSABLE-TEMPLATE.md     # Template reutilizable OG
+│   ├── OPEN-GRAPH-SETUP.md         # Setup de Open Graph
+│   ├── SOCIAL-MEDIA-TESTING.md     # Testing en redes sociales
+│   ├── SUNSETLABS-FOOTER-TEMPLATE.md # Template de footer con branding
+│   └── prompt inicial              # Prompt inicial del proyecto
+├── .kiro/
+│   ├── docs/                       # Kiro IDE documentation
+│   │   ├── agent-hooks-guide.md    # Guía completa de Agent Hooks
+│   │   └── hook-templates.md       # Plantillas genéricas de hooks
+│   ├── hooks/                      # Agent hooks configuration
+│   ├── specs/                      # Feature specifications
+│   └── steering/                   # AI assistant guidelines
 ├── .kiro/
 │   └── specs/
 │       ├── chill-chess-club-website/
@@ -552,19 +601,23 @@ Route (app)                    Size      First Load JS
 
 ### Archivos de Código
 
-- **Componentes:** 9 archivos
-- **Páginas:** 1 archivo
-- **API Routes:** 1 archivo
-- **Utilidades:** 2 archivos
-- **Configuración:** 5 archivos
+- **Componentes principales:** 16 archivos (app/[locale]/components/)
+- **Componentes neumórficos:** 5 archivos (app/[locale]/components/neumorphic/)
+- **Componentes UI compartidos:** 6 archivos (components/ui/)
+- **Total componentes:** 27 archivos
+- **Páginas:** 7 archivos (home, blog, recursos, términos, privacidad, not-found, test-404)
+- **API Routes:** 2 endpoints (contact, og)
+- **Utilidades:** 9 archivos (lib/)
+- **Configuración:** 7 archivos
 - **Traducciones:** 2 archivos (JSON)
+- **Documentación:** 11 archivos (docs/ + .kiro/docs/)
 
 ### Líneas de Código (aprox.)
 
-- **TypeScript/TSX:** ~2,500 líneas
-- **CSS:** ~50 líneas
-- **JSON:** ~400 líneas
-- **Markdown:** ~800 líneas (docs)
+- **TypeScript/TSX:** ~3,800 líneas
+- **CSS:** ~150 líneas
+- **JSON:** ~600 líneas
+- **Markdown:** ~2,500 líneas (docs + specs + guides)
 
 ---
 
@@ -716,6 +769,81 @@ Route (app)                    Size      First Load JS
 ---
 
 ## 🆕 HISTORIAL DE CAMBIOS
+
+### v1.4.0 (2025-11-15) - Documentación y Herramientas de Desarrollo
+
+**Cambios principales:**
+
+#### 📚 Documentación Expandida
+
+- ✅ **Guía de Agent Hooks** - Documentación completa para crear hooks de automatización en Kiro IDE
+- ✅ **Plantillas de Hooks Genéricas** - Templates reutilizables para Project Status Report, Pre-Deploy Check y Update Documentation
+- ✅ **Template de Footer Sunset Labs** - Documentación detallada del componente de branding con 3 variantes
+- ✅ **Guías de Open Graph** - 7 documentos sobre implementación de imágenes OG dinámicas
+- ✅ **Guías de Deployment** - Verificación y testing de deployment
+
+#### 🎨 Componentes Neumórficos
+
+- ✅ **5 componentes de diseño** - AnimatedTitle, GlassmorphicHeader, NeumorphicCard, SunsetGradientText, TwinklingStars
+- ✅ **Utilidades neumórficas** - Helper functions en `lib/neumorphic-utils.ts`
+- ✅ **Design tokens** - Sistema de colores sunset en `lib/design-tokens.ts`
+
+#### 🛠️ Infraestructura
+
+- ✅ **API de Open Graph** - Endpoint `/api/og` para generación dinámica de imágenes OG
+- ✅ **Componentes UI base** - 6 componentes Radix UI (accordion, button, card, input, label, textarea)
+- ✅ **Metadata utilities** - Helpers para SEO en `lib/metadata-utils.ts`
+- ✅ **Páginas de error** - not-found.tsx y test-404 para manejo de errores
+
+#### 📊 Métricas Actualizadas
+
+- **Total componentes:** 27 archivos (16 principales + 5 neumórficos + 6 UI)
+- **Dependencias:** 20 paquetes principales (agregados @vercel/og, lucide-react, @radix-ui/\*)
+- **Documentación:** 11 archivos markdown (2,500+ líneas)
+- **Líneas de código:** ~3,800 líneas TypeScript/TSX
+
+#### 📝 Archivos Nuevos
+
+**Documentación:**
+
+- `.kiro/docs/agent-hooks-guide.md` - Guía completa de Agent Hooks
+- `.kiro/docs/hook-templates.md` - Plantillas genéricas de hooks
+- `docs/SUNSETLABS-FOOTER-TEMPLATE.md` - Template de footer con branding
+- `docs/DEPLOYMENT-VERIFICATION.md` - Guía de verificación de deployment
+- `docs/DYNAMIC-OG-IMPLEMENTATION.md` - Implementación de Open Graph
+- `docs/EMAIL_SETUP.md` - Configuración de email
+- `docs/OG-*.md` - 5 documentos adicionales sobre Open Graph
+- `docs/SOCIAL-MEDIA-TESTING.md` - Testing en redes sociales
+
+**Componentes:**
+
+- `app/[locale]/components/neumorphic/*.tsx` - 5 componentes neumórficos
+- `app/[locale]/components/BlogPreview.tsx` - Preview de blog
+- `app/[locale]/components/ScrollToTop.tsx` - Botón scroll to top
+- `components/ui/*.tsx` - 6 componentes UI base
+
+**Utilidades:**
+
+- `lib/design-tokens.ts` - Sistema de colores
+- `lib/metadata-utils.ts` - Helpers de SEO
+- `lib/neumorphic-utils.ts` - Utilidades de diseño
+
+**API:**
+
+- `app/api/og/route.tsx` - Generación de imágenes Open Graph
+
+#### 🔧 Dependencias Agregadas
+
+- `@vercel/og` - Generación de imágenes Open Graph
+- `lucide-react` - Iconos adicionales
+- `@radix-ui/react-accordion` - Componente acordeón accesible
+- `@radix-ui/react-label` - Labels accesibles
+- `@radix-ui/react-slot` - Composición de componentes
+- `@tailwindcss/typography` - Estilos de tipografía
+- `class-variance-authority` - Variantes de componentes
+- `tailwindcss-animate` - Animaciones Tailwind
+
+---
 
 ### v1.3.0 (2025-11-03) - Accesibilidad WCAG 2 AA y Optimización de Rendimiento
 
