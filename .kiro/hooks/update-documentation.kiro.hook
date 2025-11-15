@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Update Documentation",
+  "description": "Automatically updates PROJECT-CONTEXT.md by scanning components, checking dependencies, verifying folder structure, incrementing version, adding changelog entries, and updating project metrics",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "You need to update the PROJECT-CONTEXT.md file with the latest project information. Follow these steps:\n\n1. **Scan Components**: Count all component files in app/[locale]/components/ directory and its subdirectories\n2. **Check Dependencies**: Read package.json and list all dependencies and devDependencies\n3. **Verify Folder Structure**: Check for any new important folders in the project root and app/ directory\n4. **Increment Version**: Read the current version from PROJECT-CONTEXT.md (look for version number like 1.3.0) and increment the minor version (e.g., 1.3.0 → 1.4.0)\n5. **Add Changelog Entry**: Add a new entry to the \"Historial de Cambios\" or \"Change History\" section with:\n   - Current date in format YYYY-MM-DD\n   - New version number\n   - Summary of changes detected (new components, dependencies, folders)\n6. **Update Metrics**: Update project metrics section with:\n   - Total number of components\n   - Total number of files (approximate by counting major directories)\n   - Number of dependencies\n   - Any other relevant metrics found in the file\n\n**IMPORTANT**: You MUST modify the PROJECT-CONTEXT.md file directly. Do not just provide suggestions - make the actual changes to the file.\n\nAfter updating, provide a summary showing:\n- Old version → New version\n- Number of components found\n- New dependencies detected (if any)\n- New folders detected (if any)\n- What sections were updated\n\nMake sure to preserve the existing structure and formatting of PROJECT-CONTEXT.md while updating the relevant sections.\n\nCRITICAL RULES:\n- NEVER use executePwsh or any shell commands (dir, find, Get-ChildItem, etc.)\n- ONLY use Kiro tools: fileSearch, grepSearch, readFile, listDirectory, readMultipleFiles, strReplace, fsWrite\n- These tools automatically exclude node_modules/, .next/, .git/ folders\n- DO NOT use markdown tables in your summary - use bullet lists and simple text"
+  }
+}
