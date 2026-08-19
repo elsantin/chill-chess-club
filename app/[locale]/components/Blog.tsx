@@ -71,22 +71,22 @@ export default function Blog() {
                 interactive={true}
               >
                 {/* Article Image */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-52 overflow-hidden bg-warmGray-900 select-none">
                   {/* TODO: Reemplazar placeholder con imagen real en /public/images/ */}
                   <Image
                     src={blogImages[index].src}
                     alt={blogImages[index].alt}
                     width={blogImages[index].width}
                     height={blogImages[index].height}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out will-change-transform"
                   />
                   {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-warmGray-900/80 to-transparent" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-sunset-500/20 via-rose-500/10 to-purple-500/20 mix-blend-overlay" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-warmGray-900 via-warmGray-900/30 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-sunset-500/20 via-rose-500/10 to-purple-500/20 mix-blend-overlay pointer-events-none" />
                 </div>
 
-                {/* Article Content */}
-                <div className="p-6">
+                {/* Article Content (Solapado físicamente 24px sobre la base de la imagen) */}
+                <div className="relative z-10 bg-warmGray-900 -mt-6 p-6 pt-4 rounded-t-2xl">
                   {/* Meta Information */}
                   <div
                     className="flex items-center gap-4 text-sm !text-warmGray-300 mb-3"

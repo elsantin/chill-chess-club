@@ -130,7 +130,17 @@ export default function BlogPostClient({
                 interactive={false}
               >
                 <div
-                  className="prose prose-lg prose-invert max-w-none [&_*]:!animate-none [&_h1]:!animate-none [&_h2]:!animate-none [&_h3]:!animate-none [&_h4]:!animate-none"
+                  className="prose prose-lg prose-invert max-w-none 
+                    prose-headings:font-playfair prose-headings:tracking-wide
+                    prose-h2:text-2xl prose-h2:md:text-3xl prose-h2:font-bold prose-h2:mt-12 prose-h2:mb-6 
+                    prose-h2:border-b prose-h2:border-warmGray-800/80 prose-h2:pb-3 prose-h2:text-sunset-300
+                    prose-h3:text-xl prose-h3:md:text-2xl prose-h3:mt-8 prose-h3:mb-4 prose-h3:text-warmGray-200
+                    prose-p:text-warmGray-300 prose-p:leading-relaxed prose-p:text-base prose-p:md:text-lg prose-p:mb-6
+                    prose-p:first-of-type:text-xl prose-p:first-of-type:leading-relaxed prose-p:first-of-type:text-warmGray-200 prose-p:first-of-type:border-l-2 prose-p:first-of-type:border-sunset-500/50 prose-p:first-of-type:pl-4 prose-p:first-of-type:my-6
+                    prose-blockquote:border-l-4 prose-blockquote:border-sunset-400 prose-blockquote:bg-warmGray-950/40 prose-blockquote:py-2 prose-blockquote:px-6 prose-blockquote:rounded-r-xl prose-blockquote:italic prose-blockquote:text-warmGray-200
+                    prose-strong:text-warmGray-100 prose-strong:font-semibold
+                    prose-li:text-warmGray-300 prose-li:my-2
+                    [&_*]:!animate-none [&_h1]:!animate-none [&_h2]:!animate-none [&_h3]:!animate-none [&_h4]:!animate-none"
                   style={{ animation: "none" }}
                   dangerouslySetInnerHTML={{ __html: post.content }}
                 />

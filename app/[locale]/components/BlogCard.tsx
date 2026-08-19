@@ -38,7 +38,7 @@ export function BlogCard({ post, index = 0 }: BlogCardProps) {
           interactive={true}
         >
           {/* Image */}
-          <div className="relative h-64 overflow-hidden bg-warmGray-800">
+          <div className="relative h-64 overflow-hidden bg-warmGray-900 select-none">
             {/* Performance: Optimized with lazy loading, quality control, and blur placeholder */}
             <Image
               src={post.image}
@@ -49,22 +49,22 @@ export function BlogCard({ post, index = 0 }: BlogCardProps) {
               quality={85}
               placeholder="blur"
               blurDataURL={blurPlaceholders.card}
-              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out will-change-transform"
             />
             {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-warmGray-900 via-warmGray-900/50 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-br from-sunset-500/20 via-rose-500/10 to-purple-500/20 mix-blend-overlay" />
+            <div className="absolute inset-0 bg-gradient-to-t from-warmGray-900 via-warmGray-900/30 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-sunset-500/20 via-rose-500/10 to-purple-500/20 mix-blend-overlay pointer-events-none" />
 
             {/* Category badge */}
             {post.category && (
-              <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-sunset-500 to-rose-500 text-white text-sm font-semibold rounded-full">
+              <div className="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-sunset-500 to-rose-500 text-white text-sm font-semibold rounded-full z-20">
                 {post.category}
               </div>
             )}
           </div>
 
-          {/* Content */}
-          <div className="p-6 flex flex-col flex-grow">
+          {/* Content (Solapado físicamente 24px sobre la base de la imagen) */}
+          <div className="relative z-10 bg-warmGray-900 -mt-6 p-6 pt-4 flex flex-col flex-grow rounded-t-2xl">
             {/* Meta info */}
             <div className="flex items-center gap-4 text-sm text-warmGray-400 mb-3">
               <div className="flex items-center gap-1">
